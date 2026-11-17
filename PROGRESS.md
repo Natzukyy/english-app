@@ -57,8 +57,10 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 - [x] revisión de accesibilidad: contraste de color (todo ≥6.4:1), botones táctiles ≥44px, prefers-reduced-motion, foco visible — ver D10
 
 ## Fase 7 — Reporte matutino
-- [ ] REPORTE_MATUTINO.md
+- [x] REPORTE_MATUTINO.md
 
 ---
 ## Paso actual
-Cerrando fase 6 (commit). Siguiente: fase 7 (reporte matutino).
+Las 7 fases de `prompt-noche.md` están cerradas, cada una con su commit y tests en verde (62 pruebas).
+Nada pendiente a medias. Si Alex no ha puesto `STOP`, podría seguir con tareas de refinamiento
+menores (más contenido, más tarjetas de repaso) pero no hay nada de la lista de fases que falte.

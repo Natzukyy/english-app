@@ -1,3 +1,4 @@
 .DS_Store
 *.log
 STOP
+.claude/settings.local.json
