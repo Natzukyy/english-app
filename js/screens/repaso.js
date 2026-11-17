@@ -52,6 +52,9 @@
     }
 
     var tarjeta = sesion.cola[sesion.indice];
+    var esc = global.App.Util.escaparHTML;
+    // tarjeta.frente/atras vienen de IndexedDB (sembradas por nosotros, pero sustituibles por
+    // un respaldo importado): se escapan antes de insertarlas como HTML.
     el.innerHTML =
       '<h1 data-i18n-live="repaso.titulo"></h1>' +
       '<p class="texto-tenue">' +
@@ -61,10 +64,10 @@
       "</p>" +
       '<div class="tarjeta hero-bloque">' +
       '<p style="font-size:22px">' +
-      tarjeta.frente +
+      esc(tarjeta.frente) +
       "</p>" +
       '<p class="texto-tenue" id="repaso-atras" style="display:none;margin-top:8px">' +
-      tarjeta.atras +
+      esc(tarjeta.atras) +
       "</p>" +
       "</div>" +
       '<button type="button" class="boton-principal" id="btn-mostrar">Mostrar respuesta</button>' +

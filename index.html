@@ -6,6 +6,10 @@
     <title>Inglés B2</title>
     <meta name="description" content="App personal para practicar inglés hacia nivel B2 (CEFR)." />
     <meta name="theme-color" content="#0d0f24" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"
+    />
 
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
@@ -42,6 +46,7 @@
       </nav>
     </div>
 
+    <script src="js/core/util.js"></script>
     <script src="js/core/storage.js"></script>
     <script src="js/core/i18n.js"></script>
     <script src="js/core/fecha.js"></script>

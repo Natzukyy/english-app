@@ -30,16 +30,20 @@
         return;
       }
 
+      var esc = global.App.Util.escaparHTML;
+      // Todo lo que sale de "diagnostico" y "xp" viene de IndexedDB (puede venir de un
+      // respaldo importado): se escapa antes de insertarlo como HTML. Ver DECISIONES.md D10.
       var filas = Object.keys(diagnostico.porHabilidad)
         .map(function (h) {
           var r = diagnostico.porHabilidad[h];
+          var porcentaje = Number(r.porcentajeHaciaB2) || 0;
           return (
             '<div class="tarjeta"><p>' +
-            h +
+            esc(h) +
             " — " +
-            r.nivelCEFR +
+            esc(r.nivelCEFR) +
             '</p><div class="barra-progreso"><span style="width:' +
-            r.porcentajeHaciaB2 +
+            Math.max(0, Math.min(100, porcentaje)) +
             '%"></span></div></div>'
           );
         })
@@ -50,13 +54,13 @@
         '<div class="hero-bloque"><p class="hero-numero">' +
         global.App.XP.nivelDesdeXP(xp.total) +
         '</p><p class="texto-tenue">nivel · ' +
-        xp.total +
+        esc(xp.total) +
         " XP · racha " +
         racha.rachaActual +
         "</p></div>" +
         filas +
         '<p class="texto-tenue">Diagnóstico del ' +
-        diagnostico.fecha +
+        esc(diagnostico.fecha) +
         ". Meta: B2 para el " +
         FECHA_OBJETIVO +
         " (" +

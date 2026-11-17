@@ -37,10 +37,12 @@
       var minutosHoy = sesionHoy.minutos || 0;
       var porcentajeMeta = Math.min(100, Math.round((minutosHoy / prefs.metaMinutosDia) * 100));
 
+      var esc = global.App.Util.escaparHTML;
       var chipsHtml = ["lectura", "escucha", "habla", "escritura"]
         .map(function (habilidad) {
-          var nivelCEFR = diagnostico && diagnostico.porHabilidad[habilidad] ? diagnostico.porHabilidad[habilidad].nivelCEFR : "—";
-          return '<span class="chip ' + skillChipClase(habilidad) + '">' + habilidad + ": " + nivelCEFR + "</span>";
+          var nivelCEFRCrudo = diagnostico && diagnostico.porHabilidad[habilidad] ? diagnostico.porHabilidad[habilidad].nivelCEFR : "—";
+          // nivelCEFRCrudo viene de IndexedDB (puede venir de un respaldo importado): se escapa.
+          return '<span class="chip ' + skillChipClase(habilidad) + '">' + habilidad + ": " + esc(nivelCEFRCrudo) + "</span>";
         })
         .join(" ");
 
@@ -56,9 +58,9 @@
         '<p class="texto-tenue">' +
         t("inicio.meta.etiqueta") +
         ": " +
-        minutosHoy +
+        esc(minutosHoy) +
         "/" +
-        prefs.metaMinutosDia +
+        esc(prefs.metaMinutosDia) +
         " min</p>" +
         '<div class="barra-progreso"><span style="width:' +
         porcentajeMeta +
@@ -68,7 +70,7 @@
         "<p>Nivel " +
         nivel +
         " · " +
-        xp.total +
+        esc(xp.total) +
         " XP</p>" +
         "</div>" +
         '<button type="button" class="boton-principal" id="btn-empezar-repaso" data-i18n-live="nav.repaso"></button>' +

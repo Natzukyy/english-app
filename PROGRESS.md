@@ -52,12 +52,13 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 - [ ] auditoría formal de accesibilidad/seguridad (fase 6)
 
 ## Fase 6 — Auditoría
-- [ ] security-guidance
-- [ ] revisión accesibilidad/código
+- [x] security-guidance / security-review: no disponible sin remoto git (ver BLOQUEOS.md B2) — hice la revisión manual yo mismo
+- [x] hallazgo real arreglado: XSS almacenado vía respaldo importado (App.Util.escaparHTML + CSP) — ver DECISIONES.md D10
+- [x] revisión de accesibilidad: contraste de color (todo ≥6.4:1), botones táctiles ≥44px, prefers-reduced-motion, foco visible — ver D10
 
 ## Fase 7 — Reporte matutino
 - [ ] REPORTE_MATUTINO.md
 
 ---
 ## Paso actual
-Cerrando fase 5 (commit). Siguiente: fase 6 (auditoría de seguridad/accesibilidad).
+Cerrando fase 6 (commit). Siguiente: fase 7 (reporte matutino).

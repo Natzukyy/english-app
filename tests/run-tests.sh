@@ -11,6 +11,7 @@ trap 'rm -f "$TMP"' EXIT
 # Módulos puros de js/core/ (sin DOM/IndexedDB/fetch) que sí pueden correr en JXA.
 # storage.js queda fuera: depende de IndexedDB, que no existe fuera del navegador.
 CORE_PURO=(
+  "js/core/util.js"
   "js/core/i18n.js"
   "js/core/fecha.js"
   "js/core/racha.js"

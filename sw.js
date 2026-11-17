@@ -3,7 +3,7 @@
    Subir CACHE_VERSION cuando cambie la lista de archivos o su contenido relevante offline. */
 "use strict";
 
-var CACHE_VERSION = "v5";
+var CACHE_VERSION = "v6";
 var CACHE_NAME = "app-ingles-" + CACHE_VERSION;
 
 var ARCHIVOS_APP_SHELL = [
@@ -12,6 +12,7 @@ var ARCHIVOS_APP_SHELL = [
   "manifest.webmanifest",
   "css/styles.css",
   "js/app.js",
+  "js/core/util.js",
   "js/core/storage.js",
   "js/core/i18n.js",
   "js/core/fecha.js",
