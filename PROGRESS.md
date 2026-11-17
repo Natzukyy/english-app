@@ -10,11 +10,13 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 - [ ] commit de cierre de fase 0
 
 ## Fase 1 — Esqueleto PWA
-- [ ] manifest.webmanifest + iconos placeholder
-- [ ] service worker (cache offline básico)
-- [ ] index.html + navegación entre pantallas vacías
-- [ ] storage.js (IndexedDB) + exportar/importar respaldo
-- [ ] i18n.js (es/en) con umbrales editables
+- [x] manifest.webmanifest + iconos placeholder (PNG generados sin dependencias)
+- [x] service worker (cache offline básico, escrito a mano)
+- [x] index.html + navegación entre pantallas (router por hash, 5 pantallas)
+- [x] storage.js (IndexedDB) + exportar/importar respaldo (funcional en pantalla de ajustes)
+- [x] i18n.js (es/en) con umbrales editables (data/i18n/umbrales.json)
+- [x] tokens de diseño (css/styles.css) con la skill frontend-design: paleta "night-lab" (índigo + neón menta/violeta + 4 pasteles de habilidad), tipografía de sistema iOS/macOS
+- [x] verificación: sintaxis JS ok, servidor local responde 200 en todas las rutas clave, tests en verde
 
 ## Fase 2 — Lógica núcleo con pruebas
 - [ ] racha.js + tests
@@ -44,4 +46,4 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 
 ---
 ## Paso actual
-Cerrando fase 0 (CLAUDE.md del proyecto + commit).
+Cerrando fase 1 (commit). Siguiente: fase 2 (racha, XP, repaso espaciado con pruebas).

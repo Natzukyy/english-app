@@ -1,0 +1,264 @@
+/* app-ingles — tokens de diseño
+   Paleta "night-lab": fondo índigo oscuro + dos acentos neón (menta, violeta) para acción/foco,
+   y cuatro pasteles reservados solo para las etiquetas de habilidad (lectura/escucha/habla/escritura).
+   Tipografía: fuentes de sistema de iOS/macOS (sin fuentes web) — la app es offline-first y
+   sin dependencias externas (ver DECISIONES.md D1/D5).
+   Sin sombras rgba genéricas: en fondo oscuro usamos borde o resplandor (glow), no "soft shadow". */
+
+:root {
+  --bg: #0d0f24;
+  --surface: #171a3e;
+  --surface-alta: #20244d;
+  --borde: #2d2f5c;
+
+  --texto: #edebfa;
+  --texto-tenue: #9093c2;
+
+  --neon-menta: #5ef2c4;
+  --neon-violeta: #b18cff;
+
+  --pastel-lectura: #ffd9a0;
+  --pastel-escucha: #b9e6ff;
+  --pastel-habla: #ffb4c6;
+  --pastel-escritura: #c9f7d7;
+
+  --critico: #ff8fa3;
+
+  --fuente-display: ui-serif, "New York", Georgia, serif;
+  --fuente-texto: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+
+  --radio: 14px;
+  --radio-chico: 8px;
+  --espacio-lienzo-max: 480px;
+
+  --toque-minimo: 44px;
+
+  --dur-rapida: 120ms;
+  --dur-media: 220ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--texto);
+  font-family: var(--fuente-texto);
+  font-size: 17px;
+  line-height: 1.45;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+}
+
+/* "Lienzo de teléfono": en pantallas grandes (Mac Safari) la app no se estira a todo el
+   ancho — se mantiene como una columna centrada, como si fuera un teléfono flotando en el
+   escritorio. Esto refuerza que es una herramienta personal, no un dashboard. */
+#app {
+  width: 100%;
+  max-width: var(--espacio-lienzo-max);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+main {
+  flex: 1;
+  padding: 20px 20px calc(var(--toque-minimo) + 32px);
+  overflow-y: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+p {
+  margin: 0 0 12px;
+  color: var(--texto);
+}
+
+.texto-tenue {
+  color: var(--texto-tenue);
+  font-size: 15px;
+}
+
+a {
+  color: var(--neon-menta);
+}
+
+button {
+  font-family: var(--fuente-texto);
+  font-size: 17px;
+  cursor: pointer;
+}
+
+/* Botón principal: una sola acción bold por pantalla. Sin sombra; el acento es el color y el
+   leve resplandor, no un degradado decorativo. */
+.boton-principal {
+  display: block;
+  width: 100%;
+  min-height: var(--toque-minimo);
+  background: var(--neon-menta);
+  color: #06261d;
+  border: none;
+  border-radius: var(--radio);
+  font-weight: 600;
+  font-size: 17px;
+  padding: 12px 20px;
+  transition: transform var(--dur-rapida) ease, opacity var(--dur-rapida) ease;
+}
+
+.boton-principal:active {
+  transform: scale(0.98);
+}
+
+.boton-secundario {
+  display: inline-block;
+  min-height: var(--toque-minimo);
+  background: transparent;
+  color: var(--texto);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 10px 16px;
+  font-size: 15px;
+}
+
+/* Hero: el número grande de cada pantalla (racha, XP, % hacia B2). Es el único elemento
+   centrado y con tipografía display; todo lo demás queda alineado a la izquierda. */
+.hero-numero {
+  font-family: var(--fuente-display);
+  font-size: 56px;
+  line-height: 1;
+  text-align: center;
+  color: var(--neon-menta);
+  text-shadow: 0 0 24px rgba(94, 242, 196, 0.35);
+  margin: 0;
+}
+
+.hero-bloque {
+  text-align: center;
+  padding: 24px 0 8px;
+}
+
+.barra-progreso {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--surface-alta);
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.barra-progreso > span {
+  display: block;
+  height: 100%;
+  background: var(--neon-violeta);
+  border-radius: 999px;
+  transition: width var(--dur-media) ease;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--radio-chico);
+  padding: 6px 10px;
+  font-size: 13px;
+  color: #1a1a2e;
+  font-weight: 500;
+}
+
+.chip-lectura {
+  background: var(--pastel-lectura);
+}
+.chip-escucha {
+  background: var(--pastel-escucha);
+}
+.chip-habla {
+  background: var(--pastel-habla);
+}
+.chip-escritura {
+  background: var(--pastel-escritura);
+}
+
+.tarjeta {
+  background: var(--surface);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.estado-vacio {
+  color: var(--texto-tenue);
+  text-align: left;
+  padding: 24px 0;
+}
+
+.mensaje-error {
+  color: var(--critico);
+}
+
+/* Barra de navegación inferior: alcanzable con el pulgar en un iPhone 11 Pro Max. */
+nav.tabs {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  background: var(--surface);
+  border-top: 1px solid var(--borde);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+nav.tabs button {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--texto-tenue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 4px;
+  min-height: var(--toque-minimo);
+  font-size: 12px;
+}
+
+nav.tabs button .icono {
+  font-size: 20px;
+  line-height: 1;
+}
+
+nav.tabs button[aria-current="true"] {
+  color: var(--neon-menta);
+}
+
+/* Foco visible siempre, para teclado/VoiceOver. */
+:focus-visible {
+  outline: 2px solid var(--neon-violeta);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+}
