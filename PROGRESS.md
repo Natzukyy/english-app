@@ -19,10 +19,12 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 - [x] verificación: sintaxis JS ok, servidor local responde 200 en todas las rutas clave, tests en verde
 
 ## Fase 2 — Lógica núcleo con pruebas
-- [ ] racha.js + tests
-- [ ] xp.js + tests
-- [ ] srs.js (SM-2) + tests (incluye bordes de zona horaria/cambio de día)
-- [ ] runner de tests (osascript) funcionando en verde
+- [x] fecha.js (utilidades de fecha local, DST-safe) + tests de bordes (medianoche, fin de mes/año, bisiesto)
+- [x] racha.js (mínimo 5 min/día, congelación limitada) + tests
+- [x] xp.js (XP y niveles) + tests
+- [x] srs.js (SM-2, justificado en DECISIONES D3) + tests
+- [x] runner de tests (osascript) en verde: 45 pasaron, 0 fallaron
+- [x] index.html y sw.js actualizados con los nuevos módulos (cache v2)
 
 ## Fase 3 — Diagnóstico
 - [ ] banco de preguntas A2–C1 (JSON)
@@ -46,4 +48,4 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 
 ---
 ## Paso actual
-Cerrando fase 1 (commit). Siguiente: fase 2 (racha, XP, repaso espaciado con pruebas).
+Cerrando fase 2 (commit). Siguiente: fase 3 (diagnóstico por habilidad).

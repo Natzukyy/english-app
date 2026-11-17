@@ -12,6 +12,10 @@ trap 'rm -f "$TMP"' EXIT
 # storage.js queda fuera: depende de IndexedDB, que no existe fuera del navegador.
 CORE_PURO=(
   "js/core/i18n.js"
+  "js/core/fecha.js"
+  "js/core/racha.js"
+  "js/core/xp.js"
+  "js/core/srs.js"
 )
 
 cat tests/lib/mini-test.js "${CORE_PURO[@]}" tests/core/*.test.js > "$TMP"
