@@ -21,17 +21,25 @@
     });
   }
 
+  function actualizarNivelInterfaz() {
+    return Promise.all([global.App.Storage.getAll("sesiones"), global.App.Datos.obtenerXP()]).then(function (res) {
+      contexto.nivelInterfaz = global.App.I18n.calcularNivel({ sesiones: res[0].length, xp: res[1].total }, contexto.umbrales);
+    });
+  }
+
   function renderizar() {
-    var ruta = rutaActual();
-    var pantalla = global.App.Screens && global.App.Screens[ruta];
-    var el = document.getElementById("pantalla");
-    marcarTabActiva(ruta);
-    aplicarI18nNav();
-    if (pantalla && typeof pantalla.render === "function") {
-      pantalla.render(el, contexto);
-    } else {
-      el.innerHTML = "<p>…</p>";
-    }
+    actualizarNivelInterfaz().then(function () {
+      var ruta = rutaActual();
+      var pantalla = global.App.Screens && global.App.Screens[ruta];
+      var el = document.getElementById("pantalla");
+      marcarTabActiva(ruta);
+      aplicarI18nNav();
+      if (pantalla && typeof pantalla.render === "function") {
+        pantalla.render(el, contexto);
+      } else {
+        el.innerHTML = "<p>…</p>";
+      }
+    });
   }
 
   function registrarNav() {
@@ -58,9 +66,6 @@
       .then(function (res) {
         contexto.strings = res.strings;
         contexto.umbrales = res.umbrales;
-        // El nivel de interfaz real (según sesiones/XP guardados) se calculará en la fase 2,
-        // cuando exista App.Racha/App.XP leyendo de App.Storage. Por ahora: nivel 0 (todo español).
-        contexto.nivelInterfaz = 0;
         renderizar();
       })
       .catch(function (err) {

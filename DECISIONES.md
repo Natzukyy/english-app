@@ -54,5 +54,9 @@ Registro de decisiones tomadas sin preguntar (modo nocturno), con alternativas c
 ## D5. Dependencias del proyecto
 - **Ninguna.** Cero paquetes npm, cero librerías externas. Todo el JS, CSS y HTML es código propio. (Ver D1.)
 
+## D9. Fecha objetivo B2 y fuente de verdad del contexto IndexedDB/UI
+- Fecha objetivo usada en la pantalla de progreso: 2027-03-31 ("B2 a finales de marzo de 2027", tal cual lo pide `PROMPT_BASE.md`). No es una decisión mía, solo la traduje a una constante (`FECHA_OBJETIVO` en `js/screens/progreso.js`).
+- `App.Datos` (nuevo, `js/core/datos.js`) es la única capa que mezcla IndexedDB con las reglas de negocio puras (Racha/XP/Progreso/SRS). Las pantallas no llaman a `App.Storage` directamente salvo para lo más simple (exportar/importar, leer la sesión de hoy). Esto es, igual que `storage.js`, código que **no se corre con el runner de pruebas** porque depende de IndexedDB — se verificó por lectura cuidadosa + chequeo de sintaxis + servidor local sirviendo todo en 200, no con pruebas automatizadas de extremo a extremo (ver BLOQUEOS.md B1: no se pudo abrir un navegador real sin intervención).
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*

@@ -42,8 +42,14 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 - [ ] pantalla/UI que consuma este contenido (queda para fase 5)
 
 ## Fase 5 — Interfaz
-- [ ] pantallas: inicio, repaso, diagnóstico, progreso, ajustes
-- [ ] estética neón/pastel, accesibilidad, prefers-reduced-motion
+- [x] inicio: racha real, meta diaria con barra de progreso, nivel/XP, chips de habilidad con último diagnóstico
+- [x] repaso: sesión real de repaso espaciado (siembra tarjetas desde vocabulario/frases, califica con SM-2, registra minutos/XP al terminar o al salir)
+- [x] diagnóstico: cuestionario interactivo completo (24 preguntas + autoevaluación habla/escritura) que guarda resultado
+- [x] progreso: resumen del último diagnóstico, nivel/XP/racha, cuenta regresiva a la fecha objetivo (B2 para 2027-03-31)
+- [x] ajustes: meta diaria (5/15/30) persistida + exportar/importar respaldo (ya existía desde fase 1)
+- [x] App.Datos (nuevo) orquesta IndexedDB + lógica pura para que las pantallas no dupliquen reglas de negocio
+- [x] estética neón/pastel aplicada (tokens de fase 1), accesibilidad base (foco visible, prefers-reduced-motion, botones táctiles ≥44px)
+- [ ] auditoría formal de accesibilidad/seguridad (fase 6)
 
 ## Fase 6 — Auditoría
 - [ ] security-guidance
@@ -54,4 +60,4 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 
 ---
 ## Paso actual
-Cerrando fase 4 (commit). Siguiente: fase 5 (interfaz: construir las 5 pantallas reales).
+Cerrando fase 5 (commit). Siguiente: fase 6 (auditoría de seguridad/accesibilidad).
