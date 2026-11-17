@@ -1,0 +1,15 @@
+{
+  "_nota": "Resumen propio (parafraseado, no texto oficial textual) de las escalas de autoevaluación CEFR para habla y escritura. Se usan porque hablar/escribir no se pueden calificar automáticamente sin un modelo (ver PROMPT_BASE.md). Alex elige el nivel que mejor lo describe; es una autoevaluación, no una medición objetiva.",
+  "habla": [
+    { "nivelCEFR": "A2", "descripcion": "Puedo presentarme, hacer preguntas sencillas sobre temas cotidianos (horarios, direcciones, precios) y responder preguntas similares, aunque con pausas y errores frecuentes." },
+    { "nivelCEFR": "B1", "descripcion": "Puedo mantener una conversación sencilla sobre temas conocidos (trabajo, estudios, viajes), dar mi opinión con frases simples y seguir una conversación aunque a veces pida que repitan." },
+    { "nivelCEFR": "B2", "descripcion": "Puedo participar con fluidez razonable en conversaciones sobre temas de mi carrera, explicar un proyecto con cierto detalle, y reaccionar a preguntas sin preparar la respuesta de antemano." },
+    { "nivelCEFR": "C1", "descripcion": "Puedo expresar ideas con fluidez y naturalidad en reuniones o entrevistas, adaptar mi registro según la situación, y defender un punto de vista complejo casi sin buscar palabras." }
+  ],
+  "escritura": [
+    { "nivelCEFR": "A2", "descripcion": "Puedo escribir mensajes cortos y sencillos (un correo breve, una nota) sobre necesidades inmediatas, con errores que a veces dificultan la comprensión." },
+    { "nivelCEFR": "B1", "descripcion": "Puedo escribir un correo o mensaje conectado sobre temas conocidos, explicando razones y dando mi opinión, aunque con errores notorios en estructuras más complejas." },
+    { "nivelCEFR": "B2", "descripcion": "Puedo escribir correos y documentos claros y bien organizados sobre temas de mi área (explicar un problema técnico, pedir feedback), con buena cohesión entre párrafos." },
+    { "nivelCEFR": "C1", "descripcion": "Puedo escribir textos bien estructurados y matizados (propuestas, reportes) adaptando el estilo a quien los lee, con errores que casi no afectan la comprensión." }
+  ]
+}

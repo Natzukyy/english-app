@@ -1,0 +1,260 @@
+{
+  "_nota": "Banco de preguntas escrito por Claude para el diagnóstico. Los niveles CEFR son una estimación razonada, no una certificación oficial (ver PROMPT_BASE.md: 'sé honesto, es una estimación'). Contenido original, verificado gramaticalmente con confianza alta.",
+  "preguntas": [
+    {
+      "id": "lec-a2-1",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "Maria works at a small company. She starts work at nine and finishes at five. Every day she takes the bus to the office, but on Fridays she walks because the weather is usually nice.",
+      "pregunta": "How does Maria usually get to work?",
+      "opciones": ["By bus", "By car", "By train", "She walks every day"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "lec-a2-2",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "Tom's laptop stopped working yesterday. He didn't know what to do, so he called his brother, who works with computers. His brother told him to restart it, and that fixed the problem.",
+      "pregunta": "Why did Tom call his brother?",
+      "opciones": ["To ask about his computer", "To invite him to dinner", "To borrow some money", "To ask for a new laptop"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "lec-b1-1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "Remote work has become more common since many companies realized that employees can be productive outside the office. However, some managers still worry that team communication suffers when people aren't in the same room, so many companies now use video calls and chat tools to keep everyone connected.",
+      "pregunta": "According to the passage, why do some companies use video calls?",
+      "opciones": [
+        "To replace in-person communication now that people work remotely",
+        "To reduce the number of employees",
+        "To monitor how long employees work",
+        "To save money on office furniture"
+      ],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "lec-b1-2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "When Ana moved to a new city for her job, she didn't know anyone. At first she felt lonely, but she decided to join a local sports club, which helped her meet new people and feel more at home.",
+      "pregunta": "What did Ana do to feel better in her new city?",
+      "opciones": ["She joined a sports club", "She went back to her old city", "She asked for a transfer", "She stopped working"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "lec-b2-1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "Artificial intelligence systems are often trained on large datasets, but the quality of those datasets matters as much as their size. A model trained on biased or incomplete data can produce results that look confident but are actually misleading, which is why data curation has become a central part of responsible AI development.",
+      "pregunta": "According to the passage, what is a risk of training AI on biased data?",
+      "opciones": [
+        "The model may produce misleading results that still look confident",
+        "The model will always refuse to produce any results",
+        "The model becomes too slow to use in production",
+        "The model stops needing any dataset at all"
+      ],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "lec-b2-2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "Many engineering teams have adopted code review as a standard practice, not only to catch bugs but also to spread knowledge about the codebase among team members. A thorough review can take time, but teams that skip it often pay for it later with harder-to-fix problems.",
+      "pregunta": "Besides catching bugs, why do teams do code review according to the passage?",
+      "opciones": [
+        "To help team members learn about the codebase",
+        "To replace automated testing completely",
+        "To reduce the number of meetings",
+        "To avoid writing documentation"
+      ],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "lec-c1-1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "The notion that technical debt is inherently harmful oversimplifies a more nuanced reality: some debt is taken on deliberately, as a reasonable trade-off to ship a feature quickly, with the understanding that it will be addressed once priorities allow. Problems arise less from the existence of debt itself than from a team's failure to track and eventually repay it.",
+      "pregunta": "What does the passage suggest is the real source of problems with technical debt?",
+      "opciones": [
+        "Failing to track and repay debt that was taken on deliberately",
+        "The mere existence of any technical debt at all",
+        "Shipping features too quickly in general",
+        "Teams that never take on any debt"
+      ],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "lec-c1-2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "Peer review, for all its flaws, remains one of the few mechanisms through which a research community can collectively push back on claims that have not been sufficiently substantiated. Its weaknesses are well documented, yet proposals to replace it outright tend to underestimate how much implicit vetting it still provides.",
+      "pregunta": "What is the passage's overall stance on peer review?",
+      "opciones": [
+        "It is flawed but still provides valuable vetting that replacements often underestimate",
+        "It should be abolished immediately",
+        "It has no real weaknesses worth mentioning",
+        "It is only useful outside of research"
+      ],
+      "respuestaCorrecta": 0
+    },
+
+    {
+      "id": "esc-a2-1",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "Hi, this is Dave. I'm running a bit late, maybe ten minutes. Can you order a coffee for me? I'll have a black coffee, no sugar.",
+      "pregunta": "What does Dave ask for?",
+      "opciones": ["A black coffee with no sugar", "A coffee with milk and sugar", "A tea with lemon", "Nothing, he already ate"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "esc-a2-2",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "The train to the airport leaves from platform two at nine fifteen. Please arrive at least ten minutes early.",
+      "pregunta": "What platform does the airport train leave from?",
+      "opciones": ["Platform two", "Platform one", "Platform nine", "Platform fifteen"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "esc-b1-1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "So the plan for the meeting is: first, we'll go over last week's numbers, then marketing will give a short update, and we'll leave the last ten minutes for questions.",
+      "pregunta": "What happens right after the numbers are reviewed?",
+      "opciones": ["Marketing gives an update", "The meeting ends", "Questions start immediately", "They review last month's numbers again"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "esc-b1-2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "I called the clinic to reschedule my appointment, but they said the earliest slot is next Thursday afternoon, so I took that one instead of waiting longer.",
+      "pregunta": "When is the speaker's new appointment?",
+      "opciones": ["Next Thursday afternoon", "This Thursday morning", "Next Thursday morning", "The clinic couldn't give a new slot"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "esc-b2-1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "Honestly, I think the project would have gone smoother if we'd agreed on the scope before starting, instead of figuring it out as we went. That said, I don't think it's too late to course-correct for the next phase.",
+      "pregunta": "What does the speaker suggest for the next phase of the project?",
+      "opciones": [
+        "Agreeing on the scope before starting instead of figuring it out later",
+        "Cancelling the project entirely",
+        "Starting without any planning again",
+        "Keeping the scope exactly as undefined as before"
+      ],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "esc-b2-2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "What surprised me about the interview wasn't the technical questions, which I expected, but how much time they spent asking about how I handle disagreements with teammates.",
+      "pregunta": "What surprised the speaker about the interview?",
+      "opciones": [
+        "How much time was spent on questions about handling disagreements",
+        "That there were no technical questions at all",
+        "That the interview was cancelled",
+        "That they asked no questions about teamwork"
+      ],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "esc-c1-1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "It's not that the proposal lacks merit; it's that it arrives at a moment when the team has barely absorbed the last round of changes, and piling on more right now risks undermining both, however well-intentioned each one is on its own.",
+      "pregunta": "What is the speaker's main concern about the proposal?",
+      "opciones": [
+        "Its timing, given the team hasn't absorbed recent changes yet",
+        "That the proposal has no merit whatsoever",
+        "That the team has had too much time to adjust already",
+        "That no changes have happened recently"
+      ],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "esc-c1-2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "I used to assume that asking for help was a sign I wasn't cut out for the job, until I noticed that the engineers I respected most asked for it constantly, and it never seemed to cost them any credibility.",
+      "pregunta": "What realization changed the speaker's view on asking for help?",
+      "opciones": [
+        "Respected engineers ask for help often without losing credibility",
+        "Asking for help is always a bad sign",
+        "Only inexperienced engineers ask questions",
+        "Credibility is unrelated to asking questions"
+      ],
+      "respuestaCorrecta": 0
+    },
+
+    {
+      "id": "voc-a2-1",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: She ___ to the gym every morning before work.",
+      "opciones": ["goes", "go", "going", "gone"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "voc-a2-2",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: There ___ some milk in the fridge.",
+      "opciones": ["is", "are", "be", "been"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "voc-b1-1",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: If I ___ more time, I would learn another language.",
+      "opciones": ["had", "have", "will have", "having"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "voc-b1-2",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: By the time we arrived, the meeting ___ already.",
+      "opciones": ["had started", "started", "starts", "has started"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "voc-b2-1",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: I'd rather you ___ anything about it for now.",
+      "opciones": ["didn't say", "don't say", "won't say", "haven't said"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "voc-b2-2",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: Hardly ___ the presentation when the fire alarm went off.",
+      "opciones": ["had she started", "she had started", "she started", "did she start"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "voc-c1-1",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: ___ the delays, the team still managed to ship on time.",
+      "opciones": ["Despite", "Although", "Even though", "Because of"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "voc-c1-2",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: Were it not for her feedback, the report ___ several errors.",
+      "opciones": ["would have contained", "will contain", "contains", "had contained"],
+      "respuestaCorrecta": 0
+    }
+  ]
+}

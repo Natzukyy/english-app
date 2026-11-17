@@ -27,9 +27,12 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 - [x] index.html y sw.js actualizados con los nuevos módulos (cache v2)
 
 ## Fase 3 — Diagnóstico
-- [ ] banco de preguntas A2–C1 (JSON)
-- [ ] motor de diagnóstico por habilidad
-- [ ] resultado: nivel estimado + mapa a B2
+- [x] banco de preguntas A2–C1 (24 preguntas: lectura, escucha con texto para TTS, vocabulario/gramática)
+- [x] rúbrica de autoevaluación CEFR para habla/escritura (data/diagnostico/rubrica_cefr.json)
+- [x] motor de diagnóstico por habilidad (js/core/diagnostico.js) + 9 tests
+- [x] hook de TTS sustituible (js/core/tts.js), sin probar en iOS real todavía
+- [x] resultado: nivel estimado por habilidad + % hacia B2
+- [ ] pantalla de diagnóstico interactiva real (queda para la fase 5, junto con las demás pantallas)
 
 ## Fase 4 — Contenido fase 1 (carrera/comunicación profesional)
 - [ ] lecturas + comprensión + vocabulario (JSON)
@@ -48,4 +51,4 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 
 ---
 ## Paso actual
-Cerrando fase 2 (commit). Siguiente: fase 3 (diagnóstico por habilidad).
+Cerrando fase 3 (commit). Siguiente: fase 4 (contenido de carrera/comunicación profesional).
