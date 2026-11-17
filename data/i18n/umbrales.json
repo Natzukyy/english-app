@@ -1,0 +1,10 @@
+{
+  "_revisar": true,
+  "_nota": "Valores PROVISIONALES (ver DECISIONES.md D2). Alex debe ajustarlos; son editables aquí sin tocar código.",
+  "niveles": [
+    { "nivel": 0, "minSesiones": 0, "minXP": 0 },
+    { "nivel": 1, "minSesiones": 20, "minXP": 200 },
+    { "nivel": 2, "minSesiones": 60, "minXP": 800 },
+    { "nivel": 3, "minSesiones": 150, "minXP": 2500 }
+  ]
+}
