@@ -1,0 +1,25 @@
+{
+  "_nota": "Vocabulario técnico y profesional, original, verificado con confianza alta.",
+  "palabras": [
+    { "id": "voc-f1-1", "ingles": "deadline", "espanol": "fecha límite", "ejemplo": "Can we move the deadline to next Friday?", "nivelCEFR": "A2", "categoria": "comunicacion_profesional" },
+    { "id": "voc-f1-2", "ingles": "feedback", "espanol": "retroalimentación / comentarios", "ejemplo": "Thanks for the feedback, I'll fix it today.", "nivelCEFR": "A2", "categoria": "comunicacion_profesional" },
+    { "id": "voc-f1-3", "ingles": "to reach out", "espanol": "contactar / escribirle a alguien", "ejemplo": "I'll reach out to the client tomorrow.", "nivelCEFR": "B1", "categoria": "comunicacion_profesional" },
+    { "id": "voc-f1-4", "ingles": "to follow up", "espanol": "dar seguimiento", "ejemplo": "I'm following up on my email from Monday.", "nivelCEFR": "B1", "categoria": "comunicacion_profesional" },
+    { "id": "voc-f1-5", "ingles": "blocker", "espanol": "algo que te detiene / impedimento", "ejemplo": "The main blocker right now is waiting for API access.", "nivelCEFR": "B1", "categoria": "standup" },
+    { "id": "voc-f1-6", "ingles": "to roll out", "espanol": "lanzar / desplegar (una función)", "ejemplo": "We're rolling out the new feature next week.", "nivelCEFR": "B1", "categoria": "comunicacion_profesional" },
+    { "id": "voc-f1-7", "ingles": "edge case", "espanol": "caso extremo / poco común", "ejemplo": "This bug only happens in a rare edge case.", "nivelCEFR": "B1", "categoria": "tecnico" },
+    { "id": "voc-f1-8", "ingles": "trade-off", "espanol": "compensación / sacrificio entre opciones", "ejemplo": "There's a trade-off between speed and accuracy.", "nivelCEFR": "B2", "categoria": "tecnico" },
+    { "id": "voc-f1-9", "ingles": "to scope (something)", "espanol": "definir el alcance de algo", "ejemplo": "Let's scope the project before we start coding.", "nivelCEFR": "B2", "categoria": "tecnico" },
+    { "id": "voc-f1-10", "ingles": "dataset", "espanol": "conjunto de datos", "ejemplo": "The model was trained on a small dataset.", "nivelCEFR": "A2", "categoria": "tecnico" },
+    { "id": "voc-f1-11", "ingles": "overfitting", "espanol": "sobreajuste", "ejemplo": "The model is overfitting on the training data.", "nivelCEFR": "B2", "categoria": "tecnico" },
+    { "id": "voc-f1-12", "ingles": "to debug", "espanol": "depurar / encontrar el error", "ejemplo": "I spent all morning debugging this function.", "nivelCEFR": "A2", "categoria": "tecnico" },
+    { "id": "voc-f1-13", "ingles": "stakeholder", "espanol": "parte interesada", "ejemplo": "We need sign-off from all the stakeholders.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional" },
+    { "id": "voc-f1-14", "ingles": "to onboard", "espanol": "incorporar / capacitar a alguien nuevo", "ejemplo": "It took a week to onboard the new intern.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional" },
+    { "id": "voc-f1-15", "ingles": "to escalate", "espanol": "escalar (un problema a alguien con más autoridad)", "ejemplo": "If it's urgent, escalate it to the team lead.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional" },
+    { "id": "voc-f1-16", "ingles": "scalable", "espanol": "escalable", "ejemplo": "This solution isn't scalable for a bigger team.", "nivelCEFR": "B2", "categoria": "tecnico" },
+    { "id": "voc-f1-17", "ingles": "to iterate", "espanol": "iterar / mejorar en pasos pequeños", "ejemplo": "We'll iterate on the design after the first feedback round.", "nivelCEFR": "B2", "categoria": "tecnico" },
+    { "id": "voc-f1-18", "ingles": "bandwidth", "espanol": "capacidad de tiempo/trabajo disponible", "ejemplo": "I don't have the bandwidth to take on another project this month.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional" },
+    { "id": "voc-f1-19", "ingles": "to sync (with someone)", "espanol": "sincronizar / ponerse al día con alguien", "ejemplo": "Let's sync tomorrow morning before the demo.", "nivelCEFR": "B1", "categoria": "standup" },
+    { "id": "voc-f1-20", "ingles": "takeaway", "espanol": "conclusión / idea principal", "ejemplo": "The main takeaway from the meeting was to simplify the onboarding flow.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional" }
+  ]
+}

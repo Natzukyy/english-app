@@ -1,0 +1,61 @@
+{
+  "_nota": "Ejercicios de habla. 'shadowing' = repetir en voz alta imitando ritmo/entonación de una frase dada. 'responder_prompt' = contestar una pregunta abierta en voz alta. Todos requieren micrófono; no se puede probar su reconocimiento de voz hasta usar el iPhone real (ver BLOQUEOS.md / REPORTE_MATUTINO.md). Evaluar pronunciación comparando transcripción contra el objetivo es aproximado, como advierte PROMPT_BASE.md.",
+  "ejercicios": [
+    {
+      "id": "habla-f1-shadow-1",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "Could you send me the file when you get a chance?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-2",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "I think we should follow up with the client before Friday.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-3",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "Sorry, could you repeat that? I didn't quite catch it.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-4",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "Honestly, I think the timeline is a bit too tight for what we're trying to do.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-1",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "What did you work on yesterday? Answer in one or two sentences.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-2",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "Explain in a few sentences what your current project is about.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-3",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "Tell me about something that's blocking your progress right now, if anything.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-4",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "Tell me about a time you disagreed with a teammate. How did you handle it?",
+      "requiere_prueba_microfono": true
+    }
+  ]
+}

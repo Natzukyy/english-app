@@ -35,8 +35,11 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 - [ ] pantalla de diagnóstico interactiva real (queda para la fase 5, junto con las demás pantallas)
 
 ## Fase 4 — Contenido fase 1 (carrera/comunicación profesional)
-- [ ] lecturas + comprensión + vocabulario (JSON)
-- [ ] ejercicios de habla (shadowing/prompt) marcados requiere_prueba_microfono
+- [x] lecturas + comprensión (4 lecturas A2→B2, data/content/fase1/lecturas.json)
+- [x] vocabulario (20 términos técnicos/profesionales, con ejemplo y nivel)
+- [x] frases útiles por situación (correos, reuniones, standups, explicar proyecto, pedir ayuda, dar feedback, entrevistas)
+- [x] ejercicios de habla (shadowing + responder_prompt) marcados requiere_prueba_microfono: true
+- [ ] pantalla/UI que consuma este contenido (queda para fase 5)
 
 ## Fase 5 — Interfaz
 - [ ] pantallas: inicio, repaso, diagnóstico, progreso, ajustes
@@ -51,4 +54,4 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 
 ---
 ## Paso actual
-Cerrando fase 3 (commit). Siguiente: fase 4 (contenido de carrera/comunicación profesional).
+Cerrando fase 4 (commit). Siguiente: fase 5 (interfaz: construir las 5 pantallas reales).

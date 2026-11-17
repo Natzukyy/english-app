@@ -3,7 +3,7 @@
    Subir CACHE_VERSION cuando cambie la lista de archivos o su contenido relevante offline. */
 "use strict";
 
-var CACHE_VERSION = "v3";
+var CACHE_VERSION = "v4";
 var CACHE_NAME = "app-ingles-" + CACHE_VERSION;
 
 var ARCHIVOS_APP_SHELL = [
@@ -22,6 +22,10 @@ var ARCHIVOS_APP_SHELL = [
   "js/core/tts.js",
   "data/diagnostico/banco.json",
   "data/diagnostico/rubrica_cefr.json",
+  "data/content/fase1/lecturas.json",
+  "data/content/fase1/vocabulario.json",
+  "data/content/fase1/frases_utiles.json",
+  "data/content/fase1/habla.json",
   "js/screens/inicio.js",
   "js/screens/repaso.js",
   "js/screens/diagnostico.js",

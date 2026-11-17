@@ -1,0 +1,79 @@
+{
+  "_nota": "Frases profesionales originales, agrupadas por situación. Verificadas con confianza alta.",
+  "categorias": [
+    {
+      "categoria": "correos",
+      "nivelCEFR": "B1",
+      "frases": [
+        { "ingles": "I wanted to follow up on my previous email.", "espanol": "Quería darle seguimiento a mi correo anterior." },
+        { "ingles": "Please let me know if this works for you.", "espanol": "Avísame si esto te funciona." },
+        { "ingles": "Attached is the document we discussed.", "espanol": "Adjunto está el documento que platicamos." },
+        { "ingles": "Sorry for the late reply.", "espanol": "Disculpa la tardanza en responder." },
+        { "ingles": "Let me know if you have any questions.", "espanol": "Avísame si tienes alguna duda." }
+      ]
+    },
+    {
+      "categoria": "reuniones",
+      "nivelCEFR": "B1",
+      "frases": [
+        { "ingles": "Can you repeat that, please?", "espanol": "¿Puedes repetir eso, por favor?" },
+        { "ingles": "I think we should table this for now.", "espanol": "Creo que deberíamos dejar esto para después." },
+        { "ingles": "Just to make sure I understood correctly...", "espanol": "Solo para asegurarme de que entendí bien..." },
+        { "ingles": "Who's taking notes for this meeting?", "espanol": "¿Quién va a tomar notas de esta reunión?" },
+        { "ingles": "Let's circle back to this next week.", "espanol": "Retomemos esto la próxima semana." }
+      ]
+    },
+    {
+      "categoria": "standups",
+      "nivelCEFR": "B1",
+      "frases": [
+        { "ingles": "Yesterday I worked on the login page.", "espanol": "Ayer trabajé en la página de inicio de sesión." },
+        { "ingles": "Today I'm planning to finish the tests.", "espanol": "Hoy planeo terminar las pruebas." },
+        { "ingles": "I'm blocked on waiting for API access.", "espanol": "Estoy bloqueado esperando acceso a la API." },
+        { "ingles": "No blockers on my end.", "espanol": "No tengo ningún bloqueo de mi parte." },
+        { "ingles": "I might need help with this later today.", "espanol": "Puede que necesite ayuda con esto más tarde." }
+      ]
+    },
+    {
+      "categoria": "explicar_proyecto",
+      "nivelCEFR": "B2",
+      "frases": [
+        { "ingles": "The goal of this project is to...", "espanol": "El objetivo de este proyecto es..." },
+        { "ingles": "It's still a work in progress.", "espanol": "Todavía está en progreso." },
+        { "ingles": "The main challenge so far has been...", "espanol": "El principal reto hasta ahora ha sido..." },
+        { "ingles": "We're using this approach because...", "espanol": "Usamos este enfoque porque..." },
+        { "ingles": "Happy to go into more detail if that's useful.", "espanol": "Con gusto entro en más detalle si es útil." }
+      ]
+    },
+    {
+      "categoria": "pedir_ayuda",
+      "nivelCEFR": "B1",
+      "frases": [
+        { "ingles": "Do you have a minute to help me with something?", "espanol": "¿Tienes un minuto para ayudarme con algo?" },
+        { "ingles": "I'm stuck on this error, could you take a look?", "espanol": "Estoy atorado con este error, ¿podrías revisarlo?" },
+        { "ingles": "Could you point me in the right direction?", "espanol": "¿Podrías orientarme un poco?" },
+        { "ingles": "I don't quite understand this part, can you explain it?", "espanol": "No entiendo bien esta parte, ¿puedes explicarla?" }
+      ]
+    },
+    {
+      "categoria": "dar_feedback",
+      "nivelCEFR": "B2",
+      "frases": [
+        { "ingles": "Overall this looks good, just a couple of comments.", "espanol": "En general se ve bien, solo un par de comentarios." },
+        { "ingles": "Have you considered doing it this way instead?", "espanol": "¿Has considerado hacerlo de esta otra forma?" },
+        { "ingles": "This part could be clearer if...", "espanol": "Esta parte podría quedar más clara si..." },
+        { "ingles": "Nice work on this, especially the part about...", "espanol": "Buen trabajo con esto, especialmente la parte sobre..." }
+      ]
+    },
+    {
+      "categoria": "entrevistas",
+      "nivelCEFR": "B2",
+      "frases": [
+        { "ingles": "Tell me about a project you're proud of.", "espanol": "Cuéntame sobre un proyecto del que estés orgulloso." },
+        { "ingles": "What would you say is your biggest strength?", "espanol": "¿Cuál dirías que es tu mayor fortaleza?" },
+        { "ingles": "Can you walk me through your thought process?", "espanol": "¿Puedes explicarme cómo pensaste el problema?" },
+        { "ingles": "Do you have any questions for me?", "espanol": "¿Tienes alguna pregunta para mí?" }
+      ]
+    }
+  ]
+}

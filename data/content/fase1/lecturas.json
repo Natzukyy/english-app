@@ -1,0 +1,98 @@
+{
+  "_nota": "Lecturas originales escritas por Claude para la fase 1 (carrera y comunicación profesional). Nivel CEFR es una etiqueta de dificultad aproximada, no una certificación.",
+  "lecturas": [
+    {
+      "id": "lec-fase1-docs-tecnicos",
+      "tema": "Leer documentación técnica",
+      "nivelCEFR": "A2",
+      "texto": "Most software documentation follows a similar structure: an overview, installation steps, and a list of examples. When you read documentation for a new library, it helps to skip straight to the examples first. You can understand what the tool does before you worry about every detail.",
+      "vocabularioClave": ["overview", "installation", "straight to", "worry about"],
+      "preguntas": [
+        {
+          "id": "lec-fase1-docs-tecnicos-p1",
+          "pregunta": "What does the text suggest doing first when reading new documentation?",
+          "opciones": ["Going straight to the examples", "Memorizing the installation steps", "Reading every detail in order", "Ignoring the overview completely"],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-correo-reunion",
+      "tema": "Correos sobre reuniones",
+      "nivelCEFR": "B1",
+      "texto": "Hi team, I wanted to follow up on yesterday's meeting. We agreed that I would send the updated schedule by Friday, and that Laura would reach out to the client to confirm the new requirements. If anything changes before then, please let me know as soon as possible.",
+      "vocabularioClave": ["follow up on", "reach out to", "requirements", "as soon as possible"],
+      "preguntas": [
+        {
+          "id": "lec-fase1-correo-reunion-p1",
+          "pregunta": "What did the writer agree to do by Friday?",
+          "opciones": ["Send the updated schedule", "Confirm the requirements with the client", "Cancel the meeting", "Hire a new team member"],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-correo-reunion-p2",
+          "pregunta": "What is Laura supposed to do?",
+          "opciones": ["Reach out to the client to confirm requirements", "Send the schedule by Friday", "Write the follow-up email", "Change the meeting time"],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-explicar-proyecto-ia",
+      "tema": "Explicar un proyecto de IA",
+      "nivelCEFR": "B1",
+      "texto": "The project I'm working on classifies customer support tickets by urgency, so the team can respond to critical issues first. It uses a model trained on past tickets that were already labeled by support agents. So far, it's been fairly accurate, but we're still reviewing edge cases where the model gets confused.",
+      "vocabularioClave": ["classifies", "urgency", "labeled", "edge cases", "gets confused"],
+      "preguntas": [
+        {
+          "id": "lec-fase1-explicar-proyecto-ia-p1",
+          "pregunta": "What is the main purpose of the project described?",
+          "opciones": [
+            "To classify support tickets by urgency so critical ones get answered first",
+            "To replace all support agents with a chatbot",
+            "To delete old support tickets automatically",
+            "To translate support tickets into other languages"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-explicar-proyecto-ia-p2",
+          "pregunta": "What is the team still working on?",
+          "opciones": ["Reviewing edge cases where the model gets confused", "Hiring more support agents", "Deleting the training data", "Changing the project's main goal"],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-entrevista",
+      "tema": "Entrevista de trabajo",
+      "nivelCEFR": "B2",
+      "texto": "When an interviewer asks you to describe a time you disagreed with a teammate, they're usually less interested in who was right and more interested in how you handled it. A strong answer explains the disagreement briefly, focuses on how you worked toward a solution, and mentions what you'd do differently next time, if anything.",
+      "vocabularioClave": ["disagreed", "handled it", "worked toward", "would do differently"],
+      "preguntas": [
+        {
+          "id": "lec-fase1-entrevista-p1",
+          "pregunta": "According to the text, what are interviewers usually most interested in when asking about a disagreement?",
+          "opciones": [
+            "How the candidate handled the disagreement, not who was right",
+            "Proving that the candidate was always right",
+            "Whether the candidate avoids all disagreements",
+            "The exact date the disagreement happened"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-entrevista-p2",
+          "pregunta": "What should a strong answer mention, according to the text?",
+          "opciones": [
+            "What the candidate would do differently next time, if anything",
+            "Only a detailed description of who was wrong",
+            "A list of every disagreement the candidate has ever had",
+            "Why the teammate was difficult to work with"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    }
+  ]
+}
