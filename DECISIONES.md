@@ -303,5 +303,39 @@ rondas de crítica propias.
   respuesta, compitiendo en especificidad con el color de acierto/error — ahora se quita
   ese atributo al comprobar.
 
+## D18. Paso A — ejercicio de habla (solo reconocimiento de voz, sin grabar audio)
+- **Pantalla nueva:** `js/screens/habla.js`, alcanzable desde el nodo "habla" en Inicio
+  (`#/habla`; no agregué una 6ª pestaña a la nav, que es un cambio de estructura de
+  navegación que no pedía este paso — ver Paso 3/4 de la ronda de diseño, ya cerrados).
+- **Nunca graba audio:** solo usa `SpeechRecognition`. No hay tensión con D12 (no usar mic
+  para grabar y reconocer a la vez) porque aquí nunca se graba — el único cuidado real es no
+  arrancar el reconocimiento mientras `App.TTS.hablar()` todavía está sonando: el botón
+  "Hablar" queda deshabilitado hasta que la promesa de `hablar()` resuelve (se ve/oye el
+  modelo primero, siempre).
+- **`App.Habla.comparar(objetivo, transcripcion)`** (nuevo, puro, `js/core/habla.js`, 9
+  pruebas en `tests/core/habla.test.js`): normaliza (minúsculas, sin puntuación, apóstrofos
+  rectos, números comunes tipo "two"↔"2"), alinea palabra por palabra con distancia de
+  edición (a nivel de palabra, usando distancia de edición de caracteres como criterio de
+  "casi igual" para tolerar errores chicos del reconocimiento — p. ej. singular/plural) y
+  devuelve `{porcentaje, acertadas, omitidas, distintas}`.
+- **Tono de guía, no de examen:** el resultado se presenta como "% parecido" con las
+  palabras que sí salieron (verde/ámbar, nunca "FAIL") y las que conviene revisar, más una
+  nota explícita de que el reconocimiento es aproximado. Umbral de 60% para contar como
+  "correcto" de cara al XP — una constante local de esta pantalla, igual que el umbral de
+  calidad≥3 de repaso; no toqué `data/i18n/umbrales.json` ni ninguna regla existente.
+- **Dos tipos de ejercicio:** "shadowing" (frase fija → sí se compara) y
+  "responder_prompt" (pregunta abierta → no hay una "respuesta correcta" que comparar, así
+  que solo se muestra la transcripción y se cuenta como intento válido).
+- **Errores manejados**, cada uno con mensaje claro y "Reintentar": sin voz detectada
+  (`no-speech`), permiso denegado (`not-allowed`/`permission-denied`), error de red
+  (`network`), y "sin soporte" (no existe `SpeechRecognition`), que en vez de "Reintentar"
+  ofrece autoevaluación manual (Me salió bien / Me costó trabajo) para no dejar al usuario
+  sin forma de completar el ejercicio.
+- **XP y minutos:** usa `App.Datos.registrarSesion` tal cual ya existía (mismas reglas de
+  XP/racha), igual que repaso — no se tocó esa función.
+- **`requiere_prueba_iphone: true`** (lo pide el paso): la lógica de comparación está
+  probada con tests; el micrófono/reconocimiento real en iOS solo lo puede probar Alex —
+  ver `REPORTE_MATUTINO_2.md`.
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*

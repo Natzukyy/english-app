@@ -518,6 +518,20 @@ nav.tabs button[aria-current="true"] {
   gap: var(--e-2);
   text-align: center;
   padding: var(--e-3) 0;
+  background: none;
+  border: none;
+  font-family: inherit;
+  width: 100%;
+}
+
+button.nodo-habilidad {
+  cursor: pointer;
+  border-radius: var(--radio-chico);
+  transition: transform var(--dur-rapida) var(--easing);
+}
+
+button.nodo-habilidad:active {
+  transform: scale(0.97);
 }
 
 .anillo {

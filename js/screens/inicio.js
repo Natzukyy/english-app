@@ -38,8 +38,13 @@
         .map(function (habilidad) {
           var datosHabilidad = diagnostico && diagnostico.porHabilidad[habilidad];
           var nivelCEFRCrudo = datosHabilidad ? datosHabilidad.nivelCEFR : "—";
+          // Solo "habla" tiene pantalla propia por ahora (ver BLOQUEOS.md B5): es el único
+          // nodo que navega a algún lado. Los demás se quedan como detalle visual, no botón.
+          var esClickeable = habilidad === "habla";
+          var etiquetaHTML = esClickeable ? '<button type="button" class="nodo-habilidad" data-ruta-a="habla">' : '<div class="nodo-habilidad">';
+          var cierreHTML = esClickeable ? "</button>" : "</div>";
           return (
-            '<div class="nodo-habilidad">' +
+            etiquetaHTML +
             '<div class="anillo">' +
             '<svg viewBox="0 0 56 56" aria-hidden="true">' +
             '<circle class="pista" cx="28" cy="28" r="24" stroke-width="4"></circle>' +
@@ -61,7 +66,7 @@
             '<span class="nivel">' +
             esc(nivelCEFRCrudo) +
             "</span>" +
-            "</div>"
+            cierreHTML
           );
         })
         .join("");
