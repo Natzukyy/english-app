@@ -1,11 +1,14 @@
 /* App.Iconos — set propio de íconos SVG en línea (sin librerías, sin emojis).
    Mismo trazo en todos: viewBox 24x24, stroke=currentColor, stroke-width 1.75,
-   extremos y uniones redondeados. currentColor hereda el color de texto del
-   elemento que los contiene, así que respetan el tema claro/oscuro sin tocarlos. */
+   extremos y uniones casi cuadradas (ver DESIGN_REVIEW.md sección 3: "terminaciones de
+   trazo ligeramente más cuadradas... recuerda a un trazo de pluma técnica, no a un ícono
+   de kit UI" -- antes era round uniforme, indistinguible de Heroicons/Feather). currentColor
+   hereda el color de texto del elemento que los contiene, así que respetan el tema
+   claro/oscuro sin tocarlos. */
 (function (global) {
   "use strict";
 
-  var ATRIBUTOS = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+  var ATRIBUTOS = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="round" aria-hidden="true"';
 
   var RUTAS = {
     inicio: '<path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9h12v-9"/>',
@@ -25,7 +28,10 @@
     microfono: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/>',
     pluma: '<path d="M4 20l1-4L16 5l3 3L8 19l-4 1z"/><path d="M14 7l3 3"/>',
     candado: '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
-    burbuja: '<path d="M4 5.5h16v10H10l-4.5 4v-4H4v-10z"/>'
+    burbuja: '<path d="M4 5.5h16v10H10l-4.5 4v-4H4v-10z"/>',
+    // Paso completado en "Tu camino": sello circular de doble trazo, como un timbre de
+    // biblioteca -- reemplaza el check genérico (ver DESIGN_REVIEW.md sección 3).
+    sello: '<circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="3"/>'
   };
 
   function svg(nombre, tamano) {

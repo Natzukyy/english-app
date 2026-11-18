@@ -1,36 +1,62 @@
-/* app-ingles — tokens de diseño (rediseño "profesional, neutro + un acento")
-   Base neutra (claro/oscuro, sigue prefers-color-scheme) + un único acento ámbar
-   (referencia: resaltar texto mientras lees/estudias). Los 4 colores de habilidad
-   quedan como un detalle sobrio (un punto de 8px), no como bloques de color.
-   Tipografía de sistema (sin serif decorativo), escala de espaciado 4/8px, números
-   tabulares en XP/racha/minutos. Ver DECISIONES.md D13 para el porqué de cada decisión.
-   Sin librerías ni fuentes externas (ver D1/D5): sigue siendo 100% offline-first. */
+/* app-ingles — tokens de diseño (rediseño "cuaderno de bitácora / fichero de estudio")
+   Ver DESIGN_REVIEW.md para el razonamiento completo. Resumen: el mundo es el de alguien
+   que lleva un registro disciplinado de su propio progreso (fichas SM-2 = fichero de
+   estudio real), nunca un dashboard de SaaS ni un mapa de ruta tipo Duolingo. Paleta
+   "Restrained": neutrales de papel + un acento tinta que hace trabajo real (nunca
+   decorativo) y un acento sello (rojo tinta de corrección) solo semántico: error y la
+   animación de "estampado" al completar algo. Los 4 colores de habilidad se conservan
+   como detalle sobrio. Dos familias tipográficas con trabajo específico: Libre Franklin
+   (UI y texto) y JetBrains Mono (solo cifras/datos tabulares, vía .num-tabular). Radio de
+   borde ya NO es un valor único: --radio-objeto (12px) solo para la tarjeta física real
+   (repaso/habla, el objeto que se "sostiene"); --radio-dato (2px, casi recto) para todo lo
+   demás (filas, fichas, botones, chips) -- lee como papel rayado/ficha de catálogo, no
+   como "card de SaaS". Ver DECISIONES.md D13 para el porqué original de la base.
+   Fuentes alojadas localmente en assets/fuentes/ (SIL OFL, sin CDN ni cuenta, ver D1/D5):
+   sigue siendo 100% offline-first. */
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("../assets/fuentes/LibreFranklin-Variable.ttf") format("truetype-variations"), url("../assets/fuentes/LibreFranklin-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../assets/fuentes/JetBrainsMono-Variable.ttf") format("truetype-variations"), url("../assets/fuentes/JetBrainsMono-Variable.ttf") format("truetype");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   color-scheme: light;
 
-  --bg: #f6f5f2;
+  --bg: #f2f1ec;
   --superficie: #ffffff;
-  --superficie-hundida: #efeee9;
-  --borde: #e4e2dc;
+  --superficie-hundida: #e9e7e0;
+  --borde: #dedcd3;
 
-  --texto: #1b1b18;
+  --texto: #1a1a17;
   --texto-tenue: #6b6a63;
 
-  --acento: #9c6008;
-  --acento-fuerte: #7a4b00;
+  --acento: #2f4368; /* tinta -- acento primario: botón principal, tab activa, foco */
+  --acento-fuerte: #23334f;
   --acento-sobre: #ffffff; /* color de texto/ícono cuando va ENCIMA de --acento */
-  --acento-tenue: #f1e4cf; /* fondo muy sutil para resaltos (p.ej. tab activa) */
+  --acento-tenue: #e4e8f0; /* fondo muy sutil para resaltos (p.ej. tab activa) */
 
   --exito: #2e7d4f;
-  --error: #b3261e;
+  --error: #9c3b2e; /* mismo valor que --acento-sello: el rojo sello es semántico, no decorativo */
+  --acento-sello: #9c3b2e; /* sello -- SOLO error y la animación de "estampado" al completar algo */
 
   --punto-lectura: #c98a2b;
   --punto-escucha: #5b7a9d;
   --punto-habla: #b9697a;
   --punto-escritura: #6b8f71;
 
-  --fuente-texto: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  --fuente-texto: "Libre Franklin", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  --fuente-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --fs-caption: 13px;
   --fs-small: 15px;
@@ -47,8 +73,8 @@
   --e-6: 32px;
   --e-7: 48px;
 
-  --radio: 12px;
-  --radio-chico: 8px;
+  --radio-objeto: 12px; /* SOLO objetos físicos reales: la tarjeta de repaso/habla */
+  --radio-dato: 2px; /* todo lo demás: filas, fichas, botones, chips -- casi recto, a propósito */
   --espacio-lienzo-max: 480px;
 
   --toque-minimo: 44px;
@@ -61,21 +87,22 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: #18181b;
-    --superficie: #222226;
-    --superficie-hundida: #1d1d20;
-    --borde: #313136;
+    --bg: #1b1c1f;
+    --superficie: #242528;
+    --superficie-hundida: #202124;
+    --borde: #35363a;
 
     --texto: #ececea;
     --texto-tenue: #9a9a96;
 
-    --acento: #e8a93d;
-    --acento-fuerte: #f2bd63;
-    --acento-sobre: #1a1200;
-    --acento-tenue: #2c2410;
+    --acento: #8fa6d1;
+    --acento-fuerte: #a9bcdc;
+    --acento-sobre: #16202f;
+    --acento-tenue: #232b3a;
 
     --exito: #6fcf97;
-    --error: #ff8a80;
+    --error: #e0897a;
+    --acento-sello: #e0897a;
 
     --punto-lectura: #e0a94f;
     --punto-escucha: #8fb0d6;
@@ -86,21 +113,22 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #18181b;
-  --superficie: #222226;
-  --superficie-hundida: #1d1d20;
-  --borde: #313136;
+  --bg: #1b1c1f;
+  --superficie: #242528;
+  --superficie-hundida: #202124;
+  --borde: #35363a;
 
   --texto: #ececea;
   --texto-tenue: #9a9a96;
 
-  --acento: #e8a93d;
-  --acento-fuerte: #f2bd63;
-  --acento-sobre: #1a1200;
-  --acento-tenue: #2c2410;
+  --acento: #8fa6d1;
+  --acento-fuerte: #a9bcdc;
+  --acento-sobre: #16202f;
+  --acento-tenue: #232b3a;
 
   --exito: #6fcf97;
-  --error: #ff8a80;
+  --error: #e0897a;
+  --acento-sello: #e0897a;
 
   --punto-lectura: #e0a94f;
   --punto-escucha: #8fb0d6;
@@ -155,6 +183,14 @@ main {
   overflow-y: auto;
 }
 
+/* Inicio reserva mucho menos espacio abajo que el resto: nav.tabs ya es un hermano real en
+   el flex de #app (no un overlay fijo), así que el padding-bottom grande de "main" de arriba
+   es espacio duplicado que Inicio no se puede dar -- tiene que caber completo sin scroll
+   (ver DESIGN_REVIEW.md sección 4). El resto de las pantallas conserva el padding original. */
+main:has(> .pantalla-vista > .inicio-cuerpo) {
+  padding-bottom: var(--e-4);
+}
+
 h1,
 h2,
 h3 {
@@ -187,6 +223,7 @@ p {
 }
 
 .num-tabular {
+  font-family: var(--fuente-mono);
   font-variant-numeric: tabular-nums;
 }
 
@@ -208,7 +245,7 @@ button {
   background: var(--acento);
   color: var(--acento-sobre);
   border: none;
-  border-radius: var(--radio);
+  border-radius: var(--radio-dato);
   font-weight: 600;
   font-size: var(--fs-body);
   padding: var(--e-3) var(--e-4);
@@ -233,7 +270,7 @@ button {
   background: var(--superficie);
   color: var(--texto);
   border: 1px solid var(--borde);
-  border-radius: var(--radio);
+  border-radius: var(--radio-dato);
   padding: var(--e-3) var(--e-4);
   font-size: var(--fs-small);
   text-align: left;
@@ -365,7 +402,7 @@ button {
 .tarjeta {
   background: var(--superficie);
   border: 1px solid var(--borde);
-  border-radius: var(--radio);
+  border-radius: var(--radio-dato); /* ficha de datos -- la tarjeta física real (.tarjeta-repaso) se redondea aparte, más abajo */
   padding: var(--e-5) var(--e-4);
   transition: border-color var(--dur-rapida) var(--easing), box-shadow var(--dur-rapida) var(--easing);
 }
@@ -401,10 +438,74 @@ button {
   margin-bottom: var(--e-6);
 }
 
-/* Flujo de Inicio: columna única, mismo espacio (32px) entre cada bloque de arriba a
-   abajo, sin cajas intermedias que lo rompan. */
-.flujo-inicio > * + * {
-  margin-top: var(--e-6);
+/* --- Inicio: ficha-resumen (racha | minutos | nivel-XP en una fila), más compacta que
+   ".tarjeta" para que quepa sin scroll (ver DESIGN_REVIEW.md sección 4). --- */
+.titulo-inicio {
+  font-size: var(--fs-heading);
+}
+
+.inicio-cuerpo > * + * {
+  margin-top: var(--e-3);
+}
+
+.ficha-resumen {
+  display: flex;
+  align-items: center;
+  gap: var(--e-4);
+  padding: var(--e-2) var(--e-4);
+}
+
+.resumen-racha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: none;
+}
+
+.resumen-racha .resumen-numero {
+  font-size: var(--fs-title);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.resumen-racha .resumen-etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--fs-caption);
+  color: var(--texto-tenue);
+}
+
+.resumen-racha .resumen-etiqueta svg {
+  width: 14px;
+  height: 14px;
+  color: var(--acento);
+}
+
+.resumen-divisor {
+  width: 1px;
+  align-self: stretch;
+  background: var(--borde);
+  flex: none;
+}
+
+.resumen-minutos {
+  flex: 1;
+  min-width: 0;
+}
+
+.resumen-nivel {
+  flex: none;
+  text-align: right;
+  font-size: var(--fs-caption);
+  color: var(--texto-tenue);
+  white-space: nowrap;
+}
+
+.resumen-nivel strong {
+  color: var(--texto);
+  font-size: var(--fs-small);
 }
 
 .estado-vacio {
@@ -487,13 +588,15 @@ nav.tabs button[aria-current="true"] {
   display: none;
 }
 
-/* Tarjeta de repaso: metáfora real de tarjeta física, con transición de volteo sutil. */
+/* Tarjeta de repaso: metáfora real de tarjeta física (la única que se sostiene en la mano),
+   así que es la única que conserva el radio redondeado -- el resto de .tarjeta es dato. */
 .tarjeta-repaso {
   min-height: 160px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: var(--e-3);
+  border-radius: var(--radio-objeto);
 }
 
 .tarjeta-repaso .frente {
@@ -537,9 +640,9 @@ nav.tabs button[aria-current="true"] {
   min-width: 0; /* si no, un grid item no se encoge más chico que su contenido y se desborda */
   box-sizing: border-box;
   margin: 0;
-  padding: var(--e-4);
+  padding: var(--e-3);
   border: 1px solid var(--borde);
-  border-radius: var(--radio);
+  border-radius: var(--radio-dato);
   background: var(--superficie);
   font: inherit;
   text-align: left;
@@ -559,10 +662,10 @@ button.tarjeta-habilidad:active {
 }
 
 .icono-mosaico {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   flex: none;
-  border-radius: var(--radio-chico);
+  border-radius: var(--radio-dato);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -580,38 +683,41 @@ button.tarjeta-habilidad:active {
   margin: 0;
 }
 
-/* --- Ruta de sesiones (inicio): nodos conectados por una línea vertical. --- */
+/* --- Ruta de sesiones (inicio): fila horizontal de nodos, cada uno un solo botón
+   tocable (círculo + título), nunca un mapa serpenteante -- ver DESIGN_REVIEW.md: el
+   stepper vertical con línea conectora se descartó por ser el lenguaje visual de
+   Duolingo. En fila entera en móvil Y laptop, no solo "mejor esfuerzo" en una de las dos. */
 .ruta-sesiones {
   display: flex;
-  flex-direction: column;
+  gap: var(--e-2);
   margin-top: var(--e-3);
 }
 
 .ruta-nodo {
+  flex: 1;
+  min-width: 0;
   display: flex;
-  align-items: flex-start;
-  gap: var(--e-3);
-  position: relative;
-  padding-bottom: var(--e-6);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-1);
+  text-align: center;
+  background: none;
+  border: none;
+  padding: var(--e-2) var(--e-1);
+  min-height: var(--toque-minimo);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: transform var(--dur-rapida) var(--easing);
 }
 
-.ruta-nodo:last-child {
-  padding-bottom: 0;
-}
-
-.ruta-nodo:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  left: 19px;
-  top: 40px;
-  bottom: 0;
-  width: 2px;
-  background: var(--borde);
+.ruta-nodo:active {
+  transform: scale(0.96);
 }
 
 .ruta-circulo {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 999px;
   display: flex;
   align-items: center;
@@ -620,14 +726,16 @@ button.tarjeta-habilidad:active {
   border: 2px solid var(--borde);
   color: var(--texto-tenue);
   background: var(--superficie);
-  position: relative;
-  z-index: 1;
 }
 
+/* El paso completado se "estampa" una vez (ver @keyframes sello-estampa) con el acento
+   sello -- es el único uso decorativo permitido de ese color, porque es exactamente la
+   animación con intención que lo justifica (ver DESIGN_REVIEW.md sección 3). */
 .ruta-nodo.completado .ruta-circulo {
-  background: var(--acento);
-  border-color: var(--acento);
+  background: var(--acento-sello);
+  border-color: var(--acento-sello);
   color: var(--acento-sobre);
+  animation: sello-estampa 180ms var(--easing) both;
 }
 
 .ruta-nodo.actual .ruta-circulo {
@@ -637,53 +745,25 @@ button.tarjeta-habilidad:active {
 
 .ruta-nodo.actual .ruta-circulo::before {
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 999px;
   background: var(--acento);
 }
 
-.ruta-nodo.actual .ruta-circulo::after {
-  content: "";
-  position: absolute;
-  inset: -5px;
-  border-radius: 999px;
-  border: 2px solid var(--acento);
-  animation: anillo-ping 1800ms ease-out infinite;
-}
-
-.ruta-boton {
-  background: none;
-  border: none;
-  text-align: left;
-  padding: var(--e-1) 0 0;
-  min-height: var(--toque-minimo);
-  flex: 1;
-  min-width: 0; /* mismo motivo: un flex item no se encoge más chico que su texto por defecto */
-}
-
-.ruta-boton .titulo,
-.ruta-boton .estado {
-  overflow-wrap: break-word;
-}
-
-.ruta-boton .titulo {
+.ruta-nodo .titulo {
   font-weight: 600;
-  color: var(--texto);
-}
-
-.ruta-boton .estado {
-  display: block;
   font-size: var(--fs-caption);
-  color: var(--texto-tenue);
-  margin-top: 2px;
+  color: var(--texto);
+  line-height: 1.2;
+  overflow-wrap: break-word;
 }
 
 /* --- Panel de retroalimentación: sube desde abajo (repaso/diagnóstico). --- */
 .panel-retro {
   margin-top: var(--e-4);
   padding: var(--e-4);
-  border-radius: var(--radio);
+  border-radius: var(--radio-dato);
   border: 1px solid var(--borde);
   background: var(--superficie);
   animation: sube-abajo var(--dur-media) var(--easing) both;
@@ -809,14 +889,19 @@ button.tarjeta-habilidad:active {
   animation: pulso var(--dur-media) var(--easing);
 }
 
-@keyframes anillo-ping {
+/* Signature move: el sello se estampa UNA vez al completar un paso -- nunca en loop.
+   Reemplaza el anillo pulsante infinito que tenía ".ruta-nodo.actual" (sin propósito claro,
+   se veía cada vez que se entraba a Inicio) por una animación con causa real: algo se
+   acaba de completar. El confeti de fin de sesión (App.Util.confeti, repaso.js/diagnostico.js)
+   queda fuera del alcance de este cambio -- lo reemplaza quien toque esas pantallas. */
+@keyframes sello-estampa {
   0% {
     transform: scale(0.9);
-    opacity: 0.8;
+    opacity: 0;
   }
   100% {
-    transform: scale(1.4);
-    opacity: 0;
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -879,6 +964,9 @@ button.tarjeta-habilidad:active {
   button.tarjeta-habilidad:hover {
     border-color: var(--acento);
   }
+  .ruta-nodo:not(.completado):hover .ruta-circulo {
+    border-color: var(--acento);
+  }
 }
 
 /* --- Responsive: móvil (hasta 767px, sin cambios) / tablet (768-1099px, igual que móvil,
@@ -907,12 +995,57 @@ button.tarjeta-habilidad:active {
     margin-right: auto;
   }
 
-  /* Inicio: panel de dos columnas (hero/meta/CTA a la izquierda, habilidades a la derecha). */
-  .panel-dos-columnas {
+  /* Inicio en laptop: meta/CTA a la izquierda, habilidades 2x2 a la derecha, "Tu camino"
+     horizontal abajo a todo el ancho (sigue en fila, igual que en móvil). */
+  .inicio-cuerpo {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--e-7);
-    align-items: start;
+    grid-template-areas: "principal habilidades" "camino camino";
+    gap: var(--e-5) var(--e-7);
+    max-width: 1100px;
+  }
+
+  .inicio-cuerpo > * + * {
+    margin-top: 0; /* el grid ya separa con "gap"; la regla de columna única no aplica aquí */
+  }
+
+  .inicio-principal {
+    grid-area: principal;
+    display: flex;
+    flex-direction: column;
+    gap: var(--e-5);
+  }
+
+  .inicio-habilidades {
+    grid-area: habilidades;
+  }
+
+  .inicio-camino {
+    grid-area: camino;
+  }
+
+  /* Con más ancho disponible, los componentes de Inicio pueden tener más presencia que en
+     móvil (donde se comprimieron para caber sin scroll) -- evita que se vean "encogidos". */
+  .ficha-resumen {
+    padding: var(--e-4) var(--e-5);
+  }
+
+  .inicio-habilidades .icono-mosaico {
+    width: 44px;
+    height: 44px;
+  }
+
+  .inicio-habilidades .tarjeta-habilidad {
+    padding: var(--e-4);
+  }
+
+  .inicio-camino .ruta-circulo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .inicio-camino .titulo {
+    font-size: var(--fs-small);
   }
 
   /* Progreso: resultado por habilidad en dos columnas, separadas por espacio (no por borde,
@@ -925,11 +1058,6 @@ button.tarjeta-habilidad:active {
   .grid-progreso .fila {
     border-top: none;
     padding: var(--e-3) 0;
-  }
-
-  /* Inicio: 4 tarjetas de habilidad en una sola fila (en móvil son 2x2). */
-  .tarjetas-habilidad {
-    grid-template-columns: repeat(4, 1fr);
   }
 
   nav.tabs {
@@ -970,7 +1098,7 @@ button.tarjeta-habilidad:active {
     height: var(--toque-minimo);
     min-height: var(--toque-minimo);
     padding: 0 var(--e-3);
-    border-radius: var(--radio-chico);
+    border-radius: var(--radio-dato);
   }
 
   nav.tabs button .icono svg {
@@ -998,7 +1126,7 @@ button.tarjeta-habilidad:active {
 .burbuja {
   max-width: 85%;
   padding: var(--e-3) var(--e-4);
-  border-radius: var(--radio);
+  border-radius: var(--radio-dato);
   font-size: var(--fs-body);
   line-height: 1.4;
 }
@@ -1025,7 +1153,7 @@ button.tarjeta-habilidad:active {
   min-height: var(--toque-minimo);
   padding: 0 var(--e-3);
   border: 1px solid var(--borde);
-  border-radius: var(--radio-chico);
+  border-radius: var(--radio-dato);
   background: var(--superficie);
   color: var(--texto);
   font-size: var(--fs-body);

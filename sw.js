@@ -4,7 +4,7 @@
    Ver DECISIONES.md D15: cómo se versiona la caché y qué hace falta hacer a mano en cada update. */
 "use strict";
 
-var CACHE_VERSION = "v18";
+var CACHE_VERSION = "v19";
 var CACHE_NAME = "app-ingles-" + CACHE_VERSION;
 
 var ARCHIVOS_APP_SHELL = [
@@ -43,6 +43,9 @@ var ARCHIVOS_APP_SHELL = [
   "js/screens/conversacion.js",
   "data/i18n/strings.json",
   "data/i18n/umbrales.json",
+  "data/config.json",
+  "assets/fuentes/LibreFranklin-Variable.ttf",
+  "assets/fuentes/JetBrainsMono-Variable.ttf",
   "icons/icon-192.png",
   "icons/icon-512.png",
   "icons/apple-touch-icon.png"

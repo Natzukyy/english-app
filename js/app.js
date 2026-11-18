@@ -4,6 +4,27 @@
   var RUTAS_VALIDAS = ["inicio", "repaso", "diagnostico", "progreso", "ajustes", "habla", "conversacion"];
   var contexto = { strings: {}, umbrales: { niveles: [] }, nivelInterfaz: 0 };
 
+  /** Preparación para crecer (idioma/nivel configurable, ver DESIGN_REVIEW.md sección 5):
+   * data/config.json saca "Inglés B2" del código del shell -- título, meta de iOS y marca
+   * de la barra lateral se rellenan con esto en vez de venir fijos en index.html. */
+  function aplicarConfigShell() {
+    return fetch("data/config.json")
+      .then(function (r) {
+        return r.json();
+      })
+      .then(function (config) {
+        var nombre = config.idiomaVisible + " " + config.nivelMetaCEFR;
+        document.title = nombre;
+        var metaTitulo = document.querySelector('meta[name="apple-mobile-web-app-title"]');
+        if (metaTitulo) metaTitulo.setAttribute("content", nombre);
+        var marca = document.getElementById("marca-sidebar");
+        if (marca) marca.textContent = nombre;
+      })
+      .catch(function (err) {
+        console.warn("No se pudo cargar data/config.json:", err);
+      });
+  }
+
   function rutaActual() {
     var hash = (location.hash || "").replace("#/", "").replace("#", "");
     return RUTAS_VALIDAS.indexOf(hash) !== -1 ? hash : "inicio";
@@ -91,6 +112,7 @@
   function iniciar() {
     registrarNav();
     registrarServiceWorker();
+    aplicarConfigShell();
     aplicarPreferenciasIniciales();
     global.App.I18n.cargarDesdeArchivos()
       .then(function (res) {

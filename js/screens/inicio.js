@@ -47,7 +47,7 @@
           return (
             etiqueta +
             '<div class="icono-mosaico" aria-hidden="true">' +
-            Iconos.svg(ICONO_POR_HABILIDAD[habilidad], 24) +
+            Iconos.svg(ICONO_POR_HABILIDAD[habilidad], 20) +
             "</div>" +
             '<span class="nombre-habilidad">' +
             NOMBRE_HABILIDAD[habilidad] +
@@ -60,10 +60,12 @@
         })
         .join("");
 
-      // Ruta de sesiones: 3 pasos reales y accionables hoy (diagnóstico, repaso, habla),
-      // derivados de datos que ya existen (nada se inventa). Sin candados: "pendiente" se ve
-      // más discreto que "actual", pero igual de tocable -- Repaso y Habla siempre se pueden
-      // abrir, nunca están realmente bloqueados.
+      // Ruta de sesiones: 4 pasos reales y accionables hoy (diagnóstico, repaso, habla,
+      // conversación con IA), derivados de datos que ya existen (nada se inventa). Sin
+      // candados: "pendiente" se ve más discreto que "actual", pero igual de tocable --
+      // Repaso y Habla siempre se pueden abrir, nunca están realmente bloqueados. Título
+      // visible corto (fila horizontal de 4 columnas angostas) + aria-label con la
+      // descripción completa para quien usa lector de pantalla.
       var pasoDiagnostico = {
         titulo: "Diagnóstico",
         estado: diagnostico ? "completado" : "actual",
@@ -72,7 +74,7 @@
       };
       var repasoHecho = !!sesionHoy.metaCumplida;
       var pasoRepaso = {
-        titulo: "Repaso de hoy",
+        titulo: "Repaso",
         estado: !diagnostico ? "pendiente" : repasoHecho ? "completado" : "actual",
         descripcion: repasoHecho ? "Meta de hoy cumplida" : minutosHoy > 0 ? "En curso — " + esc(minutosHoy) + " min hasta ahora" : "Todavía no empiezas hoy",
         ruta: "repaso"
@@ -90,69 +92,73 @@
       // después de que Alex despliegue su propio proxy y lo active en Ajustes -- la pantalla
       // misma explica qué falta, así que aquí no hay candado ni estado especial por eso.
       var pasoConversacion = {
-        titulo: "Conversación con IA",
+        titulo: "Conversación",
         estado: !diagnostico ? "pendiente" : "actual",
         descripcion: "Practica conversación con un modelo de lenguaje",
         ruta: "conversacion"
       };
       var rutaHtml = [pasoDiagnostico, pasoRepaso, pasoHabla, pasoConversacion]
         .map(function (paso) {
-          var contenidoCirculo = paso.estado === "completado" ? Iconos.svg("check", 18) : "";
+          var contenidoCirculo = paso.estado === "completado" ? Iconos.svg("sello", 16) : "";
           return (
-            '<div class="ruta-nodo ' +
+            '<button type="button" class="ruta-nodo ' +
             paso.estado +
-            '">' +
-            '<div class="ruta-circulo">' +
-            contenidoCirculo +
-            "</div>" +
-            '<button type="button" class="ruta-boton" data-ruta-a="' +
+            '" data-ruta-a="' +
             paso.ruta +
-            '"><span class="titulo">' +
-            paso.titulo +
-            '</span><span class="estado">' +
-            paso.descripcion +
-            "</span></button>" +
-            "</div>"
+            '" aria-label="' +
+            esc(paso.titulo + ": " + paso.descripcion) +
+            '"><span class="ruta-circulo" aria-hidden="true">' +
+            contenidoCirculo +
+            "</span>" +
+            '<span class="titulo">' +
+            esc(paso.titulo) +
+            "</span></button>"
           );
         })
         .join("");
 
       el.innerHTML =
-        '<div class="pantalla-vista flujo-inicio">' +
-        '<h1 data-i18n-live="inicio.titulo"></h1>' +
-        '<div class="tarjeta">' +
-        '<div class="fila">' +
-        '<p class="hero-numero num-tabular" id="valor-racha">0</p>' +
-        '<p class="hero-etiqueta">' +
+        '<div class="pantalla-vista">' +
+        '<h1 class="titulo-inicio" data-i18n-live="inicio.titulo"></h1>' +
+        '<div class="inicio-cuerpo">' +
+        '<div class="inicio-principal">' +
+        '<div class="tarjeta ficha-resumen">' +
+        '<div class="resumen-racha">' +
+        '<span class="resumen-numero num-tabular" id="valor-racha">0</span>' +
+        '<span class="resumen-etiqueta">' +
         '<span id="icono-flama"' +
         (sesionHoy.metaCumplida ? ' class="flama-animada"' : "") +
         ">" +
-        Iconos.svg("flama", 16) +
+        Iconos.svg("flama", 14) +
         "</span>" +
-        '<span data-i18n-live="inicio.racha.etiqueta"></span></p>' +
+        '<span data-i18n-live="inicio.racha.etiqueta"></span></span>' +
         "</div>" +
-        '<div class="fila">' +
+        '<div class="resumen-divisor" aria-hidden="true"></div>' +
+        '<div class="resumen-minutos">' +
         '<div class="fila-cabeza"><span class="texto-tenue" data-i18n-live="inicio.meta.etiqueta"></span><span class="texto-tenue num-tabular">' +
         esc(minutosHoy) +
         "/" +
         esc(prefs.metaMinutosDia) +
-        ' min</span></div>' +
+        " min</span></div>" +
         '<div class="barra-progreso"><span id="barra-meta" style="width:0%"></span></div>' +
         "</div>" +
-        '<div class="fila">' +
-        "<p>Nivel <strong>" +
+        '<div class="resumen-divisor" aria-hidden="true"></div>' +
+        '<p class="resumen-nivel">Nivel <strong class="num-tabular">' +
         nivel +
-        '</strong> · <span class="num-tabular" id="valor-xp">0</span> XP</p>' +
-        "</div>" +
+        '</strong><br><span class="num-tabular" id="valor-xp">0</span> XP</p>' +
         "</div>" +
         '<button type="button" class="boton-principal" id="btn-empezar-repaso" data-i18n-live="nav.repaso"></button>' +
+        "</div>" +
+        '<div class="inicio-habilidades">' +
         '<div class="tarjetas-habilidad entrada-escalonada">' +
         tarjetasHtml +
         "</div>" +
-        '<div class="seccion">' +
+        "</div>" +
+        '<div class="inicio-camino">' +
         "<h2>Tu camino</h2>" +
         '<div class="ruta-sesiones entrada-escalonada">' +
         rutaHtml +
+        "</div>" +
         "</div>" +
         "</div>" +
         "</div>";
