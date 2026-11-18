@@ -18,9 +18,11 @@
 
       if (!diagnostico) {
         el.innerHTML =
+          '<div class="pantalla-vista">' +
           '<h1 data-i18n-live="progreso.titulo"></h1>' +
           '<div class="estado-vacio" data-i18n-live="progreso.vacio"></div>' +
-          '<button type="button" class="boton-principal" id="btn-ir-diagnostico">Hacer diagnóstico</button>';
+          '<button type="button" class="boton-principal" id="btn-ir-diagnostico">Hacer diagnóstico</button>' +
+          "</div>";
         el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
           nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
         });
@@ -36,29 +38,30 @@
       var filas = Object.keys(diagnostico.porHabilidad)
         .map(function (h) {
           var r = diagnostico.porHabilidad[h];
-          var porcentaje = Number(r.porcentajeHaciaB2) || 0;
+          var porcentaje = Math.max(0, Math.min(100, Number(r.porcentajeHaciaB2) || 0));
           return (
-            '<div class="tarjeta"><p>' +
+            '<div class="fila">' +
+            '<div class="fila-cabeza"><span>' +
             esc(h) +
-            " — " +
+            " — <strong>" +
             esc(r.nivelCEFR) +
-            '</p><div class="barra-progreso"><span style="width:' +
-            Math.max(0, Math.min(100, porcentaje)) +
-            '%"></span></div></div>'
+            "</strong></span></div>" +
+            '<div class="barra-progreso"><span data-destino="' +
+            porcentaje +
+            '" style="width:0%"></span></div>' +
+            "</div>"
           );
         })
         .join("");
 
       el.innerHTML =
+        '<div class="pantalla-vista">' +
         '<h1 data-i18n-live="progreso.titulo"></h1>' +
-        '<div class="hero-bloque"><p class="hero-numero">' +
-        global.App.XP.nivelDesdeXP(xp.total) +
-        '</p><p class="texto-tenue">nivel · ' +
-        esc(xp.total) +
-        " XP · racha " +
-        racha.rachaActual +
-        "</p></div>" +
+        '<div class="hero-bloque"><p class="hero-numero num-tabular" id="valor-nivel">0</p>' +
+        '<p class="texto-tenue num-tabular">nivel · <span id="valor-xp">0</span> XP · racha <span id="valor-racha">0</span></p></div>' +
+        '<div class="seccion entrada-escalonada">' +
         filas +
+        "</div>" +
         '<p class="texto-tenue">Diagnóstico del ' +
         esc(diagnostico.fecha) +
         ". Meta: B2 para el " +
@@ -66,13 +69,21 @@
         " (" +
         (diasRestantes > 0 ? diasRestantes + " días restantes" : "fecha ya pasada") +
         ").</p>" +
-        '<button type="button" class="boton-secundario" id="btn-repetir-diagnostico">Repetir diagnóstico</button>';
+        '<button type="button" class="boton-secundario" id="btn-repetir-diagnostico">Repetir diagnóstico</button>' +
+        "</div>";
 
       el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
         nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
       });
       el.querySelector("#btn-repetir-diagnostico").addEventListener("click", function () {
         location.hash = "#/diagnostico";
+      });
+
+      global.App.Util.animarNumero(el.querySelector("#valor-nivel"), global.App.XP.nivelDesdeXP(xp.total));
+      global.App.Util.animarNumero(el.querySelector("#valor-xp"), xp.total);
+      global.App.Util.animarNumero(el.querySelector("#valor-racha"), racha.rachaActual);
+      el.querySelectorAll(".barra-progreso > span[data-destino]").forEach(function (span) {
+        global.App.Util.animarBarra(span, span.getAttribute("data-destino"));
       });
     });
   }

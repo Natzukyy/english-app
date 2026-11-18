@@ -47,28 +47,39 @@
     }
     var p = estado.preguntasOrden[estado.indice];
     var esEscucha = p.habilidad === "escucha";
+    var esc = global.App.Util.escaparHTML;
+    var porcentaje = Math.round((estado.indice / estado.preguntasOrden.length) * 100);
 
     el.innerHTML =
+      '<div class="pantalla-vista">' +
       '<h1 data-i18n-live="diagnostico.titulo"></h1>' +
-      '<p class="texto-tenue">' +
+      '<div class="fila-cabeza"><span class="texto-tenue num-tabular">' +
       (estado.indice + 1) +
       " / " +
       estado.preguntasOrden.length +
-      " · " +
-      p.nivelCEFR +
-      "</p>" +
-      '<div class="tarjeta">' +
-      (p.texto ? "<p>" + p.texto + "</p>" : "") +
-      (esEscucha ? '<button type="button" class="boton-secundario" id="btn-reproducir">🔊 Reproducir</button>' : "") +
-      "<p>" +
+      '</span><span class="texto-tenue">' +
+      esc(p.nivelCEFR) +
+      "</span></div>" +
+      '<div class="barra-progreso"><span id="barra-diagnostico" style="width:0%"></span></div>' +
+      (p.texto ? '<div class="tarjeta" style="margin-top:24px"><p style="margin:0">' + p.texto + "</p></div>" : "") +
+      (esEscucha
+        ? '<button type="button" class="enlace-discreto" id="btn-reproducir" style="margin-top:16px">' +
+          global.App.Iconos.svg("bocina", 18) +
+          "<span>Reproducir</span></button>"
+        : "") +
+      '<h2 style="margin-top:' +
+      (esEscucha ? "8" : "24") +
+      'px">' +
       p.pregunta +
-      "</p>" +
-      "</div>" +
-      '<div id="opciones"></div>';
+      "</h2>" +
+      '<div id="opciones" class="entrada-escalonada" style="margin-top:16px"></div>' +
+      "</div>";
 
     el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
       nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
     });
+
+    global.App.Util.animarBarra(el.querySelector("#barra-diagnostico"), porcentaje);
 
     if (esEscucha) {
       el.querySelector("#btn-reproducir").addEventListener("click", function () {
@@ -83,9 +94,6 @@
       var boton = document.createElement("button");
       boton.type = "button";
       boton.className = "boton-secundario";
-      boton.style.display = "block";
-      boton.style.width = "100%";
-      boton.style.marginTop = "8px";
       boton.textContent = opcion;
       boton.addEventListener("click", function () {
         estado.respuestas[p.id] = i;
@@ -99,11 +107,13 @@
   function pintarAutoevaluacion(el, ctx, t, habilidad, siguientePaso) {
     var opciones = estado.rubrica[habilidad];
     el.innerHTML =
+      '<div class="pantalla-vista">' +
       '<h1 data-i18n-live="diagnostico.titulo"></h1>' +
-      "<p>¿Qué descripción te queda mejor para <strong>" +
+      "<h2>¿Qué descripción te queda mejor para " +
       habilidad +
-      "</strong>?</p>" +
-      '<div id="opciones-rubrica"></div>';
+      "?</h2>" +
+      '<div id="opciones-rubrica" class="entrada-escalonada" style="margin-top:16px"></div>' +
+      "</div>";
 
     el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
       nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
@@ -114,11 +124,7 @@
       var boton = document.createElement("button");
       boton.type = "button";
       boton.className = "boton-secundario";
-      boton.style.display = "block";
-      boton.style.width = "100%";
-      boton.style.textAlign = "left";
-      boton.style.marginTop = "8px";
-      boton.textContent = op.nivelCEFR + " — " + op.descripcion;
+      boton.innerHTML = "<strong>" + op.nivelCEFR + "</strong> — " + op.descripcion;
       boton.addEventListener("click", function () {
         estado.autoeval[habilidad] = op.nivelCEFR;
         estado.paso = siguientePaso;
@@ -135,26 +141,39 @@
     var filas = Object.keys(resultado.porHabilidad)
       .map(function (h) {
         var r = resultado.porHabilidad[h];
+        var alcanzoB2 = r.porcentajeHaciaB2 >= 100;
         return (
-          '<div class="tarjeta"><p>' +
+          '<div class="fila">' +
+          '<div class="fila-cabeza"><span>' +
           h +
-          ": <strong>" +
+          " — <strong>" +
           r.nivelCEFR +
-          "</strong> · " +
+          "</strong></span>" +
+          (alcanzoB2 ? '<span style="color:var(--exito);display:inline-flex">' + global.App.Iconos.svg("check", 18) + "</span>" : "") +
+          "</div>" +
+          '<div class="barra-progreso"><span data-destino="' +
           r.porcentajeHaciaB2 +
-          "% hacia B2</p></div>"
+          '" style="width:0%"></span></div>' +
+          "</div>"
         );
       })
       .join("");
 
     el.innerHTML =
+      '<div class="pantalla-vista">' +
       '<h1 data-i18n-live="diagnostico.titulo"></h1>' +
       '<p class="texto-tenue">Esto es una estimación, no una certificación oficial.</p>' +
+      '<div class="seccion entrada-escalonada" style="margin-top:16px">' +
       filas +
-      '<button type="button" class="boton-principal" id="btn-ver-progreso">Ver progreso</button>';
+      "</div>" +
+      '<button type="button" class="boton-principal" id="btn-ver-progreso">Ver progreso</button>' +
+      "</div>";
 
     el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
       nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
+    });
+    el.querySelectorAll(".barra-progreso > span[data-destino]").forEach(function (span) {
+      global.App.Util.animarBarra(span, span.getAttribute("data-destino"));
     });
     el.querySelector("#btn-ver-progreso").addEventListener("click", function () {
       estado = null; // listo para poder repetir el diagnóstico más adelante
