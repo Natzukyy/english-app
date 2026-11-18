@@ -1,9 +1,10 @@
-/* Service worker — cache offline básico (app shell + datos estáticos).
+/* Service worker — red primero, con respaldo en caché offline (app shell + datos estáticos).
    Sin librerías (Workbox incluido): es un SW escrito a mano porque no hay npm (ver DECISIONES.md D1).
-   Subir CACHE_VERSION cuando cambie la lista de archivos o su contenido relevante offline. */
+   Subir CACHE_VERSION cuando cambie la lista de archivos o su contenido relevante offline.
+   Ver DECISIONES.md D15: cómo se versiona la caché y qué hace falta hacer a mano en cada update. */
 "use strict";
 
-var CACHE_VERSION = "v9";
+var CACHE_VERSION = "v10";
 var CACHE_NAME = "app-ingles-" + CACHE_VERSION;
 
 var ARCHIVOS_APP_SHELL = [
@@ -75,26 +76,29 @@ self.addEventListener("fetch", function (evento) {
   var url = new URL(peticion.url);
   if (url.origin !== location.origin) return;
 
+  // Red primero: así, con internet, siempre se ve la versión más reciente de cada archivo
+  // (antes era caché primero, y un archivo ya cacheado nunca se volvía a pedir a la red).
+  // Sin internet, cae al respaldo en caché -- la app sigue funcionando offline igual que antes.
   evento.respondWith(
-    caches.match(peticion).then(function (respuestaCache) {
-      if (respuestaCache) return respuestaCache;
-      return fetch(peticion)
-        .then(function (respuestaRed) {
-          if (respuestaRed && respuestaRed.ok) {
-            var copia = respuestaRed.clone();
-            caches.open(CACHE_NAME).then(function (cache) {
-              cache.put(peticion, copia);
-            });
-          }
-          return respuestaRed;
-        })
-        .catch(function () {
-          // Sin red y sin cache para este recurso: si pedían una página, devolvemos el shell.
+    fetch(peticion)
+      .then(function (respuestaRed) {
+        if (respuestaRed && respuestaRed.ok) {
+          var copia = respuestaRed.clone();
+          caches.open(CACHE_NAME).then(function (cache) {
+            cache.put(peticion, copia);
+          });
+        }
+        return respuestaRed;
+      })
+      .catch(function () {
+        return caches.match(peticion).then(function (respuestaCache) {
+          if (respuestaCache) return respuestaCache;
+          // Sin red y sin caché para este recurso: si pedían una página, devolvemos el shell.
           if (peticion.mode === "navigate") {
             return caches.match("index.html");
           }
           return Response.error();
         });
-    })
+      })
   );
 });

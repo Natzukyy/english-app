@@ -60,11 +60,20 @@
   }
 
   function registrarServiceWorker() {
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("sw.js").catch(function (err) {
-        console.warn("No se pudo registrar el service worker:", err);
-      });
-    }
+    if (!("serviceWorker" in navigator)) return;
+    navigator.serviceWorker.register("sw.js").catch(function (err) {
+      console.warn("No se pudo registrar el service worker:", err);
+    });
+    // Un service worker nuevo activa de inmediato (skipWaiting + clients.claim en sw.js),
+    // pero la pestaña ya abierta sigue corriendo el JS viejo que ya cargó en memoria.
+    // Recargamos una sola vez cuando eso pasa, para que el cambio se vea sin que Alex
+    // tenga que recargar a mano ni borrar caché. Ver DECISIONES.md D15.
+    var yaRecargando = false;
+    navigator.serviceWorker.addEventListener("controllerchange", function () {
+      if (yaRecargando) return;
+      yaRecargando = true;
+      location.reload();
+    });
   }
 
   function aplicarTemaInicial() {

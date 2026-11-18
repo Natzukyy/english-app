@@ -186,5 +186,34 @@ rondas de crítica propias.
 - Mismo viewBox (24x24) y grosor de trazo (1.75px, extremos y uniones redondeados) que el
   resto del set — no se tocó ningún otro ícono.
 
+## D15. Actualización del service worker sin borrar caché a mano
+- **Problema:** antes, el `fetch` del service worker era "caché primero": una vez que un
+  archivo quedaba cacheado, nunca se le volvía a preguntar a la red, aunque hubiera
+  internet. Subir `CACHE_VERSION` ayuda a que el navegador note que `sw.js` cambió de bytes
+  y arranque la instalación de una versión nueva, pero mientras esa instalación no ocurra
+  (o en una pestaña que ya estaba abierta) se seguía viendo la versión vieja.
+- **Arreglo:** el `fetch` ahora es "red primero, caché de respaldo": con internet, cada
+  archivo se pide siempre a la red (y se refresca la copia en caché); sin internet, cae al
+  respaldo que ya tenía guardado — la app offline sigue funcionando exactamente igual que
+  antes. `install`/`activate` ya hacían `skipWaiting()`/`clients.claim()` desde la fase 1
+  (no hacía falta agregarlos), pero eso solo pone al service worker nuevo al mando; una
+  pestaña que ya estaba abierta sigue corriendo el JS que ya cargó en memoria hasta que se
+  recarga. Por eso agregué en `js/app.js` un listener de `controllerchange` que recarga la
+  página una sola vez cuando el service worker nuevo toma control — así el cambio se ve solo,
+  sin que Alex tenga que recargar a mano ni borrar caché.
+- **Cómo se versiona:** `CACHE_VERSION` en `sw.js` (ahora v10) es una cadena cualquiera
+  (`"v" + número`) que solo importa que cambie de un commit a otro — nombra la caché
+  (`app-ingles-vN`) y `activate` borra cualquier caché vieja con el mismo prefijo. **Qué
+  tiene que hacer un humano (o nadie) en cada actualización:** solo subir ese número cuando
+  cambie algo que se sirve offline (lo cual ya era la convención desde la fase 1 — ver el
+  comentario en `sw.js`); después de eso no hace falta que Alex borre caché ni haga nada más,
+  el service worker nuevo se instala, activa y recarga la pestaña abierta automáticamente la
+  próxima vez que haya red.
+- **No se pudo verificar en un navegador real** (ver BLOQUEOS.md B1/B3: no hay forma segura
+  de automatizar un navegador de verdad en esta sesión). Verifiqué que `sw.js` y `js/app.js`
+  parsean sin errores y que la lógica es consistente por lectura; queda en el checklist para
+  que Alex confirme en Safari real (cambiar algo, recargar con internet, ver que se aplica
+  sin tocar el caché a mano).
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*
