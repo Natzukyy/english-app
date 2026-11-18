@@ -167,5 +167,24 @@ cambiaron para bien. Progreso y ajustes usan el mismo sistema pero con menos ite
 dedicada — deberían verse igual de bien por heredar los mismos tokens, pero no les dediqué
 rondas de crítica propias.
 
+## D14. Corrección de los íconos de engranaje (ajustes) y flechas (repaso)
+- **Engranaje:** el original tenía dientes de tamaño y espaciado irregular (hecho a mano,
+  a ojo). Lo rehíce calculando los 24 puntos del contorno con trigonometría (8 dientes,
+  radio externo 9.3, radio interno 7.3, ancho de diente 44% del paso angular, centrado en
+  12,12) para que los dientes sean matemáticamente iguales y parejos, más el círculo central
+  sin cambios.
+- **Flechas de repaso:** el original eran dos trazos sueltos que no se leían como flechas de
+  sincronización (parecían dos comas desconectadas). Las rehíce como dos arcos de círculo de
+  150° cada uno (radio 7.5, centro 12,12), simétricos por rotación de 180°, cada uno con una
+  punta de flecha de dos líneas tangente al final del arco — el diseño estándar de un ícono
+  de "repetir/sincronizar".
+- **Verificación:** antes de aplicar el cambio, rendericé los 5 íconos juntos y detecté que
+  solo estos dos tenían un problema real (los otros 3 — inicio, diagnóstico, progreso — ya
+  estaban bien centrados y simétricos, confirmado también ampliándolos). Después, verifiqué
+  cada ícono nuevo ampliado (~25x, llenando todo el viewport) antes de aceptarlo. Capturas en
+  `capturas/iconos/`.
+- Mismo viewBox (24x24) y grosor de trazo (1.75px, extremos y uniones redondeados) que el
+  resto del set — no se tocó ningún otro ícono.
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*
