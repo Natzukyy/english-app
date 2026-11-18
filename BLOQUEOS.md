@@ -13,6 +13,26 @@ Cosas que fallaron o no se pudieron resolver solo. Formato: qué, cuándo, qué 
 - **Qué hice en su lugar:** encontré que `qlmanage -t -s <N> -o <dir> archivo.html` (generador de miniaturas de QuickLook, incluido en macOS, cero instalación) sí aplica CSS real vía WebKit, con el viewport exactamente del tamaño `-s` en px (confirmado con una prueba de calibración). **No ejecuta JavaScript en absoluto** (ni siquiera dentro de `<iframe>`, lo confirmé también), así que no sirve para capturar la app corriendo. Lo que sí permite: crear páginas HTML estáticas que reproducen a mano el `innerHTML` exacto que cada pantalla generaría (con datos de ejemplo reales, tomados de los JSON de contenido) enlazando el `css/styles.css` real del proyecto, envueltas en un `<iframe style="width:430px;height:932px">` dentro de una página contenedora, y capturarlas con `qlmanage`. Esto da capturas reales, con el CSS real del proyecto, al ancho exacto de un iPhone — no son una simulación mía "a ojo".
 - **Qué falta / limitación:** estas capturas reproducen el HTML que el código *debería* generar con esos datos de ejemplo, no la app corriendo de verdad (no valida JS, rutas, IndexedDB, ni que el `innerHTML` real coincida al 100% con lo que escribí a mano en el fixture). Sigue siendo necesario que Alex abra la app de verdad (`python3 -m http.server`) y la revise en Safari/Mac o en su iPhone para una confirmación final — lo mismo que ya se señalaba en B1.
 
+## B5. La ruta de inicio no incluye lecturas ni ejercicios de habla todavía
+- **Qué pide el Paso 4:** una ruta de sesiones derivada de "lecturas, vocabulario, frases,
+  ejercicios de habla, diagnóstico", solo lectura, sin inventar nodos falsos.
+- **Por qué no la agrego completa:** `data/content/fase1/lecturas.json` y `habla.json`
+  existen como contenido, pero **ninguna pantalla los consume todavía** (no hay una
+  pantalla de "lecturas" ni una de "ejercicios de habla" a las que un nodo de la ruta
+  pudiera llevar). Vocabulario y frases sí tienen pantalla real (repaso, vía las tarjetas
+  SM-2). Agregar un nodo "Lectura 1" que al tocarlo no lleva a ningún lado sería peor que no
+  tener ese nodo — sería un nodo falso con apariencia de funcional, justo lo que el paso
+  pide evitar.
+- **Qué hice en su lugar:** la ruta de inicio tiene 2 pasos reales y accionables, derivados
+  de datos que sí existen hoy: **Diagnóstico** (completado/actual según haya o no un
+  resultado guardado) y **Repaso de hoy** (completado/actual/pendiente según
+  `sesionHoy.metaCumplida`, ya calculado por `App.Progreso`). Nada inventado.
+- **Propuesta para extenderla:** en cuanto exista una pantalla de ejercicios de habla (el
+  Paso A de la tarea siguiente la agrega) y, más adelante, una pantalla para leer las
+  lecturas, la ruta puede crecer con un nodo por cada una — derivando su estado de datos
+  reales que esas pantallas ya tendrían que guardar (p. ej. "última lectura vista" o
+  "ejercicios de habla completados hoy").
+
 ## B4. Capturas reales con `qlmanage` no son confiables por encima de ~960px de ancho
 - **Qué pasó:** al verificar el Paso 3 (versión laptop/responsive), las capturas a 1440x900,
   1280x800 y 1100x700 vía el truco de `qlmanage` + `<iframe>` (documentado en B3) salieron

@@ -243,5 +243,65 @@ rondas de crítica propias.
   Capturas en `capturas/responsive/`. Falta que Alex confirme a los tamaños exactos
   (1440/1280/768) en un navegador real.
 
+## D17. Más vida: ruta de aprendizaje y flujo de sesión con feedback (Paso 4)
+- **Nodos de habilidad (inicio):** cada habilidad es ahora un ícono propio (libro/
+  auriculares/micrófono/pluma, nuevos en `js/core/iconos.js`) dentro de un anillo de
+  progreso SVG (`stroke-dasharray`/`stroke-dashoffset`, animado con
+  `App.Util.animarAnillo`, nueva). El porcentaje del anillo es exactamente
+  `porcentajeHaciaB2` que ya calculaba `App.Diagnostico` — no es un número nuevo, solo una
+  forma nueva de dibujar uno que ya existía.
+- **Ruta de sesiones (inicio):** ver BLOQUEOS.md B5 — por ahora son 2 pasos reales
+  (Diagnóstico, Repaso de hoy), no los 5 tipos de contenido que menciona el Paso 4, porque
+  lecturas/habla todavía no tienen pantalla propia y no quise poner nodos que no llevan a
+  ningún lado.
+- **Racha/meta:** la flama ahora tiene una clase `.flama-animada` (un pulso de escala) que
+  se aplica cuando `sesionHoy.metaCumplida` es real (de IndexedDB, no inventado). La barra
+  de meta diaria se quedó como barra (ya animaba desde el Paso 1 de la ronda anterior) en
+  vez de cambiarla a anillo — el Paso 4 ofrecía "anillo **o** barra animada" como
+  alternativas válidas, y ya teníamos una barra animada funcionando.
+- **Repaso — Comprobar/Continuar:** "Mostrar respuesta" pasa a llamarse "Comprobar"; al
+  tocarlo, un panel de retroalimentación (`.panel-retro`) sube desde abajo con la respuesta
+  y las 4 opciones de autocalificación. Al calificar, el panel se tiñe de éxito/error
+  (según `calidad >= 3`, la misma regla de siempre) y aparece "Continuar", que es quien
+  ahora dispara `calificarTarjeta`/`Storage.put`/avanzar — **antes avanzaba solo con un
+  `setTimeout` de 220ms; ahora espera el toque de Alex**, así que no depende de un tiempo
+  arbitrario para que la animación se alcance a ver. La calificación SM-2 en sí no cambió
+  en nada.
+- **Diagnóstico — Comprobar/Continuar con corrección real:** las preguntas de banco
+  (lectura/escucha/vocabulario_gramatica) ahora se responden en dos pasos: elegir una
+  opción (se resalta, no avanza todavía) y tocar "Comprobar", que compara contra
+  `p.respuestaCorrecta` — **un campo que ya existía en `data/diagnostico/banco.json`**, solo
+  que antes no se usaba para nada visual durante el cuestionario. Esto **reemplaza la
+  decisión D13 anterior** ("no revelar acierto/error pregunta por pregunta, por integridad
+  del diagnóstico"): el Paso 4 pidió explícitamente este flujo para repaso y diagnóstico
+  por igual, y dado que no es un test adaptativo (todas las preguntas están fijas de
+  antemano, no cambian según respuestas previas), revelar el acierto no compromete nada —
+  fue una cautela mía de más en D13. Lo que SIGUE intacto: `App.Diagnostico.construirResultado`
+  calcula el nivel estimado exactamente igual que antes; esto solo cambia qué se le muestra
+  a Alex mientras contesta, no cómo se califica al final. Los pasos de autoevaluación
+  (habla/escritura) no tienen "Comprobar" porque no hay una respuesta correcta que
+  comprobar — se seleccionan y avanzan directo, como antes.
+- **Fin de sesión:** repaso ahora tiene una pantalla de cierre real (no solo una frase):
+  confeti discreto (`App.Util.confeti`, con los colores propios de la app, nunca arcoíris
+  genérico), racha animada, y un resumen de tarjetas repasadas/aciertos/minutos/XP —todo
+  leído de `registrarSesion` y `obtenerEstadoRacha`, que ya existían. El resultado del
+  diagnóstico también gana confeti, pero **no** XP/minutos inventados: el diagnóstico nunca
+  llamó a `registrarSesion` y no empecé a hacerlo ahora (sería agregar una regla de negocio
+  nueva, fuera de lo pedido).
+- **Microinteracciones:** todo el movimiento nuevo (pulso de la flama, anillo de progreso,
+  panel que sube, confeti) usa solo `transform`/`opacity`, 150–900ms (el confeti es el único
+  que pasa de 300ms, porque "caer" se ve mal comprimido a menos de medio segundo; sigue
+  siendo una animación breve y única, no un loop). El confeti se desactiva por completo
+  (`display:none`) bajo `prefers-reduced-motion`, no solo se congela.
+- **Verificación:** mismo límite de `qlmanage` que D16 para capturas grandes, y un límite
+  nuevo específico — cualquier elemento con la animación `entra-arriba`/`sube-abajo`
+  (`.pantalla-vista`, `.entrada-escalonada`, `.panel-retro`) se congela invisible en la
+  primera captura porque el generador de miniaturas no avanza el tiempo de la animación;
+  para revisar esos casos quité la animación de una copia del HTML de prueba (nunca del
+  código real) y así encontré y arreglé un bug real: las opciones del diagnóstico se
+  quedaban con `aria-current="true"` de la selección aunque ya se hubiera comprobado la
+  respuesta, compitiendo en especificidad con el color de acierto/error — ahora se quita
+  ese atributo al comprobar.
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*

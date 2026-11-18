@@ -74,11 +74,46 @@
     });
   }
 
+  /** Hace crecer el anillo de progreso (un <circle> con stroke-dasharray=circunferencia)
+   * de 0% a porcentaje, acortando stroke-dashoffset. */
+  function animarAnillo(elementoCircle, porcentaje, circunferencia) {
+    if (!elementoCircle) return;
+    var destino = Math.max(0, Math.min(100, Number(porcentaje) || 0));
+    var offsetDestino = circunferencia * (1 - destino / 100);
+    if (prefiereMenosMovimiento()) {
+      elementoCircle.style.strokeDashoffset = String(offsetDestino);
+      return;
+    }
+    elementoCircle.style.strokeDashoffset = String(circunferencia);
+    global.requestAnimationFrame(function () {
+      global.requestAnimationFrame(function () {
+        elementoCircle.style.strokeDashoffset = String(offsetDestino);
+      });
+    });
+  }
+
   global.App = global.App || {};
+  /** HTML de un confeti discreto (usa los colores propios de la app, no arcoíris). Se
+   * desactiva solo por CSS bajo prefers-reduced-motion (.confeti{display:none}). */
+  function confeti() {
+    var colores = ["var(--acento)", "var(--punto-lectura)", "var(--punto-escucha)", "var(--punto-habla)", "var(--punto-escritura)"];
+    var piezas = "";
+    for (var i = 0; i < 14; i++) {
+      var izquierda = Math.round((i / 14) * 94 + Math.sin(i) * 3);
+      var color = colores[i % colores.length];
+      var retraso = (i % 7) * 60;
+      piezas +=
+        '<span style="left:' + izquierda + "%;background:" + color + ";animation-delay:" + retraso + 'ms"></span>';
+    }
+    return '<div class="confeti" aria-hidden="true">' + piezas + "</div>";
+  }
+
   global.App.Util = {
     escaparHTML: escaparHTML,
     aplicarTema: aplicarTema,
     animarNumero: animarNumero,
-    animarBarra: animarBarra
+    animarBarra: animarBarra,
+    animarAnillo: animarAnillo,
+    confeti: confeti
   };
 })(typeof window !== "undefined" ? window : globalThis);

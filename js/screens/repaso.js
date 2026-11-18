@@ -36,25 +36,54 @@
 
   function pintarTarjetaActual(el, ctx, t) {
     if (!sesion || sesion.indice >= sesion.cola.length) {
-      finalizarSesionSiActiva().then(function (resultado) {
-        el.innerHTML =
-          '<div class="pantalla-vista ancho-lectura">' +
-          '<h1 data-i18n-live="repaso.titulo"></h1>' +
-          '<div class="hero-bloque">' +
-          '<span style="color:var(--exito)">' +
-          global.App.Iconos.svg("check", 32) +
-          "</span>" +
-          '<p class="texto-tenue" style="margin-top:8px">Repasaste ' +
-          (sesion ? sesion.indice : 0) +
-          " tarjeta(s)" +
-          (resultado && resultado.xpGanada ? " · +" + resultado.xpGanada + " XP" : "") +
-          "</p>" +
-          "</div>" +
-          "</div>";
-        el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
-          nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
+      var tarjetasRepasadas = sesion ? sesion.indice : 0;
+      var aciertos = sesion ? sesion.correctas : 0;
+      finalizarSesionSiActiva()
+        .then(function (resultado) {
+          return Promise.all([Promise.resolve(resultado), global.App.Datos.obtenerEstadoRacha()]);
+        })
+        .then(function (res) {
+          var resultado = res[0];
+          var racha = res[1];
+          var xpGanada = (resultado && resultado.xpGanada) || 0;
+          var minutos = (resultado && resultado.minutosHoy) || 0;
+
+          el.innerHTML =
+            '<div class="pantalla-vista ancho-lectura">' +
+            global.App.Util.confeti() +
+            '<div class="hero-bloque">' +
+            '<span id="icono-exito" style="color:var(--exito)">' +
+            global.App.Iconos.svg("check", 32) +
+            "</span>" +
+            '<h1 style="margin-top:8px" data-i18n-live="repaso.titulo"></h1>' +
+            '<p class="hero-etiqueta">' +
+            '<span id="icono-flama-fin" class="flama-animada">' +
+            global.App.Iconos.svg("flama", 16) +
+            "</span>" +
+            "<span>Racha de <strong class=\"num-tabular\" id=\"valor-racha-fin\">0</strong></span>" +
+            "</p>" +
+            "</div>" +
+            '<div class="seccion">' +
+            '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">Tarjetas repasadas</span><span class="num-tabular">' +
+            tarjetasRepasadas +
+            "</span></div></div>" +
+            '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">Aciertos</span><span class="num-tabular">' +
+            aciertos +
+            "/" +
+            tarjetasRepasadas +
+            "</span></div></div>" +
+            '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">Minutos hoy</span><span class="num-tabular">' +
+            minutos +
+            "</span></div></div>" +
+            '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">XP ganado</span><span class="num-tabular">+<span id="valor-xp-fin">0</span></span></div></div>' +
+            "</div>" +
+            "</div>";
+          el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
+            nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
+          });
+          global.App.Util.animarNumero(el.querySelector("#valor-racha-fin"), racha.rachaActual);
+          global.App.Util.animarNumero(el.querySelector("#valor-xp-fin"), xpGanada);
         });
-      });
       return;
     }
 
@@ -76,17 +105,9 @@
       '<p class="frente">' +
       esc(tarjeta.frente) +
       "</p>" +
-      '<p class="atras" id="repaso-atras" style="display:none">' +
-      esc(tarjeta.atras) +
-      "</p>" +
       "</div>" +
-      '<button type="button" class="boton-principal" id="btn-mostrar" style="margin-top:24px">Mostrar respuesta</button>' +
-      '<div id="repaso-calificar" class="grid-calificar" style="display:none">' +
-      '<button type="button" class="boton-secundario" data-calidad="1">No la sabía</button>' +
-      '<button type="button" class="boton-secundario" data-calidad="3">Difícil</button>' +
-      '<button type="button" class="boton-secundario" data-calidad="4">Bien</button>' +
-      '<button type="button" class="boton-secundario" data-calidad="5">Fácil</button>' +
-      "</div>" +
+      '<button type="button" class="boton-principal" id="btn-comprobar" style="margin-top:24px">Comprobar</button>' +
+      '<div id="zona-retro"></div>' +
       "</div>";
 
     el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
@@ -95,37 +116,57 @@
 
     global.App.Util.animarBarra(el.querySelector("#barra-repaso"), porcentaje);
 
-    el.querySelector("#btn-mostrar").addEventListener("click", function () {
-      el.querySelector("#repaso-atras").style.display = "block";
-      el.querySelector("#repaso-calificar").style.display = "grid";
-      el.querySelector("#btn-mostrar").style.display = "none";
-    });
+    el.querySelector("#btn-comprobar").addEventListener("click", function () {
+      el.querySelector("#btn-comprobar").style.display = "none";
+      // Panel de retroalimentación: sube desde abajo. Todavía no tiene tono de
+      // acierto/error -- eso se decide cuando Alex se autocalifica (abajo).
+      el.querySelector("#zona-retro").innerHTML =
+        '<div class="panel-retro" id="panel-retro">' +
+        '<p class="atras">' +
+        esc(tarjeta.atras) +
+        "</p>" +
+        '<div id="repaso-calificar" class="grid-calificar">' +
+        '<button type="button" class="boton-secundario" data-calidad="1">No la sabía</button>' +
+        '<button type="button" class="boton-secundario" data-calidad="3">Difícil</button>' +
+        '<button type="button" class="boton-secundario" data-calidad="4">Bien</button>' +
+        '<button type="button" class="boton-secundario" data-calidad="5">Fácil</button>' +
+        "</div>" +
+        "</div>";
 
-    el.querySelectorAll("#repaso-calificar button").forEach(function (boton) {
-      boton.addEventListener("click", function () {
-        var calidad = Number(boton.getAttribute("data-calidad"));
-        var esCorrecta = calidad >= 3;
+      el.querySelectorAll("#repaso-calificar button").forEach(function (boton) {
+        boton.addEventListener("click", function () {
+          var calidad = Number(boton.getAttribute("data-calidad"));
+          var esCorrecta = calidad >= 3;
+          var panel = el.querySelector("#panel-retro");
+          var tarjetaEl = el.querySelector("#tarjeta-actual");
 
-        // Feedback visual (pulso + borde) antes de avanzar; no cambia la calificación ni el
-        // SM-2, solo retrasa ~220ms el avance para que la animación (transform/opacity) se vea.
-        el.querySelectorAll("#repaso-calificar button").forEach(function (b) {
-          b.disabled = true;
-        });
-        var tarjetaEl = el.querySelector("#tarjeta-actual");
-        tarjetaEl.classList.add(esCorrecta ? "estado-correcto" : "estado-incorrecto");
-        tarjetaEl.classList.add(esCorrecta ? "pulso-correcto" : "pulso-incorrecto");
+          tarjetaEl.classList.add(esCorrecta ? "estado-correcto" : "estado-incorrecto");
+          tarjetaEl.classList.add(esCorrecta ? "pulso-correcto" : "pulso-incorrecto");
+          panel.classList.add(esCorrecta ? "exito" : "error");
+          panel.querySelector("#repaso-calificar").remove();
+          var titulo = document.createElement("p");
+          titulo.className = "titulo-retro";
+          titulo.textContent = esCorrecta ? "¡Bien hecho!" : "No pasa nada, va a volver a salir";
+          panel.insertBefore(titulo, panel.firstChild);
 
-        setTimeout(function () {
-          var actualizada = global.App.SRS.calificarTarjeta(tarjeta, calidad, new Date());
-          actualizada.frente = tarjeta.frente;
-          actualizada.atras = tarjeta.atras;
-          actualizada.tipo = tarjeta.tipo;
-          if (esCorrecta) sesion.correctas += 1;
-          global.App.Storage.put("srs_cards", actualizada).then(function () {
-            sesion.indice += 1;
-            pintarTarjetaActual(el, ctx, t);
+          var btnContinuar = document.createElement("button");
+          btnContinuar.type = "button";
+          btnContinuar.className = "boton-principal";
+          btnContinuar.style.marginTop = "12px";
+          btnContinuar.textContent = "Continuar";
+          btnContinuar.addEventListener("click", function () {
+            var actualizada = global.App.SRS.calificarTarjeta(tarjeta, calidad, new Date());
+            actualizada.frente = tarjeta.frente;
+            actualizada.atras = tarjeta.atras;
+            actualizada.tipo = tarjeta.tipo;
+            if (esCorrecta) sesion.correctas += 1;
+            global.App.Storage.put("srs_cards", actualizada).then(function () {
+              sesion.indice += 1;
+              pintarTarjetaActual(el, ctx, t);
+            });
           });
-        }, 220);
+          panel.appendChild(btnContinuar);
+        });
       });
     });
   }

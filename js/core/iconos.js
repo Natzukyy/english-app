@@ -19,7 +19,12 @@
     bocina: '<path d="M4 9v6h3l5 4V5L7 9H4z"/><path d="M16.5 9a4 4 0 0 1 0 6"/><path d="M19 7a7.5 7.5 0 0 1 0 10"/>',
     check: '<path d="M5 12.5l4.5 4.5L19 7"/>',
     equis: '<path d="M6 6l12 12"/><path d="M18 6L6 18"/>',
-    flecha: '<path d="M9 5l7 7-7 7"/>'
+    flecha: '<path d="M9 5l7 7-7 7"/>',
+    libro: '<path d="M12 6c-1.8-1.3-4.3-2-7-2v14c2.7 0 5.2.7 7 2"/><path d="M12 6c1.8-1.3 4.3-2 7-2v14c-2.7 0-5.2.7-7 2"/><path d="M12 6v14"/>',
+    auriculares: '<path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="2"/><rect x="17" y="13" width="4" height="6" rx="2"/>',
+    microfono: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/>',
+    pluma: '<path d="M4 20l1-4L16 5l3 3L8 19l-4 1z"/><path d="M14 7l3 3"/>',
+    candado: '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'
   };
 
   function svg(nombre, tamano) {

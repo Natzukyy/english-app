@@ -73,6 +73,8 @@
       p.pregunta +
       "</h2>" +
       '<div id="opciones" class="entrada-escalonada" style="margin-top:16px"></div>' +
+      '<button type="button" class="boton-principal" id="btn-comprobar" style="margin-top:16px" disabled>Comprobar</button>' +
+      '<div id="zona-retro"></div>' +
       "</div>";
 
     el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
@@ -89,18 +91,56 @@
       });
     }
 
+    var seleccionada = -1;
     var contenedorOpciones = el.querySelector("#opciones");
-    p.opciones.forEach(function (opcion, i) {
+    var btnComprobar = el.querySelector("#btn-comprobar");
+    var botonesOpcion = p.opciones.map(function (opcion, i) {
       var boton = document.createElement("button");
       boton.type = "button";
       boton.className = "boton-secundario";
       boton.textContent = opcion;
       boton.addEventListener("click", function () {
-        estado.respuestas[p.id] = i;
+        seleccionada = i;
+        botonesOpcion.forEach(function (b) {
+          b.removeAttribute("aria-current");
+        });
+        boton.setAttribute("aria-current", "true");
+        btnComprobar.disabled = false;
+      });
+      contenedorOpciones.appendChild(boton);
+      return boton;
+    });
+
+    btnComprobar.addEventListener("click", function () {
+      if (seleccionada === -1) return;
+      estado.respuestas[p.id] = seleccionada;
+      var esCorrecta = seleccionada === p.respuestaCorrecta;
+      btnComprobar.style.display = "none";
+      botonesOpcion.forEach(function (b, i) {
+        b.disabled = true;
+        b.removeAttribute("aria-current"); // el estado de seleccion ya no aplica, ahora manda el resultado
+        if (i === p.respuestaCorrecta) {
+          b.classList.add("pulso-correcto", "estado-correcto");
+        } else if (i === seleccionada) {
+          b.classList.add("pulso-incorrecto", "estado-incorrecto");
+        }
+      });
+
+      el.querySelector("#zona-retro").innerHTML =
+        '<div class="panel-retro ' +
+        (esCorrecta ? "exito" : "error") +
+        '">' +
+        '<p class="titulo-retro">' +
+        (esCorrecta ? "¡Correcto!" : "No era esa") +
+        "</p>" +
+        (esCorrecta ? "" : "<p>La respuesta correcta era: " + global.App.Util.escaparHTML(p.opciones[p.respuestaCorrecta]) + "</p>") +
+        '<button type="button" class="boton-principal" id="btn-continuar" style="margin-top:12px">Continuar</button>' +
+        "</div>";
+
+      el.querySelector("#btn-continuar").addEventListener("click", function () {
         estado.indice += 1;
         pintar(el, ctx, t);
       });
-      contenedorOpciones.appendChild(boton);
     });
   }
 
@@ -161,6 +201,7 @@
 
     el.innerHTML =
       '<div class="pantalla-vista ancho-lectura">' +
+      global.App.Util.confeti() +
       '<h1 data-i18n-live="diagnostico.titulo"></h1>' +
       '<p class="texto-tenue">Esto es una estimación, no una certificación oficial.</p>' +
       '<div class="seccion entrada-escalonada" style="margin-top:16px">' +
