@@ -79,5 +79,90 @@ Registro de decisiones tomadas sin preguntar (modo nocturno), con alternativas c
 - **Notificaciones (`Notification.requestPermission`):** da `granted` **solo cuando la app está instalada** a pantalla de inicio (no en una pestaña normal de Safari). Importante: esto solo sirve para notificaciones disparadas desde JS mientras la app está abierta/en memoria — **no hay recordatorios programados reales sin un servidor de push**, porque iOS Safari no soporta Web Push sin él. Si en el futuro se quiere un recordatorio diario aunque la app esté cerrada, hace falta backend (fuera de alcance de D5 por ahora).
 - **Regla de diseño que se desprende de esta prueba, vigente para toda la app (no solo para `prueba/`):** grabar audio (`MediaRecorder`) y reconocer voz (`SpeechRecognition`) **nunca deben usar el micrófono al mismo tiempo**; cualquier pantalla que use uno debe liberar siempre el micrófono (`stream.getTracks().forEach(t => t.stop())` para `MediaRecorder`, y dejar que `SpeechRecognition` termine con `stop()`/evento `end`) al terminar cada uso, sin excepción, incluyendo las rutas de error. Esto ya se aplicó en `prueba/index.html` (bloqueo mutuo de los botones de las pruebas 2 y 3 mientras una está activa, y liberación de tracks en todas las rutas, incluida la de error del `MediaRecorder`). Cuando se construyan los ejercicios de habla reales (fase 1 ya tiene el contenido, falta la UI), esta regla debe respetarse igual — queda anotada aquí para no perderla. Ver también `CLAUDE.md`.
 
+## D13. Rediseño visual completo (tema "neutro + un acento")
+Alex pidió rediseñar toda la interfaz porque se veía "genérica, de plantilla hecha por IA"
+(fondo índigo saturado, verde neón, tarjetas anidadas, serif decorativo, emojis como
+íconos). Pidió cambiar **solo lo visual** — nada de lógica, datos ni reglas de negocio — y
+dio una dirección concreta (ver su mensaje completo en el historial). Esto documenta qué
+decidí y por qué, pantalla por pantalla. Capturas antes/después en `capturas/`.
+
+- **Color:** base neutra cálida (`#f6f5f2` claro / `#18181b` oscuro, sigue `prefers-color-scheme`
+  y se puede forzar desde Ajustes) + **un solo acento** ámbar (`#9c6008` claro / `#e8a93d`
+  oscuro). Elegí ámbar y no azul porque azul es el acento por defecto de casi cualquier app
+  genérica (el propio checklist de la skill `frontend-design` lo marca como señal de "SaaS
+  genérico"); ámbar además conecta con la idea de "resaltar" mientras lees/estudias.
+  Verifiqué contraste WCAG con la misma fórmula de D10: el acento da ≥4.6:1 como texto sobre
+  el fondo y ≥4.7:1 con el texto que va encima del botón relleno, en ambos temas. Los 4
+  colores de habilidad (antes bloques de color) quedan como un punto de 8px sobrio, tal como
+  pidió explícitamente.
+- **Menos cajas anidadas:** solo dejé `.tarjeta` donde el contenido ES literalmente una
+  tarjeta (la palabra de repaso) o una cita/pasaje de lectura (el texto del diagnóstico).
+  Todo lo demás (meta diaria, nivel/XP, resultados del diagnóstico, progreso por habilidad)
+  pasó de cajas con borde apiladas a filas separadas por un divisor de 1px + espacio, con la
+  escala de espaciado 4/8px que pidió.
+- **Tipografía:** quité el serif decorativo por completo (antes solo en títulos); con un
+  acento de color ya hay suficiente personalidad, y un segundo estilo tipográfico sin un
+  motivo claro es justo el tipo de decoración que pidió evitar. Números de racha/XP/minutos
+  en `font-variant-numeric: tabular-nums`.
+- **Íconos:** 5 SVG en línea propios (mismo viewBox 24x24, trazo 1.75px, extremos
+  redondeados) para la navegación, más `js/core/iconos.js` para los que las pantallas
+  generan dinámicamente (flama, check, bocina). Cero emojis en la interfaz.
+- **Movimiento** (siempre `transform`/`opacity`, 150-250ms, `cubic-bezier(0.22,1,0.36,1)`,
+  respeta `prefers-reduced-motion` globalmente):
+  - Entrada de pantalla: cada pantalla envuelve su contenido en `.pantalla-vista`
+    (fade + translateY(8px) al montar).
+  - Entrada escalonada: `.entrada-escalonada` anima los hijos con 40ms de diferencia entre
+    uno y otro (chips de inicio, opciones del diagnóstico, filas de resultado/progreso).
+  - Números: `App.Util.animarNumero` cuenta hacia el valor final con `requestAnimationFrame`
+    (racha, XP, nivel). Barras de progreso: `App.Util.animarBarra` las hace crecer desde 0%
+    al montar o cambiar (meta diaria, avance del repaso/diagnóstico, % hacia B2).
+  - Feedback al tocar: `:active { transform: scale(0.97) }` en botones y tabs.
+  - Acierto/error en **repaso**: al calificar una tarjeta, un pulso (`transform: scale`) +
+    borde de éxito/error la marca antes de avanzar; el avance se retrasa 220ms a propósito
+    (ver `js/screens/repaso.js`) solo para que la animación se alcance a ver — la
+    calificación SM-2 y lo que se guarda no cambian en nada.
+  - Acierto/error en **diagnóstico**: decisión explícita de **no** mostrar aciertos/errores
+    pregunta por pregunta durante el cuestionario — el diagnóstico es una evaluación de una
+    sola pasada, sin retroalimentación inmediata, y eso es una regla de integridad del
+    diagnóstico, no una preferencia visual (PROMPT_BASE.md ya trataba esto como una
+    evaluación, no como un juego). En su lugar, el lenguaje de "acierto" se aplica en la
+    pantalla de **resultado**: un check verde junto a las habilidades que ya llegan a B2. Y
+    decidí **no** poner un marcador rojo de "error" en las que todavía no llegan — no haber
+    llegado a B2 en el primer diagnóstico es lo normal, no una falla, y pintarlo de rojo
+    sería un mensaje equivocado para una app que busca que Alex seas constante, no que se
+    sienta mal por su punto de partida.
+- **Tema claro/oscuro:** `preferencias.tema` (`"sistema"|"claro"|"oscuro"`, default
+  `"sistema"`) nuevo en `App.Datos`; `App.Util.aplicarTema` pone/quita `data-theme` en
+  `<html>`. El CSS define los tokens oscuros dos veces (bajo `@media
+  (prefers-color-scheme: dark) :root:not([data-theme="light"])` y bajo
+  `:root[data-theme="dark"]`) para que tanto "seguir al sistema" como forzar un tema
+  funcionen sin JS adicional en el primer pintado. Selector de 3 vías en Ajustes, igual que
+  el de la meta diaria.
+- **iOS:** la barra inferior ahora usa `backdrop-filter: blur` + `color-mix()` (con un
+  respaldo sólido declarado antes, por si el navegador no soporta `color-mix`) para que se
+  vea como una tab bar nativa; `env(safe-area-inset-*)` se agregó también en `main` (antes
+  solo estaba en la barra inferior).
+- **Service worker:** `CACHE_VERSION` subió de v6 a v8 en dos pasos (v7: agrega
+  `iconos.js`; v8: todo el contenido de pantallas/CSS cambió).
+
+**Qué NO toqué:** ninguna fórmula de SM-2/XP/racha/diagnóstico, ningún dato de
+`data/`, ninguna ruta de `js/app.js` más allá de aplicar el tema al arrancar. `App.Datos`
+gana un campo de preferencia (tema) pero su merge con el default es ahora más robusto
+(antes un registro viejo sin un campo nuevo rompía el default; ahora se completa con
+`Object.assign`).
+
+**Herramientas usadas:** `frontend-design` (plan en dos pasadas: tokens → revisar contra
+los "tells" genéricos → construir). `emil-design-engineering`, `make-interfaces-feel-better`
+y `web-animation-design` (del audit-suite) **no están disponibles como skills en este
+entorno** — no aparecen en el listado de skills invocables — así que seguí sin ellas,
+apoyándome en la guía de `frontend-design` y en las capturas reales para iterar.
+
+**Qué quedó mejor y qué sigue flojo (ver también el mensaje final a Alex):** inicio, repaso
+y diagnóstico pasaron por varias rondas reales de captura→crítica→ajuste (el acento y el
+layout de chips se afinaron después de ver inicio renderizado) y creo que son las que más
+cambiaron para bien. Progreso y ajustes usan el mismo sistema pero con menos iteración
+dedicada — deberían verse igual de bien por heredar los mismos tokens, pero no les dediqué
+rondas de crítica propias.
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*
