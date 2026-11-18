@@ -20,5 +20,14 @@ App personal de Alex para llegar a B2 de inglés (CEFR) para fines de marzo 2027
 ## Decisiones vigentes
 Ver `DECISIONES.md`. Resumen: sin backend (IndexedDB + export/import JSON), SM-2 para repaso espaciado, umbrales de i18n provisionales y editables, fase 3 (juegos) solo como toggle sin lógica, sin conversación con LLM.
 
+## Resultado probado en iPhone real (iOS 27, Safari 27.2) — ver DECISIONES.md D12
+- Micrófono (`getUserMedia`+`MediaRecorder`) funciona, mimeType `audio/mp4` (AAC).
+- `SpeechRecognition` (en-US) funciona, en Safari y ya instalada.
+- `speechSynthesis` trae 26 voces en inglés (Daniel en-GB, Samantha en-US, Karen en-AU, Moira en-IE, Rishi en-IN, Tessa en-ZA).
+- `Notification.requestPermission` da `granted` solo con la app instalada a pantalla de inicio. Sin servidor push no hay recordatorios programados reales (solo notificaciones mientras la app está abierta).
+
+## Regla de diseño: micrófono (vigente para toda la app, no solo `prueba/`)
+Grabar audio (`MediaRecorder`) y reconocer voz (`SpeechRecognition`) **nunca al mismo tiempo**. Siempre liberar el micrófono al terminar cada uso (detener los tracks del stream / dejar que el reconocedor llegue a `end`), incluyendo las rutas de error, no solo el camino feliz.
+
 ## No tocar sin autorización de Alex
 Despliegue (GitHub Pages u otro), instalar Node/dependencias, backend, conversación con LLM, contenido de videojuegos.

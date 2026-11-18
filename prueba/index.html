@@ -165,6 +165,13 @@
         pre.className = ok === null ? "" : ok ? "estado-ok" : "estado-mal";
       }
 
+      // Grabar audio (prueba 2) y reconocer voz (prueba 3) nunca deben usar el micrófono
+      // al mismo tiempo. Mientras una está activa, se bloquea el botón de la otra.
+      function bloquearMicCompartido(bloqueado) {
+        document.getElementById("boton-2").disabled = bloqueado;
+        document.getElementById("boton-3").disabled = bloqueado;
+      }
+
       // --- 1. Entorno ---
       document.getElementById("boton-1").addEventListener("click", function () {
         var lineas = [];
@@ -222,6 +229,7 @@
           .join("\n");
 
         marcar("resultado-2", null, "Pidiendo permiso de micrófono...\n\nisTypeSupported:\n" + soportados);
+        bloquearMicCompartido(true);
 
         navigator.mediaDevices
           .getUserMedia({ audio: true })
@@ -235,6 +243,7 @@
               stream.getTracks().forEach(function (t) {
                 t.stop();
               });
+              bloquearMicCompartido(false);
               return;
             }
             grabador.addEventListener("dataavailable", function (ev) {
@@ -244,6 +253,7 @@
               stream.getTracks().forEach(function (t) {
                 t.stop();
               });
+              bloquearMicCompartido(false);
               var blob = new Blob(trozos, { type: grabador.mimeType || "audio/webm" });
               var url = URL.createObjectURL(blob);
               pre.textContent =
@@ -262,6 +272,10 @@
             });
             grabador.addEventListener("error", function (ev) {
               marcar("resultado-2", false, "MediaRecorder error en grabación -> " + (ev.error ? ev.error.name + ": " + ev.error.message : "desconocido"));
+              stream.getTracks().forEach(function (t) {
+                t.stop();
+              });
+              bloquearMicCompartido(false);
             });
 
             marcar("resultado-2", null, "Grabando 4 segundos...\n\nisTypeSupported:\n" + soportados);
@@ -272,6 +286,7 @@
           })
           .catch(function (err) {
             marcar("resultado-2", false, "getUserMedia rechazó -> " + err.name + ": " + err.message + "\n\nisTypeSupported:\n" + soportados);
+            bloquearMicCompartido(false);
           });
       });
 
@@ -286,10 +301,12 @@
         var parcial = "";
         var finales = [];
         var reconocimiento;
+        bloquearMicCompartido(true);
         try {
           reconocimiento = new Reconocedor();
         } catch (e) {
           marcar("resultado-3", false, "Error al crear el reconocedor -> " + e.name + ": " + e.message);
+          bloquearMicCompartido(false);
           return;
         }
         reconocimiento.lang = "en-US";
@@ -325,12 +342,14 @@
           if (pre.className !== "estado-mal") {
             marcar("resultado-3", true, "Terminado.\n\nParcial (al cortar): " + parcial + "\n\nFinal(es):\n" + (finales.length ? finales.join("\n") : "(ninguno)"));
           }
+          bloquearMicCompartido(false);
         });
 
         try {
           reconocimiento.start();
         } catch (e) {
           marcar("resultado-3", false, "reconocimiento.start() lanzó error -> " + e.name + ": " + e.message);
+          bloquearMicCompartido(false);
           return;
         }
         setTimeout(function () {
