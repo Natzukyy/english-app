@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pruebas de integración — capa de datos</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 16px;
+        background: #18181b;
+        color: #ececea;
+        font-family: -apple-system, system-ui, sans-serif;
+        line-height: 1.5;
+      }
+      h1 {
+        font-size: 1.3rem;
+      }
+      p.intro {
+        color: #9a9a96;
+        max-width: 640px;
+      }
+      button {
+        min-height: 44px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 8px;
+        border: none;
+        background: #e8a93d;
+        color: #1a1200;
+        cursor: pointer;
+      }
+      #resumen {
+        margin: 16px 0;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        max-width: 760px;
+      }
+      li {
+        padding: 10px 12px;
+        border-radius: 8px;
+        margin-bottom: 6px;
+        border: 1px solid #313136;
+      }
+      li.ok {
+        border-color: #6fcf97;
+      }
+      li.fail {
+        border-color: #ff8a80;
+      }
+      li .nombre {
+        font-weight: 600;
+      }
+      li .detalle {
+        display: block;
+        font-size: 0.85rem;
+        color: #9a9a96;
+        white-space: pre-wrap;
+        margin-top: 4px;
+      }
+      li.fail .detalle {
+        color: #ff8a80;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pruebas de integración — capa de datos (IndexedDB real)</h1>
+    <p class="intro">
+      Corren contra IndexedDB de verdad, en una base de datos de pruebas separada
+      (<code id="nombre-db-mostrado"></code>) que nunca toca tus datos reales de la app. Cada
+      corrida la borra al terminar. Ver <code>CLAUDE.md</code> para cómo abrir esta página.
+    </p>
+    <button type="button" id="btn-correr">Correr todas las pruebas</button>
+    <p id="resumen"></p>
+    <ul id="lista-resultados"></ul>
+
+    <script src="../js/core/util.js"></script>
+    <script src="../js/core/storage.js"></script>
+    <script src="../js/core/fecha.js"></script>
+    <script src="../js/core/racha.js"></script>
+    <script src="../js/core/xp.js"></script>
+    <script src="../js/core/srs.js"></script>
+    <script src="../js/core/diagnostico.js"></script>
+    <script src="../js/core/progreso.js"></script>
+    <script src="../js/core/datos.js"></script>
+    <script>
+      "use strict";
+
+      // Base de datos de pruebas, independiente de "app-ingles" (la real). Nunca se toca la
+      // real: App.Storage se cambia temporalmente a esta instancia mientras corre la
+      // batería (App.Datos usa `global.App.Storage.xxx` en cada llamada, así que basta con
+      // reemplazar la referencia; no hace falta tocar datos.js). Se restaura al terminar,
+      // pase lo que pase, y la base de prueba se borra entera al final.
+      var NOMBRE_DB_PRUEBA = "app-ingles-integracion-" + Date.now();
+      document.getElementById("nombre-db-mostrado").textContent = NOMBRE_DB_PRUEBA;
+      var storageReal = App.Storage;
+      var storagePrueba = App.Storage.crear(NOMBRE_DB_PRUEBA, 1);
+
+      var pruebas = [];
+      function prueba(nombre, fn) {
+        pruebas.push({ nombre: nombre, fn: fn });
+      }
+
+      function limpiarStores(nombres) {
+        return Promise.all(nombres.map(function (n) { return App.Storage.clearStore(n); }));
+      }
+
+      function assertEqual(actual, esperado, mensaje) {
+        var a = JSON.stringify(actual);
+        var e = JSON.stringify(esperado);
+        if (a !== e) throw new Error((mensaje ? mensaje + " — " : "") + "esperado " + e + " pero fue " + a);
+      }
+      function assertTrue(valor, mensaje) {
+        if (!valor) throw new Error(mensaje || "se esperaba un valor verdadero");
+      }
+
+      // --- 1. Guardar y leer sesión del día ---
+      prueba("guardar y leer la sesión del día", function () {
+        return limpiarStores(["sesiones"]).then(function () {
+          var hoy = App.Fecha.hoyISO();
+          return App.Storage.put("sesiones", { id: hoy, minutos: 12, metaCumplida: false, ejerciciosCorrectos: 2 })
+            .then(function () {
+              return App.Storage.get("sesiones", hoy);
+            })
+            .then(function (fila) {
+              assertEqual(fila.minutos, 12);
+              assertEqual(fila.ejerciciosCorrectos, 2);
+            });
+        });
+      });
+
+      // --- 2. Sumar minutos y XP a través de App.Datos.registrarSesion ---
+      prueba("registrarSesion suma minutos y XP del mismo día", function () {
+        return limpiarStores(["sesiones", "xp"]).then(function () {
+          return App.Datos.registrarSesion(5, 1, new Date(2026, 10, 10, 9, 0))
+            .then(function () {
+              return App.Datos.registrarSesion(7, 2, new Date(2026, 10, 10, 18, 0));
+            })
+            .then(function (resultado) {
+              assertEqual(resultado.minutosHoy, 12);
+              return App.Storage.get("sesiones", "2026-11-10");
+            })
+            .then(function (fila) {
+              assertEqual(fila.minutos, 12);
+              assertEqual(fila.ejerciciosCorrectos, 3);
+              return App.Datos.obtenerXP();
+            })
+            .then(function (xp) {
+              assertTrue(xp.total > 0, "el XP total debería ser mayor que 0 tras 2 sesiones");
+            });
+        });
+      });
+
+      // --- 3. Cambio de día: cada fecha tiene su propio registro ---
+      prueba("cambio de día: dos fechas quedan separadas", function () {
+        return limpiarStores(["sesiones", "xp"]).then(function () {
+          return App.Datos.registrarSesion(5, 0, new Date(2026, 10, 10, 10, 0))
+            .then(function () {
+              return App.Datos.registrarSesion(8, 0, new Date(2026, 10, 11, 10, 0));
+            })
+            .then(function () {
+              return App.Datos.obtenerMinutosPorDia();
+            })
+            .then(function (mapa) {
+              assertEqual(mapa["2026-11-10"], 5);
+              assertEqual(mapa["2026-11-11"], 8);
+            });
+        });
+      });
+
+      // --- 4. Racha: con y sin mínimo cumplido ---
+      prueba("racha: varios días bajo el mínimo agotan los congelamientos y rompen la racha", function () {
+        return limpiarStores(["sesiones"]).then(function () {
+          return Promise.all([
+            App.Storage.put("sesiones", { id: "2026-11-10", minutos: 5 }), // cumple -> racha 1
+            App.Storage.put("sesiones", { id: "2026-11-11", minutos: 2 }), // no cumple -> congelamiento 2->1
+            App.Storage.put("sesiones", { id: "2026-11-12", minutos: 2 }), // no cumple -> congelamiento 1->0
+            App.Storage.put("sesiones", { id: "2026-11-13", minutos: 2 }) // no cumple, sin congelamientos -> rompe
+          ]).then(function () {
+            return App.Datos.obtenerEstadoRacha(new Date(2026, 10, 13));
+          });
+        }).then(function (racha) {
+          assertEqual(racha.rachaActual, 0);
+        });
+      });
+
+      // --- 5. Congelaciones: un día sin registro se cubre con una congelación ---
+      prueba("racha: un día saltado se cubre con una congelación disponible", function () {
+        return limpiarStores(["sesiones"]).then(function () {
+          return Promise.all([
+            App.Storage.put("sesiones", { id: "2026-11-10", minutos: 10 }),
+            App.Storage.put("sesiones", { id: "2026-11-11", minutos: 10 })
+            // falta el 12 por completo (no bajo el mínimo: directamente no hay registro)
+          ]).then(function () {
+            return App.Storage.put("sesiones", { id: "2026-11-13", minutos: 10 });
+          }).then(function () {
+            return App.Datos.obtenerEstadoRacha(new Date(2026, 10, 13));
+          });
+        }).then(function (racha) {
+          // 10(racha=1), 11(racha=2), 12 sin registro pero cubierto por congelamiento inicial, 13(racha=3)
+          assertEqual(racha.rachaActual, 3);
+        });
+      });
+
+      // --- 6. Exportar e importar respaldo: debe quedar igual ---
+      prueba("exportar e importar un respaldo deja los datos igual", function () {
+        return limpiarStores(App.Storage.STORES).then(function () {
+          return Promise.all([
+            App.Storage.put("xp", { id: "actual", total: 250 }),
+            App.Storage.put("sesiones", { id: "2026-11-10", minutos: 15, metaCumplida: true }),
+            App.Storage.put("srs_cards", { id: "voc-1", frente: "deadline", atras: "fecha límite" })
+          ]);
+        }).then(function () {
+          return App.Storage.exportBackup();
+        }).then(function (respaldo) {
+          return limpiarStores(App.Storage.STORES).then(function () {
+            return App.Storage.importBackup(respaldo);
+          });
+        }).then(function () {
+          return Promise.all([App.Storage.get("xp", "actual"), App.Storage.get("sesiones", "2026-11-10"), App.Storage.get("srs_cards", "voc-1")]);
+        }).then(function (res) {
+          assertEqual(res[0].total, 250);
+          assertEqual(res[1].minutos, 15);
+          assertEqual(res[2].frente, "deadline");
+        });
+      });
+
+      // --- 7. Respaldo malformado o con HTML no rompe nada ni se ejecuta ---
+      prueba("respaldo malformado: se rechaza sin romper nada", function () {
+        return App.Storage.importBackup({ noEsUnRespaldoValido: true }).then(
+          function () {
+            throw new Error("debería haber rechazado un respaldo sin 'datos'");
+          },
+          function (err) {
+            assertTrue(err instanceof Error);
+          }
+        );
+      });
+
+      prueba("respaldo con HTML se guarda como texto inerte, no se ejecuta", function () {
+        var payload = '<img src=x onerror="window.__xssEjecutado = true">';
+        return limpiarStores(["srs_cards"]).then(function () {
+          return App.Storage.importBackup({ datos: { srs_cards: [{ id: "voc-xss", frente: payload, atras: "ok" }] } });
+        }).then(function () {
+          return App.Storage.get("srs_cards", "voc-xss");
+        }).then(function (fila) {
+          // IndexedDB solo guarda texto: no hay forma de que esto "se ejecute" aquí. El
+          // riesgo real está al RENDERIZAR este campo (ver DECISIONES.md D10, ya arreglado
+          // con App.Util.escaparHTML en las pantallas) -- esta prueba solo confirma que
+          // guardarlo/leerlo no rompe ni altera el contenido.
+          assertEqual(fila.frente, payload);
+          assertTrue(!window.__xssEjecutado, "el payload no debió ejecutarse nunca");
+        });
+      });
+
+      // --- 8. Repaso: crear tarjeta, calificar con SM-2, persistir y recargar ---
+      prueba("repaso: tarjeta nueva, calificada y recargada desde IndexedDB", function () {
+        return limpiarStores(["srs_cards"]).then(function () {
+          var tarjeta = App.SRS.tarjetaNueva("voc-999", new Date(2026, 10, 10));
+          tarjeta.frente = "deadline";
+          tarjeta.atras = "fecha límite";
+          var calificada = App.SRS.calificarTarjeta(tarjeta, 4, new Date(2026, 10, 10));
+          calificada.frente = tarjeta.frente;
+          calificada.atras = tarjeta.atras;
+          return App.Storage.put("srs_cards", calificada);
+        }).then(function () {
+          return App.Storage.get("srs_cards", "voc-999");
+        }).then(function (recargada) {
+          assertEqual(recargada.repeticiones, 1);
+          assertEqual(recargada.intervaloDias, 1);
+          assertEqual(recargada.frente, "deadline");
+        });
+      });
+
+      function correrTodo() {
+        var lista = document.getElementById("lista-resultados");
+        var resumen = document.getElementById("resumen");
+        lista.innerHTML = "";
+        resumen.textContent = "Corriendo…";
+        App.Storage = storagePrueba; // a partir de aquí, App.Datos lee/escribe en la base de prueba
+
+        var pasaron = 0;
+        var fallaron = 0;
+
+        return pruebas
+          .reduce(function (cadena, p) {
+            return cadena.then(function () {
+              return Promise.resolve()
+                .then(p.fn)
+                .then(function () {
+                  pasaron++;
+                  var li = document.createElement("li");
+                  li.className = "ok";
+                  li.innerHTML = "<span class=\"nombre\">✓ " + p.nombre + "</span>";
+                  lista.appendChild(li);
+                })
+                .catch(function (err) {
+                  fallaron++;
+                  var li = document.createElement("li");
+                  li.className = "fail";
+                  var nombreSpan = document.createElement("span");
+                  nombreSpan.className = "nombre";
+                  nombreSpan.textContent = "✗ " + p.nombre;
+                  var detalleSpan = document.createElement("span");
+                  detalleSpan.className = "detalle";
+                  detalleSpan.textContent = err && err.message ? err.message : String(err);
+                  li.appendChild(nombreSpan);
+                  li.appendChild(detalleSpan);
+                  lista.appendChild(li);
+                });
+            });
+          }, Promise.resolve())
+          .then(function () {
+            resumen.textContent = pasaron + " pasaron, " + fallaron + " fallaron (de " + pruebas.length + ")";
+          })
+          .then(function () {
+            App.Storage = storageReal; // restaurar siempre, pase lo que pase
+            return storagePrueba.eliminarBaseDeDatos();
+          })
+          .catch(function (err) {
+            App.Storage = storageReal;
+            resumen.textContent = "Error inesperado corriendo la batería: " + err.message;
+          });
+      }
+
+      document.getElementById("btn-correr").addEventListener("click", function () {
+        correrTodo();
+      });
+    </script>
+  </body>
+</html>

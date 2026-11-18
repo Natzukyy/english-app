@@ -337,5 +337,41 @@ rondas de crítica propias.
   probada con tests; el micrófono/reconocimiento real en iOS solo lo puede probar Alex —
   ver `REPORTE_MATUTINO_2.md`.
 
+## D19. Paso B — pruebas de integración de la capa de datos (IndexedDB real)
+- **`js/core/storage.js` se refactorizó a fábrica** (`App.Storage.crear(nombreDB, version)`)
+  para poder dar a las pruebas una base de datos separada sin tocar la real de Alex. El
+  comportamiento de `global.App.Storage` (la instancia real, `"app-ingles"`, versión 1) **no
+  cambió en nada** — mismo nombre, misma versión, misma API; solo se envolvió la lógica
+  existente en una función que ahora se puede llamar de nuevo con otro nombre. Cero cambio
+  de comportamiento para la app real.
+- **`tests/integracion.html`** (nuevo): página independiente, sin dependencias, que corre
+  contra IndexedDB de verdad (necesita un navegador real — `osascript`/JavaScriptCore no
+  tiene IndexedDB, por eso esta capa no se probaba antes). Usa
+  `App.Storage.crear("app-ingles-integracion-" + Date.now(), 1)` y reemplaza
+  temporalmente `App.Storage` con esa instancia mientras corre la batería (restaurando la
+  real al final, pase lo que pase) — como `App.Datos` lee `global.App.Storage.xxx` en cada
+  llamada (no guarda una referencia capturada), esto basta para que toda la capa de datos
+  "vea" la base de prueba sin tocar `datos.js`. Al terminar, borra la base de prueba entera
+  (`eliminarBaseDeDatos`, nuevo). Documentado en `CLAUDE.md` cómo abrirla.
+- **8 pruebas**: sesión del día, sumar minutos/XP, cambio de día, racha con mínimo cumplido
+  y sin cumplir (agotando congelamientos a propósito para ver la racha romperse de verdad),
+  congelación cubriendo un día saltado, exportar+reimportar, respaldo malformado (rechazado
+  limpio) y respaldo con HTML (se guarda como texto inerte — el riesgo real de XSS está en
+  renderizar ese campo, no en guardarlo, y ya se arregló del lado de renderizado en D10;
+  esta prueba solo confirma que IndexedDB no "ejecuta" nada, que es justo lo que se espera
+  de un almacén de clave-valor), y repaso (tarjeta nueva → calificar SM-2 → guardar →
+  recargar).
+- **No encontré un error real en `storage.js`/`datos.js`** al escribir estas pruebas
+  (sí encontré uno en la UI del diagnóstico durante el Paso 4 — ver D17). El
+  único ajuste que hice fue a mi PROPIA prueba de racha (mi primera versión asumía que un
+  solo día bajo el mínimo rompería la racha, pero los 2 congelamientos iniciales por
+  defecto lo cubren — no es un bug, es el comportamiento documentado en D7).
+- **No pude correr esta página yo mismo** (osascript no tiene IndexedDB ni DOM real —
+  ver BLOQUEOS.md B1/B3/B4, mismo límite de siempre esta sesión). Verifiqué sintaxis
+  (parser de JavaScriptCore) y que el servidor local la sirve junto con todos los `js/core/*`
+  que importa, y tracé a mano cada prueba contra los valores por defecto reales de
+  `App.Racha`/`App.XP`/`App.SRS`. Queda en el checklist de `REPORTE_MATUTINO_2.md` para que
+  Alex la corra de verdad y me diga si algo falla.
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*

@@ -9,7 +9,8 @@ App personal de Alex para llegar a B2 de inglés (CEFR) para fines de marzo 2027
 
 ## Comandos
 - Servir localmente: `python3 -m http.server 8000` desde la raíz del proyecto, abrir `http://localhost:8000`.
-- Correr pruebas: `./tests/run-tests.sh` (usa `osascript -l JavaScript`, no requiere nada instalado).
+- Correr pruebas (lógica pura, sin IndexedDB): `./tests/run-tests.sh` (usa `osascript -l JavaScript`, no requiere nada instalado).
+- Correr pruebas de integración de la capa de datos (storage.js/datos.js, con IndexedDB real): con el servidor local corriendo, abrir `http://localhost:8000/tests/integracion.html` en un navegador real y tocar "Correr todas las pruebas". No se puede correr desde la terminal (necesita IndexedDB de un navegador de verdad); usa su propia base de datos de pruebas (`app-ingles-integracion-<timestamp>`, se borra sola al terminar) y nunca toca la base real de la app.
 
 ## Estructura
 - `js/core/` — lógica de negocio pura (racha, XP, repaso espaciado, i18n, storage). Sin DOM. Es lo que se prueba.
