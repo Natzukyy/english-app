@@ -1,6 +1,8 @@
 (function (global) {
   "use strict";
 
+  var listenerVocesCambiaron = null; // referencia al listener de voiceschanged del render anterior, para no acumularlos
+
   function descargarJSON(objeto, nombreArchivo) {
     var blob = new Blob([JSON.stringify(objeto, null, 2)], { type: "application/json" });
     var url = URL.createObjectURL(blob);
@@ -41,6 +43,14 @@
         "<h2>Idioma de la interfaz</h2>" +
         '<button type="button" class="boton-secundario" id="btn-forzar-espanol">Forzar español</button>' +
         '<p class="texto-caption" style="margin-top:8px">Si lo activas, la interfaz se queda en español sin importar tus días activos.</p>' +
+        "</div>" +
+        '<div class="seccion">' +
+        "<h2>Voz del modelo</h2>" +
+        '<p class="texto-caption">Qué voz usan Habla, Diagnóstico y Conversación para leer en voz alta.</p>' +
+        '<div class="fila" style="margin-top:8px">' +
+        '<select id="select-voz" class="campo-texto"><option value="">Cargando voces…</option></select>' +
+        '<button type="button" class="boton-secundario" id="btn-probar-voz" style="margin-top:8px" disabled>Probar</button>' +
+        "</div>" +
         "</div>" +
         '<div class="seccion">' +
         "<h2>Conversación con IA</h2>" +
@@ -85,6 +95,65 @@
           });
         });
         contenedorTema.appendChild(boton);
+      });
+
+      var selectVoz = el.querySelector("#select-voz");
+      var btnProbarVoz = el.querySelector("#btn-probar-voz");
+
+      function poblarVoces() {
+        global.App.TTS.obtenerVocesListas().then(function (voces) {
+          var utiles = global.App.TTS.vocesUtiles(voces);
+          selectVoz.innerHTML = "";
+          if (!utiles.length) {
+            selectVoz.innerHTML = '<option value="">No hay voces en inglés disponibles en este dispositivo</option>';
+            selectVoz.disabled = true;
+            btnProbarVoz.disabled = true;
+            return;
+          }
+          var vozPorDefecto = global.App.TTS.elegirVoz(utiles, "");
+          var opcionAuto = document.createElement("option");
+          opcionAuto.value = "";
+          opcionAuto.textContent = "Automática (" + (vozPorDefecto ? vozPorDefecto.name : "—") + ")";
+          selectVoz.appendChild(opcionAuto);
+          utiles.forEach(function (voz) {
+            var opcion = document.createElement("option");
+            opcion.value = voz.name;
+            opcion.textContent = voz.name + " (" + voz.lang + ")";
+            selectVoz.appendChild(opcion);
+          });
+          var prefSigueDisponible = prefs.vozPreferidaTTS && utiles.some(function (voz) {
+            return voz.name === prefs.vozPreferidaTTS;
+          });
+          selectVoz.value = prefSigueDisponible ? prefs.vozPreferidaTTS : "";
+          selectVoz.disabled = false;
+          btnProbarVoz.disabled = false;
+        });
+      }
+      poblarVoces();
+      // En algunos navegadores getVoices() devuelve [] hasta que termina de cargar las voces
+      // del sistema; cuando eso pasa después del primer render, se vuelve a poblar la lista.
+      // Se quita el listener del render anterior para no acumularlos en speechSynthesis
+      // (este <select> se recrea cada vez que se entra a Ajustes).
+      if (global.speechSynthesis) {
+        if (listenerVocesCambiaron) {
+          global.speechSynthesis.removeEventListener("voiceschanged", listenerVocesCambiaron);
+        }
+        listenerVocesCambiaron = poblarVoces;
+        global.speechSynthesis.addEventListener("voiceschanged", listenerVocesCambiaron);
+      }
+
+      selectVoz.addEventListener("change", function () {
+        var valor = selectVoz.value;
+        global.App.Datos.guardarPreferencias(Object.assign({}, prefs, { vozPreferidaTTS: valor })).then(function () {
+          prefs.vozPreferidaTTS = valor;
+          global.App.TTS.establecerVozPreferida(valor);
+        });
+      });
+
+      btnProbarVoz.addEventListener("click", function () {
+        global.App.TTS.hablar("This is what the model sounds like.", "en-US").catch(function () {
+          /* sin Web Speech disponible: no hay nada que probar */
+        });
       });
 
       var btnForzarEspanol = el.querySelector("#btn-forzar-espanol");

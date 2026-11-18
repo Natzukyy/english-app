@@ -115,10 +115,9 @@
     sesion = { inicioMs: Date.now(), intentos: 0, correctas: 0, finalizada: false };
     historial = [];
     pintarPantallaChat(el, escenario, workerUrl, nivelCEFR);
+    // Nada de reproducción automática: el saludo se ve en texto; el audio solo suena si el
+    // usuario toca el botón de escuchar de la burbuja.
     agregarBurbuja(el, "asistente", SALUDO_POR_ESCENARIO[escenario]);
-    global.App.TTS.hablar(SALUDO_POR_ESCENARIO[escenario], "en-US").catch(function () {
-      /* sin Web Speech disponible: el saludo ya se ve en texto */
-    });
   }
 
   function pintarPantallaChat(el, escenario, workerUrl, nivelCEFR) {
@@ -151,10 +150,26 @@
     var esc = global.App.Util.escaparHTML;
     var zona = el.querySelector("#zona-historial");
     if (!zona) return;
+    var esAsistente = rol === "asistente";
     var div = document.createElement("div");
-    div.className = "burbuja " + (rol === "usuario" ? "burbuja-usuario" : "burbuja-asistente");
-    div.innerHTML = "<p>" + esc(texto) + "</p>";
+    div.className = "burbuja " + (esAsistente ? "burbuja-asistente" : "burbuja-usuario");
+    div.innerHTML =
+      "<p>" +
+      esc(texto) +
+      "</p>" +
+      (esAsistente
+        ? '<button type="button" class="enlace-discreto boton-escuchar-burbuja" aria-label="Escuchar" style="margin-top:4px">' +
+          global.App.Iconos.svg("bocina", 16) +
+          "</button>"
+        : "");
     zona.appendChild(div);
+    if (esAsistente) {
+      div.querySelector(".boton-escuchar-burbuja").addEventListener("click", function () {
+        global.App.TTS.hablar(texto, "en-US").catch(function () {
+          /* sin Web Speech disponible: el texto ya se ve en la burbuja */
+        });
+      });
+    }
     while (zona.children.length > UMBRAL_HISTORIAL_VISIBLE) {
       zona.removeChild(zona.firstChild);
     }
@@ -285,14 +300,10 @@
             "asistente",
             resultado.texto
           );
+          // Nada de reproducción automática: el audio solo suena si el usuario toca el botón
+          // de escuchar de la burbuja (ver agregarBurbuja).
           agregarBurbuja(el, "asistente", resultado.texto);
-          global.App.TTS.hablar(resultado.texto, "en-US")
-            .catch(function () {
-              /* sin Web Speech disponible: la respuesta ya se ve en texto */
-            })
-            .then(function () {
-              btnHablar.disabled = false;
-            });
+          btnHablar.disabled = false;
           return;
         }
         mostrarErrorConversacion(el, resultado.error, textoUsuario, escenario, workerUrl, nivelCEFR);

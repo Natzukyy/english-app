@@ -14,7 +14,8 @@
     // propio proxy primero (ver REPORTE_CONVERSACION_IA.md). La URL es la de su propio Worker,
     // nunca una clave de API -- esa vive solo en el servidor del proxy.
     conversacionActivada: false,
-    conversacionWorkerUrl: ""
+    conversacionWorkerUrl: "",
+    vozPreferidaTTS: "" // nombre de voz elegido en Ajustes; "" = sin preferencia, usa el orden por defecto de App.TTS
   };
 
   function obtenerPreferencias() {

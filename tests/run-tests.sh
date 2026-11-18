@@ -21,6 +21,7 @@ CORE_PURO=(
   "js/core/progreso.js"
   "js/core/habla.js"
   "js/core/conversacion.js"
+  "js/core/tts.js"
 )
 
 cat tests/lib/mini-test.js "${CORE_PURO[@]}" tests/core/*.test.js > "$TMP"

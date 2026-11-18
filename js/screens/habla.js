@@ -85,7 +85,7 @@
       "<span>" +
       (esSombra ? "Escuchar el modelo" : "Escuchar la pregunta") +
       "</span></button>" +
-      '<button type="button" class="boton-principal" id="btn-hablar" style="margin-top:12px" disabled>' +
+      '<button type="button" class="boton-principal" id="btn-hablar" style="margin-top:12px">' +
       global.App.Iconos.svg("microfono", 18) +
       " Hablar</button>" +
       '<div id="zona-reconocimiento"></div>' +
@@ -109,7 +109,7 @@
     }
 
     btnEscuchar.addEventListener("click", reproducirModelo);
-    reproducirModelo(); // se reproduce solo al entrar; "Hablar" queda deshabilitado hasta que termine
+    // Nada de reproducción automática: el modelo solo suena cuando el usuario toca "Escuchar".
 
     btnHablar.addEventListener("click", function () {
       iniciarReconocimiento(el, t, ejercicio, esSombra, fraseMostrada);

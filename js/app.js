@@ -76,18 +76,22 @@
     });
   }
 
-  function aplicarTemaInicial() {
-    // El valor por defecto ("sistema", sin atributo) ya sigue prefers-color-scheme vía CSS,
-    // así que la mayoría de la gente nunca ve el breve instante antes de que esto resuelva.
+  function aplicarPreferenciasIniciales() {
+    // El valor por defecto del tema ("sistema", sin atributo) ya sigue prefers-color-scheme
+    // vía CSS, así que la mayoría de la gente nunca ve el breve instante antes de que esto
+    // resuelva. La voz preferida de App.TTS vive en memoria (no en DOM), así que también se
+    // debe cargar aquí para que cualquier pantalla que hable (Habla, Diagnóstico, Conversación)
+    // la respete sin haber pasado antes por Ajustes.
     return global.App.Datos.obtenerPreferencias().then(function (prefs) {
       global.App.Util.aplicarTema(prefs.tema);
+      global.App.TTS.establecerVozPreferida(prefs.vozPreferidaTTS);
     });
   }
 
   function iniciar() {
     registrarNav();
     registrarServiceWorker();
-    aplicarTemaInicial();
+    aplicarPreferenciasIniciales();
     global.App.I18n.cargarDesdeArchivos()
       .then(function (res) {
         contexto.strings = res.strings;
