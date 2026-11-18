@@ -38,12 +38,19 @@
     if (!sesion || sesion.indice >= sesion.cola.length) {
       finalizarSesionSiActiva().then(function (resultado) {
         el.innerHTML =
+          '<div class="pantalla-vista">' +
           '<h1 data-i18n-live="repaso.titulo"></h1>' +
-          '<div class="tarjeta"><p>¡Listo por hoy! Repasaste ' +
+          '<div class="hero-bloque">' +
+          '<span style="color:var(--exito)">' +
+          global.App.Iconos.svg("check", 32) +
+          "</span>" +
+          '<p class="texto-tenue" style="margin-top:8px">Repasaste ' +
           (sesion ? sesion.indice : 0) +
-          " tarjeta(s)." +
-          (resultado && resultado.xpGanada ? " +" + resultado.xpGanada + " XP." : "") +
-          "</p></div>";
+          " tarjeta(s)" +
+          (resultado && resultado.xpGanada ? " · +" + resultado.xpGanada + " XP" : "") +
+          "</p>" +
+          "</div>" +
+          "</div>";
         el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
           nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
         });
@@ -53,34 +60,40 @@
 
     var tarjeta = sesion.cola[sesion.indice];
     var esc = global.App.Util.escaparHTML;
+    var porcentaje = Math.round((sesion.indice / sesion.cola.length) * 100);
     // tarjeta.frente/atras vienen de IndexedDB (sembradas por nosotros, pero sustituibles por
     // un respaldo importado): se escapan antes de insertarlas como HTML.
     el.innerHTML =
+      '<div class="pantalla-vista">' +
       '<h1 data-i18n-live="repaso.titulo"></h1>' +
-      '<p class="texto-tenue">' +
+      '<div class="fila-cabeza"><span class="texto-tenue num-tabular">' +
       (sesion.indice + 1) +
       " / " +
       sesion.cola.length +
-      "</p>" +
-      '<div class="tarjeta hero-bloque">' +
-      '<p style="font-size:22px">' +
+      "</span></div>" +
+      '<div class="barra-progreso"><span id="barra-repaso" style="width:0%"></span></div>' +
+      '<div class="tarjeta tarjeta-repaso" id="tarjeta-actual" style="margin-top:24px">' +
+      '<p class="frente">' +
       esc(tarjeta.frente) +
       "</p>" +
-      '<p class="texto-tenue" id="repaso-atras" style="display:none;margin-top:8px">' +
+      '<p class="atras" id="repaso-atras" style="display:none">' +
       esc(tarjeta.atras) +
       "</p>" +
       "</div>" +
-      '<button type="button" class="boton-principal" id="btn-mostrar">Mostrar respuesta</button>' +
-      '<div id="repaso-calificar" style="display:none;margin-top:12px;grid-template-columns:1fr 1fr;gap:8px">' +
+      '<button type="button" class="boton-principal" id="btn-mostrar" style="margin-top:24px">Mostrar respuesta</button>' +
+      '<div id="repaso-calificar" class="grid-calificar" style="display:none">' +
       '<button type="button" class="boton-secundario" data-calidad="1">No la sabía</button>' +
       '<button type="button" class="boton-secundario" data-calidad="3">Difícil</button>' +
       '<button type="button" class="boton-secundario" data-calidad="4">Bien</button>' +
       '<button type="button" class="boton-secundario" data-calidad="5">Fácil</button>' +
+      "</div>" +
       "</div>";
 
     el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
       nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
     });
+
+    global.App.Util.animarBarra(el.querySelector("#barra-repaso"), porcentaje);
 
     el.querySelector("#btn-mostrar").addEventListener("click", function () {
       el.querySelector("#repaso-atras").style.display = "block";
@@ -91,15 +104,28 @@
     el.querySelectorAll("#repaso-calificar button").forEach(function (boton) {
       boton.addEventListener("click", function () {
         var calidad = Number(boton.getAttribute("data-calidad"));
-        var actualizada = global.App.SRS.calificarTarjeta(tarjeta, calidad, new Date());
-        actualizada.frente = tarjeta.frente;
-        actualizada.atras = tarjeta.atras;
-        actualizada.tipo = tarjeta.tipo;
-        if (calidad >= 3) sesion.correctas += 1;
-        global.App.Storage.put("srs_cards", actualizada).then(function () {
-          sesion.indice += 1;
-          pintarTarjetaActual(el, ctx, t);
+        var esCorrecta = calidad >= 3;
+
+        // Feedback visual (pulso + borde) antes de avanzar; no cambia la calificación ni el
+        // SM-2, solo retrasa ~220ms el avance para que la animación (transform/opacity) se vea.
+        el.querySelectorAll("#repaso-calificar button").forEach(function (b) {
+          b.disabled = true;
         });
+        var tarjetaEl = el.querySelector("#tarjeta-actual");
+        tarjetaEl.classList.add(esCorrecta ? "estado-correcto" : "estado-incorrecto");
+        tarjetaEl.classList.add(esCorrecta ? "pulso-correcto" : "pulso-incorrecto");
+
+        setTimeout(function () {
+          var actualizada = global.App.SRS.calificarTarjeta(tarjeta, calidad, new Date());
+          actualizada.frente = tarjeta.frente;
+          actualizada.atras = tarjeta.atras;
+          actualizada.tipo = tarjeta.tipo;
+          if (esCorrecta) sesion.correctas += 1;
+          global.App.Storage.put("srs_cards", actualizada).then(function () {
+            sesion.indice += 1;
+            pintarTarjetaActual(el, ctx, t);
+          });
+        }, 220);
       });
     });
   }
