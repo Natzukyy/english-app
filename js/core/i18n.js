@@ -5,22 +5,20 @@
   "use strict";
 
   /**
-   * Calcula el nivel de interfaz (0-3) según sesiones completadas y XP acumulado.
-   * Usa el máximo de los dos criterios (basta con cumplir uno) para no castigar
-   * a alguien que sube de XP rápido pero con pocas sesiones, o viceversa.
-   * @param {{sesiones:number, xp:number}} progreso
-   * @param {{niveles: Array<{nivel:number,minSesiones:number,minXP:number}>}} umbrales
+   * Calcula el nivel de interfaz (0-3) según días activos (días en que se cumplió el
+   * mínimo de la racha, 5 min). NO depende de XP ni de número de sesiones (ver
+   * DECISIONES.md D2: con XP se llegaba a nivel 3 en semanas; con solo días activos
+   * se necesitan ~90 días de constancia real).
+   * @param {{diasActivos:number}} progreso
+   * @param {{niveles: Array<{nivel:number,minDiasActivos:number}>}} umbrales
    * @returns {number} nivel 0..3
    */
   function calcularNivel(progreso, umbrales) {
-    var sesiones = (progreso && progreso.sesiones) || 0;
-    var xp = (progreso && progreso.xp) || 0;
+    var diasActivos = (progreso && progreso.diasActivos) || 0;
     var niveles = (umbrales && umbrales.niveles) || [];
     var nivelAlcanzado = 0;
     niveles.forEach(function (def) {
-      var cumpleSesiones = sesiones >= def.minSesiones;
-      var cumpleXP = xp >= def.minXP;
-      if ((cumpleSesiones || cumpleXP) && def.nivel > nivelAlcanzado) {
+      if (diasActivos >= def.minDiasActivos && def.nivel > nivelAlcanzado) {
         nivelAlcanzado = def.nivel;
       }
     });

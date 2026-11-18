@@ -55,6 +55,28 @@
     Test.assertEqual(estado.rachaActual, 2);
   });
 
+  Test.test("contarDiasActivos: un día sin cumplir el mínimo no cuenta", function () {
+    var historial = { "2026-11-10": 10, "2026-11-11": 4 };
+    Test.assertEqual(App.Racha.contarDiasActivos(historial, 5), 1);
+  });
+
+  Test.test("contarDiasActivos: justo en el mínimo sí cuenta", function () {
+    var historial = { "2026-11-10": 5 };
+    Test.assertEqual(App.Racha.contarDiasActivos(historial, 5), 1);
+  });
+
+  Test.test("contarDiasActivos: sin historial da 0", function () {
+    Test.assertEqual(App.Racha.contarDiasActivos({}, 5), 0);
+  });
+
+  Test.test("contarDiasActivos: cuenta todos los días que cumplen, sin importar el orden", function () {
+    var historial = {};
+    for (var i = 0; i < 90; i++) {
+      historial[App.Fecha.sumarDias("2026-01-01", i)] = i % 2 === 0 ? 5 : 2; // la mitad no cumple
+    }
+    Test.assertEqual(App.Racha.contarDiasActivos(historial, 5), 45);
+  });
+
   Test.test("calcularEstado: se gana 1 congelamiento nuevo cada 7 días seguidos, sin pasar el máximo", function () {
     var sinInicial = Object.assign({}, opts, { congelamientosIniciales: 0 });
     var historial = {};

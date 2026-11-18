@@ -15,6 +15,18 @@
     return (minutos || 0) >= metaMinutosDia;
   }
 
+  /** Cuenta cuántos días del historial cumplen el mínimo (días activos). No depende de
+   * XP ni de número de sesiones — solo de si ese día se llegó al mínimo. Ver DECISIONES.md D2. */
+  function contarDiasActivos(minutosPorDia, metaMinutosDia) {
+    var meta = typeof metaMinutosDia === "number" ? metaMinutosDia : OPCIONES_POR_DEFECTO.metaMinutosDia;
+    var dias = Object.keys(minutosPorDia || {});
+    var cuenta = 0;
+    dias.forEach(function (dia) {
+      if (cumpleMeta(minutosPorDia[dia], meta)) cuenta += 1;
+    });
+    return cuenta;
+  }
+
   /**
    * Recalcula el estado de la racha simulando día por día, en orden cronológico,
    * desde el primer día con registro hasta "hoy".
@@ -71,6 +83,7 @@
   global.App.Racha = {
     OPCIONES_POR_DEFECTO: OPCIONES_POR_DEFECTO,
     cumpleMeta: cumpleMeta,
+    contarDiasActivos: contarDiasActivos,
     calcularEstado: calcularEstado
   };
 })(typeof window !== "undefined" ? window : globalThis);

@@ -1,10 +1,10 @@
 (function () {
   var umbrales = {
     niveles: [
-      { nivel: 0, minSesiones: 0, minXP: 0 },
-      { nivel: 1, minSesiones: 20, minXP: 200 },
-      { nivel: 2, minSesiones: 60, minXP: 800 },
-      { nivel: 3, minSesiones: 150, minXP: 2500 }
+      { nivel: 0, minDiasActivos: 0 },
+      { nivel: 1, minDiasActivos: 14 },
+      { nivel: 2, minDiasActivos: 40 },
+      { nivel: 3, minDiasActivos: 90 }
     ]
   };
 
@@ -14,20 +14,32 @@
     "a.critica": { categoria: "critica", es: "Error", en: "Error (en)" }
   };
 
-  Test.test("calcularNivel: 0 sesiones y 0 xp da nivel 0", function () {
-    Test.assertEqual(App.I18n.calcularNivel({ sesiones: 0, xp: 0 }, umbrales), 0);
+  Test.test("calcularNivel: 0 días activos da nivel 0", function () {
+    Test.assertEqual(App.I18n.calcularNivel({ diasActivos: 0 }, umbrales), 0);
   });
 
-  Test.test("calcularNivel: justo en el umbral de sesiones del nivel 1", function () {
-    Test.assertEqual(App.I18n.calcularNivel({ sesiones: 20, xp: 0 }, umbrales), 1);
+  Test.test("calcularNivel: 13 días activos todavía es nivel 0", function () {
+    Test.assertEqual(App.I18n.calcularNivel({ diasActivos: 13 }, umbrales), 0);
   });
 
-  Test.test("calcularNivel: XP alto compensa pocas sesiones", function () {
-    Test.assertEqual(App.I18n.calcularNivel({ sesiones: 1, xp: 2600 }, umbrales), 3);
+  Test.test("calcularNivel: 14 días activos es nivel 1", function () {
+    Test.assertEqual(App.I18n.calcularNivel({ diasActivos: 14 }, umbrales), 1);
   });
 
-  Test.test("calcularNivel: un poco debajo del umbral se queda en el nivel anterior", function () {
-    Test.assertEqual(App.I18n.calcularNivel({ sesiones: 59, xp: 799 }, umbrales), 1);
+  Test.test("calcularNivel: 39 días activos todavía es nivel 1", function () {
+    Test.assertEqual(App.I18n.calcularNivel({ diasActivos: 39 }, umbrales), 1);
+  });
+
+  Test.test("calcularNivel: 40 días activos es nivel 2", function () {
+    Test.assertEqual(App.I18n.calcularNivel({ diasActivos: 40 }, umbrales), 2);
+  });
+
+  Test.test("calcularNivel: 89 días activos todavía es nivel 2", function () {
+    Test.assertEqual(App.I18n.calcularNivel({ diasActivos: 89 }, umbrales), 2);
+  });
+
+  Test.test("calcularNivel: 90 días activos es nivel 3", function () {
+    Test.assertEqual(App.I18n.calcularNivel({ diasActivos: 90 }, umbrales), 3);
   });
 
   Test.test("texto: nivel 0 siempre es español, incluso lo corto", function () {

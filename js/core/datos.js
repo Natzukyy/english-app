@@ -5,7 +5,7 @@
 (function (global) {
   "use strict";
 
-  var PREFERENCIAS_POR_DEFECTO = { id: "preferencias", metaMinutosDia: 15, tema: "sistema" };
+  var PREFERENCIAS_POR_DEFECTO = { id: "preferencias", metaMinutosDia: 15, tema: "sistema", forzarEspanol: false };
 
   function obtenerPreferencias() {
     return global.App.Storage.get("settings", "preferencias").then(function (p) {

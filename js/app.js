@@ -22,8 +22,16 @@
   }
 
   function actualizarNivelInterfaz() {
-    return Promise.all([global.App.Storage.getAll("sesiones"), global.App.Datos.obtenerXP()]).then(function (res) {
-      contexto.nivelInterfaz = global.App.I18n.calcularNivel({ sesiones: res[0].length, xp: res[1].total }, contexto.umbrales);
+    return Promise.all([global.App.Datos.obtenerMinutosPorDia(), global.App.Datos.obtenerPreferencias()]).then(function (res) {
+      var minutosPorDia = res[0];
+      var prefs = res[1];
+      if (prefs.forzarEspanol) {
+        contexto.nivelInterfaz = 0;
+        return;
+      }
+      var minimoRacha = global.App.Racha.OPCIONES_POR_DEFECTO.metaMinutosDia;
+      var diasActivos = global.App.Racha.contarDiasActivos(minutosPorDia, minimoRacha);
+      contexto.nivelInterfaz = global.App.I18n.calcularNivel({ diasActivos: diasActivos }, contexto.umbrales);
     });
   }
 

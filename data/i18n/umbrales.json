@@ -1,10 +1,10 @@
 {
   "_revisar": true,
-  "_nota": "Valores PROVISIONALES (ver DECISIONES.md D2). Alex debe ajustarlos; son editables aquí sin tocar código.",
+  "_nota": "Valores PROVISIONALES (ver DECISIONES.md D2). El nivel de interfaz depende SOLO de días activos (días en que se cumplió el mínimo de la racha, 5 min) -- no de XP ni de número de sesiones. Alex debe ajustarlos; son editables aquí sin tocar código.",
   "niveles": [
-    { "nivel": 0, "minSesiones": 0, "minXP": 0 },
-    { "nivel": 1, "minSesiones": 20, "minXP": 200 },
-    { "nivel": 2, "minSesiones": 60, "minXP": 800 },
-    { "nivel": 3, "minSesiones": 150, "minXP": 2500 }
+    { "nivel": 0, "minDiasActivos": 0 },
+    { "nivel": 1, "minDiasActivos": 14 },
+    { "nivel": 2, "minDiasActivos": 40 },
+    { "nivel": 3, "minDiasActivos": 90 }
   ]
 }

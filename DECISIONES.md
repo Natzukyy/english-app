@@ -19,13 +19,16 @@ Registro de decisiones tomadas sin preguntar (modo nocturno), con alternativas c
 - **Riesgo:** sin bundler, hay que cuidar a mano el orden de carga de `<script>` y las rutas relativas del Service Worker.
 
 ## D2. Umbrales de "cuánto inglés en la interfaz" (provisional, `revisar: true`)
-- **Qué elegí (valores PROVISIONALES, pensados para ajustarse):**
-  - Nivel 0 (0–19 sesiones de repaso completadas O XP < 200): interfaz 100% español.
-  - Nivel 1 (20–59 sesiones O XP 200–799): interfaz ~70% español / 30% inglés (botones y etiquetas cortas en inglés, instrucciones largas en español).
-  - Nivel 2 (60–149 sesiones O XP 800–2499): ~40% español / 60% inglés.
-  - Nivel 3 (150+ sesiones O XP 2500+): interfaz 100% inglés, con toggle manual para volver a español si se necesita.
-- **Por qué estos números:** son una estimación razonable de progresión de uso diario (meta mínima 5 min/día), no un dato medido. Los dejo como configuración editable en `data/i18n/umbrales.json`, no hardcodeados.
-- **Alternativa:** preguntarte los umbrales exactos como pide `PROMPT_BASE.md` — descartada esta noche por la regla de no preguntar; quedó marcada para tu revisión explícita en el reporte matutino.
+- **Versión original (de la noche autónoma, YA NO VIGENTE):** el nivel dependía de sesiones completadas O de XP acumulado (lo que se cumpliera primero). Alex detectó el problema al revisarlo: con XP alto se llegaba a nivel 3 (interfaz 100% inglés) en 8–36 días, sin relación real con cuánto inglés se había practicado de forma constante.
+- **Corrección de Alex (elegida: opción A):** el nivel de interfaz depende **solo de días activos** — días en que se cumplió el mínimo de la racha (5 min, el mínimo fijo de `App.Racha`, no la meta diaria configurable de 5/15/30). XP y número de sesiones siguen existiendo para todo lo demás (progreso, racha, repaso), pero ya no entran en esta regla.
+  - Nivel 0: 0–13 días activos — interfaz 100% español.
+  - Nivel 1: 14–39 días activos — corto en inglés, largo en español.
+  - Nivel 2: 40–89 días activos — todo en inglés salvo mensajes críticos.
+  - Nivel 3: 90+ días activos — interfaz 100% inglés.
+  - Valores en `data/i18n/umbrales.json` (`minDiasActivos` por nivel), editables, marcados `revisar: true`.
+- **Por qué 14/40/90:** son semanas/meses redondos de constancia real (2 semanas, ~6 semanas, ~3 meses), no una medición — igual de provisionales que antes, pero ahora miden lo que Alex quería medir: consistencia de uso, no acumulación de puntos.
+- **Selector manual:** agregué un botón "Forzar español" en Ajustes (`preferencias.forzarEspanol`, default `false`). Si está activo, la interfaz se queda en español sin importar los días activos — para cuando Alex lo necesite sin tener que perder su progreso de días activos.
+- **Implementación:** `App.Racha.contarDiasActivos(minutosPorDia, metaMinutosDia)` (nueva, pura, con pruebas) cuenta los días que cumplen el mínimo; `App.I18n.calcularNivel` ahora recibe `{diasActivos}` en vez de `{sesiones, xp}`. `js/app.js` arma `diasActivos` a partir de `App.Datos.obtenerMinutosPorDia()` antes de cada render.
 
 ## D3. Algoritmo de repaso espaciado: SM-2 (no FSRS)
 1. FSRS da mejores intervalos, pero necesita un historial de repasos reales (ideal: cientos) para ajustar sus parámetros por usuario; esta app arranca en cero, sin ese historial.

@@ -37,6 +37,11 @@
         "<h2>Meta diaria</h2>" +
         '<div class="fila-botones" id="botones-meta"></div>' +
         "</div>" +
+        '<div class="seccion">' +
+        "<h2>Idioma de la interfaz</h2>" +
+        '<button type="button" class="boton-secundario" id="btn-forzar-espanol">Forzar español</button>' +
+        '<p class="texto-caption" style="margin-top:8px">Si lo activas, la interfaz se queda en español sin importar tus días activos.</p>' +
+        "</div>" +
         '<div class="fila">' +
         '<button type="button" class="enlace-discreto" id="btn-exportar" data-i18n-live="ajustes.exportar"></button>' +
         "</div>" +
@@ -74,6 +79,17 @@
           });
         });
         contenedorTema.appendChild(boton);
+      });
+
+      var btnForzarEspanol = el.querySelector("#btn-forzar-espanol");
+      if (prefs.forzarEspanol) btnForzarEspanol.setAttribute("aria-current", "true");
+      btnForzarEspanol.addEventListener("click", function () {
+        var nuevoValor = !prefs.forzarEspanol;
+        global.App.Datos.guardarPreferencias(Object.assign({}, prefs, { forzarEspanol: nuevoValor })).then(function () {
+          prefs.forzarEspanol = nuevoValor;
+          if (nuevoValor) btnForzarEspanol.setAttribute("aria-current", "true");
+          else btnForzarEspanol.removeAttribute("aria-current");
+        });
       });
 
       var contenedorMeta = el.querySelector("#botones-meta");
