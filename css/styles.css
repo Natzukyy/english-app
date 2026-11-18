@@ -995,6 +995,17 @@ button.tarjeta-habilidad:active {
     margin-right: auto;
   }
 
+  /* Con 100dvh completo y solo 2 filas de contenido, Inicio dejaba medio viewport vacío
+     abajo de "Tu camino" en laptop -- cumplía "sin scroll" pero se veía a medio llenar.
+     Centrar el bloque completo (título + cuerpo) en el alto disponible lee como una
+     composición deliberada (el "Hoy" de una bitácora), no como una página cortada a la
+     mitad; en móvil no hace falta, ya llena el alto de sobra. */
+  main:has(> .pantalla-vista > .inicio-cuerpo) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   /* Inicio en laptop: meta/CTA a la izquierda, habilidades 2x2 a la derecha, "Tu camino"
      horizontal abajo a todo el ancho (sigue en fila, igual que en móvil). */
   .inicio-cuerpo {
