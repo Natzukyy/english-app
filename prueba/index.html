@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pruebas iPhone — Inglés B2</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 16px;
+        background: #0d0f24;
+        color: #e8e9f5;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.45;
+      }
+      h1 {
+        font-size: 1.3rem;
+        margin: 0 0 8px;
+      }
+      p.intro {
+        color: #b3b6d6;
+        font-size: 0.95rem;
+        margin: 0 0 20px;
+      }
+      section {
+        background: #161937;
+        border: 1px solid #2a2e5c;
+        border-radius: 10px;
+        padding: 14px;
+        margin-bottom: 14px;
+      }
+      section h2 {
+        font-size: 1rem;
+        margin: 0 0 8px;
+      }
+      .botones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+      button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 10px 16px;
+        font-size: 0.95rem;
+        border-radius: 8px;
+        border: none;
+        background: #5eead4;
+        color: #0d0f24;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button.secundario {
+        background: #2a2e5c;
+        color: #e8e9f5;
+      }
+      button:active {
+        opacity: 0.8;
+      }
+      pre {
+        white-space: pre-wrap;
+        word-break: break-word;
+        background: #0a0c1f;
+        border: 1px solid #2a2e5c;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 0.82rem;
+        margin: 0;
+        max-height: 260px;
+        overflow: auto;
+      }
+      .estado-ok {
+        color: #5eead4;
+      }
+      .estado-mal {
+        color: #ff8aa0;
+      }
+      audio {
+        width: 100%;
+        margin-top: 8px;
+      }
+      #reporte-final {
+        position: sticky;
+        bottom: 0;
+        background: #161937;
+        border: 1px solid #2a2e5c;
+        border-radius: 10px;
+        padding: 14px;
+      }
+      #estado-copiar {
+        display: block;
+        margin-top: 8px;
+        font-size: 0.85rem;
+        color: #b3b6d6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pruebas de compatibilidad — Inglés B2</h1>
+    <p class="intro">
+      Corre cada prueba con su botón (en orden, de arriba hacia abajo). Cada resultado se muestra tal cual, sin
+      interpretar — si algo falla, verás el mensaje de error textual. Al final, usa "Copiar reporte" y pégalo de
+      vuelta en el chat.
+    </p>
+
+    <section id="seccion-1">
+      <h2>1. Entorno</h2>
+      <div class="botones">
+        <button id="boton-1">Ejecutar</button>
+      </div>
+      <pre id="resultado-1">No ejecutada.</pre>
+    </section>
+
+    <section id="seccion-2">
+      <h2>2. Micrófono (grabar 4s y reproducir)</h2>
+      <div class="botones">
+        <button id="boton-2">Ejecutar</button>
+      </div>
+      <pre id="resultado-2">No ejecutada.</pre>
+    </section>
+
+    <section id="seccion-3">
+      <h2>3. Reconocimiento de voz (en-US, ~8s)</h2>
+      <div class="botones">
+        <button id="boton-3">Ejecutar</button>
+      </div>
+      <pre id="resultado-3">No ejecutada.</pre>
+    </section>
+
+    <section id="seccion-4">
+      <h2>4. Síntesis de voz (voces en-*)</h2>
+      <div class="botones">
+        <button id="boton-4">Ejecutar</button>
+      </div>
+      <pre id="resultado-4">No ejecutada.</pre>
+    </section>
+
+    <section id="seccion-5">
+      <h2>5. Notificaciones</h2>
+      <div class="botones">
+        <button id="boton-5">Ejecutar</button>
+        <button id="boton-5-permiso" class="secundario" style="display: none">Pedir permiso (toque)</button>
+      </div>
+      <pre id="resultado-5">No ejecutada.</pre>
+    </section>
+
+    <div id="reporte-final">
+      <button id="boton-copiar">Copiar reporte</button>
+      <span id="estado-copiar"></span>
+    </div>
+
+    <script>
+      "use strict";
+
+      function marcar(id, ok, texto) {
+        var pre = document.getElementById(id);
+        pre.textContent = texto;
+        pre.className = ok === null ? "" : ok ? "estado-ok" : "estado-mal";
+      }
+
+      // --- 1. Entorno ---
+      document.getElementById("boton-1").addEventListener("click", function () {
+        var lineas = [];
+        lineas.push("user agent: " + navigator.userAgent);
+        lineas.push("contexto seguro (HTTPS): " + window.isSecureContext);
+        var standaloneMatchMedia = false;
+        try {
+          standaloneMatchMedia = window.matchMedia("(display-mode: standalone)").matches;
+        } catch (e) {
+          standaloneMatchMedia = "error: " + e.message;
+        }
+        lineas.push("display-mode standalone: " + standaloneMatchMedia);
+        lineas.push("navigator.standalone (iOS): " + (typeof navigator.standalone !== "undefined" ? navigator.standalone : "no existe en este navegador"));
+
+        if (!("serviceWorker" in navigator)) {
+          lineas.push("service worker: API no disponible en este navegador");
+          marcar("resultado-1", false, lineas.join("\n"));
+          return;
+        }
+        navigator.serviceWorker
+          .getRegistration()
+          .then(function (reg) {
+            lineas.push("service worker: " + (reg ? "registrado, scope=" + reg.scope : "no registrado"));
+            marcar("resultado-1", true, lineas.join("\n"));
+          })
+          .catch(function (err) {
+            lineas.push("service worker: error al consultar -> " + err.name + ": " + err.message);
+            marcar("resultado-1", false, lineas.join("\n"));
+          });
+      });
+
+      // --- 2. Micrófono ---
+      document.getElementById("boton-2").addEventListener("click", function () {
+        var pre = document.getElementById("resultado-2");
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+          marcar("resultado-2", false, "getUserMedia no disponible en este navegador.");
+          return;
+        }
+        if (typeof MediaRecorder === "undefined") {
+          marcar("resultado-2", false, "MediaRecorder no disponible en este navegador.");
+          return;
+        }
+
+        var candidatos = ["audio/mp4", "audio/webm;codecs=opus", "audio/webm", "audio/aac", "audio/ogg;codecs=opus"];
+        var soportados = candidatos
+          .map(function (tipo) {
+            var soportado = false;
+            try {
+              soportado = MediaRecorder.isTypeSupported(tipo);
+            } catch (e) {
+              soportado = "error: " + e.message;
+            }
+            return tipo + " -> " + soportado;
+          })
+          .join("\n");
+
+        marcar("resultado-2", null, "Pidiendo permiso de micrófono...\n\nisTypeSupported:\n" + soportados);
+
+        navigator.mediaDevices
+          .getUserMedia({ audio: true })
+          .then(function (stream) {
+            var trozos = [];
+            var grabador;
+            try {
+              grabador = new MediaRecorder(stream);
+            } catch (e) {
+              marcar("resultado-2", false, "MediaRecorder lanzó error al crearse -> " + e.name + ": " + e.message + "\n\nisTypeSupported:\n" + soportados);
+              stream.getTracks().forEach(function (t) {
+                t.stop();
+              });
+              return;
+            }
+            grabador.addEventListener("dataavailable", function (ev) {
+              if (ev.data && ev.data.size > 0) trozos.push(ev.data);
+            });
+            grabador.addEventListener("stop", function () {
+              stream.getTracks().forEach(function (t) {
+                t.stop();
+              });
+              var blob = new Blob(trozos, { type: grabador.mimeType || "audio/webm" });
+              var url = URL.createObjectURL(blob);
+              pre.textContent =
+                "Permiso concedido. mimeType usado: " +
+                (grabador.mimeType || "(vacío)") +
+                ", tamaño: " +
+                blob.size +
+                " bytes.\n\nisTypeSupported:\n" +
+                soportados +
+                "\n\nReproduce abajo para confirmar que se escucha:";
+              pre.className = "estado-ok";
+              var audio = document.createElement("audio");
+              audio.controls = true;
+              audio.src = url;
+              pre.appendChild(audio);
+            });
+            grabador.addEventListener("error", function (ev) {
+              marcar("resultado-2", false, "MediaRecorder error en grabación -> " + (ev.error ? ev.error.name + ": " + ev.error.message : "desconocido"));
+            });
+
+            marcar("resultado-2", null, "Grabando 4 segundos...\n\nisTypeSupported:\n" + soportados);
+            grabador.start();
+            setTimeout(function () {
+              grabador.stop();
+            }, 4000);
+          })
+          .catch(function (err) {
+            marcar("resultado-2", false, "getUserMedia rechazó -> " + err.name + ": " + err.message + "\n\nisTypeSupported:\n" + soportados);
+          });
+      });
+
+      // --- 3. Reconocimiento de voz ---
+      document.getElementById("boton-3").addEventListener("click", function () {
+        var Reconocedor = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!Reconocedor) {
+          marcar("resultado-3", false, "SpeechRecognition / webkitSpeechRecognition no existe en este navegador (esperado en algunas versiones de iOS Safari).");
+          return;
+        }
+
+        var parcial = "";
+        var finales = [];
+        var reconocimiento;
+        try {
+          reconocimiento = new Reconocedor();
+        } catch (e) {
+          marcar("resultado-3", false, "Error al crear el reconocedor -> " + e.name + ": " + e.message);
+          return;
+        }
+        reconocimiento.lang = "en-US";
+        reconocimiento.continuous = true;
+        reconocimiento.interimResults = true;
+
+        function actualizarPantalla() {
+          marcar(
+            "resultado-3",
+            null,
+            "Escuchando (en-US) durante ~8s. Habla en inglés.\n\nParcial: " + parcial + "\n\nFinal(es):\n" + finales.join("\n")
+          );
+        }
+        actualizarPantalla();
+
+        reconocimiento.addEventListener("result", function (ev) {
+          parcial = "";
+          for (var i = ev.resultIndex; i < ev.results.length; i++) {
+            var texto = ev.results[i][0].transcript;
+            if (ev.results[i].isFinal) {
+              finales.push(texto);
+            } else {
+              parcial += texto;
+            }
+          }
+          actualizarPantalla();
+        });
+        reconocimiento.addEventListener("error", function (ev) {
+          marcar("resultado-3", false, "Error de reconocimiento -> " + ev.error + (ev.message ? ": " + ev.message : ""));
+        });
+        reconocimiento.addEventListener("end", function () {
+          var pre = document.getElementById("resultado-3");
+          if (pre.className !== "estado-mal") {
+            marcar("resultado-3", true, "Terminado.\n\nParcial (al cortar): " + parcial + "\n\nFinal(es):\n" + (finales.length ? finales.join("\n") : "(ninguno)"));
+          }
+        });
+
+        try {
+          reconocimiento.start();
+        } catch (e) {
+          marcar("resultado-3", false, "reconocimiento.start() lanzó error -> " + e.name + ": " + e.message);
+          return;
+        }
+        setTimeout(function () {
+          try {
+            reconocimiento.stop();
+          } catch (e) {
+            /* ya pudo haber terminado solo */
+          }
+        }, 8000);
+      });
+
+      // --- 4. Síntesis de voz ---
+      document.getElementById("boton-4").addEventListener("click", function () {
+        if (!("speechSynthesis" in window)) {
+          marcar("resultado-4", false, "window.speechSynthesis no existe en este navegador.");
+          return;
+        }
+        marcar("resultado-4", null, "Buscando voces...");
+
+        function continuar(voces) {
+          var vocesIngles = voces.filter(function (v) {
+            return v.lang && v.lang.toLowerCase().indexOf("en") === 0;
+          });
+          var listado = voces
+            .map(function (v) {
+              return v.name + " (" + v.lang + (v.default ? ", default" : "") + ")";
+            })
+            .join("\n");
+
+          if (!vocesIngles.length) {
+            marcar("resultado-4", false, "No se encontraron voces en-*. Voces totales reportadas (" + voces.length + "):\n" + (listado || "(ninguna)"));
+            return;
+          }
+
+          var utterance = new SpeechSynthesisUtterance("This is a test of English speech synthesis on this device.");
+          utterance.voice = vocesIngles[0];
+          utterance.lang = vocesIngles[0].lang;
+
+          utterance.addEventListener("end", function () {
+            marcar("resultado-4", true, "Reproducido con: " + vocesIngles[0].name + " (" + vocesIngles[0].lang + ")\n\nVoces en-* encontradas (" + vocesIngles.length + "):\n" + vocesIngles.map(function (v) { return v.name + " (" + v.lang + ")"; }).join("\n"));
+          });
+          utterance.addEventListener("error", function (ev) {
+            marcar("resultado-4", false, "speechSynthesis.speak error -> " + (ev.error || "desconocido"));
+          });
+
+          marcar("resultado-4", null, "Reproduciendo con " + vocesIngles[0].name + "...");
+          window.speechSynthesis.speak(utterance);
+        }
+
+        var vocesIniciales = window.speechSynthesis.getVoices();
+        if (vocesIniciales.length) {
+          continuar(vocesIniciales);
+          return;
+        }
+        var atendido = false;
+        var listener = function () {
+          if (atendido) return;
+          atendido = true;
+          window.speechSynthesis.removeEventListener("voiceschanged", listener);
+          continuar(window.speechSynthesis.getVoices());
+        };
+        window.speechSynthesis.addEventListener("voiceschanged", listener);
+        setTimeout(function () {
+          if (atendido) return;
+          atendido = true;
+          window.speechSynthesis.removeEventListener("voiceschanged", listener);
+          continuar(window.speechSynthesis.getVoices());
+        }, 1500);
+      });
+
+      // --- 5. Notificaciones ---
+      document.getElementById("boton-5").addEventListener("click", function () {
+        if (!("Notification" in window)) {
+          marcar("resultado-5", false, "window.Notification no existe en este navegador/contexto.");
+          document.getElementById("boton-5-permiso").style.display = "none";
+          return;
+        }
+        marcar("resultado-5", null, "Notification existe. Permiso actual: " + Notification.permission);
+        document.getElementById("boton-5-permiso").style.display = "inline-block";
+      });
+
+      document.getElementById("boton-5-permiso").addEventListener("click", function () {
+        if (!("Notification" in window)) return;
+        try {
+          var resultado = Notification.requestPermission(function (permisoCallback) {
+            marcar("resultado-5", permisoCallback === "granted", "requestPermission (callback) -> " + permisoCallback);
+          });
+          if (resultado && typeof resultado.then === "function") {
+            resultado
+              .then(function (permiso) {
+                marcar("resultado-5", permiso === "granted", "requestPermission (promesa) -> " + permiso);
+              })
+              .catch(function (err) {
+                marcar("resultado-5", false, "requestPermission rechazó -> " + err.name + ": " + err.message);
+              });
+          }
+        } catch (e) {
+          marcar("resultado-5", false, "requestPermission lanzó error -> " + e.name + ": " + e.message);
+        }
+      });
+
+      // --- Copiar reporte ---
+      document.getElementById("boton-copiar").addEventListener("click", function () {
+        var partes = [];
+        partes.push("Reporte de pruebas — Inglés B2 — " + new Date().toISOString());
+        for (var i = 1; i <= 5; i++) {
+          var titulo = document.querySelector("#seccion-" + i + " h2").textContent;
+          var cuerpo = document.getElementById("resultado-" + i).textContent;
+          partes.push("\n## " + titulo + "\n" + cuerpo);
+        }
+        var texto = partes.join("\n");
+        var estado = document.getElementById("estado-copiar");
+
+        function marcarCopiado(ok, extra) {
+          estado.textContent = ok ? "Reporte copiado al portapapeles." : "No se pudo copiar automático" + (extra ? " (" + extra + ")" : "") + ". Selecciona y copia el texto de abajo.";
+          if (!ok) {
+            var area = document.createElement("textarea");
+            area.value = texto;
+            area.style.width = "100%";
+            area.style.height = "160px";
+            area.style.marginTop = "8px";
+            estado.appendChild(document.createElement("br"));
+            estado.appendChild(area);
+            area.focus();
+            area.select();
+          }
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard
+            .writeText(texto)
+            .then(function () {
+              marcarCopiado(true);
+            })
+            .catch(function (err) {
+              marcarCopiado(false, err.name + ": " + err.message);
+            });
+        } else {
+          marcarCopiado(false, "navigator.clipboard no disponible");
+        }
+      });
+    </script>
+  </body>
+</html>
