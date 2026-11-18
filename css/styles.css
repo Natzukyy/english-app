@@ -1,40 +1,111 @@
-/* app-ingles — tokens de diseño
-   Paleta "night-lab": fondo índigo oscuro + dos acentos neón (menta, violeta) para acción/foco,
-   y cuatro pasteles reservados solo para las etiquetas de habilidad (lectura/escucha/habla/escritura).
-   Tipografía: fuentes de sistema de iOS/macOS (sin fuentes web) — la app es offline-first y
-   sin dependencias externas (ver DECISIONES.md D1/D5).
-   Sin sombras rgba genéricas: en fondo oscuro usamos borde o resplandor (glow), no "soft shadow". */
+/* app-ingles — tokens de diseño (rediseño "profesional, neutro + un acento")
+   Base neutra (claro/oscuro, sigue prefers-color-scheme) + un único acento ámbar
+   (referencia: resaltar texto mientras lees/estudias). Los 4 colores de habilidad
+   quedan como un detalle sobrio (un punto de 8px), no como bloques de color.
+   Tipografía de sistema (sin serif decorativo), escala de espaciado 4/8px, números
+   tabulares en XP/racha/minutos. Ver DECISIONES.md D13 para el porqué de cada decisión.
+   Sin librerías ni fuentes externas (ver D1/D5): sigue siendo 100% offline-first. */
 
 :root {
-  --bg: #0d0f24;
-  --surface: #171a3e;
-  --surface-alta: #20244d;
-  --borde: #2d2f5c;
+  color-scheme: light;
 
-  --texto: #edebfa;
-  --texto-tenue: #9093c2;
+  --bg: #f6f5f2;
+  --superficie: #ffffff;
+  --superficie-hundida: #efeee9;
+  --borde: #e4e2dc;
 
-  --neon-menta: #5ef2c4;
-  --neon-violeta: #b18cff;
+  --texto: #1b1b18;
+  --texto-tenue: #6b6a63;
 
-  --pastel-lectura: #ffd9a0;
-  --pastel-escucha: #b9e6ff;
-  --pastel-habla: #ffb4c6;
-  --pastel-escritura: #c9f7d7;
+  --acento: #8f5a00;
+  --acento-fuerte: #714600;
+  --acento-sobre: #ffffff; /* color de texto/ícono cuando va ENCIMA de --acento */
+  --acento-tenue: #f1e4cf; /* fondo muy sutil para resaltos (p.ej. tab activa) */
 
-  --critico: #ff8fa3;
+  --exito: #2e7d4f;
+  --error: #b3261e;
 
-  --fuente-display: ui-serif, "New York", Georgia, serif;
+  --punto-lectura: #c98a2b;
+  --punto-escucha: #5b7a9d;
+  --punto-habla: #b9697a;
+  --punto-escritura: #6b8f71;
+
   --fuente-texto: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
 
-  --radio: 14px;
+  --fs-caption: 13px;
+  --fs-small: 15px;
+  --fs-body: 17px;
+  --fs-heading: 20px;
+  --fs-title: 26px;
+  --fs-hero: 48px;
+
+  --e-1: 4px;
+  --e-2: 8px;
+  --e-3: 12px;
+  --e-4: 16px;
+  --e-5: 24px;
+  --e-6: 32px;
+  --e-7: 48px;
+
+  --radio: 12px;
   --radio-chico: 8px;
   --espacio-lienzo-max: 480px;
 
   --toque-minimo: 44px;
 
-  --dur-rapida: 120ms;
+  --dur-rapida: 160ms;
   --dur-media: 220ms;
+  --easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #18181b;
+    --superficie: #222226;
+    --superficie-hundida: #1d1d20;
+    --borde: #313136;
+
+    --texto: #ececea;
+    --texto-tenue: #9a9a96;
+
+    --acento: #e8a93d;
+    --acento-fuerte: #f2bd63;
+    --acento-sobre: #1a1200;
+    --acento-tenue: #2c2410;
+
+    --exito: #6fcf97;
+    --error: #ff8a80;
+
+    --punto-lectura: #e0a94f;
+    --punto-escucha: #8fb0d6;
+    --punto-habla: #d98fa0;
+    --punto-escritura: #93c49a;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #18181b;
+  --superficie: #222226;
+  --superficie-hundida: #1d1d20;
+  --borde: #313136;
+
+  --texto: #ececea;
+  --texto-tenue: #9a9a96;
+
+  --acento: #e8a93d;
+  --acento-fuerte: #f2bd63;
+  --acento-sobre: #1a1200;
+  --acento-tenue: #2c2410;
+
+  --exito: #6fcf97;
+  --error: #ff8a80;
+
+  --punto-lectura: #e0a94f;
+  --punto-escucha: #8fb0d6;
+  --punto-habla: #d98fa0;
+  --punto-escritura: #93c49a;
 }
 
 * {
@@ -48,9 +119,10 @@ body {
   background: var(--bg);
   color: var(--texto);
   font-family: var(--fuente-texto);
-  font-size: 17px;
-  line-height: 1.45;
+  font-size: var(--fs-body);
+  line-height: 1.5;
   -webkit-text-size-adjust: 100%;
+  transition: background-color var(--dur-media) var(--easing), color var(--dur-media) var(--easing);
 }
 
 body {
@@ -61,8 +133,7 @@ body {
 }
 
 /* "Lienzo de teléfono": en pantallas grandes (Mac Safari) la app no se estira a todo el
-   ancho — se mantiene como una columna centrada, como si fuera un teléfono flotando en el
-   escritorio. Esto refuerza que es una herramienta personal, no un dashboard. */
+   ancho — se mantiene como una columna centrada. Herramienta personal, no un dashboard. */
 #app {
   width: 100%;
   max-width: var(--espacio-lienzo-max);
@@ -75,156 +146,295 @@ body {
 
 main {
   flex: 1;
-  padding: 20px 20px calc(var(--toque-minimo) + 32px);
+  padding: var(--e-5) max(var(--e-4), env(safe-area-inset-right)) calc(var(--toque-minimo) + var(--e-6))
+    max(var(--e-4), env(safe-area-inset-left));
+  padding-top: max(var(--e-5), env(safe-area-inset-top));
   overflow-y: auto;
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--fuente-display);
-  font-weight: 600;
-  margin: 0 0 8px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--e-2);
 }
 
 h1 {
-  font-size: 28px;
+  font-size: var(--fs-title);
+}
+
+h2 {
+  font-size: var(--fs-heading);
 }
 
 p {
-  margin: 0 0 12px;
+  margin: 0 0 var(--e-3);
   color: var(--texto);
 }
 
 .texto-tenue {
   color: var(--texto-tenue);
-  font-size: 15px;
+  font-size: var(--fs-small);
+}
+
+.texto-caption {
+  color: var(--texto-tenue);
+  font-size: var(--fs-caption);
+}
+
+.num-tabular {
+  font-variant-numeric: tabular-nums;
 }
 
 a {
-  color: var(--neon-menta);
+  color: var(--acento);
 }
 
 button {
   font-family: var(--fuente-texto);
-  font-size: 17px;
+  font-size: var(--fs-body);
   cursor: pointer;
 }
 
-/* Botón principal: una sola acción bold por pantalla. Sin sombra; el acento es el color y el
-   leve resplandor, no un degradado decorativo. */
+/* Botón principal: una sola acción bold por pantalla. */
 .boton-principal {
   display: block;
   width: 100%;
   min-height: var(--toque-minimo);
-  background: var(--neon-menta);
-  color: #06261d;
+  background: var(--acento);
+  color: var(--acento-sobre);
   border: none;
   border-radius: var(--radio);
   font-weight: 600;
-  font-size: 17px;
-  padding: 12px 20px;
-  transition: transform var(--dur-rapida) ease, opacity var(--dur-rapida) ease;
+  font-size: var(--fs-body);
+  padding: var(--e-3) var(--e-4);
+  transition: transform var(--dur-rapida) var(--easing), opacity var(--dur-rapida) var(--easing),
+    background-color var(--dur-media) var(--easing);
 }
 
 .boton-principal:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
+}
+
+.boton-principal:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
 
 .boton-secundario {
-  display: inline-block;
+  display: block;
+  width: 100%;
   min-height: var(--toque-minimo);
-  background: transparent;
+  background: var(--superficie);
   color: var(--texto);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
-  padding: 10px 16px;
-  font-size: 15px;
+  padding: var(--e-3) var(--e-4);
+  font-size: var(--fs-small);
+  text-align: left;
+  transition: transform var(--dur-rapida) var(--easing), border-color var(--dur-rapida) var(--easing),
+    background-color var(--dur-media) var(--easing);
 }
 
-/* Hero: el número grande de cada pantalla (racha, XP, % hacia B2). Es el único elemento
-   centrado y con tipografía display; todo lo demás queda alineado a la izquierda. */
+.boton-secundario:active {
+  transform: scale(0.97);
+}
+
+.boton-secundario + .boton-secundario {
+  margin-top: var(--e-2);
+}
+
+.boton-secundario[aria-current="true"] {
+  border-color: var(--acento);
+  color: var(--acento);
+  background: var(--acento-tenue);
+  font-weight: 600;
+}
+
+.fila-botones {
+  display: flex;
+  gap: var(--e-2);
+}
+
+.fila-botones .boton-secundario {
+  flex: 1;
+  text-align: center;
+}
+
+.fila-botones .boton-secundario + .boton-secundario {
+  margin-top: 0;
+}
+
+/* Hero: el número grande y central de cada pantalla (racha, nivel). Único elemento
+   centrado; todo lo demás queda alineado a la izquierda, con aire entre bloques. */
 .hero-numero {
-  font-family: var(--fuente-display);
-  font-size: 56px;
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
   line-height: 1;
   text-align: center;
-  color: var(--neon-menta);
-  text-shadow: 0 0 24px rgba(94, 242, 196, 0.35);
+  color: var(--texto);
+  letter-spacing: -0.02em;
   margin: 0;
 }
 
 .hero-bloque {
   text-align: center;
-  padding: 24px 0 8px;
+  padding: var(--e-5) 0 var(--e-2);
+}
+
+.hero-etiqueta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-1);
+  color: var(--texto-tenue);
+  font-size: var(--fs-small);
+}
+
+.hero-etiqueta svg {
+  color: var(--acento);
 }
 
 .barra-progreso {
-  height: 10px;
+  height: 8px;
   border-radius: 999px;
-  background: var(--surface-alta);
+  background: var(--superficie-hundida);
   overflow: hidden;
-  margin: 8px 0;
+  margin: var(--e-2) 0;
 }
 
 .barra-progreso > span {
   display: block;
   height: 100%;
-  background: var(--neon-violeta);
+  background: var(--acento);
   border-radius: 999px;
-  transition: width var(--dur-media) ease;
+  transition: width 600ms var(--easing);
 }
 
+/* Chips de habilidad: un punto de color (detalle sobrio), no un bloque de color. */
 .chip {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  border-radius: var(--radio-chico);
-  padding: 6px 10px;
-  font-size: 13px;
-  color: #1a1a2e;
-  font-weight: 500;
+  gap: var(--e-2);
+  padding: 4px 0;
+  font-size: var(--fs-small);
+  color: var(--texto-tenue);
 }
 
-.chip-lectura {
-  background: var(--pastel-lectura);
-}
-.chip-escucha {
-  background: var(--pastel-escucha);
-}
-.chip-habla {
-  background: var(--pastel-habla);
-}
-.chip-escritura {
-  background: var(--pastel-escritura);
+.chip .punto {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex: none;
 }
 
+.chip strong {
+  color: var(--texto);
+  font-weight: 600;
+}
+
+.chip-lectura .punto {
+  background: var(--punto-lectura);
+}
+.chip-escucha .punto {
+  background: var(--punto-escucha);
+}
+.chip-habla .punto {
+  background: var(--punto-habla);
+}
+.chip-escritura .punto {
+  background: var(--punto-escritura);
+}
+
+.lista-chips {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  margin-top: var(--e-5);
+}
+
+/* Tarjeta: reservada para cuando el contenido ES literalmente una tarjeta (la palabra
+   de repaso). En el resto de la app, las secciones se separan con espacio + divisores,
+   no con cajas anidadas (ver DECISIONES.md D13). */
 .tarjeta {
-  background: var(--surface);
+  background: var(--superficie);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
-  padding: 16px;
-  margin-bottom: 16px;
+  padding: var(--e-5) var(--e-4);
+  transition: border-color var(--dur-rapida) var(--easing), box-shadow var(--dur-rapida) var(--easing);
+}
+
+.tarjeta.estado-correcto {
+  border-color: var(--exito);
+}
+
+.tarjeta.estado-incorrecto {
+  border-color: var(--error);
+}
+
+/* Fila + divisor: el reemplazo de ".tarjeta" para listas de datos (progreso, resultados). */
+.fila {
+  padding: var(--e-4) 0;
+}
+
+.fila + .fila {
+  border-top: 1px solid var(--borde);
+}
+
+.fila-cabeza {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--e-3);
+  margin-bottom: var(--e-2);
+}
+
+.seccion {
+  margin-bottom: var(--e-6);
 }
 
 .estado-vacio {
   color: var(--texto-tenue);
   text-align: left;
-  padding: 24px 0;
+  padding: var(--e-6) 0;
 }
 
 .mensaje-error {
-  color: var(--critico);
+  color: var(--error);
 }
 
-/* Barra de navegación inferior: alcanzable con el pulgar en un iPhone 11 Pro Max. */
+.enlace-discreto {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-1);
+  color: var(--acento);
+  background: none;
+  border: none;
+  padding: var(--e-2) 0;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  min-height: var(--toque-minimo);
+}
+
+.enlace-discreto:active {
+  transform: scale(0.97);
+}
+
+/* Barra de navegación inferior, estilo iOS: translúcida, con desenfoque. */
 nav.tabs {
   position: sticky;
   bottom: 0;
   display: flex;
-  background: var(--surface);
+  background: var(--superficie); /* respaldo si color-mix() no existe */
+  background: color-mix(in srgb, var(--superficie) 82%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
   border-top: 1px solid var(--borde);
   padding-bottom: env(safe-area-inset-bottom, 0);
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
 }
 
 nav.tabs button {
@@ -236,29 +446,141 @@ nav.tabs button {
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  padding: 8px 4px;
+  padding: 6px 2px;
   min-height: var(--toque-minimo);
-  font-size: 12px;
+  font-size: 11px;
+  transition: color var(--dur-rapida) var(--easing), transform var(--dur-rapida) var(--easing);
+}
+
+nav.tabs button:active {
+  transform: scale(0.95);
 }
 
 nav.tabs button .icono {
-  font-size: 20px;
+  display: flex;
   line-height: 1;
 }
 
+nav.tabs button .icono svg {
+  width: 23px;
+  height: 23px;
+}
+
 nav.tabs button[aria-current="true"] {
-  color: var(--neon-menta);
+  color: var(--acento);
+}
+
+/* Tarjeta de repaso: metáfora real de tarjeta física, con transición de volteo sutil. */
+.tarjeta-repaso {
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--e-3);
+}
+
+.tarjeta-repaso .frente {
+  font-size: var(--fs-title);
+  font-weight: 600;
+  text-align: center;
+}
+
+.tarjeta-repaso .atras {
+  text-align: center;
+  color: var(--texto-tenue);
+}
+
+.grid-calificar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--e-2);
+  margin-top: var(--e-3);
+}
+
+.grid-calificar .boton-secundario {
+  text-align: center;
+}
+
+.icono-inline {
+  display: inline-flex;
+  vertical-align: -4px;
+}
+
+.icono-inline svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* Foco visible siempre, para teclado/VoiceOver. */
 :focus-visible {
-  outline: 2px solid var(--neon-violeta);
+  outline: 2px solid var(--acento);
   outline-offset: 2px;
+}
+
+/* --- Movimiento: solo transform y opacity, 150–250ms, ease-out. Respeta reduced-motion. --- */
+
+@keyframes entra-arriba {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulso {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.015);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pantalla-vista {
+  animation: entra-arriba var(--dur-media) var(--easing) both;
+}
+
+.entrada-escalonada > * {
+  animation: entra-arriba var(--dur-media) var(--easing) both;
+}
+
+.entrada-escalonada > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.entrada-escalonada > *:nth-child(2) {
+  animation-delay: 40ms;
+}
+.entrada-escalonada > *:nth-child(3) {
+  animation-delay: 80ms;
+}
+.entrada-escalonada > *:nth-child(4) {
+  animation-delay: 120ms;
+}
+.entrada-escalonada > *:nth-child(5) {
+  animation-delay: 160ms;
+}
+.entrada-escalonada > *:nth-child(6) {
+  animation-delay: 200ms;
+}
+.entrada-escalonada > *:nth-child(n + 7) {
+  animation-delay: 240ms;
+}
+
+.pulso-correcto,
+.pulso-incorrecto {
+  animation: pulso var(--dur-media) var(--easing);
 }
 
 @media (prefers-reduced-motion: reduce) {
   * {
-    transition-duration: 0.001ms !important;
     animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
   }
 }
