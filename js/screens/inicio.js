@@ -86,7 +86,16 @@
         descripcion: "Practica con reconocimiento de voz",
         ruta: "habla"
       };
-      var rutaHtml = [pasoDiagnostico, pasoRepaso, pasoHabla]
+      // Conversación con IA (D24): nodo siempre visible, pero solo tiene sentido tocarlo
+      // después de que Alex despliegue su propio proxy y lo active en Ajustes -- la pantalla
+      // misma explica qué falta, así que aquí no hay candado ni estado especial por eso.
+      var pasoConversacion = {
+        titulo: "Conversación con IA",
+        estado: !diagnostico ? "pendiente" : "actual",
+        descripcion: "Practica conversación con un modelo de lenguaje",
+        ruta: "conversacion"
+      };
+      var rutaHtml = [pasoDiagnostico, pasoRepaso, pasoHabla, pasoConversacion]
         .map(function (paso) {
           var contenidoCirculo = paso.estado === "completado" ? Iconos.svg("check", 18) : "";
           return (

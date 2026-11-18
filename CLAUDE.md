@@ -3,7 +3,7 @@
 App personal de Alex para llegar a B2 de inglés (CEFR) para fines de marzo 2027. PWA, sin backend, sin cuentas. Prioridad de habilidades: lectura > habla > escucha (énfasis en habla), escritura también débil. Especificación completa en `PROMPT_BASE.md`.
 
 ## Stack (ver DECISIONES.md D1)
-- Vanilla HTML/CSS/JS. **Sin Node, sin npm, sin bundler, sin frameworks, sin dependencias.** (Esta Mac no tiene Node instalado; no se instala nada global sin autorización.)
+- Vanilla HTML/CSS/JS. **Sin Node, sin npm, sin bundler, sin frameworks, sin dependencias.** (Decisión por ligereza/reversibilidad, no solo por disponibilidad: Node ya quedó instalado globalmente en la Mac en otra sesión, para una tarea sin relación con este proyecto -- no se instala nada global sin autorización, y nada de este proyecto depende de que esté instalado.)
 - Scripts clásicos (no ES modules) colgados de un namespace global `App.*`, para que el mismo archivo corra en el navegador y en el runner de pruebas.
 - Datos de contenido/i18n en JSON bajo `data/`, nunca hardcodeados en JS.
 
@@ -19,7 +19,7 @@ App personal de Alex para llegar a B2 de inglés (CEFR) para fines de marzo 2027
 - `tests/core/` — un `*.test.js` por módulo de `js/core/`.
 
 ## Decisiones vigentes
-Ver `DECISIONES.md`. Resumen: sin backend (IndexedDB + export/import JSON), SM-2 para repaso espaciado, umbrales de i18n provisionales y editables, fase 3 (juegos) solo como toggle sin lógica, sin conversación con LLM.
+Ver `DECISIONES.md`. Resumen: sin backend propio en la app (IndexedDB + export/import JSON), SM-2 para repaso espaciado, umbrales de i18n provisionales y editables, fase 3 (juegos) solo como toggle sin lógica. Conversación con IA (D24): autorizada por Alex, implementada del lado del cliente (pantalla, lógica, Ajustes) y vía un proxy serverless (Cloudflare Worker) cuyo código vive en `cloudflare/worker.js` pero que Alex debe desplegar él mismo -- ver `REPORTE_CONVERSACION_IA.md`. Hasta que lo despliegue y active en Ajustes, la función no hace nada.
 
 ## Resultado probado en iPhone real (iOS 27, Safari 27.2) — ver DECISIONES.md D12
 - Micrófono (`getUserMedia`+`MediaRecorder`) funciona, mimeType `audio/mp4` (AAC).
@@ -31,4 +31,4 @@ Ver `DECISIONES.md`. Resumen: sin backend (IndexedDB + export/import JSON), SM-2
 Grabar audio (`MediaRecorder`) y reconocer voz (`SpeechRecognition`) **nunca al mismo tiempo**. Siempre liberar el micrófono al terminar cada uso (detener los tracks del stream / dejar que el reconocedor llegue a `end`), incluyendo las rutas de error, no solo el camino feliz.
 
 ## No tocar sin autorización de Alex
-Despliegue (GitHub Pages u otro), instalar Node/dependencias, backend, conversación con LLM, contenido de videojuegos.
+Despliegue (GitHub Pages, Cloudflare u otro), instalar Node/dependencias, crear cuentas o manejar pagos/claves de API en nombre de Alex, contenido de videojuegos.

@@ -1,7 +1,7 @@
 (function (global) {
   "use strict";
 
-  var RUTAS_VALIDAS = ["inicio", "repaso", "diagnostico", "progreso", "ajustes", "habla"];
+  var RUTAS_VALIDAS = ["inicio", "repaso", "diagnostico", "progreso", "ajustes", "habla", "conversacion"];
   var contexto = { strings: {}, umbrales: { niveles: [] }, nivelInterfaz: 0 };
 
   function rutaActual() {

@@ -42,6 +42,12 @@
         '<button type="button" class="boton-secundario" id="btn-forzar-espanol">Forzar español</button>' +
         '<p class="texto-caption" style="margin-top:8px">Si lo activas, la interfaz se queda en español sin importar tus días activos.</p>' +
         "</div>" +
+        '<div class="seccion">' +
+        "<h2>Conversación con IA</h2>" +
+        '<p class="texto-caption">Necesita tu propio proxy desplegado (ver REPORTE_CONVERSACION_IA.md). Tu clave de API nunca vive aquí.</p>' +
+        '<button type="button" class="boton-secundario" id="btn-activar-conversacion" style="margin-top:8px">Activar</button>' +
+        '<input type="url" id="input-worker-url" class="campo-texto" placeholder="https://tu-worker.tu-cuenta.workers.dev" style="margin-top:8px" />' +
+        "</div>" +
         '<div class="fila">' +
         '<button type="button" class="enlace-discreto" id="btn-exportar" data-i18n-live="ajustes.exportar"></button>' +
         "</div>" +
@@ -89,6 +95,39 @@
           prefs.forzarEspanol = nuevoValor;
           if (nuevoValor) btnForzarEspanol.setAttribute("aria-current", "true");
           else btnForzarEspanol.removeAttribute("aria-current");
+        });
+      });
+
+      var btnActivarConversacion = el.querySelector("#btn-activar-conversacion");
+      var inputWorkerUrl = el.querySelector("#input-worker-url");
+      inputWorkerUrl.value = prefs.conversacionWorkerUrl || "";
+      if (prefs.conversacionActivada) btnActivarConversacion.setAttribute("aria-current", "true");
+      btnActivarConversacion.textContent = prefs.conversacionActivada ? "Desactivar" : "Activar";
+
+      function guardarAjustesConversacion() {
+        var url = inputWorkerUrl.value.trim();
+        var activar = !prefs.conversacionActivada;
+        // No se puede activar sin una URL -- evita un botón "activado" que en realidad no hace nada.
+        if (activar && !url) {
+          inputWorkerUrl.focus();
+          return;
+        }
+        global.App.Datos.guardarPreferencias(Object.assign({}, prefs, { conversacionActivada: activar, conversacionWorkerUrl: url })).then(function () {
+          prefs.conversacionActivada = activar;
+          prefs.conversacionWorkerUrl = url;
+          btnActivarConversacion.textContent = activar ? "Desactivar" : "Activar";
+          if (activar) btnActivarConversacion.setAttribute("aria-current", "true");
+          else btnActivarConversacion.removeAttribute("aria-current");
+        });
+      }
+
+      btnActivarConversacion.addEventListener("click", guardarAjustesConversacion);
+      inputWorkerUrl.addEventListener("blur", function () {
+        // Si solo cambió la URL sin tocar Activar/Desactivar, igual se guarda al salir del campo.
+        var url = inputWorkerUrl.value.trim();
+        if (url === (prefs.conversacionWorkerUrl || "")) return;
+        global.App.Datos.guardarPreferencias(Object.assign({}, prefs, { conversacionWorkerUrl: url })).then(function () {
+          prefs.conversacionWorkerUrl = url;
         });
       });
 

@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://*.workers.dev; object-src 'none'; base-uri 'self'; form-action 'self'"
     />
 
     <link rel="manifest" href="manifest.webmanifest" />
@@ -85,8 +85,11 @@
     <script src="js/core/progreso.js"></script>
     <script src="js/core/tts.js"></script>
     <script src="js/core/habla.js"></script>
+    <script src="js/core/ia.js"></script>
+    <script src="js/core/conversacion.js"></script>
     <script src="js/core/datos.js"></script>
     <script src="js/screens/habla.js"></script>
+    <script src="js/screens/conversacion.js"></script>
     <script src="js/screens/inicio.js"></script>
     <script src="js/screens/repaso.js"></script>
     <script src="js/screens/diagnostico.js"></script>

@@ -534,5 +534,90 @@ de 1440/1280 muestran el desborde conocido de la herramienta (incluidas de todas
 tal como se pidió) junto con una captura de control a 900px (mecanismo real, confiable) y
 otra con bordes de calibración que confirma que la barra lateral ya NO se estira.
 
+## D24. Conversación con IA: proxy serverless (opción B), implementada del lado del cliente, pendiente de despliegue por Alex
+`PROMPT_BASE.md` pedía proponer esto con costo/riesgo "cuando termine el primer hito" (ya
+pasó: la prueba en iPhone real está hecha, ver D12/REPORTE_PRUEBA_IPHONE.md). Se presentaron
+dos opciones:
+
+- **Opción A (no elegida):** la propia clave de Anthropic de Alex, guardada en IndexedDB,
+  llamando directo desde el navegador con el header `anthropic-dangerous-direct-browser-access`
+  (existe desde 2024, confirmado buscando fuentes). Sin backend, cero infraestructura nueva,
+  pero la clave queda legible en las herramientas de desarrollador del navegador.
+- **Opción B (elegida por Alex):** un Cloudflare Worker gratuito como proxy, que guarda la
+  clave como secreto del servidor. Es "backend" en el sentido de la regla propia de Alex
+  ("no tocar sin autorización") — por eso se propuso en vez de construirse directo, y Alex
+  autorizó explícitamente esta opción.
+
+**Qué se construyó del lado del cliente (sí corre ya, se puede revisar/probar sin desplegar nada):**
+- `js/core/conversacion.js` (puro, con tests): arma el payload para la API de mensajes de
+  Anthropic (modelo `claude-haiku-5-5`, el más barato disponible al escribir esto — ver
+  investigación de precios en el chat: ~$0.10/millón tokens de entrada, ~$0.50/millón de
+  salida, cifras de terceros no confirmadas contra la página oficial de Anthropic),
+  recorta el historial a los últimos 8 turnos (en pares, para no romper la alternancia
+  usuario/asistente que exige la API), e interpreta la respuesta/errores.
+- `js/core/ia.js`: hook de red sustituible, mismo patrón que `App.TTS` (D-anterior) — la
+  pantalla nunca hace `fetch` directo, para poder sustituir la implementación en pruebas.
+- `js/screens/conversacion.js`: pantalla nueva y separada (decisión explícita de Alex, no
+  dentro de Habla). Reutiliza la misma disciplina de micrófono que Habla (D12/D18): solo
+  `SpeechRecognition`, nunca `MediaRecorder`. Si el navegador no tiene reconocimiento de voz,
+  cae a un campo de texto (no tiene sentido la autoevaluación de Habla aquí, porque no hay
+  una "respuesta correcta" contra la cual compararse). 7 escenarios de práctica = las mismas
+  7 categorías ya escritas en `data/content/fase1/frases_utiles.json` (correos, reuniones,
+  standups, explicar proyecto, pedir ayuda, dar feedback, entrevistas) — no se inventaron
+  escenarios nuevos. El nivel CEFR que se le pasa al modelo viene de la autoevaluación de
+  habla del último diagnóstico (o "B1" si no hay diagnóstico todavía).
+- Cuarto nodo "Conversación con IA" en "Tu camino" (Inicio), campos nuevos en Ajustes
+  (activar/desactivar + URL del Worker propio de Alex — nunca una clave de API, esa vive
+  solo en el servidor del proxy), `connect-src https://*.workers.dev` agregado al CSP de
+  `index.html` (no se puede poner la URL exacta porque Alex todavía no la tiene; si más
+  adelante usa un dominio propio en vez del subdominio `workers.dev` por defecto, el CSP
+  necesitará otro ajuste — queda anotado en `REPORTE_CONVERSACION_IA.md`).
+- `cloudflare/worker.js`: el código del proxy, NO desplegado desde aquí (no hay cuenta de
+  Cloudflare ni clave de Anthropic en esta sesión, y aunque las hubiera, crear cuentas y
+  manejar claves/pagos es algo que le toca a Alex, nunca al asistente). Se pega tal cual en
+  el panel web de Cloudflare — ver el reporte para los pasos exactos.
+
+**Protección contra abuso/costo si alguien encuentra la URL pública del Worker (el sitio en
+GitHub Pages es público):** el Worker compara el header `Origin` de la petición contra
+`ALLOWED_ORIGIN` (el origen real de la app de Alex) y rechaza con 403 si no coincide —
+protege contra scripts de otras páginas, pero un cliente que no es un navegador (`curl`,
+etc.) puede falsear ese header. Como respaldo real, el Worker lleva un contador diario en
+Workers KV (`DAILY_LIMIT`, 200 por defecto) que acota el costo máximo posible por día sin
+importar quién esté llamando. Simplificación a propósito: el contador sube incluso si
+Anthropic respondió con un error (más simple que distinguir causas; el límite es un
+respaldo de costo, no una medición exacta). El modelo y `max_tokens` que manda el cliente
+nunca se usan tal cual -- el Worker los vuelve a acotar él mismo (defensa en profundidad).
+
+**Las burbujas de chat insertan el texto del modelo con `innerHTML`, igual que el patrón ya
+auditado en D10** (siempre pasado por `App.Util.escaparHTML` antes de interpolarse) — el
+hook de seguridad de este entorno marca cualquier `innerHTML` como advertencia genérica,
+pero este caso ya sigue la misma mitigación que el resto de la app, no es código nuevo sin
+revisar.
+
+**Verificado en este entorno (sin Worker real desplegado):** los 94 tests (11 nuevos) pasan
+con `./tests/run-tests.sh`; serví la app local con `python3 -m http.server` y probé en
+navegador el flujo completo: estado "no configurado", activar en Ajustes, elegir escenario,
+saludo inicial + TTS, error real de CORS al llamar a una URL de prueba que no existe (con
+mensaje y botón Reintentar), y el camino feliz completo sustituyendo `App.IA` por una
+respuesta simulada (la burbuja del asistente se pinta, se habla por TTS, y Terminar registra
+la sesión -- se vio el XP/racha/nodo de Inicio actualizarse correctamente). Encontré y
+arreglé en el camino un bug real de la UI: reintentar tras un error duplicaba la burbuja del
+usuario y contaba el intento dos veces hacia XP/racha -- ya corregido (el reintento ya no
+vuelve a pintar la burbuja ni a incrementar `intentos`).
+
+**Lo que NO se pudo verificar aquí (le toca a Alex, con su propio Worker desplegado):**
+el comportamiento real contra la API de Anthropic (una clave válida, límites reales,
+tiempos de respuesta), el CORS real del Worker (aquí solo se vio el error esperado contra
+una URL que no existe), y -- como con Habla -- el micrófono/reconocimiento de voz real en su
+iPhone (`requiere_prueba_iphone: true`).
+
+**No tocado (fuera de alcance de esta tarea):** no se instaló Node ni ningún paquete dentro
+de este proyecto (el stack sigue siendo 100% vanilla, D1/D5 sin cambios); nota aparte para
+Alex: en esta misma sesión SÍ se instaló Node globalmente en la Mac, pero para una tarea
+distinta y sin relación con este proyecto (unos skills de Claude Code) -- la frase "esta Mac
+no tiene Node instalado" en `CLAUDE.md` de este proyecto ya no es exacta como hecho, aunque
+la decisión de D1 sigue siendo válida por sus propias razones (ligereza, reversibilidad),
+no solo porque Node faltara.
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*

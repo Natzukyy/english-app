@@ -5,7 +5,17 @@
 (function (global) {
   "use strict";
 
-  var PREFERENCIAS_POR_DEFECTO = { id: "preferencias", metaMinutosDia: 15, tema: "sistema", forzarEspanol: false };
+  var PREFERENCIAS_POR_DEFECTO = {
+    id: "preferencias",
+    metaMinutosDia: 15,
+    tema: "sistema",
+    forzarEspanol: false,
+    // Conversación con IA (D24): apagada por defecto porque necesita que Alex despliegue su
+    // propio proxy primero (ver REPORTE_CONVERSACION_IA.md). La URL es la de su propio Worker,
+    // nunca una clave de API -- esa vive solo en el servidor del proxy.
+    conversacionActivada: false,
+    conversacionWorkerUrl: ""
+  };
 
   function obtenerPreferencias() {
     return global.App.Storage.get("settings", "preferencias").then(function (p) {

@@ -984,6 +984,59 @@ button.tarjeta-habilidad:active {
   }
 }
 
+/* Conversación con IA (D24): burbujas de chat + campo de texto de respaldo cuando no hay
+   reconocimiento de voz. Reutiliza los tokens existentes, nada de color nuevo. */
+.conversacion-historial {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  margin: var(--e-4) 0;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+
+.burbuja {
+  max-width: 85%;
+  padding: var(--e-3) var(--e-4);
+  border-radius: var(--radio);
+  font-size: var(--fs-body);
+  line-height: 1.4;
+}
+
+.burbuja p {
+  margin: 0;
+}
+
+.burbuja-usuario {
+  align-self: flex-end;
+  background: var(--acento-tenue);
+  color: var(--texto);
+}
+
+.burbuja-asistente {
+  align-self: flex-start;
+  background: var(--superficie-hundida);
+  border: 1px solid var(--borde);
+  color: var(--texto);
+}
+
+.campo-texto {
+  width: 100%;
+  min-height: var(--toque-minimo);
+  padding: 0 var(--e-3);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-chico);
+  background: var(--superficie);
+  color: var(--texto);
+  font-size: var(--fs-body);
+  font-family: var(--fuente-texto);
+}
+
+.campo-texto:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 1px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;

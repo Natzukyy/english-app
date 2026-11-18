@@ -59,8 +59,21 @@ Rama: `noche-1`. Un commit por paso. Antes de cada paso se anota aquí qué se v
 ## Fase 7 — Reporte matutino
 - [x] REPORTE_MATUTINO.md
 
+## Fase 8 — Conversación con IA (D24)
+- [x] `js/core/conversacion.js` (payload/respuesta, puro) + 11 tests
+- [x] `js/core/ia.js` (hook de red sustituible, mismo patrón que App.TTS)
+- [x] `js/screens/conversacion.js` (pantalla nueva, 7 escenarios de fase 1, fallback a texto sin voz)
+- [x] Cuarto nodo en "Tu camino" (Inicio) + campos de activar/URL en Ajustes
+- [x] `cloudflare/worker.js` (proxy, código listo, NO desplegado)
+- [x] CSP/service worker/runner de tests actualizados
+- [x] Probado en navegador local (estado no configurado, selector, saludo+TTS, error real de
+      CORS con reintentar, camino feliz con `App.IA` simulado) — un bug real encontrado y
+      arreglado (burbuja/intento duplicados al reintentar)
+- [ ] Desplegar el Worker real y activar en Ajustes (le toca a Alex — ver REPORTE_CONVERSACION_IA.md)
+- [ ] Probar conversación real de voz en el iPhone
+
 ---
 ## Paso actual
-Las 7 fases de `prompt-noche.md` están cerradas, cada una con su commit y tests en verde (62 pruebas).
-Nada pendiente a medias. Si Alex no ha puesto `STOP`, podría seguir con tareas de refinamiento
-menores (más contenido, más tarjetas de repaso) pero no hay nada de la lista de fases que falte.
+Las 7 fases de `prompt-noche.md` están cerradas. La fase 8 (conversación con IA, D24) está
+completa del lado del código; falta que Alex cree sus cuentas, despliegue el proxy y pruebe
+en su iPhone -- sin eso, la función queda visible pero inactiva. Nada más pendiente a medias.
