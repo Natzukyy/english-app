@@ -51,7 +51,7 @@
     var porcentaje = Math.round((estado.indice / estado.preguntasOrden.length) * 100);
 
     el.innerHTML =
-      '<div class="pantalla-vista">' +
+      '<div class="pantalla-vista ancho-lectura">' +
       '<h1 data-i18n-live="diagnostico.titulo"></h1>' +
       '<div class="fila-cabeza"><span class="texto-tenue num-tabular">' +
       (estado.indice + 1) +
@@ -107,7 +107,7 @@
   function pintarAutoevaluacion(el, ctx, t, habilidad, siguientePaso) {
     var opciones = estado.rubrica[habilidad];
     el.innerHTML =
-      '<div class="pantalla-vista">' +
+      '<div class="pantalla-vista ancho-lectura">' +
       '<h1 data-i18n-live="diagnostico.titulo"></h1>' +
       "<h2>¿Qué descripción te queda mejor para " +
       habilidad +
@@ -160,7 +160,7 @@
       .join("");
 
     el.innerHTML =
-      '<div class="pantalla-vista">' +
+      '<div class="pantalla-vista ancho-lectura">' +
       '<h1 data-i18n-live="diagnostico.titulo"></h1>' +
       '<p class="texto-tenue">Esto es una estimación, no una certificación oficial.</p>' +
       '<div class="seccion entrada-escalonada" style="margin-top:16px">' +

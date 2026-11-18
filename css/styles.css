@@ -578,6 +578,113 @@ nav.tabs button[aria-current="true"] {
   animation: pulso var(--dur-media) var(--easing);
 }
 
+/* --- Hover (solo en dispositivos con puntero fino; evita hover "pegado" al tocar) --- */
+@media (hover: hover) and (pointer: fine) {
+  .boton-principal:hover {
+    background: var(--acento-fuerte);
+  }
+  .boton-secundario:hover {
+    border-color: var(--acento);
+  }
+  .boton-secundario[aria-current="true"]:hover {
+    border-color: var(--acento);
+  }
+  .enlace-discreto:hover {
+    text-decoration: underline;
+  }
+  nav.tabs button:hover {
+    color: var(--acento);
+  }
+}
+
+/* --- Responsive: móvil (hasta 767px, sin cambios) / tablet (768-1099px, igual que móvil,
+   el lienzo centrado ya deja aire de sobra) / laptop (desde 1100px: barra lateral + columnas). --- */
+@media (min-width: 1100px) {
+  body {
+    align-items: flex-start;
+  }
+
+  #app {
+    max-width: 1180px;
+    min-height: 100vh;
+    flex-direction: row;
+  }
+
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: var(--e-7) var(--e-6) var(--e-6);
+  }
+
+  /* Repaso, diagnóstico y ajustes: ancho de lectura, nunca estirado a todo el panel. */
+  .ancho-lectura {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Inicio: panel de dos columnas (hero/meta/CTA a la izquierda, habilidades a la derecha). */
+  .panel-dos-columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--e-7);
+    align-items: start;
+  }
+
+  /* Progreso: resultado por habilidad en dos columnas, separadas por espacio (no por borde,
+     que se ve raro a media fila en una rejilla). */
+  .grid-progreso {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 var(--e-6);
+  }
+  .grid-progreso .fila {
+    border-top: none;
+    padding: var(--e-3) 0;
+  }
+
+  nav.tabs {
+    order: -1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 220px;
+    flex: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 2px;
+    padding: var(--e-6) var(--e-3);
+    border-top: none;
+    border-right: 1px solid var(--borde);
+    background: var(--superficie);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  nav.tabs button {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--e-3);
+    font-size: var(--fs-small);
+    min-height: var(--toque-minimo);
+    padding: 10px var(--e-3);
+    border-radius: var(--radio-chico);
+  }
+
+  nav.tabs button .icono svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  nav.tabs button[aria-current="true"] {
+    background: var(--acento-tenue);
+    font-weight: 600;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;

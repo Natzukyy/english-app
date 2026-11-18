@@ -58,6 +58,8 @@
       el.innerHTML =
         '<div class="pantalla-vista">' +
         '<h1 data-i18n-live="inicio.titulo"></h1>' +
+        '<div class="panel-dos-columnas">' +
+        '<div class="panel-col">' +
         '<div class="hero-bloque">' +
         '<p class="hero-numero num-tabular" id="valor-racha">0</p>' +
         '<p class="hero-etiqueta">' +
@@ -80,8 +82,12 @@
         "</div>" +
         "</div>" +
         '<button type="button" class="boton-principal" id="btn-empezar-repaso" data-i18n-live="nav.repaso"></button>' +
+        "</div>" +
+        '<div class="panel-col">' +
         '<div class="lista-chips entrada-escalonada">' +
         chipsHtml +
+        "</div>" +
+        "</div>" +
         "</div>" +
         "</div>";
 

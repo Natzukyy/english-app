@@ -26,7 +26,7 @@
 
     global.App.Datos.obtenerPreferencias().then(function (prefs) {
       el.innerHTML =
-        '<div class="pantalla-vista">' +
+        '<div class="pantalla-vista ancho-lectura">' +
         '<h1 data-i18n-live="ajustes.titulo"></h1>' +
         '<div class="seccion entrada-escalonada">' +
         '<div class="seccion">' +

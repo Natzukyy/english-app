@@ -38,7 +38,7 @@
     if (!sesion || sesion.indice >= sesion.cola.length) {
       finalizarSesionSiActiva().then(function (resultado) {
         el.innerHTML =
-          '<div class="pantalla-vista">' +
+          '<div class="pantalla-vista ancho-lectura">' +
           '<h1 data-i18n-live="repaso.titulo"></h1>' +
           '<div class="hero-bloque">' +
           '<span style="color:var(--exito)">' +
@@ -64,7 +64,7 @@
     // tarjeta.frente/atras vienen de IndexedDB (sembradas por nosotros, pero sustituibles por
     // un respaldo importado): se escapan antes de insertarlas como HTML.
     el.innerHTML =
-      '<div class="pantalla-vista">' +
+      '<div class="pantalla-vista ancho-lectura">' +
       '<h1 data-i18n-live="repaso.titulo"></h1>' +
       '<div class="fila-cabeza"><span class="texto-tenue num-tabular">' +
       (sesion.indice + 1) +

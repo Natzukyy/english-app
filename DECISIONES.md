@@ -215,5 +215,33 @@ rondas de crítica propias.
   que Alex confirme en Safari real (cambiar algo, recargar con internet, ver que se aplica
   sin tocar el caché a mano).
 
+## D16. Versión laptop/responsive (Paso 3)
+- **Breakpoints:** móvil hasta 767px y tablet 768-1099px comparten exactamente el mismo CSS
+  que ya existía (lienzo centrado de 480px máximo, barra inferior) — no había pedido un
+  tratamiento distinto para tablet más allá de fijar dónde termina, así que dejé esa franja
+  intacta a propósito, en vez de inventar un diseño intermedio no pedido. Desde 1100px:
+  barra lateral + columnas.
+- **Barra lateral:** la misma `nav.tabs` del HTML, reordenada con `order:-1` y reestilada por
+  CSS (sin tocar el HTML): iconos+etiqueta en fila, ancho fijo 220px, fondo sólido con borde
+  derecho, fila activa con tinte del acento. `main` pasa a `max-width:960px` centrado dentro
+  de `#app` (que a su vez tiene su propio `max-width:1180px`).
+- **Inicio como "panel":** envolví su contenido en `.panel-dos-columnas` (hero/meta/CTA a la
+  izquierda, habilidades a la derecha) — en móvil/tablet es simplemente dos `div` apilados
+  (ninguna regla de grid se aplica por debajo de 1100px, así que no cambia nada ahí).
+- **Progreso en dos columnas:** la lista de habilidades usa `.grid-progreso` (rejilla 2x2,
+  separada por espacio en vez de línea divisoria — una línea divisoria a media fila en una
+  rejilla se ve rota).
+- **Repaso/diagnóstico/ajustes:** `.ancho-lectura` (máximo 720px, centrado) en su contenedor
+  — nunca se estiran a todo el panel, tal como se pidió.
+- **Hover:** agregado en botones, enlaces y la barra de navegación, dentro de
+  `@media (hover: hover) and (pointer: fine)` para que no se quede "pegado" al tocar en
+  móvil. Sin atajos de teclado nuevos (no se pidieron).
+- **Verificación de capturas:** ver BLOQUEOS.md B4 — el método de captura (`qlmanage` +
+  iframe) no es fiel por encima de ~960px de ancho (límite del generador de miniaturas, no
+  de mi CSS). Verifiqué el mecanismo completo con el breakpoint temporalmente bajado a
+  700px (en una copia, nunca en el archivo real) y capturas a 900px, que sí son fieles.
+  Capturas en `capturas/responsive/`. Falta que Alex confirme a los tamaños exactos
+  (1440/1280/768) en un navegador real.
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*

@@ -59,7 +59,7 @@
         '<h1 data-i18n-live="progreso.titulo"></h1>' +
         '<div class="hero-bloque"><p class="hero-numero num-tabular" id="valor-nivel">0</p>' +
         '<p class="texto-tenue num-tabular">nivel · <span id="valor-xp">0</span> XP · racha <span id="valor-racha">0</span></p></div>' +
-        '<div class="seccion entrada-escalonada">' +
+        '<div class="seccion entrada-escalonada grid-progreso">' +
         filas +
         "</div>" +
         '<p class="texto-tenue">Diagnóstico del ' +
