@@ -1,5 +1,5 @@
 {
-  "_nota": "Lecturas originales escritas por Claude para la fase 1 (carrera y comunicación profesional). Nivel CEFR es una etiqueta de dificultad aproximada, no una certificación.",
+  "_nota": "Lecturas originales escritas por Claude para la fase 1 (carrera en IA/ingeniería y comunicación profesional). Nivel CEFR es una etiqueta de dificultad aproximada, no una certificación. Las primeras 4 son de la noche anterior; de 'lec-fase1-standup' en adelante son nuevas (Paso C) y llevan 'revisar: true' porque el nivel CEFR es mi estimación sin revisar todavía por Alex.",
   "lecturas": [
     {
       "id": "lec-fase1-docs-tecnicos",
@@ -89,6 +89,186 @@
             "Only a detailed description of who was wrong",
             "A list of every disagreement the candidate has ever had",
             "Why the teammate was difficult to work with"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-standup",
+      "tema": "Daily standup",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "Every morning at nine, the team spends ten minutes on a quick standup call. Each person says what they finished yesterday, what they plan to do today, and whether anything is blocking them. It's short on purpose, so longer discussions move to a separate conversation afterward.",
+      "vocabularioClave": ["standup", "blocking", "on purpose", "afterward"],
+      "preguntas": [
+        {
+          "id": "lec-fase1-standup-p1",
+          "pregunta": "Why is the standup call kept short, according to the text?",
+          "opciones": ["On purpose, so longer talks happen separately", "Because nobody has anything to say", "Because the team only meets once a week", "Because managers are not allowed to join"],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-pedir-ayuda",
+      "tema": "Pedir ayuda a un compañero",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "Mateo had been stuck on the same bug for almost an hour. Instead of continuing to guess, he messaged a teammate and asked if she had a few minutes to take a look. She found the mistake in less than five minutes, and Mateo thanked her and made a note to ask for help sooner next time.",
+      "vocabularioClave": ["stuck on", "take a look", "made a note", "sooner"],
+      "preguntas": [
+        {
+          "id": "lec-fase1-pedir-ayuda-p1",
+          "pregunta": "What did Mateo decide to do differently next time?",
+          "opciones": ["Ask for help sooner", "Stop using that teammate's help", "Never ask for help again", "Wait even longer before asking"],
+          "respuestaCorrecta": 1
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-documentar-codigo",
+      "tema": "Documentar código",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "texto": "Good comments explain why a piece of code exists, not just what it does. If the code itself is clear, repeating it in a comment adds little value. But if there's a non-obvious reason behind a decision, like working around a bug in another system, that reason is worth writing down so the next person doesn't remove it by accident.",
+      "vocabularioClave": ["non-obvious", "working around", "worth writing down", "by accident"],
+      "preguntas": [
+        {
+          "id": "lec-fase1-documentar-codigo-p1",
+          "pregunta": "According to the text, when is a comment most worth writing?",
+          "opciones": [
+            "When there's a non-obvious reason behind a decision",
+            "Whenever the code is already very clear",
+            "Only at the very start of a file",
+            "Never, because comments always add value"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-documentar-codigo-p2",
+          "pregunta": "What risk does the text mention about missing comments?",
+          "opciones": [
+            "The next person might remove something important by accident",
+            "The code will stop compiling",
+            "The file will become too short",
+            "The team will have to rewrite the whole project"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-code-review-feedback",
+      "tema": "Dar feedback en un code review",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "texto": "When leaving comments on someone else's code, it helps to be specific and to explain the reasoning, not just the preference. Saying 'this could cause a bug if the list is empty' is more useful than saying 'I don't like this.' It also helps to mention what's working well, not only what needs to change.",
+      "vocabularioClave": ["specific", "reasoning", "preference", "what's working well"],
+      "preguntas": [
+        {
+          "id": "lec-fase1-code-review-feedback-p1",
+          "pregunta": "Why is 'this could cause a bug if the list is empty' considered more useful than 'I don't like this'?",
+          "opciones": [
+            "It's specific and explains the reasoning",
+            "It's shorter to type",
+            "It avoids mentioning any code at all",
+            "It only focuses on personal preference"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-blocker-proyecto",
+      "tema": "Explicar un bloqueo en un proyecto",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "When Sofia reported that her task was blocked, she didn't just say 'I'm stuck.' She explained exactly what she needed, who could unblock her, and what she had already tried. That level of detail meant her manager could act on it immediately instead of asking several follow-up questions first.",
+      "vocabularioClave": ["blocked", "unblock", "level of detail", "act on it"],
+      "preguntas": [
+        {
+          "id": "lec-fase1-blocker-proyecto-p1",
+          "pregunta": "What made Sofia's report about being blocked especially useful?",
+          "opciones": [
+            "It included exactly what she needed and who could help",
+            "It was written in very few words",
+            "It avoided mentioning what she had already tried",
+            "It was sent directly to the whole company"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-blocker-proyecto-p2",
+          "pregunta": "What was the result of Sofia's detailed report?",
+          "opciones": [
+            "Her manager could act on it immediately",
+            "Her manager ignored the message",
+            "The project was cancelled",
+            "She had to repeat the report three times"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-planear-sprint",
+      "tema": "Planear un sprint",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "During sprint planning, the team doesn't just list tasks; they discuss how confident they are about each estimate. A task that sounds simple but depends on an external team is treated differently from one the team fully controls, even if both are estimated at the same number of hours.",
+      "vocabularioClave": ["sprint planning", "estimate", "depends on", "fully controls"],
+      "preguntas": [
+        {
+          "id": "lec-fase1-planear-sprint-p1",
+          "pregunta": "According to the text, why might two tasks with the same hour estimate be treated differently?",
+          "opciones": [
+            "One depends on an external team and the other doesn't",
+            "One of them was written in a different language",
+            "Only one of them has a deadline",
+            "The team always treats every task exactly the same way"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-pros-contras-herramienta",
+      "tema": "Pros y contras de una herramienta",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "texto": "Before adopting a new tool, the team listed what they liked about it, what concerned them, and what they would need to test before relying on it in production. The tool was faster than their current one, but it was also newer and had less community support, which made the team decide to try it on a small project first.",
+      "vocabularioClave": ["adopting", "concerned them", "rely on", "community support"],
+      "preguntas": [
+        {
+          "id": "lec-fase1-pros-contras-herramienta-p1",
+          "pregunta": "Why did the team decide to try the new tool on a small project first?",
+          "opciones": [
+            "Because it was newer and had less community support",
+            "Because it was more expensive than the old tool",
+            "Because the old tool had completely stopped working",
+            "Because the whole team disliked the new tool"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-preparar-demo",
+      "tema": "Preparar una demo",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "Before the demo, Lucas practiced the steps twice so he wouldn't get stuck in front of everyone. He also prepared a backup plan in case the internet connection failed. During the real demo, one button didn't work as expected, but because he had practiced, he knew how to continue without panicking.",
+      "vocabularioClave": ["backup plan", "in case", "as expected", "without panicking"],
+      "preguntas": [
+        {
+          "id": "lec-fase1-preparar-demo-p1",
+          "pregunta": "Why did Lucas prepare a backup plan?",
+          "opciones": [
+            "In case the internet connection failed",
+            "Because he didn't want to do the demo",
+            "Because the button was broken before the demo started",
+            "Because the audience asked him to"
           ],
           "respuestaCorrecta": 0
         }

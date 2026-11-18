@@ -1,5 +1,5 @@
 {
-  "_nota": "Banco de preguntas escrito por Claude para el diagnóstico. Los niveles CEFR son una estimación razonada, no una certificación oficial (ver PROMPT_BASE.md: 'sé honesto, es una estimación'). Contenido original, verificado gramaticalmente con confianza alta.",
+  "_nota": "Banco de preguntas escrito por Claude para el diagnóstico. Los niveles CEFR son una estimación razonada, no una certificación oficial (ver PROMPT_BASE.md: 'sé honesto, es una estimación'). Contenido original, verificado gramaticalmente con confianza alta. Las preguntas con id que empieza en 'lec-a2-3'/'esc-a2-3'/'voc-a2-3' en adelante (y equivalentes en otros niveles) son nuevas del Paso C, marcadas 'revisar: true'. Nota aparte: en todas las preguntas ORIGINALES (de la noche anterior) la respuesta correcta es siempre la opción en el índice 0 -- es un patrón real de los datos que no corregí (cambiarlo requeriría mezclar las opciones al renderizar, un cambio de lógica fuera de este paso); lo marco aquí para que se revise, y en las preguntas NUEVAS sí varié a propósito en qué posición queda la respuesta correcta.",
   "preguntas": [
     {
       "id": "lec-a2-1",
@@ -98,6 +98,106 @@
       ],
       "respuestaCorrecta": 0
     },
+    {
+      "id": "lec-a2-3",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "Lily opens her coffee shop at seven every morning. The first hour is usually the busiest, with people stopping by before work. After nine, things get quiet until lunchtime, when students from the nearby school come in for sandwiches.",
+      "pregunta": "When is the coffee shop usually the busiest, according to the text?",
+      "opciones": ["At lunchtime", "The first hour, before work", "Right before closing", "Late at night"],
+      "respuestaCorrecta": 1
+    },
+    {
+      "id": "lec-a2-4",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "Carlos spends most weekends fixing old bicycles in his garage. He buys them cheap, replaces the broken parts, and sells them for a small profit. It started as a hobby, but now a few neighbors ask him to fix their bikes too.",
+      "pregunta": "What do some neighbors now ask Carlos to do?",
+      "opciones": ["Sell them a new bicycle", "Fix their bicycles", "Teach them to ride a bike", "Buy their old bicycles"],
+      "respuestaCorrecta": 1
+    },
+    {
+      "id": "lec-b1-3",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "texto": "When Hana wanted to learn basic video editing, she didn't take a formal course. Instead, she watched short tutorials and copied what she saw, pausing the video every few seconds. It took longer than a structured course might have, but she only learned exactly what she needed for her own videos.",
+      "pregunta": "How did Hana learn video editing?",
+      "opciones": ["By taking a formal course", "By watching and copying short tutorials", "By asking a professional editor", "By reading a long manual"],
+      "respuestaCorrecta": 1
+    },
+    {
+      "id": "lec-b1-4",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "texto": "After living in a large house for years, Omar and his family moved into a much smaller apartment downtown. At first it felt cramped, but they got rid of things they didn't use, and within a month the smaller space felt surprisingly comfortable, with everything closer and easier to maintain.",
+      "pregunta": "What helped the smaller apartment feel more comfortable?",
+      "opciones": ["Buying more furniture", "Getting rid of things they didn't use", "Moving again to an even bigger place", "Hiring someone to clean it"],
+      "respuestaCorrecta": 1
+    },
+    {
+      "id": "lec-b2-3",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "Teams spread across different time zones often rely on asynchronous communication: detailed written updates instead of live meetings. This requires writing more clearly than a quick chat message would, since there's no chance to immediately clarify a misunderstanding, but it also means people can respond when it actually suits their schedule.",
+      "pregunta": "According to the text, why does asynchronous communication require clearer writing?",
+      "opciones": [
+        "Because there's no immediate chance to clarify a misunderstanding",
+        "Because live meetings are no longer allowed",
+        "Because written messages are always shorter than chat",
+        "Because teams in the same time zone write poorly"
+      ],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "lec-b2-4",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "Estimating how long a software project will take is notoriously difficult, partly because unexpected problems tend to appear only once work has already started. Experienced teams don't try to eliminate this uncertainty; instead, they build in extra time and communicate estimates as ranges rather than exact dates.",
+      "pregunta": "How do experienced teams deal with the uncertainty in estimates, according to the text?",
+      "opciones": [
+        "They eliminate uncertainty completely before starting",
+        "They build in extra time and give estimates as ranges",
+        "They refuse to give any estimate at all",
+        "They only estimate projects that have no unexpected problems"
+      ],
+      "respuestaCorrecta": 1
+    },
+    {
+      "id": "lec-c1-3",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "revisar": true,
+      "texto": "The old engineering mantra of moving fast and breaking things assumes that the cost of mistakes stays low enough to be worth the speed gained. That assumption tends to hold for a young product with few users, but it erodes as a system matures and the blast radius of a careless change grows, which is why many teams quietly slow down as they scale, without ever renouncing the idea in public.",
+      "pregunta": "According to the passage, why might a maturing team slow down even without admitting it?",
+      "opciones": [
+        "The cost of mistakes grows as the system's blast radius increases",
+        "They have fully renounced the idea of moving fast in public",
+        "Young products always have more users than mature ones",
+        "Speed stops being valuable to any team at any stage"
+      ],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "lec-c1-4",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "revisar": true,
+      "texto": "Maintainers of widely used open-source projects often describe a quiet asymmetry: thousands of people benefit from their work, yet only a handful ever contribute back, whether in code, documentation, or even acknowledgment. Burnout, in this telling, has less to do with the coding itself than with the accumulated weight of unpaid, invisible obligation.",
+      "pregunta": "What does the passage suggest is the real source of maintainer burnout?",
+      "opciones": [
+        "The accumulated weight of unpaid, invisible obligation",
+        "The coding work itself, regardless of recognition",
+        "Having too many contributors helping with the project",
+        "A lack of users willing to try the project"
+      ],
+      "respuestaCorrecta": 0
+    },
 
     {
       "id": "esc-a2-1",
@@ -191,6 +291,106 @@
       ],
       "respuestaCorrecta": 0
     },
+    {
+      "id": "esc-a2-3",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "textoParaTTS": "Hey, it's me. For lunch, can you order me a sandwich, no onions please? I'll be there in about twenty minutes.",
+      "pregunta": "What does the speaker ask for?",
+      "opciones": ["A sandwich with onions", "A sandwich with no onions", "A salad", "Nothing, they already ate"],
+      "respuestaCorrecta": 1
+    },
+    {
+      "id": "esc-a2-4",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "textoParaTTS": "Tomorrow it's going to rain all day, so bring an umbrella if you're walking to the office.",
+      "pregunta": "What does the speaker suggest bringing tomorrow?",
+      "opciones": ["Sunglasses", "An umbrella", "A jacket for the cold", "Nothing special"],
+      "respuestaCorrecta": 1
+    },
+    {
+      "id": "esc-b1-3",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "textoParaTTS": "This is a message from the clinic. Your appointment on Tuesday was moved to Wednesday at the same time, ten in the morning, because the doctor is out that day.",
+      "pregunta": "Why was the appointment moved?",
+      "opciones": ["The patient asked to reschedule", "The doctor is out on Tuesday", "The clinic is closing permanently", "The time changed but not the day"],
+      "respuestaCorrecta": 1
+    },
+    {
+      "id": "esc-b1-4",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "textoParaTTS": "To reset your password, go to the login page, click 'forgot password', and follow the link we send to your email. It usually arrives within a couple of minutes.",
+      "pregunta": "What should you click on the login page to reset your password?",
+      "opciones": ["'Forgot password'", "'Create account'", "'Contact support'", "'Change email'"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "esc-b2-3",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "textoParaTTS": "What I've learned is that most of my frustration with meetings wasn't about the meetings themselves, but about joining without a clear idea of what decision we actually needed to make.",
+      "pregunta": "What does the speaker say was really behind their frustration with meetings?",
+      "opciones": [
+        "Joining without a clear idea of the decision needed",
+        "Meetings being too short",
+        "Having too few meetings overall",
+        "Meetings always starting late"
+      ],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "esc-b2-4",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "textoParaTTS": "We ended up compromising on a smaller version of the feature, which wasn't what either side originally wanted, but it let us ship something this quarter instead of waiting for the ideal version.",
+      "pregunta": "What was the result of the compromise described?",
+      "opciones": [
+        "They shipped a smaller version instead of waiting for the ideal one",
+        "They cancelled the feature entirely",
+        "They delayed everything until next year",
+        "Both sides got exactly what they originally wanted"
+      ],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "esc-c1-3",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "revisar": true,
+      "textoParaTTS": "What nobody tells you is that the hardest part of scaling a team isn't hiring, it's the slow erosion of the context everyone used to share by default, back when there were few enough of you that nothing really needed to be written down.",
+      "pregunta": "According to the speaker, what is the hardest part of scaling a team?",
+      "opciones": [
+        "The erosion of shared context that used to exist by default",
+        "Finding enough office space",
+        "The hiring process itself",
+        "Writing too much documentation too early"
+      ],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "esc-c1-4",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "revisar": true,
+      "textoParaTTS": "I'm not against the proposal in principle, I just think we're underestimating how much of our current stability comes from habits we'd be throwing away along with the parts we actually dislike.",
+      "pregunta": "What is the speaker's concern about the proposal?",
+      "opciones": [
+        "It might discard useful habits along with the disliked parts",
+        "They are completely against the proposal in principle",
+        "The proposal has already been rejected by everyone else",
+        "Stability has nothing to do with current habits"
+      ],
+      "respuestaCorrecta": 0
+    },
 
     {
       "id": "voc-a2-1",
@@ -255,6 +455,78 @@
       "pregunta": "Choose the correct option: Were it not for her feedback, the report ___ several errors.",
       "opciones": ["would have contained", "will contain", "contains", "had contained"],
       "respuestaCorrecta": 0
+    },
+    {
+      "id": "voc-a2-3",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "pregunta": "Choose the correct option: I ___ speak French, but I can understand a little.",
+      "opciones": ["can", "can't", "am", "do"],
+      "respuestaCorrecta": 1
+    },
+    {
+      "id": "voc-a2-4",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "pregunta": "Choose the correct option: There are three ___ on the table.",
+      "opciones": ["apple", "apples", "an apple", "apple's"],
+      "respuestaCorrecta": 1
+    },
+    {
+      "id": "voc-b1-3",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "pregunta": "Choose the correct option: I ___ work late every day, but now I leave on time most nights.",
+      "opciones": ["use to", "used to", "am used", "was use to"],
+      "respuestaCorrecta": 1
+    },
+    {
+      "id": "voc-b1-4",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "pregunta": "Choose the correct option: This version is ___ than the last one.",
+      "opciones": ["more fast", "fastest", "faster", "fast"],
+      "respuestaCorrecta": 2
+    },
+    {
+      "id": "voc-b2-3",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "pregunta": "Choose the correct option: The bug ___ before the update went live.",
+      "opciones": ["was fixed", "fixed", "fixes", "has fix"],
+      "respuestaCorrecta": 0
+    },
+    {
+      "id": "voc-b2-4",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "pregunta": "Choose the correct option: She said she ___ the report by Friday.",
+      "opciones": ["will finish", "finishes", "would finish", "finish"],
+      "respuestaCorrecta": 2
+    },
+    {
+      "id": "voc-c1-3",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "revisar": true,
+      "pregunta": "Choose the correct option: No sooner ___ the deploy than three alerts went off.",
+      "opciones": ["we had finished", "had we finished", "we finished", "did we finished"],
+      "respuestaCorrecta": 1
+    },
+    {
+      "id": "voc-c1-4",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "revisar": true,
+      "pregunta": "Choose the correct option: Had I known about the merge conflict earlier, I ___ it before lunch.",
+      "opciones": ["would resolve", "resolve", "would have resolved", "will have resolved"],
+      "respuestaCorrecta": 2
     }
   ]
 }

@@ -373,5 +373,37 @@ rondas de crítica propias.
   `App.Racha`/`App.XP`/`App.SRS`. Queda en el checklist de `REPORTE_MATUTINO_2.md` para que
   Alex la corra de verdad y me diga si algo falla.
 
+## D20. Paso C — ampliación de contenido de fase 1
+- **Lecturas:** 4 → 12 (8 nuevas, A2-B2, temas de carrera/comunicación profesional:
+  standup, pedir ayuda, documentar código, feedback en code review, explicar un bloqueo,
+  planear un sprint, pros/contras de una herramienta, preparar una demo). Texto 100%
+  original, cada una con 1-2 preguntas de comprensión y distractores de largo parecido.
+- **Vocabulario:** 20 → 60 (40 términos nuevos: incidentes/DevOps, SCRUM, comunicación
+  asertiva, reuniones). Mismas categorías que ya existían más 2 nuevas (`reuniones`,
+  `entrevistas`) para los términos que encajaban mejor ahí.
+- **Frases útiles:** de ~34 a 55, repartidas entre las 7 categorías que ya existían (no se
+  pidió un número exacto, solo "ampliar").
+- **Ejercicios de habla:** 8 → 24 (16 nuevos: 8 `shadowing` + 8 `responder_prompt`,
+  progresión A2→C1), para que el Paso A tenga variedad real.
+- **Banco del diagnóstico:** 24 → 48, agregando exactamente 2 preguntas nuevas por cada
+  combinación de habilidad (lectura/escucha/vocabulario_gramatica) y nivel (A2/B1/B2/C1) —
+  queda perfectamente balanceado: 4 de cada combinación, 12 por habilidad, 12 por nivel.
+- **Hallazgo real (no lo arreglé, lo marqué):** en TODAS las preguntas originales de la
+  noche anterior, la respuesta correcta es siempre la opción en el índice 0 — un patrón que
+  alguien que haga el diagnóstico con atención podría notar y explotar sin realmente saber
+  inglés. No lo corregí porque arreglarlo de verdad significa mezclar las opciones al
+  renderizar en `diagnostico.js`, un cambio de lógica fuera de este paso (que pedía solo
+  contenido). Sí varié a propósito la posición de la respuesta correcta en las 24 preguntas
+  nuevas, para que al menos no empeore. Queda anotado para que Alex decida si vale la pena
+  el cambio de lógica.
+- **Todo lo nuevo** está marcado `revisar: true` (el nivel CEFR es mi estimación, no una
+  certificación) y es contenido original mío, verificado gramaticalmente con confianza alta
+  pero sin afirmaciones técnicas dudosas — donde no tenía certeza de un dato preferí texto
+  genérico/narrativo en vez de inventar un dato técnico específico.
+- **Verificación:** cada archivo se validó con `json.load` (parsea sin errores), conteo de
+  ids únicos, y que todo `respuestaCorrecta` cae dentro del rango de `opciones` — ver
+  comandos corridos en esta sesión. 78/78 pruebas puras siguen en verde (nada de esto toca
+  lógica).
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*

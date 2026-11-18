@@ -1,5 +1,5 @@
 {
-  "_nota": "Ejercicios de habla. 'shadowing' = repetir en voz alta imitando ritmo/entonación de una frase dada. 'responder_prompt' = contestar una pregunta abierta en voz alta. Todos requieren micrófono; no se puede probar su reconocimiento de voz hasta usar el iPhone real (ver BLOQUEOS.md / REPORTE_MATUTINO.md). Evaluar pronunciación comparando transcripción contra el objetivo es aproximado, como advierte PROMPT_BASE.md.",
+  "_nota": "Ejercicios de habla. 'shadowing' = repetir en voz alta imitando ritmo/entonación de una frase dada. 'responder_prompt' = contestar una pregunta abierta en voz alta. Todos requieren micrófono; el reconocimiento de voz ya se confirmó funcionando en iPhone real (ver DECISIONES.md D12). Evaluar pronunciación comparando transcripción contra el objetivo es aproximado, como advierte PROMPT_BASE.md y como implementa App.Habla.comparar. Los ejercicios de 'habla-f1-shadow-5' en adelante son nuevos (Paso A/C) y llevan 'revisar: true' en el nivel CEFR.",
   "ejercicios": [
     {
       "id": "habla-f1-shadow-1",
@@ -55,6 +55,134 @@
       "tipo": "responder_prompt",
       "nivelCEFR": "B2",
       "prompt": "Tell me about a time you disagreed with a teammate. How did you handle it?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-5",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "fraseObjetivo": "Can everyone see my screen?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-6",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "fraseObjetivo": "I'm a bit behind on this task.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-7",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "fraseObjetivo": "Could you confirm by end of day?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-8",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "fraseObjetivo": "Not a blocker, just a small suggestion.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-9",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "fraseObjetivo": "Let's align on the scope before we estimate the work.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-10",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "fraseObjetivo": "I'd push back a little on this part of the proposal.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-11",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "fraseObjetivo": "We found the root cause, but the fix will take a couple of days.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-12",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "revisar": true,
+      "fraseObjetivo": "It's not that the proposal lacks merit, it's that the timing feels off.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-5",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "prompt": "What do you usually do first thing in the morning at work or school?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-6",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "prompt": "Describe a tool or app you use every day. What is it for?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-7",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "prompt": "Tell me about a bug or problem you fixed recently. What was it?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-8",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "prompt": "How do you usually ask a teammate for help when you're stuck?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-9",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "prompt": "Describe a decision where you had to choose between two reasonable options. How did you decide?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-10",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "prompt": "What's one piece of feedback you received that actually changed how you work?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-11",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "revisar": true,
+      "prompt": "Tell me about a time a project didn't go as planned. What would you do differently now?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-12",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "revisar": true,
+      "prompt": "How do you decide when a piece of technical debt is worth fixing versus leaving alone?",
       "requiere_prueba_microfono": true
     }
   ]
