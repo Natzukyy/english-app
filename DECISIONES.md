@@ -405,5 +405,36 @@ rondas de crítica propias.
   comandos corridos en esta sesión. 78/78 pruebas puras siguen en verde (nada de esto toca
   lógica).
 
+## D21. Arreglo del sesgo "la respuesta correcta siempre es la opción 0" (ver D20)
+- **Arreglo:** `App.Util.barajarOpciones(opciones, indiceCorrecta)` (nueva, pura,
+  `js/core/util.js`) baraja un arreglo de ÍNDICES (no los textos) y devuelve
+  `{opciones, indiceCorrecta, indicesOriginales}`. `indicesOriginales[posiciónBarajada]`
+  guarda a qué índice original corresponde esa posición, así que la respuesta elegida en
+  pantalla se puede traducir de vuelta al índice original sin ambigüedad, incluso si dos
+  opciones tuvieran el mismo texto (por eso se barajan índices y no los strings).
+- **`js/screens/diagnostico.js`** la usa al pintar cada pregunta de banco.json: las
+  opciones se muestran en el orden barajado, pero lo que se guarda en
+  `estado.respuestas[p.id]` sigue siendo el **índice original** (vía `indicesOriginales`).
+  `App.Diagnostico.construirResultado`/`evaluarHabilidad` (el motor de calificación) **no
+  se tocó en absoluto** — sigue comparando `respuestas[p.id] === p.respuestaCorrecta` contra
+  `banco.json` tal cual, y sigue dando el resultado correcto porque lo que le llega ya está
+  en su mismo sistema de índices de siempre. `banco.json` tampoco se tocó: el sesgo se
+  arregla solo en cómo se presenta, nunca en los datos.
+- **Lecturas:** `data/content/fase1/lecturas.json` tiene el mismo sesgo en sus preguntas de
+  comprensión (casi todas con `respuestaCorrecta: 0`), pero **no hay ninguna pantalla que
+  las muestre todavía** (ver BLOQUEOS.md B5) — no hay nada que cablear. `barajarOpciones` es
+  genérica (no depende de nada específico del diagnóstico) y queda lista para usarse ahí el
+  día que exista esa pantalla.
+- **Pruebas (5 nuevas, `tests/core/util.test.js`):** la correcta cae en más de una posición
+  a lo largo de 200 corridas; la comprobación sigue apuntando al valor correcto (no a una
+  posición fija) en 100 corridas; la traducción posición-barajada → índice original es
+  consistente; no se pierde ni se duplica ninguna opción (mismo multiconjunto, mismos 5
+  índices originales presentes) en 50 corridas; caso de una sola opción no se rompe.
+- **Nada de diseño ni de puntuación cambió:** mismas clases CSS, mismo flujo
+  Comprobar/Continuar, mismas animaciones, mismo umbral de acierto y misma fórmula de
+  `evaluarHabilidad`. 83/83 pruebas en verde (78 de antes + 5 nuevas), corrido varias veces
+  para confirmar que no hay aleatoriedad que las haga fallar por casualidad (el riesgo
+  teórico de que 200 corridas caigan siempre en la misma posición es prácticamente cero).
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*

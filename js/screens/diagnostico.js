@@ -91,10 +91,17 @@
       });
     }
 
+    // Se baraja el orden de las opciones al presentarlas -- en los datos originales la
+    // respuesta correcta siempre está en el índice 0 (ver DECISIONES.md D20/D21). Barajar es
+    // puramente de presentación: banco.json no se toca, y lo que se guarda en
+    // estado.respuestas sigue siendo el índice ORIGINAL (vía indicesOriginales), para que
+    // App.Diagnostico.construirResultado siga calificando exactamente igual que antes.
+    var barajada = global.App.Util.barajarOpciones(p.opciones, p.respuestaCorrecta);
+
     var seleccionada = -1;
     var contenedorOpciones = el.querySelector("#opciones");
     var btnComprobar = el.querySelector("#btn-comprobar");
-    var botonesOpcion = p.opciones.map(function (opcion, i) {
+    var botonesOpcion = barajada.opciones.map(function (opcion, i) {
       var boton = document.createElement("button");
       boton.type = "button";
       boton.className = "boton-secundario";
@@ -113,13 +120,15 @@
 
     btnComprobar.addEventListener("click", function () {
       if (seleccionada === -1) return;
-      estado.respuestas[p.id] = seleccionada;
-      var esCorrecta = seleccionada === p.respuestaCorrecta;
+      // Se guarda el índice ORIGINAL (de banco.json), no la posición barajada en pantalla --
+      // así App.Diagnostico.construirResultado (sin cambios) sigue calificando correcto.
+      estado.respuestas[p.id] = barajada.indicesOriginales[seleccionada];
+      var esCorrecta = seleccionada === barajada.indiceCorrecta;
       btnComprobar.style.display = "none";
       botonesOpcion.forEach(function (b, i) {
         b.disabled = true;
         b.removeAttribute("aria-current"); // el estado de seleccion ya no aplica, ahora manda el resultado
-        if (i === p.respuestaCorrecta) {
+        if (i === barajada.indiceCorrecta) {
           b.classList.add("pulso-correcto", "estado-correcto");
         } else if (i === seleccionada) {
           b.classList.add("pulso-incorrecto", "estado-incorrecto");
@@ -133,7 +142,7 @@
         '<p class="titulo-retro">' +
         (esCorrecta ? "¡Correcto!" : "No era esa") +
         "</p>" +
-        (esCorrecta ? "" : "<p>La respuesta correcta era: " + global.App.Util.escaparHTML(p.opciones[p.respuestaCorrecta]) + "</p>") +
+        (esCorrecta ? "" : "<p>La respuesta correcta era: " + global.App.Util.escaparHTML(barajada.opciones[barajada.indiceCorrecta]) + "</p>") +
         '<button type="button" class="boton-principal" id="btn-continuar" style="margin-top:12px">Continuar</button>' +
         "</div>";
 

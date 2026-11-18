@@ -15,6 +15,41 @@
     });
   }
 
+  /**
+   * Baraja las opciones de una pregunta de opción múltiple (banco de diagnóstico, preguntas
+   * de comprensión de lecturas) SIN tocar los datos originales -- arregla que en varias
+   * preguntas la respuesta correcta esté siempre en el índice 0 (ver DECISIONES.md D20/D21).
+   * No baraja los textos directamente: baraja un arreglo de índices y arma las opciones
+   * nuevas a partir de ahí, así que la "referencia" a cuál opción es la correcta nunca se
+   * pierde aunque dos opciones tengan el mismo texto.
+   * @param {Array<string>} opciones
+   * @param {number} indiceCorrecta  índice de la respuesta correcta en `opciones` (original)
+   * @returns {{opciones:Array<string>, indiceCorrecta:number, indicesOriginales:Array<number>}}
+   *   `indicesOriginales[posiciónBarajada]` da el índice que esa opción tenía en el arreglo
+   *   original -- así se puede traducir de vuelta una respuesta elegida (en el orden
+   *   barajado) al índice original, para seguir calificando contra los datos sin tocar nada
+   *   de la lógica de puntuación.
+   */
+  function barajarOpciones(opciones, indiceCorrecta) {
+    var indices = opciones.map(function (_, i) {
+      return i;
+    });
+    for (var i = indices.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = indices[i];
+      indices[i] = indices[j];
+      indices[j] = tmp;
+    }
+    var opcionesBarajadas = indices.map(function (indiceOriginal) {
+      return opciones[indiceOriginal];
+    });
+    return {
+      opciones: opcionesBarajadas,
+      indiceCorrecta: indices.indexOf(indiceCorrecta),
+      indicesOriginales: indices
+    };
+  }
+
   // --- Helpers de presentación (DOM/rAF). No tienen prueba unitaria a propósito, igual que
   // storage.js/datos.js: dependen de `document`/`requestAnimationFrame`, que no existen en el
   // runner de pruebas (JavaScriptCore puro). Se verifican por lectura + por las capturas en
@@ -110,6 +145,7 @@
 
   global.App.Util = {
     escaparHTML: escaparHTML,
+    barajarOpciones: barajarOpciones,
     aplicarTema: aplicarTema,
     animarNumero: animarNumero,
     animarBarra: animarBarra,
