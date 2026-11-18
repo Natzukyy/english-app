@@ -89,7 +89,17 @@
         descripcion: repasoHecho ? "Meta de hoy cumplida" : minutosHoy > 0 ? "En curso — " + esc(minutosHoy) + " min hasta ahora" : "Todavía no empiezas hoy",
         ruta: "repaso"
       };
-      var rutaHtml = [pasoDiagnostico, pasoRepaso]
+      // Habla comparte el mismo registro de sesión del día que repaso (ambos llaman a
+      // App.Datos.registrarSesion), así que no hay forma honesta de saber si "habla"
+      // específicamente ya se practicó hoy -- no se le pone un "completado" falso. Se queda
+      // en "actual" (el mismo estado animado de pulso) en cuanto el diagnóstico está hecho.
+      var pasoHabla = {
+        titulo: "Habla",
+        estado: !diagnostico ? "pendiente" : "actual",
+        descripcion: "Practica con reconocimiento de voz",
+        ruta: "habla"
+      };
+      var rutaHtml = [pasoDiagnostico, pasoRepaso, pasoHabla]
         .map(function (paso) {
           var contenidoCirculo = paso.estado === "completado" ? Iconos.svg("check", 18) : paso.estado === "pendiente" ? Iconos.svg("candado", 16) : "";
           return (

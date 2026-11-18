@@ -436,5 +436,19 @@ rondas de crítica propias.
   para confirmar que no hay aleatoriedad que las haga fallar por casualidad (el riesgo
   teórico de que 200 corridas caigan siempre en la misma posición es prácticamente cero).
 
+## D22. Tercer nodo "Habla" en "Tu camino" (Inicio)
+- Agregado a pedido explícito de Alex: mismo componente visual que "Diagnóstico"/"Repaso de
+  hoy" (círculo + línea conectora + mismo pulso animado en estado "actual"), sin pestaña de
+  navegación nueva — se llega igual que antes, por hash (`#/habla`), reusando el wiring
+  genérico de `[data-ruta-a]` que ya existía.
+- **Estado honesto, no inventado:** como `habla.js` y `repaso.js` llaman al mismo
+  `App.Datos.registrarSesion` y por lo tanto escriben en el mismo registro de sesión del
+  día, no hay manera de saber si "habla" específicamente se practicó hoy (solo si hubo
+  estudio en general). Por eso este nodo nunca llega a "completado": se queda en "actual"
+  en cuanto el diagnóstico está hecho (mismo gate que repaso), para no mostrar un check que
+  no se puede respaldar con un dato real. Ver BLOQUEOS.md B5, actualizado.
+- Sin cambios de lógica de negocio ni de puntuación; solo un tercer elemento en el arreglo
+  que ya armaba la ruta en `js/screens/inicio.js`.
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*
