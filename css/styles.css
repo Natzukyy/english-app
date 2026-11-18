@@ -17,8 +17,8 @@
   --texto: #1b1b18;
   --texto-tenue: #6b6a63;
 
-  --acento: #8f5a00;
-  --acento-fuerte: #714600;
+  --acento: #9c6008;
+  --acento-fuerte: #7a4b00;
   --acento-sobre: #ffffff; /* color de texto/ícono cuando va ENCIMA de --acento */
   --acento-tenue: #f1e4cf; /* fondo muy sutil para resaltos (p.ej. tab activa) */
 
@@ -215,6 +215,7 @@ button {
 
 .boton-principal:active {
   transform: scale(0.97);
+  background: var(--acento-fuerte);
 }
 
 .boton-principal:disabled {
@@ -350,8 +351,8 @@ button {
 
 .lista-chips {
   display: flex;
-  flex-direction: column;
-  gap: var(--e-3);
+  flex-wrap: wrap;
+  gap: var(--e-2) var(--e-5);
   margin-top: var(--e-5);
 }
 
