@@ -2,7 +2,7 @@
   "use strict";
 
   var ICONO_POR_HABILIDAD = { lectura: "libro", escucha: "auriculares", habla: "microfono", escritura: "pluma" };
-  var CIRCUNFERENCIA_ANILLO = 150.8; // 2 * PI * 24 (radio del <circle> del anillo)
+  var NOMBRE_HABILIDAD = { lectura: "Lectura", escucha: "Escucha", habla: "Habla", escritura: "Escritura" };
 
   function render(el, ctx) {
     var t = function (clave) {
@@ -32,50 +32,38 @@
       var esc = global.App.Util.escaparHTML;
       var Iconos = global.App.Iconos;
 
-      // Nodos de habilidad: icono propio + anillo de progreso (% hacia B2 del último
-      // diagnóstico, ya calculado por App.Diagnostico -- aquí solo se lee y se dibuja).
-      var nodosHtml = ["lectura", "escucha", "habla", "escritura"]
+      // Tarjetas de habilidad: mosaico de ícono + nombre + barra de progreso (% hacia B2 del
+      // último diagnóstico, ya calculado por App.Diagnostico) o "Sin datos" si no hay
+      // diagnóstico todavía -- nunca una raya suelta.
+      var tarjetasHtml = ["lectura", "escucha", "habla", "escritura"]
         .map(function (habilidad) {
           var datosHabilidad = diagnostico && diagnostico.porHabilidad[habilidad];
-          var nivelCEFRCrudo = datosHabilidad ? datosHabilidad.nivelCEFR : "—";
-          // Solo "habla" tiene pantalla propia por ahora (ver BLOQUEOS.md B5): es el único
-          // nodo que navega a algún lado. Los demás se quedan como detalle visual, no botón.
+          var porcentaje = datosHabilidad ? datosHabilidad.porcentajeHaciaB2 : null;
+          // Solo "habla" tiene pantalla propia por ahora (ver BLOQUEOS.md B5): es la única
+          // tarjeta que navega a algún lado. Las demás se quedan como detalle visual.
           var esClickeable = habilidad === "habla";
-          var etiquetaHTML = esClickeable ? '<button type="button" class="nodo-habilidad" data-ruta-a="habla">' : '<div class="nodo-habilidad">';
-          var cierreHTML = esClickeable ? "</button>" : "</div>";
+          var etiqueta = esClickeable ? '<button type="button" class="tarjeta-habilidad" data-ruta-a="habla">' : '<div class="tarjeta-habilidad">';
+          var cierre = esClickeable ? "</button>" : "</div>";
           return (
-            etiquetaHTML +
-            '<div class="anillo">' +
-            '<svg viewBox="0 0 56 56" aria-hidden="true">' +
-            '<circle class="pista" cx="28" cy="28" r="24" stroke-width="4"></circle>' +
-            '<circle class="progreso" data-habilidad="' +
-            habilidad +
-            '" cx="28" cy="28" r="24" stroke-width="4" stroke-dasharray="' +
-            CIRCUNFERENCIA_ANILLO +
-            '" stroke-dashoffset="' +
-            CIRCUNFERENCIA_ANILLO +
-            '"></circle>' +
-            "</svg>" +
-            '<span class="icono-centro">' +
-            Iconos.svg(ICONO_POR_HABILIDAD[habilidad], 22) +
-            "</span>" +
+            etiqueta +
+            '<div class="icono-mosaico" aria-hidden="true">' +
+            Iconos.svg(ICONO_POR_HABILIDAD[habilidad], 24) +
             "</div>" +
-            '<span class="texto-caption">' +
-            habilidad +
+            '<span class="nombre-habilidad">' +
+            NOMBRE_HABILIDAD[habilidad] +
             "</span>" +
-            '<span class="nivel">' +
-            esc(nivelCEFRCrudo) +
-            "</span>" +
-            cierreHTML
+            (porcentaje === null
+              ? '<span class="texto-tenue texto-caption">Sin datos</span>'
+              : '<div class="barra-progreso"><span data-destino="' + porcentaje + '" style="width:0%"></span></div>') +
+            cierre
           );
         })
         .join("");
 
-      // Ruta de sesiones: SOLO 2 pasos reales y accionables hoy (diagnóstico + repaso),
-      // derivados de datos que ya existen (nada se inventa). Lecturas y ejercicios de habla
-      // todavía no tienen pantalla propia que los muestre -- ver BLOQUEOS.md B5: por eso no
-      // son parte de la ruta todavía (un nodo que no lleva a ningún lado sería peor que no
-      // tener ese nodo).
+      // Ruta de sesiones: 3 pasos reales y accionables hoy (diagnóstico, repaso, habla),
+      // derivados de datos que ya existen (nada se inventa). Sin candados: "pendiente" se ve
+      // más discreto que "actual", pero igual de tocable -- Repaso y Habla siempre se pueden
+      // abrir, nunca están realmente bloqueados.
       var pasoDiagnostico = {
         titulo: "Diagnóstico",
         estado: diagnostico ? "completado" : "actual",
@@ -91,8 +79,7 @@
       };
       // Habla comparte el mismo registro de sesión del día que repaso (ambos llaman a
       // App.Datos.registrarSesion), así que no hay forma honesta de saber si "habla"
-      // específicamente ya se practicó hoy -- no se le pone un "completado" falso. Se queda
-      // en "actual" (el mismo estado animado de pulso) en cuanto el diagnóstico está hecho.
+      // específicamente ya se practicó hoy -- no se le pone un "completado" falso.
       var pasoHabla = {
         titulo: "Habla",
         estado: !diagnostico ? "pendiente" : "actual",
@@ -101,7 +88,7 @@
       };
       var rutaHtml = [pasoDiagnostico, pasoRepaso, pasoHabla]
         .map(function (paso) {
-          var contenidoCirculo = paso.estado === "completado" ? Iconos.svg("check", 18) : paso.estado === "pendiente" ? Iconos.svg("candado", 16) : "";
+          var contenidoCirculo = paso.estado === "completado" ? Iconos.svg("check", 18) : "";
           return (
             '<div class="ruta-nodo ' +
             paso.estado +
@@ -122,11 +109,10 @@
         .join("");
 
       el.innerHTML =
-        '<div class="pantalla-vista">' +
+        '<div class="pantalla-vista flujo-inicio">' +
         '<h1 data-i18n-live="inicio.titulo"></h1>' +
-        '<div class="panel-dos-columnas">' +
-        '<div class="panel-col">' +
-        '<div class="hero-bloque">' +
+        '<div class="tarjeta">' +
+        '<div class="fila">' +
         '<p class="hero-numero num-tabular" id="valor-racha">0</p>' +
         '<p class="hero-etiqueta">' +
         '<span id="icono-flama"' +
@@ -136,7 +122,6 @@
         "</span>" +
         '<span data-i18n-live="inicio.racha.etiqueta"></span></p>' +
         "</div>" +
-        '<div class="seccion entrada-escalonada">' +
         '<div class="fila">' +
         '<div class="fila-cabeza"><span class="texto-tenue" data-i18n-live="inicio.meta.etiqueta"></span><span class="texto-tenue num-tabular">' +
         esc(minutosHoy) +
@@ -152,12 +137,8 @@
         "</div>" +
         "</div>" +
         '<button type="button" class="boton-principal" id="btn-empezar-repaso" data-i18n-live="nav.repaso"></button>' +
-        "</div>" +
-        '<div class="panel-col">' +
-        '<div class="nodos-habilidad entrada-escalonada">' +
-        nodosHtml +
-        "</div>" +
-        "</div>" +
+        '<div class="tarjetas-habilidad entrada-escalonada">' +
+        tarjetasHtml +
         "</div>" +
         '<div class="seccion">' +
         "<h2>Tu camino</h2>" +
@@ -183,11 +164,8 @@
       global.App.Util.animarNumero(el.querySelector("#valor-racha"), racha.rachaActual);
       global.App.Util.animarNumero(el.querySelector("#valor-xp"), xp.total);
       global.App.Util.animarBarra(el.querySelector("#barra-meta"), porcentajeMeta);
-      el.querySelectorAll(".anillo circle.progreso").forEach(function (circulo) {
-        var habilidad = circulo.getAttribute("data-habilidad");
-        var datosHabilidad = diagnostico && diagnostico.porHabilidad[habilidad];
-        var porcentaje = datosHabilidad ? datosHabilidad.porcentajeHaciaB2 : 0;
-        global.App.Util.animarAnillo(circulo, porcentaje, CIRCUNFERENCIA_ANILLO);
+      el.querySelectorAll(".tarjeta-habilidad .barra-progreso > span[data-destino]").forEach(function (span) {
+        global.App.Util.animarBarra(span, span.getAttribute("data-destino"));
       });
     });
   }

@@ -146,9 +146,12 @@ body {
 
 main {
   flex: 1;
+  min-width: 0; /* si no, el min-content de los hijos puede ganarle al max-width en flex */
   padding: var(--e-5) max(var(--e-4), env(safe-area-inset-right)) calc(var(--toque-minimo) + var(--e-6))
     max(var(--e-4), env(safe-area-inset-left));
-  padding-top: max(var(--e-5), env(safe-area-inset-top));
+  /* +var(--e-2) de respiro: max() solo iguala el borde del área segura, y en la práctica
+     el contenido se sigue viendo pegado (o tapado) por la barra de estado del iPhone. */
+  padding-top: calc(max(var(--e-5), env(safe-area-inset-top, 0px)) + var(--e-2));
   overflow-y: auto;
 }
 
@@ -319,7 +322,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: var(--e-2);
-  padding: 4px 0;
+  padding: var(--e-1) 0;
   font-size: var(--fs-small);
   color: var(--texto-tenue);
 }
@@ -398,6 +401,12 @@ button {
   margin-bottom: var(--e-6);
 }
 
+/* Flujo de Inicio: columna única, mismo espacio (32px) entre cada bloque de arriba a
+   abajo, sin cajas intermedias que lo rompan. */
+.flujo-inicio > * + * {
+  margin-top: var(--e-6);
+}
+
 .estado-vacio {
   color: var(--texto-tenue);
   text-align: left;
@@ -473,6 +482,11 @@ nav.tabs button[aria-current="true"] {
   color: var(--acento);
 }
 
+/* Nombre de la app: solo se ve arriba de la barra lateral en laptop (ver media query). */
+.marca-sidebar {
+  display: none;
+}
+
 /* Tarjeta de repaso: metáfora real de tarjeta física, con transición de volteo sutil. */
 .tarjeta-repaso {
   min-height: 160px;
@@ -504,73 +518,66 @@ nav.tabs button[aria-current="true"] {
   text-align: center;
 }
 
-/* --- Nodos de habilidad (inicio): icono + anillo de progreso + nivel. --- */
-.nodos-habilidad {
+/* --- Tarjetas de habilidad (inicio): mosaico de ícono + nombre + barra o "Sin datos". ---
+   Mismo tamaño de caja sin importar si es <div> (sin pantalla propia todavía) o <button>
+   ("habla", que sí navega) -- se resetean los estilos nativos de <button> para que ambas
+   midan exactamente igual en la rejilla (ver DECISIONES.md). */
+.tarjetas-habilidad {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--e-4);
 }
 
-.nodo-habilidad {
+.tarjeta-habilidad {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--e-2);
-  text-align: center;
-  padding: var(--e-3) 0;
-  background: none;
-  border: none;
-  font-family: inherit;
   width: 100%;
+  min-width: 0; /* si no, un grid item no se encoge más chico que su contenido y se desborda */
+  box-sizing: border-box;
+  margin: 0;
+  padding: var(--e-4);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--superficie);
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: default;
+  transition: transform var(--dur-rapida) var(--easing), border-color var(--dur-rapida) var(--easing);
 }
 
-button.nodo-habilidad {
+button.tarjeta-habilidad {
   cursor: pointer;
-  border-radius: var(--radio-chico);
-  transition: transform var(--dur-rapida) var(--easing);
 }
 
-button.nodo-habilidad:active {
+button.tarjeta-habilidad:active {
   transform: scale(0.97);
 }
 
-.anillo {
-  position: relative;
-  width: 56px;
-  height: 56px;
+.icono-mosaico {
+  width: 48px;
+  height: 48px;
   flex: none;
-}
-
-.anillo svg {
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg);
-}
-
-.anillo circle.pista {
-  fill: none;
-  stroke: var(--superficie-hundida);
-}
-
-.anillo circle.progreso {
-  fill: none;
-  stroke: var(--acento);
-  stroke-linecap: round;
-  transition: stroke-dashoffset 700ms var(--easing);
-}
-
-.anillo .icono-centro {
-  position: absolute;
-  inset: 0;
+  border-radius: var(--radio-chico);
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--superficie-hundida);
   color: var(--texto);
 }
 
-.nodo-habilidad .nivel {
-  font-size: var(--fs-small);
+.nombre-habilidad {
   font-weight: 600;
+  font-size: var(--fs-small);
+}
+
+.tarjeta-habilidad .barra-progreso {
+  width: 100%;
+  margin: 0;
 }
 
 /* --- Ruta de sesiones (inicio): nodos conectados por una línea vertical. --- */
@@ -649,9 +656,15 @@ button.nodo-habilidad:active {
   background: none;
   border: none;
   text-align: left;
-  padding: 6px 0 0;
+  padding: var(--e-1) 0 0;
   min-height: var(--toque-minimo);
   flex: 1;
+  min-width: 0; /* mismo motivo: un flex item no se encoge más chico que su texto por defecto */
+}
+
+.ruta-boton .titulo,
+.ruta-boton .estado {
+  overflow-wrap: break-word;
 }
 
 .ruta-boton .titulo {
@@ -863,6 +876,9 @@ button.nodo-habilidad:active {
   nav.tabs button:hover {
     color: var(--acento);
   }
+  button.tarjeta-habilidad:hover {
+    border-color: var(--acento);
+  }
 }
 
 /* --- Responsive: móvil (hasta 767px, sin cambios) / tablet (768-1099px, igual que móvil,
@@ -873,7 +889,7 @@ button.nodo-habilidad:active {
   }
 
   #app {
-    max-width: 1180px;
+    max-width: 1200px; /* 240px barra lateral + 960px contenido */
     min-height: 100vh;
     flex-direction: row;
   }
@@ -881,7 +897,7 @@ button.nodo-habilidad:active {
   main {
     max-width: 960px;
     margin: 0 auto;
-    padding: var(--e-7) var(--e-6) var(--e-6);
+    padding: var(--e-6);
   }
 
   /* Repaso, diagnóstico y ajustes: ancho de lectura, nunca estirado a todo el panel. */
@@ -911,18 +927,23 @@ button.nodo-habilidad:active {
     padding: var(--e-3) 0;
   }
 
+  /* Inicio: 4 tarjetas de habilidad en una sola fila (en móvil son 2x2). */
+  .tarjetas-habilidad {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   nav.tabs {
     order: -1;
     position: sticky;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 220px;
+    width: 240px;
     flex: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    gap: 2px;
+    gap: var(--e-1);
     padding: var(--e-6) var(--e-3);
     border-top: none;
     border-right: 1px solid var(--borde);
@@ -931,14 +952,24 @@ button.nodo-habilidad:active {
     backdrop-filter: none;
   }
 
+  .marca-sidebar {
+    display: block;
+    font-weight: 700;
+    font-size: var(--fs-heading);
+    padding: 0 var(--e-3) var(--e-4);
+    color: var(--texto);
+  }
+
   nav.tabs button {
+    flex: none; /* sin esto, flex:1 (móvil) estira los 5 botones a todo el alto de la barra */
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     gap: var(--e-3);
     font-size: var(--fs-small);
+    height: var(--toque-minimo);
     min-height: var(--toque-minimo);
-    padding: 10px var(--e-3);
+    padding: 0 var(--e-3);
     border-radius: var(--radio-chico);
   }
 

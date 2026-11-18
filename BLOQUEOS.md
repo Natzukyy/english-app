@@ -56,6 +56,16 @@ Cosas que fallaron o no se pudieron resolver solo. Formato: qué, cuándo, qué 
   achicando/agrandando la ventana de la Mac a través de 1100px, 768px, etc. — es la única
   forma de ver los tamaños exactos pedidos. Capturas del mecanismo (a 900px, con el
   breakpoint de prueba en 700px) en `capturas/responsive/`.
+- **Confirmación más profunda (rediseño de Inicio):** repetí la investigación con más
+  cuidado porque el desborde parecía afectar también el contenido (no solo el ancho del
+  iframe). Agregué bordes de calibración (`outline`) a `#app`/`nav.tabs`/`main` y probé con
+  contenido mínimo (un título + una tarjeta + un botón, sin rejillas ni listas): el desborde
+  sigue apareciendo igual, incluso con tan poco contenido — eso descarta que sea por
+  `display:grid`/`flex` de alguna tarjeta específica. También confirmé que `nav.tabs`
+  (la barra lateral) sí mide y se posiciona bien incluso a 1440px (se ve clarísimo con el
+  borde de calibración) — el límite de la herramienta es específicamente sobre el ancho de
+  `#app`/`main` a esas resoluciones, no sobre todo el layout. Capturas de esta sesión en
+  `capturas/inicio-rediseno/` (incluye la de control con bordes de calibración).
 
 ## B1. Verificación visual en navegador real, no confiable en automático
 - **Qué pasó:** intenté abrir la app en Safari vía AppleScript (`osascript -e 'tell application "Safari"...'`) para tomar una captura y confirmar visualmente la pantalla de inicio. La primera llamada tardó mucho y se movió a background; una segunda llamada (solo para listar las pestañas abiertas) falló con "Tiempo límite agotado para un evento Apple (-1712)".

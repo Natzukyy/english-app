@@ -450,5 +450,89 @@ rondas de crítica propias.
 - Sin cambios de lógica de negocio ni de puntuación; solo un tercer elemento en el arreglo
   que ya armaba la ruta en `js/screens/inicio.js`.
 
+## D23. Rediseño de Inicio: corrección de los bugs reales vistos en capturas
+Alex reportó bugs concretos vistos en capturas reales de Inicio (móvil y laptop) y dio una
+especificación exacta a seguir al pie de la letra. Antes de tocar código confirmé qué
+skills veo en esta sesión: `frontend-design` (plugin) está disponible y lo usé como guía de
+fondo; `emil-design-engineering`, `make-interfaces-feel-better` y `web-animation-design` NO
+existen en este entorno (ya confirmado en rondas anteriores). Donde la especificación de
+Alex es explícita, manda ella sobre cualquier otra guía.
+
+- **Móvil — barra de estado tapando el encabezado:** `main` ya tenía
+  `padding-top: max(e-5, env(safe-area-inset-top))`, pero en la práctica se seguía viendo
+  pegado/tapado. Cambié a `calc(max(e-5, env(safe-area-inset-top, 0px)) + e-2)` — 8px extra
+  de respiro más allá del borde del área segura, nunca exactamente al ras.
+- **Íconos irreconocibles / habla y escritura desalineadas:** la causa real de la
+  desalineación era de *box model*, no de diseño: las tarjetas eran `<div>` o `<button>`
+  según si tenían pantalla propia, y un `<button>` sin reset trae su propio padding/border
+  del navegador, así que medía distinto a un `<div>` aunque compartieran la misma clase.
+  Arreglo: `.tarjeta-habilidad` resetea explícitamente `border/padding/font/appearance` para
+  que `<div>` y `<button>` midan exactamente igual. De paso, se abandona el anillo de
+  progreso (56px, ícono a 22px) por el mosaico de 48px + ícono a 24px que pide la
+  especificación — más grande, más reconocible. Verifiqué los 4 íconos ampliados antes de
+  aceptarlos (reutilizan los mismos trazos ya aprobados en el Paso 1/4, que ya habían
+  pasado esa revisión).
+- **Candados en "Tu camino":** ya no se dibuja el ícono de candado para "pendiente" --
+  `contenidoCirculo` solo pone el ícono de check en "completado"; "pendiente" y "actual" se
+  diferencian solo por color/pulso (CSS, ya existía), nunca por un candado. Repaso y Habla
+  siempre fueron clickeables en el código (nunca hubo un bloqueo real) — el candado
+  visual era lo único que mentía.
+- **Nunca una raya "—":** las tarjetas de habilidad muestran una barra de progreso real o
+  el texto "Sin datos" en `texto-tenue`, nunca un guion suelto.
+- **Laptop — barra lateral estirando sus 5 ítems a todo el alto:** la causa real era que
+  `nav.tabs button{flex:1}` (de la regla base, pensada para la barra inferior en móvil)
+  nunca se reseteaba dentro de la media query de laptop, así que cada botón heredaba
+  `flex-grow:1` dentro de un contenedor en columna y se repartía el alto completo de
+  `100vh` entre los 5 -- de ahí también el "cuadro gigante" del ítem activo (el fondo
+  tintado ocupaba ese alto estirado). Arreglo: `flex: none` + `height: var(--toque-minimo)`
+  en la media query de laptop. Ancho fijo subido de 220 a 240px (pedido explícito), `gap`
+  de las filas a 4px (`--e-1`), y agregué un encabezado `.marca-sidebar` ("Inglés B2") fijo
+  arriba de los ítems (no existía ningún nombre de app en la barra antes).
+- **Laptop — contenido en dos columnas desconectadas / botón pegado a "Tu camino":**
+  se elimina `.panel-dos-columnas`/`.panel-col` por completo. Ahora todo Inicio es una sola
+  columna (`.flujo-inicio`, nueva clase utilitaria: `> * + * { margin-top: 32px }`, un
+  espacio uniforme entre cada bloque de arriba a abajo). Racha, meta y nivel/XP se
+  consolidan en **una sola tarjeta** (tres `.fila` con divisor, reutilizando el patrón que
+  ya existía en vez de inventar uno nuevo) en lugar de hero-bloque + tarjeta separados.
+  `main` en laptop pasa de padding asimétrico (48/32/32) a `padding: 32px` parejo, como pide
+  la especificación.
+- **Rejilla de habilidades 2x2 en móvil / 4 en laptop:** `.tarjetas-habilidad` usa
+  `grid-template-columns: 1fr 1fr` por defecto y `repeat(4, 1fr)` desde 1100px, dentro de la
+  media query de laptop que ya existía (no se agregó ninguna media query nueva).
+- **Único acento, sin colores nuevos:** las tarjetas de habilidad no usan
+  `--punto-lectura/escucha/habla/escritura` en ningún lado (esos tokens se quedaron
+  reservados para los chips de Progreso, que no se tocaron); el ícono del mosaico usa
+  `--texto` sobre `--superficie-hundida` (neutro) y la única barra de color sigue siendo
+  `--acento`.
+- **Limpieza:** `App.Util.animarAnillo` y toda la CSS de `.anillo`/`.nodo-habilidad`/
+  `.nodos-habilidad` se eliminaron por completo (confirmé con `grep` que no se usaban en
+  ningún otro lado antes de borrarlos) — ya no tenían función con el nuevo diseño de
+  mosaico.
+- **Escala de espaciado:** de paso corregí dos valores sueltos preexistentes que no
+  encajaban en la escala 4/8/12/16/24/32/48 (`.chip{padding:4px 0}` y
+  `.ruta-boton{padding:6px 0 0}`, este último literalmente fuera de la escala) a
+  `var(--e-1)`, ya que la especificación pide la escala "al pie de la letra" y estaban a la
+  vista mientras tocaba esas reglas.
+
+**Proceso de capturas (mínimo 2 vueltas, cumplido):** verifiqué 390/375 (ambos perfectos
+desde la primera vuelta) y 1440/1280. En la primera vuelta de laptop, la barra lateral se
+veía bien pero el contenido principal parecía desbordarse en la captura. Antes de aceptarlo
+como bug real, investigué a fondo: agregué bordes de calibración (`outline`) a `#app` y
+`main`, probé con contenido mínimo (sin las 4 tarjetas ni la ruta) y el desborde seguía
+idéntico -- eso ya descartaba que fuera por la rejilla o por las tarjetas.
+Lo reproduje con una versión reducida del breakpoint (1100px→700px, en
+una copia, nunca en el archivo real) a 900px de ancho, donde la herramienta de captura SÍ
+es fiel (ver BLOQUEOS.md B4): ahí todo se ve exactamente como se espera, sin desborde.
+Conclusión: es la MISMA limitación de `qlmanage` ya documentada (no es fiel por encima de
+~1000px de ancho), ahora confirmada con una prueba de control más profunda — ni el
+contenido ni la cantidad de tarjetas la disparan, aparece incluso con una tarjeta y un
+botón solos. Igual agregué `min-width: 0` en `main`, `.tarjeta-habilidad` y `.ruta-boton`
+como buena práctica defensiva contra el desborde real de flex/grid (el de
+`min-width: auto` por defecto), aunque no era la causa de lo que se veía en la captura.
+Capturas en `capturas/inicio-rediseno/`: las de 390/375 son fieles y quedaron limpias; las
+de 1440/1280 muestran el desborde conocido de la herramienta (incluidas de todas formas,
+tal como se pidió) junto con una captura de control a 900px (mecanismo real, confiable) y
+otra con bordes de calibración que confirma que la barra lateral ya NO se estira.
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*
