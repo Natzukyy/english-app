@@ -59,9 +59,18 @@
     }
   }
 
+  function aplicarTemaInicial() {
+    // El valor por defecto ("sistema", sin atributo) ya sigue prefers-color-scheme vía CSS,
+    // así que la mayoría de la gente nunca ve el breve instante antes de que esto resuelva.
+    return global.App.Datos.obtenerPreferencias().then(function (prefs) {
+      global.App.Util.aplicarTema(prefs.tema);
+    });
+  }
+
   function iniciar() {
     registrarNav();
     registrarServiceWorker();
+    aplicarTemaInicial();
     global.App.I18n.cargarDesdeArchivos()
       .then(function (res) {
         contexto.strings = res.strings;

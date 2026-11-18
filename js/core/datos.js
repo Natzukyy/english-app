@@ -5,11 +5,13 @@
 (function (global) {
   "use strict";
 
-  var PREFERENCIAS_POR_DEFECTO = { id: "preferencias", metaMinutosDia: 15 };
+  var PREFERENCIAS_POR_DEFECTO = { id: "preferencias", metaMinutosDia: 15, tema: "sistema" };
 
   function obtenerPreferencias() {
     return global.App.Storage.get("settings", "preferencias").then(function (p) {
-      return p || Object.assign({}, PREFERENCIAS_POR_DEFECTO);
+      // Object.assign con el default primero: si p viene de una versión anterior sin
+      // "tema" (o de un respaldo viejo), igual queda con un valor válido.
+      return Object.assign({}, PREFERENCIAS_POR_DEFECTO, p || {});
     });
   }
 

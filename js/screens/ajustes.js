@@ -26,24 +26,54 @@
 
     global.App.Datos.obtenerPreferencias().then(function (prefs) {
       el.innerHTML =
+        '<div class="pantalla-vista">' +
         '<h1 data-i18n-live="ajustes.titulo"></h1>' +
-        '<div class="tarjeta">' +
-        '<p class="texto-tenue">Meta diaria</p>' +
-        '<div id="botones-meta" style="display:flex;gap:8px"></div>' +
+        '<div class="seccion entrada-escalonada">' +
+        '<div class="seccion">' +
+        "<h2>Tema</h2>" +
+        '<div class="fila-botones" id="botones-tema"></div>' +
         "</div>" +
-        '<div class="tarjeta">' +
-        '<p class="texto-tenue" data-i18n-live="ajustes.exportar"></p>' +
-        '<button type="button" class="boton-secundario" id="btn-exportar" data-i18n-live="ajustes.exportar"></button>' +
+        '<div class="seccion">' +
+        "<h2>Meta diaria</h2>" +
+        '<div class="fila-botones" id="botones-meta"></div>' +
         "</div>" +
-        '<div class="tarjeta">' +
-        '<p class="texto-tenue" data-i18n-live="ajustes.importar"></p>' +
-        '<button type="button" class="boton-secundario" id="btn-importar" data-i18n-live="ajustes.importar"></button>' +
+        '<div class="fila">' +
+        '<button type="button" class="enlace-discreto" id="btn-exportar" data-i18n-live="ajustes.exportar"></button>' +
+        "</div>" +
+        '<div class="fila">' +
+        '<button type="button" class="enlace-discreto" id="btn-importar" data-i18n-live="ajustes.importar"></button>' +
         '<input type="file" id="input-importar" accept="application/json" hidden />' +
         '<p id="mensaje-importar" class="texto-tenue" aria-live="polite"></p>' +
+        "</div>" +
+        "</div>" +
         "</div>";
 
       el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
         nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
+      });
+
+      var contenedorTema = el.querySelector("#botones-tema");
+      [
+        { valor: "sistema", etiqueta: "Sistema" },
+        { valor: "claro", etiqueta: "Claro" },
+        { valor: "oscuro", etiqueta: "Oscuro" }
+      ].forEach(function (opcion) {
+        var boton = document.createElement("button");
+        boton.type = "button";
+        boton.className = "boton-secundario";
+        boton.textContent = opcion.etiqueta;
+        if (opcion.valor === prefs.tema) boton.setAttribute("aria-current", "true");
+        boton.addEventListener("click", function () {
+          global.App.Util.aplicarTema(opcion.valor); // optimista: se ve al toque, no espera guardar
+          global.App.Datos.guardarPreferencias(Object.assign({}, prefs, { tema: opcion.valor })).then(function () {
+            prefs.tema = opcion.valor;
+            contenedorTema.querySelectorAll("button").forEach(function (b) {
+              b.removeAttribute("aria-current");
+            });
+            boton.setAttribute("aria-current", "true");
+          });
+        });
+        contenedorTema.appendChild(boton);
       });
 
       var contenedorMeta = el.querySelector("#botones-meta");
@@ -51,11 +81,11 @@
         var boton = document.createElement("button");
         boton.type = "button";
         boton.className = "boton-secundario";
-        boton.style.flex = "1";
         boton.textContent = minutos + " min";
         if (minutos === prefs.metaMinutosDia) boton.setAttribute("aria-current", "true");
         boton.addEventListener("click", function () {
           global.App.Datos.guardarPreferencias(Object.assign({}, prefs, { metaMinutosDia: minutos })).then(function () {
+            prefs.metaMinutosDia = minutos;
             contenedorMeta.querySelectorAll("button").forEach(function (b) {
               b.removeAttribute("aria-current");
             });
