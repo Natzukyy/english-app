@@ -67,7 +67,7 @@
           global.App.Iconos.svg("bocina", 18) +
           "<span>Reproducir</span></button>"
         : "") +
-      '<h2 style="margin-top:' +
+      '<h2 class="pregunta-diagnostico" style="margin-top:' +
       (esEscucha ? "8" : "24") +
       'px">' +
       p.pregunta +
@@ -158,7 +158,7 @@
     el.innerHTML =
       '<div class="pantalla-vista ancho-lectura">' +
       '<h1 data-i18n-live="diagnostico.titulo"></h1>' +
-      "<h2>¿Qué descripción te queda mejor para " +
+      '<h2 class="pregunta-diagnostico">¿Qué descripción te queda mejor para ' +
       habilidad +
       "?</h2>" +
       '<div id="opciones-rubrica" class="entrada-escalonada" style="margin-top:16px"></div>' +
@@ -210,8 +210,12 @@
 
     el.innerHTML =
       '<div class="pantalla-vista ancho-lectura">' +
-      global.App.Util.confeti() +
-      '<h1 data-i18n-live="diagnostico.titulo"></h1>' +
+      '<div class="hero-bloque">' +
+      '<span class="icono-sello-fin">' +
+      global.App.Iconos.svg("sello", 32) +
+      "</span>" +
+      '<h1 style="margin-top:8px" data-i18n-live="diagnostico.titulo"></h1>' +
+      "</div>" +
       '<p class="texto-tenue">Esto es una estimación, no una certificación oficial.</p>' +
       '<div class="seccion entrada-escalonada" style="margin-top:16px">' +
       filas +
