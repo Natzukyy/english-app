@@ -775,6 +775,261 @@ nav.tabs button[aria-current="true"] {
   font-weight: 600;
 }
 
+/* ============================================================================
+   REPASO -- rediseño "Calcomanías oscuro" (ver spec de Alex, sesión del 19 nov 2026).
+   Clases NUEVAS y propias de esta pantalla: no se tocan .tarjeta-repaso/.grid-calificar/
+   .panel-retro de arriba porque Habla todavía las usa tal cual (su propio rediseño es un
+   fork aparte). Reusa .superficie-oscura y --sombra-dura/--ease-pop/--ease-out del bloque
+   de fundamentos (Fase A). ============================ */
+
+.repaso-contador {
+  margin-top: var(--e-2);
+  font-size: var(--fs-small);
+  color: var(--texto-2);
+}
+
+.repaso-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-5);
+  margin-top: var(--e-5);
+}
+
+/* El marco es el que rota (--r) Y voltea (rotateY) -- border/sombra/radio viven en el mismo
+   elemento que el contenido para que el "objeto físico completo" se vea volteando, no solo
+   su contenido interno. perspective en el propio marco (no en un ancestro) porque es el
+   único elemento 3D de toda la pantalla. */
+.repaso-marco {
+  position: relative;
+  min-height: 220px;
+  border: 2.5px solid var(--tinta);
+  border-radius: var(--radio-calcomania-grande);
+  box-shadow: var(--sombra-dura);
+  background: var(--crema);
+  transform: rotate(var(--r, -1deg));
+  transform-style: preserve-3d;
+  transition: transform var(--dur-lenta) var(--ease-pop), box-shadow var(--dur-rapida) var(--ease-pop);
+  perspective: 1400px;
+}
+
+.repaso-marco.revelada {
+  transform: rotate(var(--r, -1deg)) rotateY(180deg);
+}
+
+/* Al calificar: sale volando hacia el lado según la nota (spec de animación) -- coral/
+   amarillo (calidad 1/3, la respuesta floja) a la izquierda; menta/azul (calidad 4/5, la
+   respuesta segura) a la derecha. Reemplaza cualquier transform anterior (incluida la
+   rotación --r y el volteo), así que se aplica DESPUÉS de que el volteo ya se vio. */
+@keyframes repaso-vuela-izq {
+  to {
+    transform: translateX(-160%) rotate(-18deg);
+    opacity: 0;
+  }
+}
+@keyframes repaso-vuela-der {
+  to {
+    transform: translateX(160%) rotate(18deg);
+    opacity: 0;
+  }
+}
+.repaso-marco.vuela-izq {
+  animation: repaso-vuela-izq var(--dur-media) var(--ease-out) forwards;
+}
+.repaso-marco.vuela-der {
+  animation: repaso-vuela-der var(--dur-media) var(--ease-out) forwards;
+}
+
+.repaso-cara {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--e-5);
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.repaso-cara-frente {
+  color: var(--tinta);
+  gap: var(--e-3);
+}
+
+.repaso-cara-atras {
+  background: var(--surface);
+  color: var(--texto);
+  transform: rotateY(180deg);
+  justify-content: center;
+  align-items: center;
+  gap: var(--e-2);
+  text-align: center;
+}
+
+.repaso-pastilla {
+  align-self: flex-start;
+  background: var(--tinta);
+  color: var(--crema);
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  padding: var(--e-1) var(--e-3);
+  border-radius: 999px;
+}
+
+/* flex:1 (en vez de "justify-content:space-between" en .repaso-cara-frente + un margin fijo
+   aquí) -- la frase crece para llenar exactamente el espacio entre la pastilla y el botón de
+   bocina y centra su propio texto adentro; un margin fijo sumado al alto del texto (3 líneas
+   a 52px en laptop) se pasaba del alto de la tarjeta y recortaba el botón fuera de la vista
+   (overflow:hidden de .repaso-cara) -- flex:1 nunca se desborda así, toma lo que sobra. */
+.repaso-frase {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-size: var(--fs-title);
+  font-weight: 700;
+  text-align: center;
+  /* La regla global "p { color: var(--texto) }" gana sobre el color heredado de
+     .repaso-cara-frente (un rule que apunta directo al elemento siempre gana sobre
+     herencia, sin importar especificidad) -- --tinta explícito aquí, siempre oscuro
+     sobre el crema, sin importar el tema. */
+  color: var(--tinta);
+}
+
+.repaso-boton-bocina {
+  align-self: flex-end;
+  width: 48px;
+  height: 48px;
+  flex: none;
+  border-radius: 999px;
+  background: var(--menta);
+  color: var(--tinta);
+  border: 2.5px solid var(--tinta);
+  box-shadow: var(--sombra-dura);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--dur-rapida) var(--ease-pop), box-shadow var(--dur-rapida) var(--ease-pop);
+}
+.repaso-boton-bocina:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 var(--sombra);
+}
+
+.repaso-etiqueta-traduccion {
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--texto-2);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.repaso-texto-traduccion {
+  font-size: var(--fs-heading);
+  margin: 0;
+}
+
+/* Panel de calificar: oculto en celular hasta revelar (mismo patrón de dos pasos que ya
+   tenía esta pantalla, solo re-vestido); siempre visible en laptop (ver media query), con
+   los botones deshabilitados hasta revelar para que la columna no cambie de alto de golpe. */
+.repaso-panel-calificar {
+  display: none;
+}
+.repaso-panel-calificar.visible {
+  display: block;
+}
+
+.repaso-pregunta-calidad {
+  font-weight: 700;
+  margin: 0 0 var(--e-3);
+}
+
+.repaso-grid-calificar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--e-2);
+}
+
+.repaso-boton-calidad {
+  padding: var(--e-3);
+  font-weight: 700;
+  color: var(--tinta);
+  text-align: center;
+  position: relative;
+  min-height: var(--toque-minimo);
+}
+.repaso-boton-calidad:disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.repaso-tecla {
+  display: none; /* solo tiene sentido como pista en laptop, donde hay teclado físico garantizado */
+}
+
+.repaso-nota-teclado {
+  display: none; /* solo laptop */
+}
+
+@media (min-width: 900px) {
+  /* "main:has(> .pantalla-repaso)" (más abajo en el archivo) centra el bloque verticalmente
+     -- pensado para cuando el contenido es más corto que el viewport. Aquí se hace que el
+     bloque mismo CREZCA hasta llenar ese alto (REGLA DE LAPTOP: nada chico flotando en
+     espacio vacío) -- con el bloque ya del alto completo, centrarlo no hace nada (no hay
+     espacio sobrante que centrar), así que ambas reglas conviven sin pelear. */
+  .pantalla-repaso {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .repaso-cuerpo {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: var(--e-6);
+    align-items: stretch;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .repaso-marco {
+    --r: 0deg; /* tarjetas grandes de contenido en laptop van sin rotación (REGLA DE LAPTOP) */
+    min-height: 100%;
+  }
+
+  .repaso-cara-frente {
+    padding: var(--e-7);
+  }
+
+  .repaso-frase {
+    font-size: 52px;
+  }
+
+  .repaso-panel-calificar {
+    display: flex;
+    flex-direction: column;
+    padding: var(--e-5);
+  }
+
+  .repaso-tecla {
+    display: block;
+    font-size: var(--fs-caption);
+    font-weight: 600;
+    opacity: 0.75;
+    margin-top: var(--e-1);
+  }
+
+  .repaso-nota-teclado {
+    display: block;
+    margin-top: auto;
+    padding-top: var(--e-4);
+    font-size: var(--fs-caption);
+    color: var(--texto-2);
+  }
+}
+
 /* --- Tarjetas de habilidad (inicio): mosaico de ícono + nombre + barra o "Sin datos". ---
    Mismo tamaño de caja sin importar si es <div> (sin pantalla propia todavía) o <button>
    ("habla", que sí navega) -- se resetean los estilos nativos de <button> para que ambas
@@ -1292,15 +1547,19 @@ button.tarjeta-habilidad:active {
   }
 
   #app {
-    max-width: 1200px; /* 240px barra lateral + 960px contenido */
+    max-width: none; /* el contenido debe abarcar la pantalla (REGLA DE LAPTOP) -- el límite real vive en "main" de abajo */
     min-height: 100vh;
     flex-direction: row;
   }
 
   main {
-    max-width: 960px;
+    max-width: 1500px; /* spec: "a 1920 se puede limitar el ancho del contenido a ~1500px y centrarlo" -- a 1280/1440 este máximo no se alcanza, así que simplemente usa el ancho disponible */
     margin: 0 auto;
-    padding: var(--e-6);
+    padding: 40px 56px; /* spec: "main con padding 40px 56px" */
+  }
+
+  h1 {
+    font-size: var(--fs-title-laptop); /* spec: "título de pantalla de 42px" en laptop */
   }
 
   /* Repaso, diagnóstico y ajustes: ancho de lectura, nunca estirado a todo el panel. */

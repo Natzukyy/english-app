@@ -3,8 +3,23 @@
 
   // Estado de la sesión en curso (vive mientras el usuario está en esta pantalla).
   var sesion = null; // { cola: [tarjeta,...], indice, inicioMs, correctas }
+  var revelado = false; // ¿ya se volteó la tarjeta actual para ver la traducción?
+  var calificando = false; // evita doble-calificación mientras la tarjeta vuela/sale
+  var listenerTeclado = null; // referencia al keydown de la tarjeta actual, para quitarlo al avanzar/salir
+
+  // Rotación ligera por tarjeta (-1.5deg a 1.2deg, spec "Calcomanías") -- una por índice para
+  // que no se sienta mecánico si se repasa la cola completa más de una vez en la sesión.
+  var ROTACIONES = ["-1deg", "0.8deg", "-0.6deg", "1.1deg", "-1.3deg"];
+
+  function quitarListenerTeclado() {
+    if (listenerTeclado) {
+      global.removeEventListener("keydown", listenerTeclado);
+      listenerTeclado = null;
+    }
+  }
 
   function finalizarSesionSiActiva() {
+    quitarListenerTeclado();
     if (!sesion || sesion.finalizada) return Promise.resolve();
     sesion.finalizada = true;
     var minutos = Math.max(sesion.cola.length > 0 ? 1 : 0, Math.round((Date.now() - sesion.inicioMs) / 60000));
@@ -89,24 +104,56 @@
     var tarjeta = sesion.cola[sesion.indice];
     var esc = global.App.Util.escaparHTML;
     var porcentaje = Math.round((sesion.indice / sesion.cola.length) * 100);
+    var rotacion = ROTACIONES[sesion.indice % ROTACIONES.length];
+    revelado = false;
+    calificando = false;
+    quitarListenerTeclado();
+
     // tarjeta.frente/atras vienen de IndexedDB (sembradas por nosotros, pero sustituibles por
     // un respaldo importado): se escapan antes de insertarlas como HTML.
     el.innerHTML =
-      '<div class="pantalla-vista ancho-lectura pantalla-repaso">' +
+      '<div class="pantalla-vista pantalla-repaso">' +
       '<h1 data-i18n-live="repaso.titulo"></h1>' +
-      '<div class="fila-cabeza"><span class="texto-tenue num-tabular">' +
+      '<div class="repaso-contador"><span class="num-tabular">' +
       (sesion.indice + 1) +
-      " / " +
+      "</span> / <span class=\"num-tabular\">" +
       sesion.cola.length +
       "</span></div>" +
       '<div class="barra-progreso"><span id="barra-repaso" style="width:0%"></span></div>' +
-      '<div class="tarjeta tarjeta-repaso" id="tarjeta-actual" style="margin-top:24px">' +
-      '<p class="frente">' +
+      '<div class="repaso-cuerpo">' +
+      '<div class="repaso-marco pop-entrada" id="repaso-marco" style="--r:' +
+      rotacion +
+      '" role="button" tabindex="0" aria-label="Voltear para ver la traducción">' +
+      '<div class="repaso-cara repaso-cara-frente">' +
+      '<span class="repaso-pastilla">' +
+      esc(tarjeta.tipo || "Repaso") +
+      "</span>" +
+      '<p class="repaso-frase">' +
       esc(tarjeta.frente) +
       "</p>" +
+      '<button type="button" class="repaso-boton-bocina" id="btn-bocina" aria-label="Escuchar">' +
+      global.App.Iconos.svg("bocina", 20) +
+      "</button>" +
       "</div>" +
-      '<button type="button" class="boton-principal" id="btn-comprobar" style="margin-top:24px">Comprobar</button>' +
-      '<div id="zona-retro"></div>' +
+      '<div class="repaso-cara repaso-cara-atras">' +
+      '<p class="repaso-etiqueta-traduccion">Traducción</p>' +
+      '<p class="repaso-texto-traduccion">' +
+      esc(tarjeta.atras) +
+      "</p>" +
+      "</div>" +
+      "</div>" +
+      '<div class="repaso-panel-calificar superficie-oscura" id="panel-calificar">' +
+      '<p class="repaso-etiqueta-traduccion" id="traduccion-panel">Toca la tarjeta o presiona espacio para ver la traducción</p>' +
+      '<p class="repaso-pregunta-calidad">¿Qué tal te fue?</p>' +
+      '<div class="repaso-grid-calificar" id="repaso-calificar">' +
+      '<button type="button" class="repaso-boton-calidad" data-calidad="1" style="background:var(--coral)" disabled>No la sabía<span class="repaso-tecla">Tecla 1</span></button>' +
+      '<button type="button" class="repaso-boton-calidad" data-calidad="3" style="background:var(--amarillo)" disabled>Difícil<span class="repaso-tecla">Tecla 2</span></button>' +
+      '<button type="button" class="repaso-boton-calidad" data-calidad="4" style="background:var(--menta)" disabled>Bien<span class="repaso-tecla">Tecla 3</span></button>' +
+      '<button type="button" class="repaso-boton-calidad" data-calidad="5" style="background:var(--azul)" disabled>Fácil<span class="repaso-tecla">Tecla 4</span></button>' +
+      "</div>" +
+      '<p class="repaso-nota-teclado">Espacio muestra la traducción. Puedes calificar con las teclas 1 a 4.</p>' +
+      "</div>" +
+      "</div>" +
       "</div>";
 
     el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
@@ -115,59 +162,92 @@
 
     global.App.Util.animarBarra(el.querySelector("#barra-repaso"), porcentaje);
 
-    el.querySelector("#btn-comprobar").addEventListener("click", function () {
-      el.querySelector("#btn-comprobar").style.display = "none";
-      // Panel de retroalimentación: sube desde abajo. Todavía no tiene tono de
-      // acierto/error -- eso se decide cuando Alex se autocalifica (abajo).
-      el.querySelector("#zona-retro").innerHTML =
-        '<div class="panel-retro" id="panel-retro">' +
-        '<p class="atras">' +
-        esc(tarjeta.atras) +
-        "</p>" +
-        '<div id="repaso-calificar" class="grid-calificar">' +
-        '<button type="button" class="boton-secundario" data-calidad="1">No la sabía</button>' +
-        '<button type="button" class="boton-secundario" data-calidad="3">Difícil</button>' +
-        '<button type="button" class="boton-secundario" data-calidad="4">Bien</button>' +
-        '<button type="button" class="boton-secundario" data-calidad="5">Fácil</button>' +
-        "</div>" +
-        "</div>";
+    var marco = el.querySelector("#repaso-marco");
+    // "pop-entrada" es una @keyframes animation con fill-mode "both": mientras siga
+    // aplicada, el motor del navegador sigue controlando "transform" con su último cuadro
+    // PARA SIEMPRE, por encima de cualquier cambio de clase/transición normal (p. ej.
+    // ".revelada" de abajo) -- aunque la regla CSS exista y la clase se agregue, el volteo
+    // nunca se vería. Se quita en cuanto termina de animar, para que el marco vuelva a
+    // responder a los cambios de transform normales del resto de esta pantalla.
+    marco.addEventListener("animationend", function () {
+      marco.classList.remove("pop-entrada");
+    });
+    var panel = el.querySelector("#panel-calificar");
+    var traduccionPanel = el.querySelector("#traduccion-panel");
+    var botonesCalidad = el.querySelectorAll(".repaso-boton-calidad");
 
-      el.querySelectorAll("#repaso-calificar button").forEach(function (boton) {
-        boton.addEventListener("click", function () {
-          var calidad = Number(boton.getAttribute("data-calidad"));
-          var esCorrecta = calidad >= 3;
-          var panel = el.querySelector("#panel-retro");
-          var tarjetaEl = el.querySelector("#tarjeta-actual");
+    function revelar() {
+      if (revelado) return;
+      revelado = true;
+      marco.classList.add("revelada");
+      panel.classList.add("visible");
+      traduccionPanel.textContent = tarjeta.atras;
+      botonesCalidad.forEach(function (boton) {
+        boton.disabled = false;
+      });
+    }
 
-          tarjetaEl.classList.add(esCorrecta ? "estado-correcto" : "estado-incorrecto");
-          tarjetaEl.classList.add(esCorrecta ? "pulso-correcto" : "pulso-incorrecto");
-          panel.classList.add(esCorrecta ? "exito" : "error");
-          panel.querySelector("#repaso-calificar").remove();
-          var titulo = document.createElement("p");
-          titulo.className = "titulo-retro";
-          titulo.textContent = esCorrecta ? "¡Bien hecho!" : "No pasa nada, va a volver a salir";
-          panel.insertBefore(titulo, panel.firstChild);
+    function calificar(calidad) {
+      if (!revelado || calificando) return;
+      calificando = true;
+      var esCorrecta = calidad >= 3;
+      marco.classList.add(esCorrecta ? "vuela-der" : "vuela-izq");
+      if (esCorrecta) sesion.correctas += 1;
 
-          var btnContinuar = document.createElement("button");
-          btnContinuar.type = "button";
-          btnContinuar.className = "boton-principal";
-          btnContinuar.style.marginTop = "12px";
-          btnContinuar.textContent = "Continuar";
-          btnContinuar.addEventListener("click", function () {
-            var actualizada = global.App.SRS.calificarTarjeta(tarjeta, calidad, new Date());
-            actualizada.frente = tarjeta.frente;
-            actualizada.atras = tarjeta.atras;
-            actualizada.tipo = tarjeta.tipo;
-            if (esCorrecta) sesion.correctas += 1;
-            global.App.Storage.put("srs_cards", actualizada).then(function () {
-              sesion.indice += 1;
-              pintarTarjetaActual(el, ctx, t);
-            });
-          });
-          panel.appendChild(btnContinuar);
-        });
+      var actualizada = global.App.SRS.calificarTarjeta(tarjeta, calidad, new Date());
+      actualizada.frente = tarjeta.frente;
+      actualizada.atras = tarjeta.atras;
+      actualizada.tipo = tarjeta.tipo;
+
+      global.App.Storage.put("srs_cards", actualizada).then(function () {
+        // Se retrasa el avance a propósito -- lo justo para alcanzar a ver la tarjeta volar
+        // (--dur-media, igual que la propia animación). No cambia nada de lo que se guarda.
+        global.setTimeout(function () {
+          sesion.indice += 1;
+          pintarTarjetaActual(el, ctx, t);
+        }, 250);
+      });
+    }
+
+    marco.addEventListener("click", revelar);
+    marco.addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter" || ev.key === " ") {
+        ev.preventDefault();
+        revelar();
+      }
+    });
+
+    el.querySelector("#btn-bocina").addEventListener("click", function (ev) {
+      ev.stopPropagation(); // no debe también voltear la tarjeta
+      global.App.TTS.hablar(tarjeta.frente, "en-US").catch(function () {
+        /* sin Web Speech disponible: la frase ya se lee en la tarjeta */
       });
     });
+
+    botonesCalidad.forEach(function (boton) {
+      boton.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        calificar(Number(boton.getAttribute("data-calidad")));
+      });
+    });
+
+    // Atajos de teclado (pensados para laptop, donde hay teclado físico de verdad -- ver
+    // spec: "Espacio muestra la traducción. Puedes calificar con las teclas 1 a 4."): se
+    // escuchan en todo el documento (no solo con el marco enfocado) para que no haga falta
+    // tabular hasta la tarjeta primero. Se quita siempre antes de pintar la siguiente
+    // tarjeta o al salir de la pantalla (quitarListenerTeclado/finalizarSesionSiActiva),
+    // para no acumular listeners.
+    listenerTeclado = function (ev) {
+      if (ev.target && /input|textarea|select/i.test(ev.target.tagName)) return;
+      if (ev.code === "Space") {
+        ev.preventDefault();
+        revelar();
+        return;
+      }
+      var calidadPorTecla = { 1: 1, 2: 3, 3: 4, 4: 5 };
+      if (calidadPorTecla[ev.key]) calificar(calidadPorTecla[ev.key]);
+    };
+    global.addEventListener("keydown", listenerTeclado);
   }
 
   global.addEventListener("hashchange", function () {
