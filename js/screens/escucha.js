@@ -25,11 +25,9 @@
   }
 
   function elegirGuion(lista, nivel) {
-    var delNivel = lista.filter(function (g) {
-      return g.nivelCEFR === nivel;
-    });
-    var candidatas = delNivel.length ? delNivel : lista;
-    return candidatas[Math.floor(Math.random() * candidatas.length)];
+    // Mismo nivel si hay contenido; si no, el más cercano POR DEBAJO (nunca un texto de B2
+    // para quien está en A1) -- ver App.Avance.elegirPorNivel.
+    return global.App.Avance.elegirPorNivel(lista, nivel);
   }
 
   function render(el, ctx) {

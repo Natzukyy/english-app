@@ -35,18 +35,11 @@
 
     el.innerHTML = '<div class="estado-vacio">…</div>';
 
-    Datos.sembrarTarjetasSiHaceFalta(new Date())
-      .then(function () {
-        return global.App.Storage.getAll("srs_cards");
-      })
-      .then(function (todas) {
-        var ahora = new Date();
-        var pendientes = todas.filter(function (c) {
-          return global.App.SRS.estaParaRepasar(c, ahora);
-        });
-        sesion = { cola: pendientes, indice: 0, inicioMs: Date.now(), correctas: 0, finalizada: false };
-        pintarTarjetaActual(el, ctx, t);
-      });
+    // Cola con topes reales (20 vencidas + 15 nuevas por día), no todas las pendientes.
+    Datos.obtenerColaRepaso(new Date()).then(function (pendientes) {
+      sesion = { cola: pendientes, indice: 0, inicioMs: Date.now(), correctas: 0, finalizada: false };
+      pintarTarjetaActual(el, ctx, t);
+    });
   }
 
   function pintarTarjetaActual(el, ctx, t) {

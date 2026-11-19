@@ -221,4 +221,62 @@
     var r2 = App.Plan.calcularPlanDelDia(contexto);
     Test.assertEqual(JSON.stringify(r1), JSON.stringify(r2));
   });
+
+  // --- armarColaRepaso: topes reales de D26 (regresión: la pantalla tomaba TODAS, "1 / 228") ---
+  function nuevaT(id, nivel) {
+    return { id: id, nivelCEFR: nivel, repeticiones: 0, intervaloDias: 0, facilidad: 2.5, proximaFecha: "2026-11-19" };
+  }
+  function vistaT(id, fecha) {
+    return { id: id, repeticiones: 2, intervaloDias: 6, facilidad: 2.5, proximaFecha: fecha };
+  }
+  var AHORA = new Date("2026-11-19T12:00:00");
+
+  Test.test("armarColaRepaso: 228 tarjetas nuevas dan solo 15 (tope por día)", function () {
+    var todas = [];
+    for (var i = 0; i < 228; i++) todas.push(nuevaT("n" + i, "A2"));
+    var r = App.Plan.armarColaRepaso(todas, AHORA, { nivelGlobal: "A2" });
+    Test.assertEqual(r.cola.length, 15);
+    Test.assertEqual(r.nuevasIncluidas.length, 15);
+  });
+
+  Test.test("armarColaRepaso: vencidas topadas en 20, las más atrasadas primero", function () {
+    var todas = [];
+    for (var i = 0; i < 30; i++) todas.push(vistaT("v" + i, "2026-10-" + (i < 9 ? "0" : "") + (i + 1)));
+    var r = App.Plan.armarColaRepaso(todas, AHORA, { nivelGlobal: "B1" });
+    Test.assertEqual(r.cola.length, 20);
+    Test.assertEqual(r.cola[0].id, "v0");
+  });
+
+  Test.test("armarColaRepaso: tarjetas de fecha futura no entran", function () {
+    var r = App.Plan.armarColaRepaso([vistaT("futura", "2026-12-01")], AHORA, {});
+    Test.assertEqual(r.cola.length, 0);
+  });
+
+  Test.test("armarColaRepaso: el cupo del día descuenta las ya introducidas hoy, y las falladas vuelven sin gastar cupo", function () {
+    var todas = [];
+    for (var i = 0; i < 40; i++) todas.push(nuevaT("n" + i, "A2"));
+    var introducidas = ["n0", "n1", "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9"];
+    var r = App.Plan.armarColaRepaso(todas, AHORA, { nivelGlobal: "A2", introducidasHoy: introducidas });
+    // 10 ya introducidas (siguen nuevas = falladas) vuelven + 5 de cupo restante = 15
+    Test.assertEqual(r.cola.length, 15);
+    Test.assertEqual(r.cola[0].id, "n0");
+    Test.assertEqual(r.nuevasIncluidas.length, 15);
+  });
+
+  Test.test("armarColaRepaso: cupo agotado hoy no mete tarjetas nuevas distintas", function () {
+    var todas = [];
+    for (var i = 0; i < 40; i++) todas.push(nuevaT("n" + i, "A2"));
+    var ids = [];
+    for (var j = 0; j < 15; j++) ids.push("n" + j);
+    // las 15 ya se aprendieron (ya no son nuevas): solo quedan nuevas "n15.."
+    var aprendidas = todas.slice(0, 15).map(function (t) { return vistaT(t.id, "2026-11-25"); });
+    var r = App.Plan.armarColaRepaso(aprendidas.concat(todas.slice(15)), AHORA, { nivelGlobal: "A2", introducidasHoy: ids });
+    Test.assertEqual(r.cola.length, 0);
+  });
+
+  Test.test("armarColaRepaso: las nuevas se ordenan por cercanía al nivel actual (mismo, luego menores, luego mayores)", function () {
+    var todas = [nuevaT("c1", "C1"), nuevaT("a1", "A1"), nuevaT("b1", "B1"), nuevaT("a2", "A2"), nuevaT("b2", "B2")];
+    var r = App.Plan.armarColaRepaso(todas, AHORA, { nivelGlobal: "B1", topeNuevas: 5 });
+    Test.assertEqual(r.cola.map(function (t) { return t.id; }), ["b1", "a2", "a1", "b2", "c1"]);
+  });
 })();

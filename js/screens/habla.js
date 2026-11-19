@@ -40,8 +40,12 @@
     return global.App.Datos.registrarSesion(minutos, sesion.correctas, new Date(), "habla");
   }
 
+  var nivelHabla = "A2"; // nivel CEFR de habla del último diagnóstico; "A2" si todavía no hay (igual que Lectura)
+
   function elegirEjercicioAlAzar() {
-    return ejercicios[Math.floor(Math.random() * ejercicios.length)];
+    // Antes elegía entre TODOS los niveles (un A1 podía recibir C1). Ahora respeta su nivel
+    // de habla: mismo nivel, o el más cercano por debajo (App.Avance.elegirPorNivel).
+    return global.App.Avance.elegirPorNivel(ejercicios, nivelHabla);
   }
 
   function render(el, ctx) {
@@ -63,6 +67,10 @@
           });
 
     cargar.then(function () {
+      return global.App.Datos.obtenerUltimoDiagnostico().then(function (diagnostico) {
+        nivelHabla = (diagnostico && diagnostico.porHabilidad && diagnostico.porHabilidad.habla && diagnostico.porHabilidad.habla.nivelCEFR) || "A2";
+      });
+    }).then(function () {
       if (!sesion || sesion.finalizada) {
         sesion = { inicioMs: Date.now(), intentos: 0, correctas: 0, finalizada: false };
       }

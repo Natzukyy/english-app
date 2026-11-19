@@ -83,4 +83,42 @@
     Test.assertEqual(r.nivel, "C2");
     Test.assertEqual(r.sustituido, false);
   });
+
+  var LISTA = [
+    { id: "a2-1", nivelCEFR: "A2" },
+    { id: "a2-2", nivelCEFR: "A2" },
+    { id: "b1-1", nivelCEFR: "B1" },
+    { id: "b2-1", nivelCEFR: "B2" }
+  ];
+
+  Test.test("nivelesDisponibles: devuelve los niveles distintos en orden A1..C2", function () {
+    Test.assertEqual(App.Avance.nivelesDisponibles(LISTA), ["A2", "B1", "B2"]);
+    Test.assertEqual(App.Avance.nivelesDisponibles([]), []);
+  });
+
+  Test.test("elegirPorNivel: usa el mismo nivel cuando hay contenido", function () {
+    Test.assertEqual(App.Avance.elegirPorNivel(LISTA, "B1", 0.5).id, "b1-1");
+  });
+
+  Test.test("elegirPorNivel: A1 SIN contenido A1 nunca devuelve B1/B2 (regresión: antes caía a cualquiera)", function () {
+    for (var i = 0; i < 20; i++) {
+      var elegido = App.Avance.elegirPorNivel(LISTA, "A1", i / 20);
+      Test.assertEqual(elegido.nivelCEFR, "A2");
+    }
+  });
+
+  Test.test("elegirPorNivel: nivel sin contenido en medio baja al más cercano por debajo", function () {
+    var sinB1 = [{ id: "a2", nivelCEFR: "A2" }, { id: "b2", nivelCEFR: "B2" }];
+    Test.assertEqual(App.Avance.elegirPorNivel(sinB1, "B1", 0).id, "a2");
+  });
+
+  Test.test("elegirPorNivel: C1 sin contenido C1 reutiliza el más alto disponible (B2)", function () {
+    Test.assertEqual(App.Avance.elegirPorNivel(LISTA, "C1", 0).id, "b2-1");
+  });
+
+  Test.test("elegirPorNivel: lista vacía devuelve null y el aleatorio recorre las candidatas", function () {
+    Test.assertEqual(App.Avance.elegirPorNivel([], "A2", 0), null);
+    Test.assertEqual(App.Avance.elegirPorNivel(LISTA, "A2", 0).id, "a2-1");
+    Test.assertEqual(App.Avance.elegirPorNivel(LISTA, "A2", 0.99).id, "a2-2");
+  });
 })();

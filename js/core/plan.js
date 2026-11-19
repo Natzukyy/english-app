@@ -176,8 +176,71 @@
     return { pasos: pasos, totalMinutos: sumaMinutos(pasos), advertencias: advertencias };
   }
 
+  /** Cola real de una sesión de Repaso, con los topes de D26 (antes la pantalla tomaba TODAS
+   * las tarjetas pendientes: "1 / 228"). Pura, sin DOM.
+   * - Vencidas (ya vistas, `repeticiones>0`, con fecha cumplida): las más atrasadas primero,
+   *   máx. `topeVencidas`.
+   * - Nuevas (`repeticiones===0`): máx. `topeNuevas` POR DÍA en total. Las que ya se
+   *   introdujeron hoy (`introducidasHoy`, ids) y siguen "nuevas" porque se fallaron vuelven
+   *   a entrar sin gastar cupo; el cupo restante se llena con tarjetas nunca vistas, las del
+   *   nivel actual de Alex primero, luego las de niveles menores y al final las mayores.
+   * @returns {{cola:Array, nuevasIncluidas:Array<string>}} nuevasIncluidas = ids de TODAS las
+   *   nuevas de esta sesión (para guardar el contador del día). */
+  function armarColaRepaso(tarjetas, ahora, opciones) {
+    var o = opciones || {};
+    var topeVencidas = typeof o.topeVencidas === "number" ? o.topeVencidas : TOPE_TARJETAS_VENCIDAS_POR_SESION;
+    var topeNuevas = typeof o.topeNuevas === "number" ? o.topeNuevas : TOPE_TARJETAS_NUEVAS_POR_DIA;
+    var hoy = global.App.Fecha.hoyISO(ahora);
+    var introducidas = {};
+    (o.introducidasHoy || []).forEach(function (id) {
+      introducidas[id] = true;
+    });
+    var idxNivelActual = global.App.Avance.indiceNivel(o.nivelGlobal || "A1");
+
+    var vencidas = (tarjetas || [])
+      .filter(function (t) {
+        return (t.repeticiones || 0) > 0 && t.proximaFecha <= hoy;
+      })
+      .sort(function (a, b) {
+        return a.proximaFecha < b.proximaFecha ? -1 : a.proximaFecha > b.proximaFecha ? 1 : 0;
+      })
+      .slice(0, topeVencidas);
+
+    var nuevas = (tarjetas || []).filter(function (t) {
+      return (t.repeticiones || 0) === 0;
+    });
+    var yaIntroducidas = nuevas.filter(function (t) {
+      return introducidas[t.id];
+    });
+    var cupo = Math.max(0, topeNuevas - Object.keys(introducidas).length);
+    // distancia al nivel actual: igual = 0, por debajo = 1+ (más cerca primero), por encima = 100+
+    function rango(t) {
+      var d = global.App.Avance.indiceNivel(t.nivelCEFR || "A1") - idxNivelActual;
+      return d <= 0 ? -d : 100 + d;
+    }
+    var frescas = nuevas
+      .filter(function (t) {
+        return !introducidas[t.id];
+      })
+      .sort(function (a, b) {
+        return rango(a) - rango(b);
+      })
+      .slice(0, cupo);
+
+    var nuevasSesion = yaIntroducidas.concat(frescas);
+    return {
+      cola: vencidas.concat(nuevasSesion),
+      nuevasIncluidas: Object.keys(introducidas).concat(
+        frescas.map(function (t) {
+          return t.id;
+        })
+      )
+    };
+  }
+
   global.App = global.App || {};
   global.App.Plan = {
+    armarColaRepaso: armarColaRepaso,
     calcularPlanDelDia: calcularPlanDelDia,
     // Expuestas para pruebas unitarias finas sin tener que pasar por calcularPlanDelDia completo.
     ordenarHabilidadesPorPrioridad: ordenarHabilidadesPorPrioridad,

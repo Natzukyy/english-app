@@ -95,8 +95,50 @@
     return { nivel: mejor, sustituido: mejor !== nivelCEFR };
   }
 
+  /** Niveles CEFR distintos que aparecen en una lista de contenido ({nivelCEFR}), en orden
+   * A1..C2. Sirve para decirle al plan qué niveles tienen contenido REAL. */
+  function nivelesDisponibles(lista) {
+    var vistos = {};
+    (lista || []).forEach(function (item) {
+      if (item && item.nivelCEFR) vistos[item.nivelCEFR] = true;
+    });
+    return ORDEN_NIVELES.filter(function (nivel) {
+      return vistos[nivel];
+    });
+  }
+
+  /** Elige un elemento de `lista` para `nivel`: del mismo nivel si hay; si no, del nivel más
+   * cercano POR DEBAJO (nunca un texto de B2 para quien está en A1); si no hay nada por
+   * debajo, del más bajo disponible. `aleatorio` (opcional, 0..1) permite pruebas
+   * deterministas. Devuelve null si la lista está vacía. */
+  function elegirPorNivel(lista, nivel, aleatorio) {
+    if (!lista || !lista.length) return null;
+    var niveles = nivelesDisponibles(lista);
+    var objetivo;
+    if (!niveles.length) {
+      objetivo = null;
+    } else if (niveles.indexOf(nivel) !== -1) {
+      objetivo = nivel;
+    } else {
+      var idx = indiceNivel(nivel);
+      objetivo = niveles[0];
+      niveles.forEach(function (n) {
+        if (indiceNivel(n) <= idx) objetivo = n;
+      });
+    }
+    var candidatas = objetivo
+      ? lista.filter(function (item) {
+          return item.nivelCEFR === objetivo;
+        })
+      : lista;
+    var r = typeof aleatorio === "number" ? aleatorio : Math.random();
+    return candidatas[Math.min(candidatas.length - 1, Math.floor(r * candidatas.length))];
+  }
+
   global.App = global.App || {};
   global.App.Avance = {
+    nivelesDisponibles: nivelesDisponibles,
+    elegirPorNivel: elegirPorNivel,
     ORDEN_NIVELES: ORDEN_NIVELES,
     indiceNivel: indiceNivel,
     numeroDesdeNivel: numeroDesdeNivel,

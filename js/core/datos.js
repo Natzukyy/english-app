@@ -130,42 +130,98 @@
     return global.App.Storage.put("diagnostico_resultados", registro);
   }
 
-  var IDS_VOCABULARIO_SEMBRADOS = "vocabulario-fase1";
+  /** Tarjetas de repaso que DEBERÍAN existir según el contenido actual de fase 1. */
+  function tarjetasDesdeContenido(vocabJson, frasesJson, ahora) {
+    var vocab = vocabJson.palabras || [];
+    var frases = frasesJson.categorias || [];
+    var tarjetas = [];
+    vocab.forEach(function (v) {
+      var t = global.App.SRS.tarjetaNueva("voc-" + v.id, ahora);
+      t.frente = v.ingles;
+      t.atras = v.espanol + (v.ejemplo ? " — " + v.ejemplo : "");
+      t.tipo = "vocabulario";
+      t.nivelCEFR = v.nivelCEFR || "A1";
+      tarjetas.push(t);
+    });
+    frases.forEach(function (cat) {
+      (cat.frases || []).forEach(function (f, i) {
+        // El id depende de la POSICIÓN dentro de la categoría: el contenido nuevo de una
+        // categoría existente se agrega siempre AL FINAL (nunca en medio) para no mover los
+        // ids de tarjetas que Alex ya tiene con su calendario SM-2.
+        var t = global.App.SRS.tarjetaNueva("frase-" + cat.categoria + "-" + i, ahora);
+        t.frente = f.ingles;
+        t.atras = f.espanol;
+        t.tipo = "frase";
+        t.nivelCEFR = cat.nivelCEFR || "A1";
+        tarjetas.push(t);
+      });
+    });
+    return tarjetas;
+  }
 
-  /** Si no hay tarjetas de repaso todavía, las crea a partir del contenido de fase 1. */
+  /** Siembra Y SINCRONIZA las tarjetas con el contenido: crea las que faltan (contenido
+   * nuevo en una app que ya se usaba -- antes solo se sembraba con la base vacía, así que
+   * nadie recibía tarjetas nuevas) y completa en las existentes los campos de contenido
+   * (`nivelCEFR`, `tipo`, `frente`, `atras`) SIN tocar su estado SM-2 (repeticiones,
+   * intervalo, facilidad, próxima fecha). Nunca borra tarjetas. Idempotente. */
   function sembrarTarjetasSiHaceFalta(ahora) {
-    return global.App.Storage.getAll("srs_cards").then(function (existentes) {
-      if (existentes.length > 0) return existentes;
-      return Promise.all([fetch("data/content/fase1/vocabulario.json").then(function (r) { return r.json(); }), fetch("data/content/fase1/frases_utiles.json").then(function (r) { return r.json(); })]).then(
-        function (res) {
-          var vocab = res[0].palabras || [];
-          var frases = res[1].categorias || [];
-          var tarjetas = [];
-
-          vocab.forEach(function (v) {
-            var t = global.App.SRS.tarjetaNueva("voc-" + v.id, ahora);
-            t.frente = v.ingles;
-            t.atras = v.espanol + (v.ejemplo ? " — " + v.ejemplo : "");
-            t.tipo = "vocabulario";
-            tarjetas.push(t);
-          });
-
-          frases.forEach(function (cat) {
-            (cat.frases || []).forEach(function (f, i) {
-              var id = "frase-" + cat.categoria + "-" + i;
-              var t = global.App.SRS.tarjetaNueva(id, ahora);
-              t.frente = f.ingles;
-              t.atras = f.espanol;
-              t.tipo = "frase";
-              tarjetas.push(t);
-            });
-          });
-
-          return Promise.all(tarjetas.map(function (t) { return global.App.Storage.put("srs_cards", t); })).then(function () {
-            return tarjetas;
-          });
+    return Promise.all([
+      global.App.Storage.getAll("srs_cards"),
+      fetch("data/content/fase1/vocabulario.json").then(function (r) { return r.json(); }),
+      fetch("data/content/fase1/frases_utiles.json").then(function (r) { return r.json(); })
+    ]).then(function (res) {
+      var existentes = {};
+      res[0].forEach(function (t) {
+        existentes[t.id] = t;
+      });
+      var deseadas = tarjetasDesdeContenido(res[1], res[2], ahora);
+      var escrituras = [];
+      deseadas.forEach(function (d) {
+        var e = existentes[d.id];
+        if (!e) {
+          escrituras.push(d);
+        } else if (e.nivelCEFR !== d.nivelCEFR || e.tipo !== d.tipo || e.frente !== d.frente || e.atras !== d.atras) {
+          escrituras.push(Object.assign({}, e, { nivelCEFR: d.nivelCEFR, tipo: d.tipo, frente: d.frente, atras: d.atras }));
         }
-      );
+      });
+      return Promise.all(
+        escrituras.map(function (t) {
+          return global.App.Storage.put("srs_cards", t);
+        })
+      ).then(function () {
+        return global.App.Storage.getAll("srs_cards");
+      });
+    });
+  }
+
+  /** Nivel CEFR global actual de Alex (ponderado, App.Avance) a partir del último
+   * diagnóstico; "A1" si todavía no hay. */
+  function obtenerNivelGlobalActual() {
+    return obtenerUltimoDiagnostico().then(function (diagnostico) {
+      var numeros = {};
+      ["lectura", "habla", "escucha", "escritura"].forEach(function (h) {
+        var d = diagnostico && diagnostico.porHabilidad && diagnostico.porHabilidad[h];
+        numeros[h] = global.App.Avance.numeroDesdeNivel((d && d.nivelCEFR) || "A1", 50);
+      });
+      return global.App.Avance.calcularNivelGlobal(numeros).nivel;
+    });
+  }
+
+  /** Cola de la sesión de Repaso con los topes de D26 (App.Plan.armarColaRepaso) y el
+   * contador de tarjetas nuevas del día (settings "tarjetasNuevasHoy"). */
+  function obtenerColaRepaso(ahora) {
+    var hoyISO = global.App.Fecha.hoyISO(ahora);
+    return Promise.all([
+      sembrarTarjetasSiHaceFalta(ahora),
+      global.App.Storage.get("settings", "tarjetasNuevasHoy"),
+      obtenerNivelGlobalActual()
+    ]).then(function (res) {
+      var registro = res[1];
+      var introducidasHoy = registro && registro.fecha === hoyISO ? registro.ids || [] : [];
+      var r = global.App.Plan.armarColaRepaso(res[0], ahora, { introducidasHoy: introducidasHoy, nivelGlobal: res[2] });
+      return global.App.Storage.put("settings", { id: "tarjetasNuevasHoy", fecha: hoyISO, ids: r.nuevasIncluidas }).then(function () {
+        return r.cola;
+      });
     });
   }
 
@@ -173,7 +229,9 @@
   // sección solo arma el "contexto" real desde IndexedDB y persiste el resultado. ---
 
   function contarTarjetasRepaso(ahora) {
-    return global.App.Storage.getAll("srs_cards").then(function (tarjetas) {
+    // Siembra/sincroniza primero: si no, el primer día (tarjetas todavía no creadas, se creaban
+    // al abrir Repaso) el plan contaba 0 y nunca incluía el paso de Repaso.
+    return sembrarTarjetasSiHaceFalta(ahora).then(function (tarjetas) {
       var vencidas = 0;
       var nuevas = 0;
       tarjetas.forEach(function (t) {
@@ -237,6 +295,45 @@
     });
   }
 
+  var ARCHIVOS_CONTENIDO_POR_HABILIDAD = [
+    { archivo: "data/content/fase1/lecturas.json", clave: "lecturas" },
+    { archivo: "data/content/fase1/escucha.json", clave: "escucha" },
+    { archivo: "data/content/fase1/escritura.json", clave: "escritura" },
+    { archivo: "data/content/fase1/habla.json", clave: "ejercicios" }
+  ];
+  var nivelesConContenidoCache = null;
+
+  /** Niveles CEFR que tienen contenido REAL en las 4 habilidades (la intersección): así el
+   * plan avisa y sustituye (App.Avance.nivelEfectivoConContenido) en vez de prometer un
+   * nivel para el que alguna pantalla no tiene nada. Si algo falla al leer (sin red y sin
+   * caché), devuelve [] = "no sé", y el plan no sustituye nada (comportamiento anterior). */
+  function obtenerNivelesConContenido() {
+    if (nivelesConContenidoCache) return Promise.resolve(nivelesConContenidoCache);
+    return Promise.all(
+      ARCHIVOS_CONTENIDO_POR_HABILIDAD.map(function (a) {
+        return fetch(a.archivo)
+          .then(function (r) {
+            return r.json();
+          })
+          .then(function (d) {
+            return global.App.Avance.nivelesDisponibles(d[a.clave] || []);
+          });
+      })
+    )
+      .then(function (listas) {
+        var comunes = global.App.Avance.ORDEN_NIVELES.filter(function (nivel) {
+          return listas.every(function (l) {
+            return l.indexOf(nivel) !== -1;
+          });
+        });
+        nivelesConContenidoCache = comunes;
+        return comunes;
+      })
+      .catch(function () {
+        return [];
+      });
+  }
+
   function armarContextoPlan(ahora) {
     var hoyISO = global.App.Fecha.hoyISO(ahora);
     return Promise.all([
@@ -245,7 +342,8 @@
       armarHabilidadesParaPlan(),
       obtenerPreferencias(),
       obtenerUltimaHabilidadRotada(hoyISO),
-      obtenerSemanasDesdeUltimaReevaluacion(hoyISO)
+      obtenerSemanasDesdeUltimaReevaluacion(hoyISO),
+      obtenerNivelesConContenido()
     ]).then(function (res) {
       var diagnostico = res[0];
       var tarjetas = res[1];
@@ -253,6 +351,7 @@
       var prefs = res[3];
       var ultimaHabilidadRotada = res[4];
       var semanasDesdeUltimaReevaluacion = res[5];
+      var nivelesConContenido = res[6];
       return {
         fecha: hoyISO,
         diagnosticoHecho: !!diagnostico,
@@ -262,11 +361,8 @@
         metaMinutosDia: prefs.metaMinutosDia,
         ultimaHabilidadRotada: ultimaHabilidadRotada,
         semanasDesdeUltimaReevaluacion: semanasDesdeUltimaReevaluacion,
-        semanasEntreReevaluacion: SEMANAS_ENTRE_REEVALUACION
-        // "nivelesConContenido" se omite a propósito: sin esa lista, App.Plan nunca sustituye
-        // un nivel por otro (ver App.Avance.nivelEfectivoConContenido con lista vacía). Fase C
-        // es quien sabe de verdad qué niveles tienen contenido real; hasta que exista ese
-        // índice, el plan asume que todo nivel tiene contenido.
+        semanasEntreReevaluacion: SEMANAS_ENTRE_REEVALUACION,
+        nivelesConContenido: nivelesConContenido
       };
     });
   }
@@ -326,6 +422,8 @@
     obtenerUltimoDiagnostico: obtenerUltimoDiagnostico,
     guardarDiagnostico: guardarDiagnostico,
     sembrarTarjetasSiHaceFalta: sembrarTarjetasSiHaceFalta,
+    obtenerColaRepaso: obtenerColaRepaso,
+    obtenerNivelGlobalActual: obtenerNivelGlobalActual,
     obtenerUltimaPracticaPorHabilidad: obtenerUltimaPracticaPorHabilidad,
     registrarPracticaHabilidad: registrarPracticaHabilidad,
     contarTarjetasRepaso: contarTarjetasRepaso,
