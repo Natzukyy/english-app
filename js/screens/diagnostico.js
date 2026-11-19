@@ -2,6 +2,7 @@
   "use strict";
 
   var HABILIDADES_BANCO = ["lectura", "escucha", "vocabulario_gramatica"];
+  var LETRAS = ["A", "B", "C", "D"];
 
   // Nombres legibles para el resultado final -- App.Diagnostico.construirResultado usa estas
   // claves (lectura/escucha/vocabulario_gramatica de banco.json + habla/escritura de la
@@ -14,8 +15,26 @@
     escritura: "Escritura"
   };
 
+  // Color por habilidad (mismo mapeo que Inicio/Progreso: lectura=azul, escucha=amarillo,
+  // habla=menta, escritura=rosa). vocabulario_gramatica no es una de las 4 habilidades "de
+  // producto" -- se queda con el tratamiento neutro (ver .diagnostico-pastilla-nivel--neutral).
+  var COLOR_HABILIDAD = {
+    lectura: "var(--punto-lectura)",
+    escucha: "var(--punto-escucha)",
+    habla: "var(--punto-habla)",
+    escritura: "var(--punto-escritura)"
+  };
+
   // Estado del diagnóstico en curso.
   var estado = null; // { banco, preguntasOrden, indice, respuestas, paso: 'preguntas'|'habla'|'escritura'|'resultado', rubrica, autoeval }
+  var listenerTeclado = null; // referencia al keydown de la pregunta actual, para quitarlo al avanzar/salir
+
+  function quitarListenerTeclado() {
+    if (listenerTeclado) {
+      global.removeEventListener("keydown", listenerTeclado);
+      listenerTeclado = null;
+    }
+  }
 
   function iniciarDiagnostico(banco, rubrica) {
     var preguntasOrden = [];
@@ -45,6 +64,7 @@
   }
 
   function pintar(el, ctx, t) {
+    quitarListenerTeclado();
     if (estado.paso === "preguntas") return pintarPregunta(el, ctx, t);
     if (estado.paso === "habla") return pintarAutoevaluacion(el, ctx, t, "habla", "escritura");
     if (estado.paso === "escritura") return pintarAutoevaluacion(el, ctx, t, "escritura", "resultado");
@@ -62,30 +82,44 @@
     var porcentaje = Math.round((estado.indice / estado.preguntasOrden.length) * 100);
 
     el.innerHTML =
-      '<div class="pantalla-vista ancho-lectura">' +
+      // Sin "ancho-lectura" aquí a propósito: ese tope de 720px es para columna única
+      // (como el resultado/autoevaluación de abajo); el layout de 2 columnas de esta
+      // pantalla en laptop necesita el ancho completo que da "main" (mismo criterio que
+      // .repaso-cuerpo, que tampoco usa ancho-lectura -- ver js/screens/repaso.js).
+      '<div class="pantalla-vista pantalla-diagnostico pantalla-diagnostico-pregunta">' +
       '<h1 data-i18n-live="diagnostico.titulo"></h1>' +
       '<div class="fila-cabeza"><span class="texto-tenue num-tabular">' +
       (estado.indice + 1) +
       " / " +
       estado.preguntasOrden.length +
-      '</span><span class="texto-tenue">' +
-      esc(p.nivelCEFR) +
       "</span></div>" +
       '<div class="barra-progreso"><span id="barra-diagnostico" style="width:0%"></span></div>' +
-      (p.texto ? '<div class="tarjeta" style="margin-top:24px"><p style="margin:0">' + p.texto + "</p></div>" : "") +
+      '<div class="diagnostico-cuerpo">' +
+      '<div class="diagnostico-columna-izquierda">' +
+      '<span class="diagnostico-pastilla-area calcomania">' +
+      esc(NOMBRE_HABILIDAD_RESULTADO[p.habilidad] || p.habilidad) +
+      "</span>" +
+      (p.texto ? '<div class="diagnostico-pasaje superficie-oscura"><p>' + p.texto + "</p></div>" : "") +
       (esEscucha
-        ? '<button type="button" class="enlace-discreto" id="btn-reproducir" style="margin-top:16px">' +
+        ? '<button type="button" class="enlace-discreto" id="btn-reproducir" style="margin-top:12px">' +
           global.App.Iconos.svg("bocina", 18) +
           "<span>Reproducir</span></button>"
         : "") +
-      '<h2 class="pregunta-diagnostico" style="margin-top:' +
-      (esEscucha ? "8" : "24") +
-      'px">' +
+      '<div class="diagnostico-tarjeta-pregunta calcomania"><h2>' +
       p.pregunta +
-      "</h2>" +
-      '<div id="opciones" class="entrada-escalonada" style="margin-top:16px"></div>' +
-      '<button type="button" class="boton-principal" id="btn-comprobar" style="margin-top:16px" disabled>Comprobar</button>' +
-      '<div id="zona-retro"></div>' +
+      "</h2></div>" +
+      "</div>" +
+      '<div class="diagnostico-columna-derecha">' +
+      '<div id="opciones" class="diagnostico-opciones pop-entrada-escalonada"></div>' +
+      '<div class="diagnostico-pie">' +
+      '<p class="diagnostico-nota-pie" id="nota-pie"></p>' +
+      '<div class="diagnostico-pie-fila">' +
+      '<p class="texto-caption diagnostico-nota-teclado">Teclas A–D para elegir · Enter para responder</p>' +
+      '<button type="button" class="calcomania calcomania-cta calcomania-presionable diagnostico-boton-accion" id="btn-accion" disabled>Responder</button>' +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
       "</div>";
 
     el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
@@ -110,69 +144,97 @@
     var barajada = global.App.Util.barajarOpciones(p.opciones, p.respuestaCorrecta);
 
     var seleccionada = -1;
+    var respondido = false;
     var contenedorOpciones = el.querySelector("#opciones");
-    var btnComprobar = el.querySelector("#btn-comprobar");
+    var btnAccion = el.querySelector("#btn-accion");
+    var notaPie = el.querySelector("#nota-pie");
+
     var botonesOpcion = barajada.opciones.map(function (opcion, i) {
       var boton = document.createElement("button");
       boton.type = "button";
-      boton.className = "boton-secundario";
-      boton.textContent = opcion;
+      boton.className = "diagnostico-opcion superficie-oscura";
+      boton.innerHTML =
+        '<span class="diagnostico-letra" aria-hidden="true">' + LETRAS[i] + "</span>" + '<span class="diagnostico-texto-opcion">' + esc(opcion) + "</span>";
       boton.addEventListener("click", function () {
-        seleccionada = i;
-        botonesOpcion.forEach(function (b) {
-          b.removeAttribute("aria-current");
-        });
-        boton.setAttribute("aria-current", "true");
-        btnComprobar.disabled = false;
+        seleccionar(i);
       });
       contenedorOpciones.appendChild(boton);
       return boton;
     });
 
-    btnComprobar.addEventListener("click", function () {
-      if (seleccionada === -1) return;
+    function seleccionar(i) {
+      if (respondido) return;
+      seleccionada = i;
+      botonesOpcion.forEach(function (b, idx) {
+        b.classList.remove("calcomania", "calcomania-presionable", "superficie-oscura", "diagnostico-opcion--seleccionada");
+        if (idx === i) {
+          b.classList.add("calcomania", "calcomania-presionable", "diagnostico-opcion--seleccionada");
+        } else {
+          b.classList.add("superficie-oscura");
+        }
+      });
+      btnAccion.disabled = false;
+    }
+
+    function responder() {
+      if (seleccionada === -1 || respondido) return;
+      respondido = true;
       // Se guarda el índice ORIGINAL (de banco.json), no la posición barajada en pantalla --
       // así App.Diagnostico.construirResultado (sin cambios) sigue calificando correcto.
       estado.respuestas[p.id] = barajada.indicesOriginales[seleccionada];
       var esCorrecta = seleccionada === barajada.indiceCorrecta;
-      btnComprobar.style.display = "none";
-      botonesOpcion.forEach(function (b, i) {
+
+      botonesOpcion.forEach(function (b, idx) {
         b.disabled = true;
-        b.removeAttribute("aria-current"); // el estado de seleccion ya no aplica, ahora manda el resultado
-        if (i === barajada.indiceCorrecta) {
-          b.classList.add("pulso-correcto", "estado-correcto");
-        } else if (i === seleccionada) {
-          b.classList.add("pulso-incorrecto", "estado-incorrecto");
+        b.classList.remove("calcomania-presionable", "diagnostico-opcion--seleccionada");
+        if (idx === barajada.indiceCorrecta) {
+          b.classList.remove("superficie-oscura");
+          b.classList.add("calcomania", "diagnostico-opcion--correcta");
+        } else if (idx === seleccionada) {
+          b.classList.add("diagnostico-opcion--incorrecta");
         }
       });
 
-      el.querySelector("#zona-retro").innerHTML =
-        '<div class="panel-retro ' +
-        (esCorrecta ? "exito" : "error") +
-        '">' +
-        '<p class="titulo-retro">' +
-        (esCorrecta ? "¡Correcto!" : "No era esa") +
-        "</p>" +
-        (esCorrecta ? "" : "<p>La respuesta correcta era: " + global.App.Util.escaparHTML(barajada.opciones[barajada.indiceCorrecta]) + "</p>") +
-        '<button type="button" class="boton-principal" id="btn-continuar" style="margin-top:12px">Continuar</button>' +
-        "</div>";
+      notaPie.textContent = esCorrecta ? "¡Correcto!" : "La respuesta correcta era " + LETRAS[barajada.indiceCorrecta] + ".";
+      notaPie.classList.add("visible");
+      notaPie.classList.toggle("diagnostico-nota-correcta", esCorrecta);
+      notaPie.classList.toggle("diagnostico-nota-incorrecta", !esCorrecta);
 
-      el.querySelector("#btn-continuar").addEventListener("click", function () {
-        estado.indice += 1;
-        pintar(el, ctx, t);
-      });
+      btnAccion.textContent = "Siguiente";
+      btnAccion.disabled = false;
+    }
+
+    function siguiente() {
+      estado.indice += 1;
+      pintar(el, ctx, t);
+    }
+
+    btnAccion.addEventListener("click", function () {
+      if (!respondido) responder();
+      else siguiente();
     });
+
+    listenerTeclado = function (ev) {
+      var tecla = (ev.key || "").toUpperCase();
+      if (!respondido && LETRAS.indexOf(tecla) !== -1) {
+        var i = LETRAS.indexOf(tecla);
+        if (botonesOpcion[i] && !botonesOpcion[i].disabled) seleccionar(i);
+      } else if (tecla === "ENTER") {
+        if (!btnAccion.disabled) btnAccion.click();
+      }
+    };
+    global.addEventListener("keydown", listenerTeclado);
   }
 
   function pintarAutoevaluacion(el, ctx, t, habilidad, siguientePaso) {
     var opciones = estado.rubrica[habilidad];
     el.innerHTML =
-      '<div class="pantalla-vista ancho-lectura">' +
+      '<div class="pantalla-vista ancho-lectura pantalla-diagnostico">' +
       '<h1 data-i18n-live="diagnostico.titulo"></h1>' +
-      '<h2 class="pregunta-diagnostico">¿Qué descripción te queda mejor para ' +
-      habilidad +
-      "?</h2>" +
-      '<div id="opciones-rubrica" class="entrada-escalonada" style="margin-top:16px"></div>' +
+      '<div class="diagnostico-tarjeta-pregunta calcomania" style="margin-top:16px"><h2>¿Qué descripción te queda mejor para ' +
+      (NOMBRE_HABILIDAD_RESULTADO[habilidad] || habilidad).toLowerCase() +
+      "?</h2></div>" +
+      '<div id="opciones-rubrica" class="diagnostico-rubrica-filas pop-entrada-escalonada"></div>' +
       "</div>";
 
     el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
@@ -183,7 +245,7 @@
     opciones.forEach(function (op) {
       var boton = document.createElement("button");
       boton.type = "button";
-      boton.className = "boton-secundario";
+      boton.className = "diagnostico-rubrica-fila superficie-oscura";
       boton.innerHTML = "<strong>" + op.nivelCEFR + "</strong> — " + op.descripcion;
       boton.addEventListener("click", function () {
         estado.autoeval[habilidad] = op.nivelCEFR;
@@ -201,17 +263,20 @@
     var filas = Object.keys(resultado.porHabilidad)
       .map(function (h) {
         var r = resultado.porHabilidad[h];
-        var alcanzoB2 = r.porcentajeHaciaB2 >= 100;
+        var colorFondo = COLOR_HABILIDAD[h];
+        var pastilla = colorFondo
+          ? '<span class="diagnostico-pastilla-nivel" style="background:' + colorFondo + '">' + r.nivelCEFR + "</span>"
+          : '<span class="diagnostico-pastilla-nivel diagnostico-pastilla-nivel--neutral">' + r.nivelCEFR + "</span>";
         return (
-          '<div class="fila">' +
+          '<div class="diagnostico-resultado-fila superficie-oscura">' +
           '<div class="fila-cabeza"><span>' +
           (NOMBRE_HABILIDAD_RESULTADO[h] || h) +
-          " — <strong>" +
-          r.nivelCEFR +
-          "</strong></span>" +
-          (alcanzoB2 ? '<span style="color:var(--exito);display:inline-flex">' + global.App.Iconos.svg("check", 18) + "</span>" : "") +
+          "</span>" +
+          pastilla +
           "</div>" +
-          '<div class="barra-progreso"><span data-destino="' +
+          '<div class="barra-progreso"' +
+          (colorFondo ? ' data-habilidad="' + h + '"' : "") +
+          '><span data-destino="' +
           r.porcentajeHaciaB2 +
           '" style="width:0%"></span></div>' +
           "</div>"
@@ -220,18 +285,18 @@
       .join("");
 
     el.innerHTML =
-      '<div class="pantalla-vista ancho-lectura">' +
-      '<div class="hero-bloque">' +
-      '<span class="icono-sello-fin">' +
-      global.App.Iconos.svg("sello", 32) +
+      '<div class="pantalla-vista ancho-lectura pantalla-diagnostico">' +
+      '<div class="diagnostico-resultado-encabezado">' +
+      '<span class="diagnostico-resultado-icono calcomania">' +
+      global.App.Iconos.svg("sello", 24) +
       "</span>" +
-      '<h1 style="margin-top:8px" data-i18n-live="diagnostico.titulo"></h1>' +
+      '<h1 data-i18n-live="diagnostico.titulo"></h1>' +
       "</div>" +
-      '<p class="texto-tenue">Esto es una estimación, no una certificación oficial.</p>' +
-      '<div class="seccion entrada-escalonada" style="margin-top:16px">' +
+      '<p class="texto-tenue" style="margin-top:8px">Esto es una estimación, no una certificación oficial.</p>' +
+      '<div class="diagnostico-resultado-filas">' +
       filas +
       "</div>" +
-      '<button type="button" class="boton-principal" id="btn-ver-progreso">Ver progreso</button>' +
+      '<button type="button" class="calcomania calcomania-cta calcomania-presionable" id="btn-ver-progreso" style="background:var(--amarillo);color:var(--tinta);margin-top:24px;width:100%;min-height:var(--toque-minimo);font-weight:700">Ver progreso</button>' +
       "</div>";
 
     el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
@@ -245,6 +310,10 @@
       location.hash = "#/progreso";
     });
   }
+
+  global.addEventListener("hashchange", function () {
+    if (location.hash.indexOf("diagnostico") === -1) quitarListenerTeclado();
+  });
 
   global.App = global.App || {};
   global.App.Screens = global.App.Screens || {};

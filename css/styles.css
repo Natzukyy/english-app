@@ -240,16 +240,306 @@ h2 {
   font-size: var(--fs-heading);
 }
 
-/* Diagnóstico: la pregunta (o la pregunta de autoevaluación) es el contenido que se está
-   evaluando, no un encabezado de sección más -- necesita distinguirse del resto del chrome
-   (título de pantalla, contador, botones). Un filete a la izquierda, como una anotación al
-   margen de una libreta rayada, en vez de una caja -- sigue la regla de "sin cajas anidadas"
-   (DECISIONES.md D13) y la metáfora de bitácora de DESIGN_REVIEW.md sección 3. */
-.pregunta-diagnostico {
+/* ============================================================================
+   DIAGNÓSTICO -- rediseño "Calcomanías oscuro" (reemplaza el filete de margen del
+   rediseño "cuaderno de bitácora" anterior). Reusa .calcomania/.superficie-oscura/
+   .pop-entrada-escalonada del bloque de infraestructura de Repaso -- ver ese commit.
+   Mobile: todo en una columna (pastilla -> pasaje/reproducir -> tarjeta de pregunta ->
+   opciones -> pie). Laptop (>=900px): .diagnostico-cuerpo se vuelve una rejilla de 2
+   columnas (440px + resto) que estira ambas a la misma altura (REGLA DE LAPTOP). */
+.diagnostico-pastilla-area {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--e-1) var(--e-3);
+  background: var(--menta);
+  color: var(--tinta);
+  font-weight: 700;
+  font-size: var(--fs-small);
+  border-radius: var(--radio-calcomania-chica);
+  --r: -1deg;
+}
+
+.diagnostico-pasaje {
+  padding: var(--e-4);
+  margin-top: var(--e-3);
+}
+.diagnostico-pasaje p {
+  margin: 0;
+}
+
+.diagnostico-tarjeta-pregunta {
+  padding: var(--e-4);
+  margin-top: var(--e-3);
+  --r: -0.8deg;
+}
+.diagnostico-tarjeta-pregunta h2 {
+  margin: 0;
   font-size: 22px;
   line-height: 1.3;
-  border-left: 3px solid var(--acento);
-  padding-left: var(--e-3);
+}
+
+.diagnostico-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  margin-top: var(--e-4);
+}
+
+/* Fila de opción: superficie plana por defecto; JS alterna las clases de abajo según el
+   estado (seleccionada/correcta/incorrecta) en vez de que el CSS decida con selectores de
+   atributo -- el estado es transitorio y depende de la interacción, no del dato. */
+.diagnostico-opcion {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  width: 100%;
+  min-height: var(--toque-minimo);
+  padding: var(--e-3) var(--e-4);
+  border-radius: var(--radio-calcomania-chica);
+  text-align: left;
+  font-family: var(--fuente-texto);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--texto);
+  --r: 0deg;
+}
+.diagnostico-opcion:disabled {
+  cursor: default;
+}
+
+.diagnostico-letra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  font-size: var(--fs-small);
+  font-weight: 700;
+}
+
+.diagnostico-opcion--seleccionada {
+  background: var(--amarillo);
+  color: var(--tinta);
+}
+
+.diagnostico-opcion--correcta {
+  background: var(--menta);
+  color: var(--tinta);
+  animation: diagnostico-pop-correcto var(--dur-rapida) var(--ease-pop);
+}
+
+.diagnostico-opcion--incorrecta {
+  border: 2.5px solid var(--coral);
+  color: var(--coral);
+  animation: diagnostico-sacude var(--dur-media) var(--ease-out);
+}
+
+@keyframes diagnostico-pop-correcto {
+  0% {
+    transform: rotate(var(--r)) scale(1);
+  }
+  50% {
+    transform: rotate(var(--r)) scale(1.04);
+  }
+  100% {
+    transform: rotate(var(--r)) scale(1);
+  }
+}
+
+@keyframes diagnostico-sacude {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+.diagnostico-pie {
+  margin-top: var(--e-4);
+}
+
+.diagnostico-nota-pie {
+  display: none; /* el mensaje de acierto/error solo aparece tras responder (JS lo rellena) */
+  margin: 0 0 var(--e-2);
+  font-weight: 600;
+}
+.diagnostico-nota-pie.visible {
+  display: block;
+}
+.diagnostico-nota-pie.diagnostico-nota-correcta {
+  color: var(--menta);
+}
+.diagnostico-nota-pie.diagnostico-nota-incorrecta {
+  color: var(--coral);
+}
+
+.diagnostico-nota-teclado {
+  display: none; /* solo tiene sentido con teclado físico -- se muestra desde 900px */
+}
+
+.diagnostico-boton-accion {
+  width: 100%;
+  min-height: var(--toque-minimo);
+  background: var(--coral);
+  color: var(--tinta);
+  font-weight: 700;
+  padding: var(--e-3) var(--e-5);
+  border: none;
+}
+.diagnostico-boton-accion:disabled {
+  opacity: 0.5;
+  box-shadow: none;
+  transform: none;
+  pointer-events: none;
+}
+
+@media (min-width: 900px) {
+  .diagnostico-cuerpo {
+    display: grid;
+    /* minmax(0, 1fr), no solo 1fr: una pista de grid sin esto toma como mínimo el
+       min-content de su contenido (texto de las opciones sin partir), así que la columna
+       puede desbordar el contenedor en vez de encogerse -- bug real encontrado al medir con
+       getBoundingClientRect (el grid reportaba 720px pero scrollWidth daba 924px). */
+    grid-template-columns: 440px minmax(0, 1fr);
+    gap: var(--e-7);
+    align-items: stretch;
+    margin-top: var(--e-5);
+  }
+
+  /* Sin "ancho-lectura" (ver diagnostico.js, pintarPregunta): el tope de ancho vive aquí,
+     en TODO el bloque (título + contador + barra + cuerpo) para que quede alineado de
+     arriba a abajo, no solo en las 2 columnas. Clase propia (no ".pantalla-diagnostico",
+     que también usan el resultado/autoevaluación CON ancho-lectura -- un tope distinto ahí
+     mezclaría dos reglas de max-width sobre el mismo elemento). */
+  .pantalla-diagnostico-pregunta {
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .diagnostico-columna-izquierda,
+  .diagnostico-columna-derecha {
+    display: flex;
+    flex-direction: column;
+  }
+  .diagnostico-tarjeta-pregunta {
+    --r: 0deg; /* REGLA DE LAPTOP: tarjetas grandes de contenido sin rotación */
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  .diagnostico-tarjeta-pregunta h2 {
+    font-size: 34px;
+  }
+  .diagnostico-opcion {
+    padding: var(--e-4) var(--e-5);
+    font-size: 21px;
+    min-height: 64px;
+  }
+  .diagnostico-pie {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--e-2);
+  }
+  .diagnostico-pie-fila {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--e-4);
+  }
+  .diagnostico-nota-pie {
+    margin: 0;
+    text-align: right;
+  }
+  .diagnostico-nota-teclado {
+    display: block;
+    margin: 0 auto 0 0; /* empuja el botón a la derecha dentro de la fila */
+    white-space: nowrap;
+  }
+  .diagnostico-boton-accion {
+    width: auto;
+  }
+}
+
+/* --- Resultado final del diagnóstico --- */
+.diagnostico-resultado-encabezado {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+}
+.diagnostico-resultado-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex: none;
+  background: var(--amarillo);
+  color: var(--tinta);
+  --r: -2deg;
+}
+.diagnostico-resultado-filas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  margin-top: var(--e-4);
+}
+.diagnostico-resultado-fila {
+  padding: var(--e-4);
+}
+.diagnostico-resultado-fila .fila-cabeza {
+  margin-bottom: var(--e-2);
+}
+.diagnostico-pastilla-nivel {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--e-2);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: var(--fs-small);
+  color: var(--tinta);
+}
+.diagnostico-pastilla-nivel--neutral {
+  background: var(--surface-borde);
+  color: var(--texto);
+}
+.diagnostico-resultado-fila .barra-progreso {
+  margin: 0;
+}
+
+.diagnostico-rubrica-filas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  margin-top: var(--e-4);
+}
+.diagnostico-rubrica-fila {
+  width: 100%;
+  text-align: left;
+  padding: var(--e-4);
+  font-family: var(--fuente-texto);
+  color: var(--texto);
+  transition: transform var(--dur-rapida) var(--ease-pop);
+}
+.diagnostico-rubrica-fila:active {
+  transform: scale(0.98);
+}
+.diagnostico-rubrica-fila strong {
+  color: var(--amarillo);
 }
 
 p {
