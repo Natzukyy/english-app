@@ -29,6 +29,67 @@
     escritura: "inicio"
   };
 
+  // Spec: "ejecuta los pasos EN SECUENCIA dentro de un flujo con barra de progreso del día
+  // arriba" -- arriba de CUALQUIER pantalla de paso (Repaso/Diagnóstico/Habla/Conversación),
+  // no solo de Inicio. Vive en el shell (app.js) y no en cada pantalla a propósito: así
+  // ninguna pantalla existente necesita saber que es parte de un plan guiado, igual que
+  // js/screens/inicio.js ya decidió para "¡Listo! Siguiente" (ver el comentario al inicio de
+  // ese archivo). CLAVE_FLUJO/RUTA_POR_TIPO/RUTA_POR_HABILIDAD_PRACTICA duplican las
+  // constantes equivalentes de inicio.js (son datos pequeños y estables, no lógica de
+  // negocio) porque ese módulo no las expone -- si llegan a divergir, es una señal de que
+  // vale la pena moverlas a un lugar compartido.
+  var CLAVE_FLUJO = "rumboFlujoEnCurso";
+  var RUTA_POR_TIPO_PASO = { diagnostico: "diagnostico", reevaluacion: "diagnostico", repaso: "repaso", conversacion: "conversacion" };
+  var RUTA_POR_HABILIDAD_PRACTICA = { habla: "habla", lectura: "lectura", escucha: "escucha", escritura: "escritura" };
+
+  function rutaDelPaso(paso) {
+    if (paso.tipo === "practica") return RUTA_POR_HABILIDAD_PRACTICA[paso.habilidad] || "inicio";
+    return RUTA_POR_TIPO_PASO[paso.tipo] || "inicio";
+  }
+
+  function leerFlujoEnCurso() {
+    try {
+      var crudo = localStorage.getItem(CLAVE_FLUJO);
+      return crudo ? JSON.parse(crudo) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /** Muestra/oculta la barra "Paso N de M" arriba de la pantalla actual. Vive fuera de
+   * #pantalla (ver index.html) para no depender de cuándo cada pantalla termine de pintar
+   * su propio contenido async -- nunca lo pisa ni lo necesita pisar. */
+  function actualizarBannerPlan(ruta) {
+    var banner = document.getElementById("banner-plan");
+    if (!banner) return;
+    var flujo = leerFlujoEnCurso();
+    if (!flujo) {
+      banner.hidden = true;
+      document.body.classList.remove("tiene-banner-plan");
+      return;
+    }
+    global.App.Datos.obtenerOCalcularPlanDeHoy(new Date()).then(function (plan) {
+      var paso = plan.id === flujo.fecha ? plan.pasos[flujo.indice] : null;
+      if (!paso || rutaDelPaso(paso) !== ruta) {
+        banner.hidden = true;
+        document.body.classList.remove("tiene-banner-plan");
+        return;
+      }
+      var total = plan.pasos.length;
+      var n = flujo.indice + 1;
+      banner.hidden = false;
+      document.body.classList.add("tiene-banner-plan");
+      banner.innerHTML =
+        '<span class="banner-plan-texto">Paso ' +
+        n +
+        " de " +
+        total +
+        '</span><div class="barra-progreso"><span style="width:' +
+        Math.round((n / total) * 100) +
+        '%"></span></div>';
+    });
+  }
+
   /** Preparación para crecer (idioma/nivel configurable): data/config.json saca el nombre
    * de la app del código del shell -- título, meta de iOS y logo de la barra lateral se
    * rellenan con esto en vez de venir fijos en index.html. El nombre real es "Rumbo"
@@ -100,6 +161,7 @@
       var el = document.getElementById("pantalla");
       marcarTabActiva(ruta);
       aplicarI18nNav();
+      actualizarBannerPlan(ruta);
       if (pantalla && typeof pantalla.render === "function") {
         pantalla.render(el, contexto);
       } else {

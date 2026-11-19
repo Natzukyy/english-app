@@ -205,6 +205,34 @@ main {
   overflow-y: auto;
 }
 
+/* Banner "Paso N de M" (ver js/app.js actualizarBannerPlan) -- arriba de CUALQUIER pantalla
+   de paso mientras Alex sigue la ruta guiada del día (spec Fase B: "barra de progreso del día
+   arriba"). En móvil, #app es flex-column y este div es un hermano ANTES de "main" en el
+   HTML, así que en flujo normal ya empuja el contenido hacia abajo sin CSS extra. Solo en
+   laptop (#app pasa a flex-row, ver más abajo) hace falta sacarlo del flujo. */
+.banner-plan[hidden] {
+  display: none;
+}
+.banner-plan {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  padding: var(--e-2) max(var(--e-4), env(safe-area-inset-right)) var(--e-2) max(var(--e-4), env(safe-area-inset-left));
+  padding-top: calc(var(--e-2) + env(safe-area-inset-top, 0px));
+  background: var(--nav);
+  border-bottom: 2.5px solid var(--surface-borde);
+}
+.banner-plan-texto {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  color: var(--texto-2);
+  white-space: nowrap;
+}
+.banner-plan .barra-progreso {
+  flex: 1;
+  margin: 0;
+}
+
 /* Inicio reserva mucho menos espacio abajo que el resto: nav.tabs ya es un hermano real en
    el flex de #app (no un overlay fijo), así que el padding-bottom grande de "main" de arriba
    es espacio duplicado que Inicio no se puede dar -- tiene que caber completo sin scroll
@@ -2025,6 +2053,22 @@ button.tarjeta-habilidad:active {
     max-width: 1500px; /* spec: "a 1920 se puede limitar el ancho del contenido a ~1500px y centrarlo" -- a 1280/1440 este máximo no se alcanza, así que simplemente usa el ancho disponible */
     margin: 0 auto;
     padding: 40px 56px; /* spec: "main con padding 40px 56px" */
+  }
+
+  /* #app pasa a flex-row aquí: el banner de "Paso N de M" (hermano de "main" antes que él en
+     el HTML) ya no lo empuja hacia abajo gratis como en móvil -- se saca del flujo con
+     "#app { position: relative }" (ver arriba, siempre activo) y se compensa el padding-top
+     de "main" con un alto fijo conocido (46px: texto 20px + gap 8px + barra 6px + paddings
+     12px, el mismo cálculo que ya usa el banner) solo mientras está visible. */
+  .banner-plan {
+    position: absolute;
+    top: 0;
+    left: 240px; /* ancho fijo de la barra lateral, ver nav.tabs más abajo */
+    right: 0;
+    z-index: 5;
+  }
+  body.tiene-banner-plan main {
+    padding-top: calc(40px + 46px);
   }
 
   h1 {
