@@ -191,6 +191,17 @@ main:has(> .pantalla-vista > .inicio-cuerpo) {
   padding-bottom: var(--e-4);
 }
 
+/* Repaso: una sola ficha a la vez, con mucho aire alrededor si se deja pegada arriba (el
+   contenido real -- título, contador, una ficha, 1 o 2 botones -- es corto). Centrarla en el
+   alto disponible lee como una ficha sola en el escritorio, no como una página cortada a la
+   mitad; el contenido es siempre corto (una frase), así que no hay riesgo real de que el
+   centrado corte el principio en pantallas bajas. */
+main:has(> .pantalla-repaso) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 h1,
 h2,
 h3 {
@@ -323,6 +334,16 @@ button {
 .hero-bloque {
   text-align: center;
   padding: var(--e-5) 0 var(--e-2);
+}
+
+/* Fin de sesión (Repaso/Diagnóstico): mismo sello que "Tu camino", mismo color sello/tinta
+   de corrección -- no --exito verde. Reemplaza el confeti (ver nota en @keyframes
+   sello-estampa): un timbre que se estampa una vez dice "sesión completada" con la misma
+   metáfora de bitácora que el resto de la app, en vez de un efecto decorativo aparte. */
+.icono-sello-fin {
+  display: inline-flex;
+  color: var(--acento-sello);
+  animation: sello-estampa 220ms var(--easing) both;
 }
 
 .hero-etiqueta {
@@ -619,6 +640,33 @@ nav.tabs button[aria-current="true"] {
 
 .grid-calificar .boton-secundario {
   text-align: center;
+}
+
+/* Jerarquía de calificación: antes los 4 botones pesaban igual, perdiendo el significado
+   de la elección (ver DESIGN_REVIEW.md sección 2, Repaso). "Difícil" se queda con el
+   boton-secundario neutro de siempre -- ya es la respuesta intermedia, ni alarma ni
+   celebra. "No la sabía" usa --error/--acento-sello (mismo valor, es semántico: esta
+   elección SÍ dispara el camino de "incorrecta" en App.SRS) solo en el borde y el texto,
+   nunca relleno, para no competir con un error real. "Bien" y "Fácil" ganan peso hacia el
+   acento a medida que crece la confianza -- "Fácil" es el único relleno sólido. */
+.grid-calificar [data-calidad="1"] {
+  border-color: var(--error);
+  color: var(--error);
+  font-weight: 600;
+}
+
+.grid-calificar [data-calidad="4"] {
+  border-color: var(--acento);
+  background: var(--acento-tenue);
+  color: var(--acento);
+  font-weight: 600;
+}
+
+.grid-calificar [data-calidad="5"] {
+  border-color: var(--acento);
+  background: var(--acento);
+  color: var(--acento-sobre);
+  font-weight: 600;
 }
 
 /* --- Tarjetas de habilidad (inicio): mosaico de ícono + nombre + barra o "Sin datos". ---

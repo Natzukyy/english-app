@@ -49,11 +49,10 @@
           var minutos = (resultado && resultado.minutosHoy) || 0;
 
           el.innerHTML =
-            '<div class="pantalla-vista ancho-lectura">' +
-            global.App.Util.confeti() +
+            '<div class="pantalla-vista ancho-lectura pantalla-repaso">' +
             '<div class="hero-bloque">' +
-            '<span id="icono-exito" style="color:var(--exito)">' +
-            global.App.Iconos.svg("check", 32) +
+            '<span id="icono-exito" class="icono-sello-fin">' +
+            global.App.Iconos.svg("sello", 32) +
             "</span>" +
             '<h1 style="margin-top:8px" data-i18n-live="repaso.titulo"></h1>' +
             '<p class="hero-etiqueta">' +
@@ -93,7 +92,7 @@
     // tarjeta.frente/atras vienen de IndexedDB (sembradas por nosotros, pero sustituibles por
     // un respaldo importado): se escapan antes de insertarlas como HTML.
     el.innerHTML =
-      '<div class="pantalla-vista ancho-lectura">' +
+      '<div class="pantalla-vista ancho-lectura pantalla-repaso">' +
       '<h1 data-i18n-live="repaso.titulo"></h1>' +
       '<div class="fila-cabeza"><span class="texto-tenue num-tabular">' +
       (sesion.indice + 1) +
