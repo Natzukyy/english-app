@@ -195,6 +195,7 @@
       btnHablar.disabled = false;
       if (!transcripcionFinal && !parcial) return; // ya se mostró el error correspondiente, si lo hubo
       var textoDicho = transcripcionFinal || parcial;
+      zonaReconocimiento.innerHTML = ""; // si no, el "Escuchando…" se queda visible encima del resultado
       mostrarResultado(el, t, ejercicio, esSombra, fraseMostrada, textoDicho);
     });
 
