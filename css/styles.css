@@ -3742,6 +3742,145 @@ main:has(> .pantalla-habla) {
   }
 }
 
+/* ============================================================================
+   ESCRITURA -- rediseño "Calcomanías oscuro" (Fase C). Mismo esqueleto de layout que
+   Lectura/Escucha. La fase de revisión (lista de verificación + modelo) reemplaza la fase de
+   escritura entera en el mismo lugar del DOM -- no son dos columnas simultáneas con
+   contenido oculto, así que no hace falta un estado "vacío" aparte más que el texto de espera
+   de la columna derecha mientras Alex todavía está escribiendo. */
+.escritura-pastilla-rosa {
+  background: var(--rosa);
+}
+
+.escritura-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-5);
+  margin-top: var(--e-4);
+}
+
+.escritura-consigna {
+  padding: var(--e-4);
+  margin-top: var(--e-3);
+  line-height: 1.5;
+}
+.escritura-consigna p {
+  margin: 0;
+}
+
+.escritura-textarea {
+  min-height: 220px;
+  margin-top: var(--e-3);
+  padding: var(--e-3);
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.escritura-boton-terminar,
+.escritura-boton-terminar-final {
+  margin-top: var(--e-3);
+  /* .calcomania solo pone borde/sombra/radio, nunca el color de fondo (ver su definición) --
+     rosa explícito aquí (color de la habilidad Escritura), igual que Lectura hace con
+     amarillo y Escucha con azul para sus propios botones principales. */
+  background: var(--rosa);
+  color: var(--tinta);
+  font-weight: 700;
+  padding: var(--e-3) var(--e-5);
+}
+.escritura-boton-terminar:disabled {
+  opacity: 0.5;
+}
+
+.escritura-tarjeta-espera {
+  padding: var(--e-4);
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.escritura-texto-escrito {
+  padding: var(--e-4);
+  margin-top: var(--e-3);
+  line-height: 1.6;
+  color: var(--texto-2);
+  white-space: pre-wrap;
+}
+.escritura-texto-escrito p {
+  margin: 0;
+}
+
+.escritura-tarjeta-lista,
+.escritura-tarjeta-modelo {
+  padding: var(--e-4);
+}
+.escritura-tarjeta-lista + .escritura-tarjeta-modelo {
+  margin-top: var(--e-3);
+}
+
+.escritura-lista-verificacion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+  margin-top: var(--e-3);
+}
+
+/* Fila de checkbox táctil (>=44px) -- la etiqueta entera es el área de toque, no solo el
+   cuadrito nativo (demasiado chico por sí solo en celular). */
+.escritura-criterio {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  min-height: var(--toque-minimo);
+  padding: var(--e-1) 0;
+  cursor: pointer;
+}
+.escritura-criterio input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--rosa);
+  flex: none;
+}
+
+.escritura-respuesta-modelo {
+  margin-top: var(--e-3);
+  line-height: 1.6;
+  color: var(--texto-2);
+}
+
+.escritura-correccion-ia {
+  margin-top: var(--e-3);
+  padding: var(--e-3);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+#btn-correccion-ia {
+  margin-top: var(--e-3);
+}
+
+@media (min-width: 900px) {
+  .escritura-cuerpo {
+    display: grid;
+    /* minmax(0, 1fr): mismo bug real documentado en .diagnostico-cuerpo/.lectura-cuerpo -- un
+       1fr solo no evita que la columna se desborde con texto largo (consigna o corrección IA). */
+    grid-template-columns: minmax(0, 1fr) 440px;
+    gap: var(--e-7);
+    align-items: stretch;
+  }
+  .escritura-columna-izquierda,
+  .escritura-columna-derecha {
+    display: flex;
+    flex-direction: column;
+  }
+  .escritura-textarea {
+    flex: 1;
+  }
+  .escritura-tarjeta-espera {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;

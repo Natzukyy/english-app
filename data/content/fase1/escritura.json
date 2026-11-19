@@ -1,0 +1,429 @@
+{
+  "_nota": "Consignas de escritura (Fase C, 'Calcomanías oscuro'). Inglés original verificado por Claude; nivelCEFR es una estimación razonada, no una certificación oficial. revisar: true en todas -- Alex debe confirmarlas.",
+  "escritura": [
+    {
+      "id": "esc-a2-cancelar-plan",
+      "tema": "Cancelar un plan con un amigo",
+      "nivelCEFR": "A2",
+      "consigna": "Escribe un mensaje a un amigo cancelando un plan que tenían para hoy. Explica por qué y propón otro día.",
+      "listaVerificacion": [
+        "Expliqué por qué cancelo (una razón simple y clara)",
+        "Propuse otro día o momento",
+        "Usé un tono amigable e informal",
+        "Escribí al menos 3 oraciones"
+      ],
+      "respuestaModelo": "Hey, I'm so sorry, but I can't make it today. I'm feeling a bit sick and I think it's better if I just rest. Can we meet this Saturday instead? I really want to see you, just not today. Let me know if that works!",
+      "revisar": true
+    },
+    {
+      "id": "esc-a2-correo-curso",
+      "tema": "Pedir información sobre un curso",
+      "nivelCEFR": "A2",
+      "consigna": "Escribe un correo corto a una escuela de idiomas preguntando información sobre un curso de inglés: horarios, precio y duración.",
+      "listaVerificacion": [
+        "Incluí un saludo apropiado",
+        "Pregunté por horarios, precio y duración",
+        "Incluí una despedida apropiada",
+        "El correo tiene entre 3 y 5 oraciones"
+      ],
+      "respuestaModelo": "Hello, I'm interested in your English course and I'd like some more information before I sign up. Could you tell me the schedule, the price, and how long the course lasts? I'm available in the evenings, so that information would help me a lot. Thank you for your time.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a2-rutina-diaria",
+      "tema": "Describir tu rutina diaria",
+      "nivelCEFR": "A2",
+      "consigna": "Describe tu rutina diaria: qué haces en la mañana, en la tarde y en la noche. Usa el tiempo presente.",
+      "listaVerificacion": [
+        "Usé el presente simple correctamente",
+        "Incluí mañana, tarde y noche",
+        "Usé palabras de secuencia (first, then, after that, finally)",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "I usually wake up at seven and have breakfast while I check my phone. In the afternoon, I study or work on my computer for a few hours, and I also try to go for a short walk. In the evening, I have dinner with my family and watch something before I go to bed. Finally, I read for a little while and fall asleep around eleven.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a2-confirmar-cita",
+      "tema": "Confirmar una cita por mensaje",
+      "nivelCEFR": "A2",
+      "consigna": "Escribe un mensaje de texto confirmando una cita (puede ser médica, de trabajo o personal) y preguntando la dirección exacta.",
+      "listaVerificacion": [
+        "Confirmé el día y la hora de la cita",
+        "Pregunté por la dirección",
+        "El tono es claro y directo",
+        "Escribí al menos 2 oraciones"
+      ],
+      "respuestaModelo": "Hi, I just wanted to confirm our appointment for Thursday at 10 a.m. Could you send me the exact address? I want to make sure I arrive on time. See you soon!",
+      "revisar": true
+    },
+    {
+      "id": "esc-a2-lugar-trabajo",
+      "tema": "Describir tu lugar de trabajo o estudio",
+      "nivelCEFR": "A2",
+      "consigna": "Describe el lugar donde trabajas o estudias: cómo es, qué hay en él y por qué te gusta o no te gusta.",
+      "listaVerificacion": [
+        "Describí cómo se ve el lugar (tamaño, colores, muebles)",
+        "Mencioné al menos 2 cosas que hay en el lugar",
+        "Dije si te gusta o no, y por qué",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "I usually study in a small room with a desk next to the window. There's a computer, some books, and a lamp I use at night. I like this space because it's quiet and I can focus without many distractions. The only problem is that it gets a little cold in winter.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a2-pedir-dia-libre",
+      "tema": "Pedir un día libre por correo",
+      "nivelCEFR": "A2",
+      "consigna": "Escribe un correo corto a tu jefe pidiendo un día libre la próxima semana. Explica brevemente el motivo.",
+      "listaVerificacion": [
+        "Pedí el día libre claramente",
+        "Di un motivo breve y apropiado",
+        "Usé un tono respetuoso",
+        "Incluí saludo y despedida"
+      ],
+      "respuestaModelo": "Hi, I wanted to ask if I could take next Friday off. I have a family matter I need to take care of that day. I'll make sure my tasks are covered before I leave. Thank you for considering it.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a2-agradecer-regalo",
+      "tema": "Agradecer un regalo",
+      "nivelCEFR": "A2",
+      "consigna": "Escribe un mensaje agradeciendo un regalo que recibiste. Describe el regalo y cómo te sientes.",
+      "listaVerificacion": [
+        "Mencioné qué fue el regalo",
+        "Expresé agradecimiento claramente",
+        "Dije cómo te sientes o cómo lo vas a usar",
+        "Escribí al menos 3 oraciones"
+      ],
+      "respuestaModelo": "Thank you so much for the book, I love it! I've wanted to read it for months, so this was a perfect gift. I already started reading it last night and I can't put it down. You always know what I like!",
+      "revisar": true
+    },
+    {
+      "id": "esc-a2-describir-persona",
+      "tema": "Describir a un amigo o familiar",
+      "nivelCEFR": "A2",
+      "consigna": "Describe a un amigo o familiar: cómo es físicamente y cómo es su personalidad.",
+      "listaVerificacion": [
+        "Describí la apariencia física",
+        "Describí al menos 2 rasgos de personalidad",
+        "Usé adjetivos variados",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "My sister is tall, with short dark hair and glasses. She's very friendly and always has a positive attitude, even on difficult days. She's also quite organized, which is very different from me. I admire how patient she is with everyone around her.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a2-estado-pedido",
+      "tema": "Preguntar por el estado de un pedido",
+      "nivelCEFR": "A2",
+      "consigna": "Escribe un mensaje a una tienda en línea preguntando por el estado de un pedido que hiciste hace una semana.",
+      "listaVerificacion": [
+        "Mencioné que hiciste un pedido y hace cuánto",
+        "Pregunté por el estado o la fecha de entrega",
+        "El tono es educado",
+        "Escribí al menos 3 oraciones"
+      ],
+      "respuestaModelo": "Hello, I placed an order a week ago and I haven't received any update since then. Could you tell me the current status and when it might arrive? I'd really appreciate any information you can give me.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a2-presentarte-equipo",
+      "tema": "Presentarte a un nuevo compañero de equipo",
+      "nivelCEFR": "A2",
+      "consigna": "Escribe un correo corto presentándote a un nuevo compañero de equipo. Di tu nombre, qué haces y dale la bienvenida.",
+      "listaVerificacion": [
+        "Dijiste tu nombre y tu rol",
+        "Diste la bienvenida al nuevo compañero",
+        "Ofreciste ayuda si la necesita",
+        "Incluiste saludo y despedida"
+      ],
+      "respuestaModelo": "Hi, my name is Alex and I work on the design team. Welcome to the company, I'm really glad you joined us! If you have any questions during your first weeks, feel free to reach out to me anytime. Looking forward to working together.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b1-producto-defectuoso",
+      "tema": "Quejarse de un producto defectuoso",
+      "nivelCEFR": "B1",
+      "consigna": "Escribe un correo de queja a una tienda sobre un producto que llegó defectuoso. Explica el problema y qué solución esperas.",
+      "listaVerificacion": [
+        "Describí claramente el problema del producto",
+        "Mencioné cuándo y dónde lo compraste",
+        "Pedí una solución específica (reembolso, cambio, etc.)",
+        "Mantuve un tono firme pero educado",
+        "Escribí al menos 5 oraciones"
+      ],
+      "respuestaModelo": "I'm writing to report a problem with an order I received last week. The headphones I bought stopped working after just two days, even though I followed the instructions carefully. I checked the packaging and everything seemed fine, so I don't think it was a mistake on my part. I would like to request a replacement or a full refund, whichever is easier on your end. I've attached a photo of the product and my order number for reference. I hope we can resolve this quickly.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b1-fin-semana-memorable",
+      "tema": "Narrar un fin de semana memorable",
+      "nivelCEFR": "B1",
+      "consigna": "Narra un fin de semana que recuerdes especialmente. Qué pasó, con quién estabas y por qué fue memorable.",
+      "listaVerificacion": [
+        "Usé el tiempo pasado correctamente",
+        "Describí qué pasó en orden cronológico",
+        "Expliqué por qué fue memorable",
+        "Escribí al menos 5 oraciones"
+      ],
+      "respuestaModelo": "Last spring, a few friends and I decided to drive to the coast without really planning anything in advance. We got lost twice on the way there, which was frustrating at first but ended up being pretty funny. When we finally arrived, we spent the whole afternoon walking along the beach and talking about everything and nothing. That weekend reminded me how much I needed a break from my usual routine, and I still think about it whenever I feel stressed.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b1-proponer-idea",
+      "tema": "Proponer una idea a tu equipo",
+      "nivelCEFR": "B1",
+      "consigna": "Escribe un correo a tu equipo proponiendo una idea para mejorar la forma de trabajar. Explica el problema actual y tu propuesta.",
+      "listaVerificacion": [
+        "Describí el problema actual claramente",
+        "Propuse una solución específica",
+        "Expliqué un beneficio concreto de tu idea",
+        "Invité a dar retroalimentación",
+        "Mantuve un tono colaborativo"
+      ],
+      "respuestaModelo": "I wanted to share an idea that might help us work more efficiently. Lately, our meetings have been running much longer than planned, and I think it's because we don't always have a clear agenda beforehand. What if we sent a short list of topics the day before each meeting, so everyone knows what to expect and can prepare in advance? I believe this could save us a good amount of time every week. Let me know what you think, and feel free to suggest changes to the idea.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b1-problema-tecnico",
+      "tema": "Describir un problema técnico y su solución",
+      "nivelCEFR": "B1",
+      "consigna": "Describe un problema técnico que tuviste (con una computadora, una app o un sistema) y cómo lo resolviste.",
+      "listaVerificacion": [
+        "Describí el problema con claridad",
+        "Expliqué los pasos que tomaste para resolverlo",
+        "Usé conectores de secuencia (first, then, eventually)",
+        "Escribí al menos 5 oraciones"
+      ],
+      "respuestaModelo": "A few weeks ago, my laptop suddenly stopped connecting to the internet, even though other devices worked fine. At first, I tried restarting the router, but that didn't change anything. Then I checked the network settings and noticed the Wi-Fi adapter was disabled for some reason. I'm still not sure what caused it, but once I turned it back on, everything worked normally again. It was a simple fix, but it took me almost an hour to find it.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b1-seguimiento-entrevista",
+      "tema": "Correo de seguimiento tras una entrevista",
+      "nivelCEFR": "B1",
+      "consigna": "Escribe un correo de seguimiento después de una entrevista de trabajo, agradeciendo la oportunidad y reafirmando tu interés.",
+      "listaVerificacion": [
+        "Agradeciste el tiempo de la entrevista",
+        "Mencionaste algo específico de la conversación",
+        "Reafirmaste tu interés en el puesto",
+        "Mantuviste un tono profesional",
+        "Incluiste saludo y despedida apropiados"
+      ],
+      "respuestaModelo": "Thank you for taking the time to speak with me yesterday about the developer position. I really enjoyed our conversation, especially when we talked about how the team handles code reviews. It confirmed that this is exactly the kind of environment I'm looking for. I remain very interested in the role and would be happy to provide any additional information if needed. I look forward to hearing from you.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b1-aprender-habilidad",
+      "tema": "Narrar cómo aprendiste una habilidad nueva",
+      "nivelCEFR": "B1",
+      "consigna": "Narra cómo aprendiste una habilidad nueva (puede ser técnica o no). Qué dificultades tuviste y cómo las superaste.",
+      "listaVerificacion": [
+        "Usé el tiempo pasado correctamente",
+        "Mencioné al menos una dificultad real",
+        "Expliqué cómo la superaste",
+        "Escribí al menos 5 oraciones"
+      ],
+      "respuestaModelo": "When I started learning to code, I found it really hard to understand why my programs kept failing for reasons I couldn't see. For the first few weeks, I felt like I was just copying examples without really understanding them. Eventually, I started writing small practice projects on my own instead of only following tutorials, and that made a huge difference. Making my own mistakes taught me more than any lesson did. Now I actually enjoy debugging, which is something I never expected to say.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b1-invitar-evento",
+      "tema": "Invitar a colegas a un evento",
+      "nivelCEFR": "B1",
+      "consigna": "Escribe un correo invitando a tus colegas a un evento de la empresa (puede ser una celebración, una capacitación, etc.).",
+      "listaVerificacion": [
+        "Mencioné qué es el evento",
+        "Incluí fecha, hora y lugar",
+        "Di una razón para asistir",
+        "Mantuve un tono entusiasta pero profesional"
+      ],
+      "respuestaModelo": "I'm excited to invite you all to our end-of-quarter celebration next Friday at 6 p.m. in the main office. It'll be a relaxed evening with food, drinks, and a chance to catch up outside of our usual meetings. After a busy few months, I think we've definitely earned it. Hope to see everyone there!",
+      "revisar": true
+    },
+    {
+      "id": "esc-b1-meta-del-ano",
+      "tema": "Describir una meta para este año",
+      "nivelCEFR": "B1",
+      "consigna": "Describe una meta importante que tienes para este año: qué quieres lograr y qué plan tienes para lograrlo.",
+      "listaVerificacion": [
+        "Describí la meta claramente",
+        "Expliqué por qué es importante para ti",
+        "Mencioné al menos un paso concreto de tu plan",
+        "Escribí al menos 5 oraciones"
+      ],
+      "respuestaModelo": "One of my main goals this year is to reach a more advanced level of English, especially for speaking. I've noticed that I understand much more than I can actually say in conversations, and that gap bothers me. My plan is to practice speaking a little every day, even if it's just a few minutes, instead of waiting until I feel ready. I also want to have at least one real conversation in English every week. It's a small habit, but I think consistency will make the biggest difference.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b1-pedir-retroalimentacion",
+      "tema": "Pedir retroalimentación sobre un proyecto",
+      "nivelCEFR": "B1",
+      "consigna": "Escribe un correo pidiendo retroalimentación sobre un proyecto en el que has estado trabajando.",
+      "listaVerificacion": [
+        "Describiste brevemente el proyecto",
+        "Pediste retroalimentación específica (no solo 'qué opinas')",
+        "Diste un plazo razonable para responder",
+        "Mantuviste un tono abierto a las críticas"
+      ],
+      "respuestaModelo": "I wanted to share the latest version of the project I've been working on and ask for your feedback. I'm particularly interested in whether the structure makes sense and if anything feels confusing to a new user. Any comments, even small ones, would be really helpful. If possible, I'd love to hear back by the end of the week, since I'd like to make adjustments before the next review.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b1-dia-dificil-trabajo",
+      "tema": "Narrar un día difícil en el trabajo",
+      "nivelCEFR": "B1",
+      "consigna": "Narra un día difícil que tuviste en el trabajo o la escuela, y cómo lo manejaste.",
+      "listaVerificacion": [
+        "Usé el tiempo pasado correctamente",
+        "Describí qué hizo el día difícil",
+        "Expliqué cómo reaccionaste o lo resolviste",
+        "Escribí al menos 5 oraciones"
+      ],
+      "respuestaModelo": "Last month, I had a day where almost everything went wrong at once: a meeting got moved without warning, I lost part of my work due to a technical issue, and I was already behind on a deadline. Instead of trying to fix everything at the same time, I decided to stop for a moment and write down what actually needed to happen that day. That helped me focus on one thing instead of panicking about all of it. By the end of the day, I hadn't solved every problem, but I felt much calmer about it.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b2-ia-reemplaza-trabajos",
+      "tema": "Opinión: ¿la IA debería reemplazar trabajos humanos?",
+      "nivelCEFR": "B2",
+      "consigna": "Escribe tu opinión sobre si la inteligencia artificial debería reemplazar trabajos que hoy hacen personas. Da al menos un argumento a favor y uno en contra antes de concluir.",
+      "listaVerificacion": [
+        "Presenté un argumento a favor claramente",
+        "Presenté un argumento en contra claramente",
+        "Di mi propia conclusión al final",
+        "Usé conectores de contraste (however, on the other hand)",
+        "Escribí al menos 6 oraciones"
+      ],
+      "respuestaModelo": "There's a strong case for automating repetitive or dangerous tasks: it can increase efficiency and free people from work that offers little personal fulfillment. On the other hand, replacing jobs too quickly can leave workers without the time or resources to retrain for new roles, which deepens inequality rather than reducing it. In my opinion, the goal shouldn't be replacement for its own sake, but automation paired with real support for the people affected. Technology that improves efficiency without a plan for the people it displaces solves one problem by creating another.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b2-trabajo-remoto-permanente",
+      "tema": "Argumento sobre el trabajo remoto permanente",
+      "nivelCEFR": "B2",
+      "consigna": "Escribe un argumento a favor o en contra de que el trabajo remoto se vuelva la norma permanente en la industria tecnológica. Defiende tu postura con razones claras.",
+      "listaVerificacion": [
+        "Tomé una postura clara (a favor o en contra)",
+        "Di al menos dos razones que la apoyan",
+        "Consideré al menos una objeción y la respondí",
+        "Escribí al menos 6 oraciones"
+      ],
+      "respuestaModelo": "I believe remote work should remain the default option in tech, not just a temporary arrangement. First, it removes the time and cost of commuting, which gives people more control over their own schedules. Second, it allows companies to hire talented people regardless of where they live, instead of limiting the search to one city. Some argue that remote work weakens team collaboration, and that's a fair concern, but it's one that can be addressed with intentional communication habits rather than by forcing everyone back into an office. The flexibility it offers is simply too valuable to give up by default.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b2-etica-datos-usuarios",
+      "tema": "Opinión sobre la ética de recopilar datos de usuarios",
+      "nivelCEFR": "B2",
+      "consigna": "Escribe tu opinión sobre los límites éticos que deberían existir al recopilar datos de usuarios en apps y sitios web.",
+      "listaVerificacion": [
+        "Expliqué por qué el tema importa",
+        "Propuse al menos un límite ético concreto",
+        "Consideré el punto de vista de las empresas",
+        "Escribí al menos 6 oraciones"
+      ],
+      "respuestaModelo": "Data collection isn't inherently wrong, but the way many companies handle it crosses a line that users rarely notice until it's too late. Personally, I think the clearest ethical limit is consent that's actually informed, not just a checkbox buried in a long terms-of-service document nobody reads. Companies will argue that detailed data helps them improve their products, and that's often true, but usefulness doesn't automatically justify collecting more than what's needed. A reasonable middle ground would be collecting only what's necessary for the service to work, and being transparent about anything beyond that.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b2-universidades-ensenar-ia",
+      "tema": "Argumento sobre enseñar IA desde el inicio en la universidad",
+      "nivelCEFR": "B2",
+      "consigna": "Argumenta a favor o en contra de que las universidades enseñen inteligencia artificial desde los primeros semestres de cualquier carrera de ingeniería.",
+      "listaVerificacion": [
+        "Tomé una postura clara",
+        "Di al menos dos razones concretas",
+        "Mencioné un riesgo o límite de tu propia postura",
+        "Escribí al menos 6 oraciones"
+      ],
+      "respuestaModelo": "I think AI fundamentals should be introduced early, even outside of specialized programs. Students who understand the basics sooner are better prepared to use these tools critically instead of treating them as magic, and that habit is hard to build later once other ways of thinking are already set. At the same time, there's a real risk of rushing students into advanced topics before they have a solid foundation in math and programming, which could do more harm than good. The solution isn't skipping the basics, but weaving AI concepts into existing courses gradually, so students build both skills at the same time instead of one after the other.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b2-equilibrio-vida-trabajo-tech",
+      "tema": "Opinión sobre el equilibrio vida-trabajo en tecnología",
+      "nivelCEFR": "B2",
+      "consigna": "Escribe tu opinión sobre la cultura de trabajo en la industria tecnológica respecto al equilibrio entre la vida personal y laboral.",
+      "listaVerificacion": [
+        "Describí un problema específico de esa cultura",
+        "Di tu opinión claramente",
+        "Propuse una posible mejora",
+        "Escribí al menos 6 oraciones"
+      ],
+      "respuestaModelo": "The tech industry often praises long hours as a sign of dedication, but I think that mindset causes more harm than it admits. Treating constant availability as a virtue makes it harder for people to set healthy boundaries, even when the actual workload doesn't require it. In my view, companies that genuinely care about long-term performance should measure results instead of hours spent online. A simple improvement would be normalizing clear response-time expectations, so people don't feel guilty for logging off at a reasonable time.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b2-certificaciones-vs-experiencia",
+      "tema": "Argumento sobre certificaciones vs. experiencia práctica",
+      "nivelCEFR": "B2",
+      "consigna": "Argumenta si las certificaciones técnicas son más o menos importantes que la experiencia práctica al contratar a alguien en tecnología.",
+      "listaVerificacion": [
+        "Tomé una postura clara",
+        "Comparé ambos lados con ejemplos o razones",
+        "Reconocí el valor del lado contrario",
+        "Escribí al menos 6 oraciones"
+      ],
+      "respuestaModelo": "While certifications can prove that someone has studied a specific topic, I don't think they're as valuable as practical experience when it comes to actually doing the job. Experience shows how someone handles unexpected problems, works with a team, and makes decisions under real constraints, none of which a certification can fully measure. That said, certifications aren't useless: they can help someone break into a field where they have no professional history yet, which is a real barrier for many people. Ideally, hiring decisions should weigh both, but when I have to choose, real-world experience tells me more about how someone will actually perform.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b2-redes-sociales-productividad",
+      "tema": "Opinión sobre redes sociales y productividad",
+      "nivelCEFR": "B2",
+      "consigna": "Escribe tu opinión sobre cómo las redes sociales afectan la productividad de las personas que trabajan o estudian con una computadora.",
+      "listaVerificacion": [
+        "Expliqué el impacto (positivo, negativo, o ambos)",
+        "Di un ejemplo concreto",
+        "Propuse una estrategia para manejarlo",
+        "Escribí al menos 6 oraciones"
+      ],
+      "respuestaModelo": "Social media isn't purely a distraction, but I think its design makes it especially hard to use in moderation while working. Notifications are built to interrupt, and even a quick check can break the concentration it took several minutes to build in the first place. I've noticed this myself: a single five-minute break can easily turn into twenty once I start scrolling. What has helped me is keeping those apps off my work computer entirely, so checking them requires a deliberate choice instead of a habit I don't even notice.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b2-codigo-abierto-vs-propietario",
+      "tema": "Argumento sobre código abierto vs. software propietario",
+      "nivelCEFR": "B2",
+      "consigna": "Argumenta si el software de código abierto es mejor que el software propietario para proyectos importantes de una empresa.",
+      "listaVerificacion": [
+        "Tomé una postura clara",
+        "Di al menos dos razones concretas",
+        "Consideré un caso donde la otra opción sea mejor",
+        "Escribí al menos 6 oraciones"
+      ],
+      "respuestaModelo": "For most internal tools, I lean toward open-source software, mainly because of transparency: anyone can inspect the code, which makes it easier to catch security issues before they become serious problems. It also avoids being locked into a single vendor who might change pricing or discontinue support with little warning. Still, proprietary software can make sense when a company needs guaranteed support and accountability, something that's harder to get from a loosely maintained open-source project. In the end, the right choice depends less on ideology and more on how critical the tool is and who's responsible for keeping it running.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b2-automatizacion-industria",
+      "tema": "Opinión sobre la automatización en la industria",
+      "nivelCEFR": "B2",
+      "consigna": "Escribe tu opinión sobre el ritmo al que se está automatizando la industria y qué tan preparada está la sociedad para ese cambio.",
+      "listaVerificacion": [
+        "Di tu opinión sobre el ritmo de automatización",
+        "Expliqué si la sociedad está preparada o no",
+        "Propuse algo que ayudaría a prepararse mejor",
+        "Escribí al menos 6 oraciones"
+      ],
+      "respuestaModelo": "Automation itself isn't the problem; the speed at which it's happening compared to how slowly institutions adapt is what concerns me. New tools can replace entire workflows within a year, while retraining programs and education systems take much longer to catch up. I don't think society is fully prepared for that gap, especially in industries where workers have spent years building a single specialized skill. What would help most isn't slowing down innovation, but investing much earlier in flexible education that teaches people how to keep learning, not just one fixed set of skills.",
+      "revisar": true
+    },
+    {
+      "id": "esc-b2-daily-standups",
+      "tema": "Argumento a favor o en contra de los daily standups",
+      "nivelCEFR": "B2",
+      "consigna": "Argumenta a favor o en contra de las reuniones diarias de pie (daily standups) como práctica estándar en equipos de desarrollo.",
+      "listaVerificacion": [
+        "Tomé una postura clara",
+        "Di al menos dos razones concretas",
+        "Reconocí una desventaja real de tu propia postura",
+        "Escribí al menos 6 oraciones"
+      ],
+      "respuestaModelo": "I'm generally in favor of daily standups, but only when they're kept genuinely short and focused. They give the whole team quick visibility into what everyone is working on, which makes it much easier to notice blockers before they cause real delays. They also create a small, low-pressure habit of communication that can prevent bigger misunderstandings later in the week. The main downside is that they can easily turn into status reports for a manager instead of a tool for the team itself, which defeats their purpose. When that happens, the problem isn't the format, it's how the meeting is actually run.",
+      "revisar": true
+    }
+  ]
+}

@@ -13,11 +13,8 @@
   var ORDEN_HABILIDADES = ["lectura", "escucha", "habla", "escritura"];
   var ROTACION = [-1.4, 1, -0.8, 1.3]; // --r distinto por tarjeta, para el aire de collage que pide el spec
 
-  // Escritura todavía no tiene pantalla propia (Fase C) -- Habla, Lectura y Escucha ya sí. En
-  // vez de llevar a una ruta que no existe (el router ya lo tolera sin romperse, pero se vería
-  // como un error), esa queda sin click y con la pastilla "Próximamente" -- decisión original
-  // ante la ambigüedad del spec, lo más simple que no rompe nada ni finge que algo funciona.
-  var RUTA_POR_HABILIDAD = { habla: "habla", lectura: "lectura", escucha: "escucha" };
+  // Las 4 habilidades ya tienen pantalla propia (Fase C completa).
+  var RUTA_POR_HABILIDAD = { habla: "habla", lectura: "lectura", escucha: "escucha", escritura: "escritura" };
 
   function formatoUltimaVez(fechaISO, hoyISO) {
     if (!fechaISO) return "Por empezar";

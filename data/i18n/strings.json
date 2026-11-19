@@ -223,5 +223,10 @@
     "categoria": "larga",
     "es": "Escucha",
     "en": "Listening"
+  },
+  "escritura.titulo": {
+    "categoria": "larga",
+    "es": "Escritura",
+    "en": "Writing"
   }
 }
