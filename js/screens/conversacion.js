@@ -75,6 +75,9 @@
   function pintarNoConfigurado(el) {
     el.innerHTML =
       '<div class="pantalla-vista ancho-lectura">' +
+      '<div class="icono-mosaico" style="margin-bottom:12px">' +
+      global.App.Iconos.svg("candado", 20) +
+      "</div>" +
       "<h1>Conversación con IA</h1>" +
       '<div class="estado-vacio">' +
       "<p>Todavía no está configurada: necesitas desplegar tu propio proxy y activarlo en Ajustes.</p>" +
@@ -99,7 +102,7 @@
       '<div class="pantalla-vista ancho-lectura">' +
       "<h1>Conversación con IA</h1>" +
       '<p class="texto-tenue">Elige una situación para practicar</p>' +
-      '<div class="fila-botones entrada-escalonada" style="flex-wrap:wrap;margin-top:12px">' +
+      '<div class="fila-botones chips-escenario entrada-escalonada" style="flex-wrap:wrap;margin-top:12px">' +
       chips +
       "</div>" +
       "</div>";
@@ -158,7 +161,7 @@
       esc(texto) +
       "</p>" +
       (esAsistente
-        ? '<button type="button" class="enlace-discreto boton-escuchar-burbuja" aria-label="Escuchar" style="margin-top:4px">' +
+        ? '<button type="button" class="enlace-discreto boton-escuchar-burbuja" aria-label="Escuchar">' +
           global.App.Iconos.svg("bocina", 16) +
           "</button>"
         : "");

@@ -1301,6 +1301,45 @@ button.tarjeta-habilidad:active {
   color: var(--texto);
 }
 
+/* Chips de escenario (selector inicial): a diferencia del resto de .fila-botones (2-3
+   botones fijos que se reparten el ancho), aquí son 7 chips de texto variable en flex-wrap --
+   con flex:1 se estiran distinto en cada fila según cuántos quepan, dispar y sin intención.
+   Cada chip mide su propio contenido. */
+.chips-escenario .boton-secundario {
+  flex: 0 1 auto;
+  width: auto;
+  text-align: center;
+}
+
+/* Botón de escuchar dentro de una burbuja: discreto a propósito (no es el protagonista),
+   pero sigue necesitando un área táctil de 44px -- se expande con ::after en vez de forzar
+   el tamaño visible, para no inflar el alto de la burbuja con espacio vacío alrededor de un
+   ícono de 16px. */
+.boton-escuchar-burbuja {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-height: 0;
+  padding: 0;
+  margin-top: var(--e-1);
+  color: var(--texto-tenue);
+  border-radius: var(--radio-dato);
+  transition: color var(--dur-rapida) var(--easing);
+}
+
+.boton-escuchar-burbuja::after {
+  content: "";
+  position: absolute;
+  inset: -8px; /* 28px + 8px*2 = 44px de área táctil real, sin crecer visualmente */
+}
+
+.boton-escuchar-burbuja:active {
+  color: var(--acento);
+}
+
 .campo-texto {
   width: 100%;
   min-height: var(--toque-minimo);
