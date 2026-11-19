@@ -9,7 +9,21 @@
 
    requiere_prueba_iphone: true -- la lógica de payload/respuesta se prueba con tests (ver
    tests/core/conversacion.test.js); el micrófono/reconocimiento y el proxy real en producción
-   solo los puede probar Alex, con su propio Worker desplegado y su propia clave de API. */
+   solo los puede probar Alex, con su propio Worker desplegado y su propia clave de API.
+
+   Rediseño "Calcomanías oscuro": el selector de escenario (antes y después de empezar a
+   chatear) se queda como una sola columna centrada en las dos resoluciones -- el spec solo
+   describe dos columnas para la pantalla de CHAT en laptop (escenarios a la izquierda +
+   panel de chat a la derecha), no para elegir el primer escenario. En esa columna izquierda
+   del chat, la lista de escenarios es clickeable de verdad (cambiar de escenario empieza una
+   conversación nueva ahí mismo, vía iniciarConversacion) -- decisión mía ante la ambigüedad
+   del spec: un elemento interactivo con pinta de lista de opciones que no responde al toque
+   se sentiría roto, y reiniciar la conversación es exactamente lo que ya hace
+   iniciarConversacion para el primer escenario. Caja "Tip" con un consejo breve por
+   escenario (TIP_POR_ESCENARIO abajo) -- contenido nuevo, no pedido por nombre en los datos
+   existentes; sigue el mismo patrón ya usado en este archivo para NOMBRE_ESCENARIO/
+   SALUDO_POR_ESCENARIO (mapas chicos en JS, no en data/ -- precedente ya establecido en esta
+   pantalla antes de este rediseño, no lo cambio aquí). */
 (function (global) {
   "use strict";
 
@@ -31,6 +45,16 @@
     pedir_ayuda: "Hey, what's up? You said you needed a hand with something?",
     dar_feedback: "Hi, thanks for making time. What feedback did you want to share?",
     entrevistas: "Thanks for coming in. To start, can you tell me a bit about yourself?"
+  };
+
+  var TIP_POR_ESCENARIO = {
+    correos: "Sé directo: di qué necesitas y para cuándo.",
+    reuniones: "No hace falta hablar perfecto -- enfócate en que te entiendan.",
+    standups: "Tres frases bastan: qué hiciste, qué sigue, qué te bloquea.",
+    explicar_proyecto: "Empieza por el problema que resuelve, no por los detalles técnicos.",
+    pedir_ayuda: "Describe qué ya intentaste antes de pedir ayuda.",
+    dar_feedback: "Sé específico: un ejemplo concreto vale más que un adjetivo.",
+    entrevistas: "Está bien tomarte un segundo para pensar antes de responder."
   };
 
   var UMBRAL_HISTORIAL_VISIBLE = 50; // tope defensivo de burbujas en el DOM; el historial enviado ya se recorta en App.Conversacion
@@ -75,7 +99,7 @@
   function pintarNoConfigurado(el) {
     el.innerHTML =
       '<div class="pantalla-vista ancho-lectura">' +
-      '<div class="icono-mosaico" style="margin-bottom:12px">' +
+      '<div class="icono-mosaico" style="background:var(--surface-borde);margin-bottom:12px">' +
       global.App.Iconos.svg("candado", 20) +
       "</div>" +
       "<h1>Conversación con IA</h1>" +
@@ -90,20 +114,32 @@
     });
   }
 
-  function pintarSelectorEscenario(el, workerUrl, nivelCEFR) {
-    var esc = global.App.Util.escaparHTML;
-    var chips = Object.keys(NOMBRE_ESCENARIO)
+  function listaEscenariosHTML(esc, escenarioActivo) {
+    return Object.keys(NOMBRE_ESCENARIO)
       .map(function (clave) {
-        return '<button type="button" class="boton-secundario" data-escenario="' + clave + '">' + esc(NOMBRE_ESCENARIO[clave]) + "</button>";
+        var activo = clave === escenarioActivo;
+        return (
+          '<button type="button" class="conv-escenario-chip" data-escenario="' +
+          clave +
+          '"' +
+          (activo ? ' aria-current="true"' : "") +
+          ">" +
+          esc(NOMBRE_ESCENARIO[clave]) +
+          "</button>"
+        );
       })
       .join("");
+  }
+
+  function pintarSelectorEscenario(el, workerUrl, nivelCEFR) {
+    var esc = global.App.Util.escaparHTML;
 
     el.innerHTML =
       '<div class="pantalla-vista ancho-lectura">' +
       "<h1>Conversación con IA</h1>" +
       '<p class="texto-tenue">Elige una situación para practicar</p>' +
-      '<div class="fila-botones chips-escenario entrada-escalonada" style="flex-wrap:wrap;margin-top:12px">' +
-      chips +
+      '<div class="conv-escenarios-selector pop-entrada-escalonada" style="margin-top:12px">' +
+      listaEscenariosHTML(esc, null) +
       "</div>" +
       "</div>";
 
@@ -126,18 +162,47 @@
   function pintarPantallaChat(el, escenario, workerUrl, nivelCEFR) {
     var esc = global.App.Util.escaparHTML;
     el.innerHTML =
-      '<div class="pantalla-vista ancho-lectura">' +
+      '<div class="pantalla-vista pantalla-conversacion">' +
       "<h1>" +
       esc(NOMBRE_ESCENARIO[escenario]) +
       "</h1>" +
+      '<div class="conv-cuerpo">' +
+      '<div class="conv-columna-escenarios">' +
+      '<div class="conv-escenarios-lista" id="lista-escenarios">' +
+      listaEscenariosHTML(esc, escenario) +
+      "</div>" +
+      '<div class="conv-tip">' +
+      '<p class="conv-tip-titulo">Tip</p>' +
+      "<p>" +
+      esc(TIP_POR_ESCENARIO[escenario] || "") +
+      "</p>" +
+      "</div>" +
+      "</div>" +
+      '<div class="conv-panel-chat superficie-oscura">' +
       '<p class="texto-caption">Las respuestas vienen de un modelo de lenguaje: son una guía de práctica, no una corrección oficial.</p>' +
       '<div class="conversacion-historial" id="zona-historial"></div>' +
       '<div id="zona-reconocimiento"></div>' +
-      '<button type="button" class="boton-principal" id="btn-hablar" style="margin-top:12px">' +
-      global.App.Iconos.svg("microfono", 18) +
-      " Hablar</button>" +
-      '<button type="button" class="enlace-discreto" id="btn-terminar-conversacion" style="margin-top:12px">Terminar</button>' +
+      '<div class="conv-barra-entrada">' +
+      '<div class="conv-mic-wrap" id="mic-wrap">' +
+      '<span class="habla-onda conv-onda"></span>' +
+      '<span class="habla-onda conv-onda"></span>' +
+      '<button type="button" class="conv-boton-mic calcomania calcomania-presionable" id="btn-hablar" aria-label="Hablar" style="background:var(--coral);--r:0deg">' +
+      global.App.Iconos.svg("microfono", 20) +
+      "</button>" +
+      "</div>" +
+      '<button type="button" class="enlace-discreto" id="btn-terminar-conversacion">Terminar</button>' +
+      "</div>" +
+      "</div>" +
+      "</div>" +
       "</div>";
+
+    el.querySelectorAll("#lista-escenarios [data-escenario]").forEach(function (boton) {
+      boton.addEventListener("click", function () {
+        var nuevoEscenario = boton.getAttribute("data-escenario");
+        if (nuevoEscenario === escenario) return; // ya es el activo, nada que hacer
+        iniciarConversacion(el, nuevoEscenario, workerUrl, nivelCEFR);
+      });
+    });
 
     el.querySelector("#btn-hablar").addEventListener("click", function () {
       iniciarReconocimiento(el, escenario, workerUrl, nivelCEFR);
@@ -182,6 +247,7 @@
   function iniciarReconocimiento(el, escenario, workerUrl, nivelCEFR) {
     var Reconocedor = global.SpeechRecognition || global.webkitSpeechRecognition;
     var btnHablar = el.querySelector("#btn-hablar");
+    var micWrap = el.querySelector("#mic-wrap");
     var zonaReconocimiento = el.querySelector("#zona-reconocimiento");
     zonaReconocimiento.innerHTML = "";
 
@@ -191,6 +257,7 @@
     }
 
     btnHablar.disabled = true;
+    micWrap.classList.add("escuchando");
     var reconocimiento = new Reconocedor();
     reconocedorActivo = reconocimiento;
     reconocimiento.lang = "en-US";
@@ -218,6 +285,7 @@
     reconocimiento.addEventListener("error", function (ev) {
       reconocedorActivo = null;
       btnHablar.disabled = false;
+      micWrap.classList.remove("escuchando");
       var mensajes = {
         "no-speech": "No se detectó voz. Intenta hablar un poco más fuerte o más cerca del micrófono.",
         "not-allowed": "No se dio permiso de micrófono. Revisa los permisos de Safari para esta página.",
@@ -239,6 +307,7 @@
 
     reconocimiento.addEventListener("end", function () {
       reconocedorActivo = null;
+      micWrap.classList.remove("escuchando");
       if (!transcripcionFinal && !parcial) {
         btnHablar.disabled = false;
         return; // ya se mostró el error correspondiente, si lo hubo
@@ -252,6 +321,7 @@
     } catch (e) {
       reconocedorActivo = null;
       btnHablar.disabled = false;
+      micWrap.classList.remove("escuchando");
       zonaReconocimiento.innerHTML = '<p class="mensaje-error">No se pudo iniciar el reconocimiento: ' + global.App.Util.escaparHTML(e.message) + "</p>";
     }
   }

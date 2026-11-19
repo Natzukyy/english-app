@@ -2630,6 +2630,202 @@ main:has(> .pantalla-habla) {
   }
 }
 
+/* ============================================================================
+   CONVERSACIÓN -- rediseño "Calcomanías oscuro". Selector de escenario en una sola
+   columna centrada (celular y laptop); pantalla de chat en dos columnas en laptop
+   (escenarios + tip a la izquierda, chat a la derecha que ocupa toda la altura). */
+
+.conv-escenarios-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+}
+
+.conv-escenarios-selector .conv-escenario-chip {
+  width: auto;
+}
+
+.conv-escenario-chip {
+  min-height: var(--toque-minimo);
+  padding: var(--e-2) var(--e-4);
+  border-radius: var(--radio-calcomania-chica);
+  border: 2.5px solid var(--surface-borde);
+  background: var(--surface);
+  color: var(--texto);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  transition: transform var(--dur-rapida) var(--ease-pop), border-color var(--dur-rapida) var(--easing),
+    background-color var(--dur-rapida) var(--easing);
+}
+
+.conv-escenario-chip:active {
+  transform: scale(0.97);
+}
+
+/* Activo: amarillo con sombra dura (spec) -- el único de la lista que se comporta como
+   calcomanía de verdad; los demás son filas neutras de superficie (ver REGLA DE LAPTOP:
+   "lista vertical de escenarios", no una fila de calcomanías todas con sombra). */
+.conv-escenario-chip[aria-current="true"] {
+  border-color: var(--tinta);
+  background: var(--amarillo);
+  color: var(--tinta);
+  box-shadow: var(--sombra-dura);
+}
+
+.pantalla-conversacion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-4);
+}
+
+.conv-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-4);
+}
+
+.conv-columna-escenarios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-4);
+}
+
+.conv-escenarios-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+}
+
+.conv-escenarios-lista .conv-escenario-chip {
+  width: 100%;
+  text-align: left;
+}
+
+/* Caja "Tip": borde punteado amarillo -- el único elemento de toda la app con este
+   tratamiento (una nota al margen, no una calcomanía ni una superficie), por eso no comparte
+   clase con nada más. */
+.conv-tip {
+  border: 2px dashed var(--amarillo);
+  border-radius: var(--radio-calcomania-chica);
+  padding: var(--e-3);
+}
+
+.conv-tip-titulo {
+  margin: 0 0 var(--e-1);
+  font-weight: 700;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--amarillo);
+}
+
+.conv-tip p:last-child {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--texto-2);
+}
+
+.conv-panel-chat {
+  padding: var(--e-4);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Burbujas: bot = superficie oscura lisa (ver spec); Alex = menta con sombra dura, como si
+   fuera su propia calcomanía (el usuario es el protagonista real de la conversación). */
+.burbuja-asistente {
+  background: var(--surface);
+  border: 2.5px solid var(--surface-borde);
+  color: var(--texto);
+  border-radius: var(--radio-dato);
+}
+
+.burbuja-usuario {
+  background: var(--menta);
+  border: 2.5px solid var(--tinta);
+  box-shadow: 3px 3px 0 0 var(--sombra);
+  color: var(--tinta);
+  border-radius: var(--radio-dato);
+}
+
+.burbuja-usuario p {
+  color: var(--tinta);
+}
+
+.conv-barra-entrada {
+  display: flex;
+  align-items: center;
+  gap: var(--e-4);
+  margin-top: var(--e-3);
+}
+
+.conv-mic-wrap {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conv-boton-mic {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  color: var(--tinta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mismas ondas pulsantes que el micrófono de Habla (".habla-onda"/"@keyframes
+   habla-onda-pulso", reusadas tal cual), reaplicadas aquí a un botón más chico -- 56px, vive
+   en una barra de entrada, no es el protagonista de la pantalla como en Habla. Mismo
+   criterio: solo corren mientras ".conv-mic-wrap" tiene la clase "escuchando", que JS agrega
+   y quita exactamente cuando SpeechRecognition arranca/termina de verdad. */
+.conv-mic-wrap.escuchando .conv-onda {
+  animation: habla-onda-pulso 1600ms var(--ease-out) infinite;
+}
+
+.conv-mic-wrap.escuchando .conv-onda:last-child {
+  animation-delay: 600ms;
+}
+
+@media (min-width: 900px) {
+  .pantalla-conversacion {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .conv-cuerpo {
+    display: grid;
+    grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+    gap: var(--e-6);
+    align-items: stretch;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .conv-panel-chat {
+    min-height: 100%;
+  }
+
+  .conversacion-historial {
+    flex: 1;
+    max-height: none;
+  }
+
+  .burbuja {
+    max-width: 560px;
+  }
+
+  .conv-barra-entrada {
+    margin-top: auto;
+    padding-top: var(--e-4);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
