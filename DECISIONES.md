@@ -619,5 +619,134 @@ no tiene Node instalado" en `CLAUDE.md` de este proyecto ya no es exacta como he
 la decisión de D1 sigue siendo válida por sus propias razones (ligereza, reversibilidad),
 no solo porque Node faltara.
 
+## D25. Renombre a "Rumbo" y escala de nivel abierta (A1-C2, sin tope en B2)
+Alex pidió explícitamente que la app dejara de llamarse "English B2" / "Inglés B2" y que la
+escala de nivel ya no tratara B2 como meta o tope -- pensando en seguir usando la app después
+de llegar a B2, y en agregar otros idiomas más adelante (empezando por japonés, no construido
+todavía, ver `REPORTE_CALCOMANIAS.md`).
+
+- **Nombre:** `data/config.json` gana `nombreApp: "Rumbo"` (y `idiomaVisible`, ya existía).
+  `js/app.js` lo lee una sola vez al iniciar y rellena `document.title`, el meta
+  `apple-mobile-web-app-title` y el logo de la barra de navegación ("Rumbo." -- el punto es
+  parte del logotipo). **Excepción real, no un olvido:** `manifest.webmanifest` es estático y
+  el sistema operativo lo lee antes de que corra cualquier JS, así que su `name`/`short_name`
+  quedaron con "Rumbo" escrito a mano en el archivo -- si el nombre cambia otra vez en
+  `config.json`, el manifest hay que actualizarlo aparte.
+- **Escala abierta:** `js/core/avance.js` (nuevo, puro, sin DOM, 14 pruebas) convierte
+  (nivel CEFR, % dentro del nivel) en un número continuo A1=0..C2=5, y combina los números de
+  varias habilidades en un nivel global ponderado (lectura>habla>escritura>escucha -- el orden
+  exacto de escritura frente a escucha no lo daba `PROMPT_BASE.md`; "también débil" la pone
+  más cerca de habla que de escucha, decisión razonada, no un dato). **Separado de
+  `App.Diagnostico` a propósito:** el diagnóstico real (`construirResultado`/
+  `evaluarHabilidad`) se queda EXACTAMENTE como estaba, sigue midiendo hasta B2 -- no hay
+  contenido más allá de B2 todavía (ver D-siguiente), así que no tendría caso hacerlo evaluar
+  C1/C2 sin preguntas de esos niveles. Un resultado "B2 completo" en el diagnóstico se muestra
+  como "B2+" en vez de "B2" a secas.
+- **Nada en la interfaz presenta B2 como tope:** se quitó `FECHA_OBJETIVO`/"días restantes
+  para marzo"/"% hacia B2" de Progreso; las pastillas de nivel ahora son simplemente el nivel
+  CEFR real de cada habilidad, sin comparar contra una meta fija. La meta personal de Alex (B2
+  en marzo de 2027) sigue existiendo, pero solo como dato opcional en `config.json`
+  (`metaPersonal`), nunca mostrado en la interfaz.
+- **Contenido sigue siendo A1-B2 por ahora** (ver D-siguiente para los volúmenes reales); el
+  motor de plan y de progreso ya soportan C1/C2 desde ya (son solo niveles más en la escala de
+  `avance.js`), así que el día que Alex agregue contenido de esos niveles, no hace falta tocar
+  ni `plan.js` ni `avance.js` -- se anota en `REPORTE_CALCOMANIAS.md` que falta ese contenido.
+
+## D26. Ruta guiada: `js/core/plan.js`, pantalla Practicar, tope de 15 tarjetas nuevas/día
+Alex reportó que a veces no sabe qué estudiar y eso lo frena -- cambio de modelo de uso
+completo: la app decide qué toca hoy, en orden, sin que Alex elija. Si quiere practicar algo
+específico, existe la pantalla aparte Practicar.
+
+- **`js/core/plan.js`** (nuevo, puro, sin DOM, 15 pruebas + 5 de integración en
+  `tests/integracion.html` contra IndexedDB real): calcula la ruta guiada del día a partir del
+  contexto real (tarjetas SM-2 vencidas/nuevas, nivel CEFR por habilidad del último
+  diagnóstico, última práctica por habilidad, minutos de hoy, meta diaria). Reglas: sin
+  diagnóstico hecho, el plan es solo Diagnóstico; repaso primero, con tope real de **20
+  tarjetas vencidas por sesión y 15 tarjetas NUEVAS por día** (antes una sola sesión de repaso
+  podía traer 115+ tarjetas de golpe -- ver D20, nunca se había puesto un tope); después,
+  bloques por habilidad rotando hacia la que tenga menor nivel y más días sin practicar
+  (desempate con la prioridad de `PROMPT_BASE.md`: lectura>habla>escucha), sin repetir la
+  misma habilidad dos días seguidos si hay alternativa; escritura se agrega aparte "cada vez
+  que haya tiempo" (es débil); conversación con IA un día configurable a la semana
+  (`config.json: diaConversacionSemana`); mini-reevaluación cada 4 semanas (configurable,
+  `semanasEntreReevaluacion`) reutilizando la pantalla de Diagnóstico (construir un
+  cuestionario corto aparte era más trabajo del que alcanzaba esta fase -- simplificación
+  consciente, no un olvido); si Alex faltó días, NO se acumulan atrasos (las tarjetas vencidas
+  ya cubren lo atrasado, con el tope de arriba); el plan es determinista y se calcula una sola
+  vez por día, se guarda en un store nuevo de IndexedDB (`"plan"`, `DB_VERSION` 1→2, migra
+  sola) para no cambiar si Alex recarga la página, y se marca qué pasos se completaron.
+- **Practicar algo específico nunca modifica el plan ya guardado de hoy** -- solo cuenta para
+  XP, minutos y "última práctica" de la habilidad (la rotación del día siguiente sí lo tiene
+  en cuenta). `registrarSesion` gana un parámetro opcional `habilidad` para que esto funcione
+  (Habla/Lectura/Escucha/Escritura lo mandan; Repaso/Conversación no, porque no son una sola
+  habilidad).
+- **Flujo "Empezar"/"Continuar"** (en Inicio, `js/screens/inicio.js`): al tocar el botón se
+  guarda en `localStorage` (`rumboFlujoEnCurso`) qué paso se está por iniciar y se navega a
+  esa pantalla; cuando Alex vuelve a Inicio (todas las pantallas ya navegan a `#/inicio` al
+  terminar), Inicio nota el marcador pendiente, marca ese paso completado y muestra "¡Listo!
+  Siguiente: …" o el cierre del día -- vive como un estado propio de Inicio (no como una
+  pantalla aparte en el router) para no complicar cada pantalla existente con la obligación de
+  avisar "terminé un paso del plan". Se puede salir y retomar en el paso donde se quedó (el
+  marcador persiste).
+- **Barra "Paso N de M" arriba de la pantalla actual** mientras se sigue la ruta guiada
+  (`js/app.js: actualizarBannerPlan`, no en cada pantalla, mismo criterio que el punto
+  anterior): lee el mismo `localStorage` + el plan guardado, se muestra solo si la ruta actual
+  coincide con la del paso en curso -- nunca en Inicio/Practicar ni en una pantalla visitada
+  fuera del flujo.
+- **"Tu camino" (Inicio) cambia de significado:** ya no es un stepper de "qué hacer hoy" (eso
+  ahora es "Tu ruta de hoy", las calcomanías numeradas del plan) -- es el progreso real de
+  Alex en la escala A1→C2 (6 nodos, `App.Avance`), con un marcador de estrella que se
+  posiciona con fracciones entre nodos y una pastilla "NN% hacia el siguiente nivel". Nunca un
+  mapa de ruta serpenteante tipo Duolingo -- explícitamente descartado por Alex.
+- **Pantalla Practicar** (`js/screens/practicar.js`, nueva): cuadrícula de las 4 habilidades
+  con su nivel CEFR real y última práctica; Lectura/Escucha/Habla/Escritura llevan a su propia
+  pantalla (las 4 ya existen, ver D27); además, filas para Repaso de tarjetas y Conversación.
+  No tiene ítem propio en la barra de navegación -- mientras Alex está ahí (o en
+  Habla/Conversación/Lectura/Escucha/Escritura), el ítem activo sigue siendo Inicio
+  (`js/app.js: RUTAS_SIN_TAB_PROPIA`).
+
+## D27. Diseño "Calcomanías oscuro" (celular y laptop) + animaciones
+Rediseño visual completo pedido y aprobado por Alex de antemano (spec exacta dada por él, no
+reinterpretada) -- reemplaza por completo el rediseño anterior "cuaderno de bitácora" de la
+rama `rediseno` (D13/D16-D23), que queda documentado ahí pero ya no es el diseño vigente.
+Detalle completo pantalla por pantalla, capturas antes/después y qué skill motivó cada cambio
+en `REPORTE_CALCOMANIAS.md` (más `docs/design-review/calcomanias/`) -- aquí solo el resumen
+de las decisiones que vale la pena que quede en este archivo:
+
+- **Solo modo oscuro por ahora** (paleta `--bg #12122A`/`--surface #1E1E3F`/`--tinta #0B0B1E`
+  + 6 acentos: amarillo/menta/rosa/coral/azul/crema), pero todo con variables CSS para poder
+  agregar claro después -- el selector Claro/Oscuro/Sistema de Ajustes sigue ahí y funciona,
+  solo que Claro y Sistema dan la misma paleta oscura por ahora (anotado, no es un bug).
+- **Tipografía Bricolage Grotesque** (variable, pesos 500-800), autohospedada en
+  `assets/fonts/` (SIL OFL, sin CDN) -- reemplaza Libre Franklin/JetBrains Mono del rediseño
+  anterior, que quedaron en `assets/fuentes/` sin referenciar (no se borraron, por si algo más
+  los necesita; limpieza pendiente si Alex confirma que no).
+  **Lenguaje visual "calcomanía":** borde 2.5px `--tinta`, sombra dura SIN blur (el CTA
+  principal con sombra coral en vez de negra), radios 16-32px, rotación ligera (`--r`, -1.5° a
+  1.2°) -- excepto las tarjetas grandes de contenido en laptop, que van sin rotación para
+  alinear con las columnas (`.sin-rotacion`). Superficies oscuras (tarjetas internas, inputs,
+  burbujas) sin sombra dura. Íconos propios en `js/core/iconos.js` (stroke 2.2, redondeado;
+  `ajustes` pasó de engranaje a sliders, nuevos `habla`/`practicar`/`estrella`/`chevron`).
+- **REGLA DE LAPTOP:** en ≥900px el contenido debe abarcar la pantalla, columnas que se
+  estiran a la misma altura (`align-items:stretch`, `minmax(0,1fr)` en vez de `1fr` solo en
+  grids -- sin esto, una columna puede desbordar su contenedor con el `min-content` de su
+  texto, bug real encontrado y corregido más de una vez). Sidebar 240px + `main` con
+  `padding:40px 56px`, título 42px, hasta 1500px de ancho de contenido centrado a 1920px.
+- **Animaciones con intención** (no decorativas): solo `transform`/`opacity`, tokens únicos
+  (`--ease-pop`, `--ease-out`, duraciones) en un solo bloque del CSS, `prefers-reduced-motion`
+  respetado globalmente (colapsa cualquier animación/transición a ~0, cubre todo lo nuevo
+  automáticamente). Volteo 3D de la tarjeta de Repaso al revelar la traducción; tarjeta que
+  "vuela" al calificar; sombra dura que se "aplasta" al presionar un botón; sol de racha
+  girando lento (28s) con pulso al cumplir la meta; marcador de estrella deslizándose a su
+  posición en "Tu camino"; ondas pulsantes en el micrófono de Habla/Conversación; chips de
+  resultado en cascada; barras que se llenan con `scaleX` + números que cuentan hacia arriba.
+- **Verificado, no solo construido:** contraste real medido (≥4.5:1 `--tinta` sobre los 6
+  acentos, confirmado en cada pantalla), tamaños táctiles ≥44px medidos (no asumidos),
+  overflow real medido con `scrollHeight`/`clientHeight` en los tamaños pedidos
+  (390×844/1440×900, spot-check 1280×720/1920×1080) -- varios bugs reales de desborde y de
+  layout se encontraron y corrigieron así, nunca solo mirando una captura (el caché del
+  navegador de Playwright en esta sesión fue agresivo de verdad: más de una captura "vieja"
+  parecía tener un bug que el código real ya no tenía).
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*

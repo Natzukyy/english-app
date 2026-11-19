@@ -1,6 +1,6 @@
 # CLAUDE.md — app-ingles
 
-App personal de Alex para llegar a B2 de inglés (CEFR) para fines de marzo 2027. PWA, sin backend, sin cuentas. Prioridad de habilidades: lectura > habla > escucha (énfasis en habla), escritura también débil. Especificación completa en `PROMPT_BASE.md`.
+App personal de Alex para practicar inglés con una ruta guiada día a día (Alex no elige qué estudiar; la app se lo dice, ver D25), medida en niveles CEFR **abiertos: A1 a C2, sin tope en B2**. Se llama **"Rumbo"** en toda la interfaz (nunca hardcodeado — nombre/idioma vienen de `data/config.json`). La meta de "B2 para fines de marzo 2027" que tenía este documento era el encargo original (ver `PROMPT_BASE.md`, que sigue siendo la especificación base de alcance/prioridades pero ya no de nombre ni de tope de nivel); hoy es solo la meta personal inicial de Alex, guardada en `config.json` como dato opcional que **no se muestra en la interfaz** como límite (ver D25 en DECISIONES.md). PWA, sin backend, sin cuentas. Prioridad de habilidades: lectura > habla > escucha (énfasis en habla), escritura también débil.
 
 ## Stack (ver DECISIONES.md D1)
 - Vanilla HTML/CSS/JS. **Sin Node, sin npm, sin bundler, sin frameworks, sin dependencias.** (Decisión por ligereza/reversibilidad, no solo por disponibilidad: Node ya quedó instalado globalmente en la Mac en otra sesión, para una tarea sin relación con este proyecto -- no se instala nada global sin autorización, y nada de este proyecto depende de que esté instalado.)
@@ -13,13 +13,15 @@ App personal de Alex para llegar a B2 de inglés (CEFR) para fines de marzo 2027
 - Correr pruebas de integración de la capa de datos (storage.js/datos.js, con IndexedDB real): con el servidor local corriendo, abrir `http://localhost:8000/tests/integracion.html` en un navegador real y tocar "Correr todas las pruebas". No se puede correr desde la terminal (necesita IndexedDB de un navegador de verdad); usa su propia base de datos de pruebas (`app-ingles-integracion-<timestamp>`, se borra sola al terminar) y nunca toca la base real de la app.
 
 ## Estructura
-- `js/core/` — lógica de negocio pura (racha, XP, repaso espaciado, i18n, storage). Sin DOM. Es lo que se prueba.
-- `js/screens/` — UI por pantalla, consume `js/core/`.
-- `data/` — contenido y textos i18n en JSON.
+- `js/core/` — lógica de negocio pura (racha, XP, repaso espaciado, i18n, storage, **plan guiado `plan.js`, escala abierta `avance.js`**, ver D26). Sin DOM. Es lo que se prueba.
+- `js/screens/` — UI por pantalla, consume `js/core/`. Pantallas: inicio, repaso, diagnostico, progreso, ajustes, habla, conversacion, **practicar, lectura, escucha, escritura** (las últimas 4, Fase C del rediseño "Calcomanías", ver D26/D27 — Lectura/Escucha/Habla/Escritura tienen pantalla propia; Practicar es el punto de entrada para practicar algo específico sin afectar la ruta guiada del día).
+- `data/` — contenido y textos i18n en JSON. `data/config.json` trae `nombreApp`/`idiomaVisible`/`metaPersonal` (nunca hardcodeado en JS, ver D26). `data/content/fase1/` — lecturas, escucha, escritura, habla (frases), vocabulario y frases_utiles (estas dos alimentan las tarjetas SM-2 de Repaso).
 - `tests/core/` — un `*.test.js` por módulo de `js/core/`.
 
 ## Decisiones vigentes
 Ver `DECISIONES.md`. Resumen: sin backend propio en la app (IndexedDB + export/import JSON), SM-2 para repaso espaciado, umbrales de i18n provisionales y editables, fase 3 (juegos) solo como toggle sin lógica. Conversación con IA (D24): autorizada por Alex, implementada del lado del cliente (pantalla, lógica, Ajustes) y vía un proxy serverless (Cloudflare Worker) cuyo código vive en `cloudflare/worker.js` pero que Alex debe desplegar él mismo -- ver `REPORTE_CONVERSACION_IA.md`. Hasta que lo despliegue y active en Ajustes, la función no hace nada.
+
+**Rediseño "Calcomanías oscuro" + ruta guiada (D25-D27, ver `REPORTE_CALCOMANIAS.md`):** app renombrada a **"Rumbo"**, escala CEFR abierta A1-C2 sin tope en B2 (D25); Alex ya no elige qué estudiar, `js/core/plan.js` arma un plan diario y la pantalla Inicio lo guía paso a paso, con la pantalla **Practicar** aparte para practicar algo específico sin afectar el plan del día, "Tu camino" en Inicio es el progreso real de Alex en la escala A1-C2 (no un mapa de ruta tipo Duolingo), tope de 15 tarjetas NUEVAS por día en el repaso guiado (D26); lenguaje visual "Calcomanías oscuro" (paleta, tipografía Bricolage Grotesque autohospedada, sombras duras, animaciones con intención) en celular y laptop (D27).
 
 ## Resultado probado en iPhone real (iOS 27, Safari 27.2) — ver DECISIONES.md D12
 - Micrófono (`getUserMedia`+`MediaRecorder`) funciona, mimeType `audio/mp4` (AAC).
