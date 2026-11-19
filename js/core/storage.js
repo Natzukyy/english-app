@@ -9,7 +9,7 @@
   "use strict";
 
   var DB_NAME_POR_DEFECTO = "app-ingles";
-  var DB_VERSION_POR_DEFECTO = 1;
+  var DB_VERSION_POR_DEFECTO = 2; // v2: agrega el store "plan" (ruta guiada diaria, ver D-calcomanias)
 
   // Un solo lugar que define los "stores" de la base. Si se agrega uno nuevo,
   // subir la versión y agregarlo también aquí para que el export/import lo incluya.
@@ -19,7 +19,8 @@
     "xp", // un solo registro con id "actual"
     "srs_cards", // tarjetas de repaso espaciado, por id
     "diagnostico_resultados", // historial de diagnósticos, por id (timestamp)
-    "sesiones" // historial de sesiones de estudio, por id (timestamp)
+    "sesiones", // historial de sesiones de estudio, por id (timestamp)
+    "plan" // ruta guiada del día, un registro por fecha YYYY-MM-DD (ver App.Plan/App.Datos)
   ];
 
   function crear(nombreDB, version) {

@@ -1,0 +1,86 @@
+(function () {
+  Test.test("indiceNivel: A1 es 0, C2 es 5, nivel desconocido cae en 0", function () {
+    Test.assertEqual(App.Avance.indiceNivel("A1"), 0);
+    Test.assertEqual(App.Avance.indiceNivel("C2"), 5);
+    Test.assertEqual(App.Avance.indiceNivel("XX"), 0);
+  });
+
+  Test.test("numeroDesdeNivel: nivel + % dentro del nivel da un número continuo", function () {
+    Test.assertEqual(App.Avance.numeroDesdeNivel("A1", 0), 0);
+    Test.assertEqual(App.Avance.numeroDesdeNivel("B1", 50), 2.5);
+    Test.assertEqual(App.Avance.numeroDesdeNivel("B2", 100), 4);
+  });
+
+  Test.test("numeroDesdeNivel: en C2 (el techo) no hay fracción, por más % que se pase", function () {
+    Test.assertEqual(App.Avance.numeroDesdeNivel("C2", 80), 5);
+    Test.assertEqual(App.Avance.numeroDesdeNivel("C2", 0), 5);
+  });
+
+  Test.test("numeroDesdeNivel: porcentaje fuera de 0-100 se acota", function () {
+    Test.assertEqual(App.Avance.numeroDesdeNivel("A2", 150), 2);
+    Test.assertEqual(App.Avance.numeroDesdeNivel("A2", -20), 1);
+  });
+
+  Test.test("nivelDesdeNumero: es el inverso de numeroDesdeNivel", function () {
+    var r = App.Avance.nivelDesdeNumero(2.66);
+    Test.assertEqual(r.nivel, "B1");
+    Test.assertEqual(r.porcentajeHaciaSiguiente, 66);
+    Test.assertEqual(r.siguienteNivel, "B2");
+  });
+
+  Test.test("nivelDesdeNumero: en el número exacto de C2, siguienteNivel es null", function () {
+    var r = App.Avance.nivelDesdeNumero(5);
+    Test.assertEqual(r.nivel, "C2");
+    Test.assertEqual(r.siguienteNivel, null);
+    Test.assertEqual(r.porcentajeHaciaSiguiente, 100);
+  });
+
+  Test.test("nivelDesdeNumero: número negativo o mayor al techo se acota a A1/C2", function () {
+    Test.assertEqual(App.Avance.nivelDesdeNumero(-3).nivel, "A1");
+    Test.assertEqual(App.Avance.nivelDesdeNumero(99).nivel, "C2");
+  });
+
+  Test.test("calcularNivelGlobal: promedio ponderado con las 4 habilidades en el mismo nivel da ese nivel", function () {
+    var r = App.Avance.calcularNivelGlobal({ lectura: 2, habla: 2, escucha: 2, escritura: 2 });
+    Test.assertEqual(r.nivel, "B1");
+    Test.assertEqual(r.porcentajeHaciaSiguiente, 0);
+  });
+
+  Test.test("calcularNivelGlobal: lectura pesa más que escucha -- lectura alta sube el global más que escucha alta", function () {
+    var conLecturaAlta = App.Avance.calcularNivelGlobal({ lectura: 5, habla: 0, escucha: 0, escritura: 0 });
+    var conEscuchaAlta = App.Avance.calcularNivelGlobal({ lectura: 0, habla: 0, escucha: 5, escritura: 0 });
+    var numLectura = App.Avance.indiceNivel(conLecturaAlta.nivel) + conLecturaAlta.porcentajeHaciaSiguiente / 100;
+    var numEscucha = App.Avance.indiceNivel(conEscuchaAlta.nivel) + conEscuchaAlta.porcentajeHaciaSiguiente / 100;
+    Test.assertEqual(numLectura > numEscucha, true);
+  });
+
+  Test.test("calcularNivelGlobal: habilidades ausentes no cuentan como 0 en el promedio", function () {
+    // Solo lectura con dato: el global debe ser exactamente el nivel de lectura, no arrastrado
+    // hacia abajo por habla/escucha/escritura "ausentes" tratadas como 0.
+    var r = App.Avance.calcularNivelGlobal({ lectura: 4 });
+    Test.assertEqual(r.nivel, "C1");
+  });
+
+  Test.test("calcularNivelGlobal: sin ninguna habilidad con datos, da A1 sin romper", function () {
+    var r = App.Avance.calcularNivelGlobal({});
+    Test.assertEqual(r.nivel, "A1");
+  });
+
+  Test.test("nivelEfectivoConContenido: nivel real con contenido disponible, se queda igual", function () {
+    var r = App.Avance.nivelEfectivoConContenido("B1", ["A1", "A2", "B1", "B2"]);
+    Test.assertEqual(r.nivel, "B1");
+    Test.assertEqual(r.sustituido, false);
+  });
+
+  Test.test("nivelEfectivoConContenido: nivel B2+ sin contenido C1/C2 reutiliza B2", function () {
+    var r = App.Avance.nivelEfectivoConContenido("C1", ["A1", "A2", "B1", "B2"]);
+    Test.assertEqual(r.nivel, "B2");
+    Test.assertEqual(r.sustituido, true);
+  });
+
+  Test.test("nivelEfectivoConContenido: sin lista de niveles con contenido, nunca sustituye", function () {
+    var r = App.Avance.nivelEfectivoConContenido("C2", []);
+    Test.assertEqual(r.nivel, "C2");
+    Test.assertEqual(r.sustituido, false);
+  });
+})();

@@ -87,6 +87,8 @@
     <script src="../js/core/srs.js"></script>
     <script src="../js/core/diagnostico.js"></script>
     <script src="../js/core/progreso.js"></script>
+    <script src="../js/core/avance.js"></script>
+    <script src="../js/core/plan.js"></script>
     <script src="../js/core/datos.js"></script>
     <script>
       "use strict";
@@ -274,6 +276,106 @@
           assertEqual(recargada.repeticiones, 1);
           assertEqual(recargada.intervaloDias, 1);
           assertEqual(recargada.frente, "deadline");
+        });
+      });
+
+      // --- 9. Plan: sin diagnóstico, el plan guardado es solo "Diagnóstico" ---
+      prueba("plan: sin diagnóstico, se guarda un plan de un solo paso", function () {
+        return limpiarStores(["plan", "diagnostico_resultados", "srs_cards", "settings"]).then(function () {
+          return App.Datos.obtenerOCalcularPlanDeHoy(new Date(2026, 10, 18));
+        }).then(function (plan) {
+          assertEqual(plan.pasos.length, 1);
+          assertEqual(plan.pasos[0].tipo, "diagnostico");
+        });
+      });
+
+      // --- 10. Plan: determinista, no se recalcula si ya existe uno guardado para hoy ---
+      prueba("plan: se calcula una sola vez por día, no cambia al pedirlo de nuevo", function () {
+        var ahora = new Date(2026, 10, 18);
+        return limpiarStores(["plan", "diagnostico_resultados", "srs_cards", "settings"]).then(function () {
+          return App.Datos.guardarDiagnostico({
+            porHabilidad: {
+              lectura: { nivelCEFR: "A2" },
+              habla: { nivelCEFR: "A2" },
+              escucha: { nivelCEFR: "A2" },
+              escritura: { nivelCEFR: "A2" }
+            }
+          });
+        }).then(function () {
+          return App.Datos.obtenerOCalcularPlanDeHoy(ahora);
+        }).then(function (plan1) {
+          // Una práctica extra el mismo día (ver Practicar, Fase B) no debe alterar el plan
+          // ya guardado -- solo cuenta para XP/minutos/última práctica.
+          return App.Datos.registrarSesion(8, 1, ahora, "lectura").then(function () {
+            return App.Datos.obtenerOCalcularPlanDeHoy(ahora);
+          }).then(function (plan2) {
+            assertEqual(JSON.stringify(plan1), JSON.stringify(plan2));
+          });
+        });
+      });
+
+      // --- 11. Plan: marcar un paso completado persiste y sobrevive una relectura ---
+      prueba("plan: marcarPasoCompletado persiste tras recargar", function () {
+        var ahora = new Date(2026, 10, 18);
+        return limpiarStores(["plan", "diagnostico_resultados", "srs_cards", "settings"]).then(function () {
+          return App.Datos.guardarDiagnostico({
+            porHabilidad: {
+              lectura: { nivelCEFR: "A2" },
+              habla: { nivelCEFR: "A2" },
+              escucha: { nivelCEFR: "A2" },
+              escritura: { nivelCEFR: "A2" }
+            }
+          });
+        }).then(function () {
+          return App.Datos.obtenerOCalcularPlanDeHoy(ahora);
+        }).then(function (plan) {
+          return App.Datos.marcarPasoCompletado(plan.id, 0);
+        }).then(function () {
+          return App.Datos.obtenerOCalcularPlanDeHoy(ahora);
+        }).then(function (planRecargado) {
+          assertEqual(planRecargado.pasos[0].completado, true);
+          assertEqual(planRecargado.pasos[1].completado, false);
+        });
+      });
+
+      // --- 12. Plan: tope real de tarjetas vencidas (antes 115 de golpe) ---
+      prueba("plan: muchas tarjetas vencidas se topan a 20 en el paso de repaso", function () {
+        var ahora = new Date(2026, 10, 18);
+        return limpiarStores(["plan", "diagnostico_resultados", "srs_cards", "settings"]).then(function () {
+          var puts = [];
+          for (var i = 0; i < 30; i++) {
+            var t = App.SRS.tarjetaNueva("voc-" + i, new Date(2026, 9, 1));
+            t.proximaFecha = "2026-10-01"; // ya vencida para "ahora"
+            t.repeticiones = 1; // no cuenta como "nueva"
+            puts.push(App.Storage.put("srs_cards", t));
+          }
+          return Promise.all(puts);
+        }).then(function () {
+          return App.Datos.guardarDiagnostico({
+            porHabilidad: {
+              lectura: { nivelCEFR: "A2" },
+              habla: { nivelCEFR: "A2" },
+              escucha: { nivelCEFR: "A2" },
+              escritura: { nivelCEFR: "A2" }
+            }
+          });
+        }).then(function () {
+          return App.Datos.obtenerOCalcularPlanDeHoy(ahora);
+        }).then(function (plan) {
+          var repaso = plan.pasos.filter(function (p) { return p.tipo === "repaso"; })[0];
+          assertTrue(!!repaso, "debería haber un paso de repaso");
+          assertEqual(repaso.tarjetasVencidas, 20);
+        });
+      });
+
+      // --- 13. Plan: registrar práctica de una habilidad actualiza su "última práctica" ---
+      prueba("registrarPracticaHabilidad: queda guardada y se puede releer", function () {
+        return limpiarStores(["settings"]).then(function () {
+          return App.Datos.registrarPracticaHabilidad("escucha", new Date(2026, 10, 18));
+        }).then(function () {
+          return App.Datos.obtenerUltimaPracticaPorHabilidad();
+        }).then(function (fechas) {
+          assertEqual(fechas.escucha, "2026-11-18");
         });
       });
 

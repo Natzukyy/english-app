@@ -37,7 +37,7 @@
     sesion.finalizada = true;
     if (sesion.intentos === 0) return Promise.resolve(); // no completó ningún ejercicio, no cuenta sesión
     var minutos = Math.max(1, Math.round((Date.now() - sesion.inicioMs) / 60000));
-    return global.App.Datos.registrarSesion(minutos, sesion.correctas, new Date());
+    return global.App.Datos.registrarSesion(minutos, sesion.correctas, new Date(), "habla");
   }
 
   function elegirEjercicioAlAzar() {
