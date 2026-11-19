@@ -3653,6 +3653,95 @@ main:has(> .pantalla-habla) {
   }
 }
 
+/* ============================================================================
+   ESCUCHA -- rediseño "Calcomanías oscuro" (Fase C). Mismo esqueleto de layout que Lectura
+   (columnas que se estiran en laptop, REGLA DE LAPTOP) pero sin texto visible al entrar: todo
+   depende de que Alex toque "Escuchar" (App.TTS.hablar nunca suena solo). El botón de
+   escuchar usa --azul (mismo color que ya usa Habla para "Escuchar el modelo" -- "azul =
+   reproducir audio" ya es una convención implícita de la app, no --amarillo otra vez encima
+   de la pastilla de habilidad, que ya es amarilla). */
+.escucha-pastilla-amarilla {
+  background: var(--amarillo);
+}
+
+.escucha-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-5);
+  margin-top: var(--e-4);
+}
+
+.escucha-panel-audio {
+  margin-top: var(--e-3);
+  padding: var(--e-6) var(--e-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--e-2);
+}
+.escucha-panel-audio svg {
+  color: var(--amarillo);
+}
+
+.escucha-boton-escuchar {
+  margin-top: var(--e-1);
+  background: var(--azul);
+  color: var(--tinta);
+  font-weight: 700;
+  padding: var(--e-3) var(--e-6);
+}
+
+.escucha-tarjeta-intro {
+  padding: var(--e-4);
+  text-align: center;
+}
+.escucha-boton-empezar {
+  margin-top: var(--e-3);
+  background: var(--amarillo);
+  color: var(--tinta);
+  font-weight: 700;
+  padding: var(--e-3) var(--e-5);
+}
+.escucha-boton-empezar:disabled {
+  opacity: 0.5;
+}
+
+.escucha-transcripcion {
+  margin-top: var(--e-3);
+  padding: var(--e-4);
+  text-align: left;
+  line-height: 1.6;
+  color: var(--texto);
+}
+.escucha-transcripcion[hidden] {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .escucha-cuerpo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 440px;
+    gap: var(--e-7);
+    align-items: stretch;
+  }
+  .escucha-columna-audio,
+  .escucha-columna-preguntas {
+    display: flex;
+    flex-direction: column;
+  }
+  .escucha-panel-audio {
+    flex: 1;
+    justify-content: center;
+  }
+  .escucha-tarjeta-intro {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;

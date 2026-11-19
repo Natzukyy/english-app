@@ -1,0 +1,773 @@
+{
+  "_nota": "Contenido de Escucha (Fase C, 'Calcomanías oscuro'). Guiones originales para sintetizar con App.TTS.hablar (speechSynthesis), nunca reproducidos automaticamente -- el usuario siempre toca 'Escuchar'. Nivel CEFR es una estimacion razonada, no una certificacion oficial (ver DECISIONES.md D8/D20). 8 guiones por nivel (A2/B1/B2) = 24 totales.",
+  "escucha": [
+    {
+      "id": "esc-fase1-pedir-cafe",
+      "tema": "Pedir un café",
+      "nivelCEFR": "A2",
+      "guion": "Hi, can I get a medium coffee with milk, please? No sugar. And can I also get a small chocolate muffin? That's for here, not to go. How much is that in total?",
+      "preguntas": [
+        {
+          "pregunta": "What does the customer order to drink?",
+          "opciones": [
+            "A medium coffee with milk",
+            "A large coffee with sugar",
+            "A small tea with milk",
+            "A medium coffee with no milk"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-fase1-pedir-cafe-p1"
+        },
+        {
+          "pregunta": "Is the order for here or to go?",
+          "opciones": [
+            "To go",
+            "For here",
+            "The speaker doesn't say",
+            "Half for here, half to go"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-pedir-cafe-p2"
+        }
+      ],
+      "transcripcion": "Hi, can I get a medium coffee with milk, please? No sugar. And can I also get a small chocolate muffin? That's for here, not to go. How much is that in total?",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-buzon-tarde",
+      "tema": "Mensaje de voz: voy a llegar tarde",
+      "nivelCEFR": "A2",
+      "guion": "Hey, it's me. I'm really sorry, but my bus is late and I think I'll get to the office around nine thirty. Can you tell the team the meeting might need to start a few minutes late? I'll call you again when I'm close. Thanks!",
+      "preguntas": [
+        {
+          "pregunta": "Why is the speaker going to be late?",
+          "opciones": [
+            "The bus is late",
+            "The car broke down",
+            "They woke up late",
+            "The office is closed"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-fase1-buzon-tarde-p1"
+        },
+        {
+          "pregunta": "What does the speaker ask the listener to do?",
+          "opciones": [
+            "Cancel the meeting",
+            "Tell the team the meeting might start late",
+            "Come and pick them up",
+            "Call the office manager"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-buzon-tarde-p2"
+        }
+      ],
+      "transcripcion": "Hey, it's me. I'm really sorry, but my bus is late and I think I'll get to the office around nine thirty. Can you tell the team the meeting might need to start a few minutes late? I'll call you again when I'm close. Thanks!",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-registro-hotel",
+      "tema": "Registrarse en un hotel",
+      "nivelCEFR": "A2",
+      "guion": "Good evening, welcome. Do you have a reservation? Great, can I see your ID, please? Perfect, you're in room four twelve, on the fourth floor. Breakfast is from seven to ten in the morning. Here's your key. Do you need help with your bags?",
+      "preguntas": [
+        {
+          "pregunta": "What room is the guest staying in?",
+          "opciones": [
+            "Room 214",
+            "Room 412",
+            "Room 421",
+            "Room 140"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-registro-hotel-p1"
+        },
+        {
+          "pregunta": "When is breakfast served?",
+          "opciones": [
+            "From six to nine",
+            "From seven to ten",
+            "Only on weekends",
+            "All day"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-registro-hotel-p2"
+        }
+      ],
+      "transcripcion": "Good evening, welcome. Do you have a reservation? Great, can I see your ID, please? Perfect, you're in room four twelve, on the fourth floor. Breakfast is from seven to ten in the morning. Here's your key. Do you need help with your bags?",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-pronostico-clima",
+      "tema": "Pronóstico del clima",
+      "nivelCEFR": "A2",
+      "guion": "Good morning! Here's the weather for today. It will be cloudy in the morning, with some rain after lunch. Temperatures will stay around eighteen degrees. Don't forget your umbrella if you're going out this afternoon. Tomorrow will be sunny and warmer.",
+      "preguntas": [
+        {
+          "pregunta": "What will the weather be like after lunch?",
+          "opciones": [
+            "Sunny",
+            "Rainy",
+            "Snowy",
+            "Very hot"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-pronostico-clima-p1"
+        },
+        {
+          "pregunta": "What does the speaker recommend?",
+          "opciones": [
+            "Wearing a coat",
+            "Staying home",
+            "Bringing an umbrella",
+            "Driving slowly"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-fase1-pronostico-clima-p2"
+        }
+      ],
+      "transcripcion": "Good morning! Here's the weather for today. It will be cloudy in the morning, with some rain after lunch. Temperatures will stay around eighteen degrees. Don't forget your umbrella if you're going out this afternoon. Tomorrow will be sunny and warmer.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-wifi-coworking",
+      "tema": "Pedir la contraseña del wifi",
+      "nivelCEFR": "A2",
+      "guion": "Excuse me, is this seat free? Thanks. Sorry to bother you, but do you know the wifi password here? Oh, it's on the wall behind the counter? Okay, I see it now. Thank you so much, that's really helpful.",
+      "preguntas": [
+        {
+          "pregunta": "What does the speaker ask about?",
+          "opciones": [
+            "The wifi password",
+            "The time",
+            "Where the bathroom is",
+            "The price of coffee"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-fase1-wifi-coworking-p1"
+        },
+        {
+          "pregunta": "Where does the speaker find the information?",
+          "opciones": [
+            "On a napkin",
+            "On the wall behind the counter",
+            "On their phone",
+            "A staff member tells them directly"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-wifi-coworking-p2"
+        }
+      ],
+      "transcripcion": "Excuse me, is this seat free? Thanks. Sorry to bother you, but do you know the wifi password here? Oh, it's on the wall behind the counter? Okay, I see it now. Thank you so much, that's really helpful.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-cita-doctor",
+      "tema": "Confirmar una cita médica",
+      "nivelCEFR": "A2",
+      "guion": "Hello, this is the clinic calling to confirm your appointment on Thursday at eleven in the morning with Doctor Lane. Please arrive fifteen minutes early. If you need to change the time, call us back before Wednesday. Thank you, and see you Thursday.",
+      "preguntas": [
+        {
+          "pregunta": "What day is the appointment?",
+          "opciones": [
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Monday"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-cita-doctor-p1"
+        },
+        {
+          "pregunta": "What should the patient do if they need to change the time?",
+          "opciones": [
+            "Just arrive late",
+            "Email the doctor",
+            "Call back before Wednesday",
+            "Nothing, it's automatic"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-fase1-cita-doctor-p2"
+        }
+      ],
+      "transcripcion": "Hello, this is the clinic calling to confirm your appointment on Thursday at eleven in the morning with Doctor Lane. Please arrive fifteen minutes early. If you need to change the time, call us back before Wednesday. Thank you, and see you Thursday.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-anuncio-tren-retraso",
+      "tema": "Anuncio de tren retrasado",
+      "nivelCEFR": "A2",
+      "guion": "Attention, passengers. The nine fifteen train to the city center is delayed by twenty minutes due to a signal problem. We're sorry for the inconvenience. Please check the screens for updates. The next train on this platform will leave at nine thirty five.",
+      "preguntas": [
+        {
+          "pregunta": "Why is the train delayed?",
+          "opciones": [
+            "A signal problem",
+            "Bad weather",
+            "Too many passengers",
+            "A strike"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-fase1-anuncio-tren-retraso-p1"
+        },
+        {
+          "pregunta": "How long is the delay?",
+          "opciones": [
+            "Ten minutes",
+            "Twenty minutes",
+            "One hour",
+            "The train is cancelled"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-anuncio-tren-retraso-p2"
+        }
+      ],
+      "transcripcion": "Attention, passengers. The nine fifteen train to the city center is delayed by twenty minutes due to a signal problem. We're sorry for the inconvenience. Please check the screens for updates. The next train on this platform will leave at nine thirty five.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-compras-roomie",
+      "tema": "Compañero de casa pregunta por el súper",
+      "nivelCEFR": "A2",
+      "guion": "Hey, I'm going to the supermarket now. Do we need anything? I know we're out of milk and eggs. Should I get more coffee too? Okay, I'll get milk, eggs, and coffee. Do you want anything else, like fruit or bread?",
+      "preguntas": [
+        {
+          "pregunta": "What are they definitely out of?",
+          "opciones": [
+            "Milk and eggs",
+            "Bread and fruit",
+            "Coffee and tea",
+            "Rice and pasta"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-fase1-compras-roomie-p1"
+        },
+        {
+          "pregunta": "Where is the speaker going?",
+          "opciones": [
+            "To the gym",
+            "To work",
+            "To the supermarket",
+            "To a friend's house"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-fase1-compras-roomie-p2"
+        }
+      ],
+      "transcripcion": "Hey, I'm going to the supermarket now. Do we need anything? I know we're out of milk and eggs. Should I get more coffee too? Okay, I'll get milk, eggs, and coffee. Do you want anything else, like fruit or bread?",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-buzon-conflicto-horario",
+      "tema": "Mensaje de voz: conflicto de horario",
+      "nivelCEFR": "B1",
+      "guion": "Hi, it's Carla. I just realized the meeting you scheduled for three o'clock overlaps with another one I already had on my calendar. Would it be possible to move it to four, or should I just send someone else from my team instead? Let me know what works best for you, and sorry for the short notice.",
+      "preguntas": [
+        {
+          "pregunta": "What is the problem Carla describes?",
+          "opciones": [
+            "She forgot about the meeting",
+            "The meeting overlaps with another one",
+            "The meeting was cancelled",
+            "She is traveling that day"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-buzon-conflicto-horario-p1"
+        },
+        {
+          "pregunta": "What does Carla suggest as a possible solution?",
+          "opciones": [
+            "Cancelling the meeting completely",
+            "Moving it to four or sending someone else",
+            "Doing the meeting by email instead",
+            "Rescheduling it for next month"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-buzon-conflicto-horario-p2"
+        }
+      ],
+      "transcripcion": "Hi, it's Carla. I just realized the meeting you scheduled for three o'clock overlaps with another one I already had on my calendar. Would it be possible to move it to four, or should I just send someone else from my team instead? Let me know what works best for you, and sorry for the short notice.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-podcast-herramientas-remoto",
+      "tema": "Podcast sobre herramientas de trabajo remoto",
+      "nivelCEFR": "B1",
+      "guion": "Welcome back to the show. Today we're talking about tools that make remote work easier. A lot of teams rely on shared documents and video calls, but honestly, the tool that changes the most for me is a good task board, because it shows everyone exactly what's being worked on without needing another meeting.",
+      "preguntas": [
+        {
+          "pregunta": "What is the podcast episode about?",
+          "opciones": [
+            "Tools for remote work",
+            "How to find a remote job",
+            "The history of video calls",
+            "Office design"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-fase1-podcast-herramientas-remoto-p1"
+        },
+        {
+          "pregunta": "According to the speaker, what changes the most for them?",
+          "opciones": [
+            "Video calls",
+            "A good task board",
+            "Shared documents",
+            "Email"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-podcast-herramientas-remoto-p2"
+        }
+      ],
+      "transcripcion": "Welcome back to the show. Today we're talking about tools that make remote work easier. A lot of teams rely on shared documents and video calls, but honestly, the tool that changes the most for me is a good task board, because it shows everyone exactly what's being worked on without needing another meeting.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-soporte-internet",
+      "tema": "Llamada de soporte: internet caído",
+      "nivelCEFR": "B1",
+      "guion": "Thanks for calling support, how can I help? My internet has been down since this morning. Okay, can you tell me if the lights on your router are on? Two of them are blinking orange. Got it, that usually means a connection issue on our end. I'm going to restart your line remotely, it should be back in about five minutes.",
+      "preguntas": [
+        {
+          "pregunta": "What color are the blinking lights on the router?",
+          "opciones": [
+            "Green",
+            "Red",
+            "Orange",
+            "Blue"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-fase1-soporte-internet-p1"
+        },
+        {
+          "pregunta": "What does the support agent decide to do?",
+          "opciones": [
+            "Send a technician",
+            "Restart the line remotely",
+            "Replace the router",
+            "Ask the customer to wait a week"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-soporte-internet-p2"
+        }
+      ],
+      "transcripcion": "Thanks for calling support, how can I help? My internet has been down since this morning. Okay, can you tell me if the lights on your router are on? Two of them are blinking orange. Got it, that usually means a connection issue on our end. I'm going to restart your line remotely, it should be back in about five minutes.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-llamada-fecha-limite",
+      "tema": "Compañeros hablan de una fecha límite",
+      "nivelCEFR": "B1",
+      "guion": "Hey, quick question. Are we still on track for Friday's deadline? Honestly, I'm a bit worried about the testing part, it's taking longer than we planned. Do you think we should ask for one more day, or just focus on the most important features first? I think focusing on the main features makes more sense than asking for extra time.",
+      "preguntas": [
+        {
+          "pregunta": "What part of the project is taking longer than planned?",
+          "opciones": [
+            "Design",
+            "Testing",
+            "Planning",
+            "The presentation"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-llamada-fecha-limite-p1"
+        },
+        {
+          "pregunta": "What does the second speaker prefer to do?",
+          "opciones": [
+            "Cancel the project",
+            "Ask for more time",
+            "Focus on the main features first",
+            "Work through the weekend without a plan"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-fase1-llamada-fecha-limite-p2"
+        }
+      ],
+      "transcripcion": "Hey, quick question. Are we still on track for Friday's deadline? Honestly, I'm a bit worried about the testing part, it's taking longer than we planned. Do you think we should ask for one more day, or just focus on the most important features first? I think focusing on the main features makes more sense than asking for extra time.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-tour-ciudad",
+      "tema": "Guía de turistas en una caminata por la ciudad",
+      "nivelCEFR": "B1",
+      "guion": "Alright, follow me this way. This street used to be the old market area, and if you look up, you can still see some of the original buildings from over a hundred years ago. We'll stop at the main square in about ten minutes, and that's where we'll take a short break before continuing to the river.",
+      "preguntas": [
+        {
+          "pregunta": "What was this street used for in the past?",
+          "opciones": [
+            "A market area",
+            "A train station",
+            "A school",
+            "A hospital"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-fase1-tour-ciudad-p1"
+        },
+        {
+          "pregunta": "Where will the group take a break?",
+          "opciones": [
+            "At the river",
+            "At the old buildings",
+            "At the main square",
+            "At a restaurant"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-fase1-tour-ciudad-p2"
+        }
+      ],
+      "transcripcion": "Alright, follow me this way. This street used to be the old market area, and if you look up, you can still see some of the original buildings from over a hundred years ago. We'll stop at the main square in about ten minutes, and that's where we'll take a short break before continuing to the river.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-anuncio-bootcamp",
+      "tema": "Anuncio de radio sobre un bootcamp de programación",
+      "nivelCEFR": "B1",
+      "guion": "Thinking about changing careers? Our twelve week coding bootcamp teaches you the skills real companies are looking for, from building websites to working with real data. Classes start every month, and most students finish with a project they can actually show in an interview. Visit our website to learn more.",
+      "preguntas": [
+        {
+          "pregunta": "How long is the bootcamp?",
+          "opciones": [
+            "Four weeks",
+            "Eight weeks",
+            "Twelve weeks",
+            "One year"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-fase1-anuncio-bootcamp-p1"
+        },
+        {
+          "pregunta": "What do most students finish with?",
+          "opciones": [
+            "A certificate only",
+            "A project they can show in an interview",
+            "A guaranteed job offer",
+            "A university degree"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-anuncio-bootcamp-p2"
+        }
+      ],
+      "transcripcion": "Thinking about changing careers? Our twelve week coding bootcamp teaches you the skills real companies are looking for, from building websites to working with real data. Classes start every month, and most students finish with a project they can actually show in an interview. Visit our website to learn more.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-laptop-machine-learning",
+      "tema": "Conversación: elegir laptop para machine learning",
+      "nivelCEFR": "B1",
+      "guion": "I'm trying to pick a laptop for machine learning classes, but I'm not sure what really matters. Is it more about the processor or the graphics card? Honestly, for most student projects, having enough memory matters more than people think, because the data itself can be pretty large. The graphics card only becomes really important later on.",
+      "preguntas": [
+        {
+          "pregunta": "What is the speaker trying to choose?",
+          "opciones": [
+            "A phone",
+            "A laptop",
+            "A monitor",
+            "A keyboard"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-laptop-machine-learning-p1"
+        },
+        {
+          "pregunta": "According to the second speaker, what matters more for most student projects?",
+          "opciones": [
+            "The processor",
+            "Having enough memory",
+            "The screen size",
+            "The brand"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-laptop-machine-learning-p2"
+        }
+      ],
+      "transcripcion": "I'm trying to pick a laptop for machine learning classes, but I'm not sure what really matters. Is it more about the processor or the graphics card? Honestly, for most student projects, having enough memory matters more than people think, because the data itself can be pretty large. The graphics card only becomes really important later on.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-aeropuerto-cambio-puerta",
+      "tema": "Anuncio de aeropuerto: cambio de puerta",
+      "nivelCEFR": "B1",
+      "guion": "Attention, passengers traveling on flight two twelve to Chicago. The departure gate has changed from gate seven to gate fifteen. Boarding will begin in thirty minutes. Please make your way to the new gate as soon as possible, and have your boarding pass ready.",
+      "preguntas": [
+        {
+          "pregunta": "What has changed?",
+          "opciones": [
+            "The flight time",
+            "The departure gate",
+            "The destination",
+            "The airline"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-aeropuerto-cambio-puerta-p1"
+        },
+        {
+          "pregunta": "When will boarding begin?",
+          "opciones": [
+            "In ten minutes",
+            "In thirty minutes",
+            "In two hours",
+            "It already started"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-aeropuerto-cambio-puerta-p2"
+        }
+      ],
+      "transcripcion": "Attention, passengers traveling on flight two twelve to Chicago. The departure gate has changed from gate seven to gate fifteen. Boarding will begin in thirty minutes. Please make your way to the new gate as soon as possible, and have your boarding pass ready.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-podcast-etica-ia",
+      "tema": "Podcast: ética en inteligencia artificial",
+      "nivelCEFR": "B2",
+      "guion": "One thing that keeps coming up in these conversations is accountability. When a model makes a biased decision, who's actually responsible: the engineer who trained it, the company that deployed it, or the data it learned from? I don't think there's a single answer, but I do think teams need to document their decisions well enough that someone could actually trace what went wrong.",
+      "preguntas": [
+        {
+          "pregunta": "What topic keeps coming up in the conversation?",
+          "opciones": [
+            "Accountability",
+            "Marketing",
+            "Hardware costs",
+            "Hiring"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-fase1-podcast-etica-ia-p1"
+        },
+        {
+          "pregunta": "What does the speaker think teams need to do?",
+          "opciones": [
+            "Avoid using AI completely",
+            "Document their decisions well enough to trace what went wrong",
+            "Let the data decide everything",
+            "Hire more engineers"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-podcast-etica-ia-p2"
+        }
+      ],
+      "transcripcion": "One thing that keeps coming up in these conversations is accountability. When a model makes a biased decision, who's actually responsible: the engineer who trained it, the company that deployed it, or the data it learned from? I don't think there's a single answer, but I do think teams need to document their decisions well enough that someone could actually trace what went wrong.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-instrucciones-guardia",
+      "tema": "Gerente explica turnos de guardia",
+      "nivelCEFR": "B2",
+      "guion": "So here's how the on-call rotation works starting next month. Each engineer covers one week at a time, and you'll get a notification if something breaks after hours. If you can't fix it within thirty minutes, escalate to the backup person instead of trying to solve everything alone. We'll review every incident together on Mondays, not to blame anyone, but to actually learn from it.",
+      "preguntas": [
+        {
+          "pregunta": "How long does each person cover the on-call rotation?",
+          "opciones": [
+            "One day",
+            "One week",
+            "One month",
+            "Three months"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-instrucciones-guardia-p1"
+        },
+        {
+          "pregunta": "What should an engineer do if they can't fix an issue within thirty minutes?",
+          "opciones": [
+            "Keep trying alone all night",
+            "Escalate to the backup person",
+            "Ignore it until morning",
+            "Call the client directly"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-instrucciones-guardia-p2"
+        }
+      ],
+      "transcripcion": "So here's how the on-call rotation works starting next month. Each engineer covers one week at a time, and you'll get a notification if something breaks after hours. If you can't fix it within thirty minutes, escalate to the backup person instead of trying to solve everything alone. We'll review every incident together on Mondays, not to blame anyone, but to actually learn from it.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-disputa-factura",
+      "tema": "Llamada de servicio al cliente: disputa de factura",
+      "nivelCEFR": "B2",
+      "guion": "I'm calling because I was charged twice for the same subscription this month, and I'd like that corrected. I understand your frustration, let me pull up your account. I do see the duplicate charge here, and I apologize for that. I'll process a refund for the extra charge right now, and it should appear in your account within three to five business days.",
+      "preguntas": [
+        {
+          "pregunta": "What is the customer's complaint?",
+          "opciones": [
+            "They were charged twice for the same subscription",
+            "They never received their order",
+            "Their account was cancelled by mistake",
+            "The price increased without notice"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-fase1-disputa-factura-p1"
+        },
+        {
+          "pregunta": "What does the agent offer to do?",
+          "opciones": [
+            "Cancel the subscription",
+            "Process a refund for the extra charge",
+            "Transfer the call to a manager",
+            "Give a discount on next month"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-disputa-factura-p2"
+        }
+      ],
+      "transcripcion": "I'm calling because I was charged twice for the same subscription this month, and I'd like that corrected. I understand your frustration, let me pull up your account. I do see the duplicate charge here, and I apologize for that. I'll process a refund for the extra charge right now, and it should appear in your account within three to five business days.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-debate-microservicios",
+      "tema": "Ingenieros debaten microservicios vs. monolito",
+      "nivelCEFR": "B2",
+      "guion": "I still think we're splitting this into microservices too early. We don't even have that many users yet, and now every small change needs three different deployments. That's fair, but the monolith is already getting hard to understand, and new engineers take weeks just to find where things live. Maybe the real answer is splitting out just the one piece that actually needs to scale differently, not everything at once.",
+      "preguntas": [
+        {
+          "pregunta": "What is the first speaker worried about?",
+          "opciones": [
+            "Security",
+            "Splitting into microservices too early",
+            "Not having enough users",
+            "The cost of servers"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-debate-microservicios-p1"
+        },
+        {
+          "pregunta": "What does the conversation suggest as a possible middle ground?",
+          "opciones": [
+            "Rewriting everything from scratch",
+            "Splitting out only the one piece that needs to scale differently",
+            "Hiring more engineers",
+            "Switching programming languages"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-debate-microservicios-p2"
+        }
+      ],
+      "transcripcion": "I still think we're splitting this into microservices too early. We don't even have that many users yet, and now every small change needs three different deployments. That's fair, but the monolith is already getting hard to understand, and new engineers take weeks just to find where things live. Maybe the real answer is splitting out just the one piece that actually needs to scale differently, not everything at once.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-intro-charla-open-source",
+      "tema": "Introducción a una charla sobre código abierto",
+      "nivelCEFR": "B2",
+      "guion": "Thanks everyone for being here. Today I want to talk about something that doesn't get enough credit: maintaining an open source project long after the exciting part is over. Writing the first version is fun, but answering issues, reviewing pull requests, and keeping documentation updated for years is where most projects actually succeed or quietly disappear.",
+      "preguntas": [
+        {
+          "pregunta": "What does the speaker say doesn't get enough credit?",
+          "opciones": [
+            "Writing the first version of a project",
+            "Maintaining a project long-term",
+            "Marketing a product",
+            "Raising funding"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-intro-charla-open-source-p1"
+        },
+        {
+          "pregunta": "According to the speaker, where do most projects actually succeed or fail?",
+          "opciones": [
+            "In the first week",
+            "In long-term maintenance",
+            "During the launch event",
+            "In the initial design phase"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-intro-charla-open-source-p2"
+        }
+      ],
+      "transcripcion": "Thanks everyone for being here. Today I want to talk about something that doesn't get enough credit: maintaining an open source project long after the exciting part is over. Writing the first version is fun, but answering issues, reviewing pull requests, and keeping documentation updated for years is where most projects actually succeed or quietly disappear.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-buzon-instrucciones-conferencia",
+      "tema": "Mensaje de voz con instrucciones para una conferencia",
+      "nivelCEFR": "B2",
+      "guion": "Hi, just a few details before your talk tomorrow. You'll have twenty minutes, followed by ten for questions, and the room holds about two hundred people. There's a confidence monitor at the back if you don't want to look at your slides directly, and a technician will do a sound check with you thirty minutes before doors open. Let me know if you need anything else before then.",
+      "preguntas": [
+        {
+          "pregunta": "How long is the question period after the talk?",
+          "opciones": [
+            "Five minutes",
+            "Ten minutes",
+            "Twenty minutes",
+            "There are no questions"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-buzon-instrucciones-conferencia-p1"
+        },
+        {
+          "pregunta": "When will the sound check happen?",
+          "opciones": [
+            "Right after the talk",
+            "The day before",
+            "Thirty minutes before doors open",
+            "There is no sound check"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-fase1-buzon-instrucciones-conferencia-p2"
+        }
+      ],
+      "transcripcion": "Hi, just a few details before your talk tomorrow. You'll have twenty minutes, followed by ten for questions, and the room holds about two hundred people. There's a confidence monitor at the back if you don't want to look at your slides directly, and a technician will do a sound check with you thirty minutes before doors open. Let me know if you need anything else before then.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-debate-remoto-mejor",
+      "tema": "Debate: ¿las empresas remotas rinden mejor?",
+      "nivelCEFR": "B2",
+      "guion": "People keep saying remote-first companies are more productive, but I think that really depends on how disciplined the team is about communication. Without a shared office, if nobody writes things down clearly, decisions get lost. I agree with that part, but I'd still argue remote teams are forced to document more, simply because they can't just walk over and ask, and that documentation ends up helping everyone later.",
+      "preguntas": [
+        {
+          "pregunta": "What does the first speaker say remote productivity depends on?",
+          "opciones": [
+            "The size of the company",
+            "How disciplined the team is about communication",
+            "The country the team is in",
+            "The number of meetings"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-debate-remoto-mejor-p1"
+        },
+        {
+          "pregunta": "What does the second speaker argue remote teams are forced to do?",
+          "opciones": [
+            "Hire more people",
+            "Document more",
+            "Work longer hours",
+            "Use more video calls"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-debate-remoto-mejor-p2"
+        }
+      ],
+      "transcripcion": "People keep saying remote-first companies are more productive, but I think that really depends on how disciplined the team is about communication. Without a shared office, if nobody writes things down clearly, decisions get lost. I agree with that part, but I'd still argue remote teams are forced to document more, simply because they can't just walk over and ask, and that documentation ends up helping everyone later.",
+      "revisar": true
+    },
+    {
+      "id": "esc-fase1-noticia-recorte-personal",
+      "tema": "Segmento de noticias: recorte de personal en tecnología",
+      "nivelCEFR": "B2",
+      "guion": "In tech news today, another major company announced it's cutting around eight percent of its workforce, citing slower growth and a shift toward investing more in automation. The company says affected employees will receive severance pay and continued health coverage for several months. Analysts say this follows a pattern seen across the industry over the past year.",
+      "preguntas": [
+        {
+          "pregunta": "What percentage of the workforce is being cut?",
+          "opciones": [
+            "Around 3 percent",
+            "Around 8 percent",
+            "Around 20 percent",
+            "The whole company is closing"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-noticia-recorte-personal-p1"
+        },
+        {
+          "pregunta": "What reason does the company give for the cuts?",
+          "opciones": [
+            "A cybersecurity attack",
+            "Slower growth and investing more in automation",
+            "A government order",
+            "Moving the office to another country"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-fase1-noticia-recorte-personal-p2"
+        }
+      ],
+      "transcripcion": "In tech news today, another major company announced it's cutting around eight percent of its workforce, citing slower growth and a shift toward investing more in automation. The company says affected employees will receive severance pay and continued health coverage for several months. Analysts say this follows a pattern seen across the industry over the past year.",
+      "revisar": true
+    }
+  ]
+}

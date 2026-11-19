@@ -218,5 +218,10 @@
     "categoria": "larga",
     "es": "Lectura",
     "en": "Reading"
+  },
+  "escucha.titulo": {
+    "categoria": "larga",
+    "es": "Escucha",
+    "en": "Listening"
   }
 }

@@ -117,7 +117,7 @@
     });
   }
 
-  function implementacionWebSpeech(texto, idioma) {
+  function implementacionWebSpeech(texto, idioma, velocidad) {
     return new Promise(function (resolve, reject) {
       if (!global.speechSynthesis || typeof global.SpeechSynthesisUtterance === "undefined") {
         reject(new Error("Web Speech API no disponible en este navegador"));
@@ -133,7 +133,10 @@
       obtenerVocesListas().then(function (voces) {
         var utterance = new global.SpeechSynthesisUtterance(texto);
         utterance.lang = idioma || "en-US";
-        utterance.rate = VELOCIDAD_DEFECTO;
+        // "velocidad" es opcional (p. ej. Escucha lo usa para su botón "más despacio") --
+        // sin tocar el comportamiento por defecto de nadie más, que sigue siendo
+        // VELOCIDAD_DEFECTO tal cual.
+        utterance.rate = velocidad || VELOCIDAD_DEFECTO;
         var voz = elegirVoz(voces, vozPreferidaActual);
         if (voz) utterance.voice = voz;
         utterance.onend = function () {
@@ -149,8 +152,8 @@
 
   var implementacionActual = implementacionWebSpeech;
 
-  function hablar(texto, idioma) {
-    return implementacionActual(texto, idioma);
+  function hablar(texto, idioma, velocidad) {
+    return implementacionActual(texto, idioma, velocidad);
   }
 
   /** Permite sustituir la implementación (pruebas, Capacitor nativo, etc.). */
