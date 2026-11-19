@@ -1,13 +1,13 @@
 {
-  "name": "Inglés B2",
-  "short_name": "Inglés B2",
-  "description": "App personal para practicar inglés hacia nivel B2 (CEFR).",
+  "name": "Rumbo",
+  "short_name": "Rumbo",
+  "description": "App personal para practicar inglés, con progreso medido en niveles CEFR (A1-C2).",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#f6f5f2",
-  "theme_color": "#f6f5f2",
+  "background_color": "#12122a",
+  "theme_color": "#12122a",
   "lang": "es",
   "icons": [
     { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },

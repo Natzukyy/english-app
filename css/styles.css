@@ -1,78 +1,100 @@
-/* app-ingles — tokens de diseño (rediseño "cuaderno de bitácora / fichero de estudio")
-   Ver DESIGN_REVIEW.md para el razonamiento completo. Resumen: el mundo es el de alguien
-   que lleva un registro disciplinado de su propio progreso (fichas SM-2 = fichero de
-   estudio real), nunca un dashboard de SaaS ni un mapa de ruta tipo Duolingo. Paleta
-   "Restrained": neutrales de papel + un acento tinta que hace trabajo real (nunca
-   decorativo) y un acento sello (rojo tinta de corrección) solo semántico: error y la
-   animación de "estampado" al completar algo. Los 4 colores de habilidad se conservan
-   como detalle sobrio. Dos familias tipográficas con trabajo específico: Libre Franklin
-   (UI y texto) y JetBrains Mono (solo cifras/datos tabulares, vía .num-tabular). Radio de
-   borde ya NO es un valor único: --radio-objeto (12px) solo para la tarjeta física real
-   (repaso/habla, el objeto que se "sostiene"); --radio-dato (2px, casi recto) para todo lo
-   demás (filas, fichas, botones, chips) -- lee como papel rayado/ficha de catálogo, no
-   como "card de SaaS". Ver DECISIONES.md D13 para el porqué original de la base.
-   Fuentes alojadas localmente en assets/fuentes/ (SIL OFL, sin CDN ni cuenta, ver D1/D5):
-   sigue siendo 100% offline-first. */
+/* app-ingles — tokens de diseño "Calcomanías oscuro" (spec aprobada por Alex, sesión del
+   19 nov 2026). Reemplaza POR COMPLETO el rediseño anterior "cuaderno de bitácora" (tinta/
+   papel, Libre Franklin) -- no es una iteración, es una dirección visual nueva. Mundo:
+   calcomanías/stickers de colores planos sobre fondo oscuro -- borde de tinta grueso
+   (2.5px), sombra dura SIN blur, rotación ligera (--r), radios 16-32px. Color con
+   significado: una habilidad, un color (nunca decorativo). Una sola familia tipográfica
+   (Bricolage Grotesque, pesos 500-800) en vez de la pareja display/mono del rediseño
+   anterior. Fuente alojada localmente en assets/fonts/ (SIL OFL, sin CDN, ver D1/D5 en
+   DECISIONES.md) -- sigue siendo 100% offline-first.
+
+   SOLO modo oscuro por ahora (pedido explícito de Alex), pero todo sigue en variables CSS
+   para poder agregar un tema claro después. El selector de Tema en Ajustes (Claro/Oscuro/
+   Sistema) sigue funcionando de verdad (cambia data-theme en <html>), pero las 3 opciones
+   dan la MISMA paleta oscura por ahora -- decisión explícita, no un bug: no existe un tema
+   claro todavía, solo se deja listo el mecanismo (ver los 2 selectores vacíos más abajo).
+
+   IMPORTANTE para quien siga: esta fase (A, fundamentos) solo reemplaza TOKENS + nav +
+   íconos + utilidades de animación reusables. El HTML/contenido interno de cada pantalla
+   (Repaso/Diagnóstico/Progreso/Ajustes/Habla/Conversación) TODAVÍA no se tocó -- se va a ver
+   "a medias" (colores nuevos aplicados vía los tokens de puente de abajo, pero formas/
+   bordes/sombra todavía del lenguaje anterior) hasta que cada pantalla tenga su propio
+   rediseño "calcomanía" en su propio commit. Eso es exactamente lo esperado en esta fase. */
 
 @font-face {
-  font-family: "Libre Franklin";
-  src: url("../assets/fuentes/LibreFranklin-Variable.ttf") format("truetype-variations"), url("../assets/fuentes/LibreFranklin-Variable.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("../assets/fuentes/JetBrainsMono-Variable.ttf") format("truetype-variations"), url("../assets/fuentes/JetBrainsMono-Variable.ttf") format("truetype");
-  font-weight: 100 800;
+  font-family: "Bricolage Grotesque";
+  src:
+    url("../assets/fonts/BricolageGrotesque-Variable-latin.woff2") format("woff2"),
+    url("../assets/fonts/BricolageGrotesque-Variable-latin-ext.woff2") format("woff2");
+  font-weight: 200 800;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  --bg: #f2f1ec;
-  --superficie: #ffffff;
-  --superficie-hundida: #e9e7e0;
-  --borde: #dedcd3;
+  /* --- Paleta base "Calcomanías oscuro" (valores exactos pedidos por Alex) --- */
+  --bg: #12122a;
+  --surface: #1e1e3f;
+  --surface-borde: #3a3a70;
+  --tinta: #0b0b1e;
+  --sombra: #070714;
+  --texto: #f2f0ff;
+  --texto-2: #b9b7e0;
+  --nav: #1a1a38;
 
-  --texto: #1a1a17;
-  --texto-tenue: #6b6a63;
+  --amarillo: #ffc93c;
+  --menta: #38d9a9;
+  --rosa: #ff8fb1;
+  --coral: #ff6b57;
+  --azul: #7c96ff;
+  --crema: #fff3c9;
 
-  --acento: #2f4368; /* tinta -- acento primario: botón principal, tab activa, foco */
-  --acento-fuerte: #23334f;
-  --acento-sobre: #ffffff; /* color de texto/ícono cuando va ENCIMA de --acento */
-  --acento-tenue: #e4e8f0; /* fondo muy sutil para resaltos (p.ej. tab activa) */
+  /* Habilidades: un color fijo por habilidad en toda la app. */
+  --punto-lectura: var(--azul);
+  --punto-escucha: var(--amarillo);
+  --punto-habla: var(--menta);
+  --punto-escritura: var(--rosa);
+  --punto-lectura-relleno: var(--punto-lectura);
+  --punto-escucha-relleno: var(--punto-escucha);
+  --punto-habla-relleno: var(--punto-habla);
+  --punto-escritura-relleno: var(--punto-escritura);
 
-  --exito: #2e7d4f;
-  --error: #9c3b2e; /* mismo valor que --acento-sello: el rojo sello es semántico, no decorativo */
-  --acento-sello: #9c3b2e; /* sello -- SOLO error y la animación de "estampado" al completar algo */
+  /* --- Puente con los nombres de token del rediseño anterior (--superficie, --acento...),
+     para que las pantallas que NO se han tocado en esta fase sigan funcionando con colores
+     correctos sin reescribir cada selector a ciegas. --acento es un mapeo GENÉRICO a
+     --amarillo (el más parecido a un "acento por defecto" en el lenguaje nuevo); cada fork
+     de pantalla debe revisar cada uso concreto y, donde el spec pida un color específico
+     (coral = negativo/"no la sabía", menta = positivo/"bien", azul = "fácil"/lectura...),
+     usar esa variable directamente en vez de depender de --acento genérico. */
+  --superficie: var(--surface);
+  --superficie-hundida: #181838; /* la franja oscura del rayado diagonal de las barras de progreso, ver más abajo */
+  --borde: var(--surface-borde);
+  --texto-tenue: var(--texto-2);
 
-  --punto-lectura: #c98a2b;
-  --punto-escucha: #5b7a9d;
-  --punto-habla: #b9697a;
-  --punto-escritura: #6b8f71;
+  --acento: var(--amarillo);
+  --acento-fuerte: #e6b32f; /* amarillo oscurecido ~10%, para hover/press */
+  --acento-sobre: var(--tinta); /* regla dura del spec: sobre cualquier superficie de color plano, el texto SIEMPRE es --tinta */
+  --acento-tenue: color-mix(in srgb, var(--amarillo) 18%, var(--nav));
 
-  /* Versión de relleno de barra: los --punto-* de arriba son para un punto de 8px (detalle
-     sobrio, ver .chip), no para rellenar un área más grande -- a ese tamaño, sobre
-     --superficie-hundida, lectura y escritura quedaban por debajo de 3:1 (no texto, pero sí
-     un control con significado). Oscurecidos hasta >=4.5:1 contra la pista, mismo tono. En
-     oscuro los --punto-* originales ya dan >=6:1, así que ahí no hace falta ajustar (ver abajo). */
-  --punto-lectura-relleno: #82591b;
-  --punto-escucha-relleno: #4d6785;
-  --punto-habla-relleno: #945461;
-  --punto-escritura-relleno: #506b54;
+  --exito: var(--menta);
+  --error: var(--coral);
+  /* Puente temporal: el "sello" del rediseño anterior (estampado al completar un paso) usa
+     el semántico negativo de este lenguaje. El spec nuevo reemplaza ese mecanismo por una
+     palomita que se dibuja + la calcomanía saltando de amarillo a menta (ver spec de
+     animación) -- cada fork de pantalla debe migrar a eso y dejar de usar --acento-sello. */
+  --acento-sello: var(--coral);
 
-  --fuente-texto: "Libre Franklin", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
-  --fuente-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --fuente-texto: "Bricolage Grotesque", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  --fuente-mono: var(--fuente-texto); /* una sola familia tipográfica en Calcomanías (ver spec) -- .num-tabular sigue funcionando vía font-variant-numeric */
 
   --fs-caption: 13px;
   --fs-small: 15px;
   --fs-body: 17px;
   --fs-heading: 20px;
   --fs-title: 26px;
+  --fs-title-laptop: 42px; /* "título de pantalla de 42px" en laptop, ver REGLA DE LAPTOP del spec */
   --fs-hero: 48px;
 
   --e-1: 4px;
@@ -83,78 +105,56 @@
   --e-6: 32px;
   --e-7: 48px;
 
-  --radio-objeto: 12px; /* SOLO objetos físicos reales: la tarjeta de repaso/habla */
-  --radio-dato: 2px; /* todo lo demás: filas, fichas, botones, chips -- casi recto, a propósito */
-  --espacio-lienzo-max: 480px;
+  /* --- Forma: radios de calcomanía (16-32px), reemplazan el sistema "objeto/dato" del
+     rediseño anterior. --radio-objeto/--radio-dato quedan como alias de compatibilidad para
+     selectores que esta fase no tocó -- cada pantalla debe migrar a --radio-calcomania-*
+     directamente cuando se rediseñe de verdad (y decidir el tamaño exacto por elemento). */
+  --radio-calcomania-chica: 16px;
+  --radio-calcomania: 20px;
+  --radio-calcomania-grande: 32px;
+  --radio-objeto: var(--radio-calcomania-grande);
+  --radio-dato: var(--radio-calcomania-chica);
 
+  /* Rotación ligera de calcomanía por defecto (-1.5deg a 1.2deg pide el spec); un elemento
+     puede traer su propio --r inline para variar. En laptop, las tarjetas GRANDES de
+     contenido van sin rotación -- ver .sin-rotacion más abajo. */
+  --r: -0.6deg;
+
+  --espacio-lienzo-max: 480px;
   --toque-minimo: 44px;
 
-  --dur-rapida: 160ms;
-  --dur-media: 220ms;
-  --easing: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Sombra dura de calcomanía: SIEMPRE sin blur (spread 0, blur 0). Offset chico en
+     celular; los forks de pantalla deben subirlo hasta 7px en laptop donde el spec lo pida.
+     El CTA principal usa --sombra-cta (coral) en vez de --sombra-dura (negra/--sombra). */
+  --sombra-offset: 5px;
+  --sombra-dura: var(--sombra-offset) var(--sombra-offset) 0 0 var(--sombra);
+  --sombra-cta: var(--sombra-offset) var(--sombra-offset) 0 0 var(--coral);
+
+  /* --- Animación: un solo bloque con todos los tokens de duración/curva (pedido explícito
+     del spec, para poder ajustarlos desde un solo lugar). Reglas duras para TODA animación
+     de aquí en adelante: solo transform/opacity (nunca propiedades que provocan reflow),
+     60fps en iPhone, prefers-reduced-motion SIEMPRE respetado -- la regla global `* { ... }`
+     más abajo en este archivo (@media (prefers-reduced-motion: reduce)) ya cubre cualquier
+     animación nueva automáticamente, sin tocarla. */
+  --ease-pop: cubic-bezier(0.2, 1.4, 0.4, 1);
+  --ease-out: cubic-bezier(0.2, 0.9, 0.3, 1);
+  --dur-rapida: 150ms;
+  --dur-media: 250ms;
+  --dur-lenta: 600ms;
+  --easing: var(--ease-out); /* alias -- el resto del CSS ya usaba var(--easing) desde antes, se conserva para no romper nada */
 }
 
+/* "Claro" y "Sistema" dan la misma paleta oscura que :root por ahora (ver nota al inicio
+   del archivo) -- el mecanismo de data-theme/prefers-color-scheme queda intacto para
+   cuando exista un tema claro real; hoy las 3 rutas resuelven a los mismos valores. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: #1b1c1f;
-    --superficie: #242528;
-    --superficie-hundida: #202124;
-    --borde: #35363a;
-
-    --texto: #ececea;
-    --texto-tenue: #9a9a96;
-
-    --acento: #8fa6d1;
-    --acento-fuerte: #a9bcdc;
-    --acento-sobre: #16202f;
-    --acento-tenue: #232b3a;
-
-    --exito: #6fcf97;
-    --error: #e0897a;
-    --acento-sello: #e0897a;
-
-    --punto-lectura: #e0a94f;
-    --punto-escucha: #8fb0d6;
-    --punto-habla: #d98fa0;
-    --punto-escritura: #93c49a;
-
-    /* En oscuro los --punto-* ya dan >=6:1 contra --superficie-hundida: sirven tal cual de relleno. */
-    --punto-lectura-relleno: var(--punto-lectura);
-    --punto-escucha-relleno: var(--punto-escucha);
-    --punto-habla-relleno: var(--punto-habla);
-    --punto-escritura-relleno: var(--punto-escritura);
   }
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #1b1c1f;
-  --superficie: #242528;
-  --superficie-hundida: #202124;
-  --borde: #35363a;
-
-  --texto: #ececea;
-  --texto-tenue: #9a9a96;
-
-  --acento: #8fa6d1;
-  --acento-fuerte: #a9bcdc;
-  --acento-sobre: #16202f;
-  --acento-tenue: #232b3a;
-
-  --exito: #6fcf97;
-  --error: #e0897a;
-  --acento-sello: #e0897a;
-
-  --punto-lectura: #e0a94f;
-  --punto-escucha: #8fb0d6;
-  --punto-habla: #d98fa0;
-  --punto-escritura: #93c49a;
-
-  --punto-lectura-relleno: var(--punto-lectura);
-  --punto-escucha-relleno: var(--punto-escucha);
-  --punto-habla-relleno: var(--punto-habla);
-  --punto-escritura-relleno: var(--punto-escritura);
 }
 
 * {
@@ -169,6 +169,7 @@ body {
   color: var(--texto);
   font-family: var(--fuente-texto);
   font-size: var(--fs-body);
+  font-weight: 500; /* Bricolage Grotesque trabaja en pesos 500-800, nunca más delgado (ver spec) */
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   transition: background-color var(--dur-media) var(--easing), color var(--dur-media) var(--easing);
@@ -392,10 +393,13 @@ button {
   color: var(--acento);
 }
 
+/* Pista con rayado diagonal sutil entre --bg y --superficie-hundida (ver spec Calcomanías:
+   "fondo con rayado diagonal sutil") + borde 2.5px -- utilidad global, no por pantalla. */
 .barra-progreso {
   height: 8px;
   border-radius: 999px;
-  background: var(--superficie-hundida);
+  border: 2.5px solid var(--borde);
+  background: repeating-linear-gradient(135deg, var(--bg) 0 6px, var(--superficie-hundida) 6px 12px);
   overflow: hidden;
   margin: var(--e-2) 0;
 }
@@ -643,25 +647,28 @@ button {
 }
 
 /* Barra de navegación inferior, estilo iOS: translúcida, con desenfoque. */
+/* Barra inferior (celular): ítem activo = píldora amarilla con borde tinta, ver spec
+   Calcomanías. border:2.5px transparent por defecto en el botón reserva el espacio exacto
+   que ocupa el borde real del activo, para que no "salte" de tamaño al cambiar de pestaña. */
 nav.tabs {
   position: sticky;
   bottom: 0;
   display: flex;
-  background: var(--superficie); /* respaldo si color-mix() no existe */
-  background: color-mix(in srgb, var(--superficie) 82%, transparent);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
-  border-top: 1px solid var(--borde);
-  padding-bottom: env(safe-area-inset-bottom, 0);
-  padding-left: env(safe-area-inset-left, 0);
-  padding-right: env(safe-area-inset-right, 0);
+  gap: var(--e-1);
+  background: var(--nav);
+  border-top: 2.5px solid var(--surface-borde);
+  padding: var(--e-2);
+  padding-bottom: calc(var(--e-2) + env(safe-area-inset-bottom, 0));
+  padding-left: calc(var(--e-2) + env(safe-area-inset-left, 0));
+  padding-right: calc(var(--e-2) + env(safe-area-inset-right, 0));
 }
 
 nav.tabs button {
   flex: 1;
   background: none;
-  border: none;
-  color: var(--texto-tenue);
+  border: 2.5px solid transparent;
+  border-radius: var(--radio-calcomania-chica);
+  color: var(--texto-2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -669,11 +676,13 @@ nav.tabs button {
   padding: 6px 2px;
   min-height: var(--toque-minimo);
   font-size: 11px;
-  transition: color var(--dur-rapida) var(--easing), transform var(--dur-rapida) var(--easing);
+  font-weight: 600;
+  transition: transform var(--dur-rapida) var(--ease-pop), background var(--dur-rapida) var(--ease-out),
+    color var(--dur-rapida) var(--ease-out), border-color var(--dur-rapida) var(--ease-out);
 }
 
 nav.tabs button:active {
-  transform: scale(0.95);
+  transform: scale(0.93);
 }
 
 nav.tabs button .icono {
@@ -687,10 +696,13 @@ nav.tabs button .icono svg {
 }
 
 nav.tabs button[aria-current="true"] {
-  color: var(--acento);
+  background: var(--amarillo);
+  border-color: var(--tinta);
+  color: var(--tinta);
 }
 
-/* Nombre de la app: solo se ve arriba de la barra lateral en laptop (ver media query). */
+/* Logo de texto ("Rumbo.", desde data/config.json -- ver js/app.js): solo se ve arriba de
+   la barra lateral en laptop (ver media query). */
 .marca-sidebar {
   display: none;
 }
@@ -1031,6 +1043,161 @@ button.tarjeta-habilidad:active {
   animation: pulso var(--dur-media) var(--easing);
 }
 
+/* ============================================================================
+   CALCOMANÍAS OSCURO -- infraestructura de componentes/animación reusable.
+   Fase A (fundamentos). Los forks de cada pantalla aplican estas clases a su propio
+   markup; aquí solo se definen una vez. Todo usa transform/opacity exclusivamente
+   (nunca box-shadow animado de verdad: ver .calcomania:active, que cambia box-shadow
+   por ser un valor discreto en :active, no una transición continua cuadro a cuadro --
+   el resto si anima con keyframes es siempre transform/opacity). ============================ */
+
+/* --- .calcomania: el componente base del lenguaje visual nuevo (tarjeta/botón/chip de
+   color plano). Borde de tinta grueso + sombra dura SIN blur + rotación ligera + radio
+   generoso. Aplica la clase y, si hace falta, un color de fondo propio por encima (la
+   clase no fija background a propósito: cada calcomanía puede ser amarilla, menta, rosa...
+   según lo que represente). --r se puede sobreescribir inline (style="--r:-1.2deg") por
+   elemento para variar la rotación dentro del rango -1.5deg a 1.2deg que pide el spec. */
+.calcomania {
+  border: 2.5px solid var(--tinta);
+  border-radius: var(--radio-calcomania);
+  box-shadow: var(--sombra-dura);
+  transform: rotate(var(--r));
+  transition: transform var(--dur-rapida) var(--ease-pop), box-shadow var(--dur-rapida) var(--ease-pop);
+}
+
+/* CTA principal: sombra coral en vez de negra (ver spec). */
+.calcomania-cta {
+  box-shadow: var(--sombra-cta);
+}
+
+/* Laptop: las tarjetas GRANDES de contenido van sin rotación para alinear con columnas
+   (ver REGLA DE LAPTOP del spec). Cada fork de pantalla decide a qué elementos aplicarla
+   dentro de su propia media query de laptop. */
+.sin-rotacion {
+  --r: 0deg;
+}
+
+/* "Aplastado" al presionar: el botón baja y la sombra se acorta (offset menor), como si se
+   presionara de verdad contra la sombra dura. Solo para calcomanías que son botones/tocables
+   -- no la apliques a una tarjeta puramente informativa que no reacciona al toque. */
+.calcomania-presionable:active {
+  transform: rotate(var(--r)) translate(calc(var(--sombra-offset) * 0.4), calc(var(--sombra-offset) * 0.4));
+  box-shadow: calc(var(--sombra-offset) * 0.3) calc(var(--sombra-offset) * 0.3) 0 0 var(--sombra);
+}
+.calcomania-cta.calcomania-presionable:active {
+  box-shadow: calc(var(--sombra-offset) * 0.3) calc(var(--sombra-offset) * 0.3) 0 0 var(--coral);
+}
+
+/* --- Superficies oscuras (tarjetas internas, inputs, burbujas de bot): fondo plano, borde
+   grueso, SIN sombra dura ni rotación -- la calcomanía "vive" en la mesa, la superficie
+   oscura vive "dentro" del cuaderno. */
+.superficie-oscura {
+  background: var(--surface);
+  border: 2.5px solid var(--surface-borde);
+  border-radius: var(--radio-calcomania-chica);
+}
+
+/* --- Entrada en "pop": las calcomanías aparecen con un rebote de escala, no solo con fade.
+   Variante escalonada (mismo patrón de retraso de .entrada-escalonada, pero con el keyframe
+   de pop) para que varias entren una tras otra (~50ms de diferencia, pide el spec). */
+@keyframes calcomania-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.82) rotate(var(--r));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(var(--r));
+  }
+}
+
+.pop-entrada {
+  animation: calcomania-pop var(--dur-lenta) var(--ease-pop) both;
+}
+
+.pop-entrada-escalonada > * {
+  animation: calcomania-pop var(--dur-lenta) var(--ease-pop) both;
+}
+.pop-entrada-escalonada > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.pop-entrada-escalonada > *:nth-child(2) {
+  animation-delay: 50ms;
+}
+.pop-entrada-escalonada > *:nth-child(3) {
+  animation-delay: 100ms;
+}
+.pop-entrada-escalonada > *:nth-child(4) {
+  animation-delay: 150ms;
+}
+.pop-entrada-escalonada > *:nth-child(5) {
+  animation-delay: 200ms;
+}
+.pop-entrada-escalonada > *:nth-child(n + 6) {
+  animation-delay: 250ms;
+}
+
+/* --- Sol de racha (Inicio): rayos girando lento, siempre. 28s/vuelta, lineal, infinito --
+   listo para que el fork de Inicio lo use en su propio markup (p. ej. un <g> de rayos
+   dentro de un SVG, o un pseudo-elemento rotando detrás del círculo del número). No se
+   aplica a nada todavía en esta fase. */
+@keyframes sol-gira {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Transición de cambio de pantalla (deslizamiento + desvanecido, ~250ms), lista para
+   conectar al router. NO se conectó en esta fase: App.Screens.render() hoy reemplaza
+   el innerHTML de #pantalla de forma síncrona en js/app.js (función renderizar()), y las
+   pantallas guardan estado en variables de módulo (p. ej. "estado" en repaso.js/
+   diagnostico.js) -- animar la salida/entrada de verdad requiere esperar a que termine la
+   animación de salida antes de pintar la pantalla nueva (con "animationend" o
+   requestAnimationFrame + un pequeño retraso), y sólo entonces hace sentido decidir la
+   dirección (avance = push a una ruta "más adelante" en el flujo guiado de la Fase B;
+   retroceso = volver a Inicio o a un paso anterior). Conectarlo a ciegas ahora, antes de que
+   exista el router de pasos de la Fase B, se sentiría arbitrario (¿qué cuenta como "avanzar"
+   entre pantallas que ni siquiera tienen una secuencia todavía?) -- se deja la infraestructura
+   lista y se documenta la forma de conectarla cuando sí haya una secuencia real que animar. */
+@keyframes pantalla-sale-izq {
+  to {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+}
+@keyframes pantalla-sale-der {
+  to {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+}
+@keyframes pantalla-entra-der {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+}
+@keyframes pantalla-entra-izq {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+}
+.transicion-sale-avance {
+  animation: pantalla-sale-izq var(--dur-media) var(--ease-out) both;
+}
+.transicion-sale-retroceso {
+  animation: pantalla-sale-der var(--dur-media) var(--ease-out) both;
+}
+.transicion-entra-avance {
+  animation: pantalla-entra-der var(--dur-media) var(--ease-out) both;
+}
+.transicion-entra-retroceso {
+  animation: pantalla-entra-izq var(--dur-media) var(--ease-out) both;
+}
+
+/* ======================================================================== */
+
 /* Signature move: el sello se estampa UNA vez al completar un paso -- nunca en loop.
    Reemplaza el anillo pulsante infinito que tenía ".ruta-nodo.actual" (sin propósito claro,
    se veía cada vez que se entraba a Inicio) por una animación con causa real: algo se
@@ -1111,9 +1278,15 @@ button.tarjeta-habilidad:active {
   }
 }
 
-/* --- Responsive: móvil (hasta 767px, sin cambios) / tablet (768-1099px, igual que móvil,
-   el lienzo centrado ya deja aire de sobra) / laptop (desde 1100px: barra lateral + columnas). --- */
-@media (min-width: 1100px) {
+/* --- Responsive: móvil/tablet (hasta 899px, misma barra inferior) / laptop (desde 900px:
+   barra lateral + columnas). Breakpoint bajado de 1100px a 900px -- pedido explícito del
+   spec de Calcomanías ("laptop ≥900px"), distinto del breakpoint del rediseño anterior.
+   REGLA DE LAPTOP (spec): el contenido debe ABARCAR la pantalla, sin elementos chicos
+   flotando en espacio vacío -- columnas que se estiran a la misma altura (align-items:
+   stretch), tarjetas que crecen con flex:1, botones anclados al borde inferior de su
+   columna. Esta fase (A) solo ajusta el breakpoint y la barra lateral; aplicar la regla de
+   verdad al contenido de cada pantalla es trabajo de su propio fork. */
+@media (min-width: 900px) {
   body {
     align-items: flex-start;
   }
@@ -1213,6 +1386,9 @@ button.tarjeta-habilidad:active {
     padding: var(--e-3) 0;
   }
 
+  /* Barra lateral de 240px (spec Calcomanías): mismo fondo --nav que la barra inferior,
+     activo = relleno amarillo + borde tinta (igual lenguaje que la píldora de celular, solo
+     que ocupa toda la fila en vez de verse como píldora aislada). */
   nav.tabs {
     order: -1;
     position: sticky;
@@ -1227,18 +1403,24 @@ button.tarjeta-habilidad:active {
     gap: var(--e-1);
     padding: var(--e-6) var(--e-3);
     border-top: none;
-    border-right: 1px solid var(--borde);
-    background: var(--superficie);
+    border-right: 2.5px solid var(--surface-borde);
+    background: var(--nav);
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
 
   .marca-sidebar {
     display: block;
-    font-weight: 700;
+    font-weight: 800;
     font-size: var(--fs-heading);
     padding: 0 var(--e-3) var(--e-4);
     color: var(--texto);
+  }
+
+  /* El punto final del logo ("Rumbo.") es el acento amarillo -- ver js/app.js
+     aplicarConfigShell(), que arma el markup con un <span class="marca-punto"> aparte. */
+  .marca-punto {
+    color: var(--amarillo);
   }
 
   nav.tabs button {
@@ -1251,7 +1433,7 @@ button.tarjeta-habilidad:active {
     height: var(--toque-minimo);
     min-height: var(--toque-minimo);
     padding: 0 var(--e-3);
-    border-radius: var(--radio-dato);
+    border-radius: var(--radio-calcomania-chica);
   }
 
   nav.tabs button .icono svg {
@@ -1260,8 +1442,10 @@ button.tarjeta-habilidad:active {
   }
 
   nav.tabs button[aria-current="true"] {
-    background: var(--acento-tenue);
-    font-weight: 600;
+    background: var(--amarillo);
+    border-color: var(--tinta);
+    color: var(--tinta);
+    font-weight: 700;
   }
 }
 

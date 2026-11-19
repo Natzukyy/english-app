@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>App de idiomas</title>
-    <meta name="description" content="App personal para practicar inglés hacia nivel B2 (CEFR)." />
-    <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)" />
+    <!-- Título/nombre reales vienen de data/config.json vía js/app.js (aplicarConfigShell) --
+         este es solo el valor antes de que cargue JS. -->
+    <title>Rumbo</title>
+    <meta name="description" content="App personal para practicar inglés, con progreso medido en niveles CEFR (A1-C2)." />
+    <!-- Solo modo oscuro por ahora (ver css/styles.css) -- un único theme-color, sin
+         distinguir claro/oscuro todavía. -->
+    <meta name="theme-color" content="#12122a" />
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://*.workers.dev; object-src 'none'; base-uri 'self'; form-action 'self'"
@@ -16,7 +19,7 @@
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="App de idiomas" />
+    <meta name="apple-mobile-web-app-title" content="Rumbo" />
 
     <link rel="stylesheet" href="css/styles.css" />
   </head>
@@ -27,7 +30,7 @@
         <div class="marca-sidebar" id="marca-sidebar"></div>
         <button type="button" data-ruta="inicio">
           <span class="icono" aria-hidden="true"
-            ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+            ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
               ><path d="M4 11.5 12 4l8 7.5" /><path d="M6 10v9h12v-9"
             /></svg
           ></span>
@@ -35,7 +38,7 @@
         </button>
         <button type="button" data-ruta="repaso">
           <span class="icono" aria-hidden="true"
-            ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+            ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
               ><path
                 d="M8.25 18.5 L9.36 19.02 L10.54 19.36 L11.75 19.5 L12.98 19.44 L14.18 19.18 L15.32 18.73 L16.37 18.1 L17.3 17.3 L18.1 16.37 L18.73 15.32 L19.18 14.18 L19.44 12.98 L19.5 11.75 L19.36 10.54 L19.02 9.36 L18.5 8.25"
               /><path d="M18.5 8.25 L20.7 9.63 M18.5 8.25 L18.59 10.85" /><path
@@ -47,7 +50,7 @@
         </button>
         <button type="button" data-ruta="diagnostico">
           <span class="icono" aria-hidden="true"
-            ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+            ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
               ><circle cx="12" cy="12" r="9" /><path d="M8 12.5l2.5 2.5L16 9.5"
             /></svg
           ></span>
@@ -55,7 +58,7 @@
         </button>
         <button type="button" data-ruta="progreso">
           <span class="icono" aria-hidden="true"
-            ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+            ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
               ><path d="M4 18V9" /><path d="M11 18V5" /><path d="M18 18v-7"
             /></svg
           ></span>
@@ -63,10 +66,10 @@
         </button>
         <button type="button" data-ruta="ajustes">
           <span class="icono" aria-hidden="true"
-            ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
-              ><path
-                d="M10.4 2.84 L13.6 2.84 L14.79 5.26 L17.35 4.39 L19.61 6.65 L18.74 9.21 L21.16 10.4 L21.16 13.6 L18.74 14.79 L19.61 17.35 L17.35 19.61 L14.79 18.74 L13.6 21.16 L10.4 21.16 L9.21 18.74 L6.65 19.61 L4.39 17.35 L5.26 14.79 L2.84 13.6 L2.84 10.4 L5.26 9.21 L4.39 6.65 L6.65 4.39 L9.21 5.26 Z"
-              /><circle cx="12" cy="12" r="3" /></svg
+            ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+              ><path d="M3 6h18" /><circle cx="14" cy="6" r="2.3" /><path d="M3 12h18" /><circle cx="9" cy="12" r="2.3" /><path
+                d="M3 18h18"
+              /><circle cx="17" cy="18" r="2.3" /></svg
           ></span>
           <span data-i18n="nav.ajustes">Ajustes</span>
         </button>

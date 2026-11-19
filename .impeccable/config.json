@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-11-19T01:56:43.962Z",
         "reason": "evaluado: .pregunta-diagnostico usa un solo filete izquierdo tipo cita/nota al margen (no borde de tarjeta repetido) para distinguir la pregunta del chrome, documentado en el CSS con D13 (sin cajas anidadas) y la metáfora de bitácora de DESIGN_REVIEW.md -- no es el patrón de 'tarjeta con borde de acento decorativo' que la regla busca"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-19T03:03:48.989Z",
+        "reason": "evaluado: css/styles.css define .calcomania/.calcomania-cta con box-shadow Npx Npx 0 0 color (offset real, blur-radius 0, spread 0) -- es una sombra dura sin blur pedida explícitamente por el spec 'Calcomanías oscuro' de Alex ('sombra dura sin blur'), lo opuesto estructural a un halo luminoso difuminado (glow = blur>0, normalmente offset 0). El color coral/sombra es intencional y semántico (CTA principal vs. resto), no decorativo al azar"
       }
     ]
   }

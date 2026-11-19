@@ -1,24 +1,56 @@
 (function (global) {
   "use strict";
 
-  var RUTAS_VALIDAS = ["inicio", "repaso", "diagnostico", "progreso", "ajustes", "habla", "conversacion"];
+  var RUTAS_VALIDAS = [
+    "inicio",
+    "repaso",
+    "diagnostico",
+    "progreso",
+    "ajustes",
+    "habla",
+    "conversacion",
+    "practicar",
+    "lectura",
+    "escucha",
+    "escritura"
+  ];
   var contexto = { strings: {}, umbrales: { niveles: [] }, nivelInterfaz: 0 };
 
-  /** Preparación para crecer (idioma/nivel configurable, ver DESIGN_REVIEW.md sección 5):
-   * data/config.json saca "Inglés B2" del código del shell -- título, meta de iOS y marca
-   * de la barra lateral se rellenan con esto en vez de venir fijos en index.html. */
+  /** Pantallas que no tienen su propio ítem en la barra de navegación (ver spec
+   * "Calcomanías oscuro"): mientras Alex esté en cualquiera de ellas, el ítem activo sigue
+   * siendo Inicio. "practicar"/"lectura"/"escucha"/"escritura" todavía no tienen pantalla
+   * real (Fase B/C) -- el mapeo ya queda listo para cuando la tengan. */
+  var RUTAS_SIN_TAB_PROPIA = {
+    habla: "inicio",
+    conversacion: "inicio",
+    practicar: "inicio",
+    lectura: "inicio",
+    escucha: "inicio",
+    escritura: "inicio"
+  };
+
+  /** Preparación para crecer (idioma/nivel configurable): data/config.json saca el nombre
+   * de la app del código del shell -- título, meta de iOS y logo de la barra lateral se
+   * rellenan con esto en vez de venir fijos en index.html. El nombre real es "Rumbo"
+   * (nombreApp); idiomaVisible/metaPersonal no se muestran en la interfaz (ver
+   * DECISIONES.md: escala de nivel abierta A1-C2, sin tope en B2). */
   function aplicarConfigShell() {
     return fetch("data/config.json")
       .then(function (r) {
         return r.json();
       })
       .then(function (config) {
-        var nombre = config.idiomaVisible + " " + config.nivelMetaCEFR;
+        var nombre = config.nombreApp || "Rumbo";
         document.title = nombre;
         var metaTitulo = document.querySelector('meta[name="apple-mobile-web-app-title"]');
         if (metaTitulo) metaTitulo.setAttribute("content", nombre);
+        // El logo lleva el punto final en amarillo ("Rumbo.", ver spec) -- por eso es
+        // innerHTML con dos spans y no textContent; el nombre se escapa igual que
+        // cualquier otro dato que no sea un literal fijo en el código (ver DECISIONES.md D10).
         var marca = document.getElementById("marca-sidebar");
-        if (marca) marca.textContent = nombre;
+        if (marca) {
+          marca.innerHTML = "<span>" + global.App.Util.escaparHTML(nombre) + '</span><span class="marca-punto">.</span>';
+        }
       })
       .catch(function (err) {
         console.warn("No se pudo cargar data/config.json:", err);
@@ -37,8 +69,9 @@
   }
 
   function marcarTabActiva(ruta) {
+    var rutaTab = RUTAS_SIN_TAB_PROPIA[ruta] || ruta;
     document.querySelectorAll("nav.tabs button").forEach(function (boton) {
-      boton.setAttribute("aria-current", boton.getAttribute("data-ruta") === ruta ? "true" : "false");
+      boton.setAttribute("aria-current", boton.getAttribute("data-ruta") === rutaTab ? "true" : "false");
     });
   }
 

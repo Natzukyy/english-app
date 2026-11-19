@@ -28,7 +28,7 @@
     "en": "The diagnostic isn't ready yet."
   },
 
-  "progreso.titulo": { "categoria": "larga", "es": "Progreso hacia B2", "en": "Progress toward B2" },
+  "progreso.titulo": { "categoria": "larga", "es": "Tu progreso", "en": "Your progress" },
   "progreso.vacio": {
     "categoria": "larga",
     "es": "Haz tu primer diagnóstico para ver tu progreso.",

@@ -1,5 +1,10 @@
 {
   "idiomaId": "en",
   "idiomaVisible": "Inglés",
-  "nivelMetaCEFR": "B2"
+  "nombreApp": "Rumbo",
+  "metaPersonal": {
+    "nivelCEFR": "B2",
+    "fecha": "2027-03-31",
+    "mostrarEnInterfaz": false
+  }
 }
