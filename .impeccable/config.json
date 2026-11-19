@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "css/styles.css"
+        ],
+        "createdAt": "2026-11-19T01:56:43.962Z",
+        "reason": "evaluado: .pregunta-diagnostico usa un solo filete izquierdo tipo cita/nota al margen (no borde de tarjeta repetido) para distinguir la pregunta del chrome, documentado en el CSS con D13 (sin cajas anidadas) y la metáfora de bitácora de DESIGN_REVIEW.md -- no es el patrón de 'tarjeta con borde de acento decorativo' que la regla busca"
+      }
+    ]
+  }
+}
