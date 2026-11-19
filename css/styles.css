@@ -55,6 +55,16 @@
   --punto-habla: #b9697a;
   --punto-escritura: #6b8f71;
 
+  /* Versión de relleno de barra: los --punto-* de arriba son para un punto de 8px (detalle
+     sobrio, ver .chip), no para rellenar un área más grande -- a ese tamaño, sobre
+     --superficie-hundida, lectura y escritura quedaban por debajo de 3:1 (no texto, pero sí
+     un control con significado). Oscurecidos hasta >=4.5:1 contra la pista, mismo tono. En
+     oscuro los --punto-* originales ya dan >=6:1, así que ahí no hace falta ajustar (ver abajo). */
+  --punto-lectura-relleno: #82591b;
+  --punto-escucha-relleno: #4d6785;
+  --punto-habla-relleno: #945461;
+  --punto-escritura-relleno: #506b54;
+
   --fuente-texto: "Libre Franklin", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
   --fuente-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
@@ -108,6 +118,12 @@
     --punto-escucha: #8fb0d6;
     --punto-habla: #d98fa0;
     --punto-escritura: #93c49a;
+
+    /* En oscuro los --punto-* ya dan >=6:1 contra --superficie-hundida: sirven tal cual de relleno. */
+    --punto-lectura-relleno: var(--punto-lectura);
+    --punto-escucha-relleno: var(--punto-escucha);
+    --punto-habla-relleno: var(--punto-habla);
+    --punto-escritura-relleno: var(--punto-escritura);
   }
 }
 
@@ -134,6 +150,11 @@
   --punto-escucha: #8fb0d6;
   --punto-habla: #d98fa0;
   --punto-escritura: #93c49a;
+
+  --punto-lectura-relleno: var(--punto-lectura);
+  --punto-escucha-relleno: var(--punto-escucha);
+  --punto-habla-relleno: var(--punto-habla);
+  --punto-escritura-relleno: var(--punto-escritura);
 }
 
 * {
@@ -377,6 +398,24 @@ button {
   background: var(--superficie-hundida);
   overflow: hidden;
   margin: var(--e-2) 0;
+}
+
+/* Progreso: cada barra carga el color de SU habilidad (igual que el punto de 8px de .chip)
+   en vez de un --acento genérico igual para las 4 -- la barra misma dice de qué habilidad es,
+   de un vistazo, sin necesidad de leer la etiqueta primero. vocabulario_gramatica no es una
+   de las 4 habilidades "de producto" (no tiene --punto-* propio): se queda con --acento neutro,
+   la regla genérica de abajo. */
+.barra-progreso[data-habilidad="lectura"] > span {
+  background: var(--punto-lectura-relleno);
+}
+.barra-progreso[data-habilidad="escucha"] > span {
+  background: var(--punto-escucha-relleno);
+}
+.barra-progreso[data-habilidad="habla"] > span {
+  background: var(--punto-habla-relleno);
+}
+.barra-progreso[data-habilidad="escritura"] > span {
+  background: var(--punto-escritura-relleno);
 }
 
 .barra-progreso > span {

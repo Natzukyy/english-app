@@ -3,6 +3,16 @@
 
   var FECHA_OBJETIVO = "2027-03-31"; // PROMPT_BASE.md: "B2 a finales de marzo de 2027"
 
+  // Nombres legibles para las claves de App.Diagnostico.construirResultado (nunca se
+  // muestran directo en pantalla -- mismo criterio que diagnostico.js).
+  var NOMBRE_HABILIDAD_RESULTADO = {
+    lectura: "Lectura",
+    escucha: "Escucha",
+    vocabulario_gramatica: "Vocabulario y gramática",
+    habla: "Habla",
+    escritura: "Escritura"
+  };
+
   function render(el, ctx) {
     var t = function (clave) {
       return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings);
@@ -42,11 +52,13 @@
           return (
             '<div class="fila">' +
             '<div class="fila-cabeza"><span>' +
-            esc(h) +
+            esc(NOMBRE_HABILIDAD_RESULTADO[h] || h) +
             " — <strong>" +
             esc(r.nivelCEFR) +
             "</strong></span></div>" +
-            '<div class="barra-progreso"><span data-destino="' +
+            '<div class="barra-progreso" data-habilidad="' +
+            esc(h) +
+            '"><span data-destino="' +
             porcentaje +
             '" style="width:0%"></span></div>' +
             "</div>"
