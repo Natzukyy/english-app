@@ -424,6 +424,146 @@
       ],
       "respuestaModelo": "I'm generally in favor of daily standups, but only when they're kept genuinely short and focused. They give the whole team quick visibility into what everyone is working on, which makes it much easier to notice blockers before they cause real delays. They also create a small, low-pressure habit of communication that can prevent bigger misunderstandings later in the week. The main downside is that they can easily turn into status reports for a manager instead of a tool for the team itself, which defeats their purpose. When that happens, the problem isn't the format, it's how the meeting is actually run.",
       "revisar": true
+    },
+    {
+      "id": "esc-a1-presentarme",
+      "tema": "Presentarme",
+      "nivelCEFR": "A1",
+      "consigna": "Escribe una presentación corta: tu nombre, tu edad, de dónde eres y a qué te dedicas.",
+      "listaVerificacion": [
+        "Escribí mi nombre",
+        "Escribí mi edad",
+        "Dije de dónde soy",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "Hello! My name is Alex. I am twenty-three years old. I am from Mexico. I am a student. I study computers. Nice to meet you!",
+      "revisar": true
+    },
+    {
+      "id": "esc-a1-mi-familia",
+      "tema": "Describir a mi familia",
+      "nivelCEFR": "A1",
+      "consigna": "Escribe sobre tu familia: quiénes son y cómo se llaman (por ejemplo, tu mamá, tu papá, tus hermanos).",
+      "listaVerificacion": [
+        "Nombré al menos a 3 personas de mi familia",
+        "Usé 'my' (my mother, my brother)",
+        "Dije una cosa de cada persona",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "I have a small family. My mother is Laura. My father is Carlos. I have one sister. Her name is Ana. She is twelve years old. I love my family.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a1-mi-rutina",
+      "tema": "Mi rutina de un día",
+      "nivelCEFR": "A1",
+      "consigna": "Escribe qué haces en un día normal: a qué hora te despiertas, qué comes y a qué hora duermes.",
+      "listaVerificacion": [
+        "Dije a qué hora me despierto",
+        "Dije qué como",
+        "Dije a qué hora duermo",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "I wake up at seven. I eat bread and eggs for breakfast. I go to school at eight. I have lunch at one. I do my homework at six. I go to bed at ten.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a1-mi-casa",
+      "tema": "Describir mi casa",
+      "nivelCEFR": "A1",
+      "consigna": "Escribe cómo es tu casa o tu cuarto: qué habitaciones o cosas hay.",
+      "listaVerificacion": [
+        "Dije qué habitaciones o cosas hay",
+        "Usé 'There is' o 'There are'",
+        "Dije cuál es mi lugar favorito",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "My house is small. There are two bedrooms and one kitchen. There is a big table in the kitchen. My favorite room is my bedroom. It is quiet.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a1-mensaje-amigo",
+      "tema": "Mensaje corto a un amigo",
+      "nivelCEFR": "A1",
+      "consigna": "Escribe un mensaje a un amigo para invitarlo a tomar un café mañana.",
+      "listaVerificacion": [
+        "Saludé a mi amigo",
+        "Dije el día y la hora",
+        "Hice una pregunta ('Can you come?')",
+        "Escribí al menos 3 oraciones"
+      ],
+      "respuestaModelo": "Hi Tom! Do you want to have coffee tomorrow? I am free at four o'clock. Can you come? See you!",
+      "revisar": true
+    },
+    {
+      "id": "esc-a1-mi-comida-favorita",
+      "tema": "Mi comida favorita",
+      "nivelCEFR": "A1",
+      "consigna": "Escribe sobre la comida que te gusta y la que no te gusta.",
+      "listaVerificacion": [
+        "Dije una comida que me gusta ('I like...')",
+        "Dije una comida que no me gusta ('I don't like...')",
+        "Dije cuándo la como",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "I like rice and chicken. I eat it for lunch. I like apples, too. I don't like fish. My favorite drink is orange juice.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a1-mi-amigo",
+      "tema": "Describir a un amigo",
+      "nivelCEFR": "A1",
+      "consigna": "Escribe cómo es un amigo o una amiga: cómo se llama, cómo es y qué le gusta hacer.",
+      "listaVerificacion": [
+        "Escribí su nombre",
+        "Dije cómo es (alto, simpático...)",
+        "Dije qué le gusta hacer",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "My friend is Maria. She is tall and kind. She is twenty years old. She likes music and football. We are good friends.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a1-mi-trabajo-estudios",
+      "tema": "Mi trabajo o mis estudios",
+      "nivelCEFR": "A1",
+      "consigna": "Escribe a qué te dedicas: dónde trabajas o estudias y qué haces ahí.",
+      "listaVerificacion": [
+        "Dije si trabajo o estudio",
+        "Dije dónde",
+        "Dije qué hago",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "I am a student. I study at a big school. I go to class from Monday to Friday. I read and write every day. I like my classes.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a1-fin-de-semana",
+      "tema": "Mi fin de semana",
+      "nivelCEFR": "A1",
+      "consigna": "Escribe qué haces normalmente el sábado o el domingo.",
+      "listaVerificacion": [
+        "Dije qué día es",
+        "Dije dos cosas que hago",
+        "Dije con quién estoy",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "On Saturday, I wake up late. I clean my room. In the afternoon, I meet my friends at the park. We talk and walk. I go home at six.",
+      "revisar": true
+    },
+    {
+      "id": "esc-a1-pedir-ayuda-simple",
+      "tema": "Pedir algo por mensaje",
+      "nivelCEFR": "A1",
+      "consigna": "Escribe un mensaje corto a un compañero para pedirle prestado un libro y decirle cuándo lo devuelves.",
+      "listaVerificacion": [
+        "Saludé",
+        "Pedí el libro con 'Can I...?'",
+        "Dije cuándo lo devuelvo",
+        "Di las gracias"
+      ],
+      "respuestaModelo": "Hi Sam! Can I have your English book, please? I need it today. I can give it back tomorrow. Thank you!",
+      "revisar": true
     }
   ]
 }

@@ -1275,6 +1275,486 @@
           "respuestaCorrecta": 0
         }
       ]
+    },
+    {
+      "id": "lec-a1-conoce-a-anna",
+      "tema": "Presentarse: conoce a Anna",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "texto": "Hello! My name is Anna. I am twenty-two years old. I am from Mexico, but I live in Canada now. I am a student. I study computers at a big school. My favorite color is blue. I like music and coffee. Nice to meet you!",
+      "vocabularioClave": [
+        {
+          "termino": "I live",
+          "traduccion": "yo vivo"
+        },
+        {
+          "termino": "student",
+          "traduccion": "estudiante"
+        },
+        {
+          "termino": "favorite",
+          "traduccion": "favorito"
+        },
+        {
+          "termino": "Nice to meet you",
+          "traduccion": "mucho gusto"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a1-conoce-a-anna-p1",
+          "pregunta": "Where does Anna live now?",
+          "opciones": [
+            "In Mexico",
+            "In Canada",
+            "In a small school",
+            "In a big city"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-a1-conoce-a-anna-p2",
+          "pregunta": "What does Anna study?",
+          "opciones": [
+            "Music",
+            "Coffee",
+            "Computers",
+            "Colors"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-a1-conoce-a-anna-p3",
+          "pregunta": "What is Anna's favorite color?",
+          "opciones": [
+            "Red",
+            "Green",
+            "Yellow",
+            "Blue"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-a1-mi-familia",
+      "tema": "Mi familia",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "texto": "I have a small family. My father is a teacher. My mother works in a hospital. I have one brother and one sister. My brother is ten years old. My sister is fifteen. We have a dog, too. His name is Max. We eat dinner together every night.",
+      "vocabularioClave": [
+        {
+          "termino": "family",
+          "traduccion": "familia"
+        },
+        {
+          "termino": "works",
+          "traduccion": "trabaja"
+        },
+        {
+          "termino": "brother",
+          "traduccion": "hermano"
+        },
+        {
+          "termino": "together",
+          "traduccion": "juntos"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a1-mi-familia-p1",
+          "pregunta": "Where does the mother work?",
+          "opciones": [
+            "In a hospital",
+            "In a school",
+            "In an office",
+            "In a store"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-a1-mi-familia-p2",
+          "pregunta": "How old is the brother?",
+          "opciones": [
+            "Five",
+            "Fifteen",
+            "Ten",
+            "Twenty"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-a1-mi-familia-p3",
+          "pregunta": "What is the dog's name?",
+          "opciones": [
+            "Tom",
+            "Max",
+            "Ben",
+            "Sam"
+          ],
+          "respuestaCorrecta": 1
+        }
+      ]
+    },
+    {
+      "id": "lec-a1-mi-dia",
+      "tema": "Mi rutina diaria",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "texto": "I wake up at seven o'clock. I eat bread and drink milk for breakfast. Then I go to work by bus. I start work at nine. I have lunch at twelve. I finish work at five. In the evening, I cook dinner and watch TV. I go to bed at ten.",
+      "vocabularioClave": [
+        {
+          "termino": "wake up",
+          "traduccion": "despertarse"
+        },
+        {
+          "termino": "by bus",
+          "traduccion": "en autobús"
+        },
+        {
+          "termino": "lunch",
+          "traduccion": "comida (del mediodía)"
+        },
+        {
+          "termino": "go to bed",
+          "traduccion": "irse a dormir"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a1-mi-dia-p1",
+          "pregunta": "How does the person go to work?",
+          "opciones": [
+            "By car",
+            "By bus",
+            "By bike",
+            "On foot"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-a1-mi-dia-p2",
+          "pregunta": "What time does work start?",
+          "opciones": [
+            "At seven",
+            "At twelve",
+            "At nine",
+            "At five"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-a1-mi-dia-p3",
+          "pregunta": "What does the person do in the evening?",
+          "opciones": [
+            "Goes to the park with friends",
+            "Plays football with a team",
+            "Studies English at school",
+            "Cooks dinner and watches TV"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-a1-supermercado",
+      "tema": "En el supermercado",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "texto": "Today I go to the supermarket. I need milk, eggs, and rice. The milk is two dollars. The eggs are three dollars. The rice is four dollars. I also buy some apples. They are one dollar. I pay ten dollars in total. Then I go home with my bag.",
+      "vocabularioClave": [
+        {
+          "termino": "need",
+          "traduccion": "necesitar"
+        },
+        {
+          "termino": "buy",
+          "traduccion": "comprar"
+        },
+        {
+          "termino": "pay",
+          "traduccion": "pagar"
+        },
+        {
+          "termino": "in total",
+          "traduccion": "en total"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a1-supermercado-p1",
+          "pregunta": "How much is the milk?",
+          "opciones": [
+            "One dollar",
+            "Two dollars",
+            "Three dollars",
+            "Four dollars"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-a1-supermercado-p2",
+          "pregunta": "How much does the person pay in total?",
+          "opciones": [
+            "Ten dollars",
+            "Twelve dollars",
+            "Five dollars",
+            "Eight dollars"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-a1-supermercado-p3",
+          "pregunta": "Where does the person go after the supermarket?",
+          "opciones": [
+            "To work",
+            "To school",
+            "To the park",
+            "Home"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-a1-mi-casa",
+      "tema": "Mi casa",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "texto": "My house is small, but it is nice. It has two bedrooms, one bathroom, and a kitchen. The kitchen is my favorite room. I cook there every day. There is a big window in the living room. I sit there and read books. My house is near the park.",
+      "vocabularioClave": [
+        {
+          "termino": "bedroom",
+          "traduccion": "recámara"
+        },
+        {
+          "termino": "kitchen",
+          "traduccion": "cocina"
+        },
+        {
+          "termino": "window",
+          "traduccion": "ventana"
+        },
+        {
+          "termino": "near",
+          "traduccion": "cerca de"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a1-mi-casa-p1",
+          "pregunta": "How many bedrooms does the house have?",
+          "opciones": [
+            "One",
+            "Three",
+            "Two",
+            "Four"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-a1-mi-casa-p2",
+          "pregunta": "What is the favorite room?",
+          "opciones": [
+            "The kitchen",
+            "The bathroom",
+            "The bedroom",
+            "The living room"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-a1-mi-casa-p3",
+          "pregunta": "Where is the house?",
+          "opciones": [
+            "Near a school",
+            "Near the park",
+            "Near a hospital",
+            "Near the station"
+          ],
+          "respuestaCorrecta": 1
+        }
+      ]
+    },
+    {
+      "id": "lec-a1-dia-lluvioso",
+      "tema": "Un sábado lluvioso",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "texto": "It is Saturday today. The weather is cold and rainy. I stay at home. I drink hot tea and read a book. My friend calls me at noon. She wants to go to the cinema. But it is raining, so we watch a movie at my house. It is a good day.",
+      "vocabularioClave": [
+        {
+          "termino": "rainy",
+          "traduccion": "lluvioso"
+        },
+        {
+          "termino": "stay",
+          "traduccion": "quedarse"
+        },
+        {
+          "termino": "calls",
+          "traduccion": "llama (por teléfono)"
+        },
+        {
+          "termino": "movie",
+          "traduccion": "película"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a1-dia-lluvioso-p1",
+          "pregunta": "What is the weather like?",
+          "opciones": [
+            "Hot and sunny",
+            "Cold and rainy",
+            "Warm and windy",
+            "Cold and sunny"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-a1-dia-lluvioso-p2",
+          "pregunta": "What does the person drink?",
+          "opciones": [
+            "Cold juice",
+            "Warm milk",
+            "Hot tea",
+            "Black coffee"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-a1-dia-lluvioso-p3",
+          "pregunta": "Why do they watch a movie at home?",
+          "opciones": [
+            "It is very late",
+            "The friend is tired",
+            "The cinema is closed",
+            "It is raining"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-a1-clase-ingles",
+      "tema": "Mi clase de inglés",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "texto": "I study English at a small school. My class is on Monday and Wednesday. My teacher is Mr. Lee. He is kind and funny. There are ten students in my class. We read, write, and speak in English. After class, I do my homework. I want to learn English for my job.",
+      "vocabularioClave": [
+        {
+          "termino": "class",
+          "traduccion": "clase"
+        },
+        {
+          "termino": "teacher",
+          "traduccion": "maestro"
+        },
+        {
+          "termino": "homework",
+          "traduccion": "tarea"
+        },
+        {
+          "termino": "learn",
+          "traduccion": "aprender"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a1-clase-ingles-p1",
+          "pregunta": "Which days is the class?",
+          "opciones": [
+            "Monday and Wednesday",
+            "Tuesday and Thursday",
+            "Friday and Saturday",
+            "Monday and Friday"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-a1-clase-ingles-p2",
+          "pregunta": "How many students are in the class?",
+          "opciones": [
+            "Eight",
+            "Twelve",
+            "Ten",
+            "Twenty"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-a1-clase-ingles-p3",
+          "pregunta": "Why does the person learn English?",
+          "opciones": [
+            "For a trip",
+            "For a test",
+            "For a friend",
+            "For a job"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-a1-domingo-amigos",
+      "tema": "Domingo con amigos",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "texto": "On Sunday, I meet my friends at the park. We play football and talk. Then we have lunch at a small restaurant. I eat chicken and rice. My friend Tom eats fish. We all drink water. In the afternoon, we walk home. Sunday is my favorite day.",
+      "vocabularioClave": [
+        {
+          "termino": "meet",
+          "traduccion": "reunirse con"
+        },
+        {
+          "termino": "lunch",
+          "traduccion": "comida (del mediodía)"
+        },
+        {
+          "termino": "fish",
+          "traduccion": "pescado"
+        },
+        {
+          "termino": "walk",
+          "traduccion": "caminar"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a1-domingo-amigos-p1",
+          "pregunta": "Where do they meet?",
+          "opciones": [
+            "At a restaurant",
+            "At school",
+            "At the park",
+            "At home"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-a1-domingo-amigos-p2",
+          "pregunta": "What does Tom eat?",
+          "opciones": [
+            "Fish",
+            "Chicken",
+            "Rice",
+            "Bread"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-a1-domingo-amigos-p3",
+          "pregunta": "What is the person's favorite day?",
+          "opciones": [
+            "Saturday",
+            "Sunday",
+            "Friday",
+            "Monday"
+          ],
+          "respuestaCorrecta": 1
+        }
+      ]
     }
   ]
 }

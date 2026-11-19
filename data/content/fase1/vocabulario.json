@@ -1105,6 +1105,1140 @@
       "nivelCEFR": "B1",
       "categoria": "servicios",
       "revisar": true
+    },
+    {
+      "id": "voc-f1-126",
+      "ingles": "one",
+      "espanol": "uno",
+      "ejemplo": "I have one brother.",
+      "nivelCEFR": "A1",
+      "categoria": "numeros",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-127",
+      "ingles": "two",
+      "espanol": "dos",
+      "ejemplo": "She has two cats.",
+      "nivelCEFR": "A1",
+      "categoria": "numeros",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-128",
+      "ingles": "three",
+      "espanol": "tres",
+      "ejemplo": "I need three apples.",
+      "nivelCEFR": "A1",
+      "categoria": "numeros",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-129",
+      "ingles": "five",
+      "espanol": "cinco",
+      "ejemplo": "The class starts at five.",
+      "nivelCEFR": "A1",
+      "categoria": "numeros",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-130",
+      "ingles": "ten",
+      "espanol": "diez",
+      "ejemplo": "I am ten minutes late.",
+      "nivelCEFR": "A1",
+      "categoria": "numeros",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-131",
+      "ingles": "twenty",
+      "espanol": "veinte",
+      "ejemplo": "He is twenty years old.",
+      "nivelCEFR": "A1",
+      "categoria": "numeros",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-132",
+      "ingles": "hundred",
+      "espanol": "cien",
+      "ejemplo": "The book is one hundred pesos.",
+      "nivelCEFR": "A1",
+      "categoria": "numeros",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-133",
+      "ingles": "first",
+      "espanol": "primero",
+      "ejemplo": "Today is the first day of class.",
+      "nivelCEFR": "A1",
+      "categoria": "numeros",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-134",
+      "ingles": "red",
+      "espanol": "rojo",
+      "ejemplo": "My bag is red.",
+      "nivelCEFR": "A1",
+      "categoria": "colores",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-135",
+      "ingles": "blue",
+      "espanol": "azul",
+      "ejemplo": "The sky is blue.",
+      "nivelCEFR": "A1",
+      "categoria": "colores",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-136",
+      "ingles": "green",
+      "espanol": "verde",
+      "ejemplo": "I like the green door.",
+      "nivelCEFR": "A1",
+      "categoria": "colores",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-137",
+      "ingles": "yellow",
+      "espanol": "amarillo",
+      "ejemplo": "The banana is yellow.",
+      "nivelCEFR": "A1",
+      "categoria": "colores",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-138",
+      "ingles": "black",
+      "espanol": "negro",
+      "ejemplo": "I have a black phone.",
+      "nivelCEFR": "A1",
+      "categoria": "colores",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-139",
+      "ingles": "white",
+      "espanol": "blanco",
+      "ejemplo": "The wall is white.",
+      "nivelCEFR": "A1",
+      "categoria": "colores",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-140",
+      "ingles": "pink",
+      "espanol": "rosa",
+      "ejemplo": "She has a pink shirt.",
+      "nivelCEFR": "A1",
+      "categoria": "colores",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-141",
+      "ingles": "orange",
+      "espanol": "naranja (color) / naranja (fruta)",
+      "ejemplo": "I eat an orange every morning.",
+      "nivelCEFR": "A1",
+      "categoria": "colores",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-142",
+      "ingles": "mother",
+      "espanol": "madre",
+      "ejemplo": "My mother is a nurse.",
+      "nivelCEFR": "A1",
+      "categoria": "familia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-143",
+      "ingles": "father",
+      "espanol": "padre",
+      "ejemplo": "My father works at a bank.",
+      "nivelCEFR": "A1",
+      "categoria": "familia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-144",
+      "ingles": "sister",
+      "espanol": "hermana",
+      "ejemplo": "My sister is fifteen.",
+      "nivelCEFR": "A1",
+      "categoria": "familia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-145",
+      "ingles": "brother",
+      "espanol": "hermano",
+      "ejemplo": "My brother likes music.",
+      "nivelCEFR": "A1",
+      "categoria": "familia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-146",
+      "ingles": "son",
+      "espanol": "hijo",
+      "ejemplo": "Her son is five years old.",
+      "nivelCEFR": "A1",
+      "categoria": "familia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-147",
+      "ingles": "daughter",
+      "espanol": "hija",
+      "ejemplo": "Their daughter is at school.",
+      "nivelCEFR": "A1",
+      "categoria": "familia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-148",
+      "ingles": "grandmother",
+      "espanol": "abuela",
+      "ejemplo": "My grandmother cooks very well.",
+      "nivelCEFR": "A1",
+      "categoria": "familia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-149",
+      "ingles": "grandfather",
+      "espanol": "abuelo",
+      "ejemplo": "My grandfather reads the news.",
+      "nivelCEFR": "A1",
+      "categoria": "familia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-150",
+      "ingles": "family",
+      "espanol": "familia",
+      "ejemplo": "I have a big family.",
+      "nivelCEFR": "A1",
+      "categoria": "familia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-151",
+      "ingles": "friend",
+      "espanol": "amigo / amiga",
+      "ejemplo": "She is my best friend.",
+      "nivelCEFR": "A1",
+      "categoria": "familia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-152",
+      "ingles": "bread",
+      "espanol": "pan",
+      "ejemplo": "I eat bread with butter.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-153",
+      "ingles": "water",
+      "espanol": "agua",
+      "ejemplo": "Can I have some water?",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-154",
+      "ingles": "milk",
+      "espanol": "leche",
+      "ejemplo": "I drink milk in the morning.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-155",
+      "ingles": "rice",
+      "espanol": "arroz",
+      "ejemplo": "We eat rice every day.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-156",
+      "ingles": "egg",
+      "espanol": "huevo",
+      "ejemplo": "I want one egg, please.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-157",
+      "ingles": "apple",
+      "espanol": "manzana",
+      "ejemplo": "The apple is red.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-158",
+      "ingles": "chicken",
+      "espanol": "pollo",
+      "ejemplo": "I like chicken with rice.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-159",
+      "ingles": "cheese",
+      "espanol": "queso",
+      "ejemplo": "She puts cheese on the bread.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-160",
+      "ingles": "tea",
+      "espanol": "té",
+      "ejemplo": "I drink tea at night.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-161",
+      "ingles": "fish",
+      "espanol": "pescado",
+      "ejemplo": "He doesn't eat fish.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-162",
+      "ingles": "juice",
+      "espanol": "jugo",
+      "ejemplo": "Orange juice is my favorite.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-163",
+      "ingles": "fruit",
+      "espanol": "fruta",
+      "ejemplo": "I eat fruit every day.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-164",
+      "ingles": "vegetables",
+      "espanol": "verduras",
+      "ejemplo": "Vegetables are good for you.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-165",
+      "ingles": "lunch",
+      "espanol": "comida (del mediodía)",
+      "ejemplo": "We have lunch at one o'clock.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-166",
+      "ingles": "dinner",
+      "espanol": "cena",
+      "ejemplo": "Dinner is at eight.",
+      "nivelCEFR": "A1",
+      "categoria": "comida",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-167",
+      "ingles": "to eat",
+      "espanol": "comer",
+      "ejemplo": "I eat at home.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-168",
+      "ingles": "to drink",
+      "espanol": "beber",
+      "ejemplo": "I drink water.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-169",
+      "ingles": "to sleep",
+      "espanol": "dormir",
+      "ejemplo": "I sleep eight hours.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-170",
+      "ingles": "to work",
+      "espanol": "trabajar",
+      "ejemplo": "She works in an office.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-171",
+      "ingles": "to study",
+      "espanol": "estudiar",
+      "ejemplo": "I study English at night.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-172",
+      "ingles": "to read",
+      "espanol": "leer",
+      "ejemplo": "I read a book every week.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-173",
+      "ingles": "to write",
+      "espanol": "escribir",
+      "ejemplo": "Please write your name here.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-174",
+      "ingles": "to walk",
+      "espanol": "caminar",
+      "ejemplo": "I walk to school.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-175",
+      "ingles": "to run",
+      "espanol": "correr",
+      "ejemplo": "He runs in the park.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-176",
+      "ingles": "to cook",
+      "espanol": "cocinar",
+      "ejemplo": "I cook dinner for my family.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-177",
+      "ingles": "to listen",
+      "espanol": "escuchar",
+      "ejemplo": "I listen to music on the bus.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-178",
+      "ingles": "to speak",
+      "espanol": "hablar",
+      "ejemplo": "I speak a little English.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-179",
+      "ingles": "to open",
+      "espanol": "abrir",
+      "ejemplo": "Please open the door.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-180",
+      "ingles": "to close",
+      "espanol": "cerrar",
+      "ejemplo": "I close the window at night.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-181",
+      "ingles": "to buy",
+      "espanol": "comprar",
+      "ejemplo": "I buy bread at the store.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-182",
+      "ingles": "to go",
+      "espanol": "ir",
+      "ejemplo": "I go to work by bus.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-183",
+      "ingles": "to come",
+      "espanol": "venir",
+      "ejemplo": "Can you come tomorrow?",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-184",
+      "ingles": "to have",
+      "espanol": "tener",
+      "ejemplo": "I have two brothers.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-185",
+      "ingles": "to like",
+      "espanol": "gustar",
+      "ejemplo": "I like coffee.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-186",
+      "ingles": "to want",
+      "espanol": "querer",
+      "ejemplo": "I want a glass of water.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-187",
+      "ingles": "to need",
+      "espanol": "necesitar",
+      "ejemplo": "I need a pen.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-188",
+      "ingles": "to live",
+      "espanol": "vivir",
+      "ejemplo": "I live in a small city.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-189",
+      "ingles": "to play",
+      "espanol": "jugar / tocar",
+      "ejemplo": "He plays the guitar.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-190",
+      "ingles": "to watch",
+      "espanol": "ver / mirar",
+      "ejemplo": "We watch TV at night.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-191",
+      "ingles": "to help",
+      "espanol": "ayudar",
+      "ejemplo": "Can you help me, please?",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-192",
+      "ingles": "to ask",
+      "espanol": "preguntar / pedir",
+      "ejemplo": "I ask my teacher a question.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-193",
+      "ingles": "to wait",
+      "espanol": "esperar",
+      "ejemplo": "Please wait here.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-194",
+      "ingles": "to call",
+      "espanol": "llamar (por teléfono)",
+      "ejemplo": "I call my mother every day.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-195",
+      "ingles": "to learn",
+      "espanol": "aprender",
+      "ejemplo": "I learn new words every day.",
+      "nivelCEFR": "A1",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-196",
+      "ingles": "house",
+      "espanol": "casa",
+      "ejemplo": "My house is near the park.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-197",
+      "ingles": "school",
+      "espanol": "escuela",
+      "ejemplo": "The school is big.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-198",
+      "ingles": "office",
+      "espanol": "oficina",
+      "ejemplo": "I work in an office.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-199",
+      "ingles": "park",
+      "espanol": "parque",
+      "ejemplo": "We walk in the park.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-200",
+      "ingles": "store",
+      "espanol": "tienda",
+      "ejemplo": "The store opens at nine.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-201",
+      "ingles": "hospital",
+      "espanol": "hospital",
+      "ejemplo": "My mother works at the hospital.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-202",
+      "ingles": "bank",
+      "espanol": "banco",
+      "ejemplo": "The bank is on the corner.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-203",
+      "ingles": "restaurant",
+      "espanol": "restaurante",
+      "ejemplo": "We eat at a small restaurant.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-204",
+      "ingles": "street",
+      "espanol": "calle",
+      "ejemplo": "My street is quiet.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-205",
+      "ingles": "city",
+      "espanol": "ciudad",
+      "ejemplo": "I live in a big city.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-206",
+      "ingles": "bus stop",
+      "espanol": "parada de autobús",
+      "ejemplo": "The bus stop is near my house.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-207",
+      "ingles": "bathroom",
+      "espanol": "baño",
+      "ejemplo": "Where is the bathroom?",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-208",
+      "ingles": "kitchen",
+      "espanol": "cocina",
+      "ejemplo": "The kitchen is small.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-209",
+      "ingles": "bedroom",
+      "espanol": "recámara",
+      "ejemplo": "My bedroom has a big window.",
+      "nivelCEFR": "A1",
+      "categoria": "lugares",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-210",
+      "ingles": "today",
+      "espanol": "hoy",
+      "ejemplo": "Today is Monday.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-211",
+      "ingles": "tomorrow",
+      "espanol": "mañana (el día siguiente)",
+      "ejemplo": "See you tomorrow.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-212",
+      "ingles": "yesterday",
+      "espanol": "ayer",
+      "ejemplo": "I was at home yesterday.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-213",
+      "ingles": "morning",
+      "espanol": "mañana (parte del día)",
+      "ejemplo": "I study in the morning.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-214",
+      "ingles": "afternoon",
+      "espanol": "tarde",
+      "ejemplo": "We have class in the afternoon.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-215",
+      "ingles": "evening",
+      "espanol": "tarde-noche",
+      "ejemplo": "I cook in the evening.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-216",
+      "ingles": "night",
+      "espanol": "noche",
+      "ejemplo": "I sleep at night.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-217",
+      "ingles": "week",
+      "espanol": "semana",
+      "ejemplo": "I study English three times a week.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-218",
+      "ingles": "month",
+      "espanol": "mes",
+      "ejemplo": "My birthday is next month.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-219",
+      "ingles": "year",
+      "espanol": "año",
+      "ejemplo": "I am in my first year.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-220",
+      "ingles": "Monday",
+      "espanol": "lunes",
+      "ejemplo": "My class is on Monday.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-221",
+      "ingles": "weekend",
+      "espanol": "fin de semana",
+      "ejemplo": "I rest on the weekend.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-222",
+      "ingles": "now",
+      "espanol": "ahora",
+      "ejemplo": "I am at home now.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-223",
+      "ingles": "late",
+      "espanol": "tarde (demasiado tarde)",
+      "ejemplo": "I am late for class.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-224",
+      "ingles": "early",
+      "espanol": "temprano",
+      "ejemplo": "I get up early.",
+      "nivelCEFR": "A1",
+      "categoria": "tiempo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-225",
+      "ingles": "big",
+      "espanol": "grande",
+      "ejemplo": "It is a big house.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-226",
+      "ingles": "small",
+      "espanol": "pequeño",
+      "ejemplo": "I have a small bag.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-227",
+      "ingles": "good",
+      "espanol": "bueno",
+      "ejemplo": "This is a good book.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-228",
+      "ingles": "bad",
+      "espanol": "malo",
+      "ejemplo": "The weather is bad today.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-229",
+      "ingles": "new",
+      "espanol": "nuevo",
+      "ejemplo": "I have a new phone.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-230",
+      "ingles": "old",
+      "espanol": "viejo",
+      "ejemplo": "That is an old house.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-231",
+      "ingles": "hot",
+      "espanol": "caliente / caluroso",
+      "ejemplo": "The tea is hot.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-232",
+      "ingles": "cold",
+      "espanol": "frío",
+      "ejemplo": "It is cold today.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-233",
+      "ingles": "happy",
+      "espanol": "feliz",
+      "ejemplo": "I am happy today.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-234",
+      "ingles": "easy",
+      "espanol": "fácil",
+      "ejemplo": "The test is easy.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-235",
+      "ingles": "hard",
+      "espanol": "difícil / duro",
+      "ejemplo": "English is hard for me.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-236",
+      "ingles": "cheap",
+      "espanol": "barato",
+      "ejemplo": "This bag is cheap.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-237",
+      "ingles": "expensive",
+      "espanol": "caro",
+      "ejemplo": "That phone is expensive.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-238",
+      "ingles": "fast",
+      "espanol": "rápido",
+      "ejemplo": "The train is fast.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-239",
+      "ingles": "slow",
+      "espanol": "lento",
+      "ejemplo": "The bus is slow today.",
+      "nivelCEFR": "A1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-240",
+      "ingles": "teacher",
+      "espanol": "maestro / maestra",
+      "ejemplo": "My teacher is very kind.",
+      "nivelCEFR": "A1",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-241",
+      "ingles": "student",
+      "espanol": "estudiante",
+      "ejemplo": "I am a student.",
+      "nivelCEFR": "A1",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-242",
+      "ingles": "book",
+      "espanol": "libro",
+      "ejemplo": "I have a new book.",
+      "nivelCEFR": "A1",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-243",
+      "ingles": "computer",
+      "espanol": "computadora",
+      "ejemplo": "I use a computer every day.",
+      "nivelCEFR": "A1",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-244",
+      "ingles": "phone",
+      "espanol": "teléfono",
+      "ejemplo": "My phone is on the table.",
+      "nivelCEFR": "A1",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-245",
+      "ingles": "class",
+      "espanol": "clase",
+      "ejemplo": "My class is at nine.",
+      "nivelCEFR": "A1",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-246",
+      "ingles": "homework",
+      "espanol": "tarea",
+      "ejemplo": "I do my homework at night.",
+      "nivelCEFR": "A1",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-247",
+      "ingles": "boss",
+      "espanol": "jefe / jefa",
+      "ejemplo": "My boss is nice.",
+      "nivelCEFR": "A1",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-248",
+      "ingles": "job",
+      "espanol": "trabajo (empleo)",
+      "ejemplo": "I have a new job.",
+      "nivelCEFR": "A1",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-249",
+      "ingles": "desk",
+      "espanol": "escritorio",
+      "ejemplo": "My desk is next to the window.",
+      "nivelCEFR": "A1",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-250",
+      "ingles": "pen",
+      "espanol": "pluma / bolígrafo",
+      "ejemplo": "Can I borrow your pen?",
+      "nivelCEFR": "A1",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-251",
+      "ingles": "notebook",
+      "espanol": "cuaderno",
+      "ejemplo": "I write in my notebook.",
+      "nivelCEFR": "A1",
+      "categoria": "trabajo_estudios",
+      "revisar": true
     }
   ]
 }

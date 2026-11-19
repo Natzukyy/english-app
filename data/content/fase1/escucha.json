@@ -768,6 +768,295 @@
       ],
       "transcripcion": "In tech news today, another major company announced it's cutting around eight percent of its workforce, citing slower growth and a shift toward investing more in automation. The company says affected employees will receive severance pay and continued health coverage for several months. Analysts say this follows a pattern seen across the industry over the past year.",
       "revisar": true
+    },
+    {
+      "id": "esc-fase1-a1-presentacion",
+      "tema": "Presentarse a alguien nuevo",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "guion": "Hello! My name is Sara. I am from Peru. I am twenty years old. I am a student. What is your name? Oh, your name is Luis. Nice to meet you, Luis!",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a1-presentacion-p1",
+          "pregunta": "Where is Sara from?",
+          "opciones": [
+            "Chile",
+            "Peru",
+            "Mexico",
+            "Spain"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-a1-presentacion-p2",
+          "pregunta": "How old is Sara?",
+          "opciones": [
+            "Twenty",
+            "Thirty",
+            "Twelve",
+            "Twenty-five"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ],
+      "transcripcion": "Hello! My name is Sara. I am from Peru. I am twenty years old. I am a student. What is your name? Oh, your name is Luis. Nice to meet you, Luis!"
+    },
+    {
+      "id": "esc-fase1-a1-hora-clase",
+      "tema": "Preguntar la hora",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "guion": "Excuse me, what time is it? It is half past three. Thank you! My English class starts at four o'clock. I have thirty minutes. I have time for a cup of tea.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a1-hora-clase-p1",
+          "pregunta": "What time is it now?",
+          "opciones": [
+            "Three o'clock",
+            "Four o'clock",
+            "Half past three",
+            "Half past four"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "esc-fase1-a1-hora-clase-p2",
+          "pregunta": "What time does the class start?",
+          "opciones": [
+            "At four o'clock",
+            "At three o'clock",
+            "At five o'clock",
+            "At half past four"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "esc-fase1-a1-hora-clase-p3",
+          "pregunta": "What does the speaker want to do before class?",
+          "opciones": [
+            "Do homework",
+            "Have some tea",
+            "Call a friend",
+            "Go home"
+          ],
+          "respuestaCorrecta": 1
+        }
+      ],
+      "transcripcion": "Excuse me, what time is it? It is half past three. Thank you! My English class starts at four o'clock. I have thirty minutes. I have time for a cup of tea."
+    },
+    {
+      "id": "esc-fase1-a1-mercado-frutas",
+      "tema": "Comprar fruta",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "guion": "Hello! I want three apples and two bananas, please. How much is it? Four dollars? Okay. Here you are. Thank you very much. Have a nice day!",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a1-mercado-frutas-p1",
+          "pregunta": "What does the customer want?",
+          "opciones": [
+            "Two apples and three bananas",
+            "Three apples and two bananas",
+            "Three apples and two oranges",
+            "Two apples and two bananas"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-a1-mercado-frutas-p2",
+          "pregunta": "How much is it?",
+          "opciones": [
+            "Two dollars",
+            "Three dollars",
+            "Four dollars",
+            "Five dollars"
+          ],
+          "respuestaCorrecta": 2
+        }
+      ],
+      "transcripcion": "Hello! I want three apples and two bananas, please. How much is it? Four dollars? Okay. Here you are. Thank you very much. Have a nice day!"
+    },
+    {
+      "id": "esc-fase1-a1-mi-hermano",
+      "tema": "Hablar de la familia",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "guion": "This is my brother. His name is David. He is seventeen years old. He is tall and he likes music. He plays the guitar every day. My brother is very kind.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a1-mi-hermano-p1",
+          "pregunta": "How old is David?",
+          "opciones": [
+            "Fifteen",
+            "Seventeen",
+            "Twenty",
+            "Seven"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-a1-mi-hermano-p2",
+          "pregunta": "What does David play?",
+          "opciones": [
+            "The piano",
+            "Football",
+            "The guitar",
+            "The radio"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "esc-fase1-a1-mi-hermano-p3",
+          "pregunta": "What is David like?",
+          "opciones": [
+            "Tall and kind",
+            "Short and funny",
+            "Old and tired",
+            "Small and quiet"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ],
+      "transcripcion": "This is my brother. His name is David. He is seventeen years old. He is tall and he likes music. He plays the guitar every day. My brother is very kind."
+    },
+    {
+      "id": "esc-fase1-a1-lunes-rutina",
+      "tema": "Una mañana de lunes",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "guion": "Today is Monday. I get up at six thirty. I wash my face and eat breakfast. Then I take the bus to school. The bus comes at seven fifteen. I like Monday because I have art class.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a1-lunes-rutina-p1",
+          "pregunta": "What day is it?",
+          "opciones": [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Friday"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-a1-lunes-rutina-p2",
+          "pregunta": "What time does the bus come?",
+          "opciones": [
+            "Six thirty",
+            "Seven thirty",
+            "Seven fifteen",
+            "Eight fifteen"
+          ],
+          "respuestaCorrecta": 2
+        }
+      ],
+      "transcripcion": "Today is Monday. I get up at six thirty. I wash my face and eat breakfast. Then I take the bus to school. The bus comes at seven fifteen. I like Monday because I have art class."
+    },
+    {
+      "id": "esc-fase1-a1-restaurante-simple",
+      "tema": "Pedir comida",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "guion": "Good evening. A table for two, please. Can I have the menu? I want chicken with rice and a glass of water. And for my friend, fish and a salad. Thank you.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a1-restaurante-simple-p1",
+          "pregunta": "How many people are at the table?",
+          "opciones": [
+            "One",
+            "Two",
+            "Three",
+            "Four"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-a1-restaurante-simple-p2",
+          "pregunta": "What does the speaker want to eat?",
+          "opciones": [
+            "Fish and a salad",
+            "Chicken with rice",
+            "Rice with fish",
+            "Only a glass of water"
+          ],
+          "respuestaCorrecta": 1
+        }
+      ],
+      "transcripcion": "Good evening. A table for two, please. Can I have the menu? I want chicken with rice and a glass of water. And for my friend, fish and a salad. Thank you."
+    },
+    {
+      "id": "esc-fase1-a1-mi-habitacion",
+      "tema": "Describir una habitación",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "guion": "This is my room. It is small. There is a bed, a desk, and a chair. The desk is next to the window. I have a lamp and two books on the desk. I study here every night.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a1-mi-habitacion-p1",
+          "pregunta": "Where is the desk?",
+          "opciones": [
+            "Next to the door",
+            "Next to the bed",
+            "Under the window",
+            "Next to the window"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "esc-fase1-a1-mi-habitacion-p2",
+          "pregunta": "What is on the desk?",
+          "opciones": [
+            "A lamp and two books",
+            "A phone and a cup",
+            "A computer and a lamp",
+            "Two pens and a bag"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "esc-fase1-a1-mi-habitacion-p3",
+          "pregunta": "When does the speaker study in the room?",
+          "opciones": [
+            "In the morning",
+            "Every night",
+            "On Sunday",
+            "At noon"
+          ],
+          "respuestaCorrecta": 1
+        }
+      ],
+      "transcripcion": "This is my room. It is small. There is a bed, a desk, and a chair. The desk is next to the window. I have a lamp and two books on the desk. I study here every night."
+    },
+    {
+      "id": "esc-fase1-a1-clima-hoy",
+      "tema": "El clima de hoy",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "guion": "Hello! It is a sunny day today. It is warm, about twenty-five degrees. There is no rain. It is a good day for the park. Tomorrow it is cloudy and a little cold.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a1-clima-hoy-p1",
+          "pregunta": "What is the weather like today?",
+          "opciones": [
+            "Cold and rainy",
+            "Sunny and warm",
+            "Cloudy and cold",
+            "Windy and hot"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-a1-clima-hoy-p2",
+          "pregunta": "How is tomorrow?",
+          "opciones": [
+            "Sunny",
+            "Rainy",
+            "Cloudy and a little cold",
+            "Very hot"
+          ],
+          "respuestaCorrecta": 2
+        }
+      ],
+      "transcripcion": "Hello! It is a sunny day today. It is warm, about twenty-five degrees. There is no rain. It is a good day for the park. Tomorrow it is cloudy and a little cold."
     }
   ]
 }

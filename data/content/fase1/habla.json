@@ -976,6 +976,326 @@
       "prompt": "Describe how your approach to problem-solving has changed over time.",
       "requiere_prueba_microfono": true,
       "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-62",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "Hello, my name is Ana.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-63",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "Nice to meet you.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-64",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "How are you today?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-65",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "I am fine, thank you.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-66",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "I am from Mexico.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-67",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "I am twenty years old.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-68",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "I live in a small house.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-69",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "This is my brother.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-70",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "I have two sisters.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-71",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "I like coffee and bread.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-72",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "I get up at seven o'clock.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-73",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "I go to school by bus.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-74",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "What time is it?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-75",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "It is half past four.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-76",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "Where is the bathroom?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-77",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "I need some water, please.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-78",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "How much is it?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-79",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "Thank you very much.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-80",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "See you tomorrow.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-81",
+      "tipo": "shadowing",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "fraseObjetivo": "Have a nice day.",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-63",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "What is your name?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-64",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "Where are you from?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-65",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "How old are you?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-66",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "How are you today?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-67",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "Do you have a brother or a sister?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-68",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "What is your favorite color?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-69",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "What do you eat for breakfast?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-70",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "What time do you wake up?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-71",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "Do you like coffee?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-72",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "Where do you live?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-73",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "What is your favorite food?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-74",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "Do you work or study?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-75",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "What day is it today?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-76",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "What do you do on Sunday?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-77",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "Is your house big or small?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-78",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "Do you have a phone?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-79",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "What is the weather like today?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-80",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "What do you drink in the morning?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-81",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "Who is your best friend?",
+      "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-prompt-82",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "prompt": "What time do you go to bed?",
+      "requiere_prueba_microfono": true
     }
   ]
 }

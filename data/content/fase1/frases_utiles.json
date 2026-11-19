@@ -555,6 +555,342 @@
           "revisar": true
         }
       ]
+    },
+    {
+      "categoria": "saludos",
+      "nivelCEFR": "A1",
+      "frases": [
+        {
+          "ingles": "Hello!",
+          "espanol": "¡Hola!",
+          "revisar": true
+        },
+        {
+          "ingles": "Good morning.",
+          "espanol": "Buenos días.",
+          "revisar": true
+        },
+        {
+          "ingles": "Good afternoon.",
+          "espanol": "Buenas tardes.",
+          "revisar": true
+        },
+        {
+          "ingles": "Good evening.",
+          "espanol": "Buenas noches (al llegar).",
+          "revisar": true
+        },
+        {
+          "ingles": "Good night.",
+          "espanol": "Buenas noches (al despedirse).",
+          "revisar": true
+        },
+        {
+          "ingles": "How are you?",
+          "espanol": "¿Cómo estás?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm fine, thanks. And you?",
+          "espanol": "Bien, gracias. ¿Y tú?",
+          "revisar": true
+        },
+        {
+          "ingles": "Goodbye!",
+          "espanol": "¡Adiós!",
+          "revisar": true
+        },
+        {
+          "ingles": "See you later.",
+          "espanol": "Nos vemos luego.",
+          "revisar": true
+        },
+        {
+          "ingles": "Have a nice day.",
+          "espanol": "Que tengas un buen día.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "presentarse",
+      "nivelCEFR": "A1",
+      "frases": [
+        {
+          "ingles": "My name is Ana.",
+          "espanol": "Me llamo Ana.",
+          "revisar": true
+        },
+        {
+          "ingles": "What's your name?",
+          "espanol": "¿Cómo te llamas?",
+          "revisar": true
+        },
+        {
+          "ingles": "Nice to meet you.",
+          "espanol": "Mucho gusto.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm from Mexico.",
+          "espanol": "Soy de México.",
+          "revisar": true
+        },
+        {
+          "ingles": "Where are you from?",
+          "espanol": "¿De dónde eres?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm twenty years old.",
+          "espanol": "Tengo veinte años.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm a student.",
+          "espanol": "Soy estudiante.",
+          "revisar": true
+        },
+        {
+          "ingles": "I live in Puebla.",
+          "espanol": "Vivo en Puebla.",
+          "revisar": true
+        },
+        {
+          "ingles": "I speak a little English.",
+          "espanol": "Hablo un poco de inglés.",
+          "revisar": true
+        },
+        {
+          "ingles": "This is my friend Tom.",
+          "espanol": "Él es mi amigo Tom.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "pedir_lo_basico",
+      "nivelCEFR": "A1",
+      "frases": [
+        {
+          "ingles": "Water, please.",
+          "espanol": "Agua, por favor.",
+          "revisar": true
+        },
+        {
+          "ingles": "Thank you very much.",
+          "espanol": "Muchas gracias.",
+          "revisar": true
+        },
+        {
+          "ingles": "You're welcome.",
+          "espanol": "De nada.",
+          "revisar": true
+        },
+        {
+          "ingles": "Excuse me.",
+          "espanol": "Disculpe / Con permiso.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm sorry.",
+          "espanol": "Lo siento.",
+          "revisar": true
+        },
+        {
+          "ingles": "Yes, please.",
+          "espanol": "Sí, por favor.",
+          "revisar": true
+        },
+        {
+          "ingles": "No, thank you.",
+          "espanol": "No, gracias.",
+          "revisar": true
+        },
+        {
+          "ingles": "I need help.",
+          "espanol": "Necesito ayuda.",
+          "revisar": true
+        },
+        {
+          "ingles": "I don't understand.",
+          "espanol": "No entiendo.",
+          "revisar": true
+        },
+        {
+          "ingles": "Where is the bathroom?",
+          "espanol": "¿Dónde está el baño?",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "precio_y_hora",
+      "nivelCEFR": "A1",
+      "frases": [
+        {
+          "ingles": "What time is it?",
+          "espanol": "¿Qué hora es?",
+          "revisar": true
+        },
+        {
+          "ingles": "It's three o'clock.",
+          "espanol": "Son las tres en punto.",
+          "revisar": true
+        },
+        {
+          "ingles": "It's half past four.",
+          "espanol": "Son las cuatro y media.",
+          "revisar": true
+        },
+        {
+          "ingles": "How much is this?",
+          "espanol": "¿Cuánto cuesta esto?",
+          "revisar": true
+        },
+        {
+          "ingles": "It's five dollars.",
+          "espanol": "Cuesta cinco dólares.",
+          "revisar": true
+        },
+        {
+          "ingles": "It's too expensive.",
+          "espanol": "Es demasiado caro.",
+          "revisar": true
+        },
+        {
+          "ingles": "What day is it today?",
+          "espanol": "¿Qué día es hoy?",
+          "revisar": true
+        },
+        {
+          "ingles": "Today is Monday.",
+          "espanol": "Hoy es lunes.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm late.",
+          "espanol": "Llego tarde.",
+          "revisar": true
+        },
+        {
+          "ingles": "The class is at nine.",
+          "espanol": "La clase es a las nueve.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "dia_a_dia_basico",
+      "nivelCEFR": "A1",
+      "frases": [
+        {
+          "ingles": "I wake up at seven.",
+          "espanol": "Me despierto a las siete.",
+          "revisar": true
+        },
+        {
+          "ingles": "I have breakfast at home.",
+          "espanol": "Desayuno en casa.",
+          "revisar": true
+        },
+        {
+          "ingles": "I go to work by bus.",
+          "espanol": "Voy al trabajo en autobús.",
+          "revisar": true
+        },
+        {
+          "ingles": "I study English every day.",
+          "espanol": "Estudio inglés todos los días.",
+          "revisar": true
+        },
+        {
+          "ingles": "I like music.",
+          "espanol": "Me gusta la música.",
+          "revisar": true
+        },
+        {
+          "ingles": "I don't like coffee.",
+          "espanol": "No me gusta el café.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm hungry.",
+          "espanol": "Tengo hambre.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm thirsty.",
+          "espanol": "Tengo sed.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm at home now.",
+          "espanol": "Estoy en casa ahora.",
+          "revisar": true
+        },
+        {
+          "ingles": "I go to bed at ten.",
+          "espanol": "Me voy a dormir a las diez.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "familia_y_amigos",
+      "nivelCEFR": "A1",
+      "frases": [
+        {
+          "ingles": "This is my mother.",
+          "espanol": "Ella es mi mamá.",
+          "revisar": true
+        },
+        {
+          "ingles": "I have two brothers.",
+          "espanol": "Tengo dos hermanos.",
+          "revisar": true
+        },
+        {
+          "ingles": "My father is a teacher.",
+          "espanol": "Mi papá es maestro.",
+          "revisar": true
+        },
+        {
+          "ingles": "She is my best friend.",
+          "espanol": "Ella es mi mejor amiga.",
+          "revisar": true
+        },
+        {
+          "ingles": "He is tall.",
+          "espanol": "Él es alto.",
+          "revisar": true
+        },
+        {
+          "ingles": "My family is small.",
+          "espanol": "Mi familia es pequeña.",
+          "revisar": true
+        },
+        {
+          "ingles": "We live together.",
+          "espanol": "Vivimos juntos.",
+          "revisar": true
+        },
+        {
+          "ingles": "Do you have brothers or sisters?",
+          "espanol": "¿Tienes hermanos o hermanas?",
+          "revisar": true
+        },
+        {
+          "ingles": "Her name is Laura.",
+          "espanol": "Ella se llama Laura.",
+          "revisar": true
+        },
+        {
+          "ingles": "They are my friends.",
+          "espanol": "Ellos son mis amigos.",
+          "revisar": true
+        }
+      ]
     }
   ]
 }
