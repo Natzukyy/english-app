@@ -212,7 +212,7 @@ main {
    ".inicio-cuerpo" era la clase del Inicio del rediseño anterior ("cuaderno de bitácora");
    el Inicio guiado de Calcomanías usa ".pantalla-inicio-guiada". */
 main:has(> .pantalla-vista.pantalla-inicio-guiada) {
-  padding-bottom: var(--e-3);
+  padding-bottom: 2px; /* a 390x844 sobraban ~10px de scroll real (medido); nav.tabs ya trae su propio padding abajo */
 }
 
 /* Repaso: una sola ficha a la vez, con mucho aire alrededor si se deja pegada arriba (el
@@ -3373,6 +3373,142 @@ main:has(> .pantalla-habla) {
     grid-template-columns: 1fr 1fr;
     margin-top: 0;
     align-content: start;
+  }
+}
+
+/* ============================================================================
+   PRACTICAR -- rediseño "Calcomanías oscuro" (Fase B). Cuadrícula 2x2 (celular) / fila de 4
+   (laptop) de calcomanías grandes por habilidad, escalonadas en vertical para dar aire de
+   collage (nth-child par con un margin-top extra); debajo, dos filas tocables de superficie. */
+
+.pantalla-practicar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+}
+
+.practicar-regreso {
+  width: var(--toque-minimo);
+  height: var(--toque-minimo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--texto);
+  margin-left: calc(var(--e-2) * -1); /* ancla visualmente al borde, el padding de main ya da aire */
+}
+
+.practicar-regreso-flecha {
+  display: inline-flex;
+  transform: rotate(180deg); /* el ícono "chevron" apunta a la derecha por defecto */
+}
+
+.practicar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--e-3);
+  margin-top: var(--e-1);
+}
+
+.practicar-tarjeta {
+  padding: var(--e-3);
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--e-1);
+  text-align: left;
+  color: var(--tinta);
+}
+
+/* El aire de collage: la 2a y 4a tarjeta (Escucha, Escritura en el orden de ORDEN_HABILIDADES)
+   bajan un poco respecto a sus vecinas -- nth-child(2n) en la cuadrícula 2x2 cae justo en la
+   columna derecha de cada fila, que es donde el spec pide el escalón. */
+.practicar-grid > *:nth-child(2n) {
+  margin-top: var(--e-3);
+}
+
+.practicar-icono {
+  display: inline-flex;
+}
+
+.practicar-nombre {
+  font-size: var(--fs-heading);
+  font-weight: 700;
+}
+
+.practicar-pastilla {
+  background: var(--tinta);
+  color: var(--crema);
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  padding: 2px var(--e-2);
+  border-radius: 999px;
+}
+
+.practicar-ultima-vez {
+  margin-top: auto;
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+/* Lectura/Escucha/Escritura sin pantalla propia todavía (Fase C): se quedan sin click, con
+   "Próximamente" en vez de "Última vez" -- opacidad reducida para leerse como "no disponible
+   todavía" sin verse rotas ni a medio terminar. */
+.practicar-tarjeta--proximamente {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.practicar-filas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+}
+
+.practicar-fila {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  padding: var(--e-2) var(--e-3);
+  min-height: var(--toque-minimo);
+  text-align: left;
+}
+
+.practicar-fila-texto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.practicar-fila-texto strong {
+  font-size: var(--fs-small);
+}
+
+.practicar-nota {
+  margin: 0;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .practicar-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .practicar-tarjeta {
+    min-height: 260px;
+    --r: 0deg !important; /* REGLA DE LAPTOP: nada de rotación en tarjetas grandes -- el "aire de collage" en laptop es solo el escalón vertical, no la inclinación */
+  }
+  /* "escalonadas verticalmente 20px entre pares" (spec): en una fila de 4, el par par
+     (columnas 2 y 4) baja 20px respecto al par impar (columnas 1 y 3). */
+  .practicar-grid > *:nth-child(2n) {
+    margin-top: 20px;
+  }
+  .practicar-filas {
+    flex-direction: row;
+  }
+  .practicar-filas > * {
+    flex: 1;
   }
 }
 
