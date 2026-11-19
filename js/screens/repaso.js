@@ -181,7 +181,10 @@
       revelado = true;
       marco.classList.add("revelada");
       panel.classList.add("visible");
-      traduccionPanel.textContent = tarjeta.atras;
+      // La traducción ya se ve en la cara trasera de la tarjeta (.repaso-texto-traduccion);
+      // este párrafo es solo el texto de ayuda antes de revelar ("Toca la tarjeta o presiona
+      // espacio..."), así que se oculta en vez de repetir la traducción una segunda vez.
+      traduccionPanel.hidden = true;
       botonesCalidad.forEach(function (boton) {
         boton.disabled = false;
       });
