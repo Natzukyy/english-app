@@ -237,9 +237,10 @@
       var tarjetaPrincipalHtml;
       if (indicePendiente === -1) {
         tarjetaPrincipalHtml =
-          '<div class="tarjeta-principal calcomania calcomania-cta pop-entrada" style="background:var(--menta)">' +
-          '<span class="tarjeta-principal-etiqueta">' + esc(t("inicio.dia_completo_titulo")) + "</span>" +
-          '<p class="tarjeta-principal-nombre">¡Ya completaste tu ruta de hoy!</p>' +
+          '<div class="tarjeta-principal tarjeta-principal--lista calcomania calcomania-cta pop-entrada" style="background:var(--menta)">' +
+          '<span class="tarjeta-principal-etiqueta">' + esc(t("inicio.dia_completo_titulo").toUpperCase()) + "</span>" +
+          '<p class="tarjeta-principal-nombre">' + esc(t("inicio.listo_por_hoy")) + "</p>" +
+          '<p class="tarjeta-principal-razon">' + esc(t("inicio.listo_por_hoy_detalle")) + "</p>" +
           "</div>";
       } else {
         var pasoActual = plan.pasos[indicePendiente];
@@ -317,8 +318,10 @@
         '<div class="tarjeta-meta superficie-oscura">' +
         '<div class="fila-cabeza"><span class="texto-tenue">' + esc(t("inicio.meta.etiqueta")) + "</span><span class=\"texto-tenue num-tabular\">" +
         esc(minutosHoy) + "/" + esc(prefs.metaMinutosDia) + " min</span></div>" +
+        '<div class="meta-fila-barra">' +
         '<div class="barra-progreso barra-escala" style="--progreso:0"><span id="barra-meta" data-destino="' + porcentajeMeta + '"></span></div>' +
         '<span class="pastilla-nivel-xp">Nivel <strong class="num-tabular">' + nivel + '</strong> · <span class="num-tabular" id="valor-xp">0</span> XP</span>' +
+        "</div>" +
         "</div>" +
         tarjetaPrincipalHtml +
         '<div class="inicio-ruta-hoy">' +
@@ -331,15 +334,15 @@
         Iconos.svg("chevron", 18) +
         "</button>" +
         '<div class="inicio-camino">' +
-        '<h2>' + esc(t("inicio.camino_titulo")) + "</h2>" +
+        '<div class="fila-cabeza camino-cabeza"><h2>' + esc(t("inicio.camino_titulo")) + "</h2>" +
+        '<span class="pastilla-nivel-xp camino-pastilla">' +
+        (global_.siguienteNivel ? global_.porcentajeHaciaSiguiente + "% hacia " + global_.siguienteNivel : "Nivel máximo de la escala") +
+        "</span></div>" +
         '<div class="camino-pista">' +
         '<div class="camino-nodos">' + caminoNodosHtml + "</div>" +
         '<span class="camino-estrella" style="left:' + porcentajeCamino + '%">' + Iconos.svg("estrella", 18) + "</span>" +
         "</div>" +
-        '<span class="pastilla-nivel-xp camino-pastilla">' +
-        (global_.siguienteNivel ? global_.porcentajeHaciaSiguiente + "% hacia " + global_.siguienteNivel : "Nivel máximo de la escala") +
-        "</span>" +
-        '<p class="camino-linea texto-tenue">' + esc(t("inicio.camino_vas_aqui")) + " · tu nivel de inglés ahora: " + global_.nivel + " · " +
+        '<p class="camino-linea texto-tenue">' + esc(t("inicio.camino_vas_aqui")) + '<span class="camino-linea-detalle"> · tu nivel de inglés ahora: ' + global_.nivel + "</span> · " +
         esc(t(ritmo === "bien" ? "inicio.ritmo_bien" : "inicio.ritmo_lento")) + "</p>" +
         '<div class="camino-mini-barras">' + miniBarrasHtml + "</div>" +
         "</div>" +

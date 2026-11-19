@@ -2988,11 +2988,17 @@ main:has(> .pantalla-habla) {
    amarilla con sombra CORAL (no la sombra oscura genérica de toda calcomanía, para que
    destaque sobre las demás -- ver .calcomania-cta, ya definida en los fundamentos). */
 .tarjeta-principal {
-  padding: var(--e-2) var(--e-3);
+  padding: var(--e-3) var(--e-4);
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--e-1);
+  min-height: 150px; /* nada pegado ni recortado aunque el título ocupe 2 líneas */
   --r: -0.8deg;
+}
+
+.tarjeta-principal--lista {
+  min-height: 96px;
+  justify-content: center;
 }
 
 .tarjeta-principal-etiqueta {
@@ -3007,7 +3013,9 @@ main:has(> .pantalla-habla) {
   margin: 0;
   font-size: var(--fs-heading);
   font-weight: 700;
+  line-height: 1.15;
   color: var(--tinta);
+  overflow-wrap: anywhere; /* un título largo parte línea, nunca se sale de la tarjeta */
 }
 
 .tarjeta-principal-razon {
@@ -3022,7 +3030,7 @@ main:has(> .pantalla-habla) {
    color). Invierte la relación a propósito: es la acción dentro de la tarjeta, no la
    tarjeta misma, así que necesita leerse como un control, no como más calcomanía. */
 .boton-tinta {
-  margin-top: var(--e-1);
+  margin-top: var(--e-2);
   align-self: flex-start;
   background: var(--tinta);
   color: var(--amarillo);
@@ -3030,6 +3038,92 @@ main:has(> .pantalla-habla) {
   padding: 0 var(--e-4);
   min-height: var(--toque-minimo);
   border: none;
+}
+
+/* Celular: el botón "Empezar"/"Continuar" ocupa todo el ancho de la tarjeta, debajo del
+   título (que puede tener 2 líneas), con alto >=48px. En laptop vuelve a su tamaño natural. */
+@media (max-width: 899px) {
+  .tarjeta-principal .boton-tinta {
+    align-self: stretch;
+    min-height: 48px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Celulares bajitos (iPhone SE/mini, 360x740): Inicio debe seguir SIN scroll, así que se
+   compactan primero los bloques de apoyo (saludo, ruta de hoy, "Tu camino") y NUNCA la
+   tarjeta "HOY TE TOCA", que es la acción principal de la pantalla. */
+@media (max-width: 899px) and (max-height: 780px) {
+  main:has(> .pantalla-vista.pantalla-inicio-guiada) {
+    padding-top: calc(max(var(--e-3), env(safe-area-inset-top, 0px)) + var(--e-1));
+  }
+  .inicio-saludo h1 {
+    font-size: var(--fs-heading);
+  }
+  .inicio-saludo p {
+    display: none;
+  }
+  .sol-racha {
+    width: 48px;
+    height: 48px;
+  }
+  .mini-barra-cabeza .icono-mosaico {
+    display: none;
+  }
+  .camino-linea {
+    margin-top: 0;
+  }
+  .camino-linea-detalle {
+    display: none; /* "tu nivel de inglés ahora: X" ya lo dice el marcador y la pastilla; una sola línea */
+  }
+  .pantalla-inicio-guiada .barra-progreso {
+    margin: 2px 0;
+  }
+  .camino-mini-barras {
+    gap: var(--e-1) var(--e-3);
+  }
+  .tarjeta-principal {
+    padding: var(--e-2) var(--e-4);
+    min-height: 0;
+  }
+  .tarjeta-principal--lista {
+    min-height: 88px;
+  }
+  .ruta-hoy-paso {
+    padding-top: var(--e-1);
+    padding-bottom: var(--e-1);
+  }
+  nav.tabs button {
+    padding-top: var(--e-1);
+    padding-bottom: var(--e-1);
+  }
+  .pantalla-inicio-guiada {
+    gap: 2px;
+  }
+}
+
+/* Barra de meta y pastilla "Nivel N · X XP" en la misma fila (ahorra alto en celular). */
+.meta-fila-barra {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+}
+.meta-fila-barra .barra-progreso {
+  flex: 1;
+  min-width: 0;
+}
+.meta-fila-barra .pastilla-nivel-xp {
+  flex: none;
+  align-self: center;
+  white-space: nowrap;
+}
+.camino-cabeza {
+  align-items: center;
+}
+.camino-cabeza .camino-pastilla {
+  margin-top: 0;
+  align-self: center;
 }
 
 /* --- Tu ruta de hoy: calcomanías numeradas compactas, máx. 5 (celular: 4 columnas; laptop:
