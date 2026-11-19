@@ -2,6 +2,9 @@
   "idiomaId": "en",
   "idiomaVisible": "Inglés",
   "nombreApp": "Rumbo",
+  "nombreUsuario": "Alex",
+  "diaConversacionSemana": 3,
+  "semanasEntreReevaluacion": 4,
   "metaPersonal": {
     "nivelCEFR": "B2",
     "fecha": "2027-03-31",

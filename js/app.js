@@ -14,7 +14,7 @@
     "escucha",
     "escritura"
   ];
-  var contexto = { strings: {}, umbrales: { niveles: [] }, nivelInterfaz: 0 };
+  var contexto = { strings: {}, umbrales: { niveles: [] }, nivelInterfaz: 0, config: {} };
 
   /** Pantallas que no tienen su propio ítem en la barra de navegación (ver spec
    * "Calcomanías oscuro"): mientras Alex esté en cualquiera de ellas, el ítem activo sigue
@@ -40,6 +40,10 @@
         return r.json();
       })
       .then(function (config) {
+        // Queda disponible para cualquier pantalla via ctx.config (Inicio/Practicar lo usan
+        // para el nombre de Alex y el día de conversación semanal -- "todo configurable desde
+        // data/, nada hardcodeado en JS", ver spec de Calcomanías).
+        contexto.config = config;
         var nombre = config.nombreApp || "Rumbo";
         document.title = nombre;
         var metaTitulo = document.querySelector('meta[name="apple-mobile-web-app-title"]');

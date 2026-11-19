@@ -1,50 +1,217 @@
 {
-  "nav.inicio": { "categoria": "corta", "es": "Inicio", "en": "Home" },
-  "nav.repaso": { "categoria": "corta", "es": "Repaso", "en": "Review" },
-  "nav.diagnostico": { "categoria": "corta", "es": "Diagnóstico", "en": "Diagnostic" },
-  "nav.progreso": { "categoria": "corta", "es": "Progreso", "en": "Progress" },
-  "nav.ajustes": { "categoria": "corta", "es": "Ajustes", "en": "Settings" },
-
-  "inicio.titulo": { "categoria": "larga", "es": "Hoy", "en": "Today" },
-  "inicio.racha.etiqueta": { "categoria": "corta", "es": "Racha", "en": "Streak" },
-  "inicio.meta.etiqueta": { "categoria": "corta", "es": "Meta de hoy", "en": "Today's goal" },
+  "nav.inicio": {
+    "categoria": "corta",
+    "es": "Inicio",
+    "en": "Home"
+  },
+  "nav.repaso": {
+    "categoria": "corta",
+    "es": "Repaso",
+    "en": "Review"
+  },
+  "nav.diagnostico": {
+    "categoria": "corta",
+    "es": "Diagnóstico",
+    "en": "Diagnostic"
+  },
+  "nav.progreso": {
+    "categoria": "corta",
+    "es": "Progreso",
+    "en": "Progress"
+  },
+  "nav.ajustes": {
+    "categoria": "corta",
+    "es": "Ajustes",
+    "en": "Settings"
+  },
+  "inicio.titulo": {
+    "categoria": "larga",
+    "es": "Hoy",
+    "en": "Today"
+  },
+  "inicio.racha.etiqueta": {
+    "categoria": "corta",
+    "es": "Racha",
+    "en": "Streak"
+  },
+  "inicio.meta.etiqueta": {
+    "categoria": "corta",
+    "es": "Meta de hoy",
+    "en": "Today's goal"
+  },
   "inicio.vacio": {
     "categoria": "larga",
     "es": "Todavía no hay contenido de repaso. Vuelve pronto.",
     "en": "No review content yet. Check back soon."
   },
-
-  "repaso.titulo": { "categoria": "larga", "es": "Sesión de repaso", "en": "Review session" },
+  "repaso.titulo": {
+    "categoria": "larga",
+    "es": "Sesión de repaso",
+    "en": "Review session"
+  },
   "repaso.vacio": {
     "categoria": "larga",
     "es": "Aún no hay tarjetas para repasar.",
     "en": "No cards to review yet."
   },
-
-  "diagnostico.titulo": { "categoria": "larga", "es": "Diagnóstico de nivel", "en": "Level diagnostic" },
+  "diagnostico.titulo": {
+    "categoria": "larga",
+    "es": "Diagnóstico de nivel",
+    "en": "Level diagnostic"
+  },
   "diagnostico.vacio": {
     "categoria": "larga",
     "es": "El diagnóstico todavía no está listo.",
     "en": "The diagnostic isn't ready yet."
   },
-
-  "progreso.titulo": { "categoria": "larga", "es": "Tu progreso", "en": "Your progress" },
+  "progreso.titulo": {
+    "categoria": "larga",
+    "es": "Tu progreso",
+    "en": "Your progress"
+  },
   "progreso.vacio": {
     "categoria": "larga",
     "es": "Haz tu primer diagnóstico para ver tu progreso.",
     "en": "Take your first diagnostic to see your progress."
   },
-
-  "ajustes.titulo": { "categoria": "larga", "es": "Ajustes", "en": "Settings" },
-  "ajustes.meta.5": { "categoria": "corta", "es": "5 min", "en": "5 min" },
-  "ajustes.meta.15": { "categoria": "corta", "es": "15 min", "en": "15 min" },
-  "ajustes.meta.30": { "categoria": "corta", "es": "30 min", "en": "30 min" },
-  "ajustes.exportar": { "categoria": "corta", "es": "Exportar respaldo", "en": "Export backup" },
-  "ajustes.importar": { "categoria": "corta", "es": "Importar respaldo", "en": "Import backup" },
-
+  "ajustes.titulo": {
+    "categoria": "larga",
+    "es": "Ajustes",
+    "en": "Settings"
+  },
+  "ajustes.meta.5": {
+    "categoria": "corta",
+    "es": "5 min",
+    "en": "5 min"
+  },
+  "ajustes.meta.15": {
+    "categoria": "corta",
+    "es": "15 min",
+    "en": "15 min"
+  },
+  "ajustes.meta.30": {
+    "categoria": "corta",
+    "es": "30 min",
+    "en": "30 min"
+  },
+  "ajustes.exportar": {
+    "categoria": "corta",
+    "es": "Exportar respaldo",
+    "en": "Export backup"
+  },
+  "ajustes.importar": {
+    "categoria": "corta",
+    "es": "Importar respaldo",
+    "en": "Import backup"
+  },
   "error.generico": {
     "categoria": "critica",
     "es": "Algo salió mal. Intenta de nuevo.",
     "en": "Something went wrong. Please try again."
+  },
+  "inicio.saludo": {
+    "categoria": "corta",
+    "es": "Hola",
+    "en": "Hi"
+  },
+  "inicio.pregunta": {
+    "categoria": "larga",
+    "es": "¿Listo para hoy?",
+    "en": "Ready for today?"
+  },
+  "inicio.hoy_te_toca": {
+    "categoria": "corta",
+    "es": "Hoy te toca",
+    "en": "Today's focus"
+  },
+  "inicio.empezar": {
+    "categoria": "corta",
+    "es": "Empezar",
+    "en": "Start"
+  },
+  "inicio.continuar": {
+    "categoria": "corta",
+    "es": "Continuar",
+    "en": "Continue"
+  },
+  "inicio.ruta_titulo": {
+    "categoria": "larga",
+    "es": "Tu ruta de hoy",
+    "en": "Your route today"
+  },
+  "inicio.practicar_boton": {
+    "categoria": "corta",
+    "es": "Practicar algo específico",
+    "en": "Practice something specific"
+  },
+  "inicio.camino_titulo": {
+    "categoria": "larga",
+    "es": "Tu camino",
+    "en": "Your path"
+  },
+  "inicio.camino_vas_aqui": {
+    "categoria": "corta",
+    "es": "Vas aquí",
+    "en": "You are here"
+  },
+  "inicio.ritmo_bien": {
+    "categoria": "larga",
+    "es": "avanzando a buen ritmo",
+    "en": "making steady progress"
+  },
+  "inicio.ritmo_lento": {
+    "categoria": "larga",
+    "es": "constancia floja esta semana",
+    "en": "light consistency this week"
+  },
+  "inicio.listo_siguiente": {
+    "categoria": "corta",
+    "es": "¡Listo! Siguiente:",
+    "en": "Done! Next:"
+  },
+  "inicio.dia_completo_titulo": {
+    "categoria": "larga",
+    "es": "¡Día completo!",
+    "en": "Day complete!"
+  },
+  "inicio.manana": {
+    "categoria": "corta",
+    "es": "Mañana:",
+    "en": "Tomorrow:"
+  },
+  "practicar.titulo": {
+    "categoria": "larga",
+    "es": "Practicar",
+    "en": "Practice"
+  },
+  "practicar.subtitulo": {
+    "categoria": "larga",
+    "es": "Elige qué quieres practicar hoy",
+    "en": "Choose what to practice today"
+  },
+  "practicar.nota": {
+    "categoria": "larga",
+    "es": "Lo que practiques aquí suma a tu meta del día, pero no cambia tu ruta de hoy.",
+    "en": "What you practice here counts toward today's goal, but doesn't change today's route."
+  },
+  "practicar.repaso_titulo": {
+    "categoria": "corta",
+    "es": "Repaso de tarjetas",
+    "en": "Flashcard review"
+  },
+  "practicar.conversacion_titulo": {
+    "categoria": "corta",
+    "es": "Conversación",
+    "en": "Conversation"
+  },
+  "practicar.conversacion_subtitulo": {
+    "categoria": "larga",
+    "es": "Practica con situaciones reales",
+    "en": "Practice with real situations"
+  },
+  "practicar.por_empezar": {
+    "categoria": "corta",
+    "es": "Por empezar",
+    "en": "Not started yet"
   }
 }
