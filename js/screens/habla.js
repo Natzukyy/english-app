@@ -5,7 +5,15 @@
    reproduciendo el modelo (TTS), y liberar siempre el reconocedor (stop/abort) al terminar
    o al salir. requiere_prueba_iphone: true -- la lógica de comparación se prueba con tests
    (ver tests/core/habla.test.js); el micrófono/reconocimiento real solo se puede probar en
-   el iPhone de Alex. */
+   el iPhone de Alex.
+
+   Rediseño "Calcomanías oscuro" (ver spec de Alex, sesión calcomanías): tarjeta crema con
+   la frase + botón "Escuchar" azul a la izquierda (laptop) / arriba (celular); panel de
+   micrófono coral con ondas pulsantes SOLO mientras graba de verdad a la derecha / abajo.
+   Reintentar repite la MISMA frase (antes "Otro ejercicio" siempre elegía una al azar, sin
+   forma de reintentar la que acabas de intentar); Siguiente elige una nueva al azar. No hay
+   botón "Terminar" explícito -- la sesión se cierra igual al salir por el nav (ver el
+   listener de "hashchange" al final de este archivo, no cambió). */
 (function (global) {
   "use strict";
 
@@ -66,30 +74,40 @@
     var esc = global.App.Util.escaparHTML;
     var esSombra = ejercicio.tipo === "shadowing";
     var fraseMostrada = esSombra ? ejercicio.fraseObjetivo : ejercicio.prompt;
+    var etiqueta = esSombra ? "Repite la frase" : "Responde en voz alta";
 
     el.innerHTML =
-      '<div class="pantalla-vista ancho-lectura">' +
-      "<h1>Ejercicio de habla</h1>" +
-      '<p class="texto-tenue">' +
-      esc(ejercicio.tipo === "shadowing" ? "Repite la frase" : "Responde en voz alta") +
+      '<div class="pantalla-vista pantalla-habla">' +
+      "<h1>Habla</h1>" +
+      '<div class="habla-cuerpo">' +
+      '<div class="habla-tarjeta calcomania pop-entrada" style="background:var(--crema);--r:-1deg">' +
+      '<span class="habla-etiqueta">' +
+      esc(etiqueta.toUpperCase()) +
       " · " +
       esc(ejercicio.nivelCEFR) +
-      "</p>" +
-      '<div class="tarjeta tarjeta-repaso" style="margin-top:16px">' +
-      '<p class="frente frase-habla">' +
+      "</span>" +
+      '<p class="habla-frase">' +
       esc(fraseMostrada) +
       "</p>" +
-      "</div>" +
-      '<button type="button" class="enlace-discreto" id="btn-escuchar" style="margin-top:16px">' +
+      '<button type="button" class="habla-boton-escuchar calcomania calcomania-presionable" id="btn-escuchar" style="background:var(--azul);--r:0deg">' +
       global.App.Iconos.svg("bocina", 18) +
       "<span>" +
       (esSombra ? "Escuchar el modelo" : "Escuchar la pregunta") +
       "</span></button>" +
-      '<button type="button" class="boton-principal" id="btn-hablar" style="margin-top:12px">' +
-      global.App.Iconos.svg("microfono", 18) +
-      " Hablar</button>" +
+      "</div>" +
+      '<div class="habla-panel-mic superficie-oscura pop-entrada" id="panel-mic">' +
+      '<div class="habla-mic-wrap" id="mic-wrap">' +
+      '<span class="habla-onda habla-onda-1"></span>' +
+      '<span class="habla-onda habla-onda-2"></span>' +
+      '<button type="button" class="habla-boton-mic calcomania calcomania-presionable" id="btn-hablar" aria-label="Hablar" style="background:var(--coral);--r:0deg">' +
+      global.App.Iconos.svg("microfono", 36) +
+      "</button>" +
+      "</div>" +
+      '<p class="habla-estado-mic" id="estado-mic">Toca el micrófono para hablar</p>' +
       '<div id="zona-reconocimiento"></div>' +
       '<div id="zona-retro"></div>' +
+      "</div>" +
+      "</div>" +
       "</div>";
 
     var btnEscuchar = el.querySelector("#btn-escuchar");
@@ -119,6 +137,8 @@
   function iniciarReconocimiento(el, t, ejercicio, esSombra, fraseMostrada) {
     var Reconocedor = global.SpeechRecognition || global.webkitSpeechRecognition;
     var btnHablar = el.querySelector("#btn-hablar");
+    var micWrap = el.querySelector("#mic-wrap");
+    var estadoMic = el.querySelector("#estado-mic");
     var zonaReconocimiento = el.querySelector("#zona-reconocimiento");
     var zonaRetro = el.querySelector("#zona-retro");
     zonaRetro.innerHTML = "";
@@ -143,6 +163,12 @@
     }
 
     btnHablar.disabled = true;
+    // Las ondas pulsantes SOLO corren mientras se está grabando de verdad -- arrancan aquí,
+    // se detienen en CUALQUIER salida del reconocimiento (result final, error o excepción al
+    // iniciar), nunca quedan girando de más.
+    micWrap.classList.add("escuchando");
+    estadoMic.textContent = "Escuchando… habla ahora";
+
     var reconocimiento = new Reconocedor();
     reconocedorActivo = reconocimiento;
     reconocimiento.lang = "en-US";
@@ -153,9 +179,8 @@
     var transcripcionFinal = "";
 
     function actualizarParcial() {
-      zonaReconocimiento.innerHTML = '<p class="texto-tenue" id="texto-parcial">Escuchando… ' + global.App.Util.escaparHTML(parcial) + "</p>";
+      zonaReconocimiento.innerHTML = '<p class="texto-tenue" id="texto-parcial">' + global.App.Util.escaparHTML(parcial) + "</p>";
     }
-    actualizarParcial();
 
     reconocimiento.addEventListener("result", function (ev) {
       parcial = "";
@@ -170,6 +195,8 @@
     reconocimiento.addEventListener("error", function (ev) {
       reconocedorActivo = null;
       btnHablar.disabled = false;
+      micWrap.classList.remove("escuchando");
+      estadoMic.textContent = "Toca el micrófono para hablar";
       var mensajes = {
         "no-speech": "No se detectó voz. Intenta hablar un poco más fuerte o más cerca del micrófono.",
         "not-allowed": "No se dio permiso de micrófono. Revisa los permisos de Safari para esta página.",
@@ -183,9 +210,9 @@
         "<p>" +
         mensaje +
         "</p>" +
-        '<button type="button" class="boton-principal" id="btn-reintentar" style="margin-top:12px">Reintentar</button>' +
+        '<button type="button" class="boton-principal" id="btn-reintentar-reconocer" style="margin-top:12px">Reintentar</button>' +
         "</div>";
-      zonaReconocimiento.querySelector("#btn-reintentar").addEventListener("click", function () {
+      zonaReconocimiento.querySelector("#btn-reintentar-reconocer").addEventListener("click", function () {
         iniciarReconocimiento(el, t, ejercicio, esSombra, fraseMostrada);
       });
     });
@@ -193,9 +220,11 @@
     reconocimiento.addEventListener("end", function () {
       reconocedorActivo = null;
       btnHablar.disabled = false;
+      micWrap.classList.remove("escuchando");
+      estadoMic.textContent = "Toca el micrófono para hablar";
       if (!transcripcionFinal && !parcial) return; // ya se mostró el error correspondiente, si lo hubo
       var textoDicho = transcripcionFinal || parcial;
-      zonaReconocimiento.innerHTML = ""; // si no, el "Escuchando…" se queda visible encima del resultado
+      zonaReconocimiento.innerHTML = "";
       mostrarResultado(el, t, ejercicio, esSombra, fraseMostrada, textoDicho);
     });
 
@@ -204,6 +233,8 @@
     } catch (e) {
       reconocedorActivo = null;
       btnHablar.disabled = false;
+      micWrap.classList.remove("escuchando");
+      estadoMic.textContent = "Toca el micrófono para hablar";
       zonaReconocimiento.innerHTML = '<p class="mensaje-error">No se pudo iniciar el reconocimiento: ' + global.App.Util.escaparHTML(e.message) + "</p>";
     }
   }
@@ -216,17 +247,17 @@
       // responder_prompt: no hay una frase "correcta" contra la cual comparar. Se muestra lo
       // que se entendió y se cuenta como intento válido (cualquier respuesta abierta cuenta).
       zonaRetro.innerHTML =
-        '<div class="panel-retro exito">' +
+        '<div class="habla-resultado pop-entrada">' +
         '<p class="titulo-retro">¡Listo!</p>' +
         "<p>Se entendió: “" +
         esc(textoDicho) +
         "”</p>" +
-        '<div class="fila-botones" style="margin-top:12px">' +
-        '<button type="button" class="boton-secundario" id="btn-otro">Otro ejercicio</button>' +
-        '<button type="button" class="boton-principal" id="btn-terminar">Terminar</button>' +
+        '<div class="habla-botones-final">' +
+        '<button type="button" class="boton-secundario" id="btn-reintentar">Reintentar</button>' +
+        '<button type="button" class="boton-principal" id="btn-siguiente">Siguiente</button>' +
         "</div>" +
         "</div>";
-      conectarBotonesFinales(el, t, true);
+      conectarBotonesFinales(el, t, ejercicio, true);
       return;
     }
 
@@ -237,32 +268,30 @@
       if (!palabras.length) return "";
       return palabras
         .map(function (p) {
-          return '<span class="chip ' + clase + '"><span class="punto" aria-hidden="true"></span>' + esc(p) + "</span>";
+          return '<span class="habla-chip ' + clase + '">' + esc(p) + "</span>";
         })
         .join(" ");
     };
 
     zonaRetro.innerHTML =
-      '<div class="panel-retro ' +
-      (esBuena ? "exito" : "error") +
-      '">' +
-      '<p class="titulo-retro">' +
-      (esBuena ? "¡Bien! " : "Vas por buen camino — ") +
-      '<span class="num-tabular">' +
-      resultado.porcentaje +
-      "%</span> parecido</p>" +
+      '<div class="habla-resultado pop-entrada">' +
+      '<span class="habla-pastilla-porcentaje"><span class="num-tabular" id="valor-porcentaje">0</span>%</span>' +
+      '<p class="titulo-retro" style="margin-top:8px">' +
+      (esBuena ? "¡Bien parecido!" : "Vas por buen camino") +
+      "</p>" +
       '<p class="texto-caption">El reconocimiento de voz es aproximado: esto es una guía, no una calificación exacta.</p>' +
-      (resultado.acertadas.length ? '<p style="margin-top:8px">' + listaPalabras(resultado.acertadas, "chip-acierto") + "</p>" : "") +
-      (resultado.omitidas.length || resultado.distintas.length
-        ? '<p class="texto-tenue" style="margin-top:8px">Para revisar: ' + listaPalabras(resultado.omitidas.concat(resultado.distintas), "chip-revisar") + "</p>"
-        : "") +
-      '<div class="fila-botones" style="margin-top:12px">' +
-      '<button type="button" class="boton-secundario" id="btn-otro">Otro ejercicio</button>' +
-      '<button type="button" class="boton-principal" id="btn-terminar">Terminar</button>' +
+      '<div class="habla-chips pop-entrada-escalonada">' +
+      (resultado.acertadas.length ? listaPalabras(resultado.acertadas, "habla-chip-acierto") : "") +
+      (resultado.omitidas.length || resultado.distintas.length ? listaPalabras(resultado.omitidas.concat(resultado.distintas), "habla-chip-revisar") : "") +
+      "</div>" +
+      '<div class="habla-botones-final">' +
+      '<button type="button" class="boton-secundario" id="btn-reintentar">Reintentar</button>' +
+      '<button type="button" class="boton-principal" id="btn-siguiente">Siguiente</button>' +
       "</div>" +
       "</div>";
 
-    conectarBotonesFinales(el, t, esBuena);
+    global.App.Util.animarNumero(el.querySelector("#valor-porcentaje"), resultado.porcentaje, 700);
+    conectarBotonesFinales(el, t, ejercicio, esBuena);
   }
 
   function registrarIntento(el, t, fueBien) {
@@ -276,17 +305,18 @@
     });
   }
 
-  function conectarBotonesFinales(el, t, fueBien) {
+  function conectarBotonesFinales(el, t, ejercicioActual, fueBien) {
     sesion.intentos += 1;
     if (fueBien) sesion.correctas += 1;
 
-    el.querySelector("#btn-otro").addEventListener("click", function () {
-      pintarEjercicio(el, t, elegirEjercicioAlAzar());
+    // Reintentar repite la MISMA frase (antes solo existía "Otro ejercicio", que siempre
+    // elegía una al azar -- no había forma de volver a intentar justo la que acabas de
+    // responder). Siguiente sí elige una nueva al azar.
+    el.querySelector("#btn-reintentar").addEventListener("click", function () {
+      pintarEjercicio(el, t, ejercicioActual);
     });
-    el.querySelector("#btn-terminar").addEventListener("click", function () {
-      finalizarSesionSiActiva().then(function () {
-        location.hash = "#/inicio";
-      });
+    el.querySelector("#btn-siguiente").addEventListener("click", function () {
+      pintarEjercicio(el, t, elegirEjercicioAlAzar());
     });
   }
 

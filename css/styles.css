@@ -2390,6 +2390,246 @@ button.tarjeta-habilidad:active {
   }
 }
 
+/* ============================================================================
+   HABLA -- rediseño "Calcomanías oscuro". Tarjeta crema (frase + escuchar) a la
+   izquierda/arriba; panel de micrófono a la derecha/abajo. Mismo lenguaje que Repaso
+   (.calcomania, superficie-oscura) y la misma REGLA DE LAPTOP (columnas que crecen a la
+   misma altura, centrado vertical cuando el contenido es más corto que el viewport). */
+
+main:has(> .pantalla-habla) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.habla-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-5);
+  margin-top: var(--e-5);
+}
+
+.habla-tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  padding: var(--e-5);
+  min-height: 220px;
+}
+
+.habla-etiqueta {
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--tinta);
+  opacity: 0.65;
+}
+
+.habla-frase {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-size: var(--fs-title);
+  font-weight: 700;
+  text-align: center;
+  color: var(--tinta); /* "p { color: var(--texto) }" global gana sobre la herencia -- explícito, ver repaso-frase */
+}
+
+.habla-boton-escuchar {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  padding: var(--e-3) var(--e-5);
+  color: var(--tinta);
+  font-weight: 700;
+  min-height: var(--toque-minimo);
+}
+
+.habla-panel-mic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-3);
+  padding: var(--e-5);
+  /* Superficie oscura, no calcomanía: nunca rota. ".pop-entrada" (abajo) usa rotate(var(--r))
+     en su keyframe y el --r global por defecto es -0.6deg -- sin esto, el panel se quedaría
+     ligeramente inclinado para siempre después de entrar (fill-mode:both deja el último
+     cuadro aplicado), el mismo bug que ya se encontró y documentó en .repaso-marco. */
+  --r: 0deg;
+}
+
+.habla-mic-wrap {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--e-2) auto;
+}
+
+.habla-boton-mic {
+  width: 112px;
+  height: 112px;
+  border-radius: 999px;
+  color: var(--tinta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ondas pulsantes: SOLO corren mientras ".habla-mic-wrap" tiene la clase "escuchando" (se
+   agrega/quita en JS, exactamente cuando SpeechRecognition arranca/termina de verdad -- no
+   es un loop ambiental sin razón, ver iniciarReconocimiento en habla.js). Dos anillos
+   desfasados 600ms para que no "respiren" los dos exactamente igual. */
+.habla-onda {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 2.5px solid var(--coral);
+  opacity: 0;
+}
+
+.habla-mic-wrap.escuchando .habla-onda {
+  animation: habla-onda-pulso 1600ms var(--ease-out) infinite;
+}
+
+.habla-mic-wrap.escuchando .habla-onda-2 {
+  animation-delay: 600ms;
+}
+
+@keyframes habla-onda-pulso {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.habla-estado-mic {
+  font-size: var(--fs-small);
+  color: var(--texto-2);
+  margin: 0;
+  text-align: center;
+}
+
+.habla-resultado {
+  width: 100%;
+  margin-top: var(--e-3);
+  text-align: center;
+  --r: 0deg; /* no es una calcomanía (sin borde/sombra propios) -- nunca rota, mismo motivo que .habla-panel-mic */
+}
+
+.habla-pastilla-porcentaje {
+  display: inline-block;
+  background: var(--amarillo);
+  color: var(--tinta);
+  font-weight: 700;
+  font-size: 22px;
+  padding: var(--e-2) var(--e-4);
+  border-radius: 999px;
+  border: 2.5px solid var(--tinta);
+}
+
+.habla-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--e-2);
+  margin-top: var(--e-3);
+}
+
+.habla-chip {
+  display: inline-block;
+  padding: var(--e-1) var(--e-3);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: var(--fs-small);
+  --r: 0deg; /* ficha de dato, no calcomanía -- mismo motivo que .habla-panel-mic/.habla-resultado */
+}
+
+.habla-chip-acierto {
+  background: var(--menta);
+  color: var(--tinta);
+}
+
+/* "coral con subrayado ondulado" (spec): el relleno coral YA distingue la palabra fallida;
+   el subrayado ondulado encima es la segunda señal explícita que pide el spec, como la
+   marca de "revisar esto" de un corrector ortográfico. */
+.habla-chip-revisar {
+  background: var(--coral);
+  color: var(--tinta);
+  text-decoration: underline wavy var(--tinta);
+  text-underline-offset: 3px;
+}
+
+.habla-botones-final {
+  display: flex;
+  gap: var(--e-2);
+  margin-top: var(--e-4);
+}
+
+.habla-botones-final > * {
+  flex: 1;
+}
+
+@media (min-width: 900px) {
+  .pantalla-habla {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .habla-cuerpo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 540px);
+    gap: var(--e-6);
+    align-items: stretch;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .habla-tarjeta {
+    --r: 0deg; /* tarjeta grande de contenido en laptop: sin rotación (REGLA DE LAPTOP) */
+    min-height: 100%;
+    padding: var(--e-7);
+  }
+
+  .habla-frase {
+    font-size: 60px;
+  }
+
+  .habla-boton-escuchar {
+    align-self: flex-end;
+    margin-top: auto;
+  }
+
+  /* Centrado por defecto (mic solo, antes de reconocer); en cuanto aparece ".habla-resultado"
+     su propio margin-top:auto (abajo) absorbe el espacio libre y empuja el bloque de
+     resultado+botones al fondo de la columna -- el mic+texto quedan arriba sin recentrarse,
+     que es justo el comportamiento "botones anclados al borde inferior de su columna" que
+     pide la REGLA DE LAPTOP. */
+  .habla-panel-mic {
+    justify-content: center;
+  }
+
+  .habla-resultado {
+    margin-top: auto;
+    padding-top: var(--e-4);
+  }
+
+  .habla-botones-final {
+    margin-top: var(--e-4);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
