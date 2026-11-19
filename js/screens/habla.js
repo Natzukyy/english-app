@@ -76,7 +76,7 @@
       esc(ejercicio.nivelCEFR) +
       "</p>" +
       '<div class="tarjeta tarjeta-repaso" style="margin-top:16px">' +
-      '<p class="frente" style="font-size:20px">' +
+      '<p class="frente frase-habla">' +
       esc(fraseMostrada) +
       "</p>" +
       "</div>" +
@@ -129,8 +129,8 @@
         '<p class="titulo-retro">Este navegador no tiene reconocimiento de voz</p>' +
         "<p>Puedes autoevaluarte: ¿cómo te salió?</p>" +
         '<div class="fila-botones" style="margin-top:8px">' +
-        '<button type="button" class="boton-secundario" id="btn-auto-bien">Me salió bien</button>' +
-        '<button type="button" class="boton-secundario" id="btn-auto-mal">Me costó trabajo</button>' +
+        '<button type="button" class="boton-secundario estado-correcto" id="btn-auto-bien">Me salió bien</button>' +
+        '<button type="button" class="boton-secundario estado-incorrecto" id="btn-auto-mal">Me costó trabajo</button>' +
         "</div>" +
         "</div>";
       zonaReconocimiento.querySelector("#btn-auto-bien").addEventListener("click", function () {
@@ -247,12 +247,13 @@
       '">' +
       '<p class="titulo-retro">' +
       (esBuena ? "¡Bien! " : "Vas por buen camino — ") +
+      '<span class="num-tabular">' +
       resultado.porcentaje +
-      "% parecido</p>" +
+      "%</span> parecido</p>" +
       '<p class="texto-caption">El reconocimiento de voz es aproximado: esto es una guía, no una calificación exacta.</p>' +
-      (resultado.acertadas.length ? '<p style="margin-top:8px">' + listaPalabras(resultado.acertadas, "chip-lectura") + "</p>" : "") +
+      (resultado.acertadas.length ? '<p style="margin-top:8px">' + listaPalabras(resultado.acertadas, "chip-acierto") + "</p>" : "") +
       (resultado.omitidas.length || resultado.distintas.length
-        ? '<p class="texto-tenue" style="margin-top:8px">Para revisar: ' + listaPalabras(resultado.omitidas.concat(resultado.distintas), "chip-habla") + "</p>"
+        ? '<p class="texto-tenue" style="margin-top:8px">Para revisar: ' + listaPalabras(resultado.omitidas.concat(resultado.distintas), "chip-revisar") + "</p>"
         : "") +
       '<div class="fila-botones" style="margin-top:12px">' +
       '<button type="button" class="boton-secundario" id="btn-otro">Otro ejercicio</button>' +

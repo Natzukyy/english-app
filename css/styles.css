@@ -461,6 +461,17 @@ button {
   background: var(--punto-escritura);
 }
 
+/* Chips de resultado en Habla (palabra acertada / por revisar): es un ESTADO, no una
+   habilidad -- antes reusaban chip-lectura/chip-habla (el color de esas dos habilidades)
+   sin ninguna relación real con lectura ni habla, solo por tener dos colores distintos a
+   mano. Mismo lenguaje semántico que ya usa esta pantalla en .panel-retro. */
+.chip-acierto .punto {
+  background: var(--exito);
+}
+.chip-revisar .punto {
+  background: var(--error);
+}
+
 .lista-chips {
   display: flex;
   flex-wrap: wrap;
@@ -699,6 +710,14 @@ nav.tabs button[aria-current="true"] {
   font-size: var(--fs-title);
   font-weight: 600;
   text-align: center;
+}
+
+/* Habla reusa la misma tarjeta física que Repaso (DESIGN_REVIEW.md sección 2), pero su
+   contenido es una oración completa a pronunciar, no una palabra de vocabulario -- al
+   tamaño de .frente normal se ve desproporcionada y rompe línea feo en 390px. Mismo peso
+   y centrado, tamaño más chico. */
+.tarjeta-repaso .frente.frase-habla {
+  font-size: var(--fs-heading);
 }
 
 .tarjeta-repaso .atras {
