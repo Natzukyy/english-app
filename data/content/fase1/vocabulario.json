@@ -1,65 +1,1110 @@
 {
   "_nota": "Vocabulario técnico y profesional, original, verificado con confianza alta. De 'voc-f1-21' en adelante son términos nuevos (Paso C), marcados 'revisar: true' porque el nivel CEFR es una estimación mía sin revisar todavía.",
   "palabras": [
-    { "id": "voc-f1-1", "ingles": "deadline", "espanol": "fecha límite", "ejemplo": "Can we move the deadline to next Friday?", "nivelCEFR": "A2", "categoria": "comunicacion_profesional" },
-    { "id": "voc-f1-2", "ingles": "feedback", "espanol": "retroalimentación / comentarios", "ejemplo": "Thanks for the feedback, I'll fix it today.", "nivelCEFR": "A2", "categoria": "comunicacion_profesional" },
-    { "id": "voc-f1-3", "ingles": "to reach out", "espanol": "contactar / escribirle a alguien", "ejemplo": "I'll reach out to the client tomorrow.", "nivelCEFR": "B1", "categoria": "comunicacion_profesional" },
-    { "id": "voc-f1-4", "ingles": "to follow up", "espanol": "dar seguimiento", "ejemplo": "I'm following up on my email from Monday.", "nivelCEFR": "B1", "categoria": "comunicacion_profesional" },
-    { "id": "voc-f1-5", "ingles": "blocker", "espanol": "algo que te detiene / impedimento", "ejemplo": "The main blocker right now is waiting for API access.", "nivelCEFR": "B1", "categoria": "standup" },
-    { "id": "voc-f1-6", "ingles": "to roll out", "espanol": "lanzar / desplegar (una función)", "ejemplo": "We're rolling out the new feature next week.", "nivelCEFR": "B1", "categoria": "comunicacion_profesional" },
-    { "id": "voc-f1-7", "ingles": "edge case", "espanol": "caso extremo / poco común", "ejemplo": "This bug only happens in a rare edge case.", "nivelCEFR": "B1", "categoria": "tecnico" },
-    { "id": "voc-f1-8", "ingles": "trade-off", "espanol": "compensación / sacrificio entre opciones", "ejemplo": "There's a trade-off between speed and accuracy.", "nivelCEFR": "B2", "categoria": "tecnico" },
-    { "id": "voc-f1-9", "ingles": "to scope (something)", "espanol": "definir el alcance de algo", "ejemplo": "Let's scope the project before we start coding.", "nivelCEFR": "B2", "categoria": "tecnico" },
-    { "id": "voc-f1-10", "ingles": "dataset", "espanol": "conjunto de datos", "ejemplo": "The model was trained on a small dataset.", "nivelCEFR": "A2", "categoria": "tecnico" },
-    { "id": "voc-f1-11", "ingles": "overfitting", "espanol": "sobreajuste", "ejemplo": "The model is overfitting on the training data.", "nivelCEFR": "B2", "categoria": "tecnico" },
-    { "id": "voc-f1-12", "ingles": "to debug", "espanol": "depurar / encontrar el error", "ejemplo": "I spent all morning debugging this function.", "nivelCEFR": "A2", "categoria": "tecnico" },
-    { "id": "voc-f1-13", "ingles": "stakeholder", "espanol": "parte interesada", "ejemplo": "We need sign-off from all the stakeholders.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional" },
-    { "id": "voc-f1-14", "ingles": "to onboard", "espanol": "incorporar / capacitar a alguien nuevo", "ejemplo": "It took a week to onboard the new intern.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional" },
-    { "id": "voc-f1-15", "ingles": "to escalate", "espanol": "escalar (un problema a alguien con más autoridad)", "ejemplo": "If it's urgent, escalate it to the team lead.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional" },
-    { "id": "voc-f1-16", "ingles": "scalable", "espanol": "escalable", "ejemplo": "This solution isn't scalable for a bigger team.", "nivelCEFR": "B2", "categoria": "tecnico" },
-    { "id": "voc-f1-17", "ingles": "to iterate", "espanol": "iterar / mejorar en pasos pequeños", "ejemplo": "We'll iterate on the design after the first feedback round.", "nivelCEFR": "B2", "categoria": "tecnico" },
-    { "id": "voc-f1-18", "ingles": "bandwidth", "espanol": "capacidad de tiempo/trabajo disponible", "ejemplo": "I don't have the bandwidth to take on another project this month.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional" },
-    { "id": "voc-f1-19", "ingles": "to sync (with someone)", "espanol": "sincronizar / ponerse al día con alguien", "ejemplo": "Let's sync tomorrow morning before the demo.", "nivelCEFR": "B1", "categoria": "standup" },
-    { "id": "voc-f1-20", "ingles": "takeaway", "espanol": "conclusión / idea principal", "ejemplo": "The main takeaway from the meeting was to simplify the onboarding flow.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional" },
-    { "id": "voc-f1-21", "ingles": "root cause", "espanol": "causa raíz", "ejemplo": "We found the root cause of the outage this morning.", "nivelCEFR": "B2", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-22", "ingles": "regression", "espanol": "regresión (un error que reaparece)", "ejemplo": "This update introduced a regression in the login flow.", "nivelCEFR": "B2", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-23", "ingles": "to refactor", "espanol": "refactorizar (mejorar código sin cambiar su comportamiento)", "ejemplo": "We should refactor this before adding more features.", "nivelCEFR": "B2", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-24", "ingles": "to deploy", "espanol": "desplegar (poner en producción)", "ejemplo": "We deploy to production every Tuesday.", "nivelCEFR": "B1", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-25", "ingles": "rollback", "espanol": "reversión (volver a una versión anterior)", "ejemplo": "We had to do a rollback after the new version broke search.", "nivelCEFR": "B2", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-26", "ingles": "latency", "espanol": "latencia (tiempo de respuesta)", "ejemplo": "Users in Europe are seeing higher latency than usual.", "nivelCEFR": "B2", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-27", "ingles": "throughput", "espanol": "rendimiento / cantidad procesada por tiempo", "ejemplo": "The new server handles twice the throughput of the old one.", "nivelCEFR": "C1", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-28", "ingles": "uptime", "espanol": "tiempo de actividad / disponibilidad", "ejemplo": "Our uptime last month was above 99%.", "nivelCEFR": "B1", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-29", "ingles": "incident", "espanol": "incidente (una falla que requiere atención)", "ejemplo": "We're still investigating last night's incident.", "nivelCEFR": "B1", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-30", "ingles": "postmortem", "espanol": "análisis posterior (de qué salió mal y por qué)", "ejemplo": "We'll write a postmortem once the incident is resolved.", "nivelCEFR": "C1", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-31", "ingles": "changelog", "espanol": "registro de cambios", "ejemplo": "Check the changelog to see what's new in this version.", "nivelCEFR": "B1", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-32", "ingles": "backlog", "espanol": "lista de pendientes (trabajo por hacer)", "ejemplo": "That idea is on the backlog, but not planned yet.", "nivelCEFR": "B1", "categoria": "standup", "revisar": true },
-    { "id": "voc-f1-33", "ingles": "sprint", "espanol": "sprint (periodo corto de trabajo planeado)", "ejemplo": "We'll finish this feature by the end of the sprint.", "nivelCEFR": "B1", "categoria": "standup", "revisar": true },
-    { "id": "voc-f1-34", "ingles": "velocity", "espanol": "velocidad (cuánto trabajo completa el equipo por sprint)", "ejemplo": "Our velocity dropped a bit after two people went on vacation.", "nivelCEFR": "C1", "categoria": "standup", "revisar": true },
-    { "id": "voc-f1-35", "ingles": "retrospective", "espanol": "retrospectiva (reunión para revisar qué mejorar)", "ejemplo": "We talked about communication in today's retrospective.", "nivelCEFR": "B2", "categoria": "standup", "revisar": true },
-    { "id": "voc-f1-36", "ingles": "pull request", "espanol": "solicitud de incorporación de cambios (en control de versiones)", "ejemplo": "Could you review my pull request when you have a chance?", "nivelCEFR": "B1", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-37", "ingles": "merge conflict", "espanol": "conflicto de fusión (al combinar cambios de código)", "ejemplo": "I'm fixing a merge conflict before I can push this.", "nivelCEFR": "B2", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-38", "ingles": "pipeline", "espanol": "flujo automatizado (de pruebas, de despliegue, de datos)", "ejemplo": "The pipeline failed because one test didn't pass.", "nivelCEFR": "B2", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-39", "ingles": "staging environment", "espanol": "entorno de pruebas (parecido a producción, antes de lanzar)", "ejemplo": "Let's test this on staging before it goes live.", "nivelCEFR": "B2", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-40", "ingles": "hotfix", "espanol": "arreglo urgente (fuera del ciclo normal)", "ejemplo": "We pushed a hotfix as soon as we found the bug.", "nivelCEFR": "B2", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-41", "ingles": "flaky test", "espanol": "prueba inestable (a veces pasa, a veces falla sin razón clara)", "ejemplo": "That test is flaky, it fails about once every ten runs.", "nivelCEFR": "C1", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-42", "ingles": "legacy code", "espanol": "código antiguo (difícil de cambiar, ya en uso)", "ejemplo": "A lot of our time goes into maintaining legacy code.", "nivelCEFR": "B2", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-43", "ingles": "greenfield project", "espanol": "proyecto desde cero (sin código previo)", "ejemplo": "It's rare to get to work on a greenfield project.", "nivelCEFR": "C1", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-44", "ingles": "metric", "espanol": "métrica (número que se mide para seguir el progreso)", "ejemplo": "Response time is the metric we care about most right now.", "nivelCEFR": "B1", "categoria": "tecnico", "revisar": true },
-    { "id": "voc-f1-45", "ingles": "to leverage", "espanol": "aprovechar (un recurso o ventaja existente)", "ejemplo": "We can leverage the existing API instead of building a new one.", "nivelCEFR": "C1", "categoria": "comunicacion_profesional", "revisar": true },
-    { "id": "voc-f1-46", "ingles": "to prioritize", "espanol": "priorizar", "ejemplo": "We need to prioritize the bug over the new feature.", "nivelCEFR": "B1", "categoria": "comunicacion_profesional", "revisar": true },
-    { "id": "voc-f1-47", "ingles": "to delegate", "espanol": "delegar", "ejemplo": "She delegated the research part to a junior teammate.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional", "revisar": true },
-    { "id": "voc-f1-48", "ingles": "to mentor (someone)", "espanol": "guiar / ser mentor de alguien", "ejemplo": "He's been mentoring two new hires this quarter.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional", "revisar": true },
-    { "id": "voc-f1-49", "ingles": "to clarify", "espanol": "aclarar", "ejemplo": "Could you clarify what you mean by 'soon'?", "nivelCEFR": "B1", "categoria": "comunicacion_profesional", "revisar": true },
-    { "id": "voc-f1-50", "ingles": "to elaborate (on something)", "espanol": "ampliar / dar más detalle sobre algo", "ejemplo": "Can you elaborate on why you chose this approach?", "nivelCEFR": "B2", "categoria": "comunicacion_profesional", "revisar": true },
-    { "id": "voc-f1-51", "ingles": "concise", "espanol": "conciso", "ejemplo": "Try to keep the summary concise, just a few bullet points.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional", "revisar": true },
-    { "id": "voc-f1-52", "ingles": "assertive", "espanol": "asertivo", "ejemplo": "She was assertive about the timeline without sounding rude.", "nivelCEFR": "C1", "categoria": "comunicacion_profesional", "revisar": true },
-    { "id": "voc-f1-53", "ingles": "proactive", "espanol": "proactivo", "ejemplo": "He's proactive about flagging risks before they become problems.", "nivelCEFR": "B2", "categoria": "comunicacion_profesional", "revisar": true },
-    { "id": "voc-f1-54", "ingles": "to align (on something)", "espanol": "ponerse de acuerdo / alinearse en algo", "ejemplo": "Let's align on the scope before we estimate the work.", "nivelCEFR": "C1", "categoria": "reuniones", "revisar": true },
-    { "id": "voc-f1-55", "ingles": "action item", "espanol": "tarea asignada (que sale de una reunión)", "ejemplo": "The only action item from the call was to update the docs.", "nivelCEFR": "B1", "categoria": "reuniones", "revisar": true },
-    { "id": "voc-f1-56", "ingles": "consensus", "espanol": "consenso", "ejemplo": "We reached a consensus after a short discussion.", "nivelCEFR": "B2", "categoria": "reuniones", "revisar": true },
-    { "id": "voc-f1-57", "ingles": "to compromise", "espanol": "llegar a un punto medio / ceder algo", "ejemplo": "We compromised on a smaller version of the feature for now.", "nivelCEFR": "B2", "categoria": "reuniones", "revisar": true },
-    { "id": "voc-f1-58", "ingles": "to advocate for (something)", "espanol": "defender / abogar por algo", "ejemplo": "She advocated for more testing before the release.", "nivelCEFR": "C1", "categoria": "reuniones", "revisar": true },
-    { "id": "voc-f1-59", "ingles": "to streamline", "espanol": "simplificar / hacer más eficiente un proceso", "ejemplo": "We streamlined the onboarding process for new clients.", "nivelCEFR": "C1", "categoria": "comunicacion_profesional", "revisar": true },
-    { "id": "voc-f1-60", "ingles": "strength", "espanol": "fortaleza (en el sentido de cualidad personal)", "ejemplo": "Communication is one of her biggest strengths.", "nivelCEFR": "B1", "categoria": "entrevistas", "revisar": true }
+    {
+      "id": "voc-f1-1",
+      "ingles": "deadline",
+      "espanol": "fecha límite",
+      "ejemplo": "Can we move the deadline to next Friday?",
+      "nivelCEFR": "A2",
+      "categoria": "comunicacion_profesional"
+    },
+    {
+      "id": "voc-f1-2",
+      "ingles": "feedback",
+      "espanol": "retroalimentación / comentarios",
+      "ejemplo": "Thanks for the feedback, I'll fix it today.",
+      "nivelCEFR": "A2",
+      "categoria": "comunicacion_profesional"
+    },
+    {
+      "id": "voc-f1-3",
+      "ingles": "to reach out",
+      "espanol": "contactar / escribirle a alguien",
+      "ejemplo": "I'll reach out to the client tomorrow.",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional"
+    },
+    {
+      "id": "voc-f1-4",
+      "ingles": "to follow up",
+      "espanol": "dar seguimiento",
+      "ejemplo": "I'm following up on my email from Monday.",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional"
+    },
+    {
+      "id": "voc-f1-5",
+      "ingles": "blocker",
+      "espanol": "algo que te detiene / impedimento",
+      "ejemplo": "The main blocker right now is waiting for API access.",
+      "nivelCEFR": "B1",
+      "categoria": "standup"
+    },
+    {
+      "id": "voc-f1-6",
+      "ingles": "to roll out",
+      "espanol": "lanzar / desplegar (una función)",
+      "ejemplo": "We're rolling out the new feature next week.",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional"
+    },
+    {
+      "id": "voc-f1-7",
+      "ingles": "edge case",
+      "espanol": "caso extremo / poco común",
+      "ejemplo": "This bug only happens in a rare edge case.",
+      "nivelCEFR": "B1",
+      "categoria": "tecnico"
+    },
+    {
+      "id": "voc-f1-8",
+      "ingles": "trade-off",
+      "espanol": "compensación / sacrificio entre opciones",
+      "ejemplo": "There's a trade-off between speed and accuracy.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico"
+    },
+    {
+      "id": "voc-f1-9",
+      "ingles": "to scope (something)",
+      "espanol": "definir el alcance de algo",
+      "ejemplo": "Let's scope the project before we start coding.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico"
+    },
+    {
+      "id": "voc-f1-10",
+      "ingles": "dataset",
+      "espanol": "conjunto de datos",
+      "ejemplo": "The model was trained on a small dataset.",
+      "nivelCEFR": "A2",
+      "categoria": "tecnico"
+    },
+    {
+      "id": "voc-f1-11",
+      "ingles": "overfitting",
+      "espanol": "sobreajuste",
+      "ejemplo": "The model is overfitting on the training data.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico"
+    },
+    {
+      "id": "voc-f1-12",
+      "ingles": "to debug",
+      "espanol": "depurar / encontrar el error",
+      "ejemplo": "I spent all morning debugging this function.",
+      "nivelCEFR": "A2",
+      "categoria": "tecnico"
+    },
+    {
+      "id": "voc-f1-13",
+      "ingles": "stakeholder",
+      "espanol": "parte interesada",
+      "ejemplo": "We need sign-off from all the stakeholders.",
+      "nivelCEFR": "B2",
+      "categoria": "comunicacion_profesional"
+    },
+    {
+      "id": "voc-f1-14",
+      "ingles": "to onboard",
+      "espanol": "incorporar / capacitar a alguien nuevo",
+      "ejemplo": "It took a week to onboard the new intern.",
+      "nivelCEFR": "B2",
+      "categoria": "comunicacion_profesional"
+    },
+    {
+      "id": "voc-f1-15",
+      "ingles": "to escalate",
+      "espanol": "escalar (un problema a alguien con más autoridad)",
+      "ejemplo": "If it's urgent, escalate it to the team lead.",
+      "nivelCEFR": "B2",
+      "categoria": "comunicacion_profesional"
+    },
+    {
+      "id": "voc-f1-16",
+      "ingles": "scalable",
+      "espanol": "escalable",
+      "ejemplo": "This solution isn't scalable for a bigger team.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico"
+    },
+    {
+      "id": "voc-f1-17",
+      "ingles": "to iterate",
+      "espanol": "iterar / mejorar en pasos pequeños",
+      "ejemplo": "We'll iterate on the design after the first feedback round.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico"
+    },
+    {
+      "id": "voc-f1-18",
+      "ingles": "bandwidth",
+      "espanol": "capacidad de tiempo/trabajo disponible",
+      "ejemplo": "I don't have the bandwidth to take on another project this month.",
+      "nivelCEFR": "B2",
+      "categoria": "comunicacion_profesional"
+    },
+    {
+      "id": "voc-f1-19",
+      "ingles": "to sync (with someone)",
+      "espanol": "sincronizar / ponerse al día con alguien",
+      "ejemplo": "Let's sync tomorrow morning before the demo.",
+      "nivelCEFR": "B1",
+      "categoria": "standup"
+    },
+    {
+      "id": "voc-f1-20",
+      "ingles": "takeaway",
+      "espanol": "conclusión / idea principal",
+      "ejemplo": "The main takeaway from the meeting was to simplify the onboarding flow.",
+      "nivelCEFR": "B2",
+      "categoria": "comunicacion_profesional"
+    },
+    {
+      "id": "voc-f1-21",
+      "ingles": "root cause",
+      "espanol": "causa raíz",
+      "ejemplo": "We found the root cause of the outage this morning.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-22",
+      "ingles": "regression",
+      "espanol": "regresión (un error que reaparece)",
+      "ejemplo": "This update introduced a regression in the login flow.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-23",
+      "ingles": "to refactor",
+      "espanol": "refactorizar (mejorar código sin cambiar su comportamiento)",
+      "ejemplo": "We should refactor this before adding more features.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-24",
+      "ingles": "to deploy",
+      "espanol": "desplegar (poner en producción)",
+      "ejemplo": "We deploy to production every Tuesday.",
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-25",
+      "ingles": "rollback",
+      "espanol": "reversión (volver a una versión anterior)",
+      "ejemplo": "We had to do a rollback after the new version broke search.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-26",
+      "ingles": "latency",
+      "espanol": "latencia (tiempo de respuesta)",
+      "ejemplo": "Users in Europe are seeing higher latency than usual.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-27",
+      "ingles": "throughput",
+      "espanol": "rendimiento / cantidad procesada por tiempo",
+      "ejemplo": "The new server handles twice the throughput of the old one.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-28",
+      "ingles": "uptime",
+      "espanol": "tiempo de actividad / disponibilidad",
+      "ejemplo": "Our uptime last month was above 99%.",
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-29",
+      "ingles": "incident",
+      "espanol": "incidente (una falla que requiere atención)",
+      "ejemplo": "We're still investigating last night's incident.",
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-30",
+      "ingles": "postmortem",
+      "espanol": "análisis posterior (de qué salió mal y por qué)",
+      "ejemplo": "We'll write a postmortem once the incident is resolved.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-31",
+      "ingles": "changelog",
+      "espanol": "registro de cambios",
+      "ejemplo": "Check the changelog to see what's new in this version.",
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-32",
+      "ingles": "backlog",
+      "espanol": "lista de pendientes (trabajo por hacer)",
+      "ejemplo": "That idea is on the backlog, but not planned yet.",
+      "nivelCEFR": "B1",
+      "categoria": "standup",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-33",
+      "ingles": "sprint",
+      "espanol": "sprint (periodo corto de trabajo planeado)",
+      "ejemplo": "We'll finish this feature by the end of the sprint.",
+      "nivelCEFR": "B1",
+      "categoria": "standup",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-34",
+      "ingles": "velocity",
+      "espanol": "velocidad (cuánto trabajo completa el equipo por sprint)",
+      "ejemplo": "Our velocity dropped a bit after two people went on vacation.",
+      "nivelCEFR": "C1",
+      "categoria": "standup",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-35",
+      "ingles": "retrospective",
+      "espanol": "retrospectiva (reunión para revisar qué mejorar)",
+      "ejemplo": "We talked about communication in today's retrospective.",
+      "nivelCEFR": "B2",
+      "categoria": "standup",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-36",
+      "ingles": "pull request",
+      "espanol": "solicitud de incorporación de cambios (en control de versiones)",
+      "ejemplo": "Could you review my pull request when you have a chance?",
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-37",
+      "ingles": "merge conflict",
+      "espanol": "conflicto de fusión (al combinar cambios de código)",
+      "ejemplo": "I'm fixing a merge conflict before I can push this.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-38",
+      "ingles": "pipeline",
+      "espanol": "flujo automatizado (de pruebas, de despliegue, de datos)",
+      "ejemplo": "The pipeline failed because one test didn't pass.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-39",
+      "ingles": "staging environment",
+      "espanol": "entorno de pruebas (parecido a producción, antes de lanzar)",
+      "ejemplo": "Let's test this on staging before it goes live.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-40",
+      "ingles": "hotfix",
+      "espanol": "arreglo urgente (fuera del ciclo normal)",
+      "ejemplo": "We pushed a hotfix as soon as we found the bug.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-41",
+      "ingles": "flaky test",
+      "espanol": "prueba inestable (a veces pasa, a veces falla sin razón clara)",
+      "ejemplo": "That test is flaky, it fails about once every ten runs.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-42",
+      "ingles": "legacy code",
+      "espanol": "código antiguo (difícil de cambiar, ya en uso)",
+      "ejemplo": "A lot of our time goes into maintaining legacy code.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-43",
+      "ingles": "greenfield project",
+      "espanol": "proyecto desde cero (sin código previo)",
+      "ejemplo": "It's rare to get to work on a greenfield project.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-44",
+      "ingles": "metric",
+      "espanol": "métrica (número que se mide para seguir el progreso)",
+      "ejemplo": "Response time is the metric we care about most right now.",
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-45",
+      "ingles": "to leverage",
+      "espanol": "aprovechar (un recurso o ventaja existente)",
+      "ejemplo": "We can leverage the existing API instead of building a new one.",
+      "nivelCEFR": "C1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-46",
+      "ingles": "to prioritize",
+      "espanol": "priorizar",
+      "ejemplo": "We need to prioritize the bug over the new feature.",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-47",
+      "ingles": "to delegate",
+      "espanol": "delegar",
+      "ejemplo": "She delegated the research part to a junior teammate.",
+      "nivelCEFR": "B2",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-48",
+      "ingles": "to mentor (someone)",
+      "espanol": "guiar / ser mentor de alguien",
+      "ejemplo": "He's been mentoring two new hires this quarter.",
+      "nivelCEFR": "B2",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-49",
+      "ingles": "to clarify",
+      "espanol": "aclarar",
+      "ejemplo": "Could you clarify what you mean by 'soon'?",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-50",
+      "ingles": "to elaborate (on something)",
+      "espanol": "ampliar / dar más detalle sobre algo",
+      "ejemplo": "Can you elaborate on why you chose this approach?",
+      "nivelCEFR": "B2",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-51",
+      "ingles": "concise",
+      "espanol": "conciso",
+      "ejemplo": "Try to keep the summary concise, just a few bullet points.",
+      "nivelCEFR": "B2",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-52",
+      "ingles": "assertive",
+      "espanol": "asertivo",
+      "ejemplo": "She was assertive about the timeline without sounding rude.",
+      "nivelCEFR": "C1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-53",
+      "ingles": "proactive",
+      "espanol": "proactivo",
+      "ejemplo": "He's proactive about flagging risks before they become problems.",
+      "nivelCEFR": "B2",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-54",
+      "ingles": "to align (on something)",
+      "espanol": "ponerse de acuerdo / alinearse en algo",
+      "ejemplo": "Let's align on the scope before we estimate the work.",
+      "nivelCEFR": "C1",
+      "categoria": "reuniones",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-55",
+      "ingles": "action item",
+      "espanol": "tarea asignada (que sale de una reunión)",
+      "ejemplo": "The only action item from the call was to update the docs.",
+      "nivelCEFR": "B1",
+      "categoria": "reuniones",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-56",
+      "ingles": "consensus",
+      "espanol": "consenso",
+      "ejemplo": "We reached a consensus after a short discussion.",
+      "nivelCEFR": "B2",
+      "categoria": "reuniones",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-57",
+      "ingles": "to compromise",
+      "espanol": "llegar a un punto medio / ceder algo",
+      "ejemplo": "We compromised on a smaller version of the feature for now.",
+      "nivelCEFR": "B2",
+      "categoria": "reuniones",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-58",
+      "ingles": "to advocate for (something)",
+      "espanol": "defender / abogar por algo",
+      "ejemplo": "She advocated for more testing before the release.",
+      "nivelCEFR": "C1",
+      "categoria": "reuniones",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-59",
+      "ingles": "to streamline",
+      "espanol": "simplificar / hacer más eficiente un proceso",
+      "ejemplo": "We streamlined the onboarding process for new clients.",
+      "nivelCEFR": "C1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-60",
+      "ingles": "strength",
+      "espanol": "fortaleza (en el sentido de cualidad personal)",
+      "ejemplo": "Communication is one of her biggest strengths.",
+      "nivelCEFR": "B1",
+      "categoria": "entrevistas",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-61",
+      "ingles": "grocery store",
+      "espanol": "tienda de abarrotes",
+      "ejemplo": "I need to stop by the grocery store after work.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-62",
+      "ingles": "appointment",
+      "espanol": "cita",
+      "ejemplo": "I have a doctor's appointment at three.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-63",
+      "ingles": "neighbor",
+      "espanol": "vecino/a",
+      "ejemplo": "My neighbor is very friendly.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-64",
+      "ingles": "weather",
+      "espanol": "clima",
+      "ejemplo": "The weather is nice today.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-65",
+      "ingles": "tired",
+      "espanol": "cansado/a",
+      "ejemplo": "I'm really tired after the trip.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-66",
+      "ingles": "to wake up",
+      "espanol": "despertarse",
+      "ejemplo": "I wake up at seven every day.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-67",
+      "ingles": "to get dressed",
+      "espanol": "vestirse",
+      "ejemplo": "She gets dressed quickly in the morning.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-68",
+      "ingles": "breakfast",
+      "espanol": "desayuno",
+      "ejemplo": "I usually skip breakfast.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-69",
+      "ingles": "to take a shower",
+      "espanol": "ducharse",
+      "ejemplo": "He takes a shower before bed.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-70",
+      "ingles": "chores",
+      "espanol": "quehaceres",
+      "ejemplo": "I do my chores on Saturdays.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-71",
+      "ingles": "to borrow",
+      "espanol": "pedir prestado",
+      "ejemplo": "Can I borrow your pen?",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-72",
+      "ingles": "to lend",
+      "espanol": "prestar",
+      "ejemplo": "I can lend you my charger.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-73",
+      "ingles": "roommate",
+      "espanol": "compañero/a de cuarto",
+      "ejemplo": "My roommate is studying engineering too.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-74",
+      "ingles": "to clean up",
+      "espanol": "limpiar",
+      "ejemplo": "Let's clean up the kitchen.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-75",
+      "ingles": "nearby",
+      "espanol": "cercano",
+      "ejemplo": "There's a park nearby.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-76",
+      "ingles": "suitcase",
+      "espanol": "maleta",
+      "ejemplo": "I packed my suitcase last night.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-77",
+      "ingles": "boarding pass",
+      "espanol": "pase de abordar",
+      "ejemplo": "Don't forget your boarding pass.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-78",
+      "ingles": "to check in",
+      "espanol": "registrarse",
+      "ejemplo": "We checked in at the hotel at noon.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-79",
+      "ingles": "departure",
+      "espanol": "salida",
+      "ejemplo": "The departure is at six in the morning.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-80",
+      "ingles": "arrival",
+      "espanol": "llegada",
+      "ejemplo": "Our arrival was delayed by an hour.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-81",
+      "ingles": "passport",
+      "espanol": "pasaporte",
+      "ejemplo": "Make sure your passport is valid.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-82",
+      "ingles": "round trip",
+      "espanol": "viaje redondo",
+      "ejemplo": "I booked a round trip to Mexico City.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-83",
+      "ingles": "to get lost",
+      "espanol": "perderse",
+      "ejemplo": "We got lost looking for the hotel.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-84",
+      "ingles": "map",
+      "espanol": "mapa",
+      "ejemplo": "Can you check the map?",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-85",
+      "ingles": "tourist",
+      "espanol": "turista",
+      "ejemplo": "There were many tourists at the museum.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-86",
+      "ingles": "luggage",
+      "espanol": "equipaje",
+      "ejemplo": "My luggage didn't arrive.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-87",
+      "ingles": "to pack",
+      "espanol": "empacar",
+      "ejemplo": "I still need to pack my bag.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-88",
+      "ingles": "receipt",
+      "espanol": "recibo",
+      "ejemplo": "Can I have a receipt, please?",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-89",
+      "ingles": "to pay in cash",
+      "espanol": "pagar en efectivo",
+      "ejemplo": "I'd rather pay in cash.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-90",
+      "ingles": "change (money)",
+      "espanol": "cambio",
+      "ejemplo": "Keep the change.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-91",
+      "ingles": "customer",
+      "espanol": "cliente",
+      "ejemplo": "The customer asked for a refund.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-92",
+      "ingles": "waiter",
+      "espanol": "mesero/a",
+      "ejemplo": "The waiter brought the menu.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-93",
+      "ingles": "to book",
+      "espanol": "reservar",
+      "ejemplo": "I booked a table for two.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-94",
+      "ingles": "available",
+      "espanol": "disponible",
+      "ejemplo": "Is this table available?",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-95",
+      "ingles": "to cancel",
+      "espanol": "cancelar",
+      "ejemplo": "I need to cancel my appointment.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-96",
+      "ingles": "repair",
+      "espanol": "reparación",
+      "ejemplo": "The repair took two days.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-97",
+      "ingles": "broken",
+      "espanol": "roto / descompuesto",
+      "ejemplo": "My phone screen is broken.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-98",
+      "ingles": "to fix",
+      "espanol": "arreglar",
+      "ejemplo": "Can you fix this for me?",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-99",
+      "ingles": "warranty",
+      "espanol": "garantía",
+      "ejemplo": "The laptop still has warranty.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-100",
+      "ingles": "refund",
+      "espanol": "reembolso",
+      "ejemplo": "They gave me a refund.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-101",
+      "ingles": "algorithm",
+      "espanol": "algoritmo",
+      "ejemplo": "We studied a new sorting algorithm.",
+      "nivelCEFR": "B1",
+      "categoria": "estudios_ia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-102",
+      "ingles": "to train (a model)",
+      "espanol": "entrenar (un modelo)",
+      "ejemplo": "It took hours to train the model.",
+      "nivelCEFR": "B1",
+      "categoria": "estudios_ia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-103",
+      "ingles": "accuracy",
+      "espanol": "precisión",
+      "ejemplo": "The accuracy improved after more data.",
+      "nivelCEFR": "B1",
+      "categoria": "estudios_ia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-104",
+      "ingles": "to predict",
+      "espanol": "predecir",
+      "ejemplo": "The model predicts customer behavior.",
+      "nivelCEFR": "B1",
+      "categoria": "estudios_ia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-105",
+      "ingles": "neural network",
+      "espanol": "red neuronal",
+      "ejemplo": "She explained how a neural network works.",
+      "nivelCEFR": "B1",
+      "categoria": "estudios_ia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-106",
+      "ingles": "to label (data)",
+      "espanol": "etiquetar (datos)",
+      "ejemplo": "We spent a week labeling the data.",
+      "nivelCEFR": "B1",
+      "categoria": "estudios_ia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-107",
+      "ingles": "assignment",
+      "espanol": "tarea asignada",
+      "ejemplo": "The assignment is due on Monday.",
+      "nivelCEFR": "B1",
+      "categoria": "estudios_ia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-108",
+      "ingles": "lecture",
+      "espanol": "clase magistral",
+      "ejemplo": "I missed the lecture yesterday.",
+      "nivelCEFR": "B1",
+      "categoria": "estudios_ia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-109",
+      "ingles": "to submit",
+      "espanol": "entregar",
+      "ejemplo": "Please submit your project by Friday.",
+      "nivelCEFR": "B1",
+      "categoria": "estudios_ia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-110",
+      "ingles": "classmate",
+      "espanol": "compañero/a de clase",
+      "ejemplo": "My classmate helped me understand the topic.",
+      "nivelCEFR": "B1",
+      "categoria": "estudios_ia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-111",
+      "ingles": "to catch up",
+      "espanol": "ponerse al día",
+      "ejemplo": "Let's catch up next week.",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-112",
+      "ingles": "heads-up",
+      "espanol": "aviso previo",
+      "ejemplo": "Just a heads-up, the meeting moved.",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-113",
+      "ingles": "workaround",
+      "espanol": "solución temporal",
+      "ejemplo": "We found a workaround for now.",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-114",
+      "ingles": "to bring up",
+      "espanol": "mencionar",
+      "ejemplo": "She brought up a good point.",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-115",
+      "ingles": "turnaround time",
+      "espanol": "tiempo de respuesta",
+      "ejemplo": "The turnaround time is two days.",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-116",
+      "ingles": "to touch base",
+      "espanol": "ponerse en contacto",
+      "ejemplo": "Let's touch base tomorrow.",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-117",
+      "ingles": "overdue",
+      "espanol": "atrasado",
+      "ejemplo": "This task is overdue.",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-118",
+      "ingles": "to wrap up",
+      "espanol": "concluir",
+      "ejemplo": "Let's wrap up the meeting.",
+      "nivelCEFR": "B1",
+      "categoria": "comunicacion_profesional",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-119",
+      "ingles": "itinerary",
+      "espanol": "itinerario",
+      "ejemplo": "I planned the whole itinerary.",
+      "nivelCEFR": "B1",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-120",
+      "ingles": "delay",
+      "espanol": "retraso",
+      "ejemplo": "There was a two-hour delay.",
+      "nivelCEFR": "B1",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-121",
+      "ingles": "to reschedule",
+      "espanol": "reprogramar",
+      "ejemplo": "We had to reschedule the flight.",
+      "nivelCEFR": "B1",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-122",
+      "ingles": "accommodation",
+      "espanol": "alojamiento",
+      "ejemplo": "The accommodation was close to downtown.",
+      "nivelCEFR": "B1",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-123",
+      "ingles": "currency exchange",
+      "espanol": "casa de cambio",
+      "ejemplo": "I need to find a currency exchange.",
+      "nivelCEFR": "B1",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-124",
+      "ingles": "to complain",
+      "espanol": "quejarse",
+      "ejemplo": "I complained about the service.",
+      "nivelCEFR": "B1",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-125",
+      "ingles": "customer service",
+      "espanol": "servicio al cliente",
+      "ejemplo": "Customer service was very helpful.",
+      "nivelCEFR": "B1",
+      "categoria": "servicios",
+      "revisar": true
+    }
   ]
 }

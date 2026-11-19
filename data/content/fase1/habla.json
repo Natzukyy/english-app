@@ -184,6 +184,798 @@
       "revisar": true,
       "prompt": "How do you decide when a piece of technical debt is worth fixing versus leaving alone?",
       "requiere_prueba_microfono": true
+    },
+    {
+      "id": "habla-f1-shadow-13",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "Nice to meet you! I'm Alex.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-14",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "Could you say that one more time, please?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-15",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "I'll be there in five minutes.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-16",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "Can you hear me okay?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-17",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "Let's take a short break.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-18",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "I just sent you the file.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-19",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "What time does the meeting start?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-20",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "I'm still learning, so please be patient.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-21",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "Do you have a minute to talk?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-22",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "I need to charge my laptop first.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-23",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "The wifi here is really slow.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-24",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "Where is the nearest bus stop?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-25",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "Can I pay with a card?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-26",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "I'd like a table for two, please.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-27",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "Sorry, I'm running a little late.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-28",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "Could you turn the volume up a bit?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-29",
+      "tipo": "shadowing",
+      "nivelCEFR": "A2",
+      "fraseObjetivo": "I'll check and let you know tomorrow.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-30",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "I'll follow up with you once I hear back from the client.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-31",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "Can we push this meeting to tomorrow afternoon?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-32",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "I think we're overcomplicating this a little.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-33",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "Let me double-check that before I confirm.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-34",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "We ran into a small issue, but it's under control.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-35",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "I'd rather we test this first before deploying it.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-36",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "Could you walk me through your reasoning here?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-37",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "That makes sense, but what about the edge cases?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-38",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "I'll have a draft ready by tomorrow morning.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-39",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "Let's circle back to this once we have more data.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-40",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "I appreciate you taking the time to explain that.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-41",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "We should probably loop in the design team too.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-42",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "It's a minor detail, but it's worth mentioning.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-43",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "I'm not fully convinced yet, honestly.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-44",
+      "tipo": "shadowing",
+      "nivelCEFR": "B1",
+      "fraseObjetivo": "Let's keep this conversation going over email.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-45",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "I see your point, but I'd frame it a bit differently.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-46",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "Let's not lose sight of the bigger picture here.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-47",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "We should weigh the trade-offs before committing to this.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-48",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "To be fair, the deadline was unrealistic from the start.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-49",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "I'd like to table this discussion until we have more context.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-50",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "There's a reasonable chance this could backfire if we rush it.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-51",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "I'm cautiously optimistic about how this is going.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-52",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "Let's not jump to conclusions before reviewing the data.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-53",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "It's worth revisiting this decision once the dust settles.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-54",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "We're spread a bit thin this quarter, to be honest.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-55",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "I'd push back on the assumption that more features mean more value.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-56",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "Let's align on priorities before we commit resources.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-57",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "That's a fair critique, and I think it's worth addressing.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-58",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "We need to be more deliberate about how we scope this.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-59",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "I don't think that's a dealbreaker, but it's worth flagging.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-60",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "Let's make sure we're solving the right problem here.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-shadow-61",
+      "tipo": "shadowing",
+      "nivelCEFR": "B2",
+      "fraseObjetivo": "In hindsight, we probably should have tested this sooner.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-13",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "What is your favorite way to spend a weekend?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-14",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "Describe your morning routine in a few sentences.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-15",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "What do you usually eat for breakfast?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-16",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "Tell me about a place you would like to visit.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-17",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "What is your favorite subject to study? Why?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-18",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "Describe your bedroom or workspace.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-19",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "What do you do when you feel stressed?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-20",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "Talk about a friend you see often.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-21",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "What kind of music do you listen to?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-22",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "Describe the weather today where you are.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-23",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "What did you have for lunch yesterday?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-24",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "Talk about a hobby you enjoy.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-25",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "How do you usually get to school or work?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-26",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "Describe your favorite app on your phone.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-27",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "What is something you learned this week?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-28",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "Talk about a pet you have or would like to have.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-29",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "A2",
+      "prompt": "What do you like to do after classes finish?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-30",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "Describe a project you're proud of and why.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-31",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "Tell me about a mistake you learned something from.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-32",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "How do you usually prepare for a meeting?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-33",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "What's a skill you'd like to improve this year?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-34",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "Describe how your team communicates day to day.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-35",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "Tell me about a time you had to learn something quickly.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-36",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "What do you think makes a good teammate?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-37",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "Describe a tool you couldn't work without.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-38",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "How do you handle disagreements with coworkers?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-39",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "Tell me about a trip that didn't go as planned.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-40",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "What's something you'd change about your daily routine?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-41",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "Describe a challenge you're currently working through.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-42",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "How do you stay organized with multiple tasks?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-43",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "Tell me about a time you asked for feedback.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-44",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "What's a habit that has helped you at work or school?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-45",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B1",
+      "prompt": "Describe a time you had to explain something technical to someone who isn't technical.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-46",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "Describe a time you had to persuade someone to change their mind.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-47",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "What's a professional risk you took, and how did it turn out?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-48",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "Tell me about a time priorities shifted suddenly on a project.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-49",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "How do you decide when to ask for help versus figuring it out alone?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-50",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "Describe a situation where you had to give difficult feedback.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-51",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "What's a long-term goal you're currently working toward?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-52",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "Tell me about a time you had to adapt to a new tool or process quickly.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-53",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "How do you balance speed and quality when under pressure?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-54",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "Describe a disagreement you had with a decision made by leadership.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-55",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "What's something you changed your mind about recently?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-56",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "Tell me about a time you mentored or helped a less experienced teammate.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-57",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "How do you approach learning something completely outside your field?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-58",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "Describe a project that failed. What did you take away from it?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-59",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "What's a trade-off you regularly have to make in your work?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-60",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "Tell me about a time you had to push back on a request from a manager.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-61",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "How do you stay motivated on long, repetitive tasks?",
+      "requiere_prueba_microfono": true,
+      "revisar": true
+    },
+    {
+      "id": "habla-f1-prompt-62",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "B2",
+      "prompt": "Describe how your approach to problem-solving has changed over time.",
+      "requiere_prueba_microfono": true,
+      "revisar": true
     }
   ]
 }

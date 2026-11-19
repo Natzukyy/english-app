@@ -5,97 +5,555 @@
       "categoria": "correos",
       "nivelCEFR": "B1",
       "frases": [
-        { "ingles": "I wanted to follow up on my previous email.", "espanol": "Quería darle seguimiento a mi correo anterior." },
-        { "ingles": "Please let me know if this works for you.", "espanol": "Avísame si esto te funciona." },
-        { "ingles": "Attached is the document we discussed.", "espanol": "Adjunto está el documento que platicamos." },
-        { "ingles": "Sorry for the late reply.", "espanol": "Disculpa la tardanza en responder." },
-        { "ingles": "Let me know if you have any questions.", "espanol": "Avísame si tienes alguna duda." },
-        { "ingles": "I hope this email finds you well.", "espanol": "Espero que este correo te encuentre bien.", "revisar": true },
-        { "ingles": "Just a gentle reminder about this.", "espanol": "Solo un recordatorio amable sobre esto.", "revisar": true },
-        { "ingles": "Could you confirm by end of day?", "espanol": "¿Podrías confirmar antes de que termine el día?", "revisar": true },
-        { "ingles": "Looping in Laura so she's aware too.", "espanol": "Incluyo a Laura en copia para que también esté al tanto.", "revisar": true }
+        {
+          "ingles": "I wanted to follow up on my previous email.",
+          "espanol": "Quería darle seguimiento a mi correo anterior."
+        },
+        {
+          "ingles": "Please let me know if this works for you.",
+          "espanol": "Avísame si esto te funciona."
+        },
+        {
+          "ingles": "Attached is the document we discussed.",
+          "espanol": "Adjunto está el documento que platicamos."
+        },
+        {
+          "ingles": "Sorry for the late reply.",
+          "espanol": "Disculpa la tardanza en responder."
+        },
+        {
+          "ingles": "Let me know if you have any questions.",
+          "espanol": "Avísame si tienes alguna duda."
+        },
+        {
+          "ingles": "I hope this email finds you well.",
+          "espanol": "Espero que este correo te encuentre bien.",
+          "revisar": true
+        },
+        {
+          "ingles": "Just a gentle reminder about this.",
+          "espanol": "Solo un recordatorio amable sobre esto.",
+          "revisar": true
+        },
+        {
+          "ingles": "Could you confirm by end of day?",
+          "espanol": "¿Podrías confirmar antes de que termine el día?",
+          "revisar": true
+        },
+        {
+          "ingles": "Looping in Laura so she's aware too.",
+          "espanol": "Incluyo a Laura en copia para que también esté al tanto.",
+          "revisar": true
+        }
       ]
     },
     {
       "categoria": "reuniones",
       "nivelCEFR": "B1",
       "frases": [
-        { "ingles": "Can you repeat that, please?", "espanol": "¿Puedes repetir eso, por favor?" },
-        { "ingles": "I think we should table this for now.", "espanol": "Creo que deberíamos dejar esto para después." },
-        { "ingles": "Just to make sure I understood correctly...", "espanol": "Solo para asegurarme de que entendí bien..." },
-        { "ingles": "Who's taking notes for this meeting?", "espanol": "¿Quién va a tomar notas de esta reunión?" },
-        { "ingles": "Let's circle back to this next week.", "espanol": "Retomemos esto la próxima semana." },
-        { "ingles": "Can everyone see my screen?", "espanol": "¿Todos pueden ver mi pantalla?", "revisar": true },
-        { "ingles": "Let's park that for the end.", "espanol": "Dejemos eso para el final.", "revisar": true },
-        { "ingles": "I think we're aligned on this.", "espanol": "Creo que estamos de acuerdo en esto.", "revisar": true },
-        { "ingles": "What's the action item here, and who owns it?", "espanol": "¿Cuál es la tarea aquí y quién la tiene a cargo?", "revisar": true }
+        {
+          "ingles": "Can you repeat that, please?",
+          "espanol": "¿Puedes repetir eso, por favor?"
+        },
+        {
+          "ingles": "I think we should table this for now.",
+          "espanol": "Creo que deberíamos dejar esto para después."
+        },
+        {
+          "ingles": "Just to make sure I understood correctly...",
+          "espanol": "Solo para asegurarme de que entendí bien..."
+        },
+        {
+          "ingles": "Who's taking notes for this meeting?",
+          "espanol": "¿Quién va a tomar notas de esta reunión?"
+        },
+        {
+          "ingles": "Let's circle back to this next week.",
+          "espanol": "Retomemos esto la próxima semana."
+        },
+        {
+          "ingles": "Can everyone see my screen?",
+          "espanol": "¿Todos pueden ver mi pantalla?",
+          "revisar": true
+        },
+        {
+          "ingles": "Let's park that for the end.",
+          "espanol": "Dejemos eso para el final.",
+          "revisar": true
+        },
+        {
+          "ingles": "I think we're aligned on this.",
+          "espanol": "Creo que estamos de acuerdo en esto.",
+          "revisar": true
+        },
+        {
+          "ingles": "What's the action item here, and who owns it?",
+          "espanol": "¿Cuál es la tarea aquí y quién la tiene a cargo?",
+          "revisar": true
+        }
       ]
     },
     {
       "categoria": "standups",
       "nivelCEFR": "B1",
       "frases": [
-        { "ingles": "Yesterday I worked on the login page.", "espanol": "Ayer trabajé en la página de inicio de sesión." },
-        { "ingles": "Today I'm planning to finish the tests.", "espanol": "Hoy planeo terminar las pruebas." },
-        { "ingles": "I'm blocked on waiting for API access.", "espanol": "Estoy bloqueado esperando acceso a la API." },
-        { "ingles": "No blockers on my end.", "espanol": "No tengo ningún bloqueo de mi parte." },
-        { "ingles": "I might need help with this later today.", "espanol": "Puede que necesite ayuda con esto más tarde." },
-        { "ingles": "I'm a bit behind on this task.", "espanol": "Voy un poco atrasado con esta tarea.", "revisar": true },
-        { "ingles": "That should be ready by tomorrow.", "espanol": "Eso debería estar listo para mañana.", "revisar": true },
-        { "ingles": "I'll pick this back up after the meeting.", "espanol": "Voy a retomar esto después de la reunión.", "revisar": true }
+        {
+          "ingles": "Yesterday I worked on the login page.",
+          "espanol": "Ayer trabajé en la página de inicio de sesión."
+        },
+        {
+          "ingles": "Today I'm planning to finish the tests.",
+          "espanol": "Hoy planeo terminar las pruebas."
+        },
+        {
+          "ingles": "I'm blocked on waiting for API access.",
+          "espanol": "Estoy bloqueado esperando acceso a la API."
+        },
+        {
+          "ingles": "No blockers on my end.",
+          "espanol": "No tengo ningún bloqueo de mi parte."
+        },
+        {
+          "ingles": "I might need help with this later today.",
+          "espanol": "Puede que necesite ayuda con esto más tarde."
+        },
+        {
+          "ingles": "I'm a bit behind on this task.",
+          "espanol": "Voy un poco atrasado con esta tarea.",
+          "revisar": true
+        },
+        {
+          "ingles": "That should be ready by tomorrow.",
+          "espanol": "Eso debería estar listo para mañana.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'll pick this back up after the meeting.",
+          "espanol": "Voy a retomar esto después de la reunión.",
+          "revisar": true
+        }
       ]
     },
     {
       "categoria": "explicar_proyecto",
       "nivelCEFR": "B2",
       "frases": [
-        { "ingles": "The goal of this project is to...", "espanol": "El objetivo de este proyecto es..." },
-        { "ingles": "It's still a work in progress.", "espanol": "Todavía está en progreso." },
-        { "ingles": "The main challenge so far has been...", "espanol": "El principal reto hasta ahora ha sido..." },
-        { "ingles": "We're using this approach because...", "espanol": "Usamos este enfoque porque..." },
-        { "ingles": "Happy to go into more detail if that's useful.", "espanol": "Con gusto entro en más detalle si es útil." },
-        { "ingles": "At a high level, the idea is...", "espanol": "A grandes rasgos, la idea es...", "revisar": true },
-        { "ingles": "One trade-off we had to accept was...", "espanol": "Una compensación que tuvimos que aceptar fue...", "revisar": true },
-        { "ingles": "That's actually a great question.", "espanol": "Esa es en realidad una muy buena pregunta.", "revisar": true }
+        {
+          "ingles": "The goal of this project is to...",
+          "espanol": "El objetivo de este proyecto es..."
+        },
+        {
+          "ingles": "It's still a work in progress.",
+          "espanol": "Todavía está en progreso."
+        },
+        {
+          "ingles": "The main challenge so far has been...",
+          "espanol": "El principal reto hasta ahora ha sido..."
+        },
+        {
+          "ingles": "We're using this approach because...",
+          "espanol": "Usamos este enfoque porque..."
+        },
+        {
+          "ingles": "Happy to go into more detail if that's useful.",
+          "espanol": "Con gusto entro en más detalle si es útil."
+        },
+        {
+          "ingles": "At a high level, the idea is...",
+          "espanol": "A grandes rasgos, la idea es...",
+          "revisar": true
+        },
+        {
+          "ingles": "One trade-off we had to accept was...",
+          "espanol": "Una compensación que tuvimos que aceptar fue...",
+          "revisar": true
+        },
+        {
+          "ingles": "That's actually a great question.",
+          "espanol": "Esa es en realidad una muy buena pregunta.",
+          "revisar": true
+        }
       ]
     },
     {
       "categoria": "pedir_ayuda",
       "nivelCEFR": "B1",
       "frases": [
-        { "ingles": "Do you have a minute to help me with something?", "espanol": "¿Tienes un minuto para ayudarme con algo?" },
-        { "ingles": "I'm stuck on this error, could you take a look?", "espanol": "Estoy atorado con este error, ¿podrías revisarlo?" },
-        { "ingles": "Could you point me in the right direction?", "espanol": "¿Podrías orientarme un poco?" },
-        { "ingles": "I don't quite understand this part, can you explain it?", "espanol": "No entiendo bien esta parte, ¿puedes explicarla?" },
-        { "ingles": "Sorry to bother you, quick question.", "espanol": "Disculpa la molestia, una pregunta rápida.", "revisar": true },
-        { "ingles": "No rush, whenever you get a chance.", "espanol": "Sin prisa, cuando tengas oportunidad.", "revisar": true },
-        { "ingles": "I tried a few things already, but nothing worked.", "espanol": "Ya intenté varias cosas, pero nada funcionó.", "revisar": true }
+        {
+          "ingles": "Do you have a minute to help me with something?",
+          "espanol": "¿Tienes un minuto para ayudarme con algo?"
+        },
+        {
+          "ingles": "I'm stuck on this error, could you take a look?",
+          "espanol": "Estoy atorado con este error, ¿podrías revisarlo?"
+        },
+        {
+          "ingles": "Could you point me in the right direction?",
+          "espanol": "¿Podrías orientarme un poco?"
+        },
+        {
+          "ingles": "I don't quite understand this part, can you explain it?",
+          "espanol": "No entiendo bien esta parte, ¿puedes explicarla?"
+        },
+        {
+          "ingles": "Sorry to bother you, quick question.",
+          "espanol": "Disculpa la molestia, una pregunta rápida.",
+          "revisar": true
+        },
+        {
+          "ingles": "No rush, whenever you get a chance.",
+          "espanol": "Sin prisa, cuando tengas oportunidad.",
+          "revisar": true
+        },
+        {
+          "ingles": "I tried a few things already, but nothing worked.",
+          "espanol": "Ya intenté varias cosas, pero nada funcionó.",
+          "revisar": true
+        }
       ]
     },
     {
       "categoria": "dar_feedback",
       "nivelCEFR": "B2",
       "frases": [
-        { "ingles": "Overall this looks good, just a couple of comments.", "espanol": "En general se ve bien, solo un par de comentarios." },
-        { "ingles": "Have you considered doing it this way instead?", "espanol": "¿Has considerado hacerlo de esta otra forma?" },
-        { "ingles": "This part could be clearer if...", "espanol": "Esta parte podría quedar más clara si..." },
-        { "ingles": "Nice work on this, especially the part about...", "espanol": "Buen trabajo con esto, especialmente la parte sobre..." },
-        { "ingles": "Not a blocker, just a small suggestion.", "espanol": "No es algo que detenga esto, solo una pequeña sugerencia.", "revisar": true },
-        { "ingles": "I'd push back a little on this part.", "espanol": "No estoy del todo de acuerdo con esta parte.", "revisar": true },
-        { "ingles": "Let's keep this in mind for next time.", "espanol": "Tengamos esto en cuenta para la próxima.", "revisar": true }
+        {
+          "ingles": "Overall this looks good, just a couple of comments.",
+          "espanol": "En general se ve bien, solo un par de comentarios."
+        },
+        {
+          "ingles": "Have you considered doing it this way instead?",
+          "espanol": "¿Has considerado hacerlo de esta otra forma?"
+        },
+        {
+          "ingles": "This part could be clearer if...",
+          "espanol": "Esta parte podría quedar más clara si..."
+        },
+        {
+          "ingles": "Nice work on this, especially the part about...",
+          "espanol": "Buen trabajo con esto, especialmente la parte sobre..."
+        },
+        {
+          "ingles": "Not a blocker, just a small suggestion.",
+          "espanol": "No es algo que detenga esto, solo una pequeña sugerencia.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'd push back a little on this part.",
+          "espanol": "No estoy del todo de acuerdo con esta parte.",
+          "revisar": true
+        },
+        {
+          "ingles": "Let's keep this in mind for next time.",
+          "espanol": "Tengamos esto en cuenta para la próxima.",
+          "revisar": true
+        }
       ]
     },
     {
       "categoria": "entrevistas",
       "nivelCEFR": "B2",
       "frases": [
-        { "ingles": "Tell me about a project you're proud of.", "espanol": "Cuéntame sobre un proyecto del que estés orgulloso." },
-        { "ingles": "What would you say is your biggest strength?", "espanol": "¿Cuál dirías que es tu mayor fortaleza?" },
-        { "ingles": "Can you walk me through your thought process?", "espanol": "¿Puedes explicarme cómo pensaste el problema?" },
-        { "ingles": "Do you have any questions for me?", "espanol": "¿Tienes alguna pregunta para mí?" },
-        { "ingles": "Let me give you some context first.", "espanol": "Déjame darte un poco de contexto primero.", "revisar": true },
-        { "ingles": "That's something I'm actively working on improving.", "espanol": "Eso es algo en lo que estoy trabajando activamente para mejorar.", "revisar": true },
-        { "ingles": "I'd love to learn more about the team.", "espanol": "Me encantaría saber más sobre el equipo.", "revisar": true }
+        {
+          "ingles": "Tell me about a project you're proud of.",
+          "espanol": "Cuéntame sobre un proyecto del que estés orgulloso."
+        },
+        {
+          "ingles": "What would you say is your biggest strength?",
+          "espanol": "¿Cuál dirías que es tu mayor fortaleza?"
+        },
+        {
+          "ingles": "Can you walk me through your thought process?",
+          "espanol": "¿Puedes explicarme cómo pensaste el problema?"
+        },
+        {
+          "ingles": "Do you have any questions for me?",
+          "espanol": "¿Tienes alguna pregunta para mí?"
+        },
+        {
+          "ingles": "Let me give you some context first.",
+          "espanol": "Déjame darte un poco de contexto primero.",
+          "revisar": true
+        },
+        {
+          "ingles": "That's something I'm actively working on improving.",
+          "espanol": "Eso es algo en lo que estoy trabajando activamente para mejorar.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'd love to learn more about the team.",
+          "espanol": "Me encantaría saber más sobre el equipo.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "direcciones",
+      "nivelCEFR": "A2",
+      "frases": [
+        {
+          "ingles": "Excuse me, how do I get to the train station?",
+          "espanol": "Disculpe, ¿cómo llego a la estación de tren?",
+          "revisar": true
+        },
+        {
+          "ingles": "Is it far from here?",
+          "espanol": "¿Está lejos de aquí?",
+          "revisar": true
+        },
+        {
+          "ingles": "You can walk there in about ten minutes.",
+          "espanol": "Puedes caminar hasta allá en unos diez minutos.",
+          "revisar": true
+        },
+        {
+          "ingles": "Turn left at the next corner.",
+          "espanol": "Da vuelta a la izquierda en la siguiente esquina.",
+          "revisar": true
+        },
+        {
+          "ingles": "Go straight for two blocks.",
+          "espanol": "Sigue derecho por dos cuadras.",
+          "revisar": true
+        },
+        {
+          "ingles": "It's right across the street.",
+          "espanol": "Está justo enfrente.",
+          "revisar": true
+        },
+        {
+          "ingles": "Sorry, I'm not from around here.",
+          "espanol": "Disculpa, no soy de aquí.",
+          "revisar": true
+        },
+        {
+          "ingles": "Is there a pharmacy nearby?",
+          "espanol": "¿Hay una farmacia cerca?",
+          "revisar": true
+        },
+        {
+          "ingles": "Thanks for the directions!",
+          "espanol": "¡Gracias por las indicaciones!",
+          "revisar": true
+        },
+        {
+          "ingles": "I think we took a wrong turn.",
+          "espanol": "Creo que nos equivocamos de camino.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "restaurante",
+      "nivelCEFR": "A2",
+      "frases": [
+        {
+          "ingles": "Could I see the menu, please?",
+          "espanol": "¿Me podría dar el menú, por favor?",
+          "revisar": true
+        },
+        {
+          "ingles": "What do you recommend?",
+          "espanol": "¿Qué me recomienda?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'll have the chicken, please.",
+          "espanol": "Voy a pedir el pollo, por favor.",
+          "revisar": true
+        },
+        {
+          "ingles": "Could we get some water too?",
+          "espanol": "¿Nos podría traer agua también?",
+          "revisar": true
+        },
+        {
+          "ingles": "Is this dish spicy?",
+          "espanol": "¿Este platillo es picante?",
+          "revisar": true
+        },
+        {
+          "ingles": "Could we have the check, please?",
+          "espanol": "¿Nos trae la cuenta, por favor?",
+          "revisar": true
+        },
+        {
+          "ingles": "Everything was delicious, thank you.",
+          "espanol": "Todo estuvo delicioso, gracias.",
+          "revisar": true
+        },
+        {
+          "ingles": "Do you have anything vegetarian?",
+          "espanol": "¿Tienen algo vegetariano?",
+          "revisar": true
+        },
+        {
+          "ingles": "Can we sit outside?",
+          "espanol": "¿Podemos sentarnos afuera?",
+          "revisar": true
+        },
+        {
+          "ingles": "Is the tip included?",
+          "espanol": "¿La propina está incluida?",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "compras",
+      "nivelCEFR": "A2",
+      "frases": [
+        {
+          "ingles": "How much does this cost?",
+          "espanol": "¿Cuánto cuesta esto?",
+          "revisar": true
+        },
+        {
+          "ingles": "Do you have this in a different size?",
+          "espanol": "¿Tiene esto en otra talla?",
+          "revisar": true
+        },
+        {
+          "ingles": "Can I try this on?",
+          "espanol": "¿Me puedo probar esto?",
+          "revisar": true
+        },
+        {
+          "ingles": "Is this on sale?",
+          "espanol": "¿Esto está en oferta?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'd like to return this, please.",
+          "espanol": "Me gustaría devolver esto, por favor.",
+          "revisar": true
+        },
+        {
+          "ingles": "Do you accept credit cards?",
+          "espanol": "¿Aceptan tarjetas de crédito?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm just looking, thank you.",
+          "espanol": "Solo estoy viendo, gracias.",
+          "revisar": true
+        },
+        {
+          "ingles": "Do you have a smaller one?",
+          "espanol": "¿Tiene uno más chico?",
+          "revisar": true
+        },
+        {
+          "ingles": "Where can I find the fitting room?",
+          "espanol": "¿Dónde está el probador?",
+          "revisar": true
+        },
+        {
+          "ingles": "Can you gift-wrap this, please?",
+          "espanol": "¿Me lo puede envolver para regalo, por favor?",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "servicios_basicos",
+      "nivelCEFR": "A2",
+      "frases": [
+        {
+          "ingles": "I'd like to open a bank account.",
+          "espanol": "Me gustaría abrir una cuenta de banco.",
+          "revisar": true
+        },
+        {
+          "ingles": "Where can I mail this package?",
+          "espanol": "¿Dónde puedo enviar este paquete?",
+          "revisar": true
+        },
+        {
+          "ingles": "I need to renew my ID.",
+          "espanol": "Necesito renovar mi identificación.",
+          "revisar": true
+        },
+        {
+          "ingles": "What documents do I need?",
+          "espanol": "¿Qué documentos necesito?",
+          "revisar": true
+        },
+        {
+          "ingles": "What time do you close?",
+          "espanol": "¿A qué hora cierran?",
+          "revisar": true
+        },
+        {
+          "ingles": "Can I schedule an appointment online?",
+          "espanol": "¿Puedo agendar una cita en línea?",
+          "revisar": true
+        },
+        {
+          "ingles": "How long will this take?",
+          "espanol": "¿Cuánto tiempo va a tardar?",
+          "revisar": true
+        },
+        {
+          "ingles": "Is there a fee for this service?",
+          "espanol": "¿Hay algún costo por este servicio?",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "problemas_cotidianos",
+      "nivelCEFR": "B1",
+      "frases": [
+        {
+          "ingles": "Something's wrong with my order.",
+          "espanol": "Algo está mal con mi pedido.",
+          "revisar": true
+        },
+        {
+          "ingles": "I was charged twice for this.",
+          "espanol": "Me cobraron dos veces por esto.",
+          "revisar": true
+        },
+        {
+          "ingles": "Could you explain why this happened?",
+          "espanol": "¿Podría explicarme por qué pasó esto?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'd appreciate it if you could fix this soon.",
+          "espanol": "Agradecería que pudieran arreglar esto pronto.",
+          "revisar": true
+        },
+        {
+          "ingles": "This isn't what I expected.",
+          "espanol": "Esto no es lo que esperaba.",
+          "revisar": true
+        },
+        {
+          "ingles": "Who can I talk to about this?",
+          "espanol": "¿Con quién puedo hablar sobre esto?",
+          "revisar": true
+        },
+        {
+          "ingles": "Can I get this resolved today?",
+          "espanol": "¿Puedo resolver esto hoy?",
+          "revisar": true
+        },
+        {
+          "ingles": "I understand, but that's not quite fair.",
+          "espanol": "Entiendo, pero eso no es del todo justo.",
+          "revisar": true
+        },
+        {
+          "ingles": "Let's figure out a solution together.",
+          "espanol": "Busquemos una solución juntos.",
+          "revisar": true
+        },
+        {
+          "ingles": "Thanks for your patience with this.",
+          "espanol": "Gracias por tu paciencia con esto.",
+          "revisar": true
+        }
       ]
     }
   ]
