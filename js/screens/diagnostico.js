@@ -3,6 +3,17 @@
 
   var HABILIDADES_BANCO = ["lectura", "escucha", "vocabulario_gramatica"];
 
+  // Nombres legibles para el resultado final -- App.Diagnostico.construirResultado usa estas
+  // claves (lectura/escucha/vocabulario_gramatica de banco.json + habla/escritura de la
+  // autoevaluación), nunca para mostrarse directo en pantalla.
+  var NOMBRE_HABILIDAD_RESULTADO = {
+    lectura: "Lectura",
+    escucha: "Escucha",
+    vocabulario_gramatica: "Vocabulario y gramática",
+    habla: "Habla",
+    escritura: "Escritura"
+  };
+
   // Estado del diagnóstico en curso.
   var estado = null; // { banco, preguntasOrden, indice, respuestas, paso: 'preguntas'|'habla'|'escritura'|'resultado', rubrica, autoeval }
 
@@ -194,7 +205,7 @@
         return (
           '<div class="fila">' +
           '<div class="fila-cabeza"><span>' +
-          h +
+          (NOMBRE_HABILIDAD_RESULTADO[h] || h) +
           " — <strong>" +
           r.nivelCEFR +
           "</strong></span>" +
