@@ -2029,7 +2029,10 @@ button.tarjeta-habilidad:active {
     font-size: var(--fs-title-laptop); /* spec: "título de pantalla de 42px" en laptop */
   }
 
-  /* Repaso, diagnóstico y ajustes: ancho de lectura, nunca estirado a todo el panel. */
+  /* Estados de una sola columna (p. ej. autoevaluación/resultado de diagnóstico, el estado
+     de carga de repaso): ancho de lectura, nunca estirado a todo el panel. Los layouts de
+     varias columnas (pregunta de repaso/diagnóstico, cuadrícula de ajustes) NO llevan esta
+     clase -- necesitan más ancho, ver sus propios bloques de CSS. */
   .ancho-lectura {
     max-width: 720px;
     margin-left: auto;
@@ -2253,6 +2256,138 @@ button.tarjeta-habilidad:active {
 .campo-texto:focus-visible {
   outline: 2px solid var(--acento);
   outline-offset: 1px;
+}
+
+/* ============================================================================
+   AJUSTES -- rediseño "Calcomanías oscuro". Cada sección es su propia tarjeta de
+   superficie oscura (.superficie-oscura); en celular se apilan, en laptop forman una
+   cuadrícula de 2 columnas que se estiran a la misma altura (REGLA DE LAPTOP). */
+
+.ajustes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  margin-top: var(--e-3);
+}
+
+.ajustes-tarjeta {
+  padding: var(--e-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+}
+
+.ajustes-tarjeta h2 {
+  margin: 0;
+}
+
+/* --- Meta diaria: stepper -/+ en vez de 3 botones fijos, para poder elegir cualquier
+   valor entre META_MIN y META_MAX (js/screens/ajustes.js) en pasos de 5 minutos. --r:0deg
+   porque son controles chicos y repetidos -- la rotación ligera se reserva para
+   calcomanías más grandes/únicas (tarjetas, CTAs), no para un par de botones redondos
+   uno al lado del otro, donde rotarlos se vería como un error de alineación. */
+.ajustes-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-5);
+  padding: var(--e-2) 0;
+}
+
+.ajustes-stepper-boton {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  background: var(--amarillo);
+  color: var(--tinta);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 999px;
+}
+
+.ajustes-stepper-boton:disabled {
+  opacity: 0.4;
+}
+
+.ajustes-stepper-valor {
+  min-width: 96px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.ajustes-stepper-valor small {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--texto-2);
+}
+
+/* --- Tema: segmentado de 3 vías (pastilla amarilla sobre la opción activa), distinto del
+   patrón de .fila-botones (3 botones iguales sin contenedor) que usan otras pantallas. */
+.ajustes-segmentado {
+  display: flex;
+  gap: var(--e-1);
+  background: var(--nav);
+  border: 2.5px solid var(--surface-borde);
+  border-radius: var(--radio-calcomania-chica);
+  padding: var(--e-1);
+}
+
+.ajustes-segmentado-boton {
+  flex: 1;
+  min-height: var(--toque-minimo);
+  border: none;
+  border-radius: calc(var(--radio-calcomania-chica) - 4px);
+  background: transparent;
+  color: var(--texto-2);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  transition: background-color var(--dur-rapida) var(--easing), color var(--dur-rapida) var(--easing);
+}
+
+.ajustes-segmentado-boton[aria-current="true"] {
+  background: var(--amarillo);
+  color: var(--tinta);
+}
+
+/* --- Pastilla de estado (Conversación con IA): mismo lenguaje de pastilla pequeña que ya
+   usa Diagnóstico para el nivel CEFR, repetido aquí en vez de importar su clase (acoplaría
+   Ajustes a una clase con nombre de otra pantalla). */
+.ajustes-pastilla-estado {
+  display: inline-block;
+  padding: var(--e-1) var(--e-3);
+  border-radius: 999px;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  color: var(--tinta);
+  white-space: nowrap;
+}
+
+/* --- Exportar/Importar: dos calcomanías CTA de color (azul/rosa), no botones de texto
+   discretos -- son la acción principal de su propia tarjeta, no un enlace secundario. */
+.ajustes-boton-dato {
+  display: block;
+  width: 100%;
+  min-height: var(--toque-minimo);
+  padding: var(--e-3) var(--e-4);
+  color: var(--tinta);
+  font-weight: 700;
+  font-size: var(--fs-body);
+}
+
+@media (min-width: 900px) {
+  /* Cuadrícula de 2 columnas, estiradas a la misma altura -- minmax(0,1fr) en vez de 1fr
+     solo, igual que ya tuvo que corregirse en Diagnóstico (1fr solo no evita el desborde de
+     una tarjeta con contenido ancho, como el <select> de voz). Sin scroll a 1440x900: seis
+     tarjetas compactas en 2x3 caben de sobra en el alto disponible (verificado). */
+  .ajustes-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: var(--e-4);
+    max-width: 1040px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
