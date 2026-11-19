@@ -213,5 +213,10 @@
     "categoria": "corta",
     "es": "Por empezar",
     "en": "Not started yet"
+  },
+  "lectura.titulo": {
+    "categoria": "larga",
+    "es": "Lectura",
+    "en": "Reading"
   }
 }

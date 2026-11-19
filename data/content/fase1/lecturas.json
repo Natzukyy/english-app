@@ -1,17 +1,39 @@
 {
-  "_nota": "Lecturas originales escritas por Claude para la fase 1 (carrera en IA/ingeniería y comunicación profesional). Nivel CEFR es una etiqueta de dificultad aproximada, no una certificación. Las primeras 4 son de la noche anterior; de 'lec-fase1-standup' en adelante son nuevas (Paso C) y llevan 'revisar: true' porque el nivel CEFR es mi estimación sin revisar todavía por Alex.",
+  "_nota": "Lecturas originales escritas por Claude para la fase 1 (carrera en IA/ingeniería y comunicación profesional). Nivel CEFR es una etiqueta de dificultad aproximada, no una certificación. Las primeras 4 son de la noche anterior; de 'lec-fase1-standup' en adelante son nuevas (Paso C) y llevan 'revisar: true' porque el nivel CEFR es mi estimación sin revisar todavía por Alex. Ampliado en Fase C (Calcomanías) a 8 lecturas por nivel (A2/B1/B2) con vocabularioClave migrado a {termino, traduccion}; se corrigió un bug real preexistente en lec-fase1-pedir-ayuda-p1 (respuestaCorrecta apuntaba a la opción equivocada, el texto dice lo contrario).",
   "lecturas": [
     {
       "id": "lec-fase1-docs-tecnicos",
       "tema": "Leer documentación técnica",
       "nivelCEFR": "A2",
       "texto": "Most software documentation follows a similar structure: an overview, installation steps, and a list of examples. When you read documentation for a new library, it helps to skip straight to the examples first. You can understand what the tool does before you worry about every detail.",
-      "vocabularioClave": ["overview", "installation", "straight to", "worry about"],
+      "vocabularioClave": [
+        {
+          "termino": "overview",
+          "traduccion": "resumen general"
+        },
+        {
+          "termino": "installation",
+          "traduccion": "instalación"
+        },
+        {
+          "termino": "straight to",
+          "traduccion": "directo a"
+        },
+        {
+          "termino": "worry about",
+          "traduccion": "preocuparte por"
+        }
+      ],
       "preguntas": [
         {
           "id": "lec-fase1-docs-tecnicos-p1",
           "pregunta": "What does the text suggest doing first when reading new documentation?",
-          "opciones": ["Going straight to the examples", "Memorizing the installation steps", "Reading every detail in order", "Ignoring the overview completely"],
+          "opciones": [
+            "Going straight to the examples",
+            "Memorizing the installation steps",
+            "Reading every detail in order",
+            "Ignoring the overview completely"
+          ],
           "respuestaCorrecta": 0
         }
       ]
@@ -21,18 +43,45 @@
       "tema": "Correos sobre reuniones",
       "nivelCEFR": "B1",
       "texto": "Hi team, I wanted to follow up on yesterday's meeting. We agreed that I would send the updated schedule by Friday, and that Laura would reach out to the client to confirm the new requirements. If anything changes before then, please let me know as soon as possible.",
-      "vocabularioClave": ["follow up on", "reach out to", "requirements", "as soon as possible"],
+      "vocabularioClave": [
+        {
+          "termino": "follow up on",
+          "traduccion": "darle seguimiento a"
+        },
+        {
+          "termino": "reach out to",
+          "traduccion": "contactar a"
+        },
+        {
+          "termino": "requirements",
+          "traduccion": "requisitos"
+        },
+        {
+          "termino": "as soon as possible",
+          "traduccion": "lo antes posible"
+        }
+      ],
       "preguntas": [
         {
           "id": "lec-fase1-correo-reunion-p1",
           "pregunta": "What did the writer agree to do by Friday?",
-          "opciones": ["Send the updated schedule", "Confirm the requirements with the client", "Cancel the meeting", "Hire a new team member"],
+          "opciones": [
+            "Send the updated schedule",
+            "Confirm the requirements with the client",
+            "Cancel the meeting",
+            "Hire a new team member"
+          ],
           "respuestaCorrecta": 0
         },
         {
           "id": "lec-fase1-correo-reunion-p2",
           "pregunta": "What is Laura supposed to do?",
-          "opciones": ["Reach out to the client to confirm requirements", "Send the schedule by Friday", "Write the follow-up email", "Change the meeting time"],
+          "opciones": [
+            "Reach out to the client to confirm requirements",
+            "Send the schedule by Friday",
+            "Write the follow-up email",
+            "Change the meeting time"
+          ],
           "respuestaCorrecta": 0
         }
       ]
@@ -42,7 +91,28 @@
       "tema": "Explicar un proyecto de IA",
       "nivelCEFR": "B1",
       "texto": "The project I'm working on classifies customer support tickets by urgency, so the team can respond to critical issues first. It uses a model trained on past tickets that were already labeled by support agents. So far, it's been fairly accurate, but we're still reviewing edge cases where the model gets confused.",
-      "vocabularioClave": ["classifies", "urgency", "labeled", "edge cases", "gets confused"],
+      "vocabularioClave": [
+        {
+          "termino": "classifies",
+          "traduccion": "clasifica"
+        },
+        {
+          "termino": "urgency",
+          "traduccion": "urgencia"
+        },
+        {
+          "termino": "labeled",
+          "traduccion": "etiquetados"
+        },
+        {
+          "termino": "edge cases",
+          "traduccion": "casos extremos"
+        },
+        {
+          "termino": "gets confused",
+          "traduccion": "se confunde"
+        }
+      ],
       "preguntas": [
         {
           "id": "lec-fase1-explicar-proyecto-ia-p1",
@@ -58,7 +128,12 @@
         {
           "id": "lec-fase1-explicar-proyecto-ia-p2",
           "pregunta": "What is the team still working on?",
-          "opciones": ["Reviewing edge cases where the model gets confused", "Hiring more support agents", "Deleting the training data", "Changing the project's main goal"],
+          "opciones": [
+            "Reviewing edge cases where the model gets confused",
+            "Hiring more support agents",
+            "Deleting the training data",
+            "Changing the project's main goal"
+          ],
           "respuestaCorrecta": 0
         }
       ]
@@ -68,7 +143,24 @@
       "tema": "Entrevista de trabajo",
       "nivelCEFR": "B2",
       "texto": "When an interviewer asks you to describe a time you disagreed with a teammate, they're usually less interested in who was right and more interested in how you handled it. A strong answer explains the disagreement briefly, focuses on how you worked toward a solution, and mentions what you'd do differently next time, if anything.",
-      "vocabularioClave": ["disagreed", "handled it", "worked toward", "would do differently"],
+      "vocabularioClave": [
+        {
+          "termino": "disagreed",
+          "traduccion": "estuvo en desacuerdo"
+        },
+        {
+          "termino": "handled it",
+          "traduccion": "lo manejó"
+        },
+        {
+          "termino": "worked toward",
+          "traduccion": "trabajó hacia"
+        },
+        {
+          "termino": "would do differently",
+          "traduccion": "haría diferente"
+        }
+      ],
       "preguntas": [
         {
           "id": "lec-fase1-entrevista-p1",
@@ -100,12 +192,34 @@
       "nivelCEFR": "A2",
       "revisar": true,
       "texto": "Every morning at nine, the team spends ten minutes on a quick standup call. Each person says what they finished yesterday, what they plan to do today, and whether anything is blocking them. It's short on purpose, so longer discussions move to a separate conversation afterward.",
-      "vocabularioClave": ["standup", "blocking", "on purpose", "afterward"],
+      "vocabularioClave": [
+        {
+          "termino": "standup",
+          "traduccion": "reunión breve diaria"
+        },
+        {
+          "termino": "blocking",
+          "traduccion": "bloqueando"
+        },
+        {
+          "termino": "on purpose",
+          "traduccion": "a propósito"
+        },
+        {
+          "termino": "afterward",
+          "traduccion": "después"
+        }
+      ],
       "preguntas": [
         {
           "id": "lec-fase1-standup-p1",
           "pregunta": "Why is the standup call kept short, according to the text?",
-          "opciones": ["On purpose, so longer talks happen separately", "Because nobody has anything to say", "Because the team only meets once a week", "Because managers are not allowed to join"],
+          "opciones": [
+            "On purpose, so longer talks happen separately",
+            "Because nobody has anything to say",
+            "Because the team only meets once a week",
+            "Because managers are not allowed to join"
+          ],
           "respuestaCorrecta": 0
         }
       ]
@@ -116,13 +230,35 @@
       "nivelCEFR": "A2",
       "revisar": true,
       "texto": "Mateo had been stuck on the same bug for almost an hour. Instead of continuing to guess, he messaged a teammate and asked if she had a few minutes to take a look. She found the mistake in less than five minutes, and Mateo thanked her and made a note to ask for help sooner next time.",
-      "vocabularioClave": ["stuck on", "take a look", "made a note", "sooner"],
+      "vocabularioClave": [
+        {
+          "termino": "stuck on",
+          "traduccion": "atorado en"
+        },
+        {
+          "termino": "take a look",
+          "traduccion": "echar un vistazo"
+        },
+        {
+          "termino": "made a note",
+          "traduccion": "tomó nota"
+        },
+        {
+          "termino": "sooner",
+          "traduccion": "más pronto"
+        }
+      ],
       "preguntas": [
         {
           "id": "lec-fase1-pedir-ayuda-p1",
           "pregunta": "What did Mateo decide to do differently next time?",
-          "opciones": ["Ask for help sooner", "Stop using that teammate's help", "Never ask for help again", "Wait even longer before asking"],
-          "respuestaCorrecta": 1
+          "opciones": [
+            "Ask for help sooner",
+            "Stop using that teammate's help",
+            "Never ask for help again",
+            "Wait even longer before asking"
+          ],
+          "respuestaCorrecta": 0
         }
       ]
     },
@@ -132,7 +268,24 @@
       "nivelCEFR": "B1",
       "revisar": true,
       "texto": "Good comments explain why a piece of code exists, not just what it does. If the code itself is clear, repeating it in a comment adds little value. But if there's a non-obvious reason behind a decision, like working around a bug in another system, that reason is worth writing down so the next person doesn't remove it by accident.",
-      "vocabularioClave": ["non-obvious", "working around", "worth writing down", "by accident"],
+      "vocabularioClave": [
+        {
+          "termino": "non-obvious",
+          "traduccion": "no evidente"
+        },
+        {
+          "termino": "working around",
+          "traduccion": "evitando (un problema)"
+        },
+        {
+          "termino": "worth writing down",
+          "traduccion": "vale la pena anotar"
+        },
+        {
+          "termino": "by accident",
+          "traduccion": "por accidente"
+        }
+      ],
       "preguntas": [
         {
           "id": "lec-fase1-documentar-codigo-p1",
@@ -164,7 +317,24 @@
       "nivelCEFR": "B1",
       "revisar": true,
       "texto": "When leaving comments on someone else's code, it helps to be specific and to explain the reasoning, not just the preference. Saying 'this could cause a bug if the list is empty' is more useful than saying 'I don't like this.' It also helps to mention what's working well, not only what needs to change.",
-      "vocabularioClave": ["specific", "reasoning", "preference", "what's working well"],
+      "vocabularioClave": [
+        {
+          "termino": "specific",
+          "traduccion": "específico"
+        },
+        {
+          "termino": "reasoning",
+          "traduccion": "razonamiento"
+        },
+        {
+          "termino": "preference",
+          "traduccion": "preferencia"
+        },
+        {
+          "termino": "what's working well",
+          "traduccion": "lo que funciona bien"
+        }
+      ],
       "preguntas": [
         {
           "id": "lec-fase1-code-review-feedback-p1",
@@ -185,7 +355,24 @@
       "nivelCEFR": "B2",
       "revisar": true,
       "texto": "When Sofia reported that her task was blocked, she didn't just say 'I'm stuck.' She explained exactly what she needed, who could unblock her, and what she had already tried. That level of detail meant her manager could act on it immediately instead of asking several follow-up questions first.",
-      "vocabularioClave": ["blocked", "unblock", "level of detail", "act on it"],
+      "vocabularioClave": [
+        {
+          "termino": "blocked",
+          "traduccion": "bloqueada"
+        },
+        {
+          "termino": "unblock",
+          "traduccion": "desbloquear"
+        },
+        {
+          "termino": "level of detail",
+          "traduccion": "nivel de detalle"
+        },
+        {
+          "termino": "act on it",
+          "traduccion": "actuar al respecto"
+        }
+      ],
       "preguntas": [
         {
           "id": "lec-fase1-blocker-proyecto-p1",
@@ -217,7 +404,24 @@
       "nivelCEFR": "B2",
       "revisar": true,
       "texto": "During sprint planning, the team doesn't just list tasks; they discuss how confident they are about each estimate. A task that sounds simple but depends on an external team is treated differently from one the team fully controls, even if both are estimated at the same number of hours.",
-      "vocabularioClave": ["sprint planning", "estimate", "depends on", "fully controls"],
+      "vocabularioClave": [
+        {
+          "termino": "sprint planning",
+          "traduccion": "planeación del sprint"
+        },
+        {
+          "termino": "estimate",
+          "traduccion": "estimación"
+        },
+        {
+          "termino": "depends on",
+          "traduccion": "depende de"
+        },
+        {
+          "termino": "fully controls",
+          "traduccion": "controla por completo"
+        }
+      ],
       "preguntas": [
         {
           "id": "lec-fase1-planear-sprint-p1",
@@ -238,7 +442,24 @@
       "nivelCEFR": "B1",
       "revisar": true,
       "texto": "Before adopting a new tool, the team listed what they liked about it, what concerned them, and what they would need to test before relying on it in production. The tool was faster than their current one, but it was also newer and had less community support, which made the team decide to try it on a small project first.",
-      "vocabularioClave": ["adopting", "concerned them", "rely on", "community support"],
+      "vocabularioClave": [
+        {
+          "termino": "adopting",
+          "traduccion": "adoptar"
+        },
+        {
+          "termino": "concerned them",
+          "traduccion": "les preocupaba"
+        },
+        {
+          "termino": "rely on",
+          "traduccion": "confiar en"
+        },
+        {
+          "termino": "community support",
+          "traduccion": "soporte de la comunidad"
+        }
+      ],
       "preguntas": [
         {
           "id": "lec-fase1-pros-contras-herramienta-p1",
@@ -259,7 +480,24 @@
       "nivelCEFR": "A2",
       "revisar": true,
       "texto": "Before the demo, Lucas practiced the steps twice so he wouldn't get stuck in front of everyone. He also prepared a backup plan in case the internet connection failed. During the real demo, one button didn't work as expected, but because he had practiced, he knew how to continue without panicking.",
-      "vocabularioClave": ["backup plan", "in case", "as expected", "without panicking"],
+      "vocabularioClave": [
+        {
+          "termino": "backup plan",
+          "traduccion": "plan de respaldo"
+        },
+        {
+          "termino": "in case",
+          "traduccion": "por si acaso"
+        },
+        {
+          "termino": "as expected",
+          "traduccion": "como se esperaba"
+        },
+        {
+          "termino": "without panicking",
+          "traduccion": "sin entrar en pánico"
+        }
+      ],
       "preguntas": [
         {
           "id": "lec-fase1-preparar-demo-p1",
@@ -269,6 +507,770 @@
             "Because he didn't want to do the demo",
             "Because the button was broken before the demo started",
             "Because the audience asked him to"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-pedir-direcciones",
+      "tema": "Pedir indicaciones en la calle",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "\"Excuse me, could you tell me how to get to the train station? I think I'm lost.\" A man stopped and pointed down the street. \"Go straight for two blocks, then turn left at the pharmacy. The station is right in front of a small park, so you can't miss it.\" Clara thanked him and started walking. She still felt a little nervous, but at least now she knew where to go.",
+      "vocabularioClave": [
+        {
+          "termino": "lost",
+          "traduccion": "perdido"
+        },
+        {
+          "termino": "turn left",
+          "traduccion": "dar vuelta a la izquierda"
+        },
+        {
+          "termino": "right in front of",
+          "traduccion": "justo enfrente de"
+        },
+        {
+          "termino": "can't miss it",
+          "traduccion": "no te lo puedes perder"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-fase1-pedir-direcciones-p1",
+          "pregunta": "Where does the man say the train station is?",
+          "opciones": [
+            "Right in front of a small park",
+            "Behind the pharmacy",
+            "Two blocks to the right",
+            "Next to the pharmacy entrance"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-pedir-direcciones-p2",
+          "pregunta": "What does Clara do after getting directions?",
+          "opciones": [
+            "She starts walking",
+            "She asks another person",
+            "She calls a taxi",
+            "She turns right immediately"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-pedir-direcciones-p3",
+          "pregunta": "How does Clara feel after getting directions?",
+          "opciones": [
+            "Still a little nervous",
+            "Completely calm",
+            "Angry at the man",
+            "Confused about the directions"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-reservar-restaurante",
+      "tema": "Hacer una reservación por teléfono",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "\"Good afternoon, I'd like to make a reservation for four people, please.\" \"Of course. What time would you like to come?\" \"Around eight, if that's possible.\" \"Let me check... Yes, we have a table at eight. Can I have your name, please?\" \"It's Daniela Pérez.\" \"Perfect, Daniela. We'll see you at eight. If your plans change, please call us at least one hour before.\"",
+      "vocabularioClave": [
+        {
+          "termino": "reservation",
+          "traduccion": "reservación"
+        },
+        {
+          "termino": "if that's possible",
+          "traduccion": "si es posible"
+        },
+        {
+          "termino": "at least",
+          "traduccion": "al menos"
+        },
+        {
+          "termino": "plans change",
+          "traduccion": "cambian los planes"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-fase1-reservar-restaurante-p1",
+          "pregunta": "How many people is the reservation for?",
+          "opciones": [
+            "Four",
+            "Two",
+            "Eight",
+            "Three"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-reservar-restaurante-p2",
+          "pregunta": "What time will Daniela arrive?",
+          "opciones": [
+            "Around eight",
+            "Around four",
+            "Around nine",
+            "Around seven"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-reservar-restaurante-p3",
+          "pregunta": "What should Daniela do if her plans change?",
+          "opciones": [
+            "Call at least one hour before",
+            "Just not show up",
+            "Send an email the next day",
+            "Make a new reservation online"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-comprar-boleto-avion",
+      "tema": "Comprar un boleto de avión en línea",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "Buying a plane ticket online is usually simple, but it helps to check a few things first. Compare prices on more than one website, and look carefully at the baggage rules before you pay. Some cheap tickets don't include a suitcase, only a small bag. It's also a good idea to check the departure time twice, because some flights leave very early in the morning.",
+      "vocabularioClave": [
+        {
+          "termino": "compare prices",
+          "traduccion": "comparar precios"
+        },
+        {
+          "termino": "baggage",
+          "traduccion": "equipaje"
+        },
+        {
+          "termino": "departure time",
+          "traduccion": "hora de salida"
+        },
+        {
+          "termino": "a good idea",
+          "traduccion": "una buena idea"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-fase1-comprar-boleto-avion-p1",
+          "pregunta": "What should you check carefully before paying, according to the text?",
+          "opciones": [
+            "The baggage rules",
+            "The color of the plane",
+            "The name of the pilot",
+            "The airport's phone number"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-comprar-boleto-avion-p2",
+          "pregunta": "What might a cheap ticket not include?",
+          "opciones": [
+            "A suitcase",
+            "A seat",
+            "A name",
+            "A departure time"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-comprar-boleto-avion-p3",
+          "pregunta": "Why should you check the departure time twice?",
+          "opciones": [
+            "Because some flights leave very early",
+            "Because prices change every hour",
+            "Because airports close at night",
+            "Because tickets expire after one day"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-rutina-estudio-ia",
+      "tema": "Rutina de estudio en la universidad",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "Marco studies Artificial Intelligence at university, and every week he tries to follow the same simple routine. On Mondays, he reviews his notes from the week before. On Wednesdays, he practices coding for at least one hour. On Fridays, he reads one short article about a new topic in AI. It's not a perfect plan, but it helps him stay organized, even during busy weeks.",
+      "vocabularioClave": [
+        {
+          "termino": "routine",
+          "traduccion": "rutina"
+        },
+        {
+          "termino": "reviews",
+          "traduccion": "repasa"
+        },
+        {
+          "termino": "stay organized",
+          "traduccion": "mantenerse organizado"
+        },
+        {
+          "termino": "busy weeks",
+          "traduccion": "semanas ocupadas"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-fase1-rutina-estudio-ia-p1",
+          "pregunta": "What does Marco do on Wednesdays?",
+          "opciones": [
+            "He practices coding for at least one hour",
+            "He reviews his notes",
+            "He reads an article about AI",
+            "He takes the day off"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-rutina-estudio-ia-p2",
+          "pregunta": "What does Marco do on Fridays?",
+          "opciones": [
+            "He reads one short article about AI",
+            "He reviews his notes from the week before",
+            "He practices coding",
+            "He meets with his professor"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-rutina-estudio-ia-p3",
+          "pregunta": "What does the text say about Marco's plan?",
+          "opciones": [
+            "It's not perfect, but it helps him stay organized",
+            "It's perfect and never changes",
+            "It only works during busy weeks",
+            "He stopped following it"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-ayuda-tienda-tecnologia",
+      "tema": "Pedir ayuda técnica en una tienda",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "texto": "When Valeria's laptop stopped turning on, she took it to a repair shop near her apartment. The technician asked her a few questions: when the problem started, whether she had dropped the laptop recently, and if she had tried charging it with a different cable. Valeria hadn't thought about the cable, so she felt a little embarrassed when it turned out that was the actual problem. The technician smiled and told her it happens more often than people think — a loose or damaged cable is one of the most common reasons a laptop won't turn on. He also recommended that she keep a spare cable at home, just in case. Valeria left feeling relieved, and a little wiser about something she now realized she had never really thought about before.",
+      "vocabularioClave": [
+        {
+          "termino": "repair shop",
+          "traduccion": "taller de reparación"
+        },
+        {
+          "termino": "dropped",
+          "traduccion": "se le cayó"
+        },
+        {
+          "termino": "turned out",
+          "traduccion": "resultó ser"
+        },
+        {
+          "termino": "just in case",
+          "traduccion": "por si acaso"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-fase1-ayuda-tienda-tecnologia-p1",
+          "pregunta": "What was the actual problem with Valeria's laptop?",
+          "opciones": [
+            "A loose or damaged cable",
+            "The battery was completely dead",
+            "She had dropped it on the floor",
+            "The screen was broken"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-ayuda-tienda-tecnologia-p2",
+          "pregunta": "How did Valeria feel when she learned the real problem?",
+          "opciones": [
+            "A little embarrassed",
+            "Furious at the technician",
+            "Completely indifferent",
+            "Proud of herself"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-ayuda-tienda-tecnologia-p3",
+          "pregunta": "What did the technician recommend?",
+          "opciones": [
+            "Keeping a spare cable at home",
+            "Buying a brand new laptop",
+            "Never charging the laptop overnight",
+            "Bringing the laptop back every month"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-ayuda-tienda-tecnologia-p4",
+          "pregunta": "According to the technician, how common is this kind of problem?",
+          "opciones": [
+            "It happens more often than people think",
+            "It almost never happens",
+            "It only happens to old laptops",
+            "It only happens once a year"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-planear-viaje-amigos",
+      "tema": "Planear un viaje con amigos",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "texto": "Planning a trip with four friends is not always easy, especially when everyone has different ideas about what to do. Before their trip to the coast, Ana's group spent almost a week deciding on a hotel, because two people wanted something cheap and close to the beach, while the other two preferred a quieter place a bit farther away. In the end, they agreed on a small hotel that was close enough to walk to the beach, but still quiet at night. Ana later said that the hardest part wasn't choosing the hotel itself, but getting everyone to agree on a budget first. Once they knew how much each person wanted to spend, the rest of the decisions became much easier.",
+      "vocabularioClave": [
+        {
+          "termino": "coast",
+          "traduccion": "costa"
+        },
+        {
+          "termino": "a bit farther away",
+          "traduccion": "un poco más lejos"
+        },
+        {
+          "termino": "agreed on",
+          "traduccion": "se pusieron de acuerdo en"
+        },
+        {
+          "termino": "budget",
+          "traduccion": "presupuesto"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-fase1-planear-viaje-amigos-p1",
+          "pregunta": "Why did it take almost a week to decide on a hotel?",
+          "opciones": [
+            "People had different preferences about price and location",
+            "The hotel they wanted was fully booked",
+            "Nobody wanted to go on the trip",
+            "They couldn't find the coast on a map"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-planear-viaje-amigos-p2",
+          "pregunta": "What kind of hotel did they finally choose?",
+          "opciones": [
+            "Close to the beach but quiet at night",
+            "Far from the beach and very noisy",
+            "The cheapest one they could find",
+            "A hotel none of them had seen before"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-planear-viaje-amigos-p3",
+          "pregunta": "According to Ana, what was the hardest part of planning the trip?",
+          "opciones": [
+            "Agreeing on a budget first",
+            "Choosing the hotel itself",
+            "Finding four friends who wanted to travel",
+            "Deciding which coast to visit"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-opinion-trabajo-casa",
+      "tema": "Opinión sobre trabajar desde casa",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "texto": "In my opinion, working from home has both clear advantages and real downsides, and I don't think there's one correct answer for everyone. On one hand, I save almost an hour a day by not commuting, and I can organize my schedule more freely. On the other hand, I sometimes feel disconnected from my teammates, and small questions that used to take thirty seconds in the office now take much longer over chat. For me, the best solution has been a mix: working from home most days, but going to the office at least once a week to talk with people face to face.",
+      "vocabularioClave": [
+        {
+          "termino": "downsides",
+          "traduccion": "desventajas"
+        },
+        {
+          "termino": "commuting",
+          "traduccion": "trasladarse al trabajo"
+        },
+        {
+          "termino": "disconnected",
+          "traduccion": "desconectado"
+        },
+        {
+          "termino": "face to face",
+          "traduccion": "cara a cara"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-fase1-opinion-trabajo-casa-p1",
+          "pregunta": "What advantage of working from home does the writer mention?",
+          "opciones": [
+            "Saving time by not commuting",
+            "Getting paid more money",
+            "Having more meetings",
+            "Never talking to teammates"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-opinion-trabajo-casa-p2",
+          "pregunta": "What problem does the writer mention about working from home?",
+          "opciones": [
+            "Feeling disconnected from teammates",
+            "Having too many commuting hours",
+            "Not having a schedule at all",
+            "Losing their job"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-opinion-trabajo-casa-p3",
+          "pregunta": "What solution has worked best for the writer?",
+          "opciones": [
+            "A mix of home and office days",
+            "Working from home every single day",
+            "Going to the office every single day",
+            "Changing jobs completely"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-debate-ia-educacion",
+      "tema": "Debate sobre el uso de IA en la educación",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "There's an ongoing debate about how much artificial intelligence should be allowed in classrooms, and reasonable people disagree. Supporters argue that AI tools can give students instant feedback, adapt to each person's pace, and free up teachers' time for more meaningful conversations instead of repetitive grading. Critics, on the other hand, worry that students may rely on these tools too early, before they've built the basic skills the tools are meant to support. A student who uses an AI assistant to fix every grammar mistake, for example, might never actually learn why the mistake was wrong in the first place. Most educators I've talked to don't take an extreme position either way. Instead, they tend to focus on how the tool is used rather than whether it's used at all — a calculator doesn't stop someone from understanding math if it's introduced after the basics, and many believe AI tools could work the same way, as long as they come at the right stage of learning. The real challenge, then, isn't deciding whether AI belongs in education, but figuring out when and how to introduce it without skipping the fundamentals that make the tool useful in the first place.",
+      "vocabularioClave": [
+        {
+          "termino": "supporters",
+          "traduccion": "defensores"
+        },
+        {
+          "termino": "critics",
+          "traduccion": "críticos"
+        },
+        {
+          "termino": "rely on",
+          "traduccion": "confiar en"
+        },
+        {
+          "termino": "fundamentals",
+          "traduccion": "fundamentos"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-fase1-debate-ia-educacion-p1",
+          "pregunta": "What do supporters of AI in classrooms argue, according to the text?",
+          "opciones": [
+            "It gives instant feedback and frees up teachers' time",
+            "It should completely replace teachers",
+            "It only works for advanced students",
+            "It makes grading slower than before"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-debate-ia-educacion-p2",
+          "pregunta": "What do critics worry about, according to the text?",
+          "opciones": [
+            "Students relying on the tools before building basic skills",
+            "AI tools being too expensive for schools",
+            "Teachers refusing to use any technology",
+            "Students reading too many articles"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-debate-ia-educacion-p3",
+          "pregunta": "What comparison does the text use to explain a middle-ground view?",
+          "opciones": [
+            "A calculator and learning math",
+            "A dictionary and learning to read",
+            "A car and learning to drive",
+            "A phone and learning to write"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-debate-ia-educacion-p4",
+          "pregunta": "What does the text say the real challenge is?",
+          "opciones": [
+            "Deciding when and how to introduce AI without skipping the fundamentals",
+            "Banning AI tools from every classroom",
+            "Making AI tools completely free",
+            "Replacing every teacher with an AI tool"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-resena-curso-en-linea",
+      "tema": "Reseña de un curso en línea",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "I finished an online machine learning course last month, and I've been meaning to write down my thoughts while they're still fresh. The content itself was solid — the explanations were clear, and the exercises matched what was actually taught, which isn't always the case with online courses. What impressed me most, though, was how the course handled mistakes: instead of simply marking an answer wrong, it explained the most common misunderstanding behind that specific error, which made debugging my own thinking much easier than debugging code ever is. On the negative side, the course assumed a stronger math background than I had, and I had to pause twice to review concepts that weren't properly introduced. If I'm honest, a short review section at the beginning would have saved me a few frustrating afternoons. Overall, I'd recommend it to someone who already feels comfortable with basic statistics, but I wouldn't suggest it as a first course for a complete beginner.",
+      "vocabularioClave": [
+        {
+          "termino": "solid",
+          "traduccion": "sólido"
+        },
+        {
+          "termino": "debugging",
+          "traduccion": "depurar (código)"
+        },
+        {
+          "termino": "math background",
+          "traduccion": "base de matemáticas"
+        },
+        {
+          "termino": "frustrating",
+          "traduccion": "frustrante"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-fase1-resena-curso-en-linea-p1",
+          "pregunta": "What did the writer find most impressive about the course?",
+          "opciones": [
+            "How it explained the misunderstanding behind each wrong answer",
+            "How short the whole course was",
+            "How many certificates it gave out",
+            "How cheap it was compared to others"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-resena-curso-en-linea-p2",
+          "pregunta": "What problem did the writer have with the course?",
+          "opciones": [
+            "It assumed a stronger math background than the writer had",
+            "The exercises didn't match what was taught",
+            "The explanations were unclear",
+            "It had no exercises at all"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-resena-curso-en-linea-p3",
+          "pregunta": "Who does the writer recommend the course to?",
+          "opciones": [
+            "Someone already comfortable with basic statistics",
+            "A complete beginner with no math background",
+            "Only professional data scientists",
+            "Nobody, because the course is too weak"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-vuelo-cancelado",
+      "tema": "Quejarse de un vuelo cancelado",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "Dear Customer Service, I'm writing to complain about my flight from Mexico City to Madrid, which was cancelled with less than three hours' notice. I understand that cancellations sometimes happen for reasons outside the airline's control, and I'm not writing to argue about the cause. What I'd like to raise is how the situation was handled afterward: there was no staff member available to explain the options for over an hour, and the information on the app contradicted what was printed on the signs at the gate. I eventually found another flight on my own, through a different airline, at a significant extra cost. I'm not asking for an apology; I'm asking for a clear explanation of your policy for last-minute cancellations, and whether passengers in my situation are eligible for any kind of compensation. I've attached my original ticket and boarding pass for reference.",
+      "vocabularioClave": [
+        {
+          "termino": "notice",
+          "traduccion": "aviso"
+        },
+        {
+          "termino": "contradicted",
+          "traduccion": "contradecía"
+        },
+        {
+          "termino": "eligible",
+          "traduccion": "con derecho a"
+        },
+        {
+          "termino": "compensation",
+          "traduccion": "compensación"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-fase1-vuelo-cancelado-p1",
+          "pregunta": "What is the writer mainly complaining about?",
+          "opciones": [
+            "How the cancellation situation was handled afterward",
+            "The fact that flights sometimes get cancelled",
+            "The price of the original ticket",
+            "The food served on the previous flight"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-vuelo-cancelado-p2",
+          "pregunta": "What problem does the writer mention about the information given?",
+          "opciones": [
+            "The app and the gate signs contradicted each other",
+            "There was no information available anywhere",
+            "The information was only in a different language",
+            "The airline refused to print any signs"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-vuelo-cancelado-p3",
+          "pregunta": "What is the writer asking for at the end of the letter?",
+          "opciones": [
+            "A clear explanation of the policy and possible compensation",
+            "A full public apology from the airline",
+            "A free ticket for a future flight",
+            "The name of the staff member who helped them"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-dia-recien-graduado",
+      "tema": "El día a día de un recién graduado buscando trabajo",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "Three months after graduating, Diego's days had settled into a routine he hadn't expected. He'd wake up early, check job listings for about an hour, and send out two or three applications that actually matched his background, rather than applying to everything he saw. In the afternoons, he worked on a small personal project, partly to keep his skills sharp and partly because having something to show felt better than waiting around for replies that rarely came quickly. The hardest part, he admitted, wasn't the rejections themselves, but the silence — applications that simply disappeared, with no response at all, good or bad. A friend who had gone through the same process told him something that stuck with him: a job search is less like a single test you pass or fail, and more like a numbers game where consistency matters more than any single application. Diego didn't love hearing that, but a few weeks later, he understood exactly what she meant.",
+      "vocabularioClave": [
+        {
+          "termino": "settled into",
+          "traduccion": "se acomodó a"
+        },
+        {
+          "termino": "matched his background",
+          "traduccion": "coincidía con su perfil"
+        },
+        {
+          "termino": "stuck with him",
+          "traduccion": "se le quedó grabado"
+        },
+        {
+          "termino": "numbers game",
+          "traduccion": "juego de probabilidades"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-fase1-dia-recien-graduado-p1",
+          "pregunta": "What did Diego do every morning, according to the text?",
+          "opciones": [
+            "Checked job listings and sent a few matching applications",
+            "Worked on his personal project",
+            "Called companies on the phone",
+            "Attended job interviews"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-dia-recien-graduado-p2",
+          "pregunta": "Why did Diego work on a personal project in the afternoons?",
+          "opciones": [
+            "To keep his skills sharp and have something to show",
+            "Because no company wanted to hire him",
+            "Because a friend told him to stop applying",
+            "To replace looking for a job completely"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-dia-recien-graduado-p3",
+          "pregunta": "What did Diego find hardest about the process?",
+          "opciones": [
+            "The silence from applications with no response",
+            "Waking up early every day",
+            "Working on his personal project",
+            "Talking to his friend about it"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-dia-recien-graduado-p4",
+          "pregunta": "What advice from his friend stuck with Diego?",
+          "opciones": [
+            "That a job search is a numbers game where consistency matters most",
+            "That he should apply to every job he sees",
+            "That he should stop looking for a few months",
+            "That personal projects are a waste of time"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-fase1-argumento-codigo-abierto",
+      "tema": "Argumento a favor de la documentación de código abierto",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "Good documentation is often the difference between an open-source project that grows and one that quietly disappears, even when the code itself is excellent. A new contributor who can't understand how to set up the project locally, or why a certain design decision was made, is far more likely to give up than to dig through old commit messages looking for answers. Some maintainers treat documentation as optional, something to add later once the 'real' work is done, but I'd argue the opposite: documentation is part of the real work, because a project nobody can contribute to eventually stops improving, no matter how clever the original code was. Writing a clear README, explaining the reasoning behind non-obvious decisions, and keeping setup instructions up to date takes real time, but it's time that pays for itself the first time someone outside the original team manages to contribute without asking a single question.",
+      "vocabularioClave": [
+        {
+          "termino": "contributor",
+          "traduccion": "colaborador"
+        },
+        {
+          "termino": "dig through",
+          "traduccion": "escarbar en"
+        },
+        {
+          "termino": "maintainers",
+          "traduccion": "mantenedores del proyecto"
+        },
+        {
+          "termino": "pays for itself",
+          "traduccion": "rinde frutos"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-fase1-argumento-codigo-abierto-p1",
+          "pregunta": "According to the text, what often makes an open-source project disappear, even with excellent code?",
+          "opciones": [
+            "Poor or missing documentation",
+            "Having too many contributors",
+            "Using an old programming language",
+            "Having a very short README"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-argumento-codigo-abierto-p2",
+          "pregunta": "What do some maintainers wrongly treat documentation as, according to the text?",
+          "opciones": [
+            "Something optional to add later",
+            "The most important part of the project",
+            "A task for new contributors only",
+            "Something that should never be written"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-argumento-codigo-abierto-p3",
+          "pregunta": "What does the writer argue documentation actually is?",
+          "opciones": [
+            "Part of the real work",
+            "A waste of developers' time",
+            "Only useful for beginners",
+            "Less important than clever code"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-fase1-argumento-codigo-abierto-p4",
+          "pregunta": "When does documentation \"pay for itself,\" according to the text?",
+          "opciones": [
+            "When someone outside the team can contribute without asking questions",
+            "As soon as it's written, regardless of who reads it",
+            "Only after the project becomes very famous",
+            "Never, according to the writer"
           ],
           "respuestaCorrecta": 0
         }

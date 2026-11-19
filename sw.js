@@ -4,7 +4,7 @@
    Ver DECISIONES.md D15: cómo se versiona la caché y qué hace falta hacer a mano en cada update. */
 "use strict";
 
-var CACHE_VERSION = "v23";
+var CACHE_VERSION = "v24";
 var CACHE_NAME = "app-ingles-" + CACHE_VERSION;
 
 var ARCHIVOS_APP_SHELL = [
@@ -42,6 +42,7 @@ var ARCHIVOS_APP_SHELL = [
   "js/screens/progreso.js",
   "js/screens/ajustes.js",
   "js/screens/practicar.js",
+  "js/screens/lectura.js",
   "js/screens/habla.js",
   "js/screens/conversacion.js",
   "data/i18n/strings.json",

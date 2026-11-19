@@ -3556,6 +3556,103 @@ main:has(> .pantalla-habla) {
   }
 }
 
+/* ============================================================================
+   LECTURA -- rediseño "Calcomanías oscuro" (Fase C). Reusa .diagnostico-opcion/
+   .diagnostico-letra/.diagnostico-tarjeta-pregunta/.diagnostico-pie (mismo patrón A-D de
+   opción múltiple que Diagnóstico, no se duplica) e .interstitial-* (mismo patrón de cierre
+   que Inicio/Habla). Mobile: columnas apiladas (texto completo, luego preguntas). Laptop
+   (>=900px): dos columnas que se estiran a la misma altura (REGLA DE LAPTOP) -- el texto se
+   queda visible en todo momento a la izquierda mientras se contestan las preguntas a la
+   derecha, para que Alex pueda releer sin perder su lugar. */
+.lectura-pastilla-azul {
+  background: var(--azul);
+}
+
+.lectura-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-5);
+  margin-top: var(--e-4);
+}
+
+.lectura-pasaje {
+  padding: var(--e-4);
+  margin-top: var(--e-3);
+  line-height: 1.6;
+}
+.lectura-pasaje p {
+  margin: 0;
+}
+
+/* Vocabulario tocable: botón en línea con el texto, sin romper el flujo de lectura -- solo
+   un trazo punteado bajo la palabra, nunca un color de fondo que se vea como un enlace roto. */
+.lectura-termino {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  border-bottom: 2px dotted var(--azul);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.lectura-traduccion {
+  margin-top: var(--e-2);
+  padding: var(--e-2) var(--e-3);
+  background: var(--surface);
+  border: 2.5px solid var(--surface-borde);
+  border-radius: var(--radio-calcomania-chica);
+  font-size: var(--fs-small);
+  color: var(--texto-2);
+}
+.lectura-traduccion[hidden] {
+  display: none;
+}
+
+.lectura-tarjeta-intro {
+  padding: var(--e-4);
+  text-align: center;
+}
+.lectura-boton-empezar {
+  margin-top: var(--e-3);
+  /* .calcomania solo pone borde/sombra/radio, nunca el color de fondo (ver su definición) --
+     amarillo explícito aquí, igual que .diagnostico-boton-accion hace con coral. Sin
+     "border:none": esta regla se declara después de ".calcomania" en el archivo, así que
+     ganaría por orden de cascada y se perdería el borde --tinta de la calcomanía. */
+  background: var(--amarillo);
+  color: var(--tinta);
+  font-weight: 700;
+  padding: var(--e-3) var(--e-5);
+}
+
+@media (min-width: 900px) {
+  .lectura-cuerpo {
+    display: grid;
+    /* minmax(0, 1fr): ver el bug real documentado en .diagnostico-cuerpo -- un 1fr solo no
+       evita que la columna se desborde con texto largo. */
+    grid-template-columns: minmax(0, 1fr) 440px;
+    gap: var(--e-7);
+    align-items: stretch;
+  }
+  .lectura-columna-texto,
+  .lectura-columna-preguntas {
+    display: flex;
+    flex-direction: column;
+  }
+  .lectura-pasaje {
+    flex: 1;
+    font-size: var(--fs-body);
+  }
+  .lectura-tarjeta-intro {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
