@@ -125,7 +125,84 @@
     return '<div class="confeti" aria-hidden="true">' + piezas + "</div>";
   }
 
+  var COLORES_LLUVIA = ["var(--amarillo)", "var(--menta)", "var(--rosa)", "var(--coral)", "var(--azul)", "var(--crema)"];
+  var FORMAS_LLUVIA = ["circulo", "cuadrado", "triangulo", "anillo"];
+  var DURACION_LLUVIA_MS = 1900; // ~1.5 s de caída + hasta 0.3 s de retraso escalonado + margen
+
+  /** Lluvia corta (~1.5 s) de formas/calcomanías de colores de la paleta. Solo CSS
+   * (transform/opacity, ver .lluvia-pieza), sin sonido, sin bloquear nada (el contenedor es
+   * pointer-events:none y aria-hidden) y se limpia sola. Con prefers-reduced-motion NO se
+   * crea nada (la celebración queda solo como mensaje, ver mostrarCelebracion). Devuelve
+   * true si se lanzó la lluvia. */
+  function lluviaCalcomanias() {
+    if (typeof document === "undefined" || prefiereMenosMovimiento()) return false;
+    var contenedor = document.createElement("div");
+    contenedor.className = "lluvia-calcomanias";
+    contenedor.setAttribute("aria-hidden", "true");
+    var piezas = "";
+    for (var i = 0; i < 30; i++) {
+      var tam = 10 + Math.round(Math.random() * 10);
+      var estilo =
+        "left:" + (Math.random() * 100).toFixed(1) + "%;" +
+        "--dx:" + Math.round((Math.random() - 0.5) * 120) + "px;" +
+        "--giro:" + Math.round((Math.random() - 0.5) * 720) + "deg;" +
+        "--retraso:" + Math.round(Math.random() * 300) + "ms;" +
+        "--dur:" + (1100 + Math.round(Math.random() * 400)) + "ms;" +
+        "--color:" + COLORES_LLUVIA[i % COLORES_LLUVIA.length] + ";" +
+        "width:" + tam + "px;height:" + tam + "px";
+      piezas += '<span class="lluvia-pieza lluvia-' + FORMAS_LLUVIA[i % FORMAS_LLUVIA.length] + '" style="' + estilo + '"></span>';
+    }
+    contenedor.innerHTML = piezas;
+    document.body.appendChild(contenedor);
+    global.setTimeout(function () {
+      if (contenedor.parentNode) contenedor.parentNode.removeChild(contenedor);
+    }, DURACION_LLUVIA_MS);
+    return true;
+  }
+
+  /** Mensaje de celebración (role=status, sin movimiento propio) + lluvia si se puede. */
+  function mostrarCelebracion(texto, conLluvia) {
+    if (typeof document === "undefined") return;
+    var aviso = document.createElement("div");
+    aviso.className = "celebracion-mensaje";
+    aviso.setAttribute("role", "status");
+    aviso.textContent = texto;
+    document.body.appendChild(aviso);
+    if (conLluvia !== false) lluviaCalcomanias();
+    global.setTimeout(function () {
+      if (aviso.parentNode) aviso.parentNode.removeChild(aviso);
+    }, 3200);
+  }
+
+  // Cola de celebraciones pendientes (subida de nivel de XP o de nivel CEFR): la sesión que
+  // las provoca termina en otra pantalla y navega a Inicio, que es quien las muestra.
+  var CLAVE_CELEBRACIONES = "rumboCelebracionesPendientes";
+
+  function anotarCelebracion(celebracion) {
+    try {
+      var lista = JSON.parse(global.localStorage.getItem(CLAVE_CELEBRACIONES) || "[]");
+      lista.push(celebracion);
+      global.localStorage.setItem(CLAVE_CELEBRACIONES, JSON.stringify(lista));
+    } catch (e) {
+      /* sin localStorage: la celebración simplemente no se muestra */
+    }
+  }
+
+  function tomarCelebracionesPendientes() {
+    try {
+      var lista = JSON.parse(global.localStorage.getItem(CLAVE_CELEBRACIONES) || "[]");
+      global.localStorage.removeItem(CLAVE_CELEBRACIONES);
+      return lista;
+    } catch (e) {
+      return [];
+    }
+  }
+
   global.App.Util = {
+    lluviaCalcomanias: lluviaCalcomanias,
+    mostrarCelebracion: mostrarCelebracion,
+    anotarCelebracion: anotarCelebracion,
+    tomarCelebracionesPendientes: tomarCelebracionesPendientes,
     escaparHTML: escaparHTML,
     barajarOpciones: barajarOpciones,
     aplicarTema: aplicarTema,

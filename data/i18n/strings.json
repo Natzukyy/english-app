@@ -238,5 +238,15 @@
     "categoria": "larga",
     "es": "Completaste tu ruta de hoy. Mañana hay un plan nuevo.",
     "en": "You finished today's route. A new plan awaits tomorrow."
+  },
+  "celebracion.nivel_xp": {
+    "categoria": "corta",
+    "es": "¡Subiste al nivel",
+    "en": "You reached level"
+  },
+  "celebracion.nivel_cefr": {
+    "categoria": "larga",
+    "es": "¡Nuevo nivel de inglés:",
+    "en": "New English level:"
   }
 }

@@ -106,7 +106,20 @@
     return diasConPractica >= 4 ? "bien" : "flojo";
   }
 
+  /** Celebraciones pendientes (subida de nivel de XP o CEFR, anotadas por App.Datos): lluvia
+   * de calcomanías + mensaje. Una por una, separadas ~0.9 s, por si hubo más de una. */
+  function mostrarCelebracionesPendientes(ctx) {
+    var t = function (clave) { return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings); };
+    global.App.Util.tomarCelebracionesPendientes().forEach(function (c, i) {
+      var texto = c.tipo === "cefr" ? t("celebracion.nivel_cefr") + " " + c.nivel : t("celebracion.nivel_xp") + " " + c.nivel;
+      global.setTimeout(function () {
+        global.App.Util.mostrarCelebracion(texto + (c.tipo === "cefr" ? "" : "!"), true);
+      }, 300 + i * 3300);
+    });
+  }
+
   function render(el, ctx) {
+    mostrarCelebracionesPendientes(ctx);
     var flujo = leerFlujoEnCurso();
     if (flujo) {
       renderCerrandoPaso(el, ctx, flujo);
@@ -181,6 +194,7 @@
         "</button>" +
         "</div>" +
         "</div>";
+      global.App.Util.lluviaCalcomanias(); // cierre del día (sin movimiento con prefers-reduced-motion)
       el.querySelector("#btn-cerrar-dia").addEventListener("click", function () {
         renderDashboard(el, ctx);
       });

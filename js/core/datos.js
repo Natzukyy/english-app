@@ -83,6 +83,13 @@
       };
       var xpNueva = { id: "actual", total: resultado.xpTotal };
 
+      var nivelXPAntes = global.App.XP.nivelDesdeXP(xp.total);
+      var nivelXPDespues = global.App.XP.nivelDesdeXP(resultado.xpTotal);
+      if (nivelXPDespues > nivelXPAntes) {
+        // Inicio muestra la lluvia de calcomanías al volver (ver App.Util.mostrarCelebracion).
+        global.App.Util.anotarCelebracion({ tipo: "xp", nivel: nivelXPDespues });
+      }
+
       return Promise.all([
         global.App.Storage.put("sesiones", sesionNueva),
         global.App.Storage.put("xp", xpNueva),
@@ -125,9 +132,28 @@
     });
   }
 
+  /** Nivel CEFR global (ponderado, App.Avance) de un resultado de diagnóstico; null si no hay. */
+  function nivelGlobalDeDiagnostico(diagnostico) {
+    if (!diagnostico || !diagnostico.porHabilidad) return null;
+    var numeros = {};
+    ["lectura", "habla", "escucha", "escritura"].forEach(function (h) {
+      var d = diagnostico.porHabilidad[h];
+      numeros[h] = global.App.Avance.numeroDesdeNivel((d && d.nivelCEFR) || "A1", 50);
+    });
+    return global.App.Avance.calcularNivelGlobal(numeros).nivel;
+  }
+
   function guardarDiagnostico(resultado) {
     var registro = Object.assign({ id: String(Date.now()) }, resultado);
-    return global.App.Storage.put("diagnostico_resultados", registro);
+    return obtenerUltimoDiagnostico().then(function (anterior) {
+      var antes = nivelGlobalDeDiagnostico(anterior);
+      var despues = nivelGlobalDeDiagnostico(registro);
+      // Solo si ya había un diagnóstico previo Y el nivel global SUBIÓ (el primero no celebra).
+      if (antes && despues && global.App.Avance.indiceNivel(despues) > global.App.Avance.indiceNivel(antes)) {
+        global.App.Util.anotarCelebracion({ tipo: "cefr", nivel: despues });
+      }
+      return global.App.Storage.put("diagnostico_resultados", registro);
+    });
   }
 
   /** Tarjetas de repaso que DEBERÍAN existir según el contenido actual de fase 1. */
