@@ -524,6 +524,16 @@ button {
   margin-bottom: var(--e-6);
 }
 
+/* Ajustes: hoy todas las secciones (Tema, Meta diaria, Idioma, Voz del modelo, Conversación
+   con IA...) pesaban igual visualmente, sin separación clara entre una y otra (ver
+   DESIGN_REVIEW.md sección 2). Mismo lenguaje que ".fila + .fila" (filete superior sutil),
+   aplicado aquí a secciones completas -- no un patrón nuevo, el mismo ya usado para listas de
+   datos en Repaso/Progreso. */
+.entrada-escalonada > .seccion + .seccion {
+  padding-top: var(--e-5);
+  border-top: 1px solid var(--borde);
+}
+
 /* --- Inicio: ficha-resumen (racha | minutos | nivel-XP en una fila), más compacta que
    ".tarjeta" para que quepa sin scroll (ver DESIGN_REVIEW.md sección 4). --- */
 .titulo-inicio {
