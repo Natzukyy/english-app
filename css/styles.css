@@ -1823,6 +1823,183 @@ button.tarjeta-habilidad:active {
   }
 }
 
+/* --- Progreso: rediseño "Calcomanías oscuro" (ver DECISIONES.md, Fase A). Reemplaza
+   .hero-bloque/.grid-progreso del rediseño anterior. Quita el lenguaje de "B2 como tope"
+   (FECHA_OBJETIVO/"días restantes"/"% hacia B2") -- Alex pidió escala abierta A1-C2 en toda
+   la app; el motor real de progreso con fracciones A1-C2 es trabajo de Fase B, esto solo deja
+   de MOSTRAR la versión vieja. */
+.pantalla-progreso .progreso-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-4);
+  flex-wrap: wrap;
+}
+.pantalla-progreso .progreso-cabecera h1 {
+  margin: 0;
+}
+/* .calcomania no fija alto -- sin esto, "Repetir diagnóstico"/"Hacer diagnóstico" medían
+   29px (bug real encontrado al medir con getBoundingClientRect), por debajo del mínimo
+   táctil de 44px. */
+.pantalla-progreso .progreso-cabecera button,
+.pantalla-progreso #btn-ir-diagnostico {
+  min-height: var(--toque-minimo);
+  padding: 0 var(--e-4);
+  font-weight: 700;
+}
+
+.progreso-fila-superior {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-4);
+  margin-top: var(--e-5);
+}
+
+.progreso-tarjeta {
+  padding: var(--e-5);
+}
+
+.progreso-etiqueta {
+  font-weight: 700;
+  font-size: var(--fs-small);
+  margin: 0 0 var(--e-2);
+}
+
+/* Tarjeta Nivel: amarilla, texto SIEMPRE --tinta (calcomanía sobre color plano). */
+.progreso-tarjeta-nivel {
+  background: var(--amarillo);
+  color: var(--tinta);
+}
+.progreso-numero-nivel {
+  font-size: 64px;
+  line-height: 1;
+  margin: 0 0 var(--e-3);
+}
+.progreso-tarjeta-nivel .barra-progreso {
+  /* Sobre fondo amarillo, el rayado diagonal oscuro (pensado para superficies oscuras) no
+     se lee bien -- pista translúcida de --tinta en su lugar, relleno --tinta sólido. */
+  background: rgba(11, 11, 30, 0.18);
+  border-color: rgba(11, 11, 30, 0.35);
+}
+.progreso-xp-texto {
+  margin: var(--e-2) 0 0;
+  font-size: var(--fs-small);
+}
+
+/* Tarjeta Racha: superficie oscura neutra (no amarilla, para no repetir el color de la
+   tarjeta de Nivel justo al lado -- el spec solo pide "tarjeta Racha", sin color propio). */
+.progreso-tarjeta-racha {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.progreso-numero-racha {
+  font-size: 48px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+}
+.progreso-numero-racha svg {
+  color: var(--amarillo);
+}
+
+/* Tarjeta "Esta semana": gráfica de 7 columnas. Sin datos reales de QUÉ habilidad se
+   practicó cada día (App.Datos.obtenerMinutosPorDia solo da minutos totales por día, no por
+   habilidad) -- se simplifica a practicó/no practicó: --azul si hubo minutos ese día,
+   --surface-borde si no (ver spec: "días sin práctica en --surface-borde"). Decisión anotada
+   en el reporte, no inventada en silencio. */
+.progreso-grafica-semana {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--e-3);
+  height: 100px;
+  margin-top: var(--e-3);
+}
+.progreso-dia-semana {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-1);
+  height: 100%;
+  justify-content: flex-end;
+}
+.progreso-dia-barra {
+  width: 100%;
+  max-width: 28px;
+  border-radius: 6px 6px 2px 2px;
+  background: var(--surface-borde);
+  min-height: 4px;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 900ms var(--ease-out); /* spec: las barras se llenan en ~.9s, distinto del --dur-lenta genérico (600ms) */
+}
+.progreso-dia-barra.con-practica {
+  background: var(--azul);
+}
+.progreso-dia-etiqueta {
+  font-size: var(--fs-caption);
+  color: var(--texto-2);
+}
+.progreso-dia-etiqueta.es-hoy {
+  color: var(--texto);
+  font-weight: 700;
+}
+
+/* Barra con relleno por "transform: scaleX", no "width" -- la única forma de animarla sin
+   provocar reflow (regla dura de animación del spec Calcomanías: "solo transform y opacity").
+   Modificador sobre ".barra-progreso" en vez de cambiar su regla base: esa clase ya la usan
+   Repaso/Diagnóstico con relleno por width, cambiar la base rompería esas pantallas. */
+.barra-progreso.barra-escala > span {
+  width: 100%;
+  transform: scaleX(var(--progreso, 0));
+  transform-origin: left;
+  transition: transform 900ms var(--ease-out); /* spec: las barras se llenan en ~.9s, distinto del --dur-lenta genérico (600ms) */
+}
+
+.progreso-grid-habilidad {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  margin-top: var(--e-3);
+}
+.progreso-tarjeta-habilidad {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+}
+.progreso-tarjeta-habilidad .fila-cabeza {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.progreso-tarjeta-habilidad .fila-cabeza span:first-child {
+  font-weight: 700;
+}
+
+@media (min-width: 900px) {
+  .progreso-fila-superior {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .progreso-tarjeta-nivel,
+  .progreso-tarjeta-racha {
+    width: 240px;
+    flex: none;
+  }
+  .progreso-tarjeta-semana {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .progreso-grid-habilidad {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--e-4);
+  }
+}
+
 /* --- Responsive: móvil/tablet (hasta 899px, misma barra inferior) / laptop (desde 900px:
    barra lateral + columnas). Breakpoint bajado de 1100px a 900px -- pedido explícito del
    spec de Calcomanías ("laptop ≥900px"), distinto del breakpoint del rediseño anterior.
@@ -1921,18 +2098,6 @@ button.tarjeta-habilidad:active {
 
   .inicio-camino .titulo {
     font-size: var(--fs-small);
-  }
-
-  /* Progreso: resultado por habilidad en dos columnas, separadas por espacio (no por borde,
-     que se ve raro a media fila en una rejilla). */
-  .grid-progreso {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 var(--e-6);
-  }
-  .grid-progreso .fila {
-    border-top: none;
-    padding: var(--e-3) 0;
   }
 
   /* Barra lateral de 240px (spec Calcomanías): mismo fondo --nav que la barra inferior,
