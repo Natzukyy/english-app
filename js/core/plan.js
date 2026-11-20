@@ -149,7 +149,10 @@
     var hoyISO = c.fecha || global.App.Fecha.hoyISO();
     var orden = ordenarHabilidadesPorPrioridad(c.habilidades, c.ultimaHabilidadRotada, hoyISO);
     var bloquesAgregados = 0;
-    while (sumaMinutos(pasos) < metaMinutosDia && bloquesAgregados < TOPE_BLOQUES_ROTACION) {
+    // SIEMPRE al menos un bloque de habilidad (lectura/habla/escucha): con muchas tarjetas el
+    // repaso solo (hasta 18 min) ya llena una meta de 15 y las habilidades prioritarias de Alex
+    // nunca entraban al plan. Decisión: el repaso no puede desplazar la práctica de habilidades.
+    while ((sumaMinutos(pasos) < metaMinutosDia || bloquesAgregados < 1) && bloquesAgregados < TOPE_BLOQUES_ROTACION) {
       var habilidad = orden[bloquesAgregados % orden.length];
       pasos.push(
         paso("practica", habilidad, "Práctica de " + habilidad, MINUTOS_BLOQUE_HABILIDAD, { nivelCEFR: nivelEfectivo(habilidad) })

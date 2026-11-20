@@ -279,4 +279,24 @@
     var r = App.Plan.armarColaRepaso(todas, AHORA, { nivelGlobal: "B1", topeNuevas: 5 });
     Test.assertEqual(r.cola.map(function (t) { return t.id; }), ["b1", "a2", "a1", "b2", "c1"]);
   });
+
+  Test.test("plan: aunque el repaso llene la meta del día, siempre entra un bloque de lectura/habla/escucha (regresión)", function () {
+    var plan = App.Plan.calcularPlanDelDia({
+      fecha: "2026-11-21",
+      diagnosticoHecho: true,
+      tarjetasVencidas: 40,
+      tarjetasNuevasDisponibles: 200,
+      metaMinutosDia: 15,
+      habilidades: {
+        lectura: { nivelCEFR: "A2", ultimaPractica: null },
+        habla: { nivelCEFR: "A2", ultimaPractica: null },
+        escucha: { nivelCEFR: "A2", ultimaPractica: null },
+        escritura: { nivelCEFR: "A2", ultimaPractica: null }
+      },
+      ultimaHabilidadRotada: "lectura"
+    });
+    var bloques = plan.pasos.filter(function (p) { return p.tipo === "practica" && p.habilidad !== "escritura"; });
+    Test.assertEqual(bloques.length >= 1, true);
+    Test.assertEqual(bloques[0].habilidad !== "lectura", true); // y no repite la de ayer
+  });
 })();
