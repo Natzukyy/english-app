@@ -198,7 +198,41 @@
     }
   }
 
+  // "Terminé este paso" vs "salí del paso": la ruta guiada solo marca un paso como completado si
+  // la pantalla avisó que se terminó (botón Terminar / resumen final). Salir por la barra de
+  // navegación a mitad de un paso NO lo marca: Inicio sigue ofreciendo "Continuar" en ese paso.
+  var CLAVE_PASO_TERMINADO = "rumboPasoTerminado";
+
+  // Guarda QUÉ pantalla terminó (la ruta actual, p. ej. "repaso"): Inicio solo cierra el paso en
+  // curso si coincide -- un diagnóstico hecho por tu cuenta no cierra un paso de Repaso.
+  function marcarPasoTerminado() {
+    try {
+      global.localStorage.setItem(CLAVE_PASO_TERMINADO, (global.location.hash || "").replace("#/", ""));
+    } catch (e) {
+      /* sin localStorage: el paso no se marcará solo, Alex puede repetirlo */
+    }
+  }
+
+  /** Devuelve la ruta que terminó ("repaso", "lectura"...) o null; la consume. */
+  function consumirPasoTerminado() {
+    try {
+      var ruta = global.localStorage.getItem(CLAVE_PASO_TERMINADO);
+      global.localStorage.removeItem(CLAVE_PASO_TERMINADO);
+      return ruta || null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function terminarPasoYVolver(destino) {
+    marcarPasoTerminado();
+    global.location.hash = destino || "#/inicio";
+  }
+
   global.App.Util = {
+    marcarPasoTerminado: marcarPasoTerminado,
+    consumirPasoTerminado: consumirPasoTerminado,
+    terminarPasoYVolver: terminarPasoYVolver,
     lluviaCalcomanias: lluviaCalcomanias,
     mostrarCelebracion: mostrarCelebracion,
     anotarCelebracion: anotarCelebracion,

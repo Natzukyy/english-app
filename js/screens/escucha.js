@@ -277,7 +277,7 @@
     el.querySelector("#btn-terminar-escucha").addEventListener("click", function () {
       finalizarSesionSiActiva().then(function () {
         estado = null;
-        location.hash = "#/inicio";
+        global.App.Util.terminarPasoYVolver();
       });
     });
   }

@@ -94,7 +94,7 @@
             nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
           });
           el.querySelector("#btn-terminar-repaso").addEventListener("click", function () {
-            location.hash = "#/inicio";
+            global.App.Util.terminarPasoYVolver();
           });
           global.App.Util.animarNumero(el.querySelector("#valor-racha-fin"), racha.rachaActual);
           global.App.Util.animarNumero(el.querySelector("#valor-xp-fin"), xpGanada);

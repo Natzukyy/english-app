@@ -114,12 +114,22 @@
       '<p class="habla-estado-mic" id="estado-mic">Toca el micrófono para hablar</p>' +
       '<div id="zona-reconocimiento"></div>' +
       '<div id="zona-retro"></div>' +
+      // Salida explícita: sin ella un paso de Habla en la ruta guiada solo se podía cerrar
+      // saliendo por la barra de navegación (que NO cuenta como terminado).
+      '<button type="button" class="enlace-discreto habla-boton-terminar" id="btn-terminar-habla">' +
+      esc(t("comun.terminar")) +
+      "</button>" +
       "</div>" +
       "</div>" +
       "</div>";
 
     var btnEscuchar = el.querySelector("#btn-escuchar");
     var btnHablar = el.querySelector("#btn-hablar");
+    el.querySelector("#btn-terminar-habla").addEventListener("click", function () {
+      finalizarSesionSiActiva().then(function () {
+        global.App.Util.terminarPasoYVolver();
+      });
+    });
 
     function reproducirModelo() {
       btnHablar.disabled = true;

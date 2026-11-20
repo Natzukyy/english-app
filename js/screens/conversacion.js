@@ -209,7 +209,7 @@
     });
     el.querySelector("#btn-terminar-conversacion").addEventListener("click", function () {
       finalizarSesionSiActiva().then(function () {
-        location.hash = "#/inicio";
+        global.App.Util.terminarPasoYVolver();
       });
     });
   }

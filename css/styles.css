@@ -4050,3 +4050,10 @@ main:has(> .pantalla-habla) {
   min-height: 52px;
   padding: var(--e-3) var(--e-5);
 }
+
+/* Salida explícita de Habla (cierra la sesión y marca el paso de la ruta guiada como terminado). */
+.habla-boton-terminar {
+  display: block;
+  margin: var(--e-2) auto 0;
+  color: var(--texto-2);
+}

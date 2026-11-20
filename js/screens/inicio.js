@@ -124,7 +124,14 @@
   function render(el, ctx) {
     mostrarCelebracionesPendientes(ctx);
     var flujo = leerFlujoEnCurso();
-    if (flujo) {
+    var terminado = global.App.Util.consumirPasoTerminado();
+    if (flujo && flujo.fecha !== global.App.Fecha.hoyISO()) {
+      limpiarFlujoEnCurso(); // marcador de otro día: ya no aplica
+      flujo = null;
+    }
+    // Solo se cierra el paso si la pantalla avisó que TERMINÓ. Si Alex salió a mitad (barra de
+    // navegación), el marcador se conserva y el dashboard ofrece "Continuar" en ese mismo paso.
+    if (flujo && terminado && terminado === rutaParaPaso({ tipo: flujo.tipo, habilidad: flujo.habilidad })) {
       renderCerrandoPaso(el, ctx, flujo);
       return;
     }
@@ -267,7 +274,7 @@
           '<p class="tarjeta-principal-nombre">' + esc(nombrePaso(pasoActual)) + "</p>" +
           '<p class="tarjeta-principal-razon">' + esc(razonPaso(pasoActual)) + "</p>" +
           '<button type="button" class="boton-tinta tarjeta-principal-boton calcomania calcomania-presionable" id="btn-empezar-plan" style="--r:0deg">' +
-          esc(t(hayAlgoHecho ? "inicio.continuar" : "inicio.empezar")) +
+          esc(t(hayAlgoHecho || leerFlujoEnCurso() ? "inicio.continuar" : "inicio.empezar")) +
           "</button>" +
           "</div>";
       }

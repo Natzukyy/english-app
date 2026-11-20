@@ -259,6 +259,7 @@
   function pintarResultado(el, ctx, t) {
     var resultado = global.App.Diagnostico.construirResultado(estado.banco, estado.respuestas, estado.autoeval, new Date());
     global.App.Datos.guardarDiagnostico(resultado);
+    global.App.Util.marcarPasoTerminado(); // llegar al resultado = el paso (Diagnóstico/reevaluación) se completó
 
     var filas = Object.keys(resultado.porHabilidad)
       .map(function (h) {

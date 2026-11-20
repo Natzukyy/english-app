@@ -205,7 +205,7 @@
       el.querySelector("#btn-terminar-escritura").addEventListener("click", function () {
         finalizarSesionSiActiva().then(function () {
           estado = null;
-          location.hash = "#/inicio";
+          global.App.Util.terminarPasoYVolver();
         });
       });
     });
