@@ -36,7 +36,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisar": true
     },
     {
       "id": "lec-fase1-correo-reunion",
@@ -84,7 +85,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisar": true
     },
     {
       "id": "lec-fase1-explicar-proyecto-ia",
@@ -136,7 +138,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisar": true
     },
     {
       "id": "lec-fase1-entrevista",
@@ -184,7 +187,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisar": true
     },
     {
       "id": "lec-fase1-standup",

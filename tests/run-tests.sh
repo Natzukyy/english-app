@@ -30,3 +30,6 @@ cat tests/lib/mini-test.js "${CORE_PURO[@]}" tests/core/*.test.js > "$TMP"
 echo "Test.run();" >> "$TMP"
 
 osascript -l JavaScript "$TMP"
+
+# Validación del contenido (esquema, ids únicos, conteos mínimos por nivel) -- sin Node.
+python3 scripts/validar_contenido.py
