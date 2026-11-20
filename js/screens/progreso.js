@@ -113,13 +113,11 @@
             ')">' +
             esc(global.App.Avance.etiquetaNivel(est.nivel, h)) +
             "</span></div>" +
-            '<div class="barra-progreso barra-escala" data-habilidad="' +
-            esc(h) +
-            '" style="--progreso:0"><span data-destino="' +
-            porcentaje +
-            '"></span></div>' +
+            '<div class="progreso-barra-fila"><span class="progreso-barra-etiqueta texto-caption">' + esc(t("progreso.barra_escala")) + "</span>" +
+            '<div class="barra-progreso barra-escala" data-habilidad="' + esc(h) + '" style="--progreso:0"><span data-destino="' + porcentaje + '"></span></div></div>' +
             (siguiente
-              ? '<div class="barra-progreso barra-escala barra-nivel" data-habilidad="' + esc(h) + '" style="--progreso:0"><span data-destino="' + pctNivel + '"></span></div>'
+              ? '<div class="progreso-barra-fila"><span class="progreso-barra-etiqueta texto-caption">' + esc(t("progreso.barra_nivel", { nivel: siguiente })) + "</span>" +
+                '<div class="barra-progreso barra-escala barra-nivel" data-habilidad="' + esc(h) + '" style="--progreso:0"><span data-destino="' + pctNivel + '"></span></div></div>'
               : "") +
             '<p class="progreso-detalle-habilidad texto-caption">' + esc(detalle) + "</p>" +
             "</div>"

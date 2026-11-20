@@ -103,6 +103,10 @@
   --e-4: 16px;
   --e-5: 24px;
   --e-6: 32px;
+  /* Padding interior de TODA tarjeta/contenedor con borde o fondo (D33). Un solo lugar: no escribir
+     valores sueltos en cada clase. .superficie-oscura y .calcomania son bases SIN padding. */
+  --pad-tarjeta: var(--e-4);
+  --pad-tarjeta-grande: var(--e-5);
   --e-7: 48px;
 
   /* --- Forma: radios de calcomanía (16-32px), reemplazan el sistema "objeto/dato" del
@@ -240,7 +244,7 @@ main {
    ".inicio-cuerpo" era la clase del Inicio del rediseño anterior ("cuaderno de bitácora");
    el Inicio guiado de Calcomanías usa ".pantalla-inicio-guiada". */
 main:has(> .pantalla-vista.pantalla-inicio-guiada) {
-  padding-bottom: 2px; /* a 390x844 sobraban ~10px de scroll real (medido); nav.tabs ya trae su propio padding abajo */
+  padding-bottom: 0; /* (era 2px) a 390x844 sobraban ~10px de scroll real (medido); nav.tabs ya trae su propio padding abajo */
 }
 
 /* Repaso: una sola ficha a la vez, con mucho aire alrededor si se deja pegada arriba (el
@@ -280,7 +284,7 @@ h2 {
 .diagnostico-pastilla-area {
   display: inline-flex;
   align-items: center;
-  padding: var(--e-1) var(--e-3);
+  padding: var(--e-2) var(--e-3);
   background: var(--menta);
   color: var(--tinta);
   font-weight: 700;
@@ -549,7 +553,7 @@ h2 {
 .diagnostico-pastilla-nivel {
   display: inline-flex;
   align-items: center;
-  padding: 2px var(--e-2);
+  padding: var(--e-2) var(--e-3);
   border-radius: 999px;
   font-weight: 700;
   font-size: var(--fs-small);
@@ -1134,7 +1138,7 @@ nav.tabs button[aria-current="true"] {
    único elemento 3D de toda la pantalla. */
 .repaso-marco {
   position: relative;
-  min-height: 220px;
+  min-height: 260px; /* (era 220) las caras son absolutas y no estiran el marco: con frase de 2 líneas + bocina el contenido quedaba a 6-10px del borde */
   border: 2.5px solid var(--tinta);
   border-radius: var(--radio-calcomania-grande);
   box-shadow: var(--sombra-dura);
@@ -1204,7 +1208,7 @@ nav.tabs button[aria-current="true"] {
   color: var(--crema);
   font-size: var(--fs-caption);
   font-weight: 700;
-  padding: var(--e-1) var(--e-3);
+  padding: var(--e-2) var(--e-3);
   border-radius: 999px;
 }
 
@@ -1268,6 +1272,7 @@ nav.tabs button[aria-current="true"] {
    los botones deshabilitados hasta revelar para que la columna no cambie de alto de golpe. */
 .repaso-panel-calificar {
   display: none;
+  padding: var(--pad-tarjeta); /* sin esto los botones de calificar tocaban el borde (D33) */
 }
 .repaso-panel-calificar.visible {
   display: block;
@@ -2011,6 +2016,20 @@ button.tarjeta-habilidad:active {
   display: flex;
   flex-direction: column;
   gap: var(--e-2);
+  padding: var(--pad-tarjeta);
+}
+/* Dentro de estas tarjetas el espaciado lo da solo el gap: sin el margen propio de la barra. */
+.progreso-tarjeta-habilidad .barra-progreso {
+  margin: 0;
+  height: 12px; /* las dos barras iguales; con borde de 2.5px el relleno mide 7px (antes 3px y 1px) */
+}
+.progreso-barra-fila {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-1);
+}
+.progreso-barra-etiqueta {
+  line-height: 1.2;
 }
 .progreso-tarjeta-habilidad .fila-cabeza {
   display: flex;
@@ -2384,7 +2403,7 @@ button.tarjeta-habilidad:active {
   background: var(--nav);
   border: 2.5px solid var(--surface-borde);
   border-radius: var(--radio-calcomania-chica);
-  padding: var(--e-1);
+  padding: var(--e-2);
 }
 
 .ajustes-segmentado-boton {
@@ -2409,7 +2428,7 @@ button.tarjeta-habilidad:active {
    Ajustes a una clase con nombre de otra pantalla). */
 .ajustes-pastilla-estado {
   display: inline-block;
-  padding: var(--e-1) var(--e-3);
+  padding: var(--e-2) var(--e-3);
   border-radius: 999px;
   font-size: var(--fs-caption);
   font-weight: 700;
@@ -2585,7 +2604,7 @@ main:has(> .pantalla-habla) {
   color: var(--tinta);
   font-weight: 700;
   font-size: 22px;
-  padding: var(--e-2) var(--e-4);
+  padding: var(--e-3) var(--e-4);
   border-radius: 999px;
   border: 2.5px solid var(--tinta);
 }
@@ -2600,7 +2619,7 @@ main:has(> .pantalla-habla) {
 
 .habla-chip {
   display: inline-block;
-  padding: var(--e-1) var(--e-3);
+  padding: var(--e-2) var(--e-3);
   border-radius: 999px;
   font-weight: 600;
   font-size: var(--fs-small);
@@ -2889,6 +2908,10 @@ main:has(> .pantalla-habla) {
   flex-direction: column;
   gap: var(--e-1);
 }
+/* Entre tarjetas (meta, HOY TE TOCA) 8px: gap de 4px + este margen. */
+.pantalla-inicio-guiada > .tarjeta-meta + .tarjeta-principal {
+  margin-top: var(--e-1);
+}
 
 /* Las barras heredan un margin vertical de e-2 (8px arriba y abajo) pensado para pantallas
    con más aire -- aquí, con hasta 6 barras en pantalla a la vez (meta + 4 mini-barras),
@@ -2896,7 +2919,7 @@ main:has(> .pantalla-habla) {
    aquí, sin tocar la regla base (la usan Repaso/Diagnóstico/Progreso con su propio espaciado). */
 .pantalla-inicio-guiada .barra-progreso {
   margin: var(--e-1) 0;
-  height: 6px;
+  height: 8px; /* igual que la barra base: 3px de relleno (a 6px quedaba 1px) */
 }
 
 .inicio-cabeza {
@@ -2986,7 +3009,7 @@ main:has(> .pantalla-habla) {
 }
 
 .tarjeta-meta {
-  padding: var(--e-1) var(--e-3);
+  padding: var(--e-3) var(--pad-tarjeta);
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -3001,7 +3024,7 @@ main:has(> .pantalla-habla) {
   color: var(--texto);
   font-size: var(--fs-caption);
   font-weight: 600;
-  padding: var(--e-1) var(--e-3);
+  padding: calc(var(--e-2) - 2px) var(--e-3);
   border-radius: 999px;
 }
 
@@ -3105,22 +3128,18 @@ main:has(> .pantalla-habla) {
     gap: var(--e-1) var(--e-3);
   }
   .tarjeta-principal {
-    padding: var(--e-2) var(--e-4);
+    padding: var(--e-3) var(--pad-tarjeta);
     min-height: 0;
   }
   .tarjeta-principal--lista {
     min-height: 88px;
-  }
-  .ruta-hoy-paso {
-    padding-top: var(--e-1);
-    padding-bottom: var(--e-1);
   }
   nav.tabs button {
     padding-top: var(--e-1);
     padding-bottom: var(--e-1);
   }
   .pantalla-inicio-guiada {
-    gap: 2px;
+    gap: var(--e-1);
   }
 }
 
@@ -3164,15 +3183,15 @@ main:has(> .pantalla-habla) {
 .ruta-hoy-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--e-1);
+  gap: var(--e-2);
 }
 
 .ruta-hoy-paso {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  padding: 4px 2px;
+  gap: var(--e-1);
+  padding: var(--e-3) var(--e-2);
   border-radius: var(--radio-calcomania-chica);
   background: var(--surface);
   border: 2px solid var(--surface-borde);
@@ -3375,15 +3394,15 @@ main:has(> .pantalla-habla) {
 .ruta-hoy-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--e-1);
+  gap: var(--e-2);
 }
 
 .ruta-hoy-paso {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  padding: 4px 2px;
+  gap: var(--e-1);
+  padding: var(--e-3) var(--e-2);
   border-radius: var(--radio-calcomania-chica);
   background: var(--surface);
   border: 2px solid var(--surface-borde);
@@ -3811,7 +3830,7 @@ main:has(> .pantalla-habla) {
   color: var(--crema);
   font-size: var(--fs-caption);
   font-weight: 700;
-  padding: 2px var(--e-2);
+  padding: var(--e-2) var(--e-3);
   border-radius: 999px;
 }
 
@@ -4158,7 +4177,7 @@ main:has(> .pantalla-habla) {
   gap: var(--e-3);
   min-height: var(--toque-minimo);
   padding: var(--e-1) 0;
-  cursor: pointer;
+  cursor: pointer; /* toda la fila (label) es el área táctil de 44px, no solo la casilla */
 }
 .escritura-criterio input[type="checkbox"] {
   width: 22px;
@@ -4290,6 +4309,7 @@ main:has(> .pantalla-habla) {
 /* Salida explícita de Habla (cierra la sesión y marca el paso de la ruta guiada como terminado). */
 .habla-boton-terminar {
   display: block;
+  min-width: var(--toque-minimo);
   margin: var(--e-2) auto 0;
   color: var(--texto-2);
 }
@@ -4310,4 +4330,58 @@ main:has(> .pantalla-habla) {
 }
 .habla-confirmacion-aviso {
   margin: 0 0 var(--e-2);
+}
+
+/* Meta de hoy (D33): "Nivel · XP" sube a la fila del título y "x/y min" queda junto a la barra
+   (ahorra alto en celular sin quitarle padding a la tarjeta). */
+.tarjeta-meta .fila-cabeza {
+  align-items: center;
+}
+.meta-fila-barra .meta-minutos {
+  flex: none;
+  white-space: nowrap;
+}
+
+/* Ruta de hoy en celular (D33): mosaico compacto, número y minutos en la primera fila y el nombre
+   debajo; padding de 8/12 px (antes 4/2, el texto tocaba el borde). */
+@media (max-width: 899px) {
+  .ruta-hoy-paso {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "num min" "nombre nombre";
+    justify-content: center;
+    align-items: center;
+    column-gap: var(--e-2);
+    row-gap: var(--e-1);
+    padding: var(--e-2);
+  }
+  .ruta-hoy-numero {
+    grid-area: num;
+  }
+  .ruta-hoy-minutos {
+    grid-area: min;
+    white-space: nowrap;
+  }
+  .ruta-hoy-nombre {
+    grid-area: nombre;
+    text-align: center;
+  }
+}
+
+/* Inicio en celular sin scroll (D33): con el padding nuevo de las tarjetas ya no cabía todo. Se
+   recorta lo secundario (frase de ritmo, texto "tu nivel ahora", detalle bajo cada mini-barra en
+   pantallas bajitas); el detalle completo sigue en Progreso. */
+@media (max-width: 899px) {
+  .camino-linea-detalle {
+    display: none;
+  }
+  .inicio-saludo p {
+    display: none;
+  }
+}
+@media (max-width: 899px) and (max-height: 780px) {
+  .camino-linea,
+  .mini-barra-detalle {
+    display: none;
+  }
 }

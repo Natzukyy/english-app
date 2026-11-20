@@ -1168,5 +1168,15 @@
     "categoria": "corta",
     "es": "Nivel confirmado",
     "en": "Level confirmed"
+  },
+  "progreso.barra_escala": {
+    "categoria": "corta",
+    "es": "Escala A1–C2",
+    "en": "A1–C2 scale"
+  },
+  "progreso.barra_nivel": {
+    "categoria": "corta",
+    "es": "Hacia {nivel}",
+    "en": "Toward {nivel}"
   }
 }

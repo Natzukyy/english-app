@@ -42,3 +42,16 @@ Por pantalla: inicio 289, progreso 72, ajustes 72, celebracion 68, lluvia 68, di
 | baja | interior | inicio | inicio-plan-completado | 360x740 | 0,3 | `div.pantalla-vista.pantalla-inicio-guiada > div.tarjeta-principal.tarjeta-principal--lista` | 10px arriba (mín 12) | 4 |
 | baja | interior | habla | habla-resultado | 360x740 | 0 | `div.habla-resultado.pop-entrada > div.habla-chips.pop-entrada-escalonada > span.habla-chip.habla-chip-acierto` | 6px arriba (mín 8) | 2 |
 
+## Estado final (después de corregir)
+
+**Sin hallazgos.**
+
+
+**Sin hallazgos en el estado final** (0 de 33 estados × 3 viewports × 2 niveles de interfaz). No quedan excepciones por hallazgo; lo que el medidor **no cuenta** (y por qué) es, por diseño:
+- Líneas de texto recortadas por `line-clamp`/`overflow:hidden` (no se ven; p. ej. el nombre de un paso de la ruta a 2 líneas).
+- La cara de la tarjeta de repaso que el volteo 3D deja detrás.
+- Insignias de ≤ 44 px con un glifo centrado (letras A–D, números de paso): límite de 3 px.
+- Una casilla de verificación dentro de un `<label>` de ≥ 44 px (la fila entera es el área táctil).
+- Líneas divisorias de un solo lado (no son tarjetas) y los términos subrayados de las lecturas (`.lectura-termino`, enlaces en línea dentro de un texto).
+
+Nota de método: el estado inicial se midió con una versión previa del medidor (sin ignorar líneas recortadas ni la cara oculta del repaso, y con insignias en 4 px); por eso algunos hallazgos iniciales son más generosos. Una segunda medición inicial con el medidor final (solo 390×844 y 1440×900, interfaz 0) dio 213 hallazgos; las capturas "antes" son de ese estado.

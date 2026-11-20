@@ -19,7 +19,8 @@ async (page) => {
     views: { '390x844': [390, 844], '360x740': [360, 740], '1440x900': [1440, 900] },
     estados: null,
     capturas: null, // carpeta para guardar capturas (solo nivel 0, 390x844 y 1440x900)
-    sufijo: 'despues'
+    sufijo: 'despues',
+    salida: 'auditoria' // nombre del archivo que guarda el receptor
   }, AJUSTES);
   const browser = page.context().browser();
   const filas = [];
@@ -69,8 +70,14 @@ async (page) => {
         if (!t.textContent.trim()) continue;
         const pe = t.parentElement;
         if (!pe || !esVisible(pe)) continue;
+        // Cara de la tarjeta de repaso que no se ve (el volteo 3D la deja detrás): no cuenta.
+        const marco = pe.closest('.repaso-marco');
+        if (marco && ((pe.closest('.repaso-cara-frente') && marco.classList.contains('revelada')) || (pe.closest('.repaso-cara-atras') && !marco.classList.contains('revelada')))) continue;
         const r = document.createRange(); r.selectNodeContents(t);
-        [...r.getClientRects()].forEach((q) => { if (q.width > 0 && q.height > 0) rs.push(q); });
+        // Líneas recortadas por un ancestro con overflow hidden (p. ej. line-clamp) no se ven: no cuentan.
+        let recorte = null;
+        for (let a = pe; a && a !== document.body; a = a.parentElement) { const o = getComputedStyle(a); if (/(hidden|clip)/.test(o.overflowY)) { recorte = a.getBoundingClientRect(); break; } }
+        [...r.getClientRects()].forEach((q) => { if (q.width > 0 && q.height > 0 && !(recorte && (q.top >= recorte.bottom - 1 || q.bottom <= recorte.top + 1))) rs.push(q); });
       }
       return rs;
     };
@@ -98,12 +105,12 @@ async (page) => {
       const bw = { t: parseFloat(cs.borderTopWidth) || 0, r: parseFloat(cs.borderRightWidth) || 0, b: parseFloat(cs.borderBottomWidth) || 0, l: parseFloat(cs.borderLeftWidth) || 0 };
       const cont = contenido(e).filter((q) => !(q.width >= r.width - 1 && q.height >= r.height - 1));
       if (!cont.length) return;
-      // Insignia: círculo/cuadrito de ≤ 44 px con UN glifo centrado (letra A-D, número de paso, icono): ahí 4 px bastan.
+      // Insignia: círculo/cuadrito de ≤ 44 px con UN glifo centrado (letra A-D, número de paso, icono): ahí 3 px bastan.
       const insignia = r.width <= 44 && r.height <= 44;
       const pastilla = r.height <= 40 || (e.tagName === 'BUTTON' && r.height <= 56 && !e.querySelector('p'));
       // Compactos (≤ 72 px en su lado menor): fichas, filas de una línea, mosaicos de la ruta: 8 px.
       const compacto = Math.min(r.width, r.height) <= 72;
-      const lim = insignia ? 4 : (pastilla || compacto) ? 8 : 12;
+      const lim = insignia ? 3 : (pastilla || compacto) ? 8 : 12;
       const ancho = r.width < 6 || r.height < 6;
       if (ancho) return;
       const u = { t: Math.min(...cont.map((q) => q.top)), b: Math.max(...cont.map((q) => q.bottom)), l: Math.min(...cont.map((q) => q.left)), r: Math.max(...cont.map((q) => q.right)) };
@@ -243,16 +250,17 @@ async (page) => {
           await preparar(p);
           await p.waitForTimeout(400);
           const pantalla = nombre.split('-')[0];
+          // La captura va ANTES de medir: medir apaga las animaciones de entrada y al quitarlas se reinician.
+          if (CFG.capturas && nivel === 0 && vpNombre !== '360x740') await p.screenshot({ path: CFG.capturas + nombre + '-' + vpNombre + '-' + CFG.sufijo + '.png', fullPage: true });
           const r = await p.evaluate(medir, { pantalla, estado: nombre, viewport: vpNombre, nivel });
           filas.push(...r);
-          if (CFG.capturas && nivel === 0 && vpNombre !== '360x740') await p.screenshot({ path: CFG.capturas + nombre + '-' + vpNombre + '-' + CFG.sufijo + '.png', fullPage: true });
         } catch (e) { errores.push(nivel + '/' + vpNombre + '/' + nombre + ': ' + e.message.slice(0, 120)); }
       }
       await ctx.close();
     }
   }
   const resultado = { filas, errores, total: filas.length };
-  try { await fetch(CFG.receptor, { method: 'POST', body: JSON.stringify(resultado) }); } catch (e) { resultado.receptorFalla = String(e); }
+  try { await fetch(CFG.receptor + CFG.salida, { method: 'POST', body: JSON.stringify(resultado) }); } catch (e) { resultado.receptorFalla = String(e); }
   const porPantalla = {}; filas.forEach((f) => { porPantalla[f.pantalla] = (porPantalla[f.pantalla] || 0) + 1; });
   return { total: filas.length, porPantalla, errores: errores.slice(0, 20), receptorFalla: resultado.receptorFalla || null };
 }
