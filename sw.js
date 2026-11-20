@@ -4,7 +4,7 @@
    Ver DECISIONES.md D15: cómo se versiona la caché y qué hace falta hacer a mano en cada update. */
 "use strict";
 
-var CACHE_VERSION = "v28";
+var CACHE_VERSION = "v29";
 var CACHE_NAME = "app-ingles-" + CACHE_VERSION;
 
 var ARCHIVOS_APP_SHELL = [
@@ -56,7 +56,11 @@ var ARCHIVOS_APP_SHELL = [
   "assets/fonts/BricolageGrotesque-Variable-latin-ext.woff2",
   "icons/icon-192.png",
   "icons/icon-512.png",
-  "icons/apple-touch-icon.png"
+  "icons/apple-touch-icon.png",
+  "icons/icon-512-maskable.png",
+  "icons/favicon.ico",
+  "icons/favicon-32.png",
+  "icons/favicon-16.png"
 ];
 
 self.addEventListener("install", function (evento) {
