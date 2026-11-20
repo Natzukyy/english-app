@@ -248,5 +248,10 @@
     "categoria": "larga",
     "es": "¡Nuevo nivel de inglés:",
     "en": "New English level:"
+  },
+  "comun.terminar": {
+    "categoria": "corta",
+    "es": "Terminar",
+    "en": "Finish"
   }
 }

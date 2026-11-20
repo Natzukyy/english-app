@@ -450,6 +450,23 @@
         });
       });
 
+      // --- 17. El plan se recalcula a mitad del flujo (fin del Diagnóstico): no se marca el paso equivocado ---
+      prueba("plan: terminar el Diagnóstico NO marca como hecho el primer paso del plan recalculado (Repaso)", function () {
+        var ahora = new Date(2026, 10, 18);
+        return limpiarStores(["plan", "diagnostico_resultados", "srs_cards", "settings"]).then(function () {
+          return App.Datos.obtenerOCalcularPlanDeHoy(ahora); // plan provisional [diagnostico]
+        }).then(function () {
+          return App.Datos.guardarDiagnostico({ porHabilidad: { lectura: { nivelCEFR: "A2" }, habla: { nivelCEFR: "A2" }, escucha: { nivelCEFR: "A2" }, escritura: { nivelCEFR: "A2" } } });
+        }).then(function () {
+          return App.Datos.obtenerOCalcularPlanDeHoy(ahora); // ahora SE RECALCULA al plan real
+        }).then(function (planReal) {
+          assertTrue(planReal.pasos[0].tipo !== "diagnostico", "debería ser el plan real");
+          return App.Datos.marcarPasoCompletado(planReal.id, 0, { tipo: "diagnostico", habilidad: null });
+        }).then(function (plan) {
+          assertEqual(plan.pasos.filter(function (p) { return p.completado; }).length, 0);
+        });
+      });
+
       function correrTodo() {
         var lista = document.getElementById("lista-resultados");
         var resumen = document.getElementById("resumen");

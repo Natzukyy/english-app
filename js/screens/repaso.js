@@ -84,9 +84,17 @@
             "</span></div></div>" +
             '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">XP ganado</span><span class="num-tabular">+<span id="valor-xp-fin">0</span></span></div></div>' +
             "</div>" +
+            // Sin este botón el resumen era un callejón sin salida (solo la barra de navegación);
+            // en la ruta guiada es el "Continuar": Inicio detecta la vuelta y muestra el siguiente paso.
+            '<button type="button" class="calcomania calcomania-cta calcomania-presionable repaso-boton-terminar" id="btn-terminar-repaso">' +
+            t("comun.terminar") +
+            "</button>" +
             "</div>";
           el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
             nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
+          });
+          el.querySelector("#btn-terminar-repaso").addEventListener("click", function () {
+            location.hash = "#/inicio";
           });
           global.App.Util.animarNumero(el.querySelector("#valor-racha-fin"), racha.rachaActual);
           global.App.Util.animarNumero(el.querySelector("#valor-xp-fin"), xpGanada);

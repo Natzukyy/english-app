@@ -4038,3 +4038,15 @@ main:has(> .pantalla-habla) {
   from { opacity: 0; transform: translateX(-50%) scale(0.82); }
   to { opacity: 1; transform: translateX(-50%) scale(1); }
 }
+
+/* Botón de cierre del resumen de Repaso (antes la pantalla no tenía salida). */
+.repaso-boton-terminar {
+  display: block;
+  width: 100%;
+  margin-top: var(--e-4);
+  background: var(--amarillo);
+  color: var(--tinta);
+  font-weight: 700;
+  min-height: 52px;
+  padding: var(--e-3) var(--e-5);
+}

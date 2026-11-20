@@ -66,9 +66,12 @@
     }
   }
 
-  function guardarFlujoEnCurso(fecha, indice) {
+  // Se guarda también el TIPO (y la habilidad) del paso, no solo su posición: el plan puede
+  // recalcularse a mitad del flujo (p. ej. al terminar el Diagnóstico el plan "solo Diagnóstico"
+  // se reemplaza por el real) y entonces el índice apuntaría a OTRO paso.
+  function guardarFlujoEnCurso(fecha, indice, paso) {
     try {
-      localStorage.setItem(CLAVE_FLUJO, JSON.stringify({ fecha: fecha, indice: indice }));
+      localStorage.setItem(CLAVE_FLUJO, JSON.stringify({ fecha: fecha, indice: indice, tipo: paso && paso.tipo, habilidad: (paso && paso.habilidad) || null }));
     } catch (e) {
       /* localStorage no disponible (modo privado, etc.) -- Empezar sigue funcionando, solo
          no se podrá marcar el paso como completado automáticamente al volver. */
@@ -91,7 +94,7 @@
   }
 
   function irAPaso(plan, indice) {
-    guardarFlujoEnCurso(plan.id, indice);
+    guardarFlujoEnCurso(plan.id, indice, plan.pasos[indice]);
     location.hash = "#/" + rutaParaPaso(plan.pasos[indice]);
   }
 
@@ -135,7 +138,7 @@
     limpiarFlujoEnCurso();
     el.innerHTML = '<div class="estado-vacio">…</div>';
 
-    global.App.Datos.marcarPasoCompletado(flujo.fecha, flujo.indice).then(function () {
+    global.App.Datos.marcarPasoCompletado(flujo.fecha, flujo.indice, flujo.tipo ? { tipo: flujo.tipo, habilidad: flujo.habilidad } : null).then(function () {
       return global.App.Datos.obtenerOCalcularPlanDeHoy(new Date());
     }).then(function (plan) {
       if (plan.id !== flujo.fecha) {

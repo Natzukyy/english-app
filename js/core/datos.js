@@ -438,9 +438,24 @@
   /** Marca un paso del plan de "fecha" como completado. Si ese paso es una reevaluación,
    * además actualiza la fecha de "última reevaluación" (reinicia el ciclo de 4 semanas) --
    * es el único efecto secundario fuera del plan mismo que un paso puede disparar. */
-  function marcarPasoCompletado(fecha, indicePaso) {
+  function marcarPasoCompletado(fecha, indicePaso, esperado) {
     return global.App.Storage.get("plan", fecha).then(function (plan) {
-      if (!plan || !plan.pasos || !plan.pasos[indicePaso]) return plan;
+      if (!plan || !plan.pasos) return plan;
+      // "esperado" ({tipo, habilidad}) protege contra un plan que se recalculó a mitad del
+      // flujo: si el paso en esa posición ya no es el que se estaba haciendo, se busca por tipo;
+      // si ya no existe (p. ej. el Diagnóstico, que el plan real no incluye) no se marca NADA --
+      // antes se marcaba como hecho el paso equivocado (Repaso sin haberlo hecho).
+      if (esperado && esperado.tipo) {
+        var coincide = function (p) {
+          return p && p.tipo === esperado.tipo && (!esperado.habilidad || p.habilidad === esperado.habilidad);
+        };
+        if (!coincide(plan.pasos[indicePaso])) {
+          indicePaso = plan.pasos.findIndex(function (p) {
+            return !p.completado && coincide(p);
+          });
+        }
+      }
+      if (indicePaso < 0 || !plan.pasos[indicePaso]) return plan;
       plan.pasos[indicePaso].completado = true;
       var esReevaluacion = plan.pasos[indicePaso].tipo === "reevaluacion";
       return global.App.Storage.put("plan", plan).then(function () {
