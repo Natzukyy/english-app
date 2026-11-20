@@ -301,7 +301,7 @@
       // --- Tus datos (exportar/importar) ---
       el.querySelector("#btn-exportar").addEventListener("click", function () {
         global.App.Storage.exportBackup().then(function (backup) {
-          descargarJSON(backup, "respaldo-rumbo-" + fechaHoyISO() + ".json");
+          descargarJSON(backup, "respaldo-hey-" + fechaHoyISO() + ".json");
         });
       });
 

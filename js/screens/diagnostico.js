@@ -260,13 +260,38 @@
 
   function pintarResultado(el, ctx, t) {
     var esc = global.App.Util.escaparHTML;
-    var resultado = global.App.Diagnostico.construirResultado(estado.banco, estado.respuestas, estado.autoeval, new Date());
-    global.App.Datos.guardarDiagnostico(resultado);
-    global.App.Util.marcarPasoTerminado(); // llegar al resultado = el paso (Diagnóstico/reevaluación) se completó
+    el.innerHTML = '<div class="estado-vacio">…</div>';
+    // Se guarda UNA sola vez (volver a esta pantalla no duplica el diagnóstico) y se espera el
+    // resultado: en la mini-reevaluación (D29) la barra y el mensaje dependen de si el nivel
+    // sube, se confirma o "repasa" (la reevaluación nunca baja el nivel).
+    if (!estado.guardado) {
+      var resultado0 = global.App.Diagnostico.construirResultado(estado.banco, estado.respuestas, estado.autoeval, new Date());
+      var modo = global.App.Util.leerModoPaso();
+      estado.guardado = global.App.Datos.guardarDiagnostico(resultado0, { modo: modo && modo.tipo === "reevaluacion" ? "reevaluacion" : "" }).then(function (g) {
+        global.App.Util.limpiarModoPaso();
+        return { resultado: resultado0, acciones: g.acciones, reevaluacion: !!(modo && modo.tipo === "reevaluacion") };
+      });
+      global.App.Util.marcarPasoTerminado(); // llegar al resultado = el paso (Diagnóstico/reevaluación) se completó
+    }
+    estado.guardado.then(function (g) {
+      pintarResultadoGuardado(el, ctx, t, g);
+    });
+  }
 
+  function pintarResultadoGuardado(el, ctx, t, g) {
+    var esc = global.App.Util.escaparHTML;
+    var resultado = g.resultado;
     var filas = Object.keys(resultado.porHabilidad)
       .map(function (h) {
-        var r = resultado.porHabilidad[h];
+        var r = Object.assign({}, resultado.porHabilidad[h]);
+        var accion = g.acciones && g.acciones[h];
+        if (g.reevaluacion && accion) r.nivelCEFR = accion.nivel; // la reevaluación nunca baja: se muestra el nivel que se conserva
+        var nota = "";
+        if (g.reevaluacion && accion) {
+          if (accion.accion === "repasa") nota = t("diagnostico.repasa", { habilidad: nombreHabilidad(t, h).toLowerCase(), nivel: accion.nivel });
+          else if (accion.accion === "sube") nota = t("diagnostico.sube", { nivel: accion.nivel });
+          else nota = t("diagnostico.confirma");
+        }
         var colorFondo = COLOR_HABILIDAD[h];
         var pastilla = colorFondo
           ? '<span class="diagnostico-pastilla-nivel" style="background:' + colorFondo + '">' + global.App.Avance.etiquetaNivel(r.nivelCEFR, h) + "</span>"
@@ -278,6 +303,7 @@
           "</span>" +
           pastilla +
           "</div>" +
+          (nota ? '<p class="texto-caption diagnostico-nota-reevaluacion">' + esc(nota) + "</p>" : "") +
           '<div class="barra-progreso"' +
           (colorFondo ? ' data-habilidad="' + h + '"' : "") +
           '><span data-destino="' +

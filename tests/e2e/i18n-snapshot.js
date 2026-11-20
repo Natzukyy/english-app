@@ -37,7 +37,7 @@ async (page) => {
   const clickTexto = (p, rx) => p.evaluate((src) => { const b=[...document.querySelectorAll('#pantalla button')].find(x=>!x.disabled && new RegExp(src,'i').test(x.textContent.trim())); if(b){b.click(); return true;} return false; }, rx);
   const clickSel = (p, sel) => p.evaluate((s) => { const e=document.querySelector(s); if(e&&!e.disabled){e.click(); return true;} return false; }, sel);
   const hash = (p) => p.evaluate(() => location.hash);
-  const sembrar = (p, diag) => p.evaluate(async (d) => { if (d) await window.App.Datos.guardarDiagnostico(d); localStorage.removeItem('rumboFlujoEnCurso'); localStorage.removeItem('rumboPasoTerminado'); }, diag || null);
+  const sembrar = (p, diag) => p.evaluate(async (d) => { if (d) await window.App.Datos.guardarDiagnostico(d); localStorage.removeItem('heyFlujoEnCurso'); localStorage.removeItem('heyPasoTerminado'); }, diag || null);
   const prefs = (p, extra) => p.evaluate(async (e) => { await window.App.Datos.guardarPreferencias(Object.assign({}, await window.App.Datos.obtenerPreferencias(), e)); }, extra);
   async function responderPreguntas(p, prefijo, soloPrimeras) {
     let n = 0;
@@ -93,15 +93,15 @@ async (page) => {
       await ir(p, 'inicio'); await snap(p, 'inicio_' + nombre);
     }
     // Interstitials del flujo guiado
-    await p.evaluate(async () => { const hoy = window.App.Fecha.hoyISO(new Date()); await window.App.Storage.put('plan', { id: hoy, totalMinutos: 18, pasos: [{tipo:'repaso',minutos:8,completado:false},{tipo:'practica',habilidad:'habla',minutos:10,completado:false}] }); localStorage.setItem('rumboFlujoEnCurso', JSON.stringify({ fecha: hoy, indice: 0, tipo: 'repaso', habilidad: null })); localStorage.setItem('rumboPasoTerminado', 'repaso'); });
+    await p.evaluate(async () => { const hoy = window.App.Fecha.hoyISO(new Date()); await window.App.Storage.put('plan', { id: hoy, totalMinutos: 18, pasos: [{tipo:'repaso',minutos:8,completado:false},{tipo:'practica',habilidad:'habla',minutos:10,completado:false}] }); localStorage.setItem('heyFlujoEnCurso', JSON.stringify({ fecha: hoy, indice: 0, tipo: 'repaso', habilidad: null })); localStorage.setItem('heyPasoTerminado', 'repaso'); });
     await ir(p, 'inicio'); await snap(p, 'inicio_listo_siguiente');
-    await p.evaluate(async () => { const hoy = window.App.Fecha.hoyISO(new Date()); await window.App.Storage.put('plan', { id: hoy, totalMinutos: 18, pasos: [{tipo:'repaso',minutos:8,completado:true},{tipo:'practica',habilidad:'habla',minutos:10,completado:false}] }); localStorage.setItem('rumboFlujoEnCurso', JSON.stringify({ fecha: hoy, indice: 1, tipo: 'practica', habilidad: 'habla' })); localStorage.setItem('rumboPasoTerminado', 'habla'); });
+    await p.evaluate(async () => { const hoy = window.App.Fecha.hoyISO(new Date()); await window.App.Storage.put('plan', { id: hoy, totalMinutos: 18, pasos: [{tipo:'repaso',minutos:8,completado:true},{tipo:'practica',habilidad:'habla',minutos:10,completado:false}] }); localStorage.setItem('heyFlujoEnCurso', JSON.stringify({ fecha: hoy, indice: 1, tipo: 'practica', habilidad: 'habla' })); localStorage.setItem('heyPasoTerminado', 'habla'); });
     await ir(p, 'inicio'); await snap(p, 'inicio_dia_completo');
-    await p.evaluate(() => { localStorage.removeItem('rumboFlujoEnCurso'); localStorage.removeItem('rumboPasoTerminado'); });
+    await p.evaluate(() => { localStorage.removeItem('heyFlujoEnCurso'); localStorage.removeItem('heyPasoTerminado'); });
     // Banner de paso en curso
-    await p.evaluate(async () => { const hoy = window.App.Fecha.hoyISO(new Date()); await window.App.Storage.put('plan', { id: hoy, totalMinutos: 18, pasos: [{tipo:'repaso',minutos:8,completado:false},{tipo:'practica',habilidad:'lectura',minutos:10,completado:false}] }); localStorage.setItem('rumboFlujoEnCurso', JSON.stringify({ fecha: hoy, indice: 0, tipo: 'repaso', habilidad: null })); });
+    await p.evaluate(async () => { const hoy = window.App.Fecha.hoyISO(new Date()); await window.App.Storage.put('plan', { id: hoy, totalMinutos: 18, pasos: [{tipo:'repaso',minutos:8,completado:false},{tipo:'practica',habilidad:'lectura',minutos:10,completado:false}] }); localStorage.setItem('heyFlujoEnCurso', JSON.stringify({ fecha: hoy, indice: 0, tipo: 'repaso', habilidad: null })); });
     await ir(p, 'repaso'); await snap(p, 'repaso_con_banner');
-    await p.evaluate(() => localStorage.removeItem('rumboFlujoEnCurso'));
+    await p.evaluate(() => localStorage.removeItem('heyFlujoEnCurso'));
     // Repaso: frente, revelado, fin
     await ir(p, 'repaso'); await snap(p, 'repaso_frente');
     await p.keyboard.press('Space'); await esperar(p, 700); await snap(p, 'repaso_revelado');

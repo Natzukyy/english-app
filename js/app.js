@@ -12,7 +12,8 @@
     "practicar",
     "lectura",
     "escucha",
-    "escritura"
+    "escritura",
+    "confirmacion"
   ];
   var contexto = { strings: {}, umbrales: { niveles: [] }, nivelInterfaz: 0, config: {} };
 
@@ -26,7 +27,8 @@
     practicar: "inicio",
     lectura: "inicio",
     escucha: "inicio",
-    escritura: "inicio"
+    escritura: "inicio",
+    confirmacion: "inicio"
   };
 
   // Spec: "ejecuta los pasos EN SECUENCIA dentro de un flujo con barra de progreso del día
@@ -38,12 +40,17 @@
   // constantes equivalentes de inicio.js (son datos pequeños y estables, no lógica de
   // negocio) porque ese módulo no las expone -- si llegan a divergir, es una señal de que
   // vale la pena moverlas a un lugar compartido.
-  var CLAVE_FLUJO = "rumboFlujoEnCurso";
+  var CLAVE_FLUJO = "heyFlujoEnCurso";
   var RUTA_POR_TIPO_PASO = { diagnostico: "diagnostico", reevaluacion: "diagnostico", repaso: "repaso", conversacion: "conversacion" };
+  // Confirmar lectura/escucha (opción múltiple) tiene pantalla propia; habla y escritura
+  // confirman dentro de su propia pantalla (modo confirmación, ver Util.leerModoPaso).
   var RUTA_POR_HABILIDAD_PRACTICA = { habla: "habla", lectura: "lectura", escucha: "escucha", escritura: "escritura" };
+
+  var RUTA_CONFIRMACION = { lectura: "confirmacion", escucha: "confirmacion", habla: "habla", escritura: "escritura" };
 
   function rutaDelPaso(paso) {
     if (paso.tipo === "practica") return RUTA_POR_HABILIDAD_PRACTICA[paso.habilidad] || "inicio";
+    if (paso.tipo === "confirmacion") return RUTA_CONFIRMACION[paso.habilidad] || "confirmacion";
     return RUTA_POR_TIPO_PASO[paso.tipo] || "inicio";
   }
 

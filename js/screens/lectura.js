@@ -89,8 +89,8 @@
         pintar(el, ctx, t);
         return;
       }
-      global.App.Datos.obtenerUltimoDiagnostico().then(function (diagnostico) {
-        var nivel = (diagnostico && diagnostico.porHabilidad.lectura && diagnostico.porHabilidad.lectura.nivelCEFR) || "A2";
+      global.App.Datos.obtenerNivelesHabilidad().then(function (niveles) {
+        var nivel = niveles.lectura || "A2";
         var lectura = elegirLectura(lecturas, nivel);
         estado = { lectura: lectura, indice: -1, respuestas: [] };
         sesion = { inicioMs: Date.now(), intentos: 0, correctas: 0, finalizada: false };
@@ -222,6 +222,9 @@
       if (seleccionada === -1 || respondido) return;
       respondido = true;
       var esCorrecta = seleccionada === barajada.indiceCorrecta;
+      // Cada pregunta contestada es una respuesta puntuada del avance continuo (D29); solo
+      // cuenta si el texto es del nivel actual de lectura. No toca XP ni el plan de hoy.
+      global.App.Datos.registrarRespuestaAvance("lectura", estado.lectura.nivelCEFR, esCorrecta ? 1 : 0, 1, new Date());
       sesion.intentos += 1;
       if (esCorrecta) {
         sesion.correctas += 1;

@@ -11,7 +11,7 @@ async (page) => {
   const planHoy = () => p.evaluate(async()=>JSON.stringify((await window.App.Datos.obtenerOCalcularPlanDeHoy(new Date())).pasos));
   const boton = () => p.evaluate(()=>{const b=document.querySelector('#btn-empezar-plan'); return b?b.textContent.trim():null;});
   await p.goto('http://localhost:8000/#/inicio', { waitUntil: 'networkidle' });
-  await p.evaluate(async()=>{ await window.App.Datos.guardarDiagnostico({porHabilidad:{lectura:{nivelCEFR:'A2'},habla:{nivelCEFR:'A2'},escucha:{nivelCEFR:'A2'},escritura:{nivelCEFR:'A2'}}}); localStorage.removeItem('rumboFlujoEnCurso'); await window.App.Storage.remove('plan', window.App.Fecha.hoyISO(new Date())); });
+  await p.evaluate(async()=>{ await window.App.Datos.guardarDiagnostico({porHabilidad:{lectura:{nivelCEFR:'A2'},habla:{nivelCEFR:'A2'},escucha:{nivelCEFR:'A2'},escritura:{nivelCEFR:'A2'}}}); localStorage.removeItem('heyFlujoEnCurso'); await window.App.Storage.remove('plan', window.App.Fecha.hoyISO(new Date())); });
   await p.reload({waitUntil:'networkidle'}); await p.waitForTimeout(900);
   const plan0 = await planHoy();
   r.botonInicial = await boton();
@@ -20,7 +20,7 @@ async (page) => {
   for (let i=0;i<3;i++){ await p.keyboard.press('Space'); await p.waitForTimeout(200); await p.keyboard.press('3'); await p.waitForTimeout(500); }
   r.hashEnPaso = await hash();
   await p.evaluate(()=>document.querySelector('nav.tabs button[data-ruta="inicio"]').click()); await p.waitForTimeout(1200);
-  r.tras_salir = { hash: await hash(), boton: await boton(), pasoNombre: await p.evaluate(()=>document.querySelector('.tarjeta-principal-nombre')?.textContent), planIgual: (await planHoy())===plan0, completados: JSON.parse(await planHoy()).filter(x=>x.completado).length, flujo: await p.evaluate(()=>localStorage.getItem('rumboFlujoEnCurso')) };
+  r.tras_salir = { hash: await hash(), boton: await boton(), pasoNombre: await p.evaluate(()=>document.querySelector('.tarjeta-principal-nombre')?.textContent), planIgual: (await planHoy())===plan0, completados: JSON.parse(await planHoy()).filter(x=>x.completado).length, flujo: await p.evaluate(()=>localStorage.getItem('heyFlujoEnCurso')) };
   await p.reload({waitUntil:'networkidle'}); await p.waitForTimeout(1000);
   r.tras_recargar = { boton: await boton(), pasoNombre: await p.evaluate(()=>document.querySelector('.tarjeta-principal-nombre')?.textContent), completados: JSON.parse(await planHoy()).filter(x=>x.completado).length };
   await p.click('#btn-empezar-plan'); await p.waitForTimeout(900);

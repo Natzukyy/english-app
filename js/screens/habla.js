@@ -40,9 +40,39 @@
     return global.App.Datos.registrarSesion(minutos, sesion.correctas, new Date(), "habla");
   }
 
-  var nivelHabla = "A2"; // nivel CEFR de habla del último diagnóstico; "A2" si todavía no hay (igual que Lectura)
+  var nivelHabla = "A2"; // nivel CEFR actual de habla (avance continuo); "A2" si todavía no hay (igual que Lectura)
+  var intentoCuenta = true; // solo el PRIMER intento de cada frase cuenta para el avance (reintentar no infla)
+  // Modo confirmación (D29): { nivelObjetivo, total, hechos, suma, usadas } mientras Alex confirma su
+  // nivel de habla con frases (shadowing) del nivel siguiente; null en práctica normal.
+  var confirmacion = null;
+
+  function iniciarConfirmacionSiToca(niveles) {
+    var modo = global.App.Util.leerModoPaso();
+    if (modo && modo.tipo === "confirmacion" && modo.habilidad === "habla") {
+      if (!confirmacion) {
+        var objetivo = global.App.Avance.siguienteNivelDe(niveles.habla || "A2");
+        confirmacion = { nivelObjetivo: objetivo, total: global.App.Avance.CONSTANTES.CONFIRMACION_PREGUNTAS, hechos: 0, suma: 0, usadas: {} };
+      }
+    } else {
+      confirmacion = null;
+    }
+  }
 
   function elegirEjercicioAlAzar() {
+    if (confirmacion) {
+      var delNivel = ejercicios.filter(function (e) {
+        return e.tipo === "shadowing" && e.nivelCEFR === confirmacion.nivelObjetivo;
+      });
+      var libres = delNivel.filter(function (e) {
+        return !confirmacion.usadas[e.id];
+      });
+      var pool = libres.length ? libres : delNivel;
+      var elegido = pool[Math.floor(Math.random() * pool.length)];
+      if (elegido) {
+        confirmacion.usadas[elegido.id] = true;
+        return elegido;
+      }
+    }
     // Antes elegía entre TODOS los niveles (un A1 podía recibir C1). Ahora respeta su nivel
     // de habla: mismo nivel, o el más cercano por debajo (App.Avance.elegirPorNivel).
     return global.App.Avance.elegirPorNivel(ejercicios, nivelHabla);
@@ -65,8 +95,9 @@
           });
 
     cargar.then(function () {
-      return global.App.Datos.obtenerUltimoDiagnostico().then(function (diagnostico) {
-        nivelHabla = (diagnostico && diagnostico.porHabilidad && diagnostico.porHabilidad.habla && diagnostico.porHabilidad.habla.nivelCEFR) || "A2";
+      return global.App.Datos.obtenerNivelesHabilidad().then(function (niveles) {
+        nivelHabla = niveles.habla || "A2";
+        iniciarConfirmacionSiToca(niveles);
       });
     }).then(function () {
       if (!sesion || sesion.finalizada) {
@@ -76,8 +107,12 @@
     });
   }
 
-  function pintarEjercicio(el, t, ejercicio) {
+  function pintarEjercicio(el, t, ejercicio, esReintento) {
     var esc = global.App.Util.escaparHTML;
+    if (!esReintento) intentoCuenta = true;
+    var cabecera = confirmacion
+      ? '<p class="texto-caption habla-confirmacion-aviso">' + esc(t("habla.confirmando", { n: Math.min(confirmacion.hechos + 1, confirmacion.total), total: confirmacion.total, nivel: confirmacion.nivelObjetivo })) + "</p>"
+      : "";
     var esSombra = ejercicio.tipo === "shadowing";
     var fraseMostrada = esSombra ? ejercicio.fraseObjetivo : ejercicio.prompt;
     var etiqueta = t(esSombra ? "habla.repite_frase" : "habla.responde_voz");
@@ -85,6 +120,7 @@
     el.innerHTML =
       '<div class="pantalla-vista pantalla-habla">' +
       "<h1>" + esc(t("habilidad.habla")) + "</h1>" +
+      cabecera +
       '<div class="habla-cuerpo">' +
       '<div class="habla-tarjeta calcomania pop-entrada" style="background:var(--crema);--r:-1deg">' +
       '<span class="habla-etiqueta">' +
@@ -114,20 +150,23 @@
       '<div id="zona-retro"></div>' +
       // Salida explícita: sin ella un paso de Habla en la ruta guiada solo se podía cerrar
       // saliendo por la barra de navegación (que NO cuenta como terminado).
-      '<button type="button" class="enlace-discreto habla-boton-terminar" id="btn-terminar-habla">' +
-      esc(t("comun.terminar")) +
-      "</button>" +
+      (confirmacion
+        ? ""
+        : '<button type="button" class="enlace-discreto habla-boton-terminar" id="btn-terminar-habla">' + esc(t("comun.terminar")) + "</button>") +
       "</div>" +
       "</div>" +
       "</div>";
 
     var btnEscuchar = el.querySelector("#btn-escuchar");
     var btnHablar = el.querySelector("#btn-hablar");
-    el.querySelector("#btn-terminar-habla").addEventListener("click", function () {
-      finalizarSesionSiActiva().then(function () {
-        global.App.Util.terminarPasoYVolver();
+    var btnTerminar = el.querySelector("#btn-terminar-habla");
+    if (btnTerminar) {
+      btnTerminar.addEventListener("click", function () {
+        finalizarSesionSiActiva().then(function () {
+          global.App.Util.terminarPasoYVolver();
+        });
       });
-    });
+    }
 
     function reproducirModelo() {
       btnHablar.disabled = true;
@@ -160,6 +199,11 @@
     var zonaRetro = el.querySelector("#zona-retro");
     zonaRetro.innerHTML = "";
 
+    if (!Reconocedor && confirmacion) {
+      // Confirmar nivel necesita una puntuación objetiva: una autoevaluación no sirve.
+      zonaReconocimiento.innerHTML = '<p class="mensaje-error">' + esc(t("habla.confirmacion_sin_voz")) + "</p>";
+      return;
+    }
     if (!Reconocedor) {
       zonaReconocimiento.innerHTML =
         '<div class="panel-retro error">' +
@@ -278,6 +322,19 @@
 
     var resultado = global.App.Habla.comparar(fraseMostrada, textoDicho);
     var esBuena = resultado.porcentaje >= UMBRAL_ACIERTO;
+    // Avance continuo (D29): el puntaje de la frase repetida (0..1) es una respuesta puntuada,
+    // solo la primera vez que se intenta esa frase (reintentar no infla el avance). En modo
+    // confirmación se acumula para el resultado de la confirmación en vez de la ventana.
+    if (intentoCuenta) {
+      intentoCuenta = false;
+      if (confirmacion) {
+        confirmacion.hechos += 1;
+        confirmacion.suma += resultado.porcentaje / 100;
+      } else {
+        global.App.Datos.registrarRespuestaAvance("habla", ejercicio.nivelCEFR, resultado.porcentaje / 100, 1, new Date());
+      }
+    }
+    var terminaConfirmacion = !!confirmacion && confirmacion.hechos >= confirmacion.total;
 
     var listaPalabras = function (palabras, clase) {
       if (!palabras.length) return "";
@@ -300,13 +357,25 @@
       (resultado.omitidas.length || resultado.distintas.length ? listaPalabras(resultado.omitidas.concat(resultado.distintas), "habla-chip-revisar") : "") +
       "</div>" +
       '<div class="habla-botones-final">' +
-      '<button type="button" class="boton-secundario" id="btn-reintentar">' + esc(t("comun.reintentar")) + '</button>' +
-      '<button type="button" class="boton-principal" id="btn-siguiente">' + esc(t("comun.siguiente")) + '</button>' +
+      (confirmacion ? "" : '<button type="button" class="boton-secundario" id="btn-reintentar">' + esc(t("comun.reintentar")) + '</button>') +
+      '<button type="button" class="boton-principal" id="btn-siguiente">' + esc(t(terminaConfirmacion ? "comun.ver_resultado" : "comun.siguiente")) + '</button>' +
       "</div>" +
       "</div>";
 
     global.App.Util.animarNumero(el.querySelector("#valor-porcentaje"), resultado.porcentaje, 700);
     conectarBotonesFinales(el, t, ejercicio, esBuena);
+  }
+
+  /** Cierra la confirmación de habla: puntaje medio de las frases >= 70 % aprueba. */
+  function terminarConfirmacion(el, t) {
+    var c = confirmacion;
+    el.innerHTML = '<div class="estado-vacio">…</div>';
+    global.App.Datos.aplicarResultadoConfirmacion("habla", c.suma, c.total, new Date()).then(function (r) {
+      var resumen = '<span class="num-tabular">' + r.porcentaje + "</span>%";
+      global.App.Screens.confirmacion.pintarTarjetaResultado(el, t, "habla", r, resumen, function () {
+        confirmacion = null;
+      });
+    });
   }
 
   function registrarIntento(el, t, fueBien) {
@@ -327,16 +396,26 @@
     // Reintentar repite la MISMA frase (antes solo existía "Otro ejercicio", que siempre
     // elegía una al azar -- no había forma de volver a intentar justo la que acabas de
     // responder). Siguiente sí elige una nueva al azar.
-    el.querySelector("#btn-reintentar").addEventListener("click", function () {
-      pintarEjercicio(el, t, ejercicioActual);
-    });
+    var btnReintentar = el.querySelector("#btn-reintentar");
+    if (btnReintentar) {
+      btnReintentar.addEventListener("click", function () {
+        pintarEjercicio(el, t, ejercicioActual, true);
+      });
+    }
     el.querySelector("#btn-siguiente").addEventListener("click", function () {
+      if (confirmacion && confirmacion.hechos >= confirmacion.total) {
+        terminarConfirmacion(el, t);
+        return;
+      }
       pintarEjercicio(el, t, elegirEjercicioAlAzar());
     });
   }
 
   global.addEventListener("hashchange", function () {
-    if (location.hash.indexOf("habla") === -1) finalizarSesionSiActiva();
+    if (location.hash.indexOf("habla") === -1) {
+      confirmacion = null; // salir a mitad de una confirmación no registra nada
+      finalizarSesionSiActiva();
+    }
   });
 
   global.App = global.App || {};

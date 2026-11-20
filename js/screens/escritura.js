@@ -27,7 +27,22 @@
     var totalCriterios = estado.consigna.listaVerificacion.length;
     var marcados = estado.marcados.size;
     var correcta = totalCriterios > 0 && marcados / totalCriterios >= 0.5 ? 1 : 0;
-    return global.App.Datos.registrarSesion(minutos, correcta, new Date(), "escritura");
+    var proporcion = totalCriterios > 0 ? marcados / totalCriterios : 0;
+    // Avance continuo (D29): la lista de criterios autoevaluada es la única puntuación que hay
+    // para escritura libre; pesa media respuesta (PESO_ESCRITURA) porque es subjetiva. En modo
+    // confirmación no entra a la ventana: define el resultado de la confirmación.
+    var K = global.App.Avance.CONSTANTES;
+    var avance;
+    if (estado.confirmacion) {
+      avance = global.App.Datos.aplicarResultadoConfirmacion("escritura", proporcion * K.CONFIRMACION_PREGUNTAS, K.CONFIRMACION_PREGUNTAS, new Date()).then(function (r) {
+        estado.resultadoConfirmacion = r;
+      });
+    } else {
+      avance = global.App.Datos.registrarRespuestaAvance("escritura", estado.consigna.nivelCEFR, proporcion, K.PESO_ESCRITURA, new Date());
+    }
+    return avance.then(function () {
+      return global.App.Datos.registrarSesion(minutos, correcta, new Date(), "escritura");
+    });
   }
 
   function elegirConsigna(lista, nivel) {
@@ -57,10 +72,14 @@
         pintar(el, ctx, t);
         return;
       }
-      global.App.Datos.obtenerUltimoDiagnostico().then(function (diagnostico) {
-        var nivel = (diagnostico && diagnostico.porHabilidad.escritura && diagnostico.porHabilidad.escritura.nivelCEFR) || "A2";
-        var consigna = elegirConsigna(consignas, nivel);
-        estado = { consigna: consigna, fase: "escribiendo", texto: "", marcados: new Set() };
+      global.App.Datos.obtenerNivelesHabilidad().then(function (niveles) {
+        var nivel = niveles.escritura || "A2";
+        // Modo confirmación (D29): una consigna del NIVEL SIGUIENTE; aprueba con >= 70 % de la
+        // lista de criterios marcada. Sin modo, práctica normal del nivel actual.
+        var modo = global.App.Util.leerModoPaso();
+        var enConfirmacion = !!(modo && modo.tipo === "confirmacion" && modo.habilidad === "escritura" && global.App.Avance.siguienteNivelDe(nivel));
+        var consigna = elegirConsigna(consignas, enConfirmacion ? global.App.Avance.siguienteNivelDe(nivel) : nivel);
+        estado = { consigna: consigna, fase: "escribiendo", texto: "", marcados: new Set(), confirmacion: enConfirmacion, resultadoConfirmacion: null };
         sesion = { inicioMs: Date.now(), finalizada: false };
         pintar(el, ctx, t);
       });
@@ -202,6 +221,17 @@
 
       el.querySelector("#btn-terminar-escritura").addEventListener("click", function () {
         finalizarSesionSiActiva().then(function () {
+          var r = estado && estado.resultadoConfirmacion;
+          if (r) {
+            // Modo confirmación: se muestra el resultado antes de volver a la ruta.
+            var nivelNombre = estado.consigna.nivelCEFR;
+            global.App.Screens.confirmacion.pintarTarjetaResultado(
+              el, t, "escritura", r,
+              '<span class="num-tabular">' + r.porcentaje + "</span>% · " + global.App.Util.escaparHTML(nivelNombre),
+              function () { estado = null; }
+            );
+            return;
+          }
           estado = null;
           global.App.Util.terminarPasoYVolver();
         });

@@ -51,8 +51,8 @@
         pintar(el, ctx, t);
         return;
       }
-      global.App.Datos.obtenerUltimoDiagnostico().then(function (diagnostico) {
-        var nivel = (diagnostico && diagnostico.porHabilidad.escucha && diagnostico.porHabilidad.escucha.nivelCEFR) || "A2";
+      global.App.Datos.obtenerNivelesHabilidad().then(function (niveles) {
+        var nivel = niveles.escucha || "A2";
         var guion = elegirGuion(guiones, nivel);
         estado = { guion: guion, yaEscucho: false, indice: -1, respuestas: [] };
         sesion = { inicioMs: Date.now(), intentos: 0, correctas: 0, finalizada: false };
@@ -210,6 +210,8 @@
       if (seleccionada === -1 || respondido) return;
       respondido = true;
       var esCorrecta = seleccionada === barajada.indiceCorrecta;
+      // Respuesta puntuada del avance continuo (D29): solo si el guion es del nivel actual de escucha.
+      global.App.Datos.registrarRespuestaAvance("escucha", estado.guion.nivelCEFR, esCorrecta ? 1 : 0, 1, new Date());
       sesion.intentos += 1;
       if (esCorrecta) {
         sesion.correctas += 1;

@@ -202,6 +202,10 @@
       var esCorrecta = calidad >= 3;
       marco.classList.add(esCorrecta ? "vuela-der" : "vuela-izq");
       if (esCorrecta) sesion.correctas += 1;
+      // Avance continuo (D29): una tarjeta de vocabulario/frase contestada con calidad >= 3 es un
+      // acierto. Las tarjetas alimentan la ventana de LECTURA y solo cuentan si son del nivel
+      // actual de lectura (no el repaso de niveles más bajos).
+      global.App.Datos.registrarRespuestaAvance("lectura", tarjeta.nivelCEFR, esCorrecta ? 1 : 0, 1, new Date());
 
       var actualizada = global.App.SRS.calificarTarjeta(tarjeta, calidad, new Date());
       actualizada.frente = tarjeta.frente;

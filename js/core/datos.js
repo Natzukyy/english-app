@@ -132,27 +132,184 @@
     });
   }
 
-  /** Nivel CEFR global (ponderado, App.Avance) de un resultado de diagnóstico; null si no hay. */
-  function nivelGlobalDeDiagnostico(diagnostico) {
-    if (!diagnostico || !diagnostico.porHabilidad) return null;
-    var numeros = {};
-    ["lectura", "habla", "escucha", "escritura"].forEach(function (h) {
-      var d = diagnostico.porHabilidad[h];
-      numeros[h] = global.App.Avance.numeroDesdeNivel((d && d.nivelCEFR) || "A1", 50);
-    });
-    return global.App.Avance.calcularNivelGlobal(numeros).nivel;
+  // ---------------------------------------------------------------------------------------
+  // AVANCE CONTINUO POR HABILIDAD (D29). El diagnóstico fija el nivel INICIAL; desde entonces
+  // el nivel de cada habilidad vive en el store "avance" (una fila por habilidad: nivel,
+  // ventana de respuestas, estado de confirmación). Sin fila todavía (usuario que ya tenía
+  // diagnóstico antes de D29) el estado se deriva del último diagnóstico, sin perder nada.
+  // ---------------------------------------------------------------------------------------
+  var colaAvance = Promise.resolve(); // serializa lectura-modificación-escritura de respuestas rápidas
+
+  function encolarAvance(fn) {
+    var p = colaAvance.then(fn);
+    colaAvance = p.catch(function () {});
+    return p;
   }
 
-  function guardarDiagnostico(resultado) {
+  function limpiarFilaAvance(fila) {
+    return { nivel: fila.nivel, ventana: fila.ventana || [], listaParaConfirmar: !!fila.listaParaConfirmar, listaDesde: fila.listaDesde || null, ultimoFallo: fila.ultimoFallo || null };
+  }
+
+  /** { lectura:{nivel,ventana,listaParaConfirmar,listaDesde,ultimoFallo}, escucha, habla, escritura } */
+  function obtenerEstadosAvance() {
+    return Promise.all([global.App.Storage.getAll("avance"), obtenerUltimoDiagnostico()]).then(function (res) {
+      var filas = {};
+      res[0].forEach(function (f) {
+        filas[f.id] = f;
+      });
+      var diag = res[1];
+      var estados = {};
+      HABILIDADES_PLAN.forEach(function (h) {
+        if (filas[h]) {
+          estados[h] = limpiarFilaAvance(filas[h]);
+        } else {
+          var base = diag && diag.porHabilidad && diag.porHabilidad[h] && diag.porHabilidad[h].nivelCEFR;
+          estados[h] = global.App.Avance.estadoHabilidadVacio(base || "A1");
+        }
+      });
+      return estados;
+    });
+  }
+
+  function guardarEstadoAvance(habilidad, estado) {
+    return global.App.Storage.put("avance", Object.assign({ id: habilidad }, estado));
+  }
+
+  /** { lectura:"B1", ... } -- el nivel actual de cada habilidad (avance continuo). */
+  function obtenerNivelesHabilidad() {
+    return obtenerEstadosAvance().then(function (estados) {
+      var niveles = {};
+      HABILIDADES_PLAN.forEach(function (h) {
+        niveles[h] = estados[h].nivel;
+      });
+      return niveles;
+    });
+  }
+
+  /** Nivel CEFR global (ponderado, App.Avance) a partir de los estados reales de avance. */
+  function nivelGlobalDeEstados(estados) {
+    return global.App.Avance.calcularNivelGlobalDesdeEstados(estados);
+  }
+
+  /** Registra UNA respuesta puntuada (valor 0..1) de una habilidad. Solo cuenta si el contenido
+   * respondido es del NIVEL ACTUAL de esa habilidad (no del repaso de niveles más bajos).
+   * No toca XP ni el plan del día. Devuelve {contado, quedoLista}. */
+  function registrarRespuestaAvance(habilidad, nivelContenido, valor, peso, ahora) {
+    if (HABILIDADES_PLAN.indexOf(habilidad) === -1) return Promise.resolve({ contado: false });
+    var hoyISO = global.App.Fecha.hoyISO(ahora);
+    return encolarAvance(function () {
+      return Promise.all([obtenerEstadosAvance(), obtenerUltimoDiagnostico()]).then(function (res) {
+        var estados = res[0];
+        if (!res[1]) return { contado: false }; // sin diagnóstico todavía no hay nivel que medir
+        var actual = estados[habilidad];
+        if (nivelContenido !== actual.nivel) return { contado: false };
+        var r = global.App.Avance.registrarRespuestaEnEstado(actual, valor, peso, hoyISO);
+        return guardarEstadoAvance(habilidad, r.estado).then(function () {
+          return { contado: true, quedoLista: r.quedoLista, estado: r.estado };
+        });
+      });
+    });
+  }
+
+  var ORDEN_CONFIRMACION = ["lectura", "habla", "escucha", "escritura"];
+
+  /** Habilidades que HOY pueden confirmarse (listas y fuera de la espera de 7 días), la que
+   * lleva más tiempo lista primero. [{habilidad, nivelActual, nivelObjetivo}] */
+  function obtenerConfirmacionesPendientes(ahora) {
+    var hoyISO = global.App.Fecha.hoyISO(ahora);
+    return obtenerEstadosAvance().then(function (estados) {
+      return ORDEN_CONFIRMACION.filter(function (h) {
+        return global.App.Avance.puedeConfirmar(estados[h], hoyISO);
+      })
+        .map(function (h, i) {
+          return { habilidad: h, nivelActual: estados[h].nivel, nivelObjetivo: global.App.Avance.siguienteNivelDe(estados[h].nivel), desde: estados[h].listaDesde || "", orden: i };
+        })
+        .sort(function (a, b) {
+          return a.desde < b.desde ? -1 : a.desde > b.desde ? 1 : a.orden - b.orden;
+        });
+    });
+  }
+
+  /** Cierra una confirmación: correctasPonderadas sobre total preguntas. Aprobada -> sube el
+   * nivel de ESA habilidad (y anota la celebración); si no, conserva 15 y reintenta en 7 días. */
+  function aplicarResultadoConfirmacion(habilidad, correctasPonderadas, total, ahora) {
+    var hoyISO = global.App.Fecha.hoyISO(ahora);
+    return encolarAvance(function () {
+      return obtenerEstadosAvance().then(function (estados) {
+        var antes = nivelGlobalDeEstados(estados).nivel;
+        var resultado = global.App.Avance.evaluarConfirmacion(correctasPonderadas, total);
+        var r = global.App.Avance.aplicarConfirmacion(estados[habilidad], resultado, hoyISO);
+        var guardado = resultado.valida ? guardarEstadoAvance(habilidad, r.estado) : Promise.resolve();
+        return guardado.then(function () {
+          var nuevosEstados = Object.assign({}, estados);
+          nuevosEstados[habilidad] = r.estado;
+          if (r.subio) {
+            global.App.Util.anotarCelebracion({ tipo: "habilidad", habilidad: habilidad, nivel: r.estado.nivel });
+            var despues = nivelGlobalDeEstados(nuevosEstados).nivel;
+            if (global.App.Avance.indiceNivel(despues) > global.App.Avance.indiceNivel(antes)) {
+              global.App.Util.anotarCelebracion({ tipo: "cefr", nivel: despues });
+            }
+          }
+          return {
+            valida: resultado.valida,
+            aprobada: resultado.aprobada,
+            porcentaje: resultado.porcentaje,
+            subio: r.subio,
+            nivelNuevo: r.estado.nivel,
+            fechaReintento: global.App.Avance.fechaReintento(r.estado),
+            estado: r.estado
+          };
+        });
+      });
+    });
+  }
+
+  /** Guarda un diagnóstico y reparte su resultado al avance continuo:
+   *  - modo "reevaluacion" (mini-reevaluación de las 4 semanas): puede confirmar o SUBIR cada
+   *    habilidad, NUNCA bajarla (si salió más bajo: acción "repasa", nivel sin cambios).
+   *  - cualquier otro (primer diagnóstico, o uno que Alex repite a propósito): fija el nivel
+   *    de cada habilidad al medido; si el nivel no cambió conserva su ventana.
+   * Devuelve {registro, acciones:{habilidad:{accion, nivelMedido, nivel}}}. */
+  function guardarDiagnostico(resultado, opciones) {
+    var modo = opciones && opciones.modo;
     var registro = Object.assign({ id: String(Date.now()) }, resultado);
-    return obtenerUltimoDiagnostico().then(function (anterior) {
-      var antes = nivelGlobalDeDiagnostico(anterior);
-      var despues = nivelGlobalDeDiagnostico(registro);
-      // Solo si ya había un diagnóstico previo Y el nivel global SUBIÓ (el primero no celebra).
-      if (antes && despues && global.App.Avance.indiceNivel(despues) > global.App.Avance.indiceNivel(antes)) {
-        global.App.Util.anotarCelebracion({ tipo: "cefr", nivel: despues });
-      }
-      return global.App.Storage.put("diagnostico_resultados", registro);
+    return encolarAvance(function () {
+      return Promise.all([obtenerUltimoDiagnostico(), obtenerEstadosAvance()]).then(function (res) {
+        var anterior = res[0];
+        var estados = res[1];
+        var antes = nivelGlobalDeEstados(estados).nivel;
+        var acciones = {};
+        var nuevos = {};
+        HABILIDADES_PLAN.forEach(function (h) {
+          var medido = registro.porHabilidad && registro.porHabilidad[h] && registro.porHabilidad[h].nivelCEFR;
+          if (!medido) {
+            nuevos[h] = estados[h];
+            return;
+          }
+          if (modo === "reevaluacion" && anterior) {
+            var r = global.App.Avance.aplicarReevaluacion(estados[h], medido);
+            nuevos[h] = r.estado;
+            acciones[h] = { accion: r.accion, nivelMedido: medido, nivel: r.estado.nivel };
+          } else {
+            nuevos[h] = medido === estados[h].nivel && anterior ? estados[h] : global.App.Avance.estadoHabilidadVacio(medido);
+            acciones[h] = { accion: "fija", nivelMedido: medido, nivel: nuevos[h].nivel };
+          }
+        });
+        var despues = nivelGlobalDeEstados(nuevos).nivel;
+        // Solo si ya había un diagnóstico previo Y el nivel global SUBIÓ (el primero no celebra).
+        if (anterior && global.App.Avance.indiceNivel(despues) > global.App.Avance.indiceNivel(antes)) {
+          global.App.Util.anotarCelebracion({ tipo: "cefr", nivel: despues });
+        }
+        return Promise.all(
+          [global.App.Storage.put("diagnostico_resultados", registro)].concat(
+            HABILIDADES_PLAN.map(function (h) {
+              return guardarEstadoAvance(h, nuevos[h]);
+            })
+          )
+        ).then(function () {
+          return { registro: registro, acciones: acciones, estados: nuevos };
+        });
+      });
     });
   }
 
@@ -220,16 +377,11 @@
     });
   }
 
-  /** Nivel CEFR global actual de Alex (ponderado, App.Avance) a partir del último
-   * diagnóstico; "A1" si todavía no hay. */
+  /** Nivel CEFR global actual de Alex (ponderado, App.Avance, con el avance continuo real);
+   * "A1" si todavía no hay diagnóstico. */
   function obtenerNivelGlobalActual() {
-    return obtenerUltimoDiagnostico().then(function (diagnostico) {
-      var numeros = {};
-      ["lectura", "habla", "escucha", "escritura"].forEach(function (h) {
-        var d = diagnostico && diagnostico.porHabilidad && diagnostico.porHabilidad[h];
-        numeros[h] = global.App.Avance.numeroDesdeNivel((d && d.nivelCEFR) || "A1", 50);
-      });
-      return global.App.Avance.calcularNivelGlobal(numeros).nivel;
+    return obtenerEstadosAvance().then(function (estados) {
+      return nivelGlobalDeEstados(estados).nivel;
     });
   }
 
@@ -271,21 +423,17 @@
     });
   }
 
-  /** Nivel CEFR real de cada habilidad: el último diagnóstico completo es la fuente de
-   * verdad (D8: el diagnóstico en sí no cambia). Si todavía no hay diagnóstico, cada
-   * habilidad queda en null -- quien llama (obtenerOCalcularPlanDeHoy) ya resuelve ese caso
-   * aparte con la regla 1 del plan (sin diagnóstico, el plan es solo Diagnóstico). */
+  /** Nivel CEFR real de cada habilidad: el avance continuo (D29), que arranca del último
+   * diagnóstico (D8: el diagnóstico en sí no cambia). Sin diagnóstico todas quedan en "A1" --
+   * obtenerOCalcularPlanDeHoy ya resuelve ese caso aparte (sin diagnóstico, el plan es solo
+   * Diagnóstico). */
   function armarHabilidadesParaPlan() {
-    return Promise.all([obtenerUltimoDiagnostico(), obtenerUltimaPracticaPorHabilidad()]).then(function (res) {
-      var diagnostico = res[0];
+    return Promise.all([obtenerEstadosAvance(), obtenerUltimaPracticaPorHabilidad()]).then(function (res) {
+      var estados = res[0];
       var fechas = res[1];
-      var porHabilidad = (diagnostico && diagnostico.porHabilidad) || {};
       var habilidades = {};
       HABILIDADES_PLAN.forEach(function (h) {
-        habilidades[h] = {
-          nivelCEFR: (porHabilidad[h] && porHabilidad[h].nivelCEFR) || "A1",
-          ultimaPractica: fechas[h] || null
-        };
+        habilidades[h] = { nivelCEFR: estados[h].nivel, ultimaPractica: fechas[h] || null };
       });
       return habilidades;
     });
@@ -369,7 +517,8 @@
       obtenerPreferencias(),
       obtenerUltimaHabilidadRotada(hoyISO),
       obtenerSemanasDesdeUltimaReevaluacion(hoyISO),
-      obtenerNivelesConContenido()
+      obtenerNivelesConContenido(),
+      obtenerConfirmacionesPendientes(ahora)
     ]).then(function (res) {
       var diagnostico = res[0];
       var tarjetas = res[1];
@@ -378,6 +527,7 @@
       var ultimaHabilidadRotada = res[4];
       var semanasDesdeUltimaReevaluacion = res[5];
       var nivelesConContenido = res[6];
+      var confirmaciones = res[7];
       return {
         fecha: hoyISO,
         diagnosticoHecho: !!diagnostico,
@@ -388,7 +538,8 @@
         ultimaHabilidadRotada: ultimaHabilidadRotada,
         semanasDesdeUltimaReevaluacion: semanasDesdeUltimaReevaluacion,
         semanasEntreReevaluacion: SEMANAS_ENTRE_REEVALUACION,
-        nivelesConContenido: nivelesConContenido
+        nivelesConContenido: nivelesConContenido,
+        confirmaciones: confirmaciones
       };
     });
   }
@@ -419,11 +570,35 @@
     });
   }
 
+  /** Un plan ya guardado no se recalcula (determinismo), PERO si una habilidad acaba de quedar
+   * "lista para confirmar" (p. ej. al terminar la práctica de hoy) se le AGREGA al final el paso
+   * "Confirma tu nivel de <habilidad>": así llega en horas, no mañana. Solo si el plan no tiene ya
+   * un paso de confirmación ni una reevaluación general (que ya cubre esa verificación). */
+  function reconciliarConfirmaciones(plan, ahora) {
+    var tieneConfirmacionOReevaluacion = plan.pasos.some(function (p) {
+      return p.tipo === "confirmacion" || p.tipo === "reevaluacion";
+    });
+    if (tieneConfirmacionOReevaluacion) return Promise.resolve(plan);
+    return obtenerConfirmacionesPendientes(ahora).then(function (pendientes) {
+      if (!pendientes.length) return plan;
+      var c = pendientes[0];
+      plan.pasos.push(
+        Object.assign({ completado: false }, global.App.Plan.pasoConfirmacion(c.habilidad, c.nivelActual, c.nivelObjetivo))
+      );
+      plan.totalMinutos = plan.pasos.reduce(function (t, p) {
+        return t + p.minutos;
+      }, 0);
+      return global.App.Storage.put("plan", plan).then(function () {
+        return plan;
+      });
+    });
+  }
+
   function obtenerOCalcularPlanDeHoy(ahora) {
     var hoyISO = global.App.Fecha.hoyISO(ahora);
     return global.App.Storage.get("plan", hoyISO).then(function (existente) {
       if (!existente) return calcularYGuardarPlan(ahora, hoyISO);
-      if (!esPlanSoloDiagnostico(existente)) return existente;
+      if (!esPlanSoloDiagnostico(existente)) return reconciliarConfirmaciones(existente, ahora);
       // El plan de hoy se guardó cuando todavía no había diagnóstico ("solo Diagnóstico"). Es
       // un plan PROVISIONAL: en cuanto existe un diagnóstico (acaba de hacerse, o se importó un
       // respaldo) se calcula el plan real del día -- si no, se quedaba en "Diagnóstico de nivel"
@@ -481,6 +656,11 @@
     sembrarTarjetasSiHaceFalta: sembrarTarjetasSiHaceFalta,
     obtenerColaRepaso: obtenerColaRepaso,
     obtenerNivelGlobalActual: obtenerNivelGlobalActual,
+    obtenerEstadosAvance: obtenerEstadosAvance,
+    obtenerNivelesHabilidad: obtenerNivelesHabilidad,
+    registrarRespuestaAvance: registrarRespuestaAvance,
+    obtenerConfirmacionesPendientes: obtenerConfirmacionesPendientes,
+    aplicarResultadoConfirmacion: aplicarResultadoConfirmacion,
     obtenerUltimaPracticaPorHabilidad: obtenerUltimaPracticaPorHabilidad,
     registrarPracticaHabilidad: registrarPracticaHabilidad,
     contarTarjetasRepaso: contarTarjetasRepaso,

@@ -36,6 +36,15 @@
     return p;
   }
 
+  /** Paso "Confirma tu nivel de <habilidad>" (D29): mini-reevaluación SOLO de esa habilidad con
+   * preguntas del nivel siguiente. */
+  function pasoConfirmacion(habilidad, nivelActual, nivelObjetivo) {
+    return paso("confirmacion", habilidad, "Confirma tu nivel de " + habilidad, global.App.Avance.CONSTANTES.MINUTOS_CONFIRMACION, {
+      nivelCEFR: nivelObjetivo,
+      nivelActual: nivelActual
+    });
+  }
+
   function sumaMinutos(pasos) {
     return pasos.reduce(function (total, p) { return total + p.minutos; }, 0);
   }
@@ -94,6 +103,7 @@
    * @param {number} [contexto.diaConversacionSemana] default miércoles
    * @param {number} [contexto.semanasDesdeUltimaReevaluacion] default 0 (nunca se reevalúa si falta)
    * @param {number} [contexto.semanasEntreReevaluacion] default 4
+   * @param {Array<{habilidad,nivelActual,nivelObjetivo}>} [contexto.confirmaciones] habilidades listas para confirmar hoy
    * @param {Array<string>} [contexto.nivelesConContenido] niveles CEFR con contenido real disponible; default: todos
    * @returns {{pasos: Array, totalMinutos: number, advertencias: Array<string>}}
    */
@@ -121,6 +131,19 @@
       pasos.push(paso("reevaluacion", null, "Mini-reevaluación de nivel", MINUTOS_REEVALUACION));
     }
 
+    // Confirmación de nivel (D29): una habilidad "lista para confirmar" agrega su paso en las
+    // siguientes 24 h, sin esperar las 4 semanas. Máximo N por día (constante en App.Avance) y
+    // ninguna el mismo día de una reevaluación general (esa ya verifica todas las habilidades).
+    var hayReevaluacion = pasos.some(function (p) {
+      return p.tipo === "reevaluacion";
+    });
+    var confirmacionesDeHoy = [];
+    if (!hayReevaluacion) {
+      (c.confirmaciones || []).slice(0, Avance.CONSTANTES.MAX_CONFIRMACIONES_POR_DIA).forEach(function (conf) {
+        confirmacionesDeHoy.push(pasoConfirmacion(conf.habilidad, conf.nivelActual, conf.nivelObjetivo));
+      });
+    }
+
     // Regla 2 + 7: repaso SM-2 primero, con tope -- las vencidas de un atraso grande ya caben
     // en el tope de la sesión normal, así que un atraso no genera un plan especial ("no
     // acumular atrasos": el plan de hoy es el plan de hoy, el tope ya absorbe lo atrasado).
@@ -134,6 +157,10 @@
         })
       );
     }
+
+    confirmacionesDeHoy.forEach(function (p) {
+      pasos.push(p);
+    });
 
     function nivelEfectivo(habilidad) {
       var nivelReal = (c.habilidades && c.habilidades[habilidad] && c.habilidades[habilidad].nivelCEFR) || "A1";
@@ -245,6 +272,7 @@
   global.App.Plan = {
     armarColaRepaso: armarColaRepaso,
     calcularPlanDelDia: calcularPlanDelDia,
+    pasoConfirmacion: pasoConfirmacion,
     // Expuestas para pruebas unitarias finas sin tener que pasar por calcularPlanDelDia completo.
     ordenarHabilidadesPorPrioridad: ordenarHabilidadesPorPrioridad,
     calcularMinutosRepaso: calcularMinutosRepaso,

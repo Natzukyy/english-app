@@ -1068,5 +1068,105 @@
     "categoria": "corta",
     "es": "Racha: {n} días",
     "en": "Streak: {n} days"
+  },
+  "celebracion.nivel_habilidad": {
+    "categoria": "larga",
+    "es": "¡Subiste de nivel en {habilidad}: ahora {nivel}!",
+    "en": "You leveled up in {habilidad}: now {nivel}!"
+  },
+  "inicio.paso.confirmacion": {
+    "categoria": "corta",
+    "es": "Confirma tu nivel de {habilidad}",
+    "en": "Confirm your {habilidad} level"
+  },
+  "inicio.razon.confirmacion": {
+    "categoria": "larga",
+    "es": "Ya completaste {actual}. Demuéstralo con preguntas de {nivel}.",
+    "en": "You've completed {actual}. Prove it with {nivel} questions."
+  },
+  "avance.lista_para_confirmar": {
+    "categoria": "corta",
+    "es": "Lista para confirmar",
+    "en": "Ready to confirm"
+  },
+  "avance.lista_para_confirmar_detalle": {
+    "categoria": "larga",
+    "es": "99 % · Lista para confirmar tu paso a {nivel}",
+    "en": "99% · Ready to confirm your move to {nivel}"
+  },
+  "avance.faltan_n": {
+    "categoria": "corta",
+    "es": "Faltan {n} respuestas",
+    "en": "{n} answers to go"
+  },
+  "avance.falta_una": {
+    "categoria": "corta",
+    "es": "Falta {n} respuesta",
+    "en": "{n} answer to go"
+  },
+  "avance.necesitas_aciertos": {
+    "categoria": "larga",
+    "es": "Necesitas más aciertos",
+    "en": "You need more correct answers"
+  },
+  "confirmacion.titulo": {
+    "categoria": "corta",
+    "es": "Confirma tu nivel",
+    "en": "Confirm your level"
+  },
+  "confirmacion.subtitulo": {
+    "categoria": "corta",
+    "es": "{habilidad} · preguntas de {nivel}",
+    "en": "{habilidad} · {nivel} questions"
+  },
+  "confirmacion.nada_pendiente": {
+    "categoria": "larga",
+    "es": "Ahora no tienes ninguna confirmación pendiente.",
+    "en": "You have no level check pending right now."
+  },
+  "confirmacion.aprobado_titulo": {
+    "categoria": "corta",
+    "es": "¡Nivel confirmado!",
+    "en": "Level confirmed!"
+  },
+  "confirmacion.aprobado_detalle": {
+    "categoria": "larga",
+    "es": "Subiste a {nivel} en {habilidad}. Tu avance en este nivel empieza de cero.",
+    "en": "You moved up to {nivel} in {habilidad}. Your progress in this level starts fresh."
+  },
+  "confirmacion.casi_titulo": {
+    "categoria": "corta",
+    "es": "¡Casi!",
+    "en": "Almost!"
+  },
+  "confirmacion.casi_detalle": {
+    "categoria": "larga",
+    "es": "Sacaste {pct} % y se aprueba con {min} %. Sigue practicando: podrás reintentar a partir del {fecha}.",
+    "en": "You got {pct}% and the pass mark is {min}%. Keep practicing: you can retry from {fecha}."
+  },
+  "habla.confirmando": {
+    "categoria": "corta",
+    "es": "Confirmación de nivel {nivel} · frase {n} de {total}",
+    "en": "Level {nivel} check · phrase {n} of {total}"
+  },
+  "habla.confirmacion_sin_voz": {
+    "categoria": "critica",
+    "es": "Para confirmar tu nivel de habla hace falta el reconocimiento de voz, y este dispositivo no lo tiene.",
+    "en": "Confirming your speaking level needs speech recognition, which this device doesn't have."
+  },
+  "diagnostico.repasa": {
+    "categoria": "larga",
+    "es": "Repasa {habilidad}: salió por debajo de tu nivel, pero tu nivel no baja ({nivel}).",
+    "en": "Review {habilidad}: it came out below your level, but your level doesn't drop ({nivel})."
+  },
+  "diagnostico.sube": {
+    "categoria": "corta",
+    "es": "¡Subiste a {nivel}!",
+    "en": "You moved up to {nivel}!"
+  },
+  "diagnostico.confirma": {
+    "categoria": "corta",
+    "es": "Nivel confirmado",
+    "en": "Level confirmed"
   }
 }

@@ -8,7 +8,7 @@ async (page) => {
   const r = {};
   await p.goto('http://localhost:8000/#/inicio', { waitUntil: 'networkidle' });
   r.sw = await p.evaluate(async()=>{ const reg = await navigator.serviceWorker.ready; await new Promise(res=>setTimeout(res,1500)); const keys = await caches.keys(); const c = keys.length? await (await caches.open(keys[keys.length-1])).keys():[]; return { activo: !!reg.active, caches: keys, entradas: c.length }; });
-  await p.evaluate(async()=>{ await window.App.Datos.guardarDiagnostico({porHabilidad:{lectura:{nivelCEFR:'A2'},habla:{nivelCEFR:'A2'},escucha:{nivelCEFR:'A2'},escritura:{nivelCEFR:'A2'}}}); localStorage.removeItem('rumboFlujoEnCurso'); await window.App.Storage.remove('plan', window.App.Fecha.hoyISO(new Date())); });
+  await p.evaluate(async()=>{ await window.App.Datos.guardarDiagnostico({porHabilidad:{lectura:{nivelCEFR:'A2'},habla:{nivelCEFR:'A2'},escucha:{nivelCEFR:'A2'},escritura:{nivelCEFR:'A2'}}}); localStorage.removeItem('heyFlujoEnCurso'); await window.App.Storage.remove('plan', window.App.Fecha.hoyISO(new Date())); });
   await p.reload({waitUntil:'networkidle'}); await p.waitForTimeout(800);
   // ---- SIN INTERNET ----
   await ctx.setOffline(true);

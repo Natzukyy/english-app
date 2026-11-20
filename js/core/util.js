@@ -182,7 +182,7 @@
 
   // Cola de celebraciones pendientes (subida de nivel de XP o de nivel CEFR): la sesión que
   // las provoca termina en otra pantalla y navega a Inicio, que es quien las muestra.
-  var CLAVE_CELEBRACIONES = "rumboCelebracionesPendientes";
+  var CLAVE_CELEBRACIONES = "heyCelebracionesPendientes";
 
   function anotarCelebracion(celebracion) {
     try {
@@ -207,7 +207,7 @@
   // "Terminé este paso" vs "salí del paso": la ruta guiada solo marca un paso como completado si
   // la pantalla avisó que se terminó (botón Terminar / resumen final). Salir por la barra de
   // navegación a mitad de un paso NO lo marca: Inicio sigue ofreciendo "Continuar" en ese paso.
-  var CLAVE_PASO_TERMINADO = "rumboPasoTerminado";
+  var CLAVE_PASO_TERMINADO = "heyPasoTerminado";
 
   // Guarda QUÉ pantalla terminó (la ruta actual, p. ej. "repaso"): Inicio solo cierra el paso en
   // curso si coincide -- un diagnóstico hecho por tu cuenta no cierra un paso de Repaso.
@@ -230,6 +230,39 @@
     }
   }
 
+  // Modo del paso que se está haciendo ("confirmacion" de una habilidad, o "reevaluacion"
+  // general): lo fija Inicio al pulsar Empezar/Continuar y lo leen las pantallas que sirven
+  // también para práctica normal (habla, escritura, diagnóstico). Practicar lo limpia, así que
+  // practicar por tu cuenta nunca cae en modo confirmación por un paso viejo a medias.
+  var CLAVE_MODO_PASO = "heyModoPaso";
+
+  function fijarModoPaso(modo) {
+    try {
+      global.localStorage.setItem(CLAVE_MODO_PASO, JSON.stringify(modo));
+    } catch (e) {
+      /* sin localStorage: la pantalla se comporta como práctica normal */
+    }
+  }
+
+  /** {tipo:"confirmacion"|"reevaluacion", habilidad, fecha} o null. */
+  function leerModoPaso() {
+    try {
+      var m = JSON.parse(global.localStorage.getItem(CLAVE_MODO_PASO) || "null");
+      if (!m || !m.fecha || (global.App.Fecha && m.fecha !== global.App.Fecha.hoyISO())) return null;
+      return m;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function limpiarModoPaso() {
+    try {
+      global.localStorage.removeItem(CLAVE_MODO_PASO);
+    } catch (e) {
+      /* nada que limpiar */
+    }
+  }
+
   function terminarPasoYVolver(destino) {
     marcarPasoTerminado();
     global.location.hash = destino || "#/inicio";
@@ -238,6 +271,9 @@
   global.App.Util = {
     marcarPasoTerminado: marcarPasoTerminado,
     consumirPasoTerminado: consumirPasoTerminado,
+    fijarModoPaso: fijarModoPaso,
+    leerModoPaso: leerModoPaso,
+    limpiarModoPaso: limpiarModoPaso,
     terminarPasoYVolver: terminarPasoYVolver,
     lluviaCalcomanias: lluviaCalcomanias,
     mostrarCelebracion: mostrarCelebracion,

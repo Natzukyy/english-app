@@ -148,8 +148,185 @@
 
   /** Ancho (0-100) de una barra de habilidad en la escala abierta A1..C2 (A1 = 0%, C2 = 100%). */
   function porcentajeEnEscala(nivelCEFR, porcentajeDentroDelNivel) {
-    var n = numeroDesdeNivel(nivelCEFR, typeof porcentajeDentroDelNivel === "number" ? porcentajeDentroDelNivel : 50);
+    var n = numeroDesdeNivel(nivelCEFR, typeof porcentajeDentroDelNivel === "number" ? porcentajeDentroDelNivel : 0);
     return Math.max(0, Math.min(100, Math.round((n / 5) * 100)));
+  }
+
+  // ---------------------------------------------------------------------------------------
+  // AVANCE CONTINUO POR HABILIDAD (D29). Todas las constantes editables viven aquí, en UN solo
+  // lugar; nada más del proyecto repite estos números.
+  // ---------------------------------------------------------------------------------------
+  var CONSTANTES = {
+    VENTANA_RESPUESTAS: 30, // tamaño de la ventana móvil (en "peso": 1 respuesta normal = 1)
+    ACIERTO_OBJETIVO: 0.8, // promedio de la ventana con el que la fracción llega a 100 %
+    CONFIRMACION_APRUEBA: 0.7, // % mínimo para aprobar la confirmación
+    CONFIRMACION_MIN_PREGUNTAS: 8, // una confirmación con menos preguntas no vale
+    CONFIRMACION_PREGUNTAS: 10, // cuántas se presentan (>= mínimo)
+    CONFIRMACION_REINTENTO_DIAS: 7, // espera tras no aprobar
+    CONFIRMACION_RETENIDAS: 15, // respuestas que se conservan al no aprobar
+    PESO_ESCRITURA: 0.5, // una consigna de escritura (lista autoevaluada) pesa media respuesta
+    MINUTOS_CONFIRMACION: 10, // duración estimada del paso del plan
+    MAX_CONFIRMACIONES_POR_DIA: 1,
+    PORCENTAJE_LISTA_PARA_CONFIRMAR: 99 // lo que se ve mientras espera confirmación
+  };
+
+  var HABILIDADES_AVANCE = ["lectura", "escucha", "habla", "escritura"];
+
+  function estadoHabilidadVacio(nivel) {
+    return { nivel: nivel || "A1", ventana: [], listaParaConfirmar: false, listaDesde: null, ultimoFallo: null };
+  }
+
+  function pesoTotal(ventana) {
+    return (ventana || []).reduce(function (suma, r) {
+      return suma + r.w;
+    }, 0);
+  }
+
+  /** Recorta la ventana quitando las respuestas MÁS VIEJAS hasta que su peso total sea <= tope. */
+  function recortarVentana(ventana, tope) {
+    var v = (ventana || []).slice();
+    while (v.length > 1 && pesoTotal(v) > tope + 1e-9) v.shift();
+    if (v.length === 1 && v[0].w > tope) v = [];
+    return v;
+  }
+
+  /** Agrega una respuesta puntuada (valor 0..1, peso >0) y recorta a la ventana de 30. No muta. */
+  function agregarRespuesta(ventana, valor, peso) {
+    var w = typeof peso === "number" && peso > 0 ? peso : 1;
+    var v = Math.max(0, Math.min(1, Number(valor) || 0));
+    return recortarVentana((ventana || []).concat([{ v: v, w: w }]), CONSTANTES.VENTANA_RESPUESTAS);
+  }
+
+  /** n = peso total de la ventana, aciertos = promedio ponderado,
+   * fraccion = min(1, n/30) * min(1, aciertos/0.80). */
+  function resumenVentana(ventana) {
+    var n = pesoTotal(ventana);
+    if (n <= 0) return { n: 0, aciertos: 0, fraccion: 0 };
+    var suma = (ventana || []).reduce(function (s, r) {
+      return s + r.v * r.w;
+    }, 0);
+    var aciertos = suma / n;
+    var fraccion = Math.min(1, n / CONSTANTES.VENTANA_RESPUESTAS) * Math.min(1, aciertos / CONSTANTES.ACIERTO_OBJETIVO);
+    return { n: n, aciertos: aciertos, fraccion: fraccion };
+  }
+
+  /** % (entero 0-100) hacia el siguiente nivel que se MUESTRA: nunca 100 -- al llegar queda en
+   * 99 hasta confirmar. En C2 (techo) no aplica: 100. */
+  function porcentajeDeHabilidad(estado) {
+    if (indiceNivel(estado.nivel) >= ORDEN_NIVELES.length - 1) return 100;
+    if (estado.listaParaConfirmar) return CONSTANTES.PORCENTAJE_LISTA_PARA_CONFIRMAR;
+    var pct = Math.floor(resumenVentana(estado.ventana).fraccion * 100 + 1e-9);
+    return Math.min(CONSTANTES.PORCENTAJE_LISTA_PARA_CONFIRMAR, pct);
+  }
+
+  /** Número continuo (A1=0..C2=5) de una habilidad, con su fracción real (reemplaza el 50 fijo). */
+  function numeroDeHabilidad(estado) {
+    return numeroDesdeNivel(estado.nivel, porcentajeDeHabilidad(estado));
+  }
+
+  /** Nivel global con los números continuos reales de cada habilidad (mismos pesos de siempre). */
+  function calcularNivelGlobalDesdeEstados(estados) {
+    var numeros = {};
+    HABILIDADES_AVANCE.forEach(function (h) {
+      if (estados && estados[h]) numeros[h] = numeroDeHabilidad(estados[h]);
+    });
+    return calcularNivelGlobal(numeros);
+  }
+
+  /** Qué le falta a una habilidad para su siguiente nivel, para el texto de la interfaz:
+   * { tipo: "lista"|"faltan"|"aciertos"|"nada"|"techo", faltan } */
+  function textoDeFalta(estado) {
+    if (indiceNivel(estado.nivel) >= ORDEN_NIVELES.length - 1) return { tipo: "techo", faltan: 0 };
+    if (estado.listaParaConfirmar) return { tipo: "lista", faltan: 0 };
+    var r = resumenVentana(estado.ventana);
+    if (r.n <= 0) return { tipo: "nada", faltan: CONSTANTES.VENTANA_RESPUESTAS };
+    if (r.n < CONSTANTES.VENTANA_RESPUESTAS) return { tipo: "faltan", faltan: Math.ceil(CONSTANTES.VENTANA_RESPUESTAS - r.n - 1e-9) };
+    return { tipo: "aciertos", faltan: 0 };
+  }
+
+  /** Registra una respuesta puntuada en el estado de una habilidad. Si con ella la fracción
+   * llega a 100 %, queda "lista para confirmar" (se muestra 99 %). No muta; devuelve
+   * { estado, quedoLista } (quedoLista = true solo en el momento en que pasa a estar lista). */
+  function registrarRespuestaEnEstado(estado, valor, peso, hoyISO) {
+    var nuevo = Object.assign({}, estado, { ventana: agregarRespuesta(estado.ventana, valor, peso) });
+    var quedoLista = false;
+    var techo = indiceNivel(nuevo.nivel) >= ORDEN_NIVELES.length - 1;
+    if (!techo && !nuevo.listaParaConfirmar && resumenVentana(nuevo.ventana).fraccion >= 1 - 1e-9) {
+      nuevo.listaParaConfirmar = true;
+      nuevo.listaDesde = hoyISO || null;
+      quedoLista = true;
+    }
+    return { estado: nuevo, quedoLista: quedoLista };
+  }
+
+  function diasEntre(desdeISO, hastaISO) {
+    var a = new Date(desdeISO + "T12:00:00");
+    var b = new Date(hastaISO + "T12:00:00");
+    return Math.round((b - a) / 86400000);
+  }
+
+  /** ¿Toca hacer la confirmación ahora? Lista para confirmar, no en C2, y (si falló antes)
+   * pasaron al menos 7 días desde ese intento. */
+  function puedeConfirmar(estado, hoyISO) {
+    if (!estado || !estado.listaParaConfirmar) return false;
+    if (indiceNivel(estado.nivel) >= ORDEN_NIVELES.length - 1) return false;
+    if (estado.ultimoFallo && diasEntre(estado.ultimoFallo, hoyISO) < CONSTANTES.CONFIRMACION_REINTENTO_DIAS) return false;
+    return true;
+  }
+
+  /** Cuándo (ISO) se puede reintentar tras un fallo; null si no hay fallo registrado. */
+  function fechaReintento(estado) {
+    if (!estado || !estado.ultimoFallo) return null;
+    var d = new Date(estado.ultimoFallo + "T12:00:00");
+    d.setDate(d.getDate() + CONSTANTES.CONFIRMACION_REINTENTO_DIAS);
+    var m = d.getMonth() + 1;
+    var dia = d.getDate();
+    return d.getFullYear() + "-" + (m < 10 ? "0" : "") + m + "-" + (dia < 10 ? "0" : "") + dia;
+  }
+
+  function siguienteNivelDe(nivel) {
+    var i = indiceNivel(nivel);
+    return i >= ORDEN_NIVELES.length - 1 ? null : ORDEN_NIVELES[i + 1];
+  }
+
+  /** Califica una confirmación: aprueba con >= 70 % y al menos 8 preguntas contestadas. */
+  function evaluarConfirmacion(correctasPonderadas, total) {
+    var t = Number(total) || 0;
+    if (t < CONSTANTES.CONFIRMACION_MIN_PREGUNTAS) return { valida: false, aprobada: false, porcentaje: 0 };
+    var p = (Number(correctasPonderadas) || 0) / t;
+    return { valida: true, aprobada: p + 1e-9 >= CONSTANTES.CONFIRMACION_APRUEBA, porcentaje: Math.round(p * 100) };
+  }
+
+  /** Aplica el resultado de una confirmación: aprobada -> sube un nivel, ventana vacía;
+   * no aprobada -> conserva las últimas 15 respuestas y anota la fecha del intento
+   * (reintento a los 7 días). Una confirmación inválida no cambia nada. */
+  function aplicarConfirmacion(estado, resultado, hoyISO) {
+    if (!resultado || !resultado.valida) return { estado: estado, subio: false };
+    if (resultado.aprobada) {
+      var siguiente = siguienteNivelDe(estado.nivel);
+      if (!siguiente) return { estado: estado, subio: false };
+      return { estado: { nivel: siguiente, ventana: [], listaParaConfirmar: false, listaDesde: null, ultimoFallo: null }, subio: true };
+    }
+    return {
+      estado: Object.assign({}, estado, {
+        ventana: recortarVentana(estado.ventana, CONSTANTES.CONFIRMACION_RETENIDAS),
+        listaParaConfirmar: false,
+        listaDesde: null,
+        ultimoFallo: hoyISO || null
+      }),
+      subio: false
+    };
+  }
+
+  /** Mini-reevaluación general (cada 4 semanas): puede subir o confirmar, NUNCA bajar.
+   * accion: "sube" | "confirma" | "repasa" (salió más bajo: el nivel no cambia). */
+  function aplicarReevaluacion(estado, nivelMedido) {
+    var actual = indiceNivel(estado.nivel);
+    var medido = indiceNivel(nivelMedido);
+    if (medido > actual) {
+      return { estado: { nivel: nivelMedido, ventana: [], listaParaConfirmar: false, listaDesde: null, ultimoFallo: null }, accion: "sube" };
+    }
+    return { estado: estado, accion: medido === actual ? "confirma" : "repasa" };
   }
 
   global.App = global.App || {};
@@ -163,6 +340,22 @@
     numeroDesdeNivel: numeroDesdeNivel,
     nivelDesdeNumero: nivelDesdeNumero,
     calcularNivelGlobal: calcularNivelGlobal,
-    nivelEfectivoConContenido: nivelEfectivoConContenido
+    nivelEfectivoConContenido: nivelEfectivoConContenido,
+    CONSTANTES: CONSTANTES,
+    HABILIDADES_AVANCE: HABILIDADES_AVANCE,
+    estadoHabilidadVacio: estadoHabilidadVacio,
+    agregarRespuesta: agregarRespuesta,
+    resumenVentana: resumenVentana,
+    porcentajeDeHabilidad: porcentajeDeHabilidad,
+    numeroDeHabilidad: numeroDeHabilidad,
+    calcularNivelGlobalDesdeEstados: calcularNivelGlobalDesdeEstados,
+    textoDeFalta: textoDeFalta,
+    registrarRespuestaEnEstado: registrarRespuestaEnEstado,
+    puedeConfirmar: puedeConfirmar,
+    fechaReintento: fechaReintento,
+    siguienteNivelDe: siguienteNivelDe,
+    evaluarConfirmacion: evaluarConfirmacion,
+    aplicarConfirmacion: aplicarConfirmacion,
+    aplicarReevaluacion: aplicarReevaluacion
   };
 })(typeof window !== "undefined" ? window : globalThis);

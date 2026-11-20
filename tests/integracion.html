@@ -101,7 +101,7 @@
       var NOMBRE_DB_PRUEBA = "app-ingles-integracion-" + Date.now();
       document.getElementById("nombre-db-mostrado").textContent = NOMBRE_DB_PRUEBA;
       var storageReal = App.Storage;
-      var storagePrueba = App.Storage.crear(NOMBRE_DB_PRUEBA, 1);
+      var storagePrueba = App.Storage.crear(NOMBRE_DB_PRUEBA, 3);
 
       var pruebas = [];
       function prueba(nombre, fn) {
@@ -464,6 +464,307 @@
           return App.Datos.marcarPasoCompletado(planReal.id, 0, { tipo: "diagnostico", habilidad: null });
         }).then(function (plan) {
           assertEqual(plan.pasos.filter(function (p) { return p.completado; }).length, 0);
+        });
+      });
+
+      // ===== Avance continuo por habilidad (D29) =====
+      var DIAG_A2 = { porHabilidad: { lectura: { nivelCEFR: "A2" }, habla: { nivelCEFR: "A2" }, escucha: { nivelCEFR: "A2" }, escritura: { nivelCEFR: "A2" } } };
+      var STORES_AVANCE = ["plan", "diagnostico_resultados", "srs_cards", "settings", "avance", "sesiones", "xp"];
+
+      function responderN(habilidad, nivel, n, valor, ahora) {
+        var p = Promise.resolve();
+        var ultimo = null;
+        for (var i = 0; i < n; i++) {
+          p = p.then(function () {
+            return App.Datos.registrarRespuestaAvance(habilidad, nivel, valor, 1, ahora).then(function (r) { ultimo = r; });
+          });
+        }
+        return p.then(function () { return ultimo; });
+      }
+
+      prueba("avance: sin diagnóstico no se cuenta nada; con diagnóstico solo cuenta el nivel actual", function () {
+        var ahora = new Date(2026, 10, 18);
+        return limpiarStores(STORES_AVANCE).then(function () {
+          return App.Datos.registrarRespuestaAvance("lectura", "A2", 1, 1, ahora);
+        }).then(function (r) {
+          assertEqual(r.contado, false);
+          return App.Datos.guardarDiagnostico(DIAG_A2);
+        }).then(function () {
+          return App.Datos.registrarRespuestaAvance("lectura", "B1", 1, 1, ahora); // contenido de otro nivel
+        }).then(function (r) {
+          assertEqual(r.contado, false);
+          return App.Datos.registrarRespuestaAvance("lectura", "A2", 1, 1, ahora);
+        }).then(function (r) {
+          assertEqual(r.contado, true);
+          return App.Datos.obtenerEstadosAvance();
+        }).then(function (e) {
+          assertEqual(e.lectura.ventana.length, 1);
+          assertEqual(e.escucha.ventana.length, 0);
+          assertEqual(e.lectura.nivel, "A2");
+        });
+      });
+
+      prueba("avance: ventana de 30 persistida en IndexedDB y recortada", function () {
+        var ahora = new Date(2026, 10, 18);
+        return limpiarStores(STORES_AVANCE).then(function () {
+          return App.Datos.guardarDiagnostico(DIAG_A2);
+        }).then(function () {
+          return responderN("habla", "A2", 35, 0.5, ahora);
+        }).then(function () {
+          return App.Storage.get("avance", "habla");
+        }).then(function (fila) {
+          assertEqual(fila.ventana.length, 30);
+          assertEqual(fila.listaParaConfirmar, false); // 50 % de acierto nunca llena la barra
+        });
+      });
+
+      prueba("avance: flujo completo -> lista -> paso en el plan -> aprobar sube el nivel de ESA habilidad", function () {
+        var ahora = new Date(2026, 10, 18);
+        return limpiarStores(STORES_AVANCE).then(function () {
+          App.Util.tomarCelebracionesPendientes();
+          return App.Datos.guardarDiagnostico(DIAG_A2);
+        }).then(function () {
+          return App.Datos.obtenerOCalcularPlanDeHoy(ahora); // el plan de hoy ya existe, sin confirmación
+        }).then(function (plan) {
+          assertEqual(plan.pasos.filter(function (p) { return p.tipo === "confirmacion"; }).length, 0);
+          return responderN("lectura", "A2", 30, 1, ahora);
+        }).then(function (r) {
+          assertEqual(r.quedoLista, true);
+          return App.Datos.obtenerEstadosAvance();
+        }).then(function (e) {
+          assertEqual(App.Avance.porcentajeDeHabilidad(e.lectura), 99);
+          return App.Datos.obtenerOCalcularPlanDeHoy(ahora); // se agrega al plan de hoy (no mañana)
+        }).then(function (plan) {
+          var c = plan.pasos.filter(function (p) { return p.tipo === "confirmacion"; });
+          assertEqual(c.length, 1);
+          assertEqual(c[0].habilidad, "lectura");
+          assertEqual(c[0].nivelCEFR, "B1");
+          return App.Datos.obtenerOCalcularPlanDeHoy(ahora); // y no se duplica
+        }).then(function (plan) {
+          assertEqual(plan.pasos.filter(function (p) { return p.tipo === "confirmacion"; }).length, 1);
+          return App.Datos.aplicarResultadoConfirmacion("lectura", 8, 10, ahora);
+        }).then(function (r) {
+          assertEqual(r.aprobada, true);
+          assertEqual(r.nivelNuevo, "B1");
+          return App.Datos.obtenerEstadosAvance();
+        }).then(function (e) {
+          assertEqual(e.lectura.nivel, "B1");
+          assertEqual(e.lectura.ventana.length, 0);
+          assertEqual(e.escucha.nivel, "A2"); // las demás habilidades no se mueven
+          return App.Datos.obtenerConfirmacionesPendientes(ahora);
+        }).then(function (p) {
+          assertEqual(p.length, 0);
+          var celebraciones = App.Util.tomarCelebracionesPendientes();
+          assertTrue(celebraciones.some(function (c) { return c.tipo === "habilidad" && c.habilidad === "lectura" && c.nivel === "B1"; }), "falta la celebración de subida");
+        });
+      });
+
+      prueba("avance: confirmación fallida conserva 15 respuestas y reintenta recién a los 7 días", function () {
+        var dia0 = new Date(2026, 10, 18);
+        var dia3 = new Date(2026, 10, 21);
+        var dia7 = new Date(2026, 10, 25);
+        return limpiarStores(STORES_AVANCE).then(function () {
+          return App.Datos.guardarDiagnostico(DIAG_A2);
+        }).then(function () {
+          return responderN("escucha", "A2", 30, 1, dia0);
+        }).then(function () {
+          return App.Datos.aplicarResultadoConfirmacion("escucha", 3, 10, dia0);
+        }).then(function (r) {
+          assertEqual(r.aprobada, false);
+          assertEqual(r.nivelNuevo, "A2");
+          assertEqual(r.fechaReintento, "2026-11-25");
+          return App.Datos.obtenerEstadosAvance();
+        }).then(function (e) {
+          assertEqual(e.escucha.ventana.length, 15);
+          assertEqual(e.escucha.listaParaConfirmar, false);
+          return responderN("escucha", "A2", 15, 1, dia3); // vuelve a llenar la ventana
+        }).then(function () {
+          return App.Datos.obtenerConfirmacionesPendientes(dia3);
+        }).then(function (p) {
+          assertEqual(p.length, 0); // lista, pero aún no pasan 7 días
+          return App.Datos.obtenerConfirmacionesPendientes(dia7);
+        }).then(function (p) {
+          assertEqual(p.length, 1);
+          assertEqual(p[0].habilidad, "escucha");
+        });
+      });
+
+      prueba("avance: confirmación con menos de 8 preguntas no cambia nada", function () {
+        var ahora = new Date(2026, 10, 18);
+        return limpiarStores(STORES_AVANCE).then(function () {
+          return App.Datos.guardarDiagnostico(DIAG_A2);
+        }).then(function () {
+          return responderN("lectura", "A2", 30, 1, ahora);
+        }).then(function () {
+          return App.Datos.aplicarResultadoConfirmacion("lectura", 5, 5, ahora);
+        }).then(function (r) {
+          assertEqual(r.valida, false);
+          return App.Datos.obtenerEstadosAvance();
+        }).then(function (e) {
+          assertEqual(e.lectura.nivel, "A2");
+          assertEqual(e.lectura.listaParaConfirmar, true);
+        });
+      });
+
+      prueba("avance: la mini-reevaluación NUNCA baja el nivel (y sí puede subir)", function () {
+        var ahora = new Date(2026, 10, 18);
+        var diagB1 = { porHabilidad: { lectura: { nivelCEFR: "B1" }, habla: { nivelCEFR: "B1" }, escucha: { nivelCEFR: "B1" }, escritura: { nivelCEFR: "B1" } } };
+        var diagMixto = { porHabilidad: { lectura: { nivelCEFR: "A2" }, habla: { nivelCEFR: "B1" }, escucha: { nivelCEFR: "B2" }, escritura: { nivelCEFR: "B1" } } };
+        return limpiarStores(STORES_AVANCE).then(function () {
+          return App.Datos.guardarDiagnostico(diagB1);
+        }).then(function () {
+          return responderN("lectura", "B1", 10, 1, ahora);
+        }).then(function () {
+          return App.Datos.guardarDiagnostico(diagMixto, { modo: "reevaluacion" });
+        }).then(function (g) {
+          assertEqual(g.acciones.lectura.accion, "repasa");
+          assertEqual(g.acciones.habla.accion, "confirma");
+          assertEqual(g.acciones.escucha.accion, "sube");
+          return App.Datos.obtenerEstadosAvance();
+        }).then(function (e) {
+          assertEqual(e.lectura.nivel, "B1"); // no bajó
+          assertEqual(e.lectura.ventana.length, 10); // y conserva su avance
+          assertEqual(e.habla.nivel, "B1");
+          assertEqual(e.escucha.nivel, "B2"); // subió
+          assertEqual(e.escucha.ventana.length, 0);
+          return App.Datos.obtenerNivelesHabilidad();
+        }).then(function (n) {
+          assertEqual(n.lectura, "B1");
+        });
+      });
+
+      prueba("avance: un diagnóstico real repetido a propósito fija el nivel medido", function () {
+        var ahora = new Date(2026, 10, 18);
+        var diagB1 = { porHabilidad: { lectura: { nivelCEFR: "B1" }, habla: { nivelCEFR: "B1" }, escucha: { nivelCEFR: "B1" }, escritura: { nivelCEFR: "B1" } } };
+        return limpiarStores(STORES_AVANCE).then(function () {
+          return App.Datos.guardarDiagnostico(diagB1);
+        }).then(function () {
+          return responderN("lectura", "B1", 5, 1, ahora);
+        }).then(function () {
+          return App.Datos.guardarDiagnostico(DIAG_A2); // sin modo: diagnóstico real
+        }).then(function () {
+          return App.Datos.obtenerEstadosAvance();
+        }).then(function (e) {
+          assertEqual(e.lectura.nivel, "A2");
+          assertEqual(e.lectura.ventana.length, 0);
+        });
+      });
+
+      prueba("avance: el nivel global usa la fracción real (no 50 % fijo)", function () {
+        var ahora = new Date(2026, 10, 18);
+        return limpiarStores(STORES_AVANCE).then(function () {
+          return App.Datos.guardarDiagnostico(DIAG_A2);
+        }).then(function () {
+          return App.Datos.obtenerEstadosAvance();
+        }).then(function (e0) {
+          assertEqual(App.Avance.calcularNivelGlobalDesdeEstados(e0).porcentajeHaciaSiguiente, 0); // ventanas vacías = 0 %
+          return responderN("lectura", "A2", 30, 1, ahora);
+        }).then(function () {
+          return App.Datos.obtenerEstadosAvance();
+        }).then(function (e1) {
+          var g = App.Avance.calcularNivelGlobalDesdeEstados(e1);
+          assertEqual(g.nivel, "A2");
+          assertEqual(g.porcentajeHaciaSiguiente, Math.round((0.99 * 3 / 9) * 100)); // lectura 99 % con peso 3 de 9
+        });
+      });
+
+      prueba("respaldo: exportar incluye el store nuevo 'avance' y se importa igual", function () {
+        var ahora = new Date(2026, 10, 18);
+        return limpiarStores(STORES_AVANCE).then(function () {
+          return App.Datos.guardarDiagnostico(DIAG_A2);
+        }).then(function () {
+          return responderN("lectura", "A2", 12, 1, ahora);
+        }).then(function () {
+          return App.Storage.exportBackup();
+        }).then(function (backup) {
+          assertTrue(Array.isArray(backup.datos.avance), "el export debe traer 'avance'");
+          assertEqual(backup.datos.avance.length, 4);
+          assertEqual(backup.version, 3);
+          return limpiarStores(["avance"]).then(function () {
+            return App.Storage.importBackup(JSON.parse(JSON.stringify(backup)));
+          });
+        }).then(function () {
+          return App.Datos.obtenerEstadosAvance();
+        }).then(function (e) {
+          assertEqual(e.lectura.ventana.length, 12);
+        });
+      });
+
+      prueba("respaldo: un export de la versión anterior (sin 'avance') se importa bien y deriva del diagnóstico", function () {
+        var viejo = {
+          app: "app-ingles",
+          version: 2,
+          exportadoEn: "2026-11-01T00:00:00.000Z",
+          datos: {
+            settings: [{ id: "preferencias", metaMinutosDia: 20 }],
+            xp: [{ id: "actual", total: 321 }],
+            diagnostico_resultados: [{ id: "1700000000000", porHabilidad: { lectura: { nivelCEFR: "B1" }, habla: { nivelCEFR: "A2" }, escucha: { nivelCEFR: "B2" }, escritura: { nivelCEFR: "A2" } } }],
+            srs_cards: [{ id: "voc-x", repeticiones: 3, intervaloDias: 6, facilidad: 2.3, proximaFecha: "2026-12-01" }],
+            sesiones: [{ id: "2026-10-31", minutos: 15, metaCumplida: true, ejerciciosCorrectos: 4 }],
+            plan: []
+          }
+        };
+        return limpiarStores(STORES_AVANCE).then(function () {
+          return App.Storage.put("avance", { id: "lectura", nivel: "C1", ventana: [], listaParaConfirmar: false }); // estado "más nuevo" que debe desaparecer
+        }).then(function () {
+          return App.Storage.importBackup(viejo);
+        }).then(function () {
+          return Promise.all([App.Datos.obtenerEstadosAvance(), App.Datos.obtenerXP(), App.Storage.get("srs_cards", "voc-x")]);
+        }).then(function (res) {
+          assertEqual(res[0].lectura.nivel, "B1"); // derivado del diagnóstico del respaldo
+          assertEqual(res[0].escucha.nivel, "B2");
+          assertEqual(res[0].habla.nivel, "A2");
+          assertEqual(res[1].total, 321);
+          assertEqual(res[2].intervaloDias, 6);
+        });
+      });
+
+      prueba("migración IndexedDB v2 -> v3: agrega 'avance' sin perder ningún dato existente", function () {
+        var nombre = "app-ingles-migracion-" + Date.now();
+        var storesV2 = ["settings", "racha", "xp", "srs_cards", "diagnostico_resultados", "sesiones", "plan"];
+        var instanciaV3 = null;
+        return new Promise(function (resolve, reject) {
+          var req = indexedDB.open(nombre, 2); // la base tal como la dejaba la versión anterior
+          req.onupgradeneeded = function () {
+            storesV2.forEach(function (n) { req.result.createObjectStore(n, { keyPath: "id" }); });
+          };
+          req.onsuccess = function () {
+            var db = req.result;
+            var tx = db.transaction(["diagnostico_resultados", "srs_cards", "xp", "plan"], "readwrite");
+            tx.objectStore("diagnostico_resultados").put({ id: "1700000000000", porHabilidad: { lectura: { nivelCEFR: "B1" }, habla: { nivelCEFR: "A2" }, escucha: { nivelCEFR: "B1" }, escritura: { nivelCEFR: "A2" } } });
+            tx.objectStore("srs_cards").put({ id: "voc-1", repeticiones: 5, intervaloDias: 14, facilidad: 2.2, proximaFecha: "2026-12-05" });
+            tx.objectStore("xp").put({ id: "actual", total: 777 });
+            tx.objectStore("plan").put({ id: "2026-11-17", pasos: [], totalMinutos: 0 });
+            tx.oncomplete = function () { db.close(); resolve(); };
+            tx.onerror = function () { reject(tx.error); };
+          };
+          req.onerror = function () { reject(req.error); };
+        }).then(function () {
+          instanciaV3 = storageReal.crear(nombre, 3); // abre con la versión nueva: dispara la migración
+          return instanciaV3.openDB();
+        }).then(function (db) {
+          assertTrue(db.objectStoreNames.contains("avance"), "debe existir el store 'avance'");
+          assertEqual(db.version, 3);
+          return Promise.all([instanciaV3.get("srs_cards", "voc-1"), instanciaV3.get("xp", "actual"), instanciaV3.getAll("diagnostico_resultados"), instanciaV3.get("plan", "2026-11-17")]);
+        }).then(function (res) {
+          assertEqual(res[0].repeticiones, 5);
+          assertEqual(res[0].intervaloDias, 14);
+          assertEqual(res[1].total, 777);
+          assertEqual(res[2].length, 1);
+          assertTrue(!!res[3], "el plan guardado debe seguir ahí");
+          // y la app, con esa base migrada, deriva el avance del diagnóstico existente (ventanas vacías)
+          var antes = App.Storage;
+          App.Storage = instanciaV3;
+          return App.Datos.obtenerEstadosAvance().then(function (e) {
+            App.Storage = antes;
+            assertEqual(e.lectura.nivel, "B1");
+            assertEqual(e.lectura.ventana.length, 0);
+            assertEqual(App.Avance.porcentajeDeHabilidad(e.lectura), 0);
+            return instanciaV3.exportBackup();
+          });
+        }).then(function (backup) {
+          assertTrue(Array.isArray(backup.datos.avance), "el export de la base migrada trae 'avance'");
+          return instanciaV3.eliminarBaseDeDatos();
         });
       });
 

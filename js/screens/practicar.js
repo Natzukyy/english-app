@@ -31,14 +31,18 @@
     var Datos = global.App.Datos;
 
     el.innerHTML = '<div class="estado-vacio">…</div>';
+    // Practicar por tu cuenta nunca es una confirmación/reevaluación a medias de un paso viejo.
+    global.App.Util.limpiarModoPaso();
 
     Promise.all([
       Datos.obtenerUltimoDiagnostico(),
       Datos.obtenerUltimaPracticaPorHabilidad(),
       Datos.contarTarjetasRepaso(new Date()),
-      Datos.obtenerPreferencias()
+      Datos.obtenerPreferencias(),
+      Datos.obtenerEstadosAvance()
     ]).then(function (res) {
       var diagnostico = res[0];
+      var estadosAvance = res[4];
       var ultimaPractica = res[1];
       var tarjetas = res[2];
       var prefs = res[3];
@@ -46,7 +50,7 @@
 
       var tarjetasHtml = ORDEN_HABILIDADES.map(function (h, i) {
         var tieneRuta = !!RUTA_POR_HABILIDAD[h];
-        var nivelCEFR = diagnostico && diagnostico.porHabilidad[h] && diagnostico.porHabilidad[h].nivelCEFR;
+        var nivelCEFR = diagnostico && estadosAvance[h] && estadosAvance[h].nivel;
         var lineaEstado = tieneRuta ? formatoUltimaVez(t, ultimaPractica[h], hoyISO) : t("practicar.proximamente");
         return (
           '<' + (tieneRuta ? "button" : "div") + ' type="button" class="practicar-tarjeta calcomania' + // i18n-ok: atributos HTML, no texto

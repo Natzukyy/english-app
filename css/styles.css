@@ -4289,3 +4289,22 @@ main:has(> .pantalla-habla) {
   margin: var(--e-2) auto 0;
   color: var(--texto-2);
 }
+
+/* Avance continuo (D29): barra "hacia el siguiente nivel" (la que se mueve tras cada sesión),
+   textos de "Faltan N respuestas" / "Lista para confirmar" y avisos de confirmación. */
+.barra-progreso.barra-nivel {
+  height: 6px;
+  margin-top: 0;
+}
+.progreso-detalle-habilidad,
+.mini-barra-detalle {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.diagnostico-nota-reevaluacion {
+  margin: 2px 0 var(--e-1);
+  overflow-wrap: anywhere;
+}
+.habla-confirmacion-aviso {
+  margin: 0 0 var(--e-2);
+}

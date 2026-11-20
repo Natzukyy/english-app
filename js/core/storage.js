@@ -9,7 +9,7 @@
   "use strict";
 
   var DB_NAME_POR_DEFECTO = "app-ingles";
-  var DB_VERSION_POR_DEFECTO = 2; // v2: agrega el store "plan" (ruta guiada diaria, ver D-calcomanias)
+  var DB_VERSION_POR_DEFECTO = 3; // v2: store "plan" (ruta guiada diaria); v3: store "avance" (ventanas por habilidad, D29)
 
   // Un solo lugar que define los "stores" de la base. Si se agrega uno nuevo,
   // subir la versión y agregarlo también aquí para que el export/import lo incluya.
@@ -20,7 +20,8 @@
     "srs_cards", // tarjetas de repaso espaciado, por id
     "diagnostico_resultados", // historial de diagnósticos, por id (timestamp)
     "sesiones", // historial de sesiones de estudio, por id (timestamp)
-    "plan" // ruta guiada del día, un registro por fecha YYYY-MM-DD (ver App.Plan/App.Datos)
+    "plan", // ruta guiada del día, un registro por fecha YYYY-MM-DD (ver App.Plan/App.Datos)
+    "avance" // una fila por habilidad (id = "lectura"...): nivel, ventana de respuestas, confirmación (D29)
   ];
 
   function crear(nombreDB, version) {
@@ -156,6 +157,10 @@
       var nombres = Object.keys(backup.datos).filter(function (n) {
         return STORES.indexOf(n) !== -1;
       });
+      // Un respaldo de una versión anterior (sin "avance") se restaura tal cual: el avance
+      // continuo vuelve a empezar vacío, derivado de su diagnóstico (D29) -- si no, quedarían
+      // niveles/ventanas más nuevos mezclados con un diagnóstico viejo.
+      if (nombres.indexOf("avance") === -1) nombres.push("avance");
       return Promise.all(
         nombres.map(function (name) {
           return clearStore(name).then(function () {

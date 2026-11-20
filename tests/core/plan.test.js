@@ -299,4 +299,58 @@
     Test.assertEqual(bloques.length >= 1, true);
     Test.assertEqual(bloques[0].habilidad !== "lectura", true); // y no repite la de ayer
   });
+
+  // --- Confirmación de nivel (D29) ---
+  function ctxConfirmacion(extra) {
+    return Object.assign(
+      { diagnosticoHecho: true, tarjetasVencidas: 5, tarjetasNuevasDisponibles: 0, habilidades: habilidadesBase(), metaMinutosDia: 15, fecha: "2026-11-16", diaSemana: 1 },
+      extra || {}
+    );
+  }
+
+  Test.test("confirmación: una habilidad lista agrega 'Confirma tu nivel de X' (10 min, nivel siguiente)", function () {
+    var r = App.Plan.calcularPlanDelDia(
+      ctxConfirmacion({ confirmaciones: [{ habilidad: "lectura", nivelActual: "A2", nivelObjetivo: "B1" }] })
+    );
+    var c = r.pasos.filter(function (p) { return p.tipo === "confirmacion"; });
+    Test.assertEqual(c.length, 1);
+    Test.assertEqual(c[0].habilidad, "lectura");
+    Test.assertEqual(c[0].nivelCEFR, "B1");
+    Test.assertEqual(c[0].minutos, App.Avance.CONSTANTES.MINUTOS_CONFIRMACION);
+  });
+
+  Test.test("confirmación: solo una por día aunque haya varias listas", function () {
+    var r = App.Plan.calcularPlanDelDia(
+      ctxConfirmacion({
+        confirmaciones: [
+          { habilidad: "lectura", nivelActual: "A2", nivelObjetivo: "B1" },
+          { habilidad: "habla", nivelActual: "A2", nivelObjetivo: "B1" }
+        ]
+      })
+    );
+    Test.assertEqual(r.pasos.filter(function (p) { return p.tipo === "confirmacion"; }).length, 1);
+  });
+
+  Test.test("confirmación: no se agrega el mismo día de una reevaluación general", function () {
+    var r = App.Plan.calcularPlanDelDia(
+      ctxConfirmacion({
+        semanasDesdeUltimaReevaluacion: 4,
+        confirmaciones: [{ habilidad: "lectura", nivelActual: "A2", nivelObjetivo: "B1" }]
+      })
+    );
+    Test.assertEqual(r.pasos.filter(function (p) { return p.tipo === "reevaluacion"; }).length, 1);
+    Test.assertEqual(r.pasos.filter(function (p) { return p.tipo === "confirmacion"; }).length, 0);
+  });
+
+  Test.test("confirmación: sin habilidades listas no hay paso de confirmación", function () {
+    var r = App.Plan.calcularPlanDelDia(ctxConfirmacion());
+    Test.assertEqual(r.pasos.filter(function (p) { return p.tipo === "confirmacion"; }).length, 0);
+  });
+
+  Test.test("confirmación: sigue habiendo al menos un bloque de práctica", function () {
+    var r = App.Plan.calcularPlanDelDia(
+      ctxConfirmacion({ confirmaciones: [{ habilidad: "escucha", nivelActual: "A2", nivelObjetivo: "B1" }] })
+    );
+    Test.assertEqual(r.pasos.filter(function (p) { return p.tipo === "practica"; }).length >= 1, true);
+  });
 })();

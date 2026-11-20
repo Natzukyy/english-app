@@ -24,13 +24,15 @@
       global.App.Datos.obtenerXP(),
       global.App.Datos.obtenerEstadoRacha(),
       global.App.Datos.obtenerMinutosPorDia(),
-      global.App.Datos.obtenerPreferencias()
+      global.App.Datos.obtenerPreferencias(),
+      global.App.Datos.obtenerEstadosAvance()
     ]).then(function (res) {
       var diagnostico = res[0];
       var xp = res[1];
       var racha = res[2];
       var minutosPorDia = res[3];
       var prefs = res[4];
+      var estadosAvance = res[5];
 
       if (!diagnostico) {
         el.innerHTML =
@@ -83,12 +85,24 @@
           "</div>";
       }
 
+      // Avance REAL por habilidad (D29): nivel actual + fracción dentro del nivel (ventana de las
+      // últimas 30 respuestas). Dos barras: la escala A1-C2 y la de "hacia el siguiente nivel",
+      // que es la que se mueve visiblemente tras cada sesión.
       var filasHabilidad = ORDEN_HABILIDADES.filter(function (h) {
         return diagnostico.porHabilidad[h];
       })
         .map(function (h) {
-          var r = diagnostico.porHabilidad[h];
-          var porcentaje = global.App.Avance.porcentajeEnEscala(r.nivelCEFR); // escala abierta A1..C2, no "hacia B2"
+          var est = estadosAvance[h];
+          var porcentaje = global.App.Avance.porcentajeEnEscala(est.nivel, global.App.Avance.porcentajeDeHabilidad(est)); // escala abierta A1..C2
+          var siguiente = global.App.Avance.siguienteNivelDe(est.nivel);
+          var pctNivel = global.App.Avance.porcentajeDeHabilidad(est);
+          var falta = global.App.Avance.textoDeFalta(est);
+          var detalle;
+          if (!siguiente) detalle = t("inicio.nivel_maximo");
+          else if (falta.tipo === "lista") detalle = t("avance.lista_para_confirmar_detalle", { nivel: siguiente });
+          else if (falta.tipo === "faltan") detalle = t("inicio.pct_hacia", { pct: pctNivel, nivel: siguiente }) + " · " + t(falta.faltan === 1 ? "avance.falta_una" : "avance.faltan_n", { n: falta.faltan });
+          else if (falta.tipo === "aciertos") detalle = t("inicio.pct_hacia", { pct: pctNivel, nivel: siguiente }) + " · " + t("avance.necesitas_aciertos");
+          else detalle = t("inicio.pct_hacia", { pct: pctNivel, nivel: siguiente });
           return (
             '<div class="progreso-tarjeta-habilidad superficie-oscura">' +
             '<div class="fila-cabeza"><span>' +
@@ -97,13 +111,17 @@
             '<span class="diagnostico-pastilla-nivel" style="background:var(--punto-' +
             h +
             ')">' +
-            esc(global.App.Avance.etiquetaNivel(r.nivelCEFR, h)) +
+            esc(global.App.Avance.etiquetaNivel(est.nivel, h)) +
             "</span></div>" +
             '<div class="barra-progreso barra-escala" data-habilidad="' +
             esc(h) +
             '" style="--progreso:0"><span data-destino="' +
             porcentaje +
             '"></span></div>' +
+            (siguiente
+              ? '<div class="barra-progreso barra-escala barra-nivel" data-habilidad="' + esc(h) + '" style="--progreso:0"><span data-destino="' + pctNivel + '"></span></div>'
+              : "") +
+            '<p class="progreso-detalle-habilidad texto-caption">' + esc(detalle) + "</p>" +
             "</div>"
           );
         })
@@ -149,6 +167,7 @@
         nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
       });
       el.querySelector("#btn-repetir-diagnostico").addEventListener("click", function () {
+        global.App.Util.limpiarModoPaso(); // repetir a mano = diagnóstico real, no la mini-reevaluación
         location.hash = "#/diagnostico";
       });
 

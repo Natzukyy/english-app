@@ -24,12 +24,16 @@
     repaso: "repaso",
     conversacion: "conversacion"
   };
+  // Confirmar lectura/escucha = pantalla propia (opción múltiple); habla/escritura confirman en
+  // su propia pantalla, en "modo confirmación" (Util.fijarModoPaso, ver irAPaso).
+  var RUTA_CONFIRMACION = { lectura: "confirmacion", escucha: "confirmacion", habla: "habla", escritura: "escritura" };
   var RUTA_POR_HABILIDAD_PRACTICA = { habla: "habla", lectura: "lectura", escucha: "escucha", escritura: "escritura" };
 
-  var CLAVE_FLUJO = "rumboFlujoEnCurso"; // localStorage: {fecha, indice} del paso que se acaba de empezar
+  var CLAVE_FLUJO = "heyFlujoEnCurso"; // localStorage: {fecha, indice} del paso que se acaba de empezar
 
   function nombrePaso(t, paso) {
     if (paso.tipo === "practica") return t("inicio.paso.practica", { habilidad: t("habilidad." + paso.habilidad).toLowerCase() });
+    if (paso.tipo === "confirmacion") return t("inicio.paso.confirmacion", { habilidad: t("habilidad." + paso.habilidad).toLowerCase() });
     var clave = "inicio.paso." + paso.tipo;
     var texto = t(clave);
     return texto === clave ? paso.tipo : texto;
@@ -43,11 +47,13 @@
     if (paso.tipo === "practica") return t("inicio.razon.practica", { minutos: paso.minutos, nivel: paso.nivelCEFR || "" });
     if (paso.tipo === "conversacion") return t("inicio.razon.conversacion");
     if (paso.tipo === "reevaluacion") return t("inicio.razon.reevaluacion");
+    if (paso.tipo === "confirmacion") return t("inicio.razon.confirmacion", { actual: paso.nivelActual || "", nivel: paso.nivelCEFR || "" });
     return t("inicio.razon.diagnostico");
   }
 
   function rutaParaPaso(paso) {
     if (paso.tipo === "practica") return RUTA_POR_HABILIDAD_PRACTICA[paso.habilidad] || "inicio";
+    if (paso.tipo === "confirmacion") return RUTA_CONFIRMACION[paso.habilidad] || "confirmacion";
     return RUTA_POR_TIPO[paso.tipo] || "inicio";
   }
 
@@ -88,7 +94,12 @@
   }
 
   function irAPaso(plan, indice) {
-    guardarFlujoEnCurso(plan.id, indice, plan.pasos[indice]);
+    var paso = plan.pasos[indice];
+    guardarFlujoEnCurso(plan.id, indice, paso);
+    // Modo del paso: confirmación de una habilidad / reevaluación general (nunca "nivel de práctica").
+    if (paso.tipo === "confirmacion") global.App.Util.fijarModoPaso({ tipo: "confirmacion", habilidad: paso.habilidad, fecha: plan.id });
+    else if (paso.tipo === "reevaluacion") global.App.Util.fijarModoPaso({ tipo: "reevaluacion", habilidad: null, fecha: plan.id });
+    else global.App.Util.limpiarModoPaso();
     location.hash = "#/" + rutaParaPaso(plan.pasos[indice]);
   }
 
@@ -108,9 +119,11 @@
   function mostrarCelebracionesPendientes(ctx) {
     var t = global.App.I18n.traductor(ctx);
     global.App.Util.tomarCelebracionesPendientes().forEach(function (c, i) {
-      var texto = c.tipo === "cefr" ? t("celebracion.nivel_cefr") + " " + c.nivel : t("celebracion.nivel_xp") + " " + c.nivel;
+      var texto;
+      if (c.tipo === "habilidad") texto = t("celebracion.nivel_habilidad", { habilidad: t("habilidad." + c.habilidad).toLowerCase(), nivel: c.nivel });
+      else texto = c.tipo === "cefr" ? t("celebracion.nivel_cefr") + " " + c.nivel : t("celebracion.nivel_xp") + " " + c.nivel;
       global.setTimeout(function () {
-        global.App.Util.mostrarCelebracion(texto + (c.tipo === "cefr" ? "" : "!"), true);
+        global.App.Util.mostrarCelebracion(texto + (c.tipo === "xp" ? "!" : ""), true);
       }, 300 + i * 3300);
     });
   }
@@ -221,7 +234,8 @@
       global.App.Storage.get("sesiones", global.App.Fecha.hoyISO()),
       Datos.obtenerUltimoDiagnostico(),
       Datos.obtenerOCalcularPlanDeHoy(new Date()),
-      Datos.obtenerMinutosPorDia()
+      Datos.obtenerMinutosPorDia(),
+      Datos.obtenerEstadosAvance()
     ]).then(function (res) {
       var racha = res[0];
       var xp = res[1];
@@ -230,21 +244,21 @@
       var diagnostico = res[4];
       var plan = res[5];
       var minutosPorDia = res[6];
+      var estadosAvance = res[7];
 
       var nivel = global.App.XP.nivelDesdeXP(xp.total);
       var minutosHoy = sesionHoy.minutos || 0;
       var porcentajeMeta = Math.min(100, Math.round((minutosHoy / prefs.metaMinutosDia) * 100));
       var nombreUsuario = config.nombreUsuario || "Alex"; // i18n-ok: nombre de reserva; el real vive en data/config.json
 
-      // --- Avance en la escala abierta A1-C2 (App.Avance), a partir del último diagnóstico.
-      // Sin una medición más fina de desempeño reciente todavía, se asume el punto medio del
-      // nivel actual (50%) para cada habilidad -- simplificación anotada en el reporte final.
+      // --- Avance en la escala abierta A1-C2 (App.Avance, D29): nivel de cada habilidad + la
+      // fracción REAL dentro de ese nivel (ventana móvil de las últimas 30 respuestas), no un
+      // 50 % fijo. El nivel global es el promedio ponderado de esos números continuos.
       var numerosHabilidad = {};
       ORDEN_HABILIDADES.forEach(function (h) {
-        var nivelCEFR = (diagnostico && diagnostico.porHabilidad[h] && diagnostico.porHabilidad[h].nivelCEFR) || "A1";
-        numerosHabilidad[h] = global.App.Avance.numeroDesdeNivel(nivelCEFR, 50);
+        numerosHabilidad[h] = global.App.Avance.numeroDeHabilidad(estadosAvance[h]);
       });
-      var global_ = global.App.Avance.calcularNivelGlobal(numerosHabilidad);
+      var global_ = global.App.Avance.calcularNivelGlobalDesdeEstados(estadosAvance);
       var porcentajeCamino = Math.min(100, (global.App.Avance.indiceNivel(global_.nivel) / 5) * 100 + global_.porcentajeHaciaSiguiente / 20);
       var ritmo = calcularRitmo(minutosPorDia, global.App.Fecha.hoyISO());
 
@@ -302,10 +316,16 @@
 
       // --- 4 mini-barras por habilidad ---
       var miniBarrasHtml = ORDEN_HABILIDADES.map(function (h) {
-        var datosHabilidad = diagnostico && diagnostico.porHabilidad[h];
-        var nivelCEFR = datosHabilidad ? datosHabilidad.nivelCEFR : null;
+        var est = estadosAvance[h];
+        var nivelCEFR = diagnostico ? est.nivel : null;
         var numero = numerosHabilidad[h];
         var porcentaje = Math.round((numero / 5) * 100);
+        var falta = global.App.Avance.textoDeFalta(est);
+        var siguiente = global.App.Avance.siguienteNivelDe(est.nivel);
+        var detalle = "";
+        if (diagnostico && falta.tipo === "lista") detalle = t("avance.lista_para_confirmar");
+        else if (diagnostico && falta.tipo === "faltan" && falta.faltan <= 10) detalle = t(falta.faltan === 1 ? "avance.falta_una" : "avance.faltan_n", { n: falta.faltan });
+        else if (diagnostico && siguiente) detalle = t("inicio.pct_hacia", { pct: global.App.Avance.porcentajeDeHabilidad(est), nivel: siguiente });
         return (
           '<div class="mini-barra-habilidad">' +
           '<div class="mini-barra-cabeza">' +
@@ -315,6 +335,7 @@
           "</div>" +
           '<div class="barra-progreso barra-escala" data-habilidad="' + h + '" style="--progreso:0">' +
           '<span data-destino="' + porcentaje + '"></span></div>' +
+          (detalle ? '<p class="mini-barra-detalle texto-caption">' + esc(detalle) + "</p>" : "") +
           "</div>"
         );
       }).join("");
