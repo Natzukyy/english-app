@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Pruebas iPhone — Inglés B2</title>
+    <title>Pruebas iPhone — Rumbo</title>
     <style>
       :root {
         color-scheme: dark;
@@ -103,7 +103,7 @@
     </style>
   </head>
   <body>
-    <h1>Pruebas de compatibilidad — Inglés B2</h1>
+    <h1>Pruebas de compatibilidad — Rumbo</h1>
     <p class="intro">
       Corre cada prueba con su botón (en orden, de arriba hacia abajo). Cada resultado se muestra tal cual, sin
       interpretar — si algo falla, verás el mensaje de error textual. Al final, usa "Copiar reporte" y pégalo de
@@ -454,7 +454,7 @@
       // --- Copiar reporte ---
       document.getElementById("boton-copiar").addEventListener("click", function () {
         var partes = [];
-        partes.push("Reporte de pruebas — Inglés B2 — " + new Date().toISOString());
+        partes.push("Reporte de pruebas — Rumbo — " + new Date().toISOString());
         for (var i = 1; i <= 5; i++) {
           var titulo = document.querySelector("#seccion-" + i + " h2").textContent;
           var cuerpo = document.getElementById("resultado-" + i).textContent;

@@ -265,8 +265,8 @@
         var r = resultado.porHabilidad[h];
         var colorFondo = COLOR_HABILIDAD[h];
         var pastilla = colorFondo
-          ? '<span class="diagnostico-pastilla-nivel" style="background:' + colorFondo + '">' + r.nivelCEFR + "</span>"
-          : '<span class="diagnostico-pastilla-nivel diagnostico-pastilla-nivel--neutral">' + r.nivelCEFR + "</span>";
+          ? '<span class="diagnostico-pastilla-nivel" style="background:' + colorFondo + '">' + global.App.Avance.etiquetaNivel(r.nivelCEFR, h) + "</span>"
+          : '<span class="diagnostico-pastilla-nivel diagnostico-pastilla-nivel--neutral">' + global.App.Avance.etiquetaNivel(r.nivelCEFR, h) + "</span>";
         return (
           '<div class="diagnostico-resultado-fila superficie-oscura">' +
           '<div class="fila-cabeza"><span>' +
@@ -277,7 +277,7 @@
           '<div class="barra-progreso"' +
           (colorFondo ? ' data-habilidad="' + h + '"' : "") +
           '><span data-destino="' +
-          r.porcentajeHaciaB2 +
+          global.App.Avance.porcentajeEnEscala(r.nivelCEFR) +
           '" style="width:0%"></span></div>' +
           "</div>"
         );

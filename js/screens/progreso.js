@@ -93,7 +93,7 @@
       })
         .map(function (h) {
           var r = diagnostico.porHabilidad[h];
-          var porcentaje = Math.max(0, Math.min(100, Number(r.porcentajeHaciaB2) || 0));
+          var porcentaje = global.App.Avance.porcentajeEnEscala(r.nivelCEFR); // escala abierta A1..C2, no "hacia B2"
           return (
             '<div class="progreso-tarjeta-habilidad superficie-oscura">' +
             '<div class="fila-cabeza"><span>' +
@@ -102,7 +102,7 @@
             '<span class="diagnostico-pastilla-nivel" style="background:var(--punto-' +
             h +
             ')">' +
-            esc(r.nivelCEFR) +
+            esc(global.App.Avance.etiquetaNivel(r.nivelCEFR, h)) +
             "</span></div>" +
             '<div class="barra-progreso barra-escala" data-habilidad="' +
             esc(h) +

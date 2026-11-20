@@ -121,4 +121,17 @@
     Test.assertEqual(App.Avance.elegirPorNivel(LISTA, "A2", 0).id, "a2-1");
     Test.assertEqual(App.Avance.elegirPorNivel(LISTA, "A2", 0.99).id, "a2-2");
   });
+
+  Test.test("etiquetaNivel: B2 medido con el banco se muestra como B2+; el B2 autoevaluado no", function () {
+    Test.assertEqual(App.Avance.etiquetaNivel("B2", "lectura"), "B2+");
+    Test.assertEqual(App.Avance.etiquetaNivel("B2", "vocabulario_gramatica"), "B2+");
+    Test.assertEqual(App.Avance.etiquetaNivel("B2", "habla"), "B2");
+    Test.assertEqual(App.Avance.etiquetaNivel("B1", "lectura"), "B1");
+  });
+
+  Test.test("porcentajeEnEscala: A1 abajo, C2 arriba, B2 ya no llena la barra (escala abierta)", function () {
+    Test.assertEqual(App.Avance.porcentajeEnEscala("A1", 0), 0);
+    Test.assertEqual(App.Avance.porcentajeEnEscala("C2", 100) > App.Avance.porcentajeEnEscala("B2", 100), true);
+    Test.assertEqual(App.Avance.porcentajeEnEscala("B2", 50) < 100, true);
+  });
 })();

@@ -135,8 +135,27 @@
     return candidatas[Math.min(candidatas.length - 1, Math.floor(r * candidatas.length))];
   }
 
+  var HABILIDADES_DE_BANCO = ["lectura", "escucha", "vocabulario_gramatica"];
+
+  /** Etiqueta para MOSTRAR un nivel. Spec de Alex: un resultado "B2 completo" del diagnóstico
+   * se muestra como "B2+" (no es un tope: el motor ya cuenta C1/C2). Solo aplica a las
+   * habilidades medidas con el banco de preguntas (el B2 de habla/escritura es una
+   * autoevaluación, no "completo"). */
+  function etiquetaNivel(nivelCEFR, habilidad) {
+    if (nivelCEFR === "B2" && HABILIDADES_DE_BANCO.indexOf(habilidad) !== -1) return "B2+";
+    return nivelCEFR;
+  }
+
+  /** Ancho (0-100) de una barra de habilidad en la escala abierta A1..C2 (A1 = 0%, C2 = 100%). */
+  function porcentajeEnEscala(nivelCEFR, porcentajeDentroDelNivel) {
+    var n = numeroDesdeNivel(nivelCEFR, typeof porcentajeDentroDelNivel === "number" ? porcentajeDentroDelNivel : 50);
+    return Math.max(0, Math.min(100, Math.round((n / 5) * 100)));
+  }
+
   global.App = global.App || {};
   global.App.Avance = {
+    etiquetaNivel: etiquetaNivel,
+    porcentajeEnEscala: porcentajeEnEscala,
     nivelesDisponibles: nivelesDisponibles,
     elegirPorNivel: elegirPorNivel,
     ORDEN_NIVELES: ORDEN_NIVELES,
