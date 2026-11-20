@@ -1,5 +1,5 @@
 {
-  "_nota": "Frases profesionales originales, agrupadas por situación. Verificadas con confianza alta. Las frases agregadas en el Paso C llevan 'revisar: true'.",
+  "_nota": "Frases profesionales originales, agrupadas por situación. Verificadas con confianza alta. Las frases agregadas en el Paso C llevan 'revisar: true'. Revisión de contenido (D31): el orden de las frases dentro de cada categoría NO cambia (el id de la tarjeta depende de la posición).",
   "categorias": [
     {
       "categoria": "correos",
@@ -7,45 +7,56 @@
       "frases": [
         {
           "ingles": "I wanted to follow up on my previous email.",
-          "espanol": "Quería darle seguimiento a mi correo anterior."
+          "espanol": "Quería darle seguimiento a mi correo anterior.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Please let me know if this works for you.",
-          "espanol": "Avísame si esto te funciona."
+          "espanol": "Avísame si esto te funciona.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Attached is the document we discussed.",
-          "espanol": "Adjunto está el documento que platicamos."
+          "espanol": "Adjunto está el documento que platicamos.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Sorry for the late reply.",
-          "espanol": "Disculpa la tardanza en responder."
+          "espanol": "Disculpa la tardanza en responder.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let me know if you have any questions.",
-          "espanol": "Avísame si tienes alguna duda."
+          "espanol": "Avísame si tienes alguna duda.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I hope this email finds you well.",
           "espanol": "Espero que este correo te encuentre bien.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Just a gentle reminder about this.",
           "espanol": "Solo un recordatorio amable sobre esto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Could you confirm by end of day?",
           "espanol": "¿Podrías confirmar antes de que termine el día?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Looping in Laura so she's aware too.",
           "espanol": "Incluyo a Laura en copia para que también esté al tanto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "reuniones",
@@ -53,45 +64,56 @@
       "frases": [
         {
           "ingles": "Can you repeat that, please?",
-          "espanol": "¿Puedes repetir eso, por favor?"
+          "espanol": "¿Puedes repetir eso, por favor?",
+          "revisionIA": "2026-11-20"
         },
         {
-          "ingles": "I think we should table this for now.",
-          "espanol": "Creo que deberíamos dejar esto para después."
+          "ingles": "I think we should put this on hold for now.",
+          "espanol": "Creo que deberíamos dejar esto en pausa por ahora.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Just to make sure I understood correctly...",
-          "espanol": "Solo para asegurarme de que entendí bien..."
+          "espanol": "Solo para asegurarme de que entendí bien...",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Who's taking notes for this meeting?",
-          "espanol": "¿Quién va a tomar notas de esta reunión?"
+          "espanol": "¿Quién va a tomar notas de esta reunión?",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let's circle back to this next week.",
-          "espanol": "Retomemos esto la próxima semana."
+          "espanol": "Retomemos esto la próxima semana.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can everyone see my screen?",
           "espanol": "¿Todos pueden ver mi pantalla?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
-          "ingles": "Let's park that for the end.",
+          "ingles": "Let's save that for the end.",
           "espanol": "Dejemos eso para el final.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I think we're aligned on this.",
           "espanol": "Creo que estamos de acuerdo en esto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "What's the action item here, and who owns it?",
           "espanol": "¿Cuál es la tarea aquí y quién la tiene a cargo?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "standups",
@@ -99,40 +121,50 @@
       "frases": [
         {
           "ingles": "Yesterday I worked on the login page.",
-          "espanol": "Ayer trabajé en la página de inicio de sesión."
+          "espanol": "Ayer trabajé en la página de inicio de sesión.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Today I'm planning to finish the tests.",
-          "espanol": "Hoy planeo terminar las pruebas."
+          "espanol": "Hoy planeo terminar las pruebas.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm blocked on waiting for API access.",
-          "espanol": "Estoy bloqueado esperando acceso a la API."
+          "espanol": "Estoy bloqueado esperando acceso a la API.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "No blockers on my end.",
-          "espanol": "No tengo ningún bloqueo de mi parte."
+          "espanol": "No tengo ningún bloqueo de mi parte.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I might need help with this later today.",
-          "espanol": "Puede que necesite ayuda con esto más tarde."
+          "espanol": "Puede que necesite ayuda con esto más tarde.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm a bit behind on this task.",
           "espanol": "Voy un poco atrasado con esta tarea.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "That should be ready by tomorrow.",
           "espanol": "Eso debería estar listo para mañana.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'll pick this back up after the meeting.",
           "espanol": "Voy a retomar esto después de la reunión.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "explicar_proyecto",
@@ -140,40 +172,50 @@
       "frases": [
         {
           "ingles": "The goal of this project is to...",
-          "espanol": "El objetivo de este proyecto es..."
+          "espanol": "El objetivo de este proyecto es...",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "It's still a work in progress.",
-          "espanol": "Todavía está en progreso."
+          "espanol": "Todavía está en progreso.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "The main challenge so far has been...",
-          "espanol": "El principal reto hasta ahora ha sido..."
+          "espanol": "El principal reto hasta ahora ha sido...",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "We're using this approach because...",
-          "espanol": "Usamos este enfoque porque..."
+          "espanol": "Usamos este enfoque porque...",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Happy to go into more detail if that's useful.",
-          "espanol": "Con gusto entro en más detalle si es útil."
+          "espanol": "Con gusto entro en más detalle si es útil.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "At a high level, the idea is...",
           "espanol": "A grandes rasgos, la idea es...",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "One trade-off we had to accept was...",
           "espanol": "Una compensación que tuvimos que aceptar fue...",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "That's actually a great question.",
-          "espanol": "Esa es en realidad una muy buena pregunta.",
-          "revisar": true
+          "espanol": "Esa es, de hecho, una muy buena pregunta.",
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "pedir_ayuda",
@@ -181,36 +223,45 @@
       "frases": [
         {
           "ingles": "Do you have a minute to help me with something?",
-          "espanol": "¿Tienes un minuto para ayudarme con algo?"
+          "espanol": "¿Tienes un minuto para ayudarme con algo?",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm stuck on this error, could you take a look?",
-          "espanol": "Estoy atorado con este error, ¿podrías revisarlo?"
+          "espanol": "Estoy atorado con este error, ¿podrías revisarlo?",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Could you point me in the right direction?",
-          "espanol": "¿Podrías orientarme un poco?"
+          "espanol": "¿Podrías orientarme un poco?",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I don't quite understand this part, can you explain it?",
-          "espanol": "No entiendo bien esta parte, ¿puedes explicarla?"
+          "espanol": "No entiendo bien esta parte, ¿puedes explicarla?",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Sorry to bother you, quick question.",
           "espanol": "Disculpa la molestia, una pregunta rápida.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "No rush, whenever you get a chance.",
           "espanol": "Sin prisa, cuando tengas oportunidad.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I tried a few things already, but nothing worked.",
           "espanol": "Ya intenté varias cosas, pero nada funcionó.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "dar_feedback",
@@ -218,36 +269,45 @@
       "frases": [
         {
           "ingles": "Overall this looks good, just a couple of comments.",
-          "espanol": "En general se ve bien, solo un par de comentarios."
+          "espanol": "En general se ve bien, solo un par de comentarios.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Have you considered doing it this way instead?",
-          "espanol": "¿Has considerado hacerlo de esta otra forma?"
+          "espanol": "¿Has considerado hacerlo de esta otra forma?",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "This part could be clearer if...",
-          "espanol": "Esta parte podría quedar más clara si..."
+          "espanol": "Esta parte podría quedar más clara si...",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Nice work on this, especially the part about...",
-          "espanol": "Buen trabajo con esto, especialmente la parte sobre..."
+          "espanol": "Buen trabajo con esto, especialmente la parte sobre...",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Not a blocker, just a small suggestion.",
           "espanol": "No es algo que detenga esto, solo una pequeña sugerencia.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'd push back a little on this part.",
           "espanol": "No estoy del todo de acuerdo con esta parte.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let's keep this in mind for next time.",
           "espanol": "Tengamos esto en cuenta para la próxima.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "entrevistas",
@@ -255,36 +315,45 @@
       "frases": [
         {
           "ingles": "Tell me about a project you're proud of.",
-          "espanol": "Cuéntame sobre un proyecto del que estés orgulloso."
+          "espanol": "Cuéntame sobre un proyecto del que estés orgulloso.",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "What would you say is your biggest strength?",
-          "espanol": "¿Cuál dirías que es tu mayor fortaleza?"
+          "espanol": "¿Cuál dirías que es tu mayor fortaleza?",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can you walk me through your thought process?",
-          "espanol": "¿Puedes explicarme cómo pensaste el problema?"
+          "espanol": "¿Puedes explicarme cómo pensaste el problema?",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Do you have any questions for me?",
-          "espanol": "¿Tienes alguna pregunta para mí?"
+          "espanol": "¿Tienes alguna pregunta para mí?",
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let me give you some context first.",
           "espanol": "Déjame darte un poco de contexto primero.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "That's something I'm actively working on improving.",
           "espanol": "Eso es algo en lo que estoy trabajando activamente para mejorar.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'd love to learn more about the team.",
           "espanol": "Me encantaría saber más sobre el equipo.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "direcciones",
@@ -293,54 +362,66 @@
         {
           "ingles": "Excuse me, how do I get to the train station?",
           "espanol": "Disculpe, ¿cómo llego a la estación de tren?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Is it far from here?",
           "espanol": "¿Está lejos de aquí?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "You can walk there in about ten minutes.",
           "espanol": "Puedes caminar hasta allá en unos diez minutos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Turn left at the next corner.",
           "espanol": "Da vuelta a la izquierda en la siguiente esquina.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Go straight for two blocks.",
           "espanol": "Sigue derecho por dos cuadras.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "It's right across the street.",
           "espanol": "Está justo enfrente.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Sorry, I'm not from around here.",
           "espanol": "Disculpa, no soy de aquí.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Is there a pharmacy nearby?",
           "espanol": "¿Hay una farmacia cerca?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Thanks for the directions!",
           "espanol": "¡Gracias por las indicaciones!",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I think we took a wrong turn.",
           "espanol": "Creo que nos equivocamos de camino.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "restaurante",
@@ -349,54 +430,66 @@
         {
           "ingles": "Could I see the menu, please?",
           "espanol": "¿Me podría dar el menú, por favor?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "What do you recommend?",
           "espanol": "¿Qué me recomienda?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'll have the chicken, please.",
           "espanol": "Voy a pedir el pollo, por favor.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Could we get some water too?",
           "espanol": "¿Nos podría traer agua también?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Is this dish spicy?",
           "espanol": "¿Este platillo es picante?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Could we have the check, please?",
           "espanol": "¿Nos trae la cuenta, por favor?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Everything was delicious, thank you.",
           "espanol": "Todo estuvo delicioso, gracias.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Do you have anything vegetarian?",
           "espanol": "¿Tienen algo vegetariano?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can we sit outside?",
           "espanol": "¿Podemos sentarnos afuera?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Is the tip included?",
           "espanol": "¿La propina está incluida?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "compras",
@@ -405,54 +498,66 @@
         {
           "ingles": "How much does this cost?",
           "espanol": "¿Cuánto cuesta esto?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Do you have this in a different size?",
           "espanol": "¿Tiene esto en otra talla?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can I try this on?",
           "espanol": "¿Me puedo probar esto?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Is this on sale?",
           "espanol": "¿Esto está en oferta?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'd like to return this, please.",
           "espanol": "Me gustaría devolver esto, por favor.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Do you accept credit cards?",
           "espanol": "¿Aceptan tarjetas de crédito?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm just looking, thank you.",
           "espanol": "Solo estoy viendo, gracias.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Do you have a smaller one?",
           "espanol": "¿Tiene uno más chico?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Where can I find the fitting room?",
           "espanol": "¿Dónde está el probador?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can you gift-wrap this, please?",
           "espanol": "¿Me lo puede envolver para regalo, por favor?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "servicios_basicos",
@@ -461,44 +566,54 @@
         {
           "ingles": "I'd like to open a bank account.",
           "espanol": "Me gustaría abrir una cuenta de banco.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Where can I mail this package?",
           "espanol": "¿Dónde puedo enviar este paquete?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I need to renew my ID.",
           "espanol": "Necesito renovar mi identificación.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "What documents do I need?",
           "espanol": "¿Qué documentos necesito?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "What time do you close?",
           "espanol": "¿A qué hora cierran?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can I schedule an appointment online?",
           "espanol": "¿Puedo agendar una cita en línea?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "How long will this take?",
           "espanol": "¿Cuánto tiempo va a tardar?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Is there a fee for this service?",
           "espanol": "¿Hay algún costo por este servicio?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "problemas_cotidianos",
@@ -507,54 +622,66 @@
         {
           "ingles": "Something's wrong with my order.",
           "espanol": "Algo está mal con mi pedido.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I was charged twice for this.",
           "espanol": "Me cobraron dos veces por esto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Could you explain why this happened?",
           "espanol": "¿Podría explicarme por qué pasó esto?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'd appreciate it if you could fix this soon.",
           "espanol": "Agradecería que pudieran arreglar esto pronto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "This isn't what I expected.",
           "espanol": "Esto no es lo que esperaba.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Who can I talk to about this?",
           "espanol": "¿Con quién puedo hablar sobre esto?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can I get this resolved today?",
-          "espanol": "¿Puedo resolver esto hoy?",
-          "revisar": true
+          "espanol": "¿Se puede resolver esto hoy?",
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I understand, but that's not quite fair.",
           "espanol": "Entiendo, pero eso no es del todo justo.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let's figure out a solution together.",
           "espanol": "Busquemos una solución juntos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Thanks for your patience with this.",
           "espanol": "Gracias por tu paciencia con esto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "saludos",
@@ -563,54 +690,66 @@
         {
           "ingles": "Hello!",
           "espanol": "¡Hola!",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Good morning.",
           "espanol": "Buenos días.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Good afternoon.",
           "espanol": "Buenas tardes.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Good evening.",
           "espanol": "Buenas noches (al llegar).",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Good night.",
           "espanol": "Buenas noches (al despedirse).",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "How are you?",
           "espanol": "¿Cómo estás?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm fine, thanks. And you?",
           "espanol": "Bien, gracias. ¿Y tú?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Goodbye!",
           "espanol": "¡Adiós!",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "See you later.",
           "espanol": "Nos vemos luego.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Have a nice day.",
           "espanol": "Que tengas un buen día.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "presentarse",
@@ -619,54 +758,66 @@
         {
           "ingles": "My name is Ana.",
           "espanol": "Me llamo Ana.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "What's your name?",
           "espanol": "¿Cómo te llamas?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Nice to meet you.",
           "espanol": "Mucho gusto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm from Mexico.",
           "espanol": "Soy de México.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Where are you from?",
           "espanol": "¿De dónde eres?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm twenty years old.",
           "espanol": "Tengo veinte años.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm a student.",
           "espanol": "Soy estudiante.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I live in Puebla.",
           "espanol": "Vivo en Puebla.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I speak a little English.",
           "espanol": "Hablo un poco de inglés.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "This is my friend Tom.",
           "espanol": "Él es mi amigo Tom.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "pedir_lo_basico",
@@ -675,54 +826,66 @@
         {
           "ingles": "Water, please.",
           "espanol": "Agua, por favor.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Thank you very much.",
           "espanol": "Muchas gracias.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "You're welcome.",
           "espanol": "De nada.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Excuse me.",
           "espanol": "Disculpe / Con permiso.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm sorry.",
           "espanol": "Lo siento.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Yes, please.",
           "espanol": "Sí, por favor.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "No, thank you.",
           "espanol": "No, gracias.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I need help.",
           "espanol": "Necesito ayuda.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I don't understand.",
           "espanol": "No entiendo.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Where is the bathroom?",
           "espanol": "¿Dónde está el baño?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "precio_y_hora",
@@ -731,54 +894,66 @@
         {
           "ingles": "What time is it?",
           "espanol": "¿Qué hora es?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "It's three o'clock.",
           "espanol": "Son las tres en punto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "It's half past four.",
           "espanol": "Son las cuatro y media.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "How much is this?",
           "espanol": "¿Cuánto cuesta esto?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "It's five dollars.",
           "espanol": "Cuesta cinco dólares.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "It's too expensive.",
           "espanol": "Es demasiado caro.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "What day is it today?",
           "espanol": "¿Qué día es hoy?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Today is Monday.",
           "espanol": "Hoy es lunes.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm late.",
           "espanol": "Llego tarde.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "The class is at nine.",
           "espanol": "La clase es a las nueve.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "dia_a_dia_basico",
@@ -787,54 +962,66 @@
         {
           "ingles": "I wake up at seven.",
           "espanol": "Me despierto a las siete.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I have breakfast at home.",
           "espanol": "Desayuno en casa.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I go to work by bus.",
           "espanol": "Voy al trabajo en autobús.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I study English every day.",
           "espanol": "Estudio inglés todos los días.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I like music.",
           "espanol": "Me gusta la música.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I don't like coffee.",
           "espanol": "No me gusta el café.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm hungry.",
           "espanol": "Tengo hambre.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm thirsty.",
           "espanol": "Tengo sed.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm at home now.",
           "espanol": "Estoy en casa ahora.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I go to bed at ten.",
           "espanol": "Me voy a dormir a las diez.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "familia_y_amigos",
@@ -843,54 +1030,66 @@
         {
           "ingles": "This is my mother.",
           "espanol": "Ella es mi mamá.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I have two brothers.",
           "espanol": "Tengo dos hermanos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "My father is a teacher.",
           "espanol": "Mi papá es maestro.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "She is my best friend.",
           "espanol": "Ella es mi mejor amiga.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "He is tall.",
           "espanol": "Él es alto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "My family is small.",
           "espanol": "Mi familia es pequeña.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "We live together.",
           "espanol": "Vivimos juntos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Do you have brothers or sisters?",
           "espanol": "¿Tienes hermanos o hermanas?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Her name is Laura.",
           "espanol": "Ella se llama Laura.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "They are my friends.",
           "espanol": "Ellos son mis amigos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "salud_y_bienestar",
@@ -899,54 +1098,66 @@
         {
           "ingles": "I have a headache.",
           "espanol": "Me duele la cabeza.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I don't feel well today.",
           "espanol": "Hoy no me siento bien.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I need to see a doctor.",
           "espanol": "Necesito ir al doctor.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Do you have anything for a cold?",
           "espanol": "¿Tienes algo para el resfriado?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm allergic to nuts.",
           "espanol": "Soy alérgico a las nueces.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "You should drink more water.",
           "espanol": "Deberías tomar más agua.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I slept badly last night.",
           "espanol": "Dormí mal anoche.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "How often should I take this?",
           "espanol": "¿Cada cuánto debo tomar esto?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm feeling much better now.",
           "espanol": "Ya me siento mucho mejor.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Take it easy and rest.",
           "espanol": "Tómalo con calma y descansa.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "tecnologia_diaria",
@@ -955,54 +1166,66 @@
         {
           "ingles": "My phone is out of battery.",
           "espanol": "A mi teléfono se le acabó la batería.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can I connect to the Wi-Fi?",
           "espanol": "¿Me puedo conectar al Wi-Fi?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I forgot my password again.",
           "espanol": "Olvidé mi contraseña otra vez.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "The app is not working.",
           "espanol": "La aplicación no funciona.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Please turn off your phone.",
           "espanol": "Por favor, apaga tu teléfono.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I need to update my laptop.",
           "espanol": "Necesito actualizar mi laptop.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can you send me the link?",
           "espanol": "¿Me puedes mandar el enlace?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'll share the file with you.",
           "espanol": "Te compartiré el archivo.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "The screen is frozen.",
           "espanol": "La pantalla está congelada.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let me restart the computer.",
           "espanol": "Déjame reiniciar la computadora.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "planes_y_citas",
@@ -1011,110 +1234,134 @@
         {
           "ingles": "Are you free this weekend?",
           "espanol": "¿Estás libre este fin de semana?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let's meet at six o'clock.",
           "espanol": "Veámonos a las seis.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm sorry, I'm running late.",
           "espanol": "Perdón, voy retrasado.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can we change the time?",
           "espanol": "¿Podemos cambiar la hora?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'll be there in ten minutes.",
           "espanol": "Llego en diez minutos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Where should we meet?",
           "espanol": "¿Dónde nos vemos?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "That sounds like a good plan.",
           "espanol": "Me parece un buen plan.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I can't make it on Friday.",
           "espanol": "No puedo el viernes.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Would you like to join us?",
           "espanol": "¿Quieres unirte a nosotros?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "See you tomorrow morning.",
           "espanol": "Nos vemos mañana por la mañana.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "opiniones_simples",
       "nivelCEFR": "B1",
       "frases": [
         {
-          "ingles": "In my opinion, it is a good idea.",
-          "espanol": "En mi opinión, es una buena idea.",
-          "revisar": true
+          "ingles": "I think it's a good idea.",
+          "espanol": "Creo que es una buena idea.",
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I see your point, but I disagree.",
           "espanol": "Entiendo tu punto, pero no estoy de acuerdo.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I think we should wait a little.",
           "espanol": "Creo que deberíamos esperar un poco.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "That depends on the budget.",
           "espanol": "Eso depende del presupuesto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm not sure that will work.",
           "espanol": "No estoy seguro de que eso funcione.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
-          "ingles": "It seems to me that it is too early.",
-          "espanol": "Me parece que es demasiado pronto.",
-          "revisar": true
+          "ingles": "I feel like it's a bit too early.",
+          "espanol": "Siento que todavía es un poco pronto.",
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "What do you think about this option?",
           "espanol": "¿Qué opinas de esta opción?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I agree with you on that.",
           "espanol": "Estoy de acuerdo contigo en eso.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Personally, I prefer the first plan.",
           "espanol": "Personalmente, prefiero el primer plan.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Both options have advantages.",
           "espanol": "Ambas opciones tienen ventajas.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "viajes_y_servicios",
@@ -1123,54 +1370,66 @@
         {
           "ingles": "I'd like to change my flight to Monday.",
           "espanol": "Quisiera cambiar mi vuelo al lunes.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Is breakfast included in the price?",
           "espanol": "¿El desayuno está incluido en el precio?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "My luggage hasn't arrived yet.",
           "espanol": "Mi equipaje todavía no llega.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Could you recommend a good restaurant nearby?",
           "espanol": "¿Podría recomendarme un buen restaurante cercano?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "We have a reservation under Garcia.",
           "espanol": "Tenemos una reservación a nombre de García.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "How long does it take to get there?",
           "espanol": "¿Cuánto se tarda en llegar?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'd like to speak to the manager, please.",
           "espanol": "Quisiera hablar con el gerente, por favor.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "There seems to be a mistake on the bill.",
           "espanol": "Parece que hay un error en la cuenta.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can I get a refund for this ticket?",
           "espanol": "¿Me pueden reembolsar este boleto?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Is there a late check-out option?",
           "espanol": "¿Hay opción de salida tardía?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "trabajo_en_equipo",
@@ -1179,54 +1438,66 @@
         {
           "ingles": "Could you give me a hand with this?",
           "espanol": "¿Me podrías echar una mano con esto?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'll take care of the first part.",
           "espanol": "Yo me encargo de la primera parte.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let's divide the tasks between us.",
           "espanol": "Dividamos las tareas entre nosotros.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'm waiting for your reply before I continue.",
           "espanol": "Espero tu respuesta antes de continuar.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "We're a bit behind schedule.",
           "espanol": "Vamos un poco atrasados.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'll keep you posted on the progress.",
           "espanol": "Te mantendré al tanto del avance.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can we go over the plan once more?",
           "espanol": "¿Podemos repasar el plan una vez más?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Thanks for your help with the report.",
           "espanol": "Gracias por tu ayuda con el informe.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I haven't had time to finish it yet.",
           "espanol": "Todavía no he tenido tiempo de terminarlo.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let's set a deadline for each task.",
           "espanol": "Pongamos una fecha límite para cada tarea.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "argumentar",
@@ -1235,54 +1506,66 @@
         {
           "ingles": "The main argument against this is the cost.",
           "espanol": "El principal argumento en contra es el costo.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
-          "ingles": "That is a fair point, but consider this.",
+          "ingles": "That's a fair point, but consider this.",
           "espanol": "Es un buen punto, pero considera esto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "The evidence strongly suggests otherwise.",
           "espanol": "La evidencia sugiere firmemente lo contrario.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "On the one hand it's faster; on the other, it's riskier.",
           "espanol": "Por un lado es más rápido; por otro, más arriesgado.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'd argue that the benefits outweigh the risks.",
           "espanol": "Yo diría que los beneficios superan los riesgos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "That doesn't necessarily follow from the data.",
           "espanol": "Eso no se desprende necesariamente de los datos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "We shouldn't jump to conclusions.",
           "espanol": "No deberíamos sacar conclusiones apresuradas.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let me play devil's advocate for a moment.",
           "espanol": "Déjame hacer de abogado del diablo un momento.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "This only works under certain assumptions.",
           "espanol": "Esto solo funciona bajo ciertos supuestos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "In the long run, it will pay off.",
           "espanol": "A la larga, valdrá la pena.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "matizar_y_corregir",
@@ -1291,54 +1574,66 @@
         {
           "ingles": "To be more precise, we lost about ten percent.",
           "espanol": "Para ser más preciso, perdimos cerca del diez por ciento.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I may have phrased that badly.",
           "espanol": "Quizá lo expresé mal.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "What I meant to say is that it is optional.",
           "espanol": "Lo que quería decir es que es opcional.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "That's not entirely accurate.",
           "espanol": "Eso no es del todo exacto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let me rephrase that.",
           "espanol": "Déjame reformularlo.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "It's more complicated than that.",
           "espanol": "Es más complicado que eso.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Strictly speaking, that isn't a bug.",
           "espanol": "Estrictamente hablando, eso no es un error.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I stand corrected.",
           "espanol": "Tienes razón, me corrijo.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "To clarify, I'm not blaming anyone.",
           "espanol": "Para aclarar, no culpo a nadie.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Please don't take it the wrong way.",
           "espanol": "Por favor, no lo tomes a mal.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "tecnologia_e_ia",
@@ -1347,110 +1642,134 @@
         {
           "ingles": "The model performs well on unseen data.",
           "espanol": "El modelo funciona bien con datos que no ha visto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "We need more diverse training data.",
           "espanol": "Necesitamos datos de entrenamiento más diversos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "The results aren't reproducible yet.",
           "espanol": "Los resultados todavía no son reproducibles.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "It's hard to explain why the model made that choice.",
           "espanol": "Es difícil explicar por qué el modelo tomó esa decisión.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "We should evaluate it on a separate test set.",
           "espanol": "Deberíamos evaluarlo en un conjunto de prueba aparte.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "The accuracy dropped after the update.",
           "espanol": "La precisión bajó después de la actualización.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Privacy has to be a priority from the start.",
           "espanol": "La privacidad debe ser una prioridad desde el inicio.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "The system flags suspicious activity automatically.",
           "espanol": "El sistema marca la actividad sospechosa automáticamente.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "We're still tuning the parameters.",
           "espanol": "Todavía estamos ajustando los parámetros.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "The API response time is unacceptable.",
           "espanol": "El tiempo de respuesta de la API es inaceptable.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "categoria": "reuniones_avanzadas",
       "nivelCEFR": "B2",
       "frases": [
         {
-          "ingles": "Let's park this for now.",
-          "espanol": "Dejemos esto en pausa por ahora.",
-          "revisar": true
+          "ingles": "Let's pause this topic for now.",
+          "espanol": "Pausemos este tema por ahora.",
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Can we circle back to this later?",
           "espanol": "¿Podemos volver a esto más tarde?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'd like to propose an alternative approach.",
           "espanol": "Me gustaría proponer un enfoque alternativo.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let's make sure we're all on the same page.",
           "espanol": "Asegurémonos de que todos estemos en la misma página.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "We're running out of time, so let's wrap up.",
           "espanol": "Se nos acaba el tiempo, así que cerremos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Who will take ownership of this item?",
           "espanol": "¿Quién se hará responsable de este punto?",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let's agree on the next steps before we leave.",
           "espanol": "Acordemos los siguientes pasos antes de irnos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "I'll follow up with a written summary.",
           "espanol": "Daré seguimiento con un resumen por escrito.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "That's outside the scope of this project.",
           "espanol": "Eso queda fuera del alcance de este proyecto.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         },
         {
           "ingles": "Let's get everyone's input first.",
           "espanol": "Primero escuchemos la opinión de todos.",
-          "revisar": true
+          "revisar": true,
+          "revisionIA": "2026-11-20"
         }
-      ]
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     }
   ]
 }

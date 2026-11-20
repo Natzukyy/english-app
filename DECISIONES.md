@@ -758,7 +758,7 @@ Detalle por tarea en `REPORTE_CALCOMANIAS_2.md`. Decisiones que no se deducen de
 - **Animaciones:** barras con `scaleX` (no `width`), estrella de "Tu camino" con pop (no `left`). Excepciones aceptadas: `dibujar-palomita` (stroke-dashoffset) y transiciones de `box-shadow` de botones (150 ms).
 - **Accesibilidad:** opciones A–D con `role=radio`/`aria-checked` dentro de `radiogroup`; sol de racha `role=img` con aria-label; Esc vuelve a Inicio salvo escribiendo en input/textarea/select. Contraste y objetivos ≥44px medidos con script/Playwright.
 - **i18n:** cero texto de interfaz hardcodeado en `js/screens` y `js/app.js` (lo vigila `scripts/buscar_texto_hardcodeado.py` desde `run-tests.sh`); excepciones marcadas con `i18n-ok`. `js/core/conversacion.js` (`mensajeError`) sigue con texto en el core.
-- **Validadores:** `scripts/validar_contenido.py` (esquema, ids únicos, mínimos por nivel) corre dentro de `run-tests.sh`.
+- **Validadores:** `tools/validar_contenido.py` (esquema, ids únicos, mínimos por nivel) corre dentro de `run-tests.sh`.
 
 ## D29. Avance continuo por habilidad, confirmación de nivel y "la mini-reevaluación nunca baja" (rama `hey`)
 Antes el nivel solo cambiaba con el Diagnóstico y dentro de cada nivel todas las habilidades contaban fijas al 50 %: practicar no movía "Tu camino". Ahora (`js/core/avance.js`, lógica pura; `js/core/datos.js`, persistencia):

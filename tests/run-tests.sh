@@ -32,7 +32,7 @@ echo "Test.run();" >> "$TMP"
 osascript -l JavaScript "$TMP"
 
 # Validación del contenido (esquema, ids únicos, conteos mínimos por nivel) -- sin Node.
-python3 scripts/validar_contenido.py
+python3 tools/validar_contenido.py
 
 # Todo texto visible debe vivir en data/i18n/strings.json (t("clave")), no escrito en js/screens ni js/app.js.
 python3 scripts/buscar_texto_hardcodeado.py

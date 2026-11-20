@@ -1,5 +1,5 @@
 {
-  "_nota": "Vocabulario técnico y profesional, original, verificado con confianza alta. De 'voc-f1-21' en adelante son términos nuevos (Paso C), marcados 'revisar: true' porque el nivel CEFR es una estimación mía sin revisar todavía.",
+  "_nota": "Vocabulario técnico y profesional, original, verificado con confianza alta. De 'voc-f1-21' en adelante son términos nuevos (Paso C), marcados 'revisar: true' porque el nivel CEFR es una estimación mía sin revisar todavía. Revisión de contenido (D31): ver docs/revision-contenido.md. Las tarjetas con retirada:true duplican a otra (duplicadoDe): se conservan en los datos guardados pero no se vuelven a mostrar.",
   "palabras": [
     {
       "id": "voc-f1-1",
@@ -7,7 +7,9 @@
       "espanol": "fecha límite",
       "ejemplo": "Can we move the deadline to next Friday?",
       "nivelCEFR": "A2",
-      "categoria": "comunicacion_profesional"
+      "categoria": "comunicacion_profesional",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-2",
@@ -15,7 +17,9 @@
       "espanol": "retroalimentación / comentarios",
       "ejemplo": "Thanks for the feedback, I'll fix it today.",
       "nivelCEFR": "A2",
-      "categoria": "comunicacion_profesional"
+      "categoria": "comunicacion_profesional",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-3",
@@ -23,7 +27,9 @@
       "espanol": "contactar / escribirle a alguien",
       "ejemplo": "I'll reach out to the client tomorrow.",
       "nivelCEFR": "B1",
-      "categoria": "comunicacion_profesional"
+      "categoria": "comunicacion_profesional",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-4",
@@ -31,7 +37,9 @@
       "espanol": "dar seguimiento",
       "ejemplo": "I'm following up on my email from Monday.",
       "nivelCEFR": "B1",
-      "categoria": "comunicacion_profesional"
+      "categoria": "comunicacion_profesional",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-5",
@@ -39,7 +47,9 @@
       "espanol": "algo que te detiene / impedimento",
       "ejemplo": "The main blocker right now is waiting for API access.",
       "nivelCEFR": "B1",
-      "categoria": "standup"
+      "categoria": "standup",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-6",
@@ -47,7 +57,9 @@
       "espanol": "lanzar / desplegar (una función)",
       "ejemplo": "We're rolling out the new feature next week.",
       "nivelCEFR": "B1",
-      "categoria": "comunicacion_profesional"
+      "categoria": "comunicacion_profesional",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-7",
@@ -55,7 +67,9 @@
       "espanol": "caso extremo / poco común",
       "ejemplo": "This bug only happens in a rare edge case.",
       "nivelCEFR": "B1",
-      "categoria": "tecnico"
+      "categoria": "tecnico",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-8",
@@ -63,7 +77,9 @@
       "espanol": "compensación / sacrificio entre opciones",
       "ejemplo": "There's a trade-off between speed and accuracy.",
       "nivelCEFR": "B2",
-      "categoria": "tecnico"
+      "categoria": "tecnico",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-9",
@@ -71,15 +87,19 @@
       "espanol": "definir el alcance de algo",
       "ejemplo": "Let's scope the project before we start coding.",
       "nivelCEFR": "B2",
-      "categoria": "tecnico"
+      "categoria": "tecnico",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-10",
       "ingles": "dataset",
       "espanol": "conjunto de datos",
       "ejemplo": "The model was trained on a small dataset.",
-      "nivelCEFR": "A2",
-      "categoria": "tecnico"
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-11",
@@ -87,15 +107,19 @@
       "espanol": "sobreajuste",
       "ejemplo": "The model is overfitting on the training data.",
       "nivelCEFR": "B2",
-      "categoria": "tecnico"
+      "categoria": "tecnico",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-12",
       "ingles": "to debug",
       "espanol": "depurar / encontrar el error",
       "ejemplo": "I spent all morning debugging this function.",
-      "nivelCEFR": "A2",
-      "categoria": "tecnico"
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-13",
@@ -103,7 +127,9 @@
       "espanol": "parte interesada",
       "ejemplo": "We need sign-off from all the stakeholders.",
       "nivelCEFR": "B2",
-      "categoria": "comunicacion_profesional"
+      "categoria": "comunicacion_profesional",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-14",
@@ -111,7 +137,9 @@
       "espanol": "incorporar / capacitar a alguien nuevo",
       "ejemplo": "It took a week to onboard the new intern.",
       "nivelCEFR": "B2",
-      "categoria": "comunicacion_profesional"
+      "categoria": "comunicacion_profesional",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-15",
@@ -119,7 +147,9 @@
       "espanol": "escalar (un problema a alguien con más autoridad)",
       "ejemplo": "If it's urgent, escalate it to the team lead.",
       "nivelCEFR": "B2",
-      "categoria": "comunicacion_profesional"
+      "categoria": "comunicacion_profesional",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-16",
@@ -127,7 +157,9 @@
       "espanol": "escalable",
       "ejemplo": "This solution isn't scalable for a bigger team.",
       "nivelCEFR": "B2",
-      "categoria": "tecnico"
+      "categoria": "tecnico",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-17",
@@ -135,7 +167,9 @@
       "espanol": "iterar / mejorar en pasos pequeños",
       "ejemplo": "We'll iterate on the design after the first feedback round.",
       "nivelCEFR": "B2",
-      "categoria": "tecnico"
+      "categoria": "tecnico",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-18",
@@ -143,7 +177,9 @@
       "espanol": "capacidad de tiempo/trabajo disponible",
       "ejemplo": "I don't have the bandwidth to take on another project this month.",
       "nivelCEFR": "B2",
-      "categoria": "comunicacion_profesional"
+      "categoria": "comunicacion_profesional",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-19",
@@ -151,7 +187,9 @@
       "espanol": "sincronizar / ponerse al día con alguien",
       "ejemplo": "Let's sync tomorrow morning before the demo.",
       "nivelCEFR": "B1",
-      "categoria": "standup"
+      "categoria": "standup",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-20",
@@ -159,7 +197,9 @@
       "espanol": "conclusión / idea principal",
       "ejemplo": "The main takeaway from the meeting was to simplify the onboarding flow.",
       "nivelCEFR": "B2",
-      "categoria": "comunicacion_profesional"
+      "categoria": "comunicacion_profesional",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-21",
@@ -168,7 +208,8 @@
       "ejemplo": "We found the root cause of the outage this morning.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-22",
@@ -177,7 +218,8 @@
       "ejemplo": "This update introduced a regression in the login flow.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-23",
@@ -186,7 +228,8 @@
       "ejemplo": "We should refactor this before adding more features.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-24",
@@ -195,7 +238,8 @@
       "ejemplo": "We deploy to production every Tuesday.",
       "nivelCEFR": "B1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-25",
@@ -204,7 +248,8 @@
       "ejemplo": "We had to do a rollback after the new version broke search.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-26",
@@ -213,7 +258,8 @@
       "ejemplo": "Users in Europe are seeing higher latency than usual.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-27",
@@ -222,16 +268,18 @@
       "ejemplo": "The new server handles twice the throughput of the old one.",
       "nivelCEFR": "C1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-28",
       "ingles": "uptime",
       "espanol": "tiempo de actividad / disponibilidad",
-      "ejemplo": "Our uptime last month was above 99%.",
+      "ejemplo": "Our uptime last month was above 99 percent.",
       "nivelCEFR": "B1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-29",
@@ -240,7 +288,8 @@
       "ejemplo": "We're still investigating last night's incident.",
       "nivelCEFR": "B1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-30",
@@ -249,7 +298,8 @@
       "ejemplo": "We'll write a postmortem once the incident is resolved.",
       "nivelCEFR": "C1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-31",
@@ -258,7 +308,8 @@
       "ejemplo": "Check the changelog to see what's new in this version.",
       "nivelCEFR": "B1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-32",
@@ -267,7 +318,8 @@
       "ejemplo": "That idea is on the backlog, but not planned yet.",
       "nivelCEFR": "B1",
       "categoria": "standup",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-33",
@@ -276,7 +328,8 @@
       "ejemplo": "We'll finish this feature by the end of the sprint.",
       "nivelCEFR": "B1",
       "categoria": "standup",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-34",
@@ -285,7 +338,8 @@
       "ejemplo": "Our velocity dropped a bit after two people went on vacation.",
       "nivelCEFR": "C1",
       "categoria": "standup",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-35",
@@ -294,7 +348,8 @@
       "ejemplo": "We talked about communication in today's retrospective.",
       "nivelCEFR": "B2",
       "categoria": "standup",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-36",
@@ -303,7 +358,8 @@
       "ejemplo": "Could you review my pull request when you have a chance?",
       "nivelCEFR": "B1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-37",
@@ -312,7 +368,8 @@
       "ejemplo": "I'm fixing a merge conflict before I can push this.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-38",
@@ -321,7 +378,8 @@
       "ejemplo": "The pipeline failed because one test didn't pass.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-39",
@@ -330,7 +388,8 @@
       "ejemplo": "Let's test this on staging before it goes live.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-40",
@@ -339,7 +398,8 @@
       "ejemplo": "We pushed a hotfix as soon as we found the bug.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-41",
@@ -348,7 +408,8 @@
       "ejemplo": "That test is flaky, it fails about once every ten runs.",
       "nivelCEFR": "C1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-42",
@@ -357,7 +418,8 @@
       "ejemplo": "A lot of our time goes into maintaining legacy code.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-43",
@@ -366,7 +428,8 @@
       "ejemplo": "It's rare to get to work on a greenfield project.",
       "nivelCEFR": "C1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-44",
@@ -375,7 +438,8 @@
       "ejemplo": "Response time is the metric we care about most right now.",
       "nivelCEFR": "B1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-45",
@@ -384,7 +448,8 @@
       "ejemplo": "We can leverage the existing API instead of building a new one.",
       "nivelCEFR": "C1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-46",
@@ -393,7 +458,8 @@
       "ejemplo": "We need to prioritize the bug over the new feature.",
       "nivelCEFR": "B1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-47",
@@ -402,7 +468,8 @@
       "ejemplo": "She delegated the research part to a junior teammate.",
       "nivelCEFR": "B2",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-48",
@@ -411,7 +478,8 @@
       "ejemplo": "He's been mentoring two new hires this quarter.",
       "nivelCEFR": "B2",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-49",
@@ -420,7 +488,8 @@
       "ejemplo": "Could you clarify what you mean by 'soon'?",
       "nivelCEFR": "B1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-50",
@@ -429,7 +498,8 @@
       "ejemplo": "Can you elaborate on why you chose this approach?",
       "nivelCEFR": "B2",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-51",
@@ -438,7 +508,8 @@
       "ejemplo": "Try to keep the summary concise, just a few bullet points.",
       "nivelCEFR": "B2",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-52",
@@ -447,7 +518,8 @@
       "ejemplo": "She was assertive about the timeline without sounding rude.",
       "nivelCEFR": "C1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-53",
@@ -456,7 +528,8 @@
       "ejemplo": "He's proactive about flagging risks before they become problems.",
       "nivelCEFR": "B2",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-54",
@@ -465,7 +538,8 @@
       "ejemplo": "Let's align on the scope before we estimate the work.",
       "nivelCEFR": "C1",
       "categoria": "reuniones",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-55",
@@ -474,7 +548,8 @@
       "ejemplo": "The only action item from the call was to update the docs.",
       "nivelCEFR": "B1",
       "categoria": "reuniones",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-56",
@@ -483,7 +558,8 @@
       "ejemplo": "We reached a consensus after a short discussion.",
       "nivelCEFR": "B2",
       "categoria": "reuniones",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-57",
@@ -492,7 +568,8 @@
       "ejemplo": "We compromised on a smaller version of the feature for now.",
       "nivelCEFR": "B2",
       "categoria": "reuniones",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-58",
@@ -501,7 +578,8 @@
       "ejemplo": "She advocated for more testing before the release.",
       "nivelCEFR": "C1",
       "categoria": "reuniones",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-59",
@@ -510,7 +588,8 @@
       "ejemplo": "We streamlined the onboarding process for new clients.",
       "nivelCEFR": "C1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-60",
@@ -519,7 +598,8 @@
       "ejemplo": "Communication is one of her biggest strengths.",
       "nivelCEFR": "B1",
       "categoria": "entrevistas",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-61",
@@ -528,7 +608,8 @@
       "ejemplo": "I need to stop by the grocery store after work.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-62",
@@ -537,7 +618,8 @@
       "ejemplo": "I have a doctor's appointment at three.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-63",
@@ -546,7 +628,8 @@
       "ejemplo": "My neighbor is very friendly.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-64",
@@ -555,7 +638,8 @@
       "ejemplo": "The weather is nice today.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-65",
@@ -564,7 +648,8 @@
       "ejemplo": "I'm really tired after the trip.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-66",
@@ -573,7 +658,8 @@
       "ejemplo": "I wake up at seven every day.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-67",
@@ -582,7 +668,8 @@
       "ejemplo": "She gets dressed quickly in the morning.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-68",
@@ -591,7 +678,8 @@
       "ejemplo": "I usually skip breakfast.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-69",
@@ -600,7 +688,8 @@
       "ejemplo": "He takes a shower before bed.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-70",
@@ -609,7 +698,8 @@
       "ejemplo": "I do my chores on Saturdays.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-71",
@@ -618,7 +708,8 @@
       "ejemplo": "Can I borrow your pen?",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-72",
@@ -627,7 +718,8 @@
       "ejemplo": "I can lend you my charger.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-73",
@@ -636,7 +728,8 @@
       "ejemplo": "My roommate is studying engineering too.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-74",
@@ -645,7 +738,8 @@
       "ejemplo": "Let's clean up the kitchen.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-75",
@@ -654,7 +748,8 @@
       "ejemplo": "There's a park nearby.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-76",
@@ -663,7 +758,8 @@
       "ejemplo": "I packed my suitcase last night.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-77",
@@ -672,7 +768,8 @@
       "ejemplo": "Don't forget your boarding pass.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-78",
@@ -681,7 +778,8 @@
       "ejemplo": "We checked in at the hotel at noon.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-79",
@@ -690,7 +788,8 @@
       "ejemplo": "The departure is at six in the morning.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-80",
@@ -699,7 +798,8 @@
       "ejemplo": "Our arrival was delayed by an hour.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-81",
@@ -708,7 +808,8 @@
       "ejemplo": "Make sure your passport is valid.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-82",
@@ -717,7 +818,8 @@
       "ejemplo": "I booked a round trip to Mexico City.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-83",
@@ -726,7 +828,8 @@
       "ejemplo": "We got lost looking for the hotel.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-84",
@@ -735,7 +838,8 @@
       "ejemplo": "Can you check the map?",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-85",
@@ -744,7 +848,8 @@
       "ejemplo": "There were many tourists at the museum.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-86",
@@ -753,7 +858,8 @@
       "ejemplo": "My luggage didn't arrive.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-87",
@@ -762,7 +868,8 @@
       "ejemplo": "I still need to pack my bag.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-88",
@@ -771,7 +878,8 @@
       "ejemplo": "Can I have a receipt, please?",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-89",
@@ -780,7 +888,8 @@
       "ejemplo": "I'd rather pay in cash.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-90",
@@ -789,7 +898,8 @@
       "ejemplo": "Keep the change.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-91",
@@ -798,7 +908,8 @@
       "ejemplo": "The customer asked for a refund.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-92",
@@ -807,7 +918,8 @@
       "ejemplo": "The waiter brought the menu.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-93",
@@ -816,7 +928,8 @@
       "ejemplo": "I booked a table for two.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-94",
@@ -825,7 +938,8 @@
       "ejemplo": "Is this table available?",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-95",
@@ -834,7 +948,8 @@
       "ejemplo": "I need to cancel my appointment.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-96",
@@ -843,7 +958,8 @@
       "ejemplo": "The repair took two days.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-97",
@@ -852,7 +968,8 @@
       "ejemplo": "My phone screen is broken.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-98",
@@ -861,16 +978,18 @@
       "ejemplo": "Can you fix this for me?",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-99",
       "ingles": "warranty",
       "espanol": "garantía",
-      "ejemplo": "The laptop still has warranty.",
+      "ejemplo": "The laptop is still under warranty.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-100",
@@ -879,7 +998,8 @@
       "ejemplo": "They gave me a refund.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-101",
@@ -888,7 +1008,8 @@
       "ejemplo": "We studied a new sorting algorithm.",
       "nivelCEFR": "B1",
       "categoria": "estudios_ia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-102",
@@ -897,7 +1018,8 @@
       "ejemplo": "It took hours to train the model.",
       "nivelCEFR": "B1",
       "categoria": "estudios_ia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-103",
@@ -906,7 +1028,8 @@
       "ejemplo": "The accuracy improved after more data.",
       "nivelCEFR": "B1",
       "categoria": "estudios_ia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-104",
@@ -915,7 +1038,8 @@
       "ejemplo": "The model predicts customer behavior.",
       "nivelCEFR": "B1",
       "categoria": "estudios_ia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-105",
@@ -924,7 +1048,8 @@
       "ejemplo": "She explained how a neural network works.",
       "nivelCEFR": "B1",
       "categoria": "estudios_ia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-106",
@@ -933,16 +1058,18 @@
       "ejemplo": "We spent a week labeling the data.",
       "nivelCEFR": "B1",
       "categoria": "estudios_ia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-107",
       "ingles": "assignment",
-      "espanol": "tarea asignada",
+      "espanol": "tarea / trabajo asignado (escolar)",
       "ejemplo": "The assignment is due on Monday.",
       "nivelCEFR": "B1",
       "categoria": "estudios_ia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-108",
@@ -951,7 +1078,8 @@
       "ejemplo": "I missed the lecture yesterday.",
       "nivelCEFR": "B1",
       "categoria": "estudios_ia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-109",
@@ -960,7 +1088,8 @@
       "ejemplo": "Please submit your project by Friday.",
       "nivelCEFR": "B1",
       "categoria": "estudios_ia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-110",
@@ -969,7 +1098,8 @@
       "ejemplo": "My classmate helped me understand the topic.",
       "nivelCEFR": "B1",
       "categoria": "estudios_ia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-111",
@@ -978,7 +1108,8 @@
       "ejemplo": "Let's catch up next week.",
       "nivelCEFR": "B1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-112",
@@ -987,7 +1118,8 @@
       "ejemplo": "Just a heads-up, the meeting moved.",
       "nivelCEFR": "B1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-113",
@@ -996,7 +1128,8 @@
       "ejemplo": "We found a workaround for now.",
       "nivelCEFR": "B1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-114",
@@ -1005,7 +1138,8 @@
       "ejemplo": "She brought up a good point.",
       "nivelCEFR": "B1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-115",
@@ -1014,7 +1148,8 @@
       "ejemplo": "The turnaround time is two days.",
       "nivelCEFR": "B1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-116",
@@ -1023,7 +1158,8 @@
       "ejemplo": "Let's touch base tomorrow.",
       "nivelCEFR": "B1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-117",
@@ -1032,7 +1168,8 @@
       "ejemplo": "This task is overdue.",
       "nivelCEFR": "B1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-118",
@@ -1041,7 +1178,8 @@
       "ejemplo": "Let's wrap up the meeting.",
       "nivelCEFR": "B1",
       "categoria": "comunicacion_profesional",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-119",
@@ -1050,7 +1188,8 @@
       "ejemplo": "I planned the whole itinerary.",
       "nivelCEFR": "B1",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-120",
@@ -1059,7 +1198,8 @@
       "ejemplo": "There was a two-hour delay.",
       "nivelCEFR": "B1",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-121",
@@ -1068,7 +1208,8 @@
       "ejemplo": "We had to reschedule the flight.",
       "nivelCEFR": "B1",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-122",
@@ -1077,7 +1218,8 @@
       "ejemplo": "The accommodation was close to downtown.",
       "nivelCEFR": "B1",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-123",
@@ -1086,7 +1228,8 @@
       "ejemplo": "I need to find a currency exchange.",
       "nivelCEFR": "B1",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-124",
@@ -1095,7 +1238,8 @@
       "ejemplo": "I complained about the service.",
       "nivelCEFR": "B1",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-125",
@@ -1104,7 +1248,8 @@
       "ejemplo": "Customer service was very helpful.",
       "nivelCEFR": "B1",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-126",
@@ -1113,7 +1258,8 @@
       "ejemplo": "I have one brother.",
       "nivelCEFR": "A1",
       "categoria": "numeros",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-127",
@@ -1122,7 +1268,8 @@
       "ejemplo": "She has two cats.",
       "nivelCEFR": "A1",
       "categoria": "numeros",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-128",
@@ -1131,7 +1278,8 @@
       "ejemplo": "I need three apples.",
       "nivelCEFR": "A1",
       "categoria": "numeros",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-129",
@@ -1140,7 +1288,8 @@
       "ejemplo": "The class starts at five.",
       "nivelCEFR": "A1",
       "categoria": "numeros",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-130",
@@ -1149,7 +1298,8 @@
       "ejemplo": "I am ten minutes late.",
       "nivelCEFR": "A1",
       "categoria": "numeros",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-131",
@@ -1158,7 +1308,8 @@
       "ejemplo": "He is twenty years old.",
       "nivelCEFR": "A1",
       "categoria": "numeros",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-132",
@@ -1167,7 +1318,8 @@
       "ejemplo": "The book is one hundred pesos.",
       "nivelCEFR": "A1",
       "categoria": "numeros",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-133",
@@ -1176,7 +1328,8 @@
       "ejemplo": "Today is the first day of class.",
       "nivelCEFR": "A1",
       "categoria": "numeros",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-134",
@@ -1185,7 +1338,8 @@
       "ejemplo": "My bag is red.",
       "nivelCEFR": "A1",
       "categoria": "colores",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-135",
@@ -1194,7 +1348,8 @@
       "ejemplo": "The sky is blue.",
       "nivelCEFR": "A1",
       "categoria": "colores",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-136",
@@ -1203,7 +1358,8 @@
       "ejemplo": "I like the green door.",
       "nivelCEFR": "A1",
       "categoria": "colores",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-137",
@@ -1212,7 +1368,8 @@
       "ejemplo": "The banana is yellow.",
       "nivelCEFR": "A1",
       "categoria": "colores",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-138",
@@ -1221,7 +1378,8 @@
       "ejemplo": "I have a black phone.",
       "nivelCEFR": "A1",
       "categoria": "colores",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-139",
@@ -1230,7 +1388,8 @@
       "ejemplo": "The wall is white.",
       "nivelCEFR": "A1",
       "categoria": "colores",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-140",
@@ -1239,7 +1398,8 @@
       "ejemplo": "She has a pink shirt.",
       "nivelCEFR": "A1",
       "categoria": "colores",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-141",
@@ -1248,7 +1408,8 @@
       "ejemplo": "I eat an orange every morning.",
       "nivelCEFR": "A1",
       "categoria": "colores",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-142",
@@ -1257,7 +1418,8 @@
       "ejemplo": "My mother is a nurse.",
       "nivelCEFR": "A1",
       "categoria": "familia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-143",
@@ -1266,7 +1428,8 @@
       "ejemplo": "My father works at a bank.",
       "nivelCEFR": "A1",
       "categoria": "familia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-144",
@@ -1275,7 +1438,8 @@
       "ejemplo": "My sister is fifteen.",
       "nivelCEFR": "A1",
       "categoria": "familia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-145",
@@ -1284,7 +1448,8 @@
       "ejemplo": "My brother likes music.",
       "nivelCEFR": "A1",
       "categoria": "familia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-146",
@@ -1293,7 +1458,8 @@
       "ejemplo": "Her son is five years old.",
       "nivelCEFR": "A1",
       "categoria": "familia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-147",
@@ -1302,7 +1468,8 @@
       "ejemplo": "Their daughter is at school.",
       "nivelCEFR": "A1",
       "categoria": "familia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-148",
@@ -1311,7 +1478,8 @@
       "ejemplo": "My grandmother cooks very well.",
       "nivelCEFR": "A1",
       "categoria": "familia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-149",
@@ -1320,7 +1488,8 @@
       "ejemplo": "My grandfather reads the news.",
       "nivelCEFR": "A1",
       "categoria": "familia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-150",
@@ -1329,7 +1498,8 @@
       "ejemplo": "I have a big family.",
       "nivelCEFR": "A1",
       "categoria": "familia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-151",
@@ -1338,7 +1508,8 @@
       "ejemplo": "She is my best friend.",
       "nivelCEFR": "A1",
       "categoria": "familia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-152",
@@ -1347,7 +1518,8 @@
       "ejemplo": "I eat bread with butter.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-153",
@@ -1356,7 +1528,8 @@
       "ejemplo": "Can I have some water?",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-154",
@@ -1365,7 +1538,8 @@
       "ejemplo": "I drink milk in the morning.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-155",
@@ -1374,7 +1548,8 @@
       "ejemplo": "We eat rice every day.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-156",
@@ -1383,7 +1558,8 @@
       "ejemplo": "I want one egg, please.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-157",
@@ -1392,7 +1568,8 @@
       "ejemplo": "The apple is red.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-158",
@@ -1401,7 +1578,8 @@
       "ejemplo": "I like chicken with rice.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-159",
@@ -1410,7 +1588,8 @@
       "ejemplo": "She puts cheese on the bread.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-160",
@@ -1419,7 +1598,8 @@
       "ejemplo": "I drink tea at night.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-161",
@@ -1428,7 +1608,8 @@
       "ejemplo": "He doesn't eat fish.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-162",
@@ -1437,7 +1618,8 @@
       "ejemplo": "Orange juice is my favorite.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-163",
@@ -1446,7 +1628,8 @@
       "ejemplo": "I eat fruit every day.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-164",
@@ -1455,7 +1638,8 @@
       "ejemplo": "Vegetables are good for you.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-165",
@@ -1464,7 +1648,8 @@
       "ejemplo": "We have lunch at one o'clock.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-166",
@@ -1473,7 +1658,8 @@
       "ejemplo": "Dinner is at eight.",
       "nivelCEFR": "A1",
       "categoria": "comida",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-167",
@@ -1482,7 +1668,8 @@
       "ejemplo": "I eat at home.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-168",
@@ -1491,7 +1678,8 @@
       "ejemplo": "I drink water.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-169",
@@ -1500,7 +1688,8 @@
       "ejemplo": "I sleep eight hours.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-170",
@@ -1509,7 +1698,8 @@
       "ejemplo": "She works in an office.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-171",
@@ -1518,7 +1708,8 @@
       "ejemplo": "I study English at night.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-172",
@@ -1527,7 +1718,8 @@
       "ejemplo": "I read a book every week.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-173",
@@ -1536,7 +1728,8 @@
       "ejemplo": "Please write your name here.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-174",
@@ -1545,7 +1738,8 @@
       "ejemplo": "I walk to school.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-175",
@@ -1554,7 +1748,8 @@
       "ejemplo": "He runs in the park.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-176",
@@ -1563,7 +1758,8 @@
       "ejemplo": "I cook dinner for my family.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-177",
@@ -1572,7 +1768,8 @@
       "ejemplo": "I listen to music on the bus.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-178",
@@ -1581,7 +1778,8 @@
       "ejemplo": "I speak a little English.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-179",
@@ -1590,7 +1788,8 @@
       "ejemplo": "Please open the door.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-180",
@@ -1599,7 +1798,8 @@
       "ejemplo": "I close the window at night.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-181",
@@ -1608,7 +1808,8 @@
       "ejemplo": "I buy bread at the store.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-182",
@@ -1617,7 +1818,8 @@
       "ejemplo": "I go to work by bus.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-183",
@@ -1626,7 +1828,8 @@
       "ejemplo": "Can you come tomorrow?",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-184",
@@ -1635,7 +1838,8 @@
       "ejemplo": "I have two brothers.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-185",
@@ -1644,7 +1848,8 @@
       "ejemplo": "I like coffee.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-186",
@@ -1653,7 +1858,8 @@
       "ejemplo": "I want a glass of water.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-187",
@@ -1662,7 +1868,8 @@
       "ejemplo": "I need a pen.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-188",
@@ -1671,7 +1878,8 @@
       "ejemplo": "I live in a small city.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-189",
@@ -1680,7 +1888,8 @@
       "ejemplo": "He plays the guitar.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-190",
@@ -1689,7 +1898,8 @@
       "ejemplo": "We watch TV at night.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-191",
@@ -1698,7 +1908,8 @@
       "ejemplo": "Can you help me, please?",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-192",
@@ -1707,7 +1918,8 @@
       "ejemplo": "I ask my teacher a question.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-193",
@@ -1716,7 +1928,8 @@
       "ejemplo": "Please wait here.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-194",
@@ -1725,7 +1938,8 @@
       "ejemplo": "I call my mother every day.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-195",
@@ -1734,7 +1948,8 @@
       "ejemplo": "I learn new words every day.",
       "nivelCEFR": "A1",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-196",
@@ -1743,7 +1958,8 @@
       "ejemplo": "My house is near the park.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-197",
@@ -1752,7 +1968,8 @@
       "ejemplo": "The school is big.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-198",
@@ -1761,7 +1978,8 @@
       "ejemplo": "I work in an office.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-199",
@@ -1770,7 +1988,8 @@
       "ejemplo": "We walk in the park.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-200",
@@ -1779,7 +1998,8 @@
       "ejemplo": "The store opens at nine.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-201",
@@ -1788,7 +2008,8 @@
       "ejemplo": "My mother works at the hospital.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-202",
@@ -1797,7 +2018,8 @@
       "ejemplo": "The bank is on the corner.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-203",
@@ -1806,7 +2028,8 @@
       "ejemplo": "We eat at a small restaurant.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-204",
@@ -1815,7 +2038,8 @@
       "ejemplo": "My street is quiet.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-205",
@@ -1824,7 +2048,8 @@
       "ejemplo": "I live in a big city.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-206",
@@ -1833,7 +2058,8 @@
       "ejemplo": "The bus stop is near my house.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-207",
@@ -1842,7 +2068,8 @@
       "ejemplo": "Where is the bathroom?",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-208",
@@ -1851,7 +2078,8 @@
       "ejemplo": "The kitchen is small.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-209",
@@ -1860,7 +2088,8 @@
       "ejemplo": "My bedroom has a big window.",
       "nivelCEFR": "A1",
       "categoria": "lugares",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-210",
@@ -1869,7 +2098,8 @@
       "ejemplo": "Today is Monday.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-211",
@@ -1878,7 +2108,8 @@
       "ejemplo": "See you tomorrow.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-212",
@@ -1887,7 +2118,8 @@
       "ejemplo": "I was at home yesterday.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-213",
@@ -1896,7 +2128,8 @@
       "ejemplo": "I study in the morning.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-214",
@@ -1905,7 +2138,8 @@
       "ejemplo": "We have class in the afternoon.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-215",
@@ -1914,7 +2148,8 @@
       "ejemplo": "I cook in the evening.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-216",
@@ -1923,7 +2158,8 @@
       "ejemplo": "I sleep at night.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-217",
@@ -1932,7 +2168,8 @@
       "ejemplo": "I study English three times a week.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-218",
@@ -1941,7 +2178,8 @@
       "ejemplo": "My birthday is next month.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-219",
@@ -1950,7 +2188,8 @@
       "ejemplo": "I am in my first year.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-220",
@@ -1959,7 +2198,8 @@
       "ejemplo": "My class is on Monday.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-221",
@@ -1968,7 +2208,8 @@
       "ejemplo": "I rest on the weekend.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-222",
@@ -1977,7 +2218,8 @@
       "ejemplo": "I am at home now.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-223",
@@ -1986,7 +2228,8 @@
       "ejemplo": "I am late for class.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-224",
@@ -1995,7 +2238,8 @@
       "ejemplo": "I get up early.",
       "nivelCEFR": "A1",
       "categoria": "tiempo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-225",
@@ -2004,7 +2248,8 @@
       "ejemplo": "It is a big house.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-226",
@@ -2013,7 +2258,8 @@
       "ejemplo": "I have a small bag.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-227",
@@ -2022,7 +2268,8 @@
       "ejemplo": "This is a good book.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-228",
@@ -2031,7 +2278,8 @@
       "ejemplo": "The weather is bad today.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-229",
@@ -2040,7 +2288,8 @@
       "ejemplo": "I have a new phone.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-230",
@@ -2049,7 +2298,8 @@
       "ejemplo": "That is an old house.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-231",
@@ -2058,7 +2308,8 @@
       "ejemplo": "The tea is hot.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-232",
@@ -2067,7 +2318,8 @@
       "ejemplo": "It is cold today.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-233",
@@ -2076,7 +2328,8 @@
       "ejemplo": "I am happy today.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-234",
@@ -2085,7 +2338,8 @@
       "ejemplo": "The test is easy.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-235",
@@ -2094,7 +2348,8 @@
       "ejemplo": "English is hard for me.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-236",
@@ -2103,7 +2358,8 @@
       "ejemplo": "This bag is cheap.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-237",
@@ -2112,7 +2368,8 @@
       "ejemplo": "That phone is expensive.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-238",
@@ -2121,7 +2378,8 @@
       "ejemplo": "The train is fast.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-239",
@@ -2130,7 +2388,8 @@
       "ejemplo": "The bus is slow today.",
       "nivelCEFR": "A1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-240",
@@ -2139,7 +2398,8 @@
       "ejemplo": "My teacher is very kind.",
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-241",
@@ -2148,7 +2408,8 @@
       "ejemplo": "I am a student.",
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-242",
@@ -2157,7 +2418,8 @@
       "ejemplo": "I have a new book.",
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-243",
@@ -2166,7 +2428,8 @@
       "ejemplo": "I use a computer every day.",
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-244",
@@ -2175,7 +2438,8 @@
       "ejemplo": "My phone is on the table.",
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-245",
@@ -2184,7 +2448,8 @@
       "ejemplo": "My class is at nine.",
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-246",
@@ -2193,7 +2458,8 @@
       "ejemplo": "I do my homework at night.",
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-247",
@@ -2202,7 +2468,8 @@
       "ejemplo": "My boss is nice.",
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-248",
@@ -2211,7 +2478,8 @@
       "ejemplo": "I have a new job.",
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-249",
@@ -2220,7 +2488,8 @@
       "ejemplo": "My desk is next to the window.",
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-250",
@@ -2229,7 +2498,8 @@
       "ejemplo": "Can I borrow your pen?",
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-251",
@@ -2238,7 +2508,8 @@
       "ejemplo": "I write in my notebook.",
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-252",
@@ -2247,7 +2518,8 @@
       "ejemplo": "They offer a discount for students.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-253",
@@ -2256,7 +2528,10 @@
       "ejemplo": "Can I borrow your charger?",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "retirada": true,
+      "duplicadoDe": "voc-f1-71",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-254",
@@ -2265,7 +2540,10 @@
       "ejemplo": "I can lend you my umbrella.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "retirada": true,
+      "duplicadoDe": "voc-f1-72",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-255",
@@ -2274,7 +2552,8 @@
       "ejemplo": "I want to improve my English.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-256",
@@ -2283,16 +2562,18 @@
       "ejemplo": "I want to invite you to my party.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-257",
       "ingles": "message",
       "espanol": "mensaje",
-      "ejemplo": "I will send you a message later.",
+      "ejemplo": "I'll send you a message later.",
       "nivelCEFR": "A2",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-258",
@@ -2301,16 +2582,18 @@
       "ejemplo": "I made a reservation for two people.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-259",
       "ingles": "headache",
       "espanol": "dolor de cabeza",
-      "ejemplo": "I have a headache, so I am going to rest.",
+      "ejemplo": "I have a headache, so I'm going to rest.",
       "nivelCEFR": "A2",
       "categoria": "salud",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-260",
@@ -2319,7 +2602,8 @@
       "ejemplo": "Take this medicine twice a day.",
       "nivelCEFR": "A2",
       "categoria": "salud",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-261",
@@ -2328,7 +2612,8 @@
       "ejemplo": "The doctor gave me a prescription.",
       "nivelCEFR": "A2",
       "categoria": "salud",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-262",
@@ -2337,7 +2622,8 @@
       "ejemplo": "The pharmacy is next to the bank.",
       "nivelCEFR": "A2",
       "categoria": "salud",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-263",
@@ -2346,7 +2632,8 @@
       "ejemplo": "I usually wear a jacket in winter.",
       "nivelCEFR": "A2",
       "categoria": "ropa",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-264",
@@ -2355,7 +2642,8 @@
       "ejemplo": "Do you have this shirt in a bigger size?",
       "nivelCEFR": "A2",
       "categoria": "ropa",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-265",
@@ -2364,7 +2652,8 @@
       "ejemplo": "Can I try on these shoes?",
       "nivelCEFR": "A2",
       "categoria": "ropa",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-266",
@@ -2373,7 +2662,8 @@
       "ejemplo": "My phone charger is in my bag.",
       "nivelCEFR": "A2",
       "categoria": "tecnologia_basica",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-267",
@@ -2382,7 +2672,8 @@
       "ejemplo": "I forgot my password.",
       "nivelCEFR": "A2",
       "categoria": "tecnologia_basica",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-268",
@@ -2391,16 +2682,18 @@
       "ejemplo": "I need to download the app first.",
       "nivelCEFR": "A2",
       "categoria": "tecnologia_basica",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-269",
       "ingles": "update",
       "espanol": "actualización",
-      "ejemplo": "There is a new update for my laptop.",
+      "ejemplo": "There's a new update for my laptop.",
       "nivelCEFR": "A2",
       "categoria": "tecnologia_basica",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-270",
@@ -2409,7 +2702,8 @@
       "ejemplo": "The screen of my phone is cracked.",
       "nivelCEFR": "A2",
       "categoria": "tecnologia_basica",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-271",
@@ -2418,7 +2712,8 @@
       "ejemplo": "I sent the report as an attachment.",
       "nivelCEFR": "A2",
       "categoria": "tecnologia_basica",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-272",
@@ -2427,7 +2722,8 @@
       "ejemplo": "The meeting room is on the second floor.",
       "nivelCEFR": "A2",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-273",
@@ -2436,7 +2732,8 @@
       "ejemplo": "My coworker helped me with the task.",
       "nivelCEFR": "A2",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-274",
@@ -2445,7 +2742,8 @@
       "ejemplo": "The exam is next Monday.",
       "nivelCEFR": "A2",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-275",
@@ -2454,7 +2752,8 @@
       "ejemplo": "My favorite subject is math.",
       "nivelCEFR": "A2",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-276",
@@ -2463,7 +2762,8 @@
       "ejemplo": "What is your schedule for tomorrow?",
       "nivelCEFR": "A2",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-277",
@@ -2472,7 +2772,8 @@
       "ejemplo": "I always forget my keys.",
       "nivelCEFR": "A2",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-278",
@@ -2481,25 +2782,28 @@
       "ejemplo": "Do you remember her name?",
       "nivelCEFR": "A2",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-279",
       "ingles": "choose",
       "espanol": "elegir",
-      "ejemplo": "It is hard to choose a gift.",
+      "ejemplo": "It's hard to choose a gift.",
       "nivelCEFR": "A2",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-280",
       "ingles": "decide",
       "espanol": "decidir",
-      "ejemplo": "I cannot decide what to eat.",
+      "ejemplo": "I can't decide what to eat.",
       "nivelCEFR": "A2",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-281",
@@ -2508,7 +2812,8 @@
       "ejemplo": "I prefer tea to coffee.",
       "nivelCEFR": "A2",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-282",
@@ -2517,7 +2822,8 @@
       "ejemplo": "We have enough time to finish.",
       "nivelCEFR": "A2",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-283",
@@ -2526,7 +2832,8 @@
       "ejemplo": "The metro is crowded at six.",
       "nivelCEFR": "A2",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-284",
@@ -2535,16 +2842,18 @@
       "ejemplo": "This chair is very comfortable.",
       "nivelCEFR": "A2",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-285",
       "ingles": "busy",
       "espanol": "ocupado",
-      "ejemplo": "I am busy until five.",
+      "ejemplo": "I'm busy until five.",
       "nivelCEFR": "A2",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-286",
@@ -2553,7 +2862,8 @@
       "ejemplo": "One benefit of remote work is flexibility.",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-287",
@@ -2562,7 +2872,8 @@
       "ejemplo": "I have two years of experience in data analysis.",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-288",
@@ -2571,7 +2882,8 @@
       "ejemplo": "Everyone should participate in the discussion.",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-289",
@@ -2580,7 +2892,8 @@
       "ejemplo": "We need to postpone the trip.",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-290",
@@ -2589,7 +2902,8 @@
       "ejemplo": "The company provides free training.",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-291",
@@ -2598,25 +2912,28 @@
       "ejemplo": "This job requires good communication skills.",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-292",
       "ingles": "responsible",
       "espanol": "responsable",
-      "ejemplo": "He is responsible for the website.",
+      "ejemplo": "He's responsible for the website.",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-293",
       "ingles": "shortage",
       "espanol": "escasez",
-      "ejemplo": "There is a shortage of engineers.",
+      "ejemplo": "There's a shortage of engineers.",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-294",
@@ -2625,7 +2942,8 @@
       "ejemplo": "Could you review my code today?",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-295",
@@ -2634,7 +2952,8 @@
       "ejemplo": "We want to reduce our costs.",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-296",
@@ -2643,7 +2962,8 @@
       "ejemplo": "We resolved the problem in an hour.",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-297",
@@ -2652,7 +2972,8 @@
       "ejemplo": "I suggest we start earlier.",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-298",
@@ -2661,7 +2982,8 @@
       "ejemplo": "I recommend this course to beginners.",
       "nivelCEFR": "B1",
       "categoria": "trabajo",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-299",
@@ -2670,7 +2992,10 @@
       "ejemplo": "Several customers complained about the delay.",
       "nivelCEFR": "B1",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "retirada": true,
+      "duplicadoDe": "voc-f1-124",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-300",
@@ -2679,16 +3004,18 @@
       "ejemplo": "They deliver the package within two days.",
       "nivelCEFR": "B1",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-301",
       "ingles": "fee",
       "espanol": "tarifa",
-      "ejemplo": "There is a small fee for cancellations.",
+      "ejemplo": "There's a small fee for cancellations.",
       "nivelCEFR": "B1",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-302",
@@ -2697,7 +3024,8 @@
       "ejemplo": "The laptop has a two-year guarantee.",
       "nivelCEFR": "B1",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-303",
@@ -2706,7 +3034,8 @@
       "ejemplo": "Please read the instructions carefully.",
       "nivelCEFR": "B1",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-304",
@@ -2715,7 +3044,8 @@
       "ejemplo": "I would like to upgrade my seat.",
       "nivelCEFR": "B1",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-305",
@@ -2724,7 +3054,8 @@
       "ejemplo": "Technical support answered quickly.",
       "nivelCEFR": "B1",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-306",
@@ -2733,16 +3064,18 @@
       "ejemplo": "The staff treated us very well.",
       "nivelCEFR": "B1",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-307",
       "ingles": "afford",
       "espanol": "permitirse",
-      "ejemplo": "I cannot afford a new laptop right now.",
+      "ejemplo": "I can't afford a new laptop right now.",
       "nivelCEFR": "B1",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-308",
@@ -2751,7 +3084,8 @@
       "ejemplo": "Learning a new language is a big challenge.",
       "nivelCEFR": "B1",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-309",
@@ -2760,7 +3094,8 @@
       "ejemplo": "The storm caused a lot of damage.",
       "nivelCEFR": "B1",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-310",
@@ -2769,7 +3104,8 @@
       "ejemplo": "It was a difficult decision.",
       "nivelCEFR": "B1",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-311",
@@ -2778,7 +3114,8 @@
       "ejemplo": "It depends on the weather.",
       "nivelCEFR": "B1",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-312",
@@ -2787,16 +3124,18 @@
       "ejemplo": "She managed to finish before noon.",
       "nivelCEFR": "B1",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-313",
       "ingles": "lack",
       "espanol": "falta",
-      "ejemplo": "There is a lack of information.",
+      "ejemplo": "There's a lack of information.",
       "nivelCEFR": "B1",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-314",
@@ -2805,7 +3144,8 @@
       "ejemplo": "They warned us about the heavy traffic.",
       "nivelCEFR": "B1",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-315",
@@ -2814,7 +3154,8 @@
       "ejemplo": "The journey took six hours.",
       "nivelCEFR": "B1",
       "categoria": "dia_a_dia",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-316",
@@ -2823,7 +3164,8 @@
       "ejemplo": "Is Thursday convenient for you?",
       "nivelCEFR": "B1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-317",
@@ -2832,7 +3174,8 @@
       "ejemplo": "This method is faster and more efficient.",
       "nivelCEFR": "B1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-318",
@@ -2841,16 +3184,18 @@
       "ejemplo": "The internet here is not reliable.",
       "nivelCEFR": "B1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-319",
       "ingles": "temporary",
       "espanol": "temporal",
-      "ejemplo": "It is only a temporary solution.",
+      "ejemplo": "It's only a temporary solution.",
       "nivelCEFR": "B1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-320",
@@ -2859,7 +3204,8 @@
       "ejemplo": "My schedule is flexible this week.",
       "nivelCEFR": "B1",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-321",
@@ -2868,7 +3214,8 @@
       "ejemplo": "I disagree with that opinion.",
       "nivelCEFR": "B1",
       "categoria": "opiniones",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-322",
@@ -2877,7 +3224,8 @@
       "ejemplo": "In my opinion, the plan is too risky.",
       "nivelCEFR": "B1",
       "categoria": "opiniones",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-323",
@@ -2886,7 +3234,8 @@
       "ejemplo": "I prefer to work in the morning.",
       "nivelCEFR": "B1",
       "categoria": "opiniones",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-324",
@@ -2895,7 +3244,8 @@
       "ejemplo": "I assume the meeting is still on.",
       "nivelCEFR": "B1",
       "categoria": "opiniones",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-325",
@@ -2904,7 +3254,8 @@
       "ejemplo": "I doubt we can finish today.",
       "nivelCEFR": "B1",
       "categoria": "opiniones",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-326",
@@ -2913,7 +3264,8 @@
       "ejemplo": "She works as a software developer.",
       "nivelCEFR": "B1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-327",
@@ -2922,7 +3274,8 @@
       "ejemplo": "We fixed the bug in the login page.",
       "nivelCEFR": "B1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-328",
@@ -2931,7 +3284,8 @@
       "ejemplo": "The new feature saves a lot of time.",
       "nivelCEFR": "B1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-329",
@@ -2940,7 +3294,8 @@
       "ejemplo": "The server was down for an hour.",
       "nivelCEFR": "B1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-330",
@@ -2949,7 +3304,8 @@
       "ejemplo": "The database stores all user records.",
       "nivelCEFR": "B1",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-331",
@@ -2958,7 +3314,8 @@
       "ejemplo": "The database is the main bottleneck.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-332",
@@ -2967,7 +3324,8 @@
       "ejemplo": "The team announced a breakthrough in speech recognition.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-333",
@@ -2976,7 +3334,8 @@
       "ejemplo": "The team uses an open-source framework.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-334",
@@ -2985,7 +3344,8 @@
       "ejemplo": "We need a more robust solution.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-335",
@@ -2994,7 +3354,8 @@
       "ejemplo": "We compared the model against a benchmark.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-336",
@@ -3003,7 +3364,8 @@
       "ejemplo": "The dataset contains a strong bias.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-337",
@@ -3012,7 +3374,10 @@
       "ejemplo": "We need to refactor this module.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "retirada": true,
+      "duplicadoDe": "voc-f1-23",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-338",
@@ -3021,7 +3386,8 @@
       "ejemplo": "Each dependency adds a possible risk.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-339",
@@ -3030,7 +3396,8 @@
       "ejemplo": "This function is deprecated.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-340",
@@ -3039,7 +3406,8 @@
       "ejemplo": "We need to integrate the payment system.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-341",
@@ -3048,7 +3416,10 @@
       "ejemplo": "We can leverage existing data to train the model.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "retirada": true,
+      "duplicadoDe": "voc-f1-45",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-342",
@@ -3057,7 +3428,10 @@
       "ejemplo": "The new tool streamlines the approval process.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "retirada": true,
+      "duplicadoDe": "voc-f1-59",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-343",
@@ -3066,7 +3440,8 @@
       "ejemplo": "These steps mitigate the risk of data loss.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-344",
@@ -3075,7 +3450,8 @@
       "ejemplo": "Please verify the data before publishing.",
       "nivelCEFR": "B2",
       "categoria": "tecnico",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-345",
@@ -3084,7 +3460,8 @@
       "ejemplo": "That conclusion is based on a wrong assumption.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-346",
@@ -3093,7 +3470,8 @@
       "ejemplo": "The requirements were ambiguous.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-347",
@@ -3102,7 +3480,8 @@
       "ejemplo": "The results were consistent across all tests.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-348",
@@ -3111,7 +3490,8 @@
       "ejemplo": "The new data contradicts our earlier findings.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-349",
@@ -3120,7 +3500,8 @@
       "ejemplo": "She gave a convincing argument.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-350",
@@ -3129,7 +3510,8 @@
       "ejemplo": "Clear communication is crucial in remote teams.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-351",
@@ -3138,7 +3520,8 @@
       "ejemplo": "The main drawback is the high cost.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-352",
@@ -3147,7 +3530,10 @@
       "ejemplo": "Could you elaborate on that point?",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "retirada": true,
+      "duplicadoDe": "voc-f1-50",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-353",
@@ -3156,7 +3542,8 @@
       "ejemplo": "I want to emphasize the security risks.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-354",
@@ -3165,7 +3552,8 @@
       "ejemplo": "Is this schedule feasible?",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-355",
@@ -3174,7 +3562,8 @@
       "ejemplo": "We found a serious flaw in the design.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-356",
@@ -3183,7 +3572,8 @@
       "ejemplo": "What are the implications for our budget?",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-357",
@@ -3192,7 +3582,8 @@
       "ejemplo": "The survey gave us useful insights.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-358",
@@ -3201,7 +3592,8 @@
       "ejemplo": "How do you justify this extra expense?",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-359",
@@ -3210,7 +3602,8 @@
       "ejemplo": "The outcome of the experiment surprised everyone.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-360",
@@ -3219,7 +3612,8 @@
       "ejemplo": "The amount of information was overwhelming.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-361",
@@ -3228,7 +3622,8 @@
       "ejemplo": "He was reluctant to change the plan.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-362",
@@ -3237,7 +3632,8 @@
       "ejemplo": "There was a substantial increase in traffic.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-363",
@@ -3246,16 +3642,18 @@
       "ejemplo": "Constant changes undermine the confidence of the team.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-364",
       "ingles": "valid",
       "espanol": "válido",
-      "ejemplo": "That is a valid concern.",
+      "ejemplo": "That's a valid concern.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-365",
@@ -3264,7 +3662,8 @@
       "ejemplo": "Remote work has become widespread.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-366",
@@ -3273,7 +3672,8 @@
       "ejemplo": "A common pitfall is skipping the tests.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-367",
@@ -3282,7 +3682,8 @@
       "ejemplo": "She did a thorough review of the contract.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-368",
@@ -3291,7 +3692,8 @@
       "ejemplo": "The downside is that it takes longer.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-369",
@@ -3300,7 +3702,8 @@
       "ejemplo": "Updating every record by hand is tedious.",
       "nivelCEFR": "B2",
       "categoria": "argumentacion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-370",
@@ -3309,7 +3712,8 @@
       "ejemplo": "Managers are accountable for the results.",
       "nivelCEFR": "B2",
       "categoria": "gestion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-371",
@@ -3318,16 +3722,20 @@
       "ejemplo": "We must prioritize the critical bugs.",
       "nivelCEFR": "B2",
       "categoria": "gestion",
-      "revisar": true
+      "revisar": true,
+      "retirada": true,
+      "duplicadoDe": "voc-f1-46",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-372",
       "ingles": "tackle",
       "espanol": "abordar",
-      "ejemplo": "Let us tackle the biggest problem first.",
+      "ejemplo": "Let's tackle the biggest problem first.",
       "nivelCEFR": "B2",
       "categoria": "gestion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-373",
@@ -3336,7 +3744,8 @@
       "ejemplo": "We reached a compromise on the deadline.",
       "nivelCEFR": "B2",
       "categoria": "gestion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-374",
@@ -3345,7 +3754,8 @@
       "ejemplo": "The results reinforce our hypothesis.",
       "nivelCEFR": "B2",
       "categoria": "gestion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-375",
@@ -3354,7 +3764,8 @@
       "ejemplo": "Please reconsider your decision.",
       "nivelCEFR": "B2",
       "categoria": "gestion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-376",
@@ -3363,7 +3774,8 @@
       "ejemplo": "Scope creep delayed the launch by a month.",
       "nivelCEFR": "B2",
       "categoria": "gestion",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-377",
@@ -3372,7 +3784,8 @@
       "ejemplo": "She came up with a clever solution.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-378",
@@ -3381,7 +3794,8 @@
       "ejemplo": "We carried out the survey last month.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-379",
@@ -3390,7 +3804,10 @@
       "ejemplo": "He brought up an important issue.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "retirada": true,
+      "duplicadoDe": "voc-f1-114",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-380",
@@ -3399,16 +3816,18 @@
       "ejemplo": "I would like to point out one problem.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-381",
       "ingles": "rule out",
       "espanol": "descartar",
-      "ejemplo": "We cannot rule out a hardware failure.",
+      "ejemplo": "We can't rule out a hardware failure.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-382",
@@ -3417,25 +3836,28 @@
       "ejemplo": "The data is backed up every night.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-383",
       "ingles": "sort out",
       "espanol": "resolver",
-      "ejemplo": "Let us sort out the details tomorrow.",
+      "ejemplo": "Let's sort out the details tomorrow.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-384",
       "ingles": "fall behind",
       "espanol": "quedarse atrás",
-      "ejemplo": "We are falling behind schedule.",
+      "ejemplo": "We're falling behind schedule.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-385",
@@ -3444,16 +3866,18 @@
       "ejemplo": "We ran into a few unexpected issues.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-386",
       "ingles": "look into",
       "espanol": "investigar",
-      "ejemplo": "I will look into the error.",
+      "ejemplo": "I'll look into the error.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-387",
@@ -3462,7 +3886,8 @@
       "ejemplo": "She turned down the job offer.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-388",
@@ -3471,16 +3896,18 @@
       "ejemplo": "The company is cutting back on expenses.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-389",
       "ingles": "set up",
       "espanol": "configurar",
-      "ejemplo": "I will set up the test environment.",
+      "ejemplo": "I'll set up the test environment.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-390",
@@ -3489,7 +3916,8 @@
       "ejemplo": "He always follows through on his promises.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-391",
@@ -3498,16 +3926,18 @@
       "ejemplo": "The director will step down in June.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-392",
       "ingles": "hold off",
       "espanol": "posponer",
-      "ejemplo": "Let us hold off on the release until Monday.",
+      "ejemplo": "Let's hold off on the release until Monday.",
       "nivelCEFR": "B2",
       "categoria": "phrasal_verbs",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-393",
@@ -3516,7 +3946,8 @@
       "ejemplo": "I bought two tickets for the concert.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-394",
@@ -3525,7 +3956,8 @@
       "ejemplo": "The train leaves from platform three.",
       "nivelCEFR": "A2",
       "categoria": "viajes",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-395",
@@ -3534,7 +3966,8 @@
       "ejemplo": "Could we have the bill, please?",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-396",
@@ -3543,16 +3976,18 @@
       "ejemplo": "We left a tip for the waiter.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-397",
       "ingles": "queue",
       "espanol": "fila",
-      "ejemplo": "There is a long queue at the bank.",
+      "ejemplo": "There's a long queue at the bank.",
       "nivelCEFR": "A2",
       "categoria": "servicios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-398",
@@ -3561,7 +3996,8 @@
       "ejemplo": "I have a pain in my back.",
       "nivelCEFR": "A2",
       "categoria": "salud",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-399",
@@ -3570,7 +4006,8 @@
       "ejemplo": "She has a fever and a cough.",
       "nivelCEFR": "A2",
       "categoria": "salud",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-400",
@@ -3579,7 +4016,8 @@
       "ejemplo": "Take a jacket; it is cold outside.",
       "nivelCEFR": "A2",
       "categoria": "ropa",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-401",
@@ -3588,7 +4026,8 @@
       "ejemplo": "What is your email address?",
       "nivelCEFR": "A2",
       "categoria": "tecnologia_basica",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-402",
@@ -3597,16 +4036,20 @@
       "ejemplo": "Tomorrow is deadline day for the project.",
       "nivelCEFR": "A2",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "retirada": true,
+      "duplicadoDe": "voc-f1-1",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-403",
       "ingles": "salary",
       "espanol": "sueldo",
-      "ejemplo": "He is happy with his new salary.",
+      "ejemplo": "He's happy with his new salary.",
       "nivelCEFR": "A2",
       "categoria": "trabajo_estudios",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-404",
@@ -3615,16 +4058,18 @@
       "ejemplo": "I always lose my umbrella.",
       "nivelCEFR": "A2",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-405",
       "ingles": "hurry",
       "espanol": "darse prisa",
-      "ejemplo": "We have to hurry or we will miss the bus.",
+      "ejemplo": "We have to hurry, or we'll miss the bus.",
       "nivelCEFR": "A2",
       "categoria": "verbos_basicos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-f1-406",
@@ -3633,7 +4078,108 @@
       "ejemplo": "My street is very noisy at night.",
       "nivelCEFR": "A2",
       "categoria": "adjetivos",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-f1-407",
+      "ingles": "outweigh",
+      "espanol": "pesar más que / superar",
+      "ejemplo": "The benefits clearly outweigh the risks.",
+      "nivelCEFR": "B2",
+      "categoria": "revision_2026_11",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-f1-408",
+      "ingles": "to overlook",
+      "espanol": "pasar por alto",
+      "ejemplo": "We overlooked one small detail in the contract.",
+      "nivelCEFR": "B2",
+      "categoria": "revision_2026_11",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-f1-409",
+      "ingles": "straightforward",
+      "espanol": "sencillo / directo",
+      "ejemplo": "The setup process is pretty straightforward.",
+      "nivelCEFR": "B2",
+      "categoria": "revision_2026_11",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-f1-410",
+      "ingles": "to oversee",
+      "espanol": "supervisar",
+      "ejemplo": "She oversees a team of six engineers.",
+      "nivelCEFR": "B2",
+      "categoria": "revision_2026_11",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-f1-411",
+      "ingles": "tangible",
+      "espanol": "tangible / concreto",
+      "ejemplo": "We need tangible results, not just promises.",
+      "nivelCEFR": "B2",
+      "categoria": "revision_2026_11",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-f1-412",
+      "ingles": "to hinder",
+      "espanol": "obstaculizar",
+      "ejemplo": "Poor communication hinders the whole project.",
+      "nivelCEFR": "B2",
+      "categoria": "revision_2026_11",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-f1-413",
+      "ingles": "nuance",
+      "espanol": "matiz",
+      "ejemplo": "The translation loses some of the nuance.",
+      "nivelCEFR": "B2",
+      "categoria": "revision_2026_11",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-f1-414",
+      "ingles": "to anticipate",
+      "espanol": "anticipar / prever",
+      "ejemplo": "We didn't anticipate so many users on the first day.",
+      "nivelCEFR": "B2",
+      "categoria": "revision_2026_11",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-f1-415",
+      "ingles": "to be in charge of",
+      "espanol": "estar a cargo de",
+      "ejemplo": "Who's in charge of the final report?",
+      "nivelCEFR": "B2",
+      "categoria": "revision_2026_11",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-f1-416",
+      "ingles": "to keep track of",
+      "espanol": "llevar el control de",
+      "ejemplo": "I use an app to keep track of my expenses.",
+      "nivelCEFR": "B2",
+      "categoria": "revision_2026_11",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     }
   ]
 }

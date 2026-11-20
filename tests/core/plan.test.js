@@ -353,4 +353,17 @@
     );
     Test.assertEqual(r.pasos.filter(function (p) { return p.tipo === "practica"; }).length >= 1, true);
   });
+
+  Test.test("armarColaRepaso: una tarjeta retirada (duplicada) no entra a la cola, vencida o nueva", function () {
+    var hoy = new Date(2026, 10, 20);
+    var tarjetas = [
+      { id: "v1", repeticiones: 3, proximaFecha: "2026-11-01", nivelCEFR: "A2", retirada: true },
+      { id: "v2", repeticiones: 3, proximaFecha: "2026-11-01", nivelCEFR: "A2" },
+      { id: "n1", repeticiones: 0, proximaFecha: "2026-11-20", nivelCEFR: "A2", retirada: true },
+      { id: "n2", repeticiones: 0, proximaFecha: "2026-11-20", nivelCEFR: "A2" }
+    ];
+    var r = App.Plan.armarColaRepaso(tarjetas, hoy, { nivelGlobal: "A2" });
+    var ids = r.cola.map(function (t) { return t.id; }).sort();
+    Test.assertEqual(JSON.stringify(ids), JSON.stringify(["n2", "v2"]));
+  });
 })();

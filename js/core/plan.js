@@ -227,6 +227,9 @@
     });
     var idxNivelActual = global.App.Avance.indiceNivel(o.nivelGlobal || "A1");
 
+    tarjetas = (tarjetas || []).filter(function (t) {
+      return !t.retirada; // tarjetas retiradas por duplicadas (D31): se conservan guardadas pero no se repasan
+    });
     var vencidas = (tarjetas || [])
       .filter(function (t) {
         return (t.repeticiones || 0) > 0 && t.proximaFecha <= hoy;

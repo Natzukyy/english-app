@@ -768,6 +768,35 @@
         });
       });
 
+      prueba("tarjetas retiradas (duplicadas): conservan su SM-2 guardado, no se crean si no existían y no se repasan", function () {
+        var ahora = new Date(2026, 10, 20);
+        // voc-f1-253 ("borrow") y voc-f1-254 ("lend") están retiradas en el contenido (duplican a 71/72).
+        return limpiarStores(["srs_cards", "settings"]).then(function () {
+          return App.Storage.put("srs_cards", { id: "voc-voc-f1-253", frente: "borrow", atras: "viejo", tipo: "vocabulario", nivelCEFR: "A2", repeticiones: 4, intervaloDias: 15, facilidad: 2.1, proximaFecha: "2026-11-01" });
+        }).then(function () {
+          return App.Datos.sembrarTarjetasSiHaceFalta(ahora);
+        }).then(function (todas) {
+          var con = todas.filter(function (c) { return c.id === "voc-voc-f1-253"; })[0];
+          assertTrue(!!con, "la tarjeta retirada NO se borra (sin huérfanas)");
+          assertEqual(con.repeticiones, 4);
+          assertEqual(con.intervaloDias, 15);
+          assertEqual(con.facilidad, 2.1);
+          assertEqual(con.proximaFecha, "2026-11-01");
+          assertEqual(con.retirada, true);
+          assertEqual(todas.filter(function (c) { return c.id === "voc-voc-f1-254"; }).length, 0); // la que nunca existió no se crea
+          return App.Datos.obtenerColaRepaso(ahora);
+        }).then(function (cola) {
+          assertEqual(cola.filter(function (c) { return c.id === "voc-voc-f1-253"; }).length, 0);
+          return App.Datos.contarTarjetasRepaso(ahora);
+        }).then(function (conteo) {
+          return App.Storage.getAll("srs_cards").then(function (todas) {
+            // la retirada, aunque vencida, no cuenta como pendiente
+            var vencidasReales = todas.filter(function (c) { return !c.retirada && (c.repeticiones || 0) > 0 && App.SRS.estaParaRepasar(c, ahora); }).length;
+            assertEqual(conteo.vencidas, vencidasReales);
+          });
+        });
+      });
+
       function correrTodo() {
         var lista = document.getElementById("lista-resultados");
         var resumen = document.getElementById("resumen");

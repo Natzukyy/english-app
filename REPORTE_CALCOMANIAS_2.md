@@ -27,7 +27,7 @@ Visto (fotogramas pausados al 0/25/50/75/100 %, `getAnimations()`, Performance A
 - `tests/integracion.html` (IndexedDB real): **18 de 18**.
 - Scripts e2e en `tests/e2e/`: flujo-completo, reanudar-y-practicar, cambio-de-dia, offline, animaciones, lluvia, rendimiento, accesibilidad, i18n-snapshot.
 
-## Contenido final (validado por `scripts/validar_contenido.py`)
+## Contenido final (validado por `tools/validar_contenido.py`)
 | Habilidad | A1 | A2 | B1 | B2 | C1 |
 |---|---|---|---|---|---|
 | Lecturas | 12 | 12 | 12 | 12 | – |

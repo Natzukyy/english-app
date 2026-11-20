@@ -31,7 +31,8 @@
         }
       ],
       "transcripcion": "Hi, can I get a medium coffee with milk, please? No sugar. And can I also get a small chocolate muffin? That's for here, not to go. How much is that in total?",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-buzon-tarde",
@@ -53,17 +54,18 @@
         {
           "pregunta": "What does the speaker ask the listener to do?",
           "opciones": [
-            "Cancel the meeting",
+            "Cancel the meeting for the whole morning",
             "Tell the team the meeting might start late",
-            "Come and pick them up",
-            "Call the office manager"
+            "Come and pick them up at the bus stop",
+            "Call the office manager about the delay"
           ],
           "respuestaCorrecta": 1,
           "id": "esc-fase1-buzon-tarde-p2"
         }
       ],
       "transcripcion": "Hey, it's me. I'm really sorry, but my bus is late and I think I'll get to the office around nine thirty. Can you tell the team the meeting might need to start a few minutes late? I'll call you again when I'm close. Thanks!",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-registro-hotel",
@@ -95,7 +97,8 @@
         }
       ],
       "transcripcion": "Good evening, welcome. Do you have a reservation? Great, can I see your ID, please? Perfect, you're in room four twelve, on the fourth floor. Breakfast is from seven to ten in the morning. Here's your key. Do you need help with your bags?",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-pronostico-clima",
@@ -127,7 +130,8 @@
         }
       ],
       "transcripcion": "Good morning! Here's the weather for today. It will be cloudy in the morning, with some rain after lunch. Temperatures will stay around eighteen degrees. Don't forget your umbrella if you're going out this afternoon. Tomorrow will be sunny and warmer.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-wifi-coworking",
@@ -149,9 +153,9 @@
         {
           "pregunta": "Where does the speaker find the information?",
           "opciones": [
-            "On a napkin",
+            "On a napkin next to the coffee machine",
             "On the wall behind the counter",
-            "On their phone",
+            "On their phone, in an old message",
             "A staff member tells them directly"
           ],
           "respuestaCorrecta": 1,
@@ -159,7 +163,8 @@
         }
       ],
       "transcripcion": "Excuse me, is this seat free? Thanks. Sorry to bother you, but do you know the wifi password here? Oh, it's on the wall behind the counter? Okay, I see it now. Thank you so much, that's really helpful.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-cita-doctor",
@@ -191,7 +196,8 @@
         }
       ],
       "transcripcion": "Hello, this is the clinic calling to confirm your appointment on Thursday at eleven in the morning with Doctor Lane. Please arrive fifteen minutes early. If you need to change the time, call us back before Wednesday. Thank you, and see you Thursday.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-anuncio-tren-retraso",
@@ -223,7 +229,8 @@
         }
       ],
       "transcripcion": "Attention, passengers. The nine fifteen train to the city center is delayed by twenty minutes due to a signal problem. We're sorry for the inconvenience. Please check the screens for updates. The next train on this platform will leave at nine thirty five.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-compras-roomie",
@@ -255,7 +262,8 @@
         }
       ],
       "transcripcion": "Hey, I'm going to the supermarket now. Do we need anything? I know we're out of milk and eggs. Should I get more coffee too? Okay, I'll get milk, eggs, and coffee. Do you want anything else, like fruit or bread?",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-buzon-conflicto-horario",
@@ -266,10 +274,10 @@
         {
           "pregunta": "What is the problem Carla describes?",
           "opciones": [
-            "She forgot about the meeting",
+            "She forgot about the meeting completely",
             "The meeting overlaps with another one",
-            "The meeting was cancelled",
-            "She is traveling that day"
+            "The meeting was cancelled by the organizer",
+            "She is traveling that day for work"
           ],
           "respuestaCorrecta": 1,
           "id": "esc-fase1-buzon-conflicto-horario-p1"
@@ -287,7 +295,8 @@
         }
       ],
       "transcripcion": "Hi, it's Carla. I just realized the meeting you scheduled for three o'clock overlaps with another one I already had on my calendar. Would it be possible to move it to four, or should I just send someone else from my team instead? Let me know what works best for you, and sorry for the short notice.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-podcast-herramientas-remoto",
@@ -319,7 +328,8 @@
         }
       ],
       "transcripcion": "Welcome back to the show. Today we're talking about tools that make remote work easier. A lot of teams rely on shared documents and video calls, but honestly, the tool that changes the most for me is a good task board, because it shows everyone exactly what's being worked on without needing another meeting.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-soporte-internet",
@@ -351,7 +361,8 @@
         }
       ],
       "transcripcion": "Thanks for calling support, how can I help? My internet has been down since this morning. Okay, can you tell me if the lights on your router are on? Two of them are blinking orange. Got it, that usually means a connection issue on our end. I'm going to restart your line remotely, it should be back in about five minutes.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-llamada-fecha-limite",
@@ -383,7 +394,8 @@
         }
       ],
       "transcripcion": "Hey, quick question. Are we still on track for Friday's deadline? Honestly, I'm a bit worried about the testing part, it's taking longer than we planned. Do you think we should ask for one more day, or just focus on the most important features first? I think focusing on the main features makes more sense than asking for extra time.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-tour-ciudad",
@@ -415,7 +427,8 @@
         }
       ],
       "transcripcion": "Alright, follow me this way. This street used to be the old market area, and if you look up, you can still see some of the original buildings from over a hundred years ago. We'll stop at the main square in about ten minutes, and that's where we'll take a short break before continuing to the river.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-anuncio-bootcamp",
@@ -437,17 +450,18 @@
         {
           "pregunta": "What do most students finish with?",
           "opciones": [
-            "A certificate only",
+            "A certificate with no real projects",
             "A project they can show in an interview",
-            "A guaranteed job offer",
-            "A university degree"
+            "A guaranteed job offer at a big company",
+            "A university degree in computer science"
           ],
           "respuestaCorrecta": 1,
           "id": "esc-fase1-anuncio-bootcamp-p2"
         }
       ],
       "transcripcion": "Thinking about changing careers? Our twelve week coding bootcamp teaches you the skills real companies are looking for, from building websites to working with real data. Classes start every month, and most students finish with a project they can actually show in an interview. Visit our website to learn more.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-laptop-machine-learning",
@@ -479,7 +493,8 @@
         }
       ],
       "transcripcion": "I'm trying to pick a laptop for machine learning classes, but I'm not sure what really matters. Is it more about the processor or the graphics card? Honestly, for most student projects, having enough memory matters more than people think, because the data itself can be pretty large. The graphics card only becomes really important later on.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-aeropuerto-cambio-puerta",
@@ -511,7 +526,8 @@
         }
       ],
       "transcripcion": "Attention, passengers traveling on flight two twelve to Chicago. The departure gate has changed from gate seven to gate fifteen. Boarding will begin in thirty minutes. Please make your way to the new gate as soon as possible, and have your boarding pass ready.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-podcast-etica-ia",
@@ -533,17 +549,18 @@
         {
           "pregunta": "What does the speaker think teams need to do?",
           "opciones": [
-            "Avoid using AI completely",
+            "Avoid using artificial intelligence in any decision",
             "Document their decisions well enough to trace what went wrong",
-            "Let the data decide everything",
-            "Hire more engineers"
+            "Let the data decide everything without human review",
+            "Hire more engineers to check every single result"
           ],
           "respuestaCorrecta": 1,
           "id": "esc-fase1-podcast-etica-ia-p2"
         }
       ],
       "transcripcion": "One thing that keeps coming up in these conversations is accountability. When a model makes a biased decision, who's actually responsible: the engineer who trained it, the company that deployed it, or the data it learned from? I don't think there's a single answer, but I do think teams need to document their decisions well enough that someone could actually trace what went wrong.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-instrucciones-guardia",
@@ -575,7 +592,8 @@
         }
       ],
       "transcripcion": "So here's how the on-call rotation works starting next month. Each engineer covers one week at a time, and you'll get a notification if something breaks after hours. If you can't fix it within thirty minutes, escalate to the backup person instead of trying to solve everything alone. We'll review every incident together on Mondays, not to blame anyone, but to actually learn from it.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-disputa-factura",
@@ -587,9 +605,9 @@
           "pregunta": "What is the customer's complaint?",
           "opciones": [
             "They were charged twice for the same subscription",
-            "They never received their order",
-            "Their account was cancelled by mistake",
-            "The price increased without notice"
+            "They never received the order they paid for",
+            "Their account was cancelled by mistake last week",
+            "The price increased without any notice this month"
           ],
           "respuestaCorrecta": 0,
           "id": "esc-fase1-disputa-factura-p1"
@@ -607,7 +625,8 @@
         }
       ],
       "transcripcion": "I'm calling because I was charged twice for the same subscription this month, and I'd like that corrected. I understand your frustration, let me pull up your account. I do see the duplicate charge here, and I apologize for that. I'll process a refund for the extra charge right now, and it should appear in your account within three to five business days.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-debate-microservicios",
@@ -618,10 +637,10 @@
         {
           "pregunta": "What is the first speaker worried about?",
           "opciones": [
-            "Security",
+            "Security problems in the current system",
             "Splitting into microservices too early",
-            "Not having enough users",
-            "The cost of servers"
+            "Not having enough users for the product",
+            "The monthly cost of the servers"
           ],
           "respuestaCorrecta": 1,
           "id": "esc-fase1-debate-microservicios-p1"
@@ -629,17 +648,18 @@
         {
           "pregunta": "What does the conversation suggest as a possible middle ground?",
           "opciones": [
-            "Rewriting everything from scratch",
+            "Rewriting everything from scratch with a brand new team",
             "Splitting out only the one piece that needs to scale differently",
-            "Hiring more engineers",
-            "Switching programming languages"
+            "Hiring more engineers so they can understand the monolith",
+            "Switching the whole system to a different programming language"
           ],
           "respuestaCorrecta": 1,
           "id": "esc-fase1-debate-microservicios-p2"
         }
       ],
       "transcripcion": "I still think we're splitting this into microservices too early. We don't even have that many users yet, and now every small change needs three different deployments. That's fair, but the monolith is already getting hard to understand, and new engineers take weeks just to find where things live. Maybe the real answer is splitting out just the one piece that actually needs to scale differently, not everything at once.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-intro-charla-open-source",
@@ -671,7 +691,8 @@
         }
       ],
       "transcripcion": "Thanks everyone for being here. Today I want to talk about something that doesn't get enough credit: maintaining an open source project long after the exciting part is over. Writing the first version is fun, but answering issues, reviewing pull requests, and keeping documentation updated for years is where most projects actually succeed or quietly disappear.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-buzon-instrucciones-conferencia",
@@ -693,17 +714,18 @@
         {
           "pregunta": "When will the sound check happen?",
           "opciones": [
-            "Right after the talk",
-            "The day before",
+            "Right after the talk, in the same room",
+            "The day before, with the whole team",
             "Thirty minutes before doors open",
-            "There is no sound check"
+            "There is no sound check for the speakers"
           ],
           "respuestaCorrecta": 2,
           "id": "esc-fase1-buzon-instrucciones-conferencia-p2"
         }
       ],
       "transcripcion": "Hi, just a few details before your talk tomorrow. You'll have twenty minutes, followed by ten for questions, and the room holds about two hundred people. There's a confidence monitor at the back if you don't want to look at your slides directly, and a technician will do a sound check with you thirty minutes before doors open. Let me know if you need anything else before then.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-debate-remoto-mejor",
@@ -714,10 +736,10 @@
         {
           "pregunta": "What does the first speaker say remote productivity depends on?",
           "opciones": [
-            "The size of the company",
+            "The size of the company and its number of offices",
             "How disciplined the team is about communication",
-            "The country the team is in",
-            "The number of meetings"
+            "The country where most of the team is based",
+            "The number of meetings held during the week"
           ],
           "respuestaCorrecta": 1,
           "id": "esc-fase1-debate-remoto-mejor-p1"
@@ -735,7 +757,8 @@
         }
       ],
       "transcripcion": "People keep saying remote-first companies are more productive, but I think that really depends on how disciplined the team is about communication. Without a shared office, if nobody writes things down clearly, decisions get lost. I agree with that part, but I'd still argue remote teams are forced to document more, simply because they can't just walk over and ask, and that documentation ends up helping everyone later.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-noticia-recorte-personal",
@@ -757,17 +780,18 @@
         {
           "pregunta": "What reason does the company give for the cuts?",
           "opciones": [
-            "A cybersecurity attack",
+            "A cybersecurity attack on its main systems",
             "Slower growth and investing more in automation",
-            "A government order",
-            "Moving the office to another country"
+            "A government order to reduce its staff",
+            "Moving its offices to another country"
           ],
           "respuestaCorrecta": 1,
           "id": "esc-fase1-noticia-recorte-personal-p2"
         }
       ],
       "transcripcion": "In tech news today, another major company announced it's cutting around eight percent of its workforce, citing slower growth and a shift toward investing more in automation. The company says affected employees will receive severance pay and continued health coverage for several months. Analysts say this follows a pattern seen across the industry over the past year.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a1-presentacion",
@@ -799,7 +823,8 @@
           "respuestaCorrecta": 0
         }
       ],
-      "transcripcion": "Hello! My name is Sara. I am from Peru. I am twenty years old. I am a student. What is your name? Oh, your name is Luis. Nice to meet you, Luis!"
+      "transcripcion": "Hello! My name is Sara. I am from Peru. I am twenty years old. I am a student. What is your name? Oh, your name is Luis. Nice to meet you, Luis!",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a1-hora-clase",
@@ -842,7 +867,8 @@
           "respuestaCorrecta": 1
         }
       ],
-      "transcripcion": "Excuse me, what time is it? It is half past three. Thank you! My English class starts at four o'clock. I have thirty minutes. I have time for a cup of tea."
+      "transcripcion": "Excuse me, what time is it? It is half past three. Thank you! My English class starts at four o'clock. I have thirty minutes. I have time for a cup of tea.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a1-mercado-frutas",
@@ -874,7 +900,8 @@
           "respuestaCorrecta": 2
         }
       ],
-      "transcripcion": "Hello! I want three apples and two bananas, please. How much is it? Four dollars? Okay. Here you are. Thank you very much. Have a nice day!"
+      "transcripcion": "Hello! I want three apples and two bananas, please. How much is it? Four dollars? Okay. Here you are. Thank you very much. Have a nice day!",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a1-mi-hermano",
@@ -917,7 +944,8 @@
           "respuestaCorrecta": 0
         }
       ],
-      "transcripcion": "This is my brother. His name is David. He is seventeen years old. He is tall and he likes music. He plays the guitar every day. My brother is very kind."
+      "transcripcion": "This is my brother. His name is David. He is seventeen years old. He is tall and he likes music. He plays the guitar every day. My brother is very kind.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a1-lunes-rutina",
@@ -949,7 +977,8 @@
           "respuestaCorrecta": 2
         }
       ],
-      "transcripcion": "Today is Monday. I get up at six thirty. I wash my face and eat breakfast. Then I take the bus to school. The bus comes at seven fifteen. I like Monday because I have art class."
+      "transcripcion": "Today is Monday. I get up at six thirty. I wash my face and eat breakfast. Then I take the bus to school. The bus comes at seven fifteen. I like Monday because I have art class.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a1-restaurante-simple",
@@ -981,7 +1010,8 @@
           "respuestaCorrecta": 1
         }
       ],
-      "transcripcion": "Good evening. A table for two, please. Can I have the menu? I want chicken with rice and a glass of water. And for my friend, fish and a salad. Thank you."
+      "transcripcion": "Good evening. A table for two, please. Can I have the menu? I want chicken with rice and a glass of water. And for my friend, fish and a salad. Thank you.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a1-mi-habitacion",
@@ -1024,7 +1054,8 @@
           "respuestaCorrecta": 1
         }
       ],
-      "transcripcion": "This is my room. It is small. There is a bed, a desk, and a chair. The desk is next to the window. I have a lamp and two books on the desk. I study here every night."
+      "transcripcion": "This is my room. It is small. There is a bed, a desk, and a chair. The desk is next to the window. I have a lamp and two books on the desk. I study here every night.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a1-clima-hoy",
@@ -1048,15 +1079,16 @@
           "id": "esc-fase1-a1-clima-hoy-p2",
           "pregunta": "How is tomorrow?",
           "opciones": [
-            "Sunny",
-            "Rainy",
+            "Sunny and a little warm",
+            "Rainy and very windy",
             "Cloudy and a little cold",
-            "Very hot"
+            "Very hot all day"
           ],
           "respuestaCorrecta": 2
         }
       ],
-      "transcripcion": "Hello! It is a sunny day today. It is warm, about twenty-five degrees. There is no rain. It is a good day for the park. Tomorrow it is cloudy and a little cold."
+      "transcripcion": "Hello! It is a sunny day today. It is warm, about twenty-five degrees. There is no rain. It is a good day for the park. Tomorrow it is cloudy and a little cold.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a1-mascota",
@@ -1099,7 +1131,8 @@
           "respuestaCorrecta": 0
         }
       ],
-      "transcripcion": "Hi, Anna! Do you have a pet? Yes, I have a cat. Her name is Luna. She is black and very small. She likes milk and sleeping on my bed. And you? I have a dog. His name is Rex. He is big and funny."
+      "transcripcion": "Hi, Anna! Do you have a pet? Yes, I have a cat. Her name is Luna. She is black and very small. She likes milk and sleeping on my bed. And you? I have a dog. His name is Rex. He is big and funny.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a1-taxi",
@@ -1142,7 +1175,8 @@
           "respuestaCorrecta": 1
         }
       ],
-      "transcripcion": "Hello, I need a taxi, please. I am at the train station. I want to go to the Hotel Sol. How much is it? It is ten dollars. Okay, thank you. The taxi comes in five minutes."
+      "transcripcion": "Hello, I need a taxi, please. I am at the train station. I want to go to the Hotel Sol. How much is it? It is ten dollars. Okay, thank you. The taxi comes in five minutes.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a1-boleto-autobus",
@@ -1166,9 +1200,9 @@
           "id": "esc-fase1-a1-boleto-autobus-p2",
           "pregunta": "When does the person want to travel?",
           "opciones": [
-            "Today at nine at night",
-            "Tomorrow at seven",
-            "Today at noon",
+            "Today at nine o'clock at night",
+            "Tomorrow at seven in the evening",
+            "Today at noon, in the afternoon",
             "Tomorrow at nine in the morning"
           ],
           "respuestaCorrecta": 3
@@ -1185,7 +1219,8 @@
           "respuestaCorrecta": 2
         }
       ],
-      "transcripcion": "Good morning. One ticket to Boston, please. Sure. For today? No, for tomorrow, at nine in the morning. That is twenty dollars. Here you are. Thank you. Your bus is number seven."
+      "transcripcion": "Good morning. One ticket to Boston, please. Sure. For today? No, for tomorrow, at nine in the morning. That is twenty dollars. Here you are. Thank you. Your bus is number seven.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a1-cumpleanos-mensaje",
@@ -1198,10 +1233,10 @@
           "id": "esc-fase1-a1-cumpleanos-mensaje-p1",
           "pregunta": "Why does Sara call?",
           "opciones": [
-            "To ask for a guitar lesson",
+            "To ask for a guitar lesson on Saturday",
             "To say happy birthday and invite Tom",
-            "To cancel a party",
-            "To buy a present"
+            "To cancel a party at her house",
+            "To buy a present for his birthday"
           ],
           "respuestaCorrecta": 1
         },
@@ -1228,7 +1263,8 @@
           "respuestaCorrecta": 3
         }
       ],
-      "transcripcion": "Hi, Tom! This is Sara. Happy birthday! I have a present for you. Can you come to my house on Saturday? We have a small party at six o'clock. There is pizza and cake. Please bring your guitar. See you!"
+      "transcripcion": "Hi, Tom! This is Sara. Happy birthday! I have a present for you. Can you come to my house on Saturday? We have a small party at six o'clock. There is pizza and cake. Please bring your guitar. See you!",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a2-devolver-camisa",
@@ -1271,7 +1307,8 @@
           "respuestaCorrecta": 0
         }
       ],
-      "transcripcion": "Hello, I would like to return this shirt, please. Is there a problem? Yes, it is too small. Do you have the receipt? Yes, here it is. I bought it last week. No problem. You can choose another size or get a gift card. I think I will take a bigger size. Let me check if we have it. Please wait a moment."
+      "transcripcion": "Hello, I would like to return this shirt, please. Is there a problem? Yes, it is too small. Do you have the receipt? Yes, here it is. I bought it last week. No problem. You can choose another size or get a gift card. I think I will take a bigger size. Let me check if we have it. Please wait a moment.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a2-invitacion-cena",
@@ -1314,7 +1351,8 @@
           "respuestaCorrecta": 1
         }
       ],
-      "transcripcion": "Hi, it's Mark. I'm calling because we are having dinner at my place on Friday evening, and I'd love for you to come. It starts at seven thirty. I'm cooking pasta, and my sister is making dessert. If you have any food allergies, please tell me. You don't need to bring anything, but a drink is always welcome. Call me back when you can. Bye!"
+      "transcripcion": "Hi, it's Mark. I'm calling because we are having dinner at my place on Friday evening, and I'd love for you to come. It starts at seven thirty. I'm cooking pasta, and my sister is making dessert. If you have any food allergies, please tell me. You don't need to bring anything, but a drink is always welcome. Call me back when you can. Bye!",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a2-horario-biblioteca",
@@ -1357,7 +1395,8 @@
           "respuestaCorrecta": 2
         }
       ],
-      "transcripcion": "Good afternoon. Can you tell me the opening hours of the library? Of course. We are open from nine in the morning to eight in the evening, Monday to Friday. And on weekends? On Saturday we close at two, and on Sunday we are closed. Do I need a card to borrow books? Yes, but it is free for students."
+      "transcripcion": "Good afternoon. Can you tell me the opening hours of the library? Of course. We are open from nine in the morning to eight in the evening, Monday to Friday. And on weekends? On Saturday we close at two, and on Sunday we are closed. Do I need a card to borrow books? Yes, but it is free for students.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-a2-alquilar-bici",
@@ -1400,7 +1439,8 @@
           "respuestaCorrecta": 3
         }
       ],
-      "transcripcion": "Hi, I want to rent a bike for the day. Sure. We have city bikes and mountain bikes. The city bike is fifteen dollars, and the mountain bike is twenty-five. I'll take the city bike. Do you need a helmet? Yes, please. It is included in the price. Please bring the bike back before six o'clock."
+      "transcripcion": "Hi, I want to rent a bike for the day. Sure. We have city bikes and mountain bikes. The city bike is fifteen dollars, and the mountain bike is twenty-five. I'll take the city bike. Do you need a helmet? Yes, please. It is included in the price. Please bring the bike back before six o'clock.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-b1-reunion-avances",
@@ -1413,10 +1453,10 @@
           "id": "esc-fase1-b1-reunion-avances-p1",
           "pregunta": "What does Priya still need to do?",
           "opciones": [
-            "Write the database",
-            "Fix the migration script",
+            "Write the database for the whole project",
+            "Fix the migration script for the database",
             "Test the login page on mobile devices",
-            "Present the project"
+            "Present the project to the client"
           ],
           "respuestaCorrecta": 2
         },
@@ -1424,10 +1464,10 @@
           "id": "esc-fase1-b1-reunion-avances-p2",
           "pregunta": "Why is Jonas behind?",
           "opciones": [
-            "He was on vacation",
+            "He was on vacation for part of the week",
             "There is a problem with the migration script",
-            "The login page is broken",
-            "He lost the data"
+            "The login page is broken after the update",
+            "He lost the data on his own computer"
           ],
           "respuestaCorrecta": 1
         },
@@ -1443,7 +1483,8 @@
           "respuestaCorrecta": 0
         }
       ],
-      "transcripcion": "Okay, let's go through the progress on the project. Priya, how is the login page? It is almost finished. I only need to test it on mobile devices, so I should be done by Wednesday. Great. And Jonas, what about the database? Well, we found a problem with the migration script, so we are about one day behind. I'll work on it tomorrow morning, and I'll let you know if I need help. Thanks, both. If nothing else comes up, we'll still deliver the first version on Friday."
+      "transcripcion": "Okay, let's go through the progress on the project. Priya, how is the login page? It is almost finished. I only need to test it on mobile devices, so I should be done by Wednesday. Great. And Jonas, what about the database? Well, we found a problem with the migration script, so we are about one day behind. I'll work on it tomorrow morning, and I'll let you know if I need help. Thanks, both. If nothing else comes up, we'll still deliver the first version on Friday.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-b1-cambiar-vuelo",
@@ -1486,7 +1527,8 @@
           "respuestaCorrecta": 1
         }
       ],
-      "transcripcion": "Thank you for calling the airline. How can I help you? Hi, I have a flight to Madrid on Monday, but I need to travel on Sunday instead. Let me check. There is a seat on Sunday at six in the evening, but there is a change fee of fifty euros. Is there any cheaper option? If you travel on Tuesday, the change is free, because that flight is not full. Unfortunately, I can't wait until Tuesday because I have an important meeting. In that case, I'll take the Sunday flight."
+      "transcripcion": "Thank you for calling the airline. How can I help you? Hi, I have a flight to Madrid on Monday, but I need to travel on Sunday instead. Let me check. There is a seat on Sunday at six in the evening, but there is a change fee of fifty euros. Is there any cheaper option? If you travel on Tuesday, the change is free, because that flight is not full. Unfortunately, I can't wait until Tuesday because I have an important meeting. In that case, I'll take the Sunday flight.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-b1-podcast-habitos-estudio",
@@ -1510,9 +1552,9 @@
           "id": "esc-fase1-b1-podcast-habitos-estudio-p2",
           "pregunta": "Why is testing yourself useful?",
           "opciones": [
-            "It is faster than studying",
-            "It replaces all notes",
-            "It is easier than reading",
+            "It is much faster than studying for hours",
+            "It replaces the need to take any notes",
+            "It is easier than reading the notes again",
             "The brain works harder and the knowledge lasts longer"
           ],
           "respuestaCorrecta": 3
@@ -1521,15 +1563,16 @@
           "id": "esc-fase1-b1-podcast-habitos-estudio-p3",
           "pregunta": "What is the final tip?",
           "opciones": [
-            "Study only on weekends",
-            "Study with music",
+            "Study only on the weekends, for hours",
+            "Study with loud music in the background",
             "Study at the same time every day",
-            "Study for six hours"
+            "Study for six hours without any break"
           ],
           "respuestaCorrecta": 2
         }
       ],
-      "transcripcion": "Welcome back to the show. Today we are talking about study habits. Many students believe that studying for six hours without a break is the best method, but research suggests otherwise. Short sessions of about forty minutes, followed by a five-minute pause, help you stay focused. Another tip is to test yourself instead of rereading your notes. When you try to remember information without looking, your brain works harder, and the knowledge lasts longer. Finally, try to study at the same time every day so that it becomes a routine."
+      "transcripcion": "Welcome back to the show. Today we are talking about study habits. Many students believe that studying for six hours without a break is the best method, but research suggests otherwise. Short sessions of about forty minutes, followed by a five-minute pause, help you stay focused. Another tip is to test yourself instead of rereading your notes. When you try to remember information without looking, your brain works harder, and the knowledge lasts longer. Finally, try to study at the same time every day so that it becomes a routine.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-b1-explicar-api",
@@ -1542,10 +1585,10 @@
           "id": "esc-fase1-b1-explicar-api-p1",
           "pregunta": "How do you get the access key?",
           "opciones": [
-            "By paying a monthly fee",
+            "By paying a monthly fee on the website",
             "By creating a free account on the website",
-            "By calling the company",
-            "By installing a program"
+            "By calling the company on the phone",
+            "By installing a program on your computer"
           ],
           "respuestaCorrecta": 1
         },
@@ -1564,15 +1607,16 @@
           "id": "esc-fase1-b1-explicar-api-p3",
           "pregunta": "What is the warning?",
           "opciones": [
-            "The key expires every day",
-            "The service only works at night",
-            "The city name must be in capital letters",
+            "The access key stops working after a single day",
+            "The service only works at night, after ten",
+            "The city name must be written in capital letters",
             "Too many requests without a pause can get you blocked"
           ],
           "respuestaCorrecta": 3
         }
       ],
-      "transcripcion": "So, to get the weather data, you only need to send a request to the API. First, you need an access key, which you can get for free by creating an account on the website. Then you add that key to the address, together with the name of the city. The service answers with a text in a format called JSON, which your program can read easily. One important thing: the free plan allows only sixty requests per minute, so don't put the call inside a loop without a pause, or the service will block you for a while."
+      "transcripcion": "So, to get the weather data, you only need to send a request to the API. First, you need an access key, which you can get for free by creating an account on the website. Then you add that key to the address, together with the name of the city. The service answers with a text in a format called JSON, which your program can read easily. One important thing: the free plan allows only sixty requests per minute, so don't put the call inside a loop without a pause, or the service will block you for a while.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-b2-resultados-modelo",
@@ -1615,7 +1659,8 @@
           "respuestaCorrecta": 0
         }
       ],
-      "transcripcion": "Thank you all for coming. Let me summarize what we found after three months of testing. Our model correctly classifies about ninety-two percent of the support tickets, which is a clear improvement over the previous system. However, accuracy is not uniform. For tickets written in Spanish, the result drops to eighty-four percent, mainly because we had far fewer training examples in that language. Our recommendation is therefore twofold: first, collect more Spanish data over the next quarter; second, keep a human reviewer for sensitive categories, such as billing disputes, until the gap closes. We believe this approach reduces risk without delaying the launch."
+      "transcripcion": "Thank you all for coming. Let me summarize what we found after three months of testing. Our model correctly classifies about ninety-two percent of the support tickets, which is a clear improvement over the previous system. However, accuracy is not uniform. For tickets written in Spanish, the result drops to eighty-four percent, mainly because we had far fewer training examples in that language. Our recommendation is therefore twofold: first, collect more Spanish data over the next quarter; second, keep a human reviewer for sensitive categories, such as billing disputes, until the gap closes. We believe this approach reduces risk without delaying the launch.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-b2-cambio-carrera",
@@ -1650,15 +1695,16 @@
           "id": "esc-fase1-b2-cambio-carrera-p3",
           "pregunta": "Why is the speaker not too worried?",
           "opciones": [
-            "They have another offer",
+            "They have another offer from a bigger company",
             "They have saved enough to live for a year",
-            "Their family will pay",
-            "The startup is very large"
+            "Their family will pay for everything",
+            "The startup is very large and well known"
           ],
           "respuestaCorrecta": 1
         }
       ],
-      "transcripcion": "So, have you decided? I think so. After eight years in accounting, I've realized that I enjoy the data analysis part of my job much more than the paperwork. I've been taking evening courses in programming, and I got an offer from a small startup. It pays about twenty percent less, though. Isn't that a big risk? It is, but I've saved enough to live for a year, and I'd rather try now than wonder for the rest of my life what would have happened. Well, if you've thought it through, I think it's a brave decision."
+      "transcripcion": "So, have you decided? I think so. After eight years in accounting, I've realized that I enjoy the data analysis part of my job much more than the paperwork. I've been taking evening courses in programming, and I got an offer from a small startup. It pays about twenty percent less, though. Isn't that a big risk? It is, but I've saved enough to live for a year, and I'd rather try now than wonder for the rest of my life what would have happened. Well, if you've thought it through, I think it's a brave decision.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-b2-noticia-ciberseguridad",
@@ -1682,9 +1728,9 @@
           "id": "esc-fase1-b2-noticia-ciberseguridad-p2",
           "pregunta": "What does the hospital say about patient records?",
           "opciones": [
-            "They were all stolen",
-            "They were deleted",
-            "They were sold online",
+            "They were all stolen during the attack",
+            "They were deleted by the attackers",
+            "They were sold online to other companies",
             "It has no evidence they were stolen"
           ],
           "respuestaCorrecta": 3
@@ -1693,15 +1739,16 @@
           "id": "esc-fase1-b2-noticia-ciberseguridad-p3",
           "pregunta": "What do experts remind organizations to do?",
           "opciones": [
-            "Buy new computers",
-            "Close their networks",
+            "Buy new computers for all of their staff",
+            "Close their networks to every outside user",
             "Update software and train staff about suspicious emails",
-            "Hire more doctors"
+            "Hire more doctors for the emergency rooms"
           ],
           "respuestaCorrecta": 2
         }
       ],
-      "transcripcion": "In technology news today, a regional hospital network has confirmed that it was the target of a cyberattack earlier this week. According to a spokesperson, the attackers blocked access to part of the scheduling system, and some non-urgent appointments had to be postponed. Emergency services were not affected. The hospital says it has no evidence that patient records were stolen, but an investigation is still under way. Security experts remind organizations to keep their software updated and to train staff to recognize suspicious emails, which remain the most common way for attackers to enter a network."
+      "transcripcion": "In technology news today, a regional hospital network has confirmed that it was the target of a cyberattack earlier this week. According to a spokesperson, the attackers blocked access to part of the scheduling system, and some non-urgent appointments had to be postponed. Emergency services were not affected. The hospital says it has no evidence that patient records were stolen, but an investigation is still under way. Security experts remind organizations to keep their software updated and to train staff to recognize suspicious emails, which remain the most common way for attackers to enter a network.",
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-fase1-b2-startup-pros-contras",
@@ -1714,10 +1761,10 @@
           "id": "esc-fase1-b2-startup-pros-contras-p1",
           "pregunta": "Which advantage of startups is mentioned?",
           "opciones": [
-            "The salaries are very high",
+            "The salaries are higher than in big companies",
             "You learn quickly and get responsibility early",
-            "The hours are shorter",
-            "The jobs are permanent"
+            "The working hours are shorter than average",
+            "The jobs are permanent and very stable"
           ],
           "respuestaCorrecta": 1
         },
@@ -1726,9 +1773,9 @@
           "pregunta": "What worries the first speaker?",
           "opciones": [
             "Long hours and the risk that funding runs out",
-            "The lack of computers",
-            "Working with many people",
-            "Having too much stability"
+            "The lack of computers and basic equipment",
+            "Working with too many people at once",
+            "Having too much stability in the job"
           ],
           "respuestaCorrecta": 0
         },
@@ -1744,7 +1791,8 @@
           "respuestaCorrecta": 3
         }
       ],
-      "transcripcion": "I'm not sure a startup is for me. Why not? You learn so quickly. That's true, and you usually get responsibility early. But the hours are often longer, and the job can disappear if the funding runs out. Fair enough, but at a big company, you may spend two years on a tiny part of a project. I'd rather have stability while I'm still learning the basics. Maybe a medium-sized company is the best compromise: stable enough to feel safe, and flexible enough to try different tasks. Honestly, I think it depends on your personality and on the stage of your life."
+      "transcripcion": "I'm not sure a startup is for me. Why not? You learn so quickly. That's true, and you usually get responsibility early. But the hours are often longer, and the job can disappear if the funding runs out. Fair enough, but at a big company, you may spend two years on a tiny part of a project. I'd rather have stability while I'm still learning the basics. Maybe a medium-sized company is the best compromise: stable enough to feel safe, and flexible enough to try different tasks. Honestly, I think it depends on your personality and on the stage of your life.",
+      "revisionIA": "2026-11-20"
     }
   ]
 }

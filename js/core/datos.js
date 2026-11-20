@@ -319,7 +319,10 @@
     var frases = frasesJson.categorias || [];
     var tarjetas = [];
     vocab.forEach(function (v) {
+      // Tarjeta RETIRADA (duplica a otra, D31): no se crea si no existía, y si ya existe se
+      // conserva con su SM-2 pero marcada `retirada` (ver sembrarTarjetasSiHaceFalta).
       var t = global.App.SRS.tarjetaNueva("voc-" + v.id, ahora);
+      if (v.retirada) t.retirada = true;
       t.frente = v.ingles;
       t.atras = v.espanol + (v.ejemplo ? " — " + v.ejemplo : "");
       t.tipo = "vocabulario";
@@ -362,9 +365,17 @@
       deseadas.forEach(function (d) {
         var e = existentes[d.id];
         if (!e) {
-          escrituras.push(d);
-        } else if (e.nivelCEFR !== d.nivelCEFR || e.tipo !== d.tipo || e.frente !== d.frente || e.atras !== d.atras) {
-          escrituras.push(Object.assign({}, e, { nivelCEFR: d.nivelCEFR, tipo: d.tipo, frente: d.frente, atras: d.atras }));
+          if (!d.retirada) escrituras.push(d); // una tarjeta retirada que nunca existió simplemente no se crea
+        } else if (
+          e.nivelCEFR !== d.nivelCEFR || e.tipo !== d.tipo || e.frente !== d.frente || e.atras !== d.atras ||
+          !!e.retirada !== !!d.retirada
+        ) {
+          // Solo se actualizan los campos de contenido: el estado SM-2 (repeticiones, intervalo,
+          // facilidad, próxima fecha) NO se toca, ni siquiera en una tarjeta retirada.
+          var nueva = Object.assign({}, e, { nivelCEFR: d.nivelCEFR, tipo: d.tipo, frente: d.frente, atras: d.atras });
+          if (d.retirada) nueva.retirada = true;
+          else delete nueva.retirada;
+          escrituras.push(nueva);
         }
       });
       return Promise.all(
@@ -413,6 +424,7 @@
       var vencidas = 0;
       var nuevas = 0;
       tarjetas.forEach(function (t) {
+        if (t.retirada) return; // duplicadas retiradas (D31): ya no se repasan
         if ((t.repeticiones || 0) === 0) {
           nuevas++;
         } else if (global.App.SRS.estaParaRepasar(t, ahora)) {

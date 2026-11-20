@@ -13,7 +13,8 @@
         "Escribí al menos 3 oraciones"
       ],
       "respuestaModelo": "Hey, I'm so sorry, but I can't make it today. I'm feeling a bit sick and I think it's better if I just rest. Can we meet this Saturday instead? I really want to see you, just not today. Let me know if that works!",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a2-correo-curso",
@@ -27,7 +28,8 @@
         "El correo tiene entre 3 y 5 oraciones"
       ],
       "respuestaModelo": "Hello, I'm interested in your English course and I'd like some more information before I sign up. Could you tell me the schedule, the price, and how long the course lasts? I'm available in the evenings, so that information would help me a lot. Thank you for your time.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a2-rutina-diaria",
@@ -40,8 +42,9 @@
         "Usé palabras de secuencia (first, then, after that, finally)",
         "Escribí al menos 4 oraciones"
       ],
-      "respuestaModelo": "I usually wake up at seven and have breakfast while I check my phone. In the afternoon, I study or work on my computer for a few hours, and I also try to go for a short walk. In the evening, I have dinner with my family and watch something before I go to bed. Finally, I read for a little while and fall asleep around eleven.",
-      "revisar": true
+      "respuestaModelo": "First, I wake up at seven and have breakfast while I check my phone. Then, in the afternoon, I study or work on my computer for a few hours, and I also try to go for a short walk. After that, I have dinner with my family and watch something before I go to bed. Finally, I read for a little while and fall asleep around eleven.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a2-confirmar-cita",
@@ -55,7 +58,8 @@
         "Escribí al menos 2 oraciones"
       ],
       "respuestaModelo": "Hi, I just wanted to confirm our appointment for Thursday at 10 a.m. Could you send me the exact address? I want to make sure I arrive on time. See you soon!",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a2-lugar-trabajo",
@@ -69,7 +73,8 @@
         "Escribí al menos 4 oraciones"
       ],
       "respuestaModelo": "I usually study in a small room with a desk next to the window. There's a computer, some books, and a lamp I use at night. I like this space because it's quiet and I can focus without many distractions. The only problem is that it gets a little cold in winter.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a2-pedir-dia-libre",
@@ -83,7 +88,8 @@
         "Incluí saludo y despedida"
       ],
       "respuestaModelo": "Hi, I wanted to ask if I could take next Friday off. I have a family matter I need to take care of that day. I'll make sure my tasks are covered before I leave. Thank you for considering it.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a2-agradecer-regalo",
@@ -97,7 +103,8 @@
         "Escribí al menos 3 oraciones"
       ],
       "respuestaModelo": "Thank you so much for the book, I love it! I've wanted to read it for months, so this was a perfect gift. I already started reading it last night and I can't put it down. You always know what I like!",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a2-describir-persona",
@@ -111,7 +118,8 @@
         "Escribí al menos 4 oraciones"
       ],
       "respuestaModelo": "My sister is tall, with short dark hair and glasses. She's very friendly and always has a positive attitude, even on difficult days. She's also quite organized, which is very different from me. I admire how patient she is with everyone around her.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a2-estado-pedido",
@@ -125,7 +133,8 @@
         "Escribí al menos 3 oraciones"
       ],
       "respuestaModelo": "Hello, I placed an order a week ago and I haven't received any update since then. Could you tell me the current status and when it might arrive? I'd really appreciate any information you can give me.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a2-presentarte-equipo",
@@ -139,7 +148,8 @@
         "Incluiste saludo y despedida"
       ],
       "respuestaModelo": "Hi, my name is Alex and I work on the design team. Welcome to the company, I'm really glad you joined us! If you have any questions during your first weeks, feel free to reach out to me anytime. Looking forward to working together.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-producto-defectuoso",
@@ -153,8 +163,9 @@
         "Mantuve un tono firme pero educado",
         "Escribí al menos 5 oraciones"
       ],
-      "respuestaModelo": "I'm writing to report a problem with an order I received last week. The headphones I bought stopped working after just two days, even though I followed the instructions carefully. I checked the packaging and everything seemed fine, so I don't think it was a mistake on my part. I would like to request a replacement or a full refund, whichever is easier on your end. I've attached a photo of the product and my order number for reference. I hope we can resolve this quickly.",
-      "revisar": true
+      "respuestaModelo": "I'm writing to report a problem with an order I placed on your website last week. The headphones I bought stopped working after just two days, even though I followed the instructions carefully. I checked the packaging and everything seemed fine, so I don't think it was a mistake on my part. I would like to request a replacement or a full refund, whichever is easier on your end. I've attached a photo of the product and my order number for reference. I hope we can resolve this quickly.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-fin-semana-memorable",
@@ -168,7 +179,8 @@
         "Escribí al menos 5 oraciones"
       ],
       "respuestaModelo": "Last spring, a few friends and I decided to drive to the coast without really planning anything in advance. We got lost twice on the way there, which was frustrating at first but ended up being pretty funny. When we finally arrived, we spent the whole afternoon walking along the beach and talking about everything and nothing. That weekend reminded me how much I needed a break from my usual routine, and I still think about it whenever I feel stressed.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-proponer-idea",
@@ -183,7 +195,8 @@
         "Mantuve un tono colaborativo"
       ],
       "respuestaModelo": "I wanted to share an idea that might help us work more efficiently. Lately, our meetings have been running much longer than planned, and I think it's because we don't always have a clear agenda beforehand. What if we sent a short list of topics the day before each meeting, so everyone knows what to expect and can prepare in advance? I believe this could save us a good amount of time every week. Let me know what you think, and feel free to suggest changes to the idea.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-problema-tecnico",
@@ -196,8 +209,9 @@
         "Usé conectores de secuencia (first, then, eventually)",
         "Escribí al menos 5 oraciones"
       ],
-      "respuestaModelo": "A few weeks ago, my laptop suddenly stopped connecting to the internet, even though other devices worked fine. At first, I tried restarting the router, but that didn't change anything. Then I checked the network settings and noticed the Wi-Fi adapter was disabled for some reason. I'm still not sure what caused it, but once I turned it back on, everything worked normally again. It was a simple fix, but it took me almost an hour to find it.",
-      "revisar": true
+      "respuestaModelo": "A few weeks ago, my laptop suddenly stopped connecting to the internet, even though other devices worked fine. At first, I tried restarting the router, but that didn't change anything. Then I checked the network settings and noticed the Wi-Fi adapter was disabled for some reason. Eventually, I turned it back on, and everything worked normally again. I'm still not sure what caused it. It was a simple fix, but it took me almost an hour to find it.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-seguimiento-entrevista",
@@ -212,7 +226,8 @@
         "Incluiste saludo y despedida apropiados"
       ],
       "respuestaModelo": "Thank you for taking the time to speak with me yesterday about the developer position. I really enjoyed our conversation, especially when we talked about how the team handles code reviews. It confirmed that this is exactly the kind of environment I'm looking for. I remain very interested in the role and would be happy to provide any additional information if needed. I look forward to hearing from you.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-aprender-habilidad",
@@ -226,7 +241,8 @@
         "Escribí al menos 5 oraciones"
       ],
       "respuestaModelo": "When I started learning to code, I found it really hard to understand why my programs kept failing for reasons I couldn't see. For the first few weeks, I felt like I was just copying examples without really understanding them. Eventually, I started writing small practice projects on my own instead of only following tutorials, and that made a huge difference. Making my own mistakes taught me more than any lesson did. Now I actually enjoy debugging, which is something I never expected to say.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-invitar-evento",
@@ -240,7 +256,8 @@
         "Mantuve un tono entusiasta pero profesional"
       ],
       "respuestaModelo": "I'm excited to invite you all to our end-of-quarter celebration next Friday at 6 p.m. in the main office. It'll be a relaxed evening with food, drinks, and a chance to catch up outside of our usual meetings. After a busy few months, I think we've definitely earned it. Hope to see everyone there!",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-meta-del-ano",
@@ -254,7 +271,8 @@
         "Escribí al menos 5 oraciones"
       ],
       "respuestaModelo": "One of my main goals this year is to reach a more advanced level of English, especially for speaking. I've noticed that I understand much more than I can actually say in conversations, and that gap bothers me. My plan is to practice speaking a little every day, even if it's just a few minutes, instead of waiting until I feel ready. I also want to have at least one real conversation in English every week. It's a small habit, but I think consistency will make the biggest difference.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-pedir-retroalimentacion",
@@ -268,7 +286,8 @@
         "Mantuviste un tono abierto a las críticas"
       ],
       "respuestaModelo": "I wanted to share the latest version of the project I've been working on and ask for your feedback. I'm particularly interested in whether the structure makes sense and if anything feels confusing to a new user. Any comments, even small ones, would be really helpful. If possible, I'd love to hear back by the end of the week, since I'd like to make adjustments before the next review.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-dia-dificil-trabajo",
@@ -282,7 +301,8 @@
         "Escribí al menos 5 oraciones"
       ],
       "respuestaModelo": "Last month, I had a day where almost everything went wrong at once: a meeting got moved without warning, I lost part of my work due to a technical issue, and I was already behind on a deadline. Instead of trying to fix everything at the same time, I decided to stop for a moment and write down what actually needed to happen that day. That helped me focus on one thing instead of panicking about all of it. By the end of the day, I hadn't solved every problem, but I felt much calmer about it.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-ia-reemplaza-trabajos",
@@ -297,7 +317,8 @@
         "Escribí al menos 6 oraciones"
       ],
       "respuestaModelo": "There's a strong case for automating repetitive or dangerous tasks: it can increase efficiency and free people from work that offers little personal fulfillment. On the other hand, replacing jobs too quickly can leave workers without the time or resources to retrain for new roles, which deepens inequality rather than reducing it. In my opinion, the goal shouldn't be replacement for its own sake, but automation paired with real support for the people affected. Technology that improves efficiency without a plan for the people it displaces solves one problem by creating another.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-trabajo-remoto-permanente",
@@ -311,7 +332,8 @@
         "Escribí al menos 6 oraciones"
       ],
       "respuestaModelo": "I believe remote work should remain the default option in tech, not just a temporary arrangement. First, it removes the time and cost of commuting, which gives people more control over their own schedules. Second, it allows companies to hire talented people regardless of where they live, instead of limiting the search to one city. Some argue that remote work weakens team collaboration, and that's a fair concern, but it's one that can be addressed with intentional communication habits rather than by forcing everyone back into an office. The flexibility it offers is simply too valuable to give up by default.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-etica-datos-usuarios",
@@ -325,7 +347,8 @@
         "Escribí al menos 6 oraciones"
       ],
       "respuestaModelo": "Data collection isn't inherently wrong, but the way many companies handle it crosses a line that users rarely notice until it's too late. Personally, I think the clearest ethical limit is consent that's actually informed, not just a checkbox buried in a long terms-of-service document nobody reads. Companies will argue that detailed data helps them improve their products, and that's often true, but usefulness doesn't automatically justify collecting more than what's needed. A reasonable middle ground would be collecting only what's necessary for the service to work, and being transparent about anything beyond that.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-universidades-ensenar-ia",
@@ -339,7 +362,8 @@
         "Escribí al menos 6 oraciones"
       ],
       "respuestaModelo": "I think AI fundamentals should be introduced early, even outside of specialized programs. Students who understand the basics sooner are better prepared to use these tools critically instead of treating them as magic, and that habit is hard to build later once other ways of thinking are already set. At the same time, there's a real risk of rushing students into advanced topics before they have a solid foundation in math and programming, which could do more harm than good. The solution isn't skipping the basics, but weaving AI concepts into existing courses gradually, so students build both skills at the same time instead of one after the other.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-equilibrio-vida-trabajo-tech",
@@ -353,7 +377,8 @@
         "Escribí al menos 6 oraciones"
       ],
       "respuestaModelo": "The tech industry often praises long hours as a sign of dedication, but I think that mindset causes more harm than it admits. Treating constant availability as a virtue makes it harder for people to set healthy boundaries, even when the actual workload doesn't require it. In my view, companies that genuinely care about long-term performance should measure results instead of hours spent online. A simple improvement would be normalizing clear response-time expectations, so people don't feel guilty for logging off at a reasonable time.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-certificaciones-vs-experiencia",
@@ -367,7 +392,8 @@
         "Escribí al menos 6 oraciones"
       ],
       "respuestaModelo": "While certifications can prove that someone has studied a specific topic, I don't think they're as valuable as practical experience when it comes to actually doing the job. Experience shows how someone handles unexpected problems, works with a team, and makes decisions under real constraints, none of which a certification can fully measure. That said, certifications aren't useless: they can help someone break into a field where they have no professional history yet, which is a real barrier for many people. Ideally, hiring decisions should weigh both, but when I have to choose, real-world experience tells me more about how someone will actually perform.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-redes-sociales-productividad",
@@ -381,7 +407,8 @@
         "Escribí al menos 6 oraciones"
       ],
       "respuestaModelo": "Social media isn't purely a distraction, but I think its design makes it especially hard to use in moderation while working. Notifications are built to interrupt, and even a quick check can break the concentration it took several minutes to build in the first place. I've noticed this myself: a single five-minute break can easily turn into twenty once I start scrolling. What has helped me is keeping those apps off my work computer entirely, so checking them requires a deliberate choice instead of a habit I don't even notice.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-codigo-abierto-vs-propietario",
@@ -395,7 +422,8 @@
         "Escribí al menos 6 oraciones"
       ],
       "respuestaModelo": "For most internal tools, I lean toward open-source software, mainly because of transparency: anyone can inspect the code, which makes it easier to catch security issues before they become serious problems. It also avoids being locked into a single vendor who might change pricing or discontinue support with little warning. Still, proprietary software can make sense when a company needs guaranteed support and accountability, something that's harder to get from a loosely maintained open-source project. In the end, the right choice depends less on ideology and more on how critical the tool is and who's responsible for keeping it running.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-automatizacion-industria",
@@ -409,7 +437,8 @@
         "Escribí al menos 6 oraciones"
       ],
       "respuestaModelo": "Automation itself isn't the problem; the speed at which it's happening compared to how slowly institutions adapt is what concerns me. New tools can replace entire workflows within a year, while retraining programs and education systems take much longer to catch up. I don't think society is fully prepared for that gap, especially in industries where workers have spent years building a single specialized skill. What would help most isn't slowing down innovation, but investing much earlier in flexible education that teaches people how to keep learning, not just one fixed set of skills.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-daily-standups",
@@ -423,7 +452,8 @@
         "Escribí al menos 6 oraciones"
       ],
       "respuestaModelo": "I'm generally in favor of daily standups, but only when they're kept genuinely short and focused. They give the whole team quick visibility into what everyone is working on, which makes it much easier to notice blockers before they cause real delays. They also create a small, low-pressure habit of communication that can prevent bigger misunderstandings later in the week. The main downside is that they can easily turn into status reports for a manager instead of a tool for the team itself, which defeats their purpose. When that happens, the problem isn't the format, it's how the meeting is actually run.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a1-presentarme",
@@ -437,7 +467,8 @@
         "Escribí al menos 4 oraciones"
       ],
       "respuestaModelo": "Hello! My name is Alex. I am twenty-three years old. I am from Mexico. I am a student. I study computers. Nice to meet you!",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a1-mi-familia",
@@ -451,7 +482,8 @@
         "Escribí al menos 4 oraciones"
       ],
       "respuestaModelo": "I have a small family. My mother is Laura. My father is Carlos. I have one sister. Her name is Ana. She is twelve years old. I love my family.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a1-mi-rutina",
@@ -465,7 +497,8 @@
         "Escribí al menos 4 oraciones"
       ],
       "respuestaModelo": "I wake up at seven. I eat bread and eggs for breakfast. I go to school at eight. I have lunch at one. I do my homework at six. I go to bed at ten.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a1-mi-casa",
@@ -479,7 +512,8 @@
         "Escribí al menos 4 oraciones"
       ],
       "respuestaModelo": "My house is small. There are two bedrooms and one kitchen. There is a big table in the kitchen. My favorite room is my bedroom. It is quiet.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a1-mensaje-amigo",
@@ -493,7 +527,8 @@
         "Escribí al menos 3 oraciones"
       ],
       "respuestaModelo": "Hi Tom! Do you want to have coffee tomorrow? I am free at four o'clock. Can you come? See you!",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a1-mi-comida-favorita",
@@ -507,7 +542,8 @@
         "Escribí al menos 4 oraciones"
       ],
       "respuestaModelo": "I like rice and chicken. I eat it for lunch. I like apples, too. I don't like fish. My favorite drink is orange juice.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a1-mi-amigo",
@@ -521,7 +557,8 @@
         "Escribí al menos 4 oraciones"
       ],
       "respuestaModelo": "My friend is Maria. She is tall and kind. She is twenty years old. She likes music and football. We are good friends.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a1-mi-trabajo-estudios",
@@ -535,7 +572,8 @@
         "Escribí al menos 4 oraciones"
       ],
       "respuestaModelo": "I am a student. I study at a big school. I go to class from Monday to Friday. I read and write every day. I like my classes.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a1-fin-de-semana",
@@ -549,7 +587,8 @@
         "Escribí al menos 4 oraciones"
       ],
       "respuestaModelo": "On Saturday, I wake up late. I clean my room. In the afternoon, I meet my friends at the park. We talk and walk. I go home at six.",
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a1-pedir-ayuda-simple",
@@ -562,8 +601,9 @@
         "Dije cuándo lo devuelvo",
         "Di las gracias"
       ],
-      "respuestaModelo": "Hi Sam! Can I have your English book, please? I need it today. I can give it back tomorrow. Thank you!",
-      "revisar": true
+      "respuestaModelo": "Hi Sam! Can I borrow your English book, please? I need it today. I can give it back tomorrow. Thank you!",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     }
   ]
 }

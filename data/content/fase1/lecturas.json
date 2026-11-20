@@ -5,7 +5,7 @@
       "id": "lec-fase1-docs-tecnicos",
       "tema": "Leer documentación técnica",
       "nivelCEFR": "A2",
-      "texto": "Most software documentation follows a similar structure: an overview, installation steps, and a list of examples. When you read documentation for a new library, it helps to skip straight to the examples first. You can understand what the tool does before you worry about every detail.",
+      "texto": "Most software documentation has the same parts: an overview, installation steps, and a list of examples. When you read the documentation for a new library, start with the examples. Then you can see what the tool does before you read every detail.",
       "vocabularioClave": [
         {
           "termino": "overview",
@@ -16,12 +16,12 @@
           "traduccion": "instalación"
         },
         {
-          "termino": "straight to",
-          "traduccion": "directo a"
+          "termino": "start with",
+          "traduccion": "empieza con"
         },
         {
-          "termino": "worry about",
-          "traduccion": "preocuparte por"
+          "termino": "every detail",
+          "traduccion": "cada detalle"
         }
       ],
       "preguntas": [
@@ -37,7 +37,8 @@
           "respuestaCorrecta": 0
         }
       ],
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-correo-reunion",
@@ -79,14 +80,15 @@
           "pregunta": "What is Laura supposed to do?",
           "opciones": [
             "Reach out to the client to confirm requirements",
-            "Send the schedule by Friday",
-            "Write the follow-up email",
-            "Change the meeting time"
+            "Send the updated schedule to the whole team",
+            "Write the follow-up email after the meeting",
+            "Change the meeting time for next week"
           ],
           "respuestaCorrecta": 0
         }
       ],
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-explicar-proyecto-ia",
@@ -121,9 +123,9 @@
           "pregunta": "What is the main purpose of the project described?",
           "opciones": [
             "To classify support tickets by urgency so critical ones get answered first",
-            "To replace all support agents with a chatbot",
-            "To delete old support tickets automatically",
-            "To translate support tickets into other languages"
+            "To replace all of the support agents with an automatic chatbot",
+            "To delete old support tickets that nobody has answered in months",
+            "To translate every support ticket into several other languages"
           ],
           "respuestaCorrecta": 0
         },
@@ -132,14 +134,15 @@
           "pregunta": "What is the team still working on?",
           "opciones": [
             "Reviewing edge cases where the model gets confused",
-            "Hiring more support agents",
-            "Deleting the training data",
-            "Changing the project's main goal"
+            "Hiring more support agents for the night shift",
+            "Deleting the old data used to train the model",
+            "Changing the main goal of the whole project"
           ],
           "respuestaCorrecta": 0
         }
       ],
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-entrevista",
@@ -170,9 +173,9 @@
           "pregunta": "According to the text, what are interviewers usually most interested in when asking about a disagreement?",
           "opciones": [
             "How the candidate handled the disagreement, not who was right",
-            "Proving that the candidate was always right",
-            "Whether the candidate avoids all disagreements",
-            "The exact date the disagreement happened"
+            "Proving that the candidate was always right in the end",
+            "Whether the candidate avoids every kind of disagreement",
+            "The exact date when the disagreement first happened"
           ],
           "respuestaCorrecta": 0
         },
@@ -188,7 +191,8 @@
           "respuestaCorrecta": 0
         }
       ],
-      "revisar": true
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-standup",
@@ -226,26 +230,27 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-pedir-ayuda",
       "tema": "Pedir ayuda a un compañero",
       "nivelCEFR": "A2",
       "revisar": true,
-      "texto": "Mateo had been stuck on the same bug for almost an hour. Instead of continuing to guess, he messaged a teammate and asked if she had a few minutes to take a look. She found the mistake in less than five minutes, and Mateo thanked her and made a note to ask for help sooner next time.",
+      "texto": "Mateo had a bug in his code. He tried to fix it for almost one hour, but he could not. Then he sent a message to a teammate and asked for help. She looked at the code and found the mistake in less than five minutes. Mateo said thank you. Next time, he will ask for help sooner.",
       "vocabularioClave": [
         {
-          "termino": "stuck on",
-          "traduccion": "atorado en"
+          "termino": "bug",
+          "traduccion": "error (en el código)"
         },
         {
-          "termino": "take a look",
-          "traduccion": "echar un vistazo"
+          "termino": "teammate",
+          "traduccion": "compañera de equipo"
         },
         {
-          "termino": "made a note",
-          "traduccion": "tomó nota"
+          "termino": "found the mistake",
+          "traduccion": "encontró el error"
         },
         {
           "termino": "sooner",
@@ -264,7 +269,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-documentar-codigo",
@@ -296,9 +302,9 @@
           "pregunta": "According to the text, when is a comment most worth writing?",
           "opciones": [
             "When there's a non-obvious reason behind a decision",
-            "Whenever the code is already very clear",
-            "Only at the very start of a file",
-            "Never, because comments always add value"
+            "Whenever the code is already clear and easy to read",
+            "Only at the very beginning of every single file",
+            "Never, because the code should always explain itself"
           ],
           "respuestaCorrecta": 0
         },
@@ -307,13 +313,14 @@
           "pregunta": "What risk does the text mention about missing comments?",
           "opciones": [
             "The next person might remove something important by accident",
-            "The code will stop compiling",
-            "The file will become too short",
+            "The code will stop compiling after the next update",
+            "The file will become too short to be useful",
             "The team will have to rewrite the whole project"
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-code-review-feedback",
@@ -351,7 +358,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-blocker-proyecto",
@@ -400,7 +408,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-planear-sprint",
@@ -438,7 +447,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-pros-contras-herramienta",
@@ -476,14 +486,15 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-preparar-demo",
       "tema": "Preparar una demo",
       "nivelCEFR": "A2",
       "revisar": true,
-      "texto": "Before the demo, Lucas practiced the steps twice so he wouldn't get stuck in front of everyone. He also prepared a backup plan in case the internet connection failed. During the real demo, one button didn't work as expected, but because he had practiced, he knew how to continue without panicking.",
+      "texto": "Before the demo, Lucas practiced the steps two times. He also made a backup plan, in case the internet stopped working. During the real demo, one button did not work. But Lucas was ready, so he stayed calm and continued.",
       "vocabularioClave": [
         {
           "termino": "backup plan",
@@ -494,12 +505,12 @@
           "traduccion": "por si acaso"
         },
         {
-          "termino": "as expected",
-          "traduccion": "como se esperaba"
+          "termino": "button",
+          "traduccion": "botón"
         },
         {
-          "termino": "without panicking",
-          "traduccion": "sin entrar en pánico"
+          "termino": "stayed calm",
+          "traduccion": "se mantuvo tranquilo"
         }
       ],
       "preguntas": [
@@ -514,7 +525,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-pedir-direcciones",
@@ -574,7 +586,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-reservar-restaurante",
@@ -634,7 +647,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-comprar-boleto-avion",
@@ -694,7 +708,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-rutina-estudio-ia",
@@ -726,9 +741,9 @@
           "pregunta": "What does Marco do on Wednesdays?",
           "opciones": [
             "He practices coding for at least one hour",
-            "He reviews his notes",
-            "He reads an article about AI",
-            "He takes the day off"
+            "He reviews his notes from the week before",
+            "He reads one short article about a new topic",
+            "He takes the day off to rest and recover"
           ],
           "respuestaCorrecta": 0
         },
@@ -748,13 +763,14 @@
           "pregunta": "What does the text say about Marco's plan?",
           "opciones": [
             "It's not perfect, but it helps him stay organized",
-            "It's perfect and never changes",
-            "It only works during busy weeks",
-            "He stopped following it"
+            "It's perfect, and it never needs to change",
+            "It only works during the least busy weeks",
+            "He stopped following it after a few days"
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-ayuda-tienda-tecnologia",
@@ -819,13 +835,14 @@
           "pregunta": "According to the technician, how common is this kind of problem?",
           "opciones": [
             "It happens more often than people think",
-            "It almost never happens",
-            "It only happens to old laptops",
-            "It only happens once a year"
+            "It almost never happens to anyone at all",
+            "It only happens to very old laptops",
+            "It only happens about once every year"
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-planear-viaje-amigos",
@@ -857,9 +874,9 @@
           "pregunta": "Why did it take almost a week to decide on a hotel?",
           "opciones": [
             "People had different preferences about price and location",
-            "The hotel they wanted was fully booked",
-            "Nobody wanted to go on the trip",
-            "They couldn't find the coast on a map"
+            "The hotel they wanted was fully booked all week",
+            "Nobody in the group really wanted to go on the trip",
+            "They couldn't find the coast on a map of the area"
           ],
           "respuestaCorrecta": 0
         },
@@ -885,7 +902,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-opinion-trabajo-casa",
@@ -928,9 +946,9 @@
           "pregunta": "What problem does the writer mention about working from home?",
           "opciones": [
             "Feeling disconnected from teammates",
-            "Having too many commuting hours",
-            "Not having a schedule at all",
-            "Losing their job"
+            "Having to spend too many hours commuting",
+            "Not having any kind of schedule at all",
+            "Losing the job because of remote work"
           ],
           "respuestaCorrecta": 0
         },
@@ -945,7 +963,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-debate-ia-educacion",
@@ -977,9 +996,9 @@
           "pregunta": "What do supporters of AI in classrooms argue, according to the text?",
           "opciones": [
             "It gives instant feedback and frees up teachers' time",
-            "It should completely replace teachers",
-            "It only works for advanced students",
-            "It makes grading slower than before"
+            "It should completely replace teachers in classrooms",
+            "It only works well for the most advanced students",
+            "It makes the grading process slower than before"
           ],
           "respuestaCorrecta": 0
         },
@@ -988,9 +1007,9 @@
           "pregunta": "What do critics worry about, according to the text?",
           "opciones": [
             "Students relying on the tools before building basic skills",
-            "AI tools being too expensive for schools",
-            "Teachers refusing to use any technology",
-            "Students reading too many articles"
+            "AI tools being too expensive for most schools",
+            "Teachers refusing to use any kind of technology",
+            "Students reading too many long articles online"
           ],
           "respuestaCorrecta": 0
         },
@@ -1010,13 +1029,14 @@
           "pregunta": "What does the text say the real challenge is?",
           "opciones": [
             "Deciding when and how to introduce AI without skipping the fundamentals",
-            "Banning AI tools from every classroom",
-            "Making AI tools completely free",
-            "Replacing every teacher with an AI tool"
+            "Banning every AI tool from every classroom for good",
+            "Making sure all AI tools are completely free to use",
+            "Replacing every teacher with an AI tool as soon as possible"
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-resena-curso-en-linea",
@@ -1048,9 +1068,9 @@
           "pregunta": "What did the writer find most impressive about the course?",
           "opciones": [
             "How it explained the misunderstanding behind each wrong answer",
-            "How short the whole course was",
-            "How many certificates it gave out",
-            "How cheap it was compared to others"
+            "How short the whole course was compared with others",
+            "How many certificates the course gave out in total",
+            "How cheap the course was compared with similar ones"
           ],
           "respuestaCorrecta": 0
         },
@@ -1059,9 +1079,9 @@
           "pregunta": "What problem did the writer have with the course?",
           "opciones": [
             "It assumed a stronger math background than the writer had",
-            "The exercises didn't match what was taught",
-            "The explanations were unclear",
-            "It had no exercises at all"
+            "The exercises didn't match what was actually taught",
+            "The explanations were unclear and badly organized",
+            "It had no exercises or practice material at all"
           ],
           "respuestaCorrecta": 0
         },
@@ -1076,7 +1096,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-vuelo-cancelado",
@@ -1108,9 +1129,9 @@
           "pregunta": "What is the writer mainly complaining about?",
           "opciones": [
             "How the cancellation situation was handled afterward",
-            "The fact that flights sometimes get cancelled",
-            "The price of the original ticket",
-            "The food served on the previous flight"
+            "The fact that flights sometimes get cancelled at all",
+            "The price of the original ticket to Madrid",
+            "The food that was served on the previous flight"
           ],
           "respuestaCorrecta": 0
         },
@@ -1130,13 +1151,14 @@
           "pregunta": "What is the writer asking for at the end of the letter?",
           "opciones": [
             "A clear explanation of the policy and possible compensation",
-            "A full public apology from the airline",
-            "A free ticket for a future flight",
+            "A full public apology from the airline's management",
+            "A free ticket for a future flight with the airline",
             "The name of the staff member who helped them"
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-dia-recien-graduado",
@@ -1168,9 +1190,9 @@
           "pregunta": "What did Diego do every morning, according to the text?",
           "opciones": [
             "Checked job listings and sent a few matching applications",
-            "Worked on his personal project",
-            "Called companies on the phone",
-            "Attended job interviews"
+            "Worked on his small personal project all morning",
+            "Called several companies on the phone to ask",
+            "Attended job interviews at different companies"
           ],
           "respuestaCorrecta": 0
         },
@@ -1190,9 +1212,9 @@
           "pregunta": "What did Diego find hardest about the process?",
           "opciones": [
             "The silence from applications with no response",
-            "Waking up early every day",
-            "Working on his personal project",
-            "Talking to his friend about it"
+            "Waking up early every single day",
+            "Working on his small personal project",
+            "Talking to his friend about the whole process"
           ],
           "respuestaCorrecta": 0
         },
@@ -1201,13 +1223,14 @@
           "pregunta": "What advice from his friend stuck with Diego?",
           "opciones": [
             "That a job search is a numbers game where consistency matters most",
-            "That he should apply to every job he sees",
-            "That he should stop looking for a few months",
-            "That personal projects are a waste of time"
+            "That he should apply to every job he sees online",
+            "That he should stop looking for work for a few months",
+            "That personal projects are a waste of his time"
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-fase1-argumento-codigo-abierto",
@@ -1272,13 +1295,14 @@
           "pregunta": "When does documentation \"pay for itself,\" according to the text?",
           "opciones": [
             "When someone outside the team can contribute without asking questions",
-            "As soon as it's written, regardless of who reads it",
-            "Only after the project becomes very famous",
-            "Never, according to the writer"
+            "As soon as it's written, no matter who ends up reading it",
+            "Only after the project becomes famous in the open-source world",
+            "Never, according to the writer of the whole text"
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a1-conoce-a-anna",
@@ -1338,7 +1362,8 @@
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a1-mi-familia",
@@ -1398,7 +1423,8 @@
           ],
           "respuestaCorrecta": 1
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a1-mi-dia",
@@ -1458,7 +1484,8 @@
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a1-supermercado",
@@ -1518,7 +1545,8 @@
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a1-mi-casa",
@@ -1578,7 +1606,8 @@
           ],
           "respuestaCorrecta": 1
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a1-dia-lluvioso",
@@ -1638,7 +1667,8 @@
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a1-clase-ingles",
@@ -1698,7 +1728,8 @@
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a1-domingo-amigos",
@@ -1758,7 +1789,8 @@
           ],
           "respuestaCorrecta": 1
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a1-mi-mascota",
@@ -1818,7 +1850,8 @@
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a1-mi-trabajo",
@@ -1878,7 +1911,8 @@
           ],
           "respuestaCorrecta": 0
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a1-mi-cumpleanos",
@@ -1938,7 +1972,8 @@
           ],
           "respuestaCorrecta": 1
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a1-parada-autobus",
@@ -1991,14 +2026,15 @@
           "id": "lec-a1-parada-autobus-p3",
           "pregunta": "What does the woman ask?",
           "opciones": [
-            "What time it is",
-            "Where the school is",
+            "What time the bus arrives today",
+            "Where the school is in the city",
             "If the bus goes to the center",
-            "If the bus is free"
+            "If the bus ticket is free today"
           ],
           "respuestaCorrecta": 2
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a2-primera-semana-trabajo",
@@ -2041,9 +2077,9 @@
           "pregunta": "What did the writer do on Wednesday?",
           "opciones": [
             "Asked many questions and wrote notes",
-            "Fixed a small bug",
-            "Learned how to use the tools",
-            "Met the manager"
+            "Fixed a small bug in the code",
+            "Learned how to use the company's tools",
+            "Met the manager for the first time"
           ],
           "respuestaCorrecta": 0
         },
@@ -2069,7 +2105,8 @@
           ],
           "respuestaCorrecta": 2
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a2-comprar-ropa",
@@ -2100,10 +2137,10 @@
           "id": "lec-a2-comprar-ropa-p1",
           "pregunta": "Why does Maria go to the store?",
           "opciones": [
-            "She wants new shoes",
+            "She wants to buy some new shoes",
             "She needs a jacket for the winter",
-            "She works there",
-            "She wants to visit the café"
+            "She works in that clothing store",
+            "She wants to visit the café in the mall"
           ],
           "respuestaCorrecta": 1
         },
@@ -2140,7 +2177,8 @@
           ],
           "respuestaCorrecta": 2
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a2-fin-de-semana-playa",
@@ -2211,7 +2249,8 @@
           ],
           "respuestaCorrecta": 2
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a2-primer-proyecto-python",
@@ -2242,10 +2281,10 @@
           "id": "lec-a2-primer-proyecto-python-p1",
           "pregunta": "What does the program do?",
           "opciones": [
-            "It translates a text",
+            "It translates a text into Spanish",
             "It counts the words in a text file",
-            "It sends emails",
-            "It plays music"
+            "It sends emails to a list of people",
+            "It plays music from a text file"
           ],
           "respuestaCorrecta": 1
         },
@@ -2264,14 +2303,15 @@
           "id": "lec-a2-primer-proyecto-python-p3",
           "pregunta": "What does the writer want to add?",
           "opciones": [
-            "A small game",
-            "A website",
-            "A translation tool",
+            "A small game to practice the basics",
+            "A website where people can see the program",
+            "A translation tool for different languages",
             "A feature that shows the five most common words"
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b1-correo-extension",
@@ -2302,10 +2342,10 @@
           "id": "lec-b1-correo-extension-p1",
           "pregunta": "Why can't Daniel finish the project on time?",
           "opciones": [
-            "He forgot the date",
-            "He was sick all week",
+            "He forgot the date of the final delivery",
+            "He was sick in bed for the whole week",
             "His team lost a file and his laptop broke",
-            "The professor changed the project"
+            "The professor changed the project at the last minute"
           ],
           "respuestaCorrecta": 2
         },
@@ -2325,9 +2365,9 @@
           "pregunta": "How does the professor react?",
           "opciones": [
             "She accepts the date but asks him to plan better",
-            "She refuses and lowers his grade",
-            "She ignores the email",
-            "She gives him a different project"
+            "She refuses and lowers his grade immediately",
+            "She ignores the email and does not answer",
+            "She gives him a completely different project"
           ],
           "respuestaCorrecta": 0
         },
@@ -2335,14 +2375,15 @@
           "id": "lec-b1-correo-extension-p4",
           "pregunta": "What does Daniel learn?",
           "opciones": [
-            "Emails are not useful for problems",
-            "Professors never accept changes",
-            "Teamwork is always difficult",
+            "Emails are not very useful for solving problems",
+            "Professors never accept changes to a deadline",
+            "Teamwork is always difficult and stressful",
             "Asking for help early is better than waiting"
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b1-transporte-publico",
@@ -2373,10 +2414,10 @@
           "id": "lec-b1-transporte-publico-p1",
           "pregunta": "Why did the writer try public transport?",
           "opciones": [
-            "The car was broken",
-            "The employer asked for it",
+            "The car was broken and needed an expensive repair",
+            "The employer asked all the workers to do it",
             "To find out if it was cheaper and less stressful",
-            "To lose weight"
+            "To lose weight by walking to the stations"
           ],
           "respuestaCorrecta": 2
         },
@@ -2384,10 +2425,10 @@
           "id": "lec-b1-transporte-publico-p2",
           "pregunta": "What was one advantage?",
           "opciones": [
-            "The trips were much faster",
+            "The trips were always much faster than driving",
             "The writer could read or listen to podcasts",
-            "The buses were never crowded",
-            "The tickets were free"
+            "The buses were never crowded or late",
+            "The tickets were completely free for everyone"
           ],
           "respuestaCorrecta": 1
         },
@@ -2396,9 +2437,9 @@
           "pregunta": "What was one disadvantage?",
           "opciones": [
             "One evening the writer waited forty minutes for a train",
-            "The trains were too fast",
-            "Parking was too expensive",
-            "The stations were very far from work"
+            "The trains were too fast to feel comfortable",
+            "Parking near the stations was too expensive",
+            "The stations were very far from the writer's work"
           ],
           "respuestaCorrecta": 0
         },
@@ -2406,14 +2447,15 @@
           "id": "lec-b1-transporte-publico-p4",
           "pregunta": "What will the writer do from now on?",
           "opciones": [
-            "Sell the car",
-            "Use only the car",
-            "Use public transport on weekends only",
+            "Sell the car and only use public transport",
+            "Use only the car, as the writer did before",
+            "Use public transport only on the weekends",
             "Use public transport for work and the car on weekends"
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b1-presentacion-tecnica",
@@ -2455,10 +2497,10 @@
           "id": "lec-b1-presentacion-tecnica-p2",
           "pregunta": "How does the text suggest organizing the talk?",
           "opciones": [
-            "Conclusion, questions, and slides",
+            "Conclusion, questions, and then the slides",
             "Introduction, main content, and conclusion",
-            "Only the main content",
-            "Questions first, then the problem"
+            "Only the main content, without an introduction",
+            "Questions first, and then the problem"
           ],
           "respuestaCorrecta": 1
         },
@@ -2467,9 +2509,9 @@
           "pregunta": "What does the text recommend for each slide?",
           "opciones": [
             "One idea and a few images or diagrams",
-            "As much text as possible",
-            "No images at all",
-            "Three different topics"
+            "As much text as possible on every slide",
+            "No images or diagrams of any kind",
+            "Three or four different topics per slide"
           ],
           "respuestaCorrecta": 0
         },
@@ -2484,7 +2526,8 @@
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b1-habitos-sueno",
@@ -2515,10 +2558,10 @@
           "id": "lec-b1-habitos-sueno-p1",
           "pregunta": "What did Lucía believe for years?",
           "opciones": [
-            "Coffee was bad for her",
-            "She needed ten hours of sleep",
+            "Coffee was bad for her health and her grades",
+            "She needed ten hours of sleep every night",
             "Studying late at night was the only good way",
-            "Exams were not important"
+            "Exams were not important for her future"
           ],
           "respuestaCorrecta": 2
         },
@@ -2526,10 +2569,10 @@
           "id": "lec-b1-habitos-sueno-p2",
           "pregunta": "What did her friend explain?",
           "opciones": [
-            "Coffee improves memory",
+            "Coffee improves memory during long exams",
             "Sleep helps the brain store what we learn",
-            "Studying at night is always better",
-            "Exams should be avoided"
+            "Studying at night is always the best way",
+            "Exams should be avoided whenever possible"
           ],
           "respuestaCorrecta": 1
         },
@@ -2538,9 +2581,9 @@
           "pregunta": "What changed after two weeks?",
           "opciones": [
             "She remembered more and concentrated better",
-            "She slept less",
-            "She stopped studying",
-            "She got worse grades"
+            "She slept fewer hours than before",
+            "She stopped studying for her exams",
+            "She got worse grades in her classes"
           ],
           "respuestaCorrecta": 0
         },
@@ -2548,14 +2591,15 @@
           "id": "lec-b1-habitos-sueno-p4",
           "pregunta": "How is her schedule now?",
           "opciones": [
-            "She studies only at night",
-            "She never goes to bed before two",
-            "She has no schedule",
+            "She studies only at night, as she used to",
+            "She never goes to bed before two in the morning",
+            "She has no schedule at all anymore",
             "Regular, although she sometimes breaks it on weekends"
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b2-privacidad-apps",
@@ -2597,10 +2641,10 @@
           "id": "lec-b2-privacidad-apps-p2",
           "pregunta": "What do companies argue about data collection?",
           "opciones": [
-            "It is required by every government",
+            "It is required by the law in every country",
             "It allows personalization and free services",
-            "It makes apps faster to install",
-            "It is never shared with anyone"
+            "It makes the apps faster to install and update",
+            "It is never shared with any other company"
           ],
           "respuestaCorrecta": 1
         },
@@ -2619,14 +2663,15 @@
           "id": "lec-b2-privacidad-apps-p4",
           "pregunta": "What does the author conclude?",
           "opciones": [
-            "Apps should be banned",
-            "Only governments can solve the problem",
-            "Users should never install apps",
+            "Apps should be banned because they collect personal data",
+            "Only governments can solve the problem of privacy for everyone",
+            "Users should never install any new app on their phones",
             "Privacy needs stricter rules, simpler design, and informed users"
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b2-automatizacion-empleo",
@@ -2657,10 +2702,10 @@
           "id": "lec-b2-automatizacion-empleo-p1",
           "pregunta": "Why might the current change be different from earlier ones?",
           "opciones": [
-            "It only affects manual work",
-            "It is slower than before",
+            "It only affects manual work in factories",
+            "It is slower than the changes of the past",
             "It may be faster and affect educated professions",
-            "Nobody is worried about it"
+            "Nobody is worried about it this time"
           ],
           "respuestaCorrecta": 2
         },
@@ -2668,10 +2713,10 @@
           "id": "lec-b2-automatizacion-empleo-p2",
           "pregunta": "What do the optimists remind us?",
           "opciones": [
-            "Automation never destroyed any job",
+            "Automation never destroyed any job in history",
             "Past automation also created new occupations",
-            "New jobs always pay more",
-            "Workers can change jobs instantly"
+            "New jobs always pay much more than old ones",
+            "Workers can change jobs instantly and without help"
           ],
           "respuestaCorrecta": 1
         },
@@ -2690,14 +2735,15 @@
           "id": "lec-b2-automatizacion-empleo-p4",
           "pregunta": "What does the third group suggest?",
           "opciones": [
-            "Ignoring artificial intelligence",
-            "Eliminating creative jobs",
-            "Banning code generation",
+            "Ignoring artificial intelligence completely",
+            "Eliminating all creative jobs in the future",
+            "Banning code generation in all companies",
             "Thinking about which tasks can be automated"
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b2-sesgos-datos",
@@ -2728,10 +2774,10 @@
           "id": "lec-b2-sesgos-datos-p1",
           "pregunta": "Why can a hiring model prefer male candidates?",
           "opciones": [
-            "Its programmers wrote that rule",
-            "Women never apply for jobs",
+            "Its programmers wrote that rule directly into the code",
+            "Women never apply for jobs in technology companies",
             "It learned from past hiring decisions made mostly about men",
-            "It cannot read résumés"
+            "It cannot read résumés written in a different format"
           ],
           "respuestaCorrecta": 2
         },
@@ -2751,9 +2797,9 @@
           "pregunta": "Why can overall accuracy be misleading?",
           "opciones": [
             "It can hide poor results for a small group",
-            "It is always very low",
-            "It ignores the majority",
-            "It cannot be measured"
+            "It is always very low in real-world systems",
+            "It ignores the results of the majority of users",
+            "It cannot be measured with any real data"
           ],
           "respuestaCorrecta": 0
         },
@@ -2761,14 +2807,15 @@
           "id": "lec-b2-sesgos-datos-p4",
           "pregunta": "What does the text say about the proposed measures?",
           "opciones": [
-            "They completely eliminate bias",
-            "They are too expensive to try",
-            "They only work for small models",
+            "They completely eliminate bias from every model",
+            "They are too expensive for any team to try",
+            "They only work for small and simple models",
             "They do not remove bias but make it visible"
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b2-viajar-solo",
@@ -2799,10 +2846,10 @@
           "id": "lec-b2-viajar-solo-p1",
           "pregunta": "What is a main advantage of traveling alone?",
           "opciones": [
-            "It is always cheaper",
-            "You never feel lonely",
+            "It is always much cheaper than traveling in a group",
+            "You never feel lonely during the whole trip",
             "You decide everything about the trip",
-            "It is always safer"
+            "It is always safer than traveling with friends"
           ],
           "respuestaCorrecta": 2
         },
@@ -2810,10 +2857,10 @@
           "id": "lec-b2-viajar-solo-p2",
           "pregunta": "Why do solo travelers often meet more people?",
           "opciones": [
-            "They stay in larger groups",
+            "They stay in larger groups at the hostels",
             "Without a companion, they start conversations with others",
-            "They avoid public places",
-            "They only travel in summer"
+            "They avoid public places and busy restaurants",
+            "They only travel during the summer months"
           ],
           "respuestaCorrecta": 1
         },
@@ -2832,14 +2879,15 @@
           "id": "lec-b2-viajar-solo-p4",
           "pregunta": "What does the author suggest at the end?",
           "opciones": [
-            "Always travel alone",
-            "Never travel alone",
-            "Choose only fashionable places",
+            "Always travel alone, whatever the destination",
+            "Never travel alone because it is not safe",
+            "Choose only the places that are fashionable",
             "Think about what you expect from the trip"
           ],
           "respuestaCorrecta": 3
         }
-      ]
+      ],
+      "revisionIA": "2026-11-20"
     }
   ]
 }

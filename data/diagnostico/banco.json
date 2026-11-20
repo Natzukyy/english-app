@@ -7,8 +7,15 @@
       "nivelCEFR": "A2",
       "texto": "Maria works at a small company. She starts work at nine and finishes at five. Every day she takes the bus to the office, but on Fridays she walks because the weather is usually nice.",
       "pregunta": "How does Maria usually get to work?",
-      "opciones": ["By bus", "By car", "By train", "She walks every day"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "By bus",
+        "By car",
+        "By train",
+        "She walks every day"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a2-2",
@@ -16,8 +23,15 @@
       "nivelCEFR": "A2",
       "texto": "Tom's laptop stopped working yesterday. He didn't know what to do, so he called his brother, who works with computers. His brother told him to restart it, and that fixed the problem.",
       "pregunta": "Why did Tom call his brother?",
-      "opciones": ["To ask about his computer", "To invite him to dinner", "To borrow some money", "To ask for a new laptop"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "To ask about his computer",
+        "To invite him to dinner",
+        "To borrow some money",
+        "To ask for a new laptop"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b1-1",
@@ -27,11 +41,13 @@
       "pregunta": "According to the passage, why do some companies use video calls?",
       "opciones": [
         "To replace in-person communication now that people work remotely",
-        "To reduce the number of employees",
-        "To monitor how long employees work",
-        "To save money on office furniture"
+        "To reduce the total number of employees in the company",
+        "To monitor exactly how long each employee works every day",
+        "To save money on office furniture and equipment"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b1-2",
@@ -39,8 +55,15 @@
       "nivelCEFR": "B1",
       "texto": "When Ana moved to a new city for her job, she didn't know anyone. At first she felt lonely, but she decided to join a local sports club, which helped her meet new people and feel more at home.",
       "pregunta": "What did Ana do to feel better in her new city?",
-      "opciones": ["She joined a sports club", "She went back to her old city", "She asked for a transfer", "She stopped working"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "She joined a sports club",
+        "She went back to her old city",
+        "She asked for a transfer",
+        "She stopped working"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b2-1",
@@ -50,11 +73,13 @@
       "pregunta": "According to the passage, what is a risk of training AI on biased data?",
       "opciones": [
         "The model may produce misleading results that still look confident",
-        "The model will always refuse to produce any results",
-        "The model becomes too slow to use in production",
-        "The model stops needing any dataset at all"
+        "The model will always refuse to produce any results at all",
+        "The model becomes too slow to use in a production environment",
+        "The model stops needing any dataset to keep working"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b2-2",
@@ -68,7 +93,9 @@
         "To reduce the number of meetings",
         "To avoid writing documentation"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-c1-1",
@@ -78,11 +105,13 @@
       "pregunta": "What does the passage suggest is the real source of problems with technical debt?",
       "opciones": [
         "Failing to track and repay debt that was taken on deliberately",
-        "The mere existence of any technical debt at all",
-        "Shipping features too quickly in general",
-        "Teams that never take on any debt"
+        "The mere existence of any technical debt in the codebase",
+        "Shipping features too quickly in any kind of project",
+        "Teams that never take on any debt at any point"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-c1-2",
@@ -92,11 +121,13 @@
       "pregunta": "What is the passage's overall stance on peer review?",
       "opciones": [
         "It is flawed but still provides valuable vetting that replacements often underestimate",
-        "It should be abolished immediately",
-        "It has no real weaknesses worth mentioning",
-        "It is only useful outside of research"
+        "It should be abolished immediately because its flaws are too serious",
+        "It has no real weaknesses worth discussing in any detail",
+        "It is only useful outside of the world of academic research"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a2-3",
@@ -105,8 +136,14 @@
       "revisar": true,
       "texto": "Lily opens her coffee shop at seven every morning. The first hour is usually the busiest, with people stopping by before work. After nine, things get quiet until lunchtime, when students from the nearby school come in for sandwiches.",
       "pregunta": "When is the coffee shop usually the busiest, according to the text?",
-      "opciones": ["At lunchtime", "The first hour, before work", "Right before closing", "Late at night"],
-      "respuestaCorrecta": 1
+      "opciones": [
+        "At lunchtime, when the students come in",
+        "The first hour, before work",
+        "Right before the shop closes",
+        "Late at night, after the school day"
+      ],
+      "respuestaCorrecta": 1,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-a2-4",
@@ -115,8 +152,14 @@
       "revisar": true,
       "texto": "Carlos spends most weekends fixing old bicycles in his garage. He buys them cheap, replaces the broken parts, and sells them for a small profit. It started as a hobby, but now a few neighbors ask him to fix their bikes too.",
       "pregunta": "What do some neighbors now ask Carlos to do?",
-      "opciones": ["Sell them a new bicycle", "Fix their bicycles", "Teach them to ride a bike", "Buy their old bicycles"],
-      "respuestaCorrecta": 1
+      "opciones": [
+        "Sell them a new bicycle",
+        "Fix their bicycles",
+        "Teach them to ride a bike",
+        "Buy their old bicycles"
+      ],
+      "respuestaCorrecta": 1,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b1-3",
@@ -125,8 +168,14 @@
       "revisar": true,
       "texto": "When Hana wanted to learn basic video editing, she didn't take a formal course. Instead, she watched short tutorials and copied what she saw, pausing the video every few seconds. It took longer than a structured course might have, but she only learned exactly what she needed for her own videos.",
       "pregunta": "How did Hana learn video editing?",
-      "opciones": ["By taking a formal course", "By watching and copying short tutorials", "By asking a professional editor", "By reading a long manual"],
-      "respuestaCorrecta": 1
+      "opciones": [
+        "By taking a formal course at a school",
+        "By watching and copying short tutorials",
+        "By asking a professional editor for help",
+        "By reading a long manual about the software"
+      ],
+      "respuestaCorrecta": 1,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b1-4",
@@ -135,8 +184,14 @@
       "revisar": true,
       "texto": "After living in a large house for years, Omar and his family moved into a much smaller apartment downtown. At first it felt cramped, but they got rid of things they didn't use, and within a month the smaller space felt surprisingly comfortable, with everything closer and easier to maintain.",
       "pregunta": "What helped the smaller apartment feel more comfortable?",
-      "opciones": ["Buying more furniture", "Getting rid of things they didn't use", "Moving again to an even bigger place", "Hiring someone to clean it"],
-      "respuestaCorrecta": 1
+      "opciones": [
+        "Buying more furniture",
+        "Getting rid of things they didn't use",
+        "Moving again to an even bigger place",
+        "Hiring someone to clean it"
+      ],
+      "respuestaCorrecta": 1,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b2-3",
@@ -147,11 +202,12 @@
       "pregunta": "According to the text, why does asynchronous communication require clearer writing?",
       "opciones": [
         "Because there's no immediate chance to clarify a misunderstanding",
-        "Because live meetings are no longer allowed",
-        "Because written messages are always shorter than chat",
-        "Because teams in the same time zone write poorly"
+        "Because live meetings are no longer allowed in these teams",
+        "Because written messages are always shorter than a chat",
+        "Because teams in the same time zone write very poorly"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-b2-4",
@@ -166,7 +222,8 @@
         "They refuse to give any estimate at all",
         "They only estimate projects that have no unexpected problems"
       ],
-      "respuestaCorrecta": 1
+      "respuestaCorrecta": 1,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-c1-3",
@@ -181,7 +238,8 @@
         "Young products always have more users than mature ones",
         "Speed stops being valuable to any team at any stage"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "lec-c1-4",
@@ -196,17 +254,24 @@
         "Having too many contributors helping with the project",
         "A lack of users willing to try the project"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisionIA": "2026-11-20"
     },
-
     {
       "id": "esc-a2-1",
       "habilidad": "escucha",
       "nivelCEFR": "A2",
       "textoParaTTS": "Hi, this is Dave. I'm running a bit late, maybe ten minutes. Can you order a coffee for me? I'll have a black coffee, no sugar.",
       "pregunta": "What does Dave ask for?",
-      "opciones": ["A black coffee with no sugar", "A coffee with milk and sugar", "A tea with lemon", "Nothing, he already ate"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "A black coffee with no sugar",
+        "A coffee with milk and sugar",
+        "A tea with lemon",
+        "Nothing, he already ate"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a2-2",
@@ -214,8 +279,15 @@
       "nivelCEFR": "A2",
       "textoParaTTS": "The train to the airport leaves from platform two at nine fifteen. Please arrive at least ten minutes early.",
       "pregunta": "What platform does the airport train leave from?",
-      "opciones": ["Platform two", "Platform one", "Platform nine", "Platform fifteen"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "Platform two",
+        "Platform one",
+        "Platform nine",
+        "Platform fifteen"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-1",
@@ -223,8 +295,15 @@
       "nivelCEFR": "B1",
       "textoParaTTS": "So the plan for the meeting is: first, we'll go over last week's numbers, then marketing will give a short update, and we'll leave the last ten minutes for questions.",
       "pregunta": "What happens right after the numbers are reviewed?",
-      "opciones": ["Marketing gives an update", "The meeting ends", "Questions start immediately", "They review last month's numbers again"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "Marketing gives an update",
+        "The meeting ends",
+        "Questions start immediately",
+        "They review last month's numbers again"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-2",
@@ -232,8 +311,15 @@
       "nivelCEFR": "B1",
       "textoParaTTS": "I called the clinic to reschedule my appointment, but they said the earliest slot is next Thursday afternoon, so I took that one instead of waiting longer.",
       "pregunta": "When is the speaker's new appointment?",
-      "opciones": ["Next Thursday afternoon", "This Thursday morning", "Next Thursday morning", "The clinic couldn't give a new slot"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "Next Thursday afternoon",
+        "This Thursday morning",
+        "Next Thursday morning",
+        "The clinic couldn't give a new slot"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-1",
@@ -243,11 +329,13 @@
       "pregunta": "What does the speaker suggest for the next phase of the project?",
       "opciones": [
         "Agreeing on the scope before starting instead of figuring it out later",
-        "Cancelling the project entirely",
-        "Starting without any planning again",
-        "Keeping the scope exactly as undefined as before"
+        "Cancelling the project entirely and starting a new one",
+        "Starting without any planning again, as they did before",
+        "Keeping the scope as undefined as it was before"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-2",
@@ -257,11 +345,13 @@
       "pregunta": "What surprised the speaker about the interview?",
       "opciones": [
         "How much time was spent on questions about handling disagreements",
-        "That there were no technical questions at all",
-        "That the interview was cancelled",
-        "That they asked no questions about teamwork"
+        "That there were no technical questions at all in the interview",
+        "That the whole interview was cancelled at the last minute",
+        "That they asked no questions about teamwork or communication"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-c1-1",
@@ -271,11 +361,13 @@
       "pregunta": "What is the speaker's main concern about the proposal?",
       "opciones": [
         "Its timing, given the team hasn't absorbed recent changes yet",
-        "That the proposal has no merit whatsoever",
+        "That the proposal has no merit whatsoever for the team",
         "That the team has had too much time to adjust already",
-        "That no changes have happened recently"
+        "That no changes have happened recently in the company"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-c1-2",
@@ -285,11 +377,13 @@
       "pregunta": "What realization changed the speaker's view on asking for help?",
       "opciones": [
         "Respected engineers ask for help often without losing credibility",
-        "Asking for help is always a bad sign",
-        "Only inexperienced engineers ask questions",
-        "Credibility is unrelated to asking questions"
+        "Asking for help is always a bad sign for an engineer",
+        "Only inexperienced engineers ever ask questions at work",
+        "Credibility is completely unrelated to asking questions"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a2-3",
@@ -298,8 +392,14 @@
       "revisar": true,
       "textoParaTTS": "Hey, it's me. For lunch, can you order me a sandwich, no onions please? I'll be there in about twenty minutes.",
       "pregunta": "What does the speaker ask for?",
-      "opciones": ["A sandwich with onions", "A sandwich with no onions", "A salad", "Nothing, they already ate"],
-      "respuestaCorrecta": 1
+      "opciones": [
+        "A sandwich with onions",
+        "A sandwich with no onions",
+        "A salad",
+        "Nothing, they already ate"
+      ],
+      "respuestaCorrecta": 1,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-a2-4",
@@ -308,8 +408,14 @@
       "revisar": true,
       "textoParaTTS": "Tomorrow it's going to rain all day, so bring an umbrella if you're walking to the office.",
       "pregunta": "What does the speaker suggest bringing tomorrow?",
-      "opciones": ["Sunglasses", "An umbrella", "A jacket for the cold", "Nothing special"],
-      "respuestaCorrecta": 1
+      "opciones": [
+        "Sunglasses",
+        "An umbrella",
+        "A jacket for the cold",
+        "Nothing special"
+      ],
+      "respuestaCorrecta": 1,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-3",
@@ -318,8 +424,14 @@
       "revisar": true,
       "textoParaTTS": "This is a message from the clinic. Your appointment on Tuesday was moved to Wednesday at the same time, ten in the morning, because the doctor is out that day.",
       "pregunta": "Why was the appointment moved?",
-      "opciones": ["The patient asked to reschedule", "The doctor is out on Tuesday", "The clinic is closing permanently", "The time changed but not the day"],
-      "respuestaCorrecta": 1
+      "opciones": [
+        "The patient asked to reschedule",
+        "The doctor is out on Tuesday",
+        "The clinic is closing permanently",
+        "The time changed but not the day"
+      ],
+      "respuestaCorrecta": 1,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b1-4",
@@ -328,8 +440,14 @@
       "revisar": true,
       "textoParaTTS": "To reset your password, go to the login page, click 'forgot password', and follow the link we send to your email. It usually arrives within a couple of minutes.",
       "pregunta": "What should you click on the login page to reset your password?",
-      "opciones": ["'Forgot password'", "'Create account'", "'Contact support'", "'Change email'"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "'Forgot password'",
+        "'Create account'",
+        "'Contact support'",
+        "'Change email'"
+      ],
+      "respuestaCorrecta": 0,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-3",
@@ -340,11 +458,12 @@
       "pregunta": "What does the speaker say was really behind their frustration with meetings?",
       "opciones": [
         "Joining without a clear idea of the decision needed",
-        "Meetings being too short",
-        "Having too few meetings overall",
-        "Meetings always starting late"
+        "Meetings being too short to cover the topics",
+        "Having too few meetings overall in the week",
+        "Meetings always starting late, with no agenda"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-b2-4",
@@ -355,11 +474,12 @@
       "pregunta": "What was the result of the compromise described?",
       "opciones": [
         "They shipped a smaller version instead of waiting for the ideal one",
-        "They cancelled the feature entirely",
-        "They delayed everything until next year",
-        "Both sides got exactly what they originally wanted"
+        "They cancelled the feature entirely after the discussion",
+        "They delayed everything until the beginning of next year",
+        "Both sides got exactly what they had originally wanted"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-c1-3",
@@ -370,11 +490,12 @@
       "pregunta": "According to the speaker, what is the hardest part of scaling a team?",
       "opciones": [
         "The erosion of shared context that used to exist by default",
-        "Finding enough office space",
-        "The hiring process itself",
-        "Writing too much documentation too early"
+        "Finding enough office space for the growing team",
+        "The hiring process itself, from interviews to offers",
+        "Writing too much documentation too early on"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "esc-c1-4",
@@ -389,72 +510,128 @@
         "The proposal has already been rejected by everyone else",
         "Stability has nothing to do with current habits"
       ],
-      "respuestaCorrecta": 0
+      "respuestaCorrecta": 0,
+      "revisionIA": "2026-11-20"
     },
-
     {
       "id": "voc-a2-1",
       "habilidad": "vocabulario_gramatica",
       "nivelCEFR": "A2",
       "pregunta": "Choose the correct option: She ___ to the gym every morning before work.",
-      "opciones": ["goes", "go", "going", "gone"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "goes",
+        "go",
+        "going",
+        "gone"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-a2-2",
       "habilidad": "vocabulario_gramatica",
       "nivelCEFR": "A2",
       "pregunta": "Choose the correct option: There ___ some milk in the fridge.",
-      "opciones": ["is", "are", "be", "been"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "is",
+        "are",
+        "be",
+        "been"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-b1-1",
       "habilidad": "vocabulario_gramatica",
       "nivelCEFR": "B1",
       "pregunta": "Choose the correct option: If I ___ more time, I would learn another language.",
-      "opciones": ["had", "have", "will have", "having"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "had",
+        "have",
+        "will have",
+        "having"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-b1-2",
       "habilidad": "vocabulario_gramatica",
       "nivelCEFR": "B1",
       "pregunta": "Choose the correct option: By the time we arrived, the meeting ___ already.",
-      "opciones": ["had started", "started", "starts", "has started"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "had started",
+        "started",
+        "starts",
+        "has started"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-b2-1",
       "habilidad": "vocabulario_gramatica",
       "nivelCEFR": "B2",
       "pregunta": "Choose the correct option: I'd rather you ___ anything about it for now.",
-      "opciones": ["didn't say", "don't say", "won't say", "haven't said"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "didn't say",
+        "don't say",
+        "won't say",
+        "haven't said"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-b2-2",
       "habilidad": "vocabulario_gramatica",
       "nivelCEFR": "B2",
       "pregunta": "Choose the correct option: Hardly ___ the presentation when the fire alarm went off.",
-      "opciones": ["had she started", "she had started", "she started", "did she start"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "had she started",
+        "she had started",
+        "she started",
+        "did she start"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-c1-1",
       "habilidad": "vocabulario_gramatica",
       "nivelCEFR": "C1",
       "pregunta": "Choose the correct option: ___ the delays, the team still managed to ship on time.",
-      "opciones": ["Despite", "Although", "Even though", "Because of"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "Despite",
+        "Although",
+        "Even though",
+        "Because of"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-c1-2",
       "habilidad": "vocabulario_gramatica",
       "nivelCEFR": "C1",
       "pregunta": "Choose the correct option: Were it not for her feedback, the report ___ several errors.",
-      "opciones": ["would have contained", "will contain", "contains", "had contained"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "would have contained",
+        "will contain",
+        "contains",
+        "had contained"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-a2-3",
@@ -462,8 +639,14 @@
       "nivelCEFR": "A2",
       "revisar": true,
       "pregunta": "Choose the correct option: I ___ speak French, but I can understand a little.",
-      "opciones": ["can", "can't", "am", "do"],
-      "respuestaCorrecta": 1
+      "opciones": [
+        "can",
+        "can't",
+        "am",
+        "do"
+      ],
+      "respuestaCorrecta": 1,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-a2-4",
@@ -471,8 +654,14 @@
       "nivelCEFR": "A2",
       "revisar": true,
       "pregunta": "Choose the correct option: There are three ___ on the table.",
-      "opciones": ["apple", "apples", "an apple", "apple's"],
-      "respuestaCorrecta": 1
+      "opciones": [
+        "apple",
+        "apples",
+        "an apple",
+        "apple's"
+      ],
+      "respuestaCorrecta": 1,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-b1-3",
@@ -480,8 +669,14 @@
       "nivelCEFR": "B1",
       "revisar": true,
       "pregunta": "Choose the correct option: I ___ work late every day, but now I leave on time most nights.",
-      "opciones": ["use to", "used to", "am used", "was use to"],
-      "respuestaCorrecta": 1
+      "opciones": [
+        "use to",
+        "used to",
+        "am used",
+        "was use to"
+      ],
+      "respuestaCorrecta": 1,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-b1-4",
@@ -489,8 +684,14 @@
       "nivelCEFR": "B1",
       "revisar": true,
       "pregunta": "Choose the correct option: This version is ___ than the last one.",
-      "opciones": ["more fast", "fastest", "faster", "fast"],
-      "respuestaCorrecta": 2
+      "opciones": [
+        "more fast",
+        "fastest",
+        "faster",
+        "fast"
+      ],
+      "respuestaCorrecta": 2,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-b2-3",
@@ -498,8 +699,14 @@
       "nivelCEFR": "B2",
       "revisar": true,
       "pregunta": "Choose the correct option: The bug ___ before the update went live.",
-      "opciones": ["was fixed", "fixed", "fixes", "has fix"],
-      "respuestaCorrecta": 0
+      "opciones": [
+        "was fixed",
+        "fixed",
+        "fixes",
+        "has fix"
+      ],
+      "respuestaCorrecta": 0,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-b2-4",
@@ -507,8 +714,14 @@
       "nivelCEFR": "B2",
       "revisar": true,
       "pregunta": "Choose the correct option: She said she ___ the report by Friday.",
-      "opciones": ["will finish", "finishes", "would finish", "finish"],
-      "respuestaCorrecta": 2
+      "opciones": [
+        "has finished",
+        "finishes",
+        "would finish",
+        "finish"
+      ],
+      "respuestaCorrecta": 2,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-c1-3",
@@ -516,8 +729,14 @@
       "nivelCEFR": "C1",
       "revisar": true,
       "pregunta": "Choose the correct option: No sooner ___ the deploy than three alerts went off.",
-      "opciones": ["we had finished", "had we finished", "we finished", "did we finished"],
-      "respuestaCorrecta": 1
+      "opciones": [
+        "we had finished",
+        "had we finished",
+        "we finished",
+        "did we finished"
+      ],
+      "respuestaCorrecta": 1,
+      "revisionIA": "2026-11-20"
     },
     {
       "id": "voc-c1-4",
@@ -525,8 +744,14 @@
       "nivelCEFR": "C1",
       "revisar": true,
       "pregunta": "Choose the correct option: Had I known about the merge conflict earlier, I ___ it before lunch.",
-      "opciones": ["would resolve", "resolve", "would have resolved", "will have resolved"],
-      "respuestaCorrecta": 2
+      "opciones": [
+        "would resolve",
+        "resolve",
+        "would have resolved",
+        "will have resolved"
+      ],
+      "respuestaCorrecta": 2,
+      "revisionIA": "2026-11-20"
     }
   ]
 }
