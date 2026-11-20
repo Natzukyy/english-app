@@ -90,7 +90,7 @@
 
   /** Preparación para crecer (idioma/nivel configurable): data/config.json saca el nombre
    * de la app del código del shell -- título, meta de iOS y logo de la barra lateral se
-   * rellenan con esto en vez de venir fijos en index.html. El nombre real es "Rumbo"
+   * rellenan con esto en vez de venir fijos en index.html. El nombre real es "Hey!"
    * (nombreApp); idiomaVisible/metaPersonal no se muestran en la interfaz (ver
    * DECISIONES.md: escala de nivel abierta A1-C2, sin tope en B2). */
   function aplicarConfigShell() {
@@ -103,16 +103,21 @@
         // para el nombre de Alex y el día de conversación semanal -- "todo configurable desde
         // data/, nada hardcodeado en JS", ver spec de Calcomanías).
         contexto.config = config;
-        var nombre = config.nombreApp || "Rumbo"; // i18n-ok: nombre de reserva si config.json no carga (el nombre real vive en data/config.json)
+        var nombre = config.nombreApp || "Hey!"; // i18n-ok: nombre de reserva si config.json no carga (el nombre real vive en data/config.json)
         document.title = nombre;
         var metaTitulo = document.querySelector('meta[name="apple-mobile-web-app-title"]');
         if (metaTitulo) metaTitulo.setAttribute("content", nombre);
-        // El logo lleva el punto final en amarillo ("Rumbo.", ver spec) -- por eso es
+        // El logo lleva el punto final en amarillo ("Hey" + "!" final en amarillo) -- por eso es
         // innerHTML con dos spans y no textContent; el nombre se escapa igual que
         // cualquier otro dato que no sea un literal fijo en el código (ver DECISIONES.md D10).
         var marca = document.getElementById("marca-sidebar");
         if (marca) {
-          marca.innerHTML = "<span>" + global.App.Util.escaparHTML(nombre) + '</span><span class="marca-punto">.</span>';
+          var ultimo = nombre.slice(-1);
+          var conAcento = ultimo === "!" || ultimo === ".";
+          var base = conAcento ? nombre.slice(0, -1) : nombre;
+          marca.innerHTML =
+            "<span>" + global.App.Util.escaparHTML(base) + "</span>" +
+            (conAcento ? '<span class="marca-punto">' + global.App.Util.escaparHTML(ultimo) + "</span>" : "");
         }
       })
       .catch(function (err) {

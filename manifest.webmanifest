@@ -1,6 +1,6 @@
 {
-  "name": "Rumbo",
-  "short_name": "Rumbo",
+  "name": "Hey!",
+  "short_name": "Hey!",
   "description": "App personal para practicar inglés, con progreso medido en niveles CEFR (A1-C2).",
   "start_url": "./index.html",
   "scope": "./",

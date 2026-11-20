@@ -1034,7 +1034,7 @@ nav.tabs button[aria-current="true"] {
   color: var(--tinta);
 }
 
-/* Logo de texto ("Rumbo.", desde data/config.json -- ver js/app.js): solo se ve arriba de
+/* Logo de texto ("Hey!", desde data/config.json -- ver js/app.js): solo se ve arriba de
    la barra lateral en laptop (ver media query). */
 .marca-sidebar {
   display: none;
@@ -2187,7 +2187,7 @@ button.tarjeta-habilidad:active {
     color: var(--texto);
   }
 
-  /* El punto final del logo ("Rumbo.") es el acento amarillo -- ver js/app.js
+  /* El signo final del logo ("Hey!") es el acento amarillo -- ver js/app.js
      aplicarConfigShell(), que arma el markup con un <span class="marca-punto"> aparte. */
   .marca-punto {
     color: var(--amarillo);
