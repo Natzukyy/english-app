@@ -115,7 +115,7 @@
       '<div class="pantalla-vista pantalla-diagnostico pantalla-diagnostico-pregunta pantalla-confirmacion">' +
       "<h1>" + esc(t("confirmacion.titulo")) + "</h1>" +
       '<div class="fila-cabeza"><span class="texto-tenue">' +
-      esc(t("confirmacion.subtitulo", { habilidad: t("habilidad." + estado.habilidad).toLowerCase(), nivel: estado.nivelObjetivo })) +
+      esc(t("confirmacion.subtitulo", { habilidad: t("habilidad." + estado.habilidad), nivel: estado.nivelObjetivo })) +
       '</span><span class="texto-tenue num-tabular">' + (estado.indice + 1) + " / " + estado.preguntas.length + "</span></div>" +
       '<div class="barra-progreso"><span id="barra-confirmacion" style="width:0%"></span></div>' +
       '<div class="diagnostico-cuerpo">' +

@@ -4211,7 +4211,11 @@ main:has(> .pantalla-habla) {
   * {
     animation-duration: 0.001ms !important;
     animation-delay: 0ms !important;
+    /* Sin esto las animaciones infinitas (sol de racha, ondas del micrófono) seguían corriendo:
+       0.001ms por vuelta, o sea parpadeo continuo y trabajo de más. Una sola vuelta y se detienen. */
+    animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -4293,8 +4297,7 @@ main:has(> .pantalla-habla) {
 /* Avance continuo (D29): barra "hacia el siguiente nivel" (la que se mueve tras cada sesión),
    textos de "Faltan N respuestas" / "Lista para confirmar" y avisos de confirmación. */
 .barra-progreso.barra-nivel {
-  height: 6px;
-  margin-top: 0;
+  margin-top: 0; /* misma altura que la barra de escala: con 6px y borde de 2.5px el relleno quedaba en 1px */
 }
 .progreso-detalle-habilidad,
 .mini-barra-detalle {

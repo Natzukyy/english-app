@@ -32,7 +32,12 @@
   var CLAVE_FLUJO = "heyFlujoEnCurso"; // localStorage: {fecha, indice} del paso que se acaba de empezar
 
   function nombrePaso(t, paso) {
-    if (paso.tipo === "practica") return t("inicio.paso.practica", { habilidad: t("habilidad." + paso.habilidad).toLowerCase() });
+    if (paso.tipo === "practica") {
+      // En inglés la plantilla es "{habilidad} practice": con la habilidad en minúscula empezaba
+      // con minúscula ("speaking practice"), así que se capitaliza la primera letra del resultado.
+      var nombre = t("inicio.paso.practica", { habilidad: t("habilidad." + paso.habilidad).toLowerCase() });
+      return nombre.charAt(0).toUpperCase() + nombre.slice(1);
+    }
     if (paso.tipo === "confirmacion") return t("inicio.paso.confirmacion", { habilidad: t("habilidad." + paso.habilidad).toLowerCase() });
     var clave = "inicio.paso." + paso.tipo;
     var texto = t(clave);
