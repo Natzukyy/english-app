@@ -1467,6 +1467,699 @@
       "prompt": "What time do you go to bed?",
       "requiere_prueba_microfono": true,
       "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-2",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "I'm not convinced that's the best use of our time.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-3",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "Let's not jump to conclusions before we've seen the full picture.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-4",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "To be honest, I was taken aback by how direct the feedback was.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-5",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "It's a trade-off, and I think we're being too optimistic about it.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-6",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "I'd rather flag the risk now than explain it later.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-7",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "The proposal is solid, albeit a little ambitious for the timeline.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-8",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "Could we revisit the assumptions behind these numbers?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-9",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "I don't want to come across as negative, but I have a concern.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-10",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "We should have a clear plan in place before we scale up.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-11",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "That's easier said than done, especially with such a small team.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-12",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "Honestly, I think we're overcomplicating a fairly simple problem.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-13",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "Let's park the details and agree on the overall direction first.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-14",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "She has a knack for turning vague ideas into concrete plans.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-15",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "It all boils down to whether we trust the data.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-16",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "I'll take ownership of this, and I'll report back by Friday.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-17",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "The results look promising, but we need to replicate them.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-18",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "There's a lot to be said for keeping things simple.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-19",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "We've been going back and forth on this for far too long.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-shadow-20",
+      "tipo": "shadowing",
+      "nivelCEFR": "C1",
+      "fraseObjetivo": "I'm cautiously optimistic, but I wouldn't bet on it yet.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-3",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "Describe a time you had to change your mind about something important. What made you do it?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-4",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "How would you explain a technical idea to someone with no background in the subject?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-5",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "What is a decision at work or university that you would make differently today?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-6",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "Talk about a book, article or talk that changed the way you think about something.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-7",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "How do you decide whether a source of information is reliable?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-8",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "Describe a disagreement you had where both sides had a point. How did it end?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-9",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "What do you think is the biggest risk of relying on artificial intelligence for everyday tasks?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-10",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "Tell me about a time you had to deliver bad news. How did you approach it?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-11",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "What does a good working relationship with a manager look like to you?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-12",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "Do you think universities should change the way they assess students? Why or why not?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-13",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "Describe a situation in which you had to work under a lot of pressure. What helped you cope?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-14",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "What is the most useful piece of advice you have ever received about work or study?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-15",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "How has technology changed the way you learn or work over the past few years?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-16",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "Talk about a cultural difference that surprised you, and what you took from it.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-17",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "What are the advantages and disadvantages of working in a very large organization?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-18",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "Describe a project you would like to start if you had the time and resources.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-19",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "How do you usually recover after a failure, and what have you learned from it?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c1-prompt-20",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C1",
+      "prompt": "Is it better to specialize in one field or to know a little about many? Explain your view.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-1",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "With respect, I think that overstates the case rather considerably.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-2",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "It's less a question of skill than of judgment, I would say.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-3",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "I'd be inclined to read the evidence rather differently.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-4",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "What troubles me is not the idea itself but the way it has been sold.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-5",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "We may simply have to agree to disagree on this particular point.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-6",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "That is a compelling argument, though it rests on a questionable premise.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-7",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "I wouldn't want to draw firm conclusions from so little data.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-8",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "The real risk is complacency, not competition.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-9",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "Let's not mistake a good quarter for proof that the strategy works.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-10",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "It would be naive to assume the problem is purely technical.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-11",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "The findings sit uneasily with everything we thought we knew.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-12",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "Insofar as I can tell, the numbers are broadly accurate.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-13",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "She doesn't mince words, which is exactly why people trust her.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-14",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "The question isn't whether we can do it, but whether we should.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-15",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "I'll defer to your judgment on this one, but I have reservations.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-16",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "Suffice it to say, the launch did not go according to plan.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-17",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "Progress is rarely linear, however much we would like it to be.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-18",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "We've been going around in circles, so let's step back for a moment.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-19",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "It remains to be seen whether the reform will have any lasting effect.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-shadow-20",
+      "tipo": "shadowing",
+      "nivelCEFR": "C2",
+      "fraseObjetivo": "Nostalgia has a way of flattening whatever it touches.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-1",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "Discuss whether technological progress always leads to social progress. Give reasons for your view.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-2",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "To what extent should companies be held responsible for the unintended effects of their products?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-3",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "Describe an occasion on which you had to disagree diplomatically with someone more senior than you.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-4",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "Is it possible to be completely objective? Explain what you think and why.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-5",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "What role should universities play in a society increasingly shaped by artificial intelligence?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-6",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "Talk about an idea you once believed strongly and later abandoned. What changed?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-7",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "How do you think the nature of expertise is changing in the age of instant information?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-8",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "Discuss the idea that efficiency is not always a virtue.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-9",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "What responsibilities do writers, journalists or scientists have toward the public?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-10",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "Describe a work of art or writing that has stayed with you, and explain why it resists easy summary.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-11",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "How would you convince a skeptical audience to take a long-term risk seriously?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-12",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "Do you think privacy is something people can realistically protect today? Defend your position.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-13",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "Discuss the tension between speed and care in your own field of study or work.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-14",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "What does it mean to make a good decision when the information is incomplete?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-15",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "Talk about how language and culture shape the way people understand a concept like success.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-16",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "To what extent is a person's career a matter of choice rather than circumstance?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-17",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "Explain what you consider the most overrated and the most underrated skill in professional life.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-18",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "How should we weigh the interests of future generations against present needs?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-19",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "Describe a time when a simple explanation turned out to be wrong, and what it taught you.",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "habla-c2-prompt-20",
+      "tipo": "responder_prompt",
+      "nivelCEFR": "C2",
+      "prompt": "What would a genuinely fair system of assessing people look like, and is it achievable?",
+      "requiere_prueba_microfono": true,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     }
   ]
 }

@@ -1793,6 +1793,1062 @@
       ],
       "transcripcion": "I'm not sure a startup is for me. Why not? You learn so quickly. That's true, and you usually get responsibility early. But the hours are often longer, and the job can disappear if the funding runs out. Fair enough, but at a big company, you may spend two years on a tiny part of a project. I'd rather have stability while I'm still learning the basics. Maybe a medium-sized company is the best compromise: stable enough to feel safe, and flexible enough to try different tasks. Honestly, I think it depends on your personality and on the stage of your life.",
       "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-entrevista-tesis",
+      "tema": "Charla con una directora de tesis",
+      "nivelCEFR": "C1",
+      "guion": "Honestly, I'd rather you bring me a messy chapter than a polished one that took you three months. When I see a rough draft, I can still change the direction of the argument. By the time a chapter is perfect, you're too attached to it, and so am I. So send me what you have on Friday, even if you're embarrassed by it. We'll fix the structure first and worry about the style afterwards.",
+      "preguntas": [
+        {
+          "pregunta": "What does the supervisor prefer to receive from the student?",
+          "opciones": [
+            "A short summary of the whole thesis",
+            "A rough chapter she can still help redirect",
+            "A list of questions about the writing style",
+            "A polished chapter that took months of work"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-c1-entrevista-tesis-p1"
+        },
+        {
+          "pregunta": "Why does she say a perfect chapter can be a problem?",
+          "opciones": [
+            "The author becomes too attached to it to change it",
+            "It takes too long for the supervisor to read",
+            "It usually contains more mistakes than a rough one",
+            "It leaves no time to study other chapters"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c1-entrevista-tesis-p2"
+        },
+        {
+          "pregunta": "What will they work on first?",
+          "opciones": [
+            "The structure of the chapter",
+            "The style of the sentences",
+            "The title of the thesis",
+            "The list of references"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c1-entrevista-tesis-p3"
+        }
+      ],
+      "transcripcion": "Honestly, I'd rather you bring me a messy chapter than a polished one that took you three months. When I see a rough draft, I can still change the direction of the argument. By the time a chapter is perfect, you're too attached to it, and so am I. So send me what you have on Friday, even if you're embarrassed by it. We'll fix the structure first and worry about the style afterwards.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-podcast-ia-errores",
+      "tema": "Podcast: cuando la IA se equivoca con aplomo",
+      "nivelCEFR": "C1",
+      "guion": "What bothers me isn't that these systems make mistakes; people do too. It's that the mistakes arrive in exactly the same tone as the correct answers. If a colleague hesitates, you know to double-check. A model never hesitates. So the burden quietly shifts to the reader, who has to bring the skepticism the interface refuses to show. I'd argue that's a design problem as much as a technical one. A small note saying the answer might be wrong would do more good than another round of polish.",
+      "preguntas": [
+        {
+          "pregunta": "What bothers the speaker most about these systems?",
+          "opciones": [
+            "They are too slow to answer even simple questions",
+            "They make many more mistakes than human colleagues do",
+            "Their mistakes sound just as confident as their correct answers",
+            "They refuse to answer whenever they are not sure"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c1-podcast-ia-errores-p1"
+        },
+        {
+          "pregunta": "According to the speaker, who ends up carrying the burden?",
+          "opciones": [
+            "The company that built the system",
+            "The reader, who has to supply the skepticism",
+            "The colleague who checks the final text",
+            "The engineers who wrote the code"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-c1-podcast-ia-errores-p2"
+        },
+        {
+          "pregunta": "What does the speaker suggest as a better improvement?",
+          "opciones": [
+            "A new round of work on the interface design",
+            "A more advanced model with fewer mistakes",
+            "A ban on using the system for important work",
+            "A short warning that the answer could be wrong"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c1-podcast-ia-errores-p3"
+        }
+      ],
+      "transcripcion": "What bothers me isn't that these systems make mistakes; people do too. It's that the mistakes arrive in exactly the same tone as the correct answers. If a colleague hesitates, you know to double-check. A model never hesitates. So the burden quietly shifts to the reader, who has to bring the skepticism the interface refuses to show. I'd argue that's a design problem as much as a technical one. A small note saying the answer might be wrong would do more good than another round of polish.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-reunion-recortes",
+      "tema": "Reunión sobre un recorte de presupuesto",
+      "nivelCEFR": "C1",
+      "guion": "I understand the numbers, and I don't doubt the cut is necessary. What worries me is how we're going to do it. If we spread it evenly across all the teams, we protect nobody, and the projects closest to launch will suffer the most. I'd propose the opposite: pick two initiatives, fund them properly, and pause the rest until the autumn. It's uncomfortable, but it's more honest than pretending everything can continue at sixty percent.",
+      "preguntas": [
+        {
+          "pregunta": "What is the speaker's main worry?",
+          "opciones": [
+            "How the budget cut will be carried out",
+            "Whether the teams will accept the news",
+            "Whether the numbers are correct",
+            "Whether the cut is really necessary"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c1-reunion-recortes-p1"
+        },
+        {
+          "pregunta": "What happens if the cut is spread evenly, according to the speaker?",
+          "opciones": [
+            "Every team keeps working at the same pace",
+            "The company saves much more money than planned",
+            "Nobody is protected and nearly finished projects suffer",
+            "The newest initiatives are the first to disappear"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c1-reunion-recortes-p2"
+        },
+        {
+          "pregunta": "What does the speaker propose?",
+          "opciones": [
+            "Cancelling every project until next year",
+            "Funding two initiatives fully and pausing the others",
+            "Asking each team to reduce its hours",
+            "Postponing the decision until the autumn"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-c1-reunion-recortes-p3"
+        }
+      ],
+      "transcripcion": "I understand the numbers, and I don't doubt the cut is necessary. What worries me is how we're going to do it. If we spread it evenly across all the teams, we protect nobody, and the projects closest to launch will suffer the most. I'd propose the opposite: pick two initiatives, fund them properly, and pause the rest until the autumn. It's uncomfortable, but it's more honest than pretending everything can continue at sixty percent.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-charla-sueno",
+      "tema": "Una divulgadora habla del sueño",
+      "nivelCEFR": "C1",
+      "guion": "People often tell me they'll catch up on sleep at the weekend, as if sleep were a bank account. The reality is more stubborn. You can recover some alertness, yes, but memory and mood take longer to come back, and a long lie-in on Sunday can leave you wide awake at midnight, which makes Monday worse. If I had to give just one piece of advice, it would be boring: go to bed and wake up at roughly the same time every day, and protect that routine as if it were a meeting.",
+      "preguntas": [
+        {
+          "pregunta": "What comparison does the speaker criticize?",
+          "opciones": [
+            "Treating sleep like a form of exercise",
+            "Treating sleep like a daily meeting",
+            "Treating sleep like a bank account",
+            "Treating sleep like a medical treatment"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c1-charla-sueno-p1"
+        },
+        {
+          "pregunta": "According to her, what can a long lie-in on Sunday cause?",
+          "opciones": [
+            "Needing less sleep for the next few days",
+            "Feeling more rested for the whole following week",
+            "Being wide awake at midnight and a harder Monday",
+            "Forgetting the plans made for the weekend"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c1-charla-sueno-p2"
+        },
+        {
+          "pregunta": "What is her single piece of advice?",
+          "opciones": [
+            "Take a short nap every afternoon after lunch",
+            "Sleep as long as possible on the days off",
+            "Avoid looking at screens for two hours before bed",
+            "Keep roughly the same sleeping schedule every day"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c1-charla-sueno-p3"
+        }
+      ],
+      "transcripcion": "People often tell me they'll catch up on sleep at the weekend, as if sleep were a bank account. The reality is more stubborn. You can recover some alertness, yes, but memory and mood take longer to come back, and a long lie-in on Sunday can leave you wide awake at midnight, which makes Monday worse. If I had to give just one piece of advice, it would be boring: go to bed and wake up at roughly the same time every day, and protect that routine as if it were a meeting.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-entrevista-trabajo-error",
+      "tema": "Entrevista de trabajo: contar un error",
+      "nivelCEFR": "C1",
+      "guion": "Tell me about a project that didn't go as planned. Well, last year I led the migration of our reporting system, and I underestimated how many teams depended on the old one. We launched on schedule, but two departments lost access to their data for almost a day. I took responsibility publicly, we rolled back, and then we rebuilt the plan with every team involved. What I'd do differently now is hold a dependency review before setting the date, not after.",
+      "preguntas": [
+        {
+          "pregunta": "What mistake does the candidate describe?",
+          "opciones": [
+            "Underestimating how many teams relied on the old system",
+            "Choosing the wrong software for the migration",
+            "Forgetting to back up the company data",
+            "Launching the project several weeks late"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c1-entrevista-trabajo-error-p1"
+        },
+        {
+          "pregunta": "What did the candidate do after the problem appeared?",
+          "opciones": [
+            "Took responsibility and rebuilt the plan with every team",
+            "Waited for the departments to find a solution",
+            "Replaced the team in charge of the project",
+            "Blamed the other departments for not preparing"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c1-entrevista-trabajo-error-p2"
+        },
+        {
+          "pregunta": "What would the candidate change in the future?",
+          "opciones": [
+            "Avoid leading projects of this kind again",
+            "Ask the departments to approve every decision",
+            "Hold a review of dependencies before setting the date",
+            "Launch the system sooner to avoid delays"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c1-entrevista-trabajo-error-p3"
+        }
+      ],
+      "transcripcion": "Tell me about a project that didn't go as planned. Well, last year I led the migration of our reporting system, and I underestimated how many teams depended on the old one. We launched on schedule, but two departments lost access to their data for almost a day. I took responsibility publicly, we rolled back, and then we rebuilt the plan with every team involved. What I'd do differently now is hold a dependency review before setting the date, not after.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-noticia-clima",
+      "tema": "Noticia: un informe sobre emisiones",
+      "nivelCEFR": "C1",
+      "guion": "A new report suggests that, although emissions have slowed in several wealthy countries, the overall global total is still rising. The authors point out that part of the apparent progress comes from moving factories abroad, which shifts the pollution rather than removing it. They call for emissions to be counted by what a country consumes, not only by what it produces. Some officials welcomed the proposal, while others warned that it would be difficult to measure reliably.",
+      "preguntas": [
+        {
+          "pregunta": "What does the report say about the global total of emissions?",
+          "opciones": [
+            "It has fallen sharply in the last few years",
+            "It is impossible to measure with any accuracy",
+            "It is still increasing despite progress in some countries",
+            "It is now lower than the level of ten years ago"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c1-noticia-clima-p1"
+        },
+        {
+          "pregunta": "Why is the progress of some countries partly misleading?",
+          "opciones": [
+            "They counted the emissions of natural sources",
+            "Their populations have become much smaller",
+            "Factories moved abroad, so the pollution only changed place",
+            "Those countries stopped publishing their data"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c1-noticia-clima-p2"
+        },
+        {
+          "pregunta": "What do the authors want to change?",
+          "opciones": [
+            "The number of factories in rich countries",
+            "The deadline of the international agreements",
+            "The price of energy for every household",
+            "The way emissions are counted, based on consumption"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c1-noticia-clima-p3"
+        }
+      ],
+      "transcripcion": "A new report suggests that, although emissions have slowed in several wealthy countries, the overall global total is still rising. The authors point out that part of the apparent progress comes from moving factories abroad, which shifts the pollution rather than removing it. They call for emissions to be counted by what a country consumes, not only by what it produces. Some officials welcomed the proposal, while others warned that it would be difficult to measure reliably.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-charla-traduccion",
+      "tema": "Una traductora habla de su oficio",
+      "nivelCEFR": "C1",
+      "guion": "People assume translation is about finding the right word, but the right word is usually the easy part. The hard part is tone. A sentence can be perfectly accurate and still sound like a stranger wrote it. When I translate a novel, I spend hours deciding whether a character would say something bluntly or politely, whether an insult should sting or sound old-fashioned. Dictionaries can't help with that. In the end, I'm judged by whether the reader forgets there was a translator at all.",
+      "preguntas": [
+        {
+          "pregunta": "According to the speaker, what is the hardest part of translating?",
+          "opciones": [
+            "Finding the exact word in a dictionary",
+            "Working within a strict deadline",
+            "Reading the whole novel before starting",
+            "Capturing the tone of what is said"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c1-charla-traduccion-p1"
+        },
+        {
+          "pregunta": "What can happen to an accurate sentence if the tone is wrong?",
+          "opciones": [
+            "It can sound as if a stranger had written it",
+            "It can be rejected by the publisher",
+            "It can become impossible to understand",
+            "It can offend the author of the novel"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c1-charla-traduccion-p2"
+        },
+        {
+          "pregunta": "How is the translator judged, in her opinion?",
+          "opciones": [
+            "By whether readers forget a translator was involved",
+            "By the number of words translated each day",
+            "By how closely the text matches the dictionary",
+            "By the opinion of the original author"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c1-charla-traduccion-p3"
+        }
+      ],
+      "transcripcion": "People assume translation is about finding the right word, but the right word is usually the easy part. The hard part is tone. A sentence can be perfectly accurate and still sound like a stranger wrote it. When I translate a novel, I spend hours deciding whether a character would say something bluntly or politely, whether an insult should sting or sound old-fashioned. Dictionaries can't help with that. In the end, I'm judged by whether the reader forgets there was a translator at all.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-mesa-redonda-remoto",
+      "tema": "Mesa redonda: el trabajo remoto a largo plazo",
+      "nivelCEFR": "C1",
+      "guion": "I'm not against working from home; I'm against pretending it's free of cost. Spontaneous conversations, the sort that solve a problem in thirty seconds, don't survive the move to chat. Newer colleagues suffer most, because they miss everything nobody writes down. That said, I'd never go back to a daily commute. The honest answer, I think, is a hybrid arrangement with real rules about which days matter, rather than an open invitation that nobody takes seriously.",
+      "preguntas": [
+        {
+          "pregunta": "What cost of remote work does the speaker emphasize?",
+          "opciones": [
+            "Salaries tend to be lower than those in the office",
+            "Spontaneous conversations that solve problems quickly are lost",
+            "Employees have to pay for all of their own equipment",
+            "Meetings become much longer than they were before"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-c1-mesa-redonda-remoto-p1"
+        },
+        {
+          "pregunta": "Who suffers most from the loss, according to the speaker?",
+          "opciones": [
+            "Newer colleagues who miss unwritten knowledge",
+            "Workers who live far from the office",
+            "Managers who must supervise everyone",
+            "Teams working in different countries"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c1-mesa-redonda-remoto-p2"
+        },
+        {
+          "pregunta": "What solution does the speaker prefer?",
+          "opciones": [
+            "A hybrid arrangement with clear rules about key days",
+            "Returning to the office five days a week",
+            "Letting every employee decide completely freely",
+            "Working from home with no days in the office"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c1-mesa-redonda-remoto-p3"
+        }
+      ],
+      "transcripcion": "I'm not against working from home; I'm against pretending it's free of cost. Spontaneous conversations, the sort that solve a problem in thirty seconds, don't survive the move to chat. Newer colleagues suffer most, because they miss everything nobody writes down. That said, I'd never go back to a daily commute. The honest answer, I think, is a hybrid arrangement with real rules about which days matter, rather than an open invitation that nobody takes seriously.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-anuncio-conferencia",
+      "tema": "Aviso sobre una conferencia de ingeniería",
+      "nivelCEFR": "C1",
+      "guion": "Welcome back, everyone. A quick change before the afternoon session: the talk on data privacy has been moved to the larger room on the second floor, because registration far exceeded our expectations. If you have already picked up a printed schedule, please cross out the old room. The workshop that was due to follow it will start twenty minutes later than planned, so there's time for coffee. Thank you for your patience.",
+      "preguntas": [
+        {
+          "pregunta": "Why has the talk on data privacy been moved?",
+          "opciones": [
+            "More people registered than the organizers expected",
+            "The talk was combined with a workshop on another topic",
+            "The speaker asked for a larger audience this year",
+            "The original room is being repaired this afternoon"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c1-anuncio-conferencia-p1"
+        },
+        {
+          "pregunta": "What should people with printed schedules do?",
+          "opciones": [
+            "Ask for a new printed schedule",
+            "Go to the registration desk",
+            "Wait for a second announcement",
+            "Cross out the old room"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c1-anuncio-conferencia-p2"
+        },
+        {
+          "pregunta": "What will happen to the workshop that follows the talk?",
+          "opciones": [
+            "It will start earlier than the organizers had planned",
+            "It will begin twenty minutes later than scheduled",
+            "It will be held in the larger room on the second floor",
+            "It will be cancelled until the day after tomorrow"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-c1-anuncio-conferencia-p3"
+        }
+      ],
+      "transcripcion": "Welcome back, everyone. A quick change before the afternoon session: the talk on data privacy has been moved to the larger room on the second floor, because registration far exceeded our expectations. If you have already picked up a printed schedule, please cross out the old room. The workshop that was due to follow it will start twenty minutes later than planned, so there's time for coffee. Thank you for your patience.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-conversacion-feedback",
+      "tema": "Conversación entre colegas sobre una revisión",
+      "nivelCEFR": "C1",
+      "guion": "I'll be straight with you: the code works, but I had to read it three times to understand it. Is that a problem? Well, you won't be the only one maintaining it. Maybe the logic is sound, but a few clearer names and one short comment would save the next person an hour. I'm not asking you to rewrite anything, just to make it easier to read. Fair enough. I got a bit carried away trying to make it compact, to be honest.",
+      "preguntas": [
+        {
+          "pregunta": "What is the reviewer's main criticism?",
+          "opciones": [
+            "The code does not follow the agreed structure",
+            "The code is hard to understand even though it works",
+            "The code was written too slowly",
+            "The code contains several serious errors"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-c1-conversacion-feedback-p1"
+        },
+        {
+          "pregunta": "What does the reviewer ask the author to do?",
+          "opciones": [
+            "Test the code on more computers",
+            "Remove the unnecessary parts of the logic",
+            "Improve names and add a short comment",
+            "Rewrite the whole function from scratch"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c1-conversacion-feedback-p2"
+        },
+        {
+          "pregunta": "How does the author respond?",
+          "opciones": [
+            "Accepts the point and admits trying to be too compact",
+            "Asks a colleague to make all the changes instead",
+            "Rejects the comment and defends the compact code",
+            "Says there is no time left for any more changes"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c1-conversacion-feedback-p3"
+        }
+      ],
+      "transcripcion": "I'll be straight with you: the code works, but I had to read it three times to understand it. Is that a problem? Well, you won't be the only one maintaining it. Maybe the logic is sound, but a few clearer names and one short comment would save the next person an hour. I'm not asking you to rewrite anything, just to make it easier to read. Fair enough. I got a bit carried away trying to make it compact, to be honest.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-resena-libro",
+      "tema": "Reseña de un libro de divulgación",
+      "nivelCEFR": "C1",
+      "guion": "It's a well-researched book, and for the first hundred pages I was hooked. But then the author starts repeating the same argument with different examples, and the momentum fades. I also found the title a bit misleading: it promises a history of the subject, yet most of the book is about the last two decades. Still, if you've never read anything on the topic, it's a generous introduction, and the notes at the end are excellent.",
+      "preguntas": [
+        {
+          "pregunta": "How does the reviewer feel about the first part of the book?",
+          "opciones": [
+            "Bored from the very beginning",
+            "Confused by the technical terms",
+            "Surprised by the unusual structure",
+            "Interested and hooked"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c1-resena-libro-p1"
+        },
+        {
+          "pregunta": "What is the problem with the title?",
+          "opciones": [
+            "It is exactly the same as another famous book",
+            "It is too long to remember without writing it down",
+            "It does not mention the real subject of the book",
+            "It suggests a full history but covers mostly recent years"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c1-resena-libro-p2"
+        },
+        {
+          "pregunta": "Who does the reviewer recommend the book to?",
+          "opciones": [
+            "Readers who only enjoy fiction",
+            "Students preparing for an exam",
+            "People who are new to the topic",
+            "Experts looking for new ideas"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c1-resena-libro-p3"
+        }
+      ],
+      "transcripcion": "It's a well-researched book, and for the first hundred pages I was hooked. But then the author starts repeating the same argument with different examples, and the momentum fades. I also found the title a bit misleading: it promises a history of the subject, yet most of the book is about the last two decades. Still, if you've never read anything on the topic, it's a generous introduction, and the notes at the end are excellent.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-podcast-startups",
+      "tema": "Podcast sobre fundadores y fracaso",
+      "nivelCEFR": "C1",
+      "guion": "We love stories of founders who failed spectacularly and then succeeded, and we tend to forget how many simply failed. The survivors write the books. What I find more instructive is a founder who shut down a promising company because she realized she no longer believed in the problem. There was no dramatic collapse, no villain, just an honest conclusion. It's a quieter kind of courage, and almost never celebrated.",
+      "preguntas": [
+        {
+          "pregunta": "What does the speaker say we tend to forget?",
+          "opciones": [
+            "How much money most startups receive early",
+            "How many founders simply failed and never returned",
+            "How difficult it is to write a successful book",
+            "How often founders change their business ideas"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-c1-podcast-startups-p1"
+        },
+        {
+          "pregunta": "Why did the founder shut down her company?",
+          "opciones": [
+            "A competitor launched a better product",
+            "Her investors asked her to leave",
+            "The company ran out of money suddenly",
+            "She no longer believed in the problem it solved"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c1-podcast-startups-p2"
+        },
+        {
+          "pregunta": "How does the speaker describe this kind of decision?",
+          "opciones": [
+            "A strategy used by experienced founders",
+            "A quiet courage that is rarely celebrated",
+            "A foolish choice that should be avoided",
+            "A rare event that happens only in small firms"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-c1-podcast-startups-p3"
+        }
+      ],
+      "transcripcion": "We love stories of founders who failed spectacularly and then succeeded, and we tend to forget how many simply failed. The survivors write the books. What I find more instructive is a founder who shut down a promising company because she realized she no longer believed in the problem. There was no dramatic collapse, no villain, just an honest conclusion. It's a quieter kind of courage, and almost never celebrated.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-conferencia-epistemica",
+      "tema": "Charla sobre la humildad en la ciencia",
+      "nivelCEFR": "C2",
+      "guion": "What distinguishes a mature field isn't the absence of disagreement but the way disagreement is handled. In the early stages, people defend positions; later, they defend methods. I've come to think that the most valuable sentence in research is not 'I was right' but 'here is what would change my mind'. A claim that cannot, even in principle, be shown to be wrong may be comforting, but it tells us nothing. The discipline lies in welcoming the observations that threaten what we most want to be true.",
+      "preguntas": [
+        {
+          "pregunta": "According to the speaker, what distinguishes a mature field?",
+          "opciones": [
+            "The use of advanced equipment in every laboratory",
+            "The absence of any disagreement among researchers",
+            "The number of experiments that are published each year",
+            "How disagreement is handled rather than whether it exists"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c2-conferencia-epistemica-p1"
+        },
+        {
+          "pregunta": "What does the speaker consider the most valuable sentence in research?",
+          "opciones": [
+            "A confident announcement of a successful result",
+            "A summary of the opinions held by experts",
+            "A statement of what evidence would change one's mind",
+            "A promise to repeat the experiment next year"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-conferencia-epistemica-p2"
+        },
+        {
+          "pregunta": "What is the speaker's attitude toward claims that cannot be proved wrong?",
+          "opciones": [
+            "They are impossible to find in real science",
+            "They are the most reliable kind of claim",
+            "They are useful only for young researchers",
+            "They are comforting but tell us nothing"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c2-conferencia-epistemica-p3"
+        }
+      ],
+      "transcripcion": "What distinguishes a mature field isn't the absence of disagreement but the way disagreement is handled. In the early stages, people defend positions; later, they defend methods. I've come to think that the most valuable sentence in research is not 'I was right' but 'here is what would change my mind'. A claim that cannot, even in principle, be shown to be wrong may be comforting, but it tells us nothing. The discipline lies in welcoming the observations that threaten what we most want to be true.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-debate-algoritmos",
+      "tema": "Debate sobre decisiones automatizadas",
+      "nivelCEFR": "C2",
+      "guion": "My difficulty is not with the technology but with the alibi it provides. 'The system decided' has become a way of dissolving responsibility, because no individual is left holding the decision. When a loan is refused, there's nobody to argue with and nothing to appeal against. I'd go further: the more sophisticated the model, the stronger the temptation to treat its output as neutral. Neutrality, however, is a claim, not a property, and every claim of that kind deserves to be examined by someone who stands to lose if it's false.",
+      "preguntas": [
+        {
+          "pregunta": "What is the speaker's main objection?",
+          "opciones": [
+            "Automated systems are too expensive for most banks",
+            "Automated systems cannot process large amounts of data",
+            "Automated systems let people avoid responsibility",
+            "Automated systems are less accurate than people"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-debate-algoritmos-p1"
+        },
+        {
+          "pregunta": "What problem does the speaker mention about refused loans?",
+          "opciones": [
+            "The decision takes several months to arrive",
+            "The customer must pay an additional fee",
+            "The refusal is always based on incorrect data",
+            "There is nobody to argue with and nothing to appeal"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c2-debate-algoritmos-p2"
+        },
+        {
+          "pregunta": "What does the speaker say about neutrality?",
+          "opciones": [
+            "It is the best feature of modern models",
+            "It is irrelevant to the use of algorithms",
+            "It is a claim that should be examined, not assumed",
+            "It can only be achieved with human decisions"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-debate-algoritmos-p3"
+        }
+      ],
+      "transcripcion": "My difficulty is not with the technology but with the alibi it provides. 'The system decided' has become a way of dissolving responsibility, because no individual is left holding the decision. When a loan is refused, there's nobody to argue with and nothing to appeal against. I'd go further: the more sophisticated the model, the stronger the temptation to treat its output as neutral. Neutrality, however, is a claim, not a property, and every claim of that kind deserves to be examined by someone who stands to lose if it's false.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-podcast-cultura",
+      "tema": "Podcast sobre nostalgia y cultura",
+      "nivelCEFR": "C2",
+      "guion": "There's a peculiar flattening that happens when we look back at a decade. We keep the songs, the logos, the slogans, and we forget the ordinary anxieties of the people who lived through it. The past becomes an aesthetic. I'm not complaining about nostalgia as such; it's a perfectly human pleasure. What troubles me is its quiet political use, the suggestion that things were simpler, which usually means simpler for some people and silent about everyone else.",
+      "preguntas": [
+        {
+          "pregunta": "What does the speaker say happens when we look back at a decade?",
+          "opciones": [
+            "We understand the period better than people then did",
+            "We remember its style but forget people's real worries",
+            "We tend to exaggerate how difficult life was",
+            "We remember only the major political events"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-c2-podcast-cultura-p1"
+        },
+        {
+          "pregunta": "How does the speaker feel about nostalgia in general?",
+          "opciones": [
+            "It is a natural pleasure and not the real problem",
+            "It is a sign that a society has lost its direction",
+            "It is only found among older generations",
+            "It is a harmful habit that should be avoided"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c2-podcast-cultura-p2"
+        },
+        {
+          "pregunta": "What troubles the speaker about nostalgia?",
+          "opciones": [
+            "Its commercial use in advertising, films and fashion",
+            "Its influence on the way history is taught in schools",
+            "Its tendency to make young people feel sad and lonely",
+            "Its use to suggest that the past was simpler for everyone"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c2-podcast-cultura-p3"
+        }
+      ],
+      "transcripcion": "There's a peculiar flattening that happens when we look back at a decade. We keep the songs, the logos, the slogans, and we forget the ordinary anxieties of the people who lived through it. The past becomes an aesthetic. I'm not complaining about nostalgia as such; it's a perfectly human pleasure. What troubles me is its quiet political use, the suggestion that things were simpler, which usually means simpler for some people and silent about everyone else.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-reunion-estrategia",
+      "tema": "Reunión de estrategia con matices",
+      "nivelCEFR": "C2",
+      "guion": "I'd urge a little restraint. We've treated the last quarter's growth as evidence that the strategy works, but two of the three largest contracts came from relationships that predate it. Strip those out and the picture is considerably less flattering. That doesn't mean we should change course; it means we shouldn't mistake a good quarter for a proof. I'd rather commission an honest review now, while the numbers are still pleasant, than be forced into one when they aren't.",
+      "preguntas": [
+        {
+          "pregunta": "Why does the speaker urge restraint?",
+          "opciones": [
+            "Much of the growth came from earlier relationships",
+            "The strategy was never properly explained to clients",
+            "The numbers for the last quarter were incorrect",
+            "The largest contracts were cancelled recently"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c2-reunion-estrategia-p1"
+        },
+        {
+          "pregunta": "What does the speaker NOT suggest?",
+          "opciones": [
+            "Ordering an honest review of the strategy",
+            "Changing the strategy immediately",
+            "Avoiding conclusions from one good quarter",
+            "Looking at the results more carefully"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-c2-reunion-estrategia-p2"
+        },
+        {
+          "pregunta": "Why does the speaker prefer a review now?",
+          "opciones": [
+            "Because the other teams have asked for it",
+            "It is easier to be honest while the results are good",
+            "Because the review will be shorter",
+            "Because the company has more money available"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-c2-reunion-estrategia-p3"
+        }
+      ],
+      "transcripcion": "I'd urge a little restraint. We've treated the last quarter's growth as evidence that the strategy works, but two of the three largest contracts came from relationships that predate it. Strip those out and the picture is considerably less flattering. That doesn't mean we should change course; it means we shouldn't mistake a good quarter for a proof. I'd rather commission an honest review now, while the numbers are still pleasant, than be forced into one when they aren't.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-entrevista-escritora",
+      "tema": "Entrevista con una escritora",
+      "nivelCEFR": "C2",
+      "guion": "I don't think of my novels as having messages. A message is something you can summarize in a sentence, and if I could, I wouldn't have needed four hundred pages. What I want is to leave the reader with a question they can't settle at once, one that keeps coming back in the supermarket queue. Some readers find that frustrating and want to be told what to think. I understand; I just don't believe fiction is the right tool for that.",
+      "preguntas": [
+        {
+          "pregunta": "Why does the writer say her novels have no messages?",
+          "opciones": [
+            "A message could be summarized and the book would be unnecessary",
+            "Her publishers forbid her from including any message",
+            "She has not yet decided what she wants to say",
+            "Readers dislike books that try to teach them something"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c2-entrevista-escritora-p1"
+        },
+        {
+          "pregunta": "What does she hope to leave readers with?",
+          "opciones": [
+            "A feeling of relief at the ending",
+            "A list of ideas to discuss with friends",
+            "A question that stays with them after reading",
+            "A clear answer to a social problem"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-entrevista-escritora-p2"
+        },
+        {
+          "pregunta": "How does she react to readers who want to be told what to think?",
+          "opciones": [
+            "She promises to write more direct and obvious novels",
+            "She is angry about their lack of imagination",
+            "She understands them but disagrees with that use of fiction",
+            "She tells them to read a different kind of book"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-entrevista-escritora-p3"
+        }
+      ],
+      "transcripcion": "I don't think of my novels as having messages. A message is something you can summarize in a sentence, and if I could, I wouldn't have needed four hundred pages. What I want is to leave the reader with a question they can't settle at once, one that keeps coming back in the supermarket queue. Some readers find that frustrating and want to be told what to think. I understand; I just don't believe fiction is the right tool for that.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-noticia-regulacion",
+      "tema": "Noticia sobre regulación de la inteligencia artificial",
+      "nivelCEFR": "C2",
+      "guion": "Lawmakers have approved a framework that sorts artificial intelligence systems by the risk they pose, with the strictest obligations reserved for those used in hiring, policing and healthcare. Industry groups welcomed the clarity but warned that compliance costs could squeeze smaller firms, which lack the legal teams of larger competitors. Civil society organizations, for their part, argued that the framework leaves too many exceptions for national security. The rules are expected to take effect in stages over the next three years.",
+      "preguntas": [
+        {
+          "pregunta": "How does the new framework sort artificial intelligence systems?",
+          "opciones": [
+            "According to the size of the company that builds them",
+            "According to the country in which they are used",
+            "According to the level of risk they present",
+            "According to the price that customers pay"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-noticia-regulacion-p1"
+        },
+        {
+          "pregunta": "What concern did industry groups raise?",
+          "opciones": [
+            "Compliance costs could be a heavy burden for smaller firms",
+            "The framework will be changed before it takes effect",
+            "The rules are too vague to be understood",
+            "The framework favors companies from other countries"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c2-noticia-regulacion-p2"
+        },
+        {
+          "pregunta": "What criticism did civil society organizations make?",
+          "opciones": [
+            "There are too many exceptions for national security",
+            "The obligations are too strict for hiring tools",
+            "The framework ignores the use of AI in hospitals",
+            "The rules apply too slowly to large companies"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c2-noticia-regulacion-p3"
+        }
+      ],
+      "transcripcion": "Lawmakers have approved a framework that sorts artificial intelligence systems by the risk they pose, with the strictest obligations reserved for those used in hiring, policing and healthcare. Industry groups welcomed the clarity but warned that compliance costs could squeeze smaller firms, which lack the legal teams of larger competitors. Civil society organizations, for their part, argued that the framework leaves too many exceptions for national security. The rules are expected to take effect in stages over the next three years.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-seminario-lenguaje",
+      "tema": "Seminario sobre el lenguaje y el pensamiento",
+      "nivelCEFR": "C2",
+      "guion": "It's tempting to say that language shapes thought, and just as tempting to say it doesn't. The evidence is more modest than either slogan. Speakers of languages that mark certain distinctions do tend to notice them faster, but the effects are small and disappear under time pressure or when people are asked to do something else at the same time. That is neither a revolution nor a dismissal. It suggests that language nudges attention rather than building walls around what can be thought.",
+      "preguntas": [
+        {
+          "pregunta": "How does the speaker describe the evidence on language and thought?",
+          "opciones": [
+            "Too limited to be worth discussing at all",
+            "Strong proof that language controls thought",
+            "More modest than either simple slogan suggests",
+            "Complete proof that language has no influence"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-seminario-lenguaje-p1"
+        },
+        {
+          "pregunta": "What happens to the effects mentioned when people are under pressure?",
+          "opciones": [
+            "They become much stronger and clearer",
+            "They affect only the youngest speakers",
+            "They tend to disappear",
+            "They change from one language to another"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-seminario-lenguaje-p2"
+        },
+        {
+          "pregunta": "What conclusion does the speaker reach?",
+          "opciones": [
+            "Language nudges attention without limiting what can be thought",
+            "Language should be studied only by scientists",
+            "Language builds walls around thought in some cultures",
+            "Language is only a tool for communicating results"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c2-seminario-lenguaje-p3"
+        }
+      ],
+      "transcripcion": "It's tempting to say that language shapes thought, and just as tempting to say it doesn't. The evidence is more modest than either slogan. Speakers of languages that mark certain distinctions do tend to notice them faster, but the effects are small and disappear under time pressure or when people are asked to do something else at the same time. That is neither a revolution nor a dismissal. It suggests that language nudges attention rather than building walls around what can be thought.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-charla-diseno",
+      "tema": "Charla de una diseñadora sobre el diseño honesto",
+      "nivelCEFR": "C2",
+      "guion": "The test I use is simple. Imagine the user watching over my shoulder as I make a decision. If I'd be comfortable explaining it to them, I go ahead. If I'd start to explain and then hesitate, I've probably found a dark pattern. It doesn't catch everything, and it won't satisfy anyone looking for a rigorous framework. But it has stopped me, more than once, from shipping something clever that I would have been rather embarrassed to defend.",
+      "preguntas": [
+        {
+          "pregunta": "What is the speaker's test for an honest design decision?",
+          "opciones": [
+            "Whether other designers approve of the idea",
+            "Whether she could comfortably explain it to the user",
+            "Whether it follows the rules of the company",
+            "Whether the design increases sales quickly"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "esc-c2-charla-diseno-p1"
+        },
+        {
+          "pregunta": "What does the speaker say about the limits of the test?",
+          "opciones": [
+            "It works only for very small projects with few users",
+            "It is too strict for most companies to follow",
+            "It was invented by a famous designer long ago",
+            "It does not catch everything and is not a rigorous framework"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c2-charla-diseno-p2"
+        },
+        {
+          "pregunta": "What has the test helped her avoid?",
+          "opciones": [
+            "Losing customers to competitors with simpler products",
+            "Working with clients who ask for large changes",
+            "Releasing clever designs she would be embarrassed to defend",
+            "Spending too much time on research with users"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-charla-diseno-p3"
+        }
+      ],
+      "transcripcion": "The test I use is simple. Imagine the user watching over my shoulder as I make a decision. If I'd be comfortable explaining it to them, I go ahead. If I'd start to explain and then hesitate, I've probably found a dark pattern. It doesn't catch everything, and it won't satisfy anyone looking for a rigorous framework. But it has stopped me, more than once, from shipping something clever that I would have been rather embarrassed to defend.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-podcast-trabajo-profundo",
+      "tema": "Podcast sobre la concentración y el trabajo",
+      "nivelCEFR": "C2",
+      "guion": "There's a fashionable idea that focus is a matter of willpower, so that anyone who gets distracted has simply not tried hard enough. I find that unconvincing. Focus is largely environmental. If your phone, your inbox and your open-plan office are all engineered to interrupt you, relying on virtue is a poor strategy. The more promising approach is to change the conditions, not the person: shorter meetings, protected mornings, and the unfashionable luxury of a closed door.",
+      "preguntas": [
+        {
+          "pregunta": "What does the speaker think about the idea that focus is a matter of willpower?",
+          "opciones": [
+            "It is unconvincing because focus depends on the environment",
+            "It is not important for people who work in teams",
+            "It is correct for most people who work from home",
+            "It is correct only for people with strong discipline"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c2-podcast-trabajo-profundo-p1"
+        },
+        {
+          "pregunta": "Which phrase best describes the speaker's recommended approach?",
+          "opciones": [
+            "Trust that practice will improve concentration",
+            "Ask managers to reduce the number of employees",
+            "Avoid technology completely during working hours",
+            "Change the conditions rather than the person"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c2-podcast-trabajo-profundo-p2"
+        },
+        {
+          "pregunta": "What does the speaker call an 'unfashionable luxury'?",
+          "opciones": [
+            "Using a second computer screen",
+            "Working from a cafe",
+            "Having a closed door",
+            "Having a long lunch break"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-podcast-trabajo-profundo-p3"
+        }
+      ],
+      "transcripcion": "There's a fashionable idea that focus is a matter of willpower, so that anyone who gets distracted has simply not tried hard enough. I find that unconvincing. Focus is largely environmental. If your phone, your inbox and your open-plan office are all engineered to interrupt you, relying on virtue is a poor strategy. The more promising approach is to change the conditions, not the person: shorter meetings, protected mornings, and the unfashionable luxury of a closed door.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-conversacion-colegas",
+      "tema": "Conversación sobre una decisión dudosa",
+      "nivelCEFR": "C2",
+      "guion": "Between us, I'm not comfortable with how this was decided. The announcement says it was a collective choice, but I never saw a vote. It's not that I think anyone acted in bad faith; I think it was convenient to describe a decision as consensus once it had already been made. If we say nothing, it becomes the version of events. I'd rather raise it politely now than discover in six months that my silence counted as agreement.",
+      "preguntas": [
+        {
+          "pregunta": "What is the speaker uncomfortable about?",
+          "opciones": [
+            "A decision described as collective without any vote",
+            "An announcement that was published much too late",
+            "A colleague who clearly acted in bad faith",
+            "A vote that was held in secret by the managers"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "esc-c2-conversacion-colegas-p1"
+        },
+        {
+          "pregunta": "What does the speaker believe about the people involved?",
+          "opciones": [
+            "They did not understand the decision themselves",
+            "They deliberately lied to everyone in the team",
+            "They did not act in bad faith but described things conveniently",
+            "They were forced to take the decision by others"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-conversacion-colegas-p2"
+        },
+        {
+          "pregunta": "Why does the speaker want to speak up now?",
+          "opciones": [
+            "Other colleagues have asked for support",
+            "A formal meeting will take place soon",
+            "The decision can still be reversed easily",
+            "Silence could later be interpreted as agreement"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c2-conversacion-colegas-p3"
+        }
+      ],
+      "transcripcion": "Between us, I'm not comfortable with how this was decided. The announcement says it was a collective choice, but I never saw a vote. It's not that I think anyone acted in bad faith; I think it was convenient to describe a decision as consensus once it had already been made. If we say nothing, it becomes the version of events. I'd rather raise it politely now than discover in six months that my silence counted as agreement.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-conferencia-economia",
+      "tema": "Charla sobre la economía de la atención",
+      "nivelCEFR": "C2",
+      "guion": "Free services are rarely free; they are paid for in a currency we don't notice spending. For a company that sells advertising, a minute of your attention is the product, and the incentive is to produce as many minutes as possible. No conspiracy is required. A thousand reasonable decisions, each aimed at keeping you slightly longer, add up to an environment that is hard to leave. The remedy, I suspect, will not come from users resisting, but from changing what the companies are rewarded for.",
+      "preguntas": [
+        {
+          "pregunta": "What does the speaker mean by saying free services are paid for in an unnoticed currency?",
+          "opciones": [
+            "People pay with hidden fees on their cards",
+            "People pay by buying other products",
+            "People pay by sharing their friends' names",
+            "People pay with their attention"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c2-conferencia-economia-p1"
+        },
+        {
+          "pregunta": "What does the speaker say about conspiracy?",
+          "opciones": [
+            "It is common among large advertising companies",
+            "It is the main reason behind the problem",
+            "It is less likely to happen in small companies",
+            "None is needed, because many reasonable decisions add up"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c2-conferencia-economia-p2"
+        },
+        {
+          "pregunta": "Where does the speaker expect a solution to come from?",
+          "opciones": [
+            "Users learning to resist more effectively",
+            "New devices with fewer applications",
+            "Changing what companies are rewarded for",
+            "Courses in schools about technology"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-conferencia-economia-p3"
+        }
+      ],
+      "transcripcion": "Free services are rarely free; they are paid for in a currency we don't notice spending. For a company that sells advertising, a minute of your attention is the product, and the incentive is to produce as many minutes as possible. No conspiracy is required. A thousand reasonable decisions, each aimed at keeping you slightly longer, add up to an environment that is hard to leave. The remedy, I suspect, will not come from users resisting, but from changing what the companies are rewarded for.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-clase-historia-memoria",
+      "tema": "Clase sobre memoria colectiva",
+      "nivelCEFR": "C2",
+      "guion": "Societies don't remember; they commemorate, which is a different activity. Remembering involves uncertainty and revision, whereas commemoration tends to produce monuments and anniversaries, fixed and slightly proud. Neither is dishonest, but we should not confuse one for the other. A nation can hold a splendid ceremony each year for an event whose causes it has never seriously discussed. Historians are often unwelcome precisely because they reintroduce the doubt that the ceremony was designed to put to rest.",
+      "preguntas": [
+        {
+          "pregunta": "What difference does the lecturer draw between remembering and commemorating?",
+          "opciones": [
+            "Remembering concerns recent events and commemorating older ones",
+            "Remembering is done by historians and commemorating by citizens",
+            "Remembering is private and commemorating happens in schools",
+            "Remembering involves doubt and revision, while commemorating fixes"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "esc-c2-clase-historia-memoria-p1"
+        },
+        {
+          "pregunta": "Why can historians be unwelcome, according to the lecturer?",
+          "opciones": [
+            "They often disagree among themselves",
+            "They ask for more money to preserve the monuments",
+            "They bring back the doubt that ceremonies aim to settle",
+            "They criticize the people who organize the ceremonies"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-clase-historia-memoria-p2"
+        },
+        {
+          "pregunta": "What does the example of a splendid yearly ceremony illustrate?",
+          "opciones": [
+            "A nation can only remember its military victories",
+            "A nation forgets its past when it changes government",
+            "A nation may celebrate an event without discussing its causes",
+            "A nation should reduce the number of its ceremonies"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "esc-c2-clase-historia-memoria-p3"
+        }
+      ],
+      "transcripcion": "Societies don't remember; they commemorate, which is a different activity. Remembering involves uncertainty and revision, whereas commemoration tends to produce monuments and anniversaries, fixed and slightly proud. Neither is dishonest, but we should not confuse one for the other. A nation can hold a splendid ceremony each year for an event whose causes it has never seriously discussed. Historians are often unwelcome precisely because they reintroduce the doubt that the ceremony was designed to put to rest.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     }
   ]
 }

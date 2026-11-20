@@ -186,7 +186,7 @@
     Test.assertEqual(r.pasos.some(function (p) { return p.tipo === "reevaluacion"; }), false);
   });
 
-  Test.test("nivel B2+ sin contenido C1/C2: el bloque de práctica reutiliza B2 y queda advertencia", function () {
+  Test.test("si un nivel todavía no tiene contenido (aquí C1), el bloque reutiliza el más alto disponible y avisa", function () {
     var habilidades = habilidadesBase();
     // Las 3 habilidades de rotación en C1 (no solo lectura) para que la regla "rota hacia el
     // nivel más bajo" no descarte a lectura antes de llegar a este caso -- el desempate de
@@ -365,5 +365,29 @@
     var r = App.Plan.armarColaRepaso(tarjetas, hoy, { nivelGlobal: "A2" });
     var ids = r.cola.map(function (t) { return t.id; }).sort();
     Test.assertEqual(JSON.stringify(ids), JSON.stringify(["n2", "v2"]));
+  });
+
+  Test.test("C1 y C2 con contenido propio: el bloque usa su nivel real y NO sustituye ni avisa", function () {
+    var todos = ["A1", "A2", "B1", "B2", "C1", "C2"];
+    var habilidades = habilidadesBase();
+    habilidades.lectura.nivelCEFR = "C1";
+    habilidades.habla.nivelCEFR = "C2";
+    habilidades.escucha.nivelCEFR = "C1";
+    habilidades.escritura.nivelCEFR = "C2";
+    var r = App.Plan.calcularPlanDelDia({
+      diagnosticoHecho: true,
+      tarjetasVencidas: 0,
+      tarjetasNuevasDisponibles: 0,
+      habilidades: habilidades,
+      metaMinutosDia: 40,
+      diaSemana: 1,
+      nivelesConContenido: todos
+    });
+    var practicas = r.pasos.filter(function (p) { return p.tipo === "practica"; });
+    Test.assertEqual(practicas.length > 0, true);
+    practicas.forEach(function (p) {
+      Test.assertEqual(p.nivelCEFR, habilidades[p.habilidad].nivelCEFR);
+    });
+    Test.assertEqual(r.advertencias.length, 0);
   });
 })();

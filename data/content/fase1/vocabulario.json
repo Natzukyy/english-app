@@ -1,5 +1,5 @@
 {
-  "_nota": "Vocabulario técnico y profesional, original, verificado con confianza alta. De 'voc-f1-21' en adelante son términos nuevos (Paso C), marcados 'revisar: true' porque el nivel CEFR es una estimación mía sin revisar todavía. Revisión de contenido (D31): ver docs/revision-contenido.md. Las tarjetas con retirada:true duplican a otra (duplicadoDe): se conservan en los datos guardados pero no se vuelven a mostrar.",
+  "_nota": "Vocabulario técnico y profesional, original, verificado con confianza alta. De 'voc-f1-21' en adelante son términos nuevos (Paso C), marcados 'revisar: true' porque el nivel CEFR es una estimación mía sin revisar todavía. Revisión de contenido (D31): ver docs/revision-contenido.md. Las tarjetas con retirada:true duplican a otra (duplicadoDe): se conservan en los datos guardados pero no se vuelven a mostrar. C1 y C2 (D31): ids voc-c1-N / voc-c2-N.",
   "palabras": [
     {
       "id": "voc-f1-1",
@@ -4178,6 +4178,2236 @@
       "ejemplo": "I use an app to keep track of my expenses.",
       "nivelCEFR": "B2",
       "categoria": "revision_2026_11",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-1",
+      "ingles": "to substantiate",
+      "espanol": "fundamentar / probar con evidencia",
+      "ejemplo": "The authors failed to substantiate their central claim.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-2",
+      "ingles": "nuanced",
+      "espanol": "matizado",
+      "ejemplo": "She gave a nuanced answer instead of a simple yes or no.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-3",
+      "ingles": "rigorous",
+      "espanol": "riguroso",
+      "ejemplo": "The course is rigorous, but the feedback is excellent.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-4",
+      "ingles": "to cite",
+      "espanol": "citar (una fuente)",
+      "ejemplo": "Make sure you cite every source you use.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-5",
+      "ingles": "peer-reviewed",
+      "espanol": "revisado por pares",
+      "ejemplo": "The study was peer-reviewed before it was published.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-6",
+      "ingles": "to corroborate",
+      "espanol": "corroborar",
+      "ejemplo": "Two independent experiments corroborate these findings.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-7",
+      "ingles": "a caveat",
+      "espanol": "una salvedad",
+      "ejemplo": "One caveat: the sample size was quite small.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-8",
+      "ingles": "to skim",
+      "espanol": "leer por encima",
+      "ejemplo": "I only had time to skim the abstract.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-9",
+      "ingles": "to delve into",
+      "espanol": "profundizar en",
+      "ejemplo": "The paper delves into the ethics of automated decisions.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-10",
+      "ingles": "scholarship",
+      "espanol": "beca",
+      "ejemplo": "She got a full scholarship to study abroad.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-11",
+      "ingles": "tenure",
+      "espanol": "plaza fija (de profesor)",
+      "ejemplo": "He is up for tenure next year.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-12",
+      "ingles": "syllabus",
+      "espanol": "programa de estudios",
+      "ejemplo": "The syllabus changed after the first week.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-13",
+      "ingles": "empirical",
+      "espanol": "empírico",
+      "ejemplo": "There is little empirical evidence for that claim.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-14",
+      "ingles": "hypothesis",
+      "espanol": "hipótesis",
+      "ejemplo": "Our hypothesis turned out to be wrong.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-15",
+      "ingles": "to extrapolate",
+      "espanol": "extrapolar",
+      "ejemplo": "It's risky to extrapolate from such a small sample.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-16",
+      "ingles": "correlation",
+      "espanol": "correlación",
+      "ejemplo": "Correlation does not mean causation.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-17",
+      "ingles": "to refute",
+      "espanol": "refutar",
+      "ejemplo": "Nobody has managed to refute the argument yet.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-18",
+      "ingles": "coherent",
+      "espanol": "coherente (se entiende bien)",
+      "ejemplo": "Her essay was clear and coherent from start to finish.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-19",
+      "ingles": "ambivalent",
+      "espanol": "ambivalente",
+      "ejemplo": "I'm ambivalent about the new curriculum.",
+      "nivelCEFR": "C1",
+      "categoria": "universidad_investigacion",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-20",
+      "ingles": "to fine-tune",
+      "espanol": "ajustar (un modelo ya entrenado)",
+      "ejemplo": "We fine-tuned the model on our own support tickets.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-21",
+      "ingles": "hallucination",
+      "espanol": "alucinación (dato inventado por una IA)",
+      "ejemplo": "The chatbot gave a convincing but false hallucination.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-22",
+      "ingles": "inference",
+      "espanol": "inferencia (usar un modelo ya entrenado)",
+      "ejemplo": "Inference is cheap compared with training.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-23",
+      "ingles": "interpretability",
+      "espanol": "interpretabilidad",
+      "ejemplo": "Interpretability matters when decisions affect people.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-24",
+      "ingles": "guardrails",
+      "espanol": "barreras de seguridad",
+      "ejemplo": "We added guardrails to stop harmful answers.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-25",
+      "ingles": "prompt",
+      "espanol": "instrucción (que se le da a una IA)",
+      "ejemplo": "A clearer prompt gives a much better answer.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-26",
+      "ingles": "to scale up",
+      "espanol": "aumentar la capacidad",
+      "ejemplo": "We need to scale up before the launch.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-27",
+      "ingles": "technical debt",
+      "espanol": "deuda técnica",
+      "ejemplo": "Technical debt slows us down every sprint.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-28",
+      "ingles": "observability",
+      "espanol": "observabilidad",
+      "ejemplo": "Good observability helped us find the leak quickly.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-29",
+      "ingles": "to deprecate",
+      "espanol": "dejar de dar soporte",
+      "ejemplo": "They plan to deprecate the old API next year.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-30",
+      "ingles": "idempotent",
+      "espanol": "idempotente (repetirlo no cambia el resultado)",
+      "ejemplo": "The endpoint is idempotent, so retries are safe.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-31",
+      "ingles": "race condition",
+      "espanol": "condición de carrera",
+      "ejemplo": "It was a race condition, so it only failed sometimes.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-32",
+      "ingles": "to benchmark",
+      "espanol": "medir el rendimiento comparando",
+      "ejemplo": "We benchmarked three databases before choosing.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-33",
+      "ingles": "end-to-end",
+      "espanol": "de principio a fin",
+      "ejemplo": "We tested the whole flow end-to-end.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-34",
+      "ingles": "proof of concept",
+      "espanol": "prueba de concepto",
+      "ejemplo": "It's only a proof of concept, not a finished product.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-35",
+      "ingles": "to harden",
+      "espanol": "reforzar la seguridad",
+      "ejemplo": "The team spent a month hardening the system.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-36",
+      "ingles": "vendor lock-in",
+      "espanol": "dependencia de un proveedor",
+      "ejemplo": "We want to avoid vendor lock-in.",
+      "nivelCEFR": "C1",
+      "categoria": "tecnologia_ia",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-37",
+      "ingles": "to negotiate",
+      "espanol": "negociar",
+      "ejemplo": "She negotiated a better contract.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-38",
+      "ingles": "accountability",
+      "espanol": "responsabilidad (rendir cuentas)",
+      "ejemplo": "There is no accountability when nobody owns the decision.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-39",
+      "ingles": "to push back",
+      "espanol": "poner objeciones / resistirse",
+      "ejemplo": "She pushed back on the unrealistic deadline.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-40",
+      "ingles": "to take ownership of",
+      "espanol": "hacerse responsable de",
+      "ejemplo": "He took ownership of the incident from the start.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-41",
+      "ingles": "to reprioritize",
+      "espanol": "reordenar prioridades",
+      "ejemplo": "We had to reprioritize after the budget cut.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-42",
+      "ingles": "milestone",
+      "espanol": "hito",
+      "ejemplo": "We reached a major milestone this week.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-43",
+      "ingles": "to forecast",
+      "espanol": "pronosticar",
+      "ejemplo": "Analysts forecast slower growth next year.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-44",
+      "ingles": "burnout",
+      "espanol": "agotamiento laboral",
+      "ejemplo": "Long hours led straight to burnout.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-45",
+      "ingles": "to double down on",
+      "espanol": "apostar con más fuerza por",
+      "ejemplo": "The company doubled down on its original plan.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-46",
+      "ingles": "perk",
+      "espanol": "beneficio extra del trabajo",
+      "ejemplo": "Free lunch is a nice perk, but not why I stay.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-47",
+      "ingles": "redundancy",
+      "espanol": "despido por reducción de personal",
+      "ejemplo": "Hundreds of workers faced redundancy.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-48",
+      "ingles": "to headhunt",
+      "espanol": "reclutar a alguien que ya trabaja",
+      "ejemplo": "She was headhunted by a rival firm.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-49",
+      "ingles": "appraisal",
+      "espanol": "evaluación de desempeño",
+      "ejemplo": "My annual appraisal is next week.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-50",
+      "ingles": "to moonlight",
+      "espanol": "tener un segundo trabajo",
+      "ejemplo": "He moonlights as a translator on weekends.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-51",
+      "ingles": "figurehead",
+      "espanol": "figura decorativa",
+      "ejemplo": "The chairman is little more than a figurehead.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-52",
+      "ingles": "to steer",
+      "espanol": "dirigir / orientar",
+      "ejemplo": "She steered the project through a difficult year.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-53",
+      "ingles": "deliverable",
+      "espanol": "entregable",
+      "ejemplo": "The first deliverable is due on Friday.",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-54",
+      "ingles": "to be swamped",
+      "espanol": "estar saturado de trabajo",
+      "ejemplo": "I'm swamped this week, can we talk Monday?",
+      "nivelCEFR": "C1",
+      "categoria": "trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-55",
+      "ingles": "to hypothesize",
+      "espanol": "plantear como hipótesis",
+      "ejemplo": "They hypothesize that sleep helps memory.",
+      "nivelCEFR": "C1",
+      "categoria": "ciencia_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-56",
+      "ingles": "to replicate",
+      "espanol": "replicar (un resultado)",
+      "ejemplo": "Other labs could not replicate the result.",
+      "nivelCEFR": "C1",
+      "categoria": "ciencia_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-57",
+      "ingles": "control group",
+      "espanol": "grupo de control",
+      "ejemplo": "The control group received no treatment.",
+      "nivelCEFR": "C1",
+      "categoria": "ciencia_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-58",
+      "ingles": "statistically significant",
+      "espanol": "estadísticamente significativo",
+      "ejemplo": "The difference was statistically significant.",
+      "nivelCEFR": "C1",
+      "categoria": "ciencia_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-59",
+      "ingles": "margin of error",
+      "espanol": "margen de error",
+      "ejemplo": "The poll has a margin of error of three points.",
+      "nivelCEFR": "C1",
+      "categoria": "ciencia_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-60",
+      "ingles": "to quantify",
+      "espanol": "cuantificar",
+      "ejemplo": "It's hard to quantify the impact of the policy.",
+      "nivelCEFR": "C1",
+      "categoria": "ciencia_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-61",
+      "ingles": "anomaly",
+      "espanol": "anomalía",
+      "ejemplo": "The data shows one odd anomaly in March.",
+      "nivelCEFR": "C1",
+      "categoria": "ciencia_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-62",
+      "ingles": "to infer",
+      "espanol": "inferir",
+      "ejemplo": "From these numbers we can infer a slow decline.",
+      "nivelCEFR": "C1",
+      "categoria": "ciencia_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-63",
+      "ingles": "threshold",
+      "espanol": "umbral",
+      "ejemplo": "The signal must pass a certain threshold.",
+      "nivelCEFR": "C1",
+      "categoria": "ciencia_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-64",
+      "ingles": "sustainable",
+      "espanol": "sostenible",
+      "ejemplo": "We need a more sustainable energy model.",
+      "nivelCEFR": "C1",
+      "categoria": "ciencia_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-65",
+      "ingles": "renewable",
+      "espanol": "renovable",
+      "ejemplo": "Renewable sources now provide a third of our power.",
+      "nivelCEFR": "C1",
+      "categoria": "ciencia_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-66",
+      "ingles": "emissions",
+      "espanol": "emisiones",
+      "ejemplo": "The city wants to cut emissions in half.",
+      "nivelCEFR": "C1",
+      "categoria": "ciencia_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-67",
+      "ingles": "to resonate with",
+      "espanol": "conectar con alguien",
+      "ejemplo": "The film really resonated with young audiences.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-68",
+      "ingles": "landmark",
+      "espanol": "hito / monumento histórico",
+      "ejemplo": "The ruling was a landmark in civil rights.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-69",
+      "ingles": "heritage",
+      "espanol": "patrimonio",
+      "ejemplo": "The festival celebrates the region's cultural heritage.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-70",
+      "ingles": "to blur the line between",
+      "espanol": "difuminar la línea entre",
+      "ejemplo": "The show blurs the line between fiction and reality.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-71",
+      "ingles": "stereotype",
+      "espanol": "estereotipo",
+      "ejemplo": "The film avoids lazy stereotypes.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-72",
+      "ingles": "to subvert",
+      "espanol": "subvertir",
+      "ejemplo": "The novel subverts the traditional hero story.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-73",
+      "ingles": "outspoken",
+      "espanol": "franco / que dice lo que piensa",
+      "ejemplo": "She is outspoken about climate policy.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-74",
+      "ingles": "to be taken aback",
+      "espanol": "quedar desconcertado",
+      "ejemplo": "I was taken aback by how direct the review was.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-75",
+      "ingles": "double standard",
+      "espanol": "doble rasero",
+      "ejemplo": "There's a double standard in how they judge men and women.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-76",
+      "ingles": "the tip of the iceberg",
+      "espanol": "la punta del iceberg",
+      "ejemplo": "These complaints are just the tip of the iceberg.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-77",
+      "ingles": "to spark debate",
+      "espanol": "generar debate",
+      "ejemplo": "The decision sparked a heated debate.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-78",
+      "ingles": "mainstream",
+      "espanol": "convencional / popular",
+      "ejemplo": "The idea has finally gone mainstream.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-79",
+      "ingles": "niche",
+      "espanol": "nicho",
+      "ejemplo": "It's a niche product with a loyal audience.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-80",
+      "ingles": "turning point",
+      "espanol": "punto de inflexión",
+      "ejemplo": "The speech was a turning point in her career.",
+      "nivelCEFR": "C1",
+      "categoria": "cultura",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-81",
+      "ingles": "to come across as",
+      "espanol": "dar la impresión de ser",
+      "ejemplo": "You come across as confident, which helps in interviews.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-82",
+      "ingles": "to put off",
+      "espanol": "desanimar / posponer",
+      "ejemplo": "The price put me off.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-83",
+      "ingles": "to carry on",
+      "espanol": "continuar",
+      "ejemplo": "Please carry on, I didn't mean to interrupt.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-84",
+      "ingles": "to bring about",
+      "espanol": "provocar / lograr",
+      "ejemplo": "Social media has brought about huge changes.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-85",
+      "ingles": "to account for",
+      "espanol": "explicar / representar",
+      "ejemplo": "Poor planning accounts for most of the delay.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-86",
+      "ingles": "to get across",
+      "espanol": "hacer entender",
+      "ejemplo": "It's hard to get this idea across in a short talk.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-87",
+      "ingles": "to fall through",
+      "espanol": "fracasar (un plan)",
+      "ejemplo": "The deal fell through at the last minute.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-88",
+      "ingles": "to phase out",
+      "espanol": "eliminar poco a poco",
+      "ejemplo": "The company is phasing out plastic packaging.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-89",
+      "ingles": "to roll back",
+      "espanol": "revertir",
+      "ejemplo": "They rolled back the update after complaints.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-90",
+      "ingles": "to weigh in",
+      "espanol": "opinar / intervenir",
+      "ejemplo": "Several experts weighed in on the debate.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-91",
+      "ingles": "to drive home",
+      "espanol": "dejar algo muy claro",
+      "ejemplo": "The crisis drove home the need for backups.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-92",
+      "ingles": "to opt out",
+      "espanol": "decidir no participar",
+      "ejemplo": "You can opt out of data collection in the settings.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-93",
+      "ingles": "to iron out",
+      "espanol": "resolver (detalles o problemas)",
+      "ejemplo": "We still need to iron out a few details.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-94",
+      "ingles": "to boil down to",
+      "espanol": "reducirse a",
+      "ejemplo": "It all boils down to trust.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-95",
+      "ingles": "to live up to",
+      "espanol": "estar a la altura de",
+      "ejemplo": "The sequel didn't live up to the hype.",
+      "nivelCEFR": "C1",
+      "categoria": "verbos_frasales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-96",
+      "ingles": "the elephant in the room",
+      "espanol": "el tema incómodo que nadie menciona",
+      "ejemplo": "Let's address the elephant in the room: the budget.",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-97",
+      "ingles": "to cut corners",
+      "espanol": "hacer las cosas a medias para ahorrar",
+      "ejemplo": "They cut corners on safety and paid for it.",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-98",
+      "ingles": "ballpark figure",
+      "espanol": "cifra aproximada",
+      "ejemplo": "Can you give me a ballpark figure?",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-99",
+      "ingles": "to hit the ground running",
+      "espanol": "empezar con mucho ritmo",
+      "ejemplo": "She hit the ground running in her new job.",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-100",
+      "ingles": "to move the goalposts",
+      "espanol": "cambiar las reglas a mitad del juego",
+      "ejemplo": "They keep moving the goalposts every time we deliver.",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-101",
+      "ingles": "back to square one",
+      "espanol": "volver al principio",
+      "ejemplo": "The test failed, so we're back to square one.",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-102",
+      "ingles": "to read the room",
+      "espanol": "leer el ambiente",
+      "ejemplo": "He read the room and dropped the joke.",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-103",
+      "ingles": "double-edged sword",
+      "espanol": "arma de doble filo",
+      "ejemplo": "Fame can be a double-edged sword.",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-104",
+      "ingles": "to bite the bullet",
+      "espanol": "apechugar",
+      "ejemplo": "We had to bite the bullet and rebuild the system.",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-105",
+      "ingles": "the last straw",
+      "espanol": "la gota que derramó el vaso",
+      "ejemplo": "The third delay was the last straw.",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-106",
+      "ingles": "to go the extra mile",
+      "espanol": "esforzarse más de lo esperado",
+      "ejemplo": "She always goes the extra mile for her clients.",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-107",
+      "ingles": "to be on the fence",
+      "espanol": "estar indeciso",
+      "ejemplo": "I'm on the fence about changing jobs.",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-108",
+      "ingles": "to cut it close",
+      "espanol": "llegar justo a tiempo",
+      "ejemplo": "We cut it close, but we met the deadline.",
+      "nivelCEFR": "C1",
+      "categoria": "modismos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-109",
+      "ingles": "albeit",
+      "espanol": "aunque (formal)",
+      "ejemplo": "It was a useful, albeit short, meeting.",
+      "nivelCEFR": "C1",
+      "categoria": "registro_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-110",
+      "ingles": "notwithstanding",
+      "espanol": "a pesar de (formal)",
+      "ejemplo": "Notwithstanding the delays, the launch went well.",
+      "nivelCEFR": "C1",
+      "categoria": "registro_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-111",
+      "ingles": "whereby",
+      "espanol": "por el cual (formal)",
+      "ejemplo": "They created a system whereby anyone can report problems.",
+      "nivelCEFR": "C1",
+      "categoria": "registro_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-112",
+      "ingles": "hence",
+      "espanol": "por lo tanto (formal)",
+      "ejemplo": "The data is incomplete, hence the caution.",
+      "nivelCEFR": "C1",
+      "categoria": "registro_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-113",
+      "ingles": "to concur",
+      "espanol": "estar de acuerdo (formal)",
+      "ejemplo": "I concur with the committee's conclusion.",
+      "nivelCEFR": "C1",
+      "categoria": "registro_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-114",
+      "ingles": "hunch",
+      "espanol": "corazonada",
+      "ejemplo": "I have a hunch the bug is in the cache.",
+      "nivelCEFR": "C1",
+      "categoria": "registro_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c1-115",
+      "ingles": "to wing it",
+      "espanol": "improvisar",
+      "ejemplo": "I didn't prepare, so I just winged it.",
+      "nivelCEFR": "C1",
+      "categoria": "registro_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-1",
+      "ingles": "ubiquitous",
+      "espanol": "omnipresente",
+      "ejemplo": "Smartphones have become ubiquitous in every classroom.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-2",
+      "ingles": "ephemeral",
+      "espanol": "efímero",
+      "ejemplo": "Online fame is often ephemeral.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-3",
+      "ingles": "paradigm shift",
+      "espanol": "cambio de paradigma",
+      "ejemplo": "Large language models caused a paradigm shift in the field.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-4",
+      "ingles": "tenuous",
+      "espanol": "débil / poco sólido",
+      "ejemplo": "The link between the two events is tenuous at best.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-5",
+      "ingles": "to encapsulate",
+      "espanol": "resumir / encapsular",
+      "ejemplo": "This sentence encapsulates the whole argument.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-6",
+      "ingles": "conducive to",
+      "espanol": "propicio para",
+      "ejemplo": "A quiet room is conducive to deep work.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-7",
+      "ingles": "to underpin",
+      "espanol": "sustentar",
+      "ejemplo": "Trust underpins every successful team.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-8",
+      "ingles": "pervasive",
+      "espanol": "generalizado / que lo invade todo",
+      "ejemplo": "Surveillance has become pervasive.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-9",
+      "ingles": "conundrum",
+      "espanol": "dilema difícil",
+      "ejemplo": "It's a real conundrum: speed or safety?",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-10",
+      "ingles": "to exacerbate",
+      "espanol": "agravar",
+      "ejemplo": "Constant meetings exacerbate the problem.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-11",
+      "ingles": "intractable",
+      "espanol": "muy difícil de resolver",
+      "ejemplo": "The conflict seems intractable.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-12",
+      "ingles": "to precipitate",
+      "espanol": "desencadenar",
+      "ejemplo": "The leak precipitated a crisis of confidence.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-13",
+      "ingles": "dichotomy",
+      "espanol": "dicotomía",
+      "ejemplo": "The dichotomy between art and science is overstated.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-14",
+      "ingles": "tangential",
+      "espanol": "tangencial",
+      "ejemplo": "Her remarks were interesting but tangential.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-15",
+      "ingles": "to supersede",
+      "espanol": "reemplazar (algo anterior)",
+      "ejemplo": "The new standard supersedes the old one.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-16",
+      "ingles": "discernible",
+      "espanol": "perceptible",
+      "ejemplo": "There is no discernible difference between the two.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-17",
+      "ingles": "to transcend",
+      "espanol": "trascender",
+      "ejemplo": "Great music transcends language.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-18",
+      "ingles": "inherent",
+      "espanol": "inherente",
+      "ejemplo": "Some risk is inherent in any experiment.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-19",
+      "ingles": "corollary",
+      "espanol": "corolario",
+      "ejemplo": "A corollary of this rule is that small teams move faster.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-20",
+      "ingles": "to belie",
+      "espanol": "desmentir / ocultar",
+      "ejemplo": "His calm tone belied his anxiety.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-21",
+      "ingles": "to galvanize",
+      "espanol": "impulsar a la acción",
+      "ejemplo": "The speech galvanized the whole team.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-22",
+      "ingles": "nascent",
+      "espanol": "incipiente",
+      "ejemplo": "The nascent field of AI safety is growing fast.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-23",
+      "ingles": "incongruous",
+      "espanol": "incongruente",
+      "ejemplo": "The glass tower looked incongruous next to the old church.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-24",
+      "ingles": "to mince words",
+      "espanol": "andarse con rodeos",
+      "ejemplo": "She doesn't mince words when it comes to quality.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-25",
+      "ingles": "to hedge",
+      "espanol": "cubrirse / no comprometerse",
+      "ejemplo": "Researchers often hedge their claims.",
+      "nivelCEFR": "C2",
+      "categoria": "abstractos_academicos",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-26",
+      "ingles": "emergent behavior",
+      "espanol": "comportamiento emergente",
+      "ejemplo": "Emergent behavior appeared once the model got big enough.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-27",
+      "ingles": "fait accompli",
+      "espanol": "hecho consumado",
+      "ejemplo": "The merger was a fait accompli by the time we heard.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-28",
+      "ingles": "to cannibalize",
+      "espanol": "canibalizar (restar ventas propias)",
+      "ejemplo": "The new app may cannibalize our own subscriptions.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-29",
+      "ingles": "moat",
+      "espanol": "ventaja competitiva difícil de copiar",
+      "ejemplo": "Their data is their moat.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-30",
+      "ingles": "to commoditize",
+      "espanol": "convertir en mercancía",
+      "ejemplo": "Cloud providers have commoditized storage.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-31",
+      "ingles": "double bind",
+      "espanol": "situación sin salida",
+      "ejemplo": "We're in a double bind: speed up or lose quality.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-32",
+      "ingles": "overengineered",
+      "espanol": "sobrediseñado",
+      "ejemplo": "The tool is overengineered for such a small task.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-33",
+      "ingles": "to degrade gracefully",
+      "espanol": "fallar de forma controlada",
+      "ejemplo": "A good system degrades gracefully under load.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-34",
+      "ingles": "blast radius",
+      "espanol": "alcance del daño",
+      "ejemplo": "Smaller deploys reduce the blast radius.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-35",
+      "ingles": "brittle",
+      "espanol": "frágil (código o proceso)",
+      "ejemplo": "The tests are brittle and break constantly.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-36",
+      "ingles": "to bake in",
+      "espanol": "incorporar desde el diseño",
+      "ejemplo": "Security must be baked in from the start.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-37",
+      "ingles": "stopgap",
+      "espanol": "parche provisional",
+      "ejemplo": "It's a stopgap, not a real fix.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-38",
+      "ingles": "non-trivial",
+      "espanol": "nada trivial",
+      "ejemplo": "Migrating the data is non-trivial.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-39",
+      "ingles": "to decouple",
+      "espanol": "desacoplar",
+      "ejemplo": "We decoupled the billing service from the main app.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-40",
+      "ingles": "single point of failure",
+      "espanol": "punto único de falla",
+      "ejemplo": "The database is a single point of failure.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-41",
+      "ingles": "to sunset",
+      "espanol": "dar por terminado (un producto)",
+      "ejemplo": "They will sunset the old platform in March.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-42",
+      "ingles": "provenance",
+      "espanol": "procedencia",
+      "ejemplo": "Data provenance is a key concern for auditors.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-43",
+      "ingles": "to reconcile",
+      "espanol": "conciliar / hacer cuadrar",
+      "ejemplo": "We need to reconcile the two reports.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-44",
+      "ingles": "attrition",
+      "espanol": "desgaste / rotación de personal",
+      "ejemplo": "High attrition is hurting the team.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-45",
+      "ingles": "lever",
+      "espanol": "palanca (factor sobre el que se puede actuar)",
+      "ejemplo": "Pricing is our strongest lever.",
+      "nivelCEFR": "C2",
+      "categoria": "tecnologia_y_trabajo",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-46",
+      "ingles": "zeitgeist",
+      "espanol": "espíritu de la época",
+      "ejemplo": "The film captured the zeitgeist of the early two thousands.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-47",
+      "ingles": "harbinger",
+      "espanol": "presagio",
+      "ejemplo": "The first layoffs were a harbinger of worse news.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-48",
+      "ingles": "watershed moment",
+      "espanol": "momento decisivo",
+      "ejemplo": "The trial was a watershed moment for the industry.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-49",
+      "ingles": "hegemony",
+      "espanol": "hegemonía",
+      "ejemplo": "Few challenged the cultural hegemony of that era.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-50",
+      "ingles": "to lampoon",
+      "espanol": "satirizar",
+      "ejemplo": "The show lampoons both politicians and journalists.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-51",
+      "ingles": "to romanticize",
+      "espanol": "idealizar",
+      "ejemplo": "We tend to romanticize the past.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-52",
+      "ingles": "vernacular",
+      "espanol": "lenguaje cotidiano o local",
+      "ejemplo": "The novel is written in the local vernacular.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-53",
+      "ingles": "to defy categorization",
+      "espanol": "no encajar en ninguna categoría",
+      "ejemplo": "Her music defies categorization.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-54",
+      "ingles": "an ode to",
+      "espanol": "una oda a",
+      "ejemplo": "The documentary is an ode to small bookstores.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-55",
+      "ingles": "cognizant of",
+      "espanol": "consciente de",
+      "ejemplo": "The authors are cognizant of the limits of their data.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-56",
+      "ingles": "to usher in",
+      "espanol": "dar paso a",
+      "ejemplo": "The invention ushered in a new era.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-57",
+      "ingles": "disenfranchised",
+      "espanol": "marginado / sin voz ni derechos",
+      "ejemplo": "Many voters felt disenfranchised.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-58",
+      "ingles": "cautionary tale",
+      "espanol": "relato con moraleja",
+      "ejemplo": "The company's collapse is a cautionary tale.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-59",
+      "ingles": "to chafe at",
+      "espanol": "rebelarse contra",
+      "ejemplo": "He chafed at the rigid rules.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-60",
+      "ingles": "veneer",
+      "espanol": "apariencia superficial",
+      "ejemplo": "Behind the veneer of calm, the team was exhausted.",
+      "nivelCEFR": "C2",
+      "categoria": "cultura_y_sociedad",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-61",
+      "ingles": "to throw someone under the bus",
+      "espanol": "culpar a alguien para salvarse",
+      "ejemplo": "He threw his colleague under the bus.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-62",
+      "ingles": "to kick the can down the road",
+      "espanol": "posponer un problema",
+      "ejemplo": "The committee kicked the can down the road again.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-63",
+      "ingles": "the writing on the wall",
+      "espanol": "señales claras de lo que viene",
+      "ejemplo": "The writing was on the wall for the old model.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-64",
+      "ingles": "to be in the weeds",
+      "espanol": "estar atrapado en los detalles",
+      "ejemplo": "We're in the weeds, so let's zoom out.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-65",
+      "ingles": "to move the needle",
+      "espanol": "lograr un cambio real",
+      "ejemplo": "Will this feature actually move the needle?",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-66",
+      "ingles": "low-hanging fruit",
+      "espanol": "lo fácil de lograr primero",
+      "ejemplo": "Let's start with the low-hanging fruit.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-67",
+      "ingles": "to take something with a grain of salt",
+      "espanol": "tomar algo con pinzas",
+      "ejemplo": "Take his estimates with a grain of salt.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-68",
+      "ingles": "red herring",
+      "espanol": "pista falsa",
+      "ejemplo": "The error message was a red herring.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-69",
+      "ingles": "to rest on one's laurels",
+      "espanol": "dormirse en los laureles",
+      "ejemplo": "You can't rest on your laurels in this industry.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-70",
+      "ingles": "a tough act to follow",
+      "espanol": "algo difícil de superar",
+      "ejemplo": "Her talk was a tough act to follow.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-71",
+      "ingles": "blessing in disguise",
+      "espanol": "bendición disfrazada",
+      "ejemplo": "Losing that client was a blessing in disguise.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-72",
+      "ingles": "to cut to the chase",
+      "espanol": "ir al grano",
+      "ejemplo": "Let me cut to the chase: we need more time.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-73",
+      "ingles": "to touch a nerve",
+      "espanol": "tocar una fibra sensible",
+      "ejemplo": "The question clearly touched a nerve.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-74",
+      "ingles": "to go down the rabbit hole",
+      "espanol": "perderse en un tema sin fin",
+      "ejemplo": "I went down the rabbit hole reading about it.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-75",
+      "ingles": "to burn the midnight oil",
+      "espanol": "trabajar hasta tarde",
+      "ejemplo": "We burned the midnight oil to finish the report.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-76",
+      "ingles": "the bottom line",
+      "espanol": "lo esencial / el resultado final",
+      "ejemplo": "The bottom line is that we need more testers.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-77",
+      "ingles": "to read between the lines",
+      "espanol": "leer entre líneas",
+      "ejemplo": "Reading between the lines, they won't renew the contract.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-78",
+      "ingles": "to bark up the wrong tree",
+      "espanol": "equivocarse de camino",
+      "ejemplo": "If you blame the network, you're barking up the wrong tree.",
+      "nivelCEFR": "C2",
+      "categoria": "modismos_avanzados",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-79",
+      "ingles": "to hash out",
+      "espanol": "discutir hasta resolver",
+      "ejemplo": "We hashed out the details over lunch.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-80",
+      "ingles": "to pan out",
+      "espanol": "resultar",
+      "ejemplo": "Let's see how the plan pans out.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-81",
+      "ingles": "to wade through",
+      "espanol": "abrirse paso entre mucho material",
+      "ejemplo": "I waded through hundreds of pages.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-82",
+      "ingles": "to gloss over",
+      "espanol": "pasar por alto con rapidez",
+      "ejemplo": "The report glosses over the real risks.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-83",
+      "ingles": "to hone in on",
+      "espanol": "centrarse en",
+      "ejemplo": "Let's hone in on the root cause.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-84",
+      "ingles": "to square with",
+      "espanol": "concordar con",
+      "ejemplo": "His story doesn't square with the evidence.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-85",
+      "ingles": "to lean into",
+      "espanol": "abrazar / apostar por",
+      "ejemplo": "The brand leaned into its quirky image.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-86",
+      "ingles": "to pare down",
+      "espanol": "reducir al mínimo",
+      "ejemplo": "We pared down the proposal to three key points.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-87",
+      "ingles": "to bear out",
+      "espanol": "confirmar",
+      "ejemplo": "The results bear out our early suspicions.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-88",
+      "ingles": "to fall short of",
+      "espanol": "no llegar a",
+      "ejemplo": "The results fell short of expectations.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-89",
+      "ingles": "to tease out",
+      "espanol": "sacar a la luz poco a poco",
+      "ejemplo": "It's hard to tease out the cause from the data.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-90",
+      "ingles": "to dial back",
+      "espanol": "moderar / reducir",
+      "ejemplo": "They dialed back their promises.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-91",
+      "ingles": "to circle the wagons",
+      "espanol": "cerrar filas",
+      "ejemplo": "The team circled the wagons after the criticism.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-92",
+      "ingles": "to run afoul of",
+      "espanol": "chocar con (reglas)",
+      "ejemplo": "The app ran afoul of the privacy law.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-93",
+      "ingles": "to weather a storm",
+      "espanol": "capear un temporal",
+      "ejemplo": "The company weathered the crisis well.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_frasales_y_colocaciones",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-94",
+      "ingles": "insofar as",
+      "espanol": "en la medida en que",
+      "ejemplo": "Insofar as we can tell, the data is accurate.",
+      "nivelCEFR": "C2",
+      "categoria": "registro_formal_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-95",
+      "ingles": "tantamount to",
+      "espanol": "equivalente a",
+      "ejemplo": "Ignoring the warning was tantamount to negligence.",
+      "nivelCEFR": "C2",
+      "categoria": "registro_formal_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-96",
+      "ingles": "inasmuch as",
+      "espanol": "dado que / en la medida en que",
+      "ejemplo": "The plan is sound inasmuch as it's realistic.",
+      "nivelCEFR": "C2",
+      "categoria": "registro_formal_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-97",
+      "ingles": "ostensibly",
+      "espanol": "aparentemente",
+      "ejemplo": "The meeting was ostensibly about budget.",
+      "nivelCEFR": "C2",
+      "categoria": "registro_formal_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-98",
+      "ingles": "purportedly",
+      "espanol": "supuestamente",
+      "ejemplo": "The device purportedly lasts a week.",
+      "nivelCEFR": "C2",
+      "categoria": "registro_formal_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-99",
+      "ingles": "arguably",
+      "espanol": "posiblemente / se podría argumentar",
+      "ejemplo": "It's arguably the best course on the topic.",
+      "nivelCEFR": "C2",
+      "categoria": "registro_formal_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-100",
+      "ingles": "by dint of",
+      "espanol": "a fuerza de",
+      "ejemplo": "She succeeded by dint of sheer persistence.",
+      "nivelCEFR": "C2",
+      "categoria": "registro_formal_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-101",
+      "ingles": "suffice it to say",
+      "espanol": "baste decir que",
+      "ejemplo": "Suffice it to say, the launch did not go well.",
+      "nivelCEFR": "C2",
+      "categoria": "registro_formal_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-102",
+      "ingles": "mutatis mutandis",
+      "espanol": "cambiando lo que haya que cambiar",
+      "ejemplo": "The same applies, mutatis mutandis, to smaller teams.",
+      "nivelCEFR": "C2",
+      "categoria": "registro_formal_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-103",
+      "ingles": "needless to say",
+      "espanol": "ni que decir tiene",
+      "ejemplo": "Needless to say, we were disappointed.",
+      "nivelCEFR": "C2",
+      "categoria": "registro_formal_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-104",
+      "ingles": "as it were",
+      "espanol": "por así decirlo",
+      "ejemplo": "He was, as it were, the glue of the team.",
+      "nivelCEFR": "C2",
+      "categoria": "registro_formal_y_matices",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-105",
+      "ingles": "to defer to",
+      "espanol": "ceder ante el criterio de alguien",
+      "ejemplo": "On medical questions, I defer to the specialists.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_formales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-106",
+      "ingles": "to adjudicate",
+      "espanol": "arbitrar / decidir entre dos partes",
+      "ejemplo": "A neutral panel will adjudicate the dispute.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_formales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-107",
+      "ingles": "to eschew",
+      "espanol": "evitar (formal)",
+      "ejemplo": "She eschews jargon and writes in plain language.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_formales",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "voc-c2-108",
+      "ingles": "equivocal",
+      "espanol": "ambiguo / poco claro",
+      "ejemplo": "The results were equivocal, so we ran the test again.",
+      "nivelCEFR": "C2",
+      "categoria": "verbos_formales",
       "revisar": true,
       "revisionIA": "2026-11-20"
     }

@@ -16,10 +16,10 @@ RAIZ = pathlib.Path(__file__).resolve().parent.parent
 F1 = RAIZ / "data/content/fase1"
 NIVELES = ["A1", "A2", "B1", "B2", "C1", "C2"]
 # Niveles que ya tienen contenido propio (el plan deja de reutilizar B2 para ellos).
-NIVELES_CON_CONTENIDO = ["A1", "A2", "B1", "B2"]  # T5 agrega C1 y C2
+NIVELES_CON_CONTENIDO = ["A1", "A2", "B1", "B2", "C1", "C2"]
 # Banco de confirmación (D29): se confirma el nivel SIGUIENTE, así que cubre A2..C2.
 NIVELES_CONFIRMACION = ["A2", "B1", "B2", "C1", "C2"]
-MINIMOS = {"lecturas": 12, "escucha": 12, "escritura": 10, "habla": 30, "tarjetas": 150}
+MINIMOS = {"lecturas": 12, "escucha": 12, "escritura": 12, "habla": 30, "tarjetas": 150}
 MIN_CONFIRMACION_POR_HABILIDAD = 12
 HABILIDADES_CONFIRMACION = ["lectura", "escucha", "vocabulario_gramatica"]
 FECHA_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -28,7 +28,7 @@ MAX_TEXTO_LECTURA = 3200
 MIN_TEXTO_LECTURA = 60
 MAX_OPCION = 130
 MAX_TARJETA = 170
-EXIGIR_CONFIRMACION = False  # T5 lo activa cuando el banco esté completo
+EXIGIR_CONFIRMACION = True
 MAX_FRACCION_DESBALANCEADAS = 0.06  # tope de preguntas cuya opción correcta es mucho más larga que las demás
 
 errores = []

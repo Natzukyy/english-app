@@ -2888,6 +2888,1492 @@
         }
       ],
       "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c1-borrador",
+      "tema": "El valor del borrador imperfecto",
+      "nivelCEFR": "C1",
+      "texto": "Most students treat a first draft as a failed final version, and that is precisely the mistake. A draft is not meant to be good; it is meant to exist. Once words are on the page, the real work of thinking can begin, because it is far easier to improve a clumsy paragraph than to conjure a perfect one from nothing. Professional writers often describe revision as the stage where they discover what they actually think. That is why instructors who ask for early, rough submissions tend to get stronger final essays: students stop polishing sentences they may later delete and start questioning their argument instead. The discomfort of showing unfinished work is real, but it is a small price for avoiding the far greater cost of defending a flawed thesis at the last minute.",
+      "vocabularioClave": [
+        {
+          "termino": "precisely",
+          "traduccion": "justamente"
+        },
+        {
+          "termino": "conjure",
+          "traduccion": "sacar de la nada"
+        },
+        {
+          "termino": "revision",
+          "traduccion": "revisión"
+        },
+        {
+          "termino": "thesis",
+          "traduccion": "tesis"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What is the writer's main point about first drafts?",
+          "opciones": [
+            "Their purpose is to start the thinking process, not to be good",
+            "They prove whether a student has a talent for writing",
+            "They should be polished carefully before anyone else sees them",
+            "They are mostly useful for checking spelling and grammar"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c1-borrador-p1"
+        },
+        {
+          "pregunta": "Why do instructors who ask for rough submissions often see better essays?",
+          "opciones": [
+            "Students are afraid of receiving a very low grade at first",
+            "Students focus on questioning their argument instead of polishing",
+            "Students copy the structure suggested by the instructor",
+            "Students spend more time reading examples from other writers"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c1-borrador-p2"
+        },
+        {
+          "pregunta": "What does the writer say about showing unfinished work?",
+          "opciones": [
+            "It is only appropriate for students who already write well",
+            "It rarely produces useful feedback from instructors or classmates",
+            "It is uncomfortable, but cheaper than defending a weak thesis late",
+            "It should be avoided until the argument is completely finished"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c1-borrador-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c1-seguridad-ia",
+      "tema": "Por qué los chatbots suenan seguros aunque se equivoquen",
+      "nivelCEFR": "C1",
+      "texto": "Language models are trained to produce fluent text, and fluency is easily mistaken for knowledge. When a system answers in a calm, well-organized paragraph, readers instinctively assume that careful reasoning stands behind it. Yet the same fluent tone appears whether the answer is correct or entirely invented. This mismatch is not a malfunction so much as a side effect of the training goal: the model learns what a convincing answer looks like, not necessarily whether it is true. Some developers are experimenting with ways of expressing uncertainty, such as flagging claims that lack support in the source material. Others argue that the responsibility lies mainly with users, who should treat any single answer as a starting point to verify rather than a verdict to accept.",
+      "vocabularioClave": [
+        {
+          "termino": "fluent",
+          "traduccion": "fluido"
+        },
+        {
+          "termino": "invented",
+          "traduccion": "inventado"
+        },
+        {
+          "termino": "mismatch",
+          "traduccion": "desajuste"
+        },
+        {
+          "termino": "verdict",
+          "traduccion": "veredicto"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "According to the text, why are chatbot answers often trusted too easily?",
+          "opciones": [
+            "They are usually shorter than answers written by people",
+            "Their fluent tone looks like evidence of careful reasoning",
+            "They always cite the sources they used for each claim",
+            "They are checked by human experts before being shown"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c1-seguridad-ia-p1"
+        },
+        {
+          "pregunta": "How does the text describe the tendency to sound confident when wrong?",
+          "opciones": [
+            "A bug that was fixed in the most recent versions",
+            "A side effect of what the model is trained to do",
+            "A deliberate choice made by the companies who sell it",
+            "A problem that only appears with very difficult questions"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c1-seguridad-ia-p2"
+        },
+        {
+          "pregunta": "What do some people believe should be done about this problem?",
+          "opciones": [
+            "Users should verify answers instead of accepting them as final",
+            "Companies should stop developing language models altogether",
+            "Chatbots should be restricted to short, simple answers",
+            "Schools should forbid students from reading chatbot text"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c1-seguridad-ia-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c1-replicacion",
+      "tema": "La réplica que nadie quería publicar",
+      "nivelCEFR": "C1",
+      "texto": "Few results in science are as unglamorous as a failed replication. When a team repeats a published experiment and cannot reproduce the original effect, journals often show little interest: the story seems to lack a clear conclusion. Yet these null results are arguably as informative as the original claim, since they reveal how robust, or fragile, a finding really is. In recent years, a handful of researchers have begun publishing replication reports under dedicated formats, where the methods are approved before the results are known. The idea is to reward careful work rather than surprising outcomes. Critics worry that this will redirect scarce funding toward confirming old ideas instead of exploring new ones, but supporters reply that unreliable foundations make every later discovery less trustworthy.",
+      "vocabularioClave": [
+        {
+          "termino": "unglamorous",
+          "traduccion": "poco atractivo"
+        },
+        {
+          "termino": "null results",
+          "traduccion": "resultados nulos"
+        },
+        {
+          "termino": "robust",
+          "traduccion": "sólido"
+        },
+        {
+          "termino": "foundations",
+          "traduccion": "cimientos"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "Why do journals often ignore failed replications?",
+          "opciones": [
+            "The methods in these studies are normally too complicated",
+            "Journals only accept studies written by the original authors",
+            "The outcome seems to offer no clear and exciting story",
+            "Failed replications are usually based on very small samples"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c1-replicacion-p1"
+        },
+        {
+          "pregunta": "What do the so-called replication reports aim to do?",
+          "opciones": [
+            "Reward careful methods instead of surprising results",
+            "Hide the results until all researchers have agreed",
+            "Replace the original studies with simpler experiments",
+            "Make experiments cheaper by using fewer participants"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c1-replicacion-p2"
+        },
+        {
+          "pregunta": "What concern do critics have about this approach?",
+          "opciones": [
+            "Researchers may become less careful about their methods",
+            "Universities may refuse to fund any experimental work",
+            "Money may go to confirming old ideas rather than finding new ones",
+            "Journals may stop publishing positive results completely"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c1-replicacion-p3"
+        },
+        {
+          "pregunta": "What can be inferred about the supporters' view?",
+          "opciones": [
+            "Funding should be limited to the largest research groups",
+            "New discoveries matter more than checking earlier ones",
+            "Replications are unnecessary when the first study was big",
+            "Weak evidence from the past makes new work less reliable"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c1-replicacion-p4"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c1-disponibilidad",
+      "tema": "El costo oculto de estar siempre disponible",
+      "nivelCEFR": "C1",
+      "texto": "Being reachable at all hours is often presented as a sign of commitment, but the evidence suggests it quietly erodes the very quality it is meant to signal. Workers who expect to answer messages in the evening rarely switch off properly; even when no message arrives, part of their attention stays on alert. Over time, this partial vigilance prevents the deep rest that creative problem-solving depends on. Some companies have responded with explicit norms, such as agreeing that messages sent after six do not require a reply until morning. The results are encouraging, though not automatic: such rules work only when managers follow them, because employees quickly learn which expectations are real and which are merely written down.",
+      "vocabularioClave": [
+        {
+          "termino": "reachable",
+          "traduccion": "localizable"
+        },
+        {
+          "termino": "erodes",
+          "traduccion": "erosiona"
+        },
+        {
+          "termino": "vigilance",
+          "traduccion": "vigilancia"
+        },
+        {
+          "termino": "norms",
+          "traduccion": "normas"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What is the writer's view of constant availability?",
+          "opciones": [
+            "It is the best way to prove loyalty to a company",
+            "It is only a problem for people with young children",
+            "It weakens the quality of work it is supposed to show",
+            "It has no real effect once workers get used to it"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c1-disponibilidad-p1"
+        },
+        {
+          "pregunta": "Why can workers fail to rest even when no message arrives?",
+          "opciones": [
+            "They prefer to check their messages before sleeping",
+            "They are usually asked to work on weekends as well",
+            "They feel guilty about having finished their work early",
+            "Part of their attention keeps waiting for a possible message"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c1-disponibilidad-p2"
+        },
+        {
+          "pregunta": "Under what condition do rules about evening messages work?",
+          "opciones": [
+            "When they are written in the employment contract",
+            "When employees agree to answer within an hour",
+            "When managers actually respect them",
+            "When only some departments are required to follow them"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c1-disponibilidad-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c1-subtitulos",
+      "tema": "Por qué los subtítulos nunca son neutrales",
+      "nivelCEFR": "C1",
+      "texto": "Anyone who has compared a film with its subtitles knows that something is always lost, but it is rarely noticed how much is also decided. Subtitlers work under strict limits: a line can hold only so many characters and must stay on screen long enough to be read. Faced with a joke built on wordplay, they cannot add a footnote; they must replace it with something that works in the target language, or drop it. Politeness, slang and regional accents are flattened in similar ways. None of this means translation is a betrayal. It means that every version is an interpretation, and that viewers who rely on subtitles are, whether they realize it or not, watching one particular reading of the film.",
+      "vocabularioClave": [
+        {
+          "termino": "wordplay",
+          "traduccion": "juego de palabras"
+        },
+        {
+          "termino": "footnote",
+          "traduccion": "nota al pie"
+        },
+        {
+          "termino": "flattened",
+          "traduccion": "aplanados"
+        },
+        {
+          "termino": "betrayal",
+          "traduccion": "traición"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "Why can subtitlers not explain a joke that relies on wordplay?",
+          "opciones": [
+            "Viewers generally dislike reading explanations of jokes",
+            "Wordplay is impossible to translate into any language",
+            "Directors forbid them from changing the original dialogue",
+            "Space and time on screen are very limited"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c1-subtitulos-p1"
+        },
+        {
+          "pregunta": "What does the writer say about regional accents and slang?",
+          "opciones": [
+            "They are the easiest part of a film to subtitle",
+            "They are usually kept exactly as in the original",
+            "They are removed only from comedies and dramas",
+            "They tend to be flattened in the translation"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c1-subtitulos-p2"
+        },
+        {
+          "pregunta": "What conclusion does the text reach about translation?",
+          "opciones": [
+            "Every version is an interpretation, not a neutral copy",
+            "Subtitles should be avoided in favor of dubbing",
+            "Translation is a betrayal of the original work",
+            "Only experts in film should make subtitles"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c1-subtitulos-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c1-clases-magistrales",
+      "tema": "Las clases magistrales no están muertas, están mal usadas",
+      "nivelCEFR": "C1",
+      "texto": "Every few years someone announces the death of the lecture, and every few years lectures carry on. The reason is not mere habit. A good lecture does something a textbook cannot: it shows an expert thinking in real time, hesitating, correcting herself, deciding what matters. The problem arises when the lecture becomes a slow reading of slides that students could just as easily download. Several universities now ask students to cover basic material beforehand and use class time for questions and problems. Early results are mixed. The format works well where students arrive prepared, and poorly where they do not, which suggests that the real challenge is less pedagogical than motivational.",
+      "vocabularioClave": [
+        {
+          "termino": "carry on",
+          "traduccion": "continuar"
+        },
+        {
+          "termino": "hesitating",
+          "traduccion": "dudando"
+        },
+        {
+          "termino": "slides",
+          "traduccion": "diapositivas"
+        },
+        {
+          "termino": "motivational",
+          "traduccion": "de motivación"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "According to the text, what can a good lecture offer that a textbook cannot?",
+          "opciones": [
+            "A faster way of covering all the material in the course",
+            "A complete list of every fact students must memorize",
+            "A guarantee that students will pay attention in class",
+            "A chance to watch an expert think and decide in real time"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c1-clases-magistrales-p1"
+        },
+        {
+          "pregunta": "What is described as the main problem with lectures?",
+          "opciones": [
+            "They are always given by teachers without enough experience",
+            "They can become a slow reading of slides available online",
+            "They make it impossible for students to ask questions",
+            "They are too short to cover the most important topics"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c1-clases-magistrales-p2"
+        },
+        {
+          "pregunta": "What does the writer suggest about the new format?",
+          "opciones": [
+            "It has been a complete failure in every university",
+            "It is better suited to science subjects than to the arts",
+            "It requires smaller classes and many more teachers",
+            "Its success depends mainly on whether students come prepared"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c1-clases-magistrales-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c1-documentacion-viva",
+      "tema": "La documentación que nadie actualiza",
+      "nivelCEFR": "C1",
+      "texto": "Ask any engineer which part of a project is most likely to be wrong, and the answer is usually the documentation. Pages written during a burst of enthusiasm gradually drift away from the code, until they mislead more than they help. The usual diagnosis is laziness, but the real cause is structural: updating documentation is rarely part of anyone's definition of done. Teams that keep their documentation healthy tend to treat it like code, reviewing changes to it in the same process and failing a build when examples stop working. This does not eliminate the effort, yet it moves the effort to the moment when the knowledge is fresh, which is the cheapest moment to capture it.",
+      "vocabularioClave": [
+        {
+          "termino": "burst",
+          "traduccion": "impulso"
+        },
+        {
+          "termino": "drift away",
+          "traduccion": "alejarse"
+        },
+        {
+          "termino": "diagnosis",
+          "traduccion": "diagnóstico"
+        },
+        {
+          "termino": "build",
+          "traduccion": "compilación automática"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "According to the text, why does documentation usually become outdated?",
+          "opciones": [
+            "Updating it is not part of what counts as finished work",
+            "Companies prefer to keep their documentation secret",
+            "Documentation is always written by new team members",
+            "Engineers dislike writing in a clear and simple style"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c1-documentacion-viva-p1"
+        },
+        {
+          "pregunta": "How do successful teams keep documentation healthy?",
+          "opciones": [
+            "They rewrite all the pages from scratch every year",
+            "They allow anyone to edit pages without any review",
+            "They review and test it with the same process as code",
+            "They hire specialists who only write documentation"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c1-documentacion-viva-p2"
+        },
+        {
+          "pregunta": "What is the benefit of this approach, according to the writer?",
+          "opciones": [
+            "The effort is postponed until the project has ended",
+            "The effort moves to when the knowledge is fresh and cheap to capture",
+            "The effort is shared equally among all the teams in the company",
+            "The effort disappears because documentation updates itself"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c1-documentacion-viva-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c1-potencial",
+      "tema": "Contratar por potencial o por experiencia",
+      "nivelCEFR": "C1",
+      "texto": "Hiring managers love to say they hire for potential, yet most job postings still ask for years of experience in precisely the tools the company already uses. The tension is easy to understand: experience is visible and potential is not. Someone with five years in a field has a track record that can be checked, while a quick learner has only a promise. Still, tools change faster than careers, and the skills that carry over best, such as judgment, curiosity and clear communication, are hard to list on a résumé. Companies that take potential seriously usually redesign their interviews around realistic problems, watching how candidates reason when they do not already know the answer.",
+      "vocabularioClave": [
+        {
+          "termino": "track record",
+          "traduccion": "historial"
+        },
+        {
+          "termino": "promise",
+          "traduccion": "promesa"
+        },
+        {
+          "termino": "carry over",
+          "traduccion": "transferirse"
+        },
+        {
+          "termino": "reason",
+          "traduccion": "razonar"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What contradiction does the writer point out?",
+          "opciones": [
+            "Companies hire quickly but dismiss employees slowly",
+            "Companies want young workers but promote only older ones",
+            "Companies pay for training but never offer any courses",
+            "Companies say they value potential but ask for specific experience"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c1-potencial-p1"
+        },
+        {
+          "pregunta": "Why is experience often preferred over potential?",
+          "opciones": [
+            "It can be verified, while potential cannot be seen directly",
+            "It is required by law in most technical professions",
+            "It always guarantees better results in the first month",
+            "It is much cheaper to find than candidates with potential"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c1-potencial-p2"
+        },
+        {
+          "pregunta": "How do some companies try to evaluate potential?",
+          "opciones": [
+            "By testing candidates on the knowledge from their last job",
+            "By hiring only people who studied at well-known universities",
+            "By watching how candidates solve realistic problems they do not know",
+            "By asking candidates to list all the tools they have used"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c1-potencial-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c1-deuda-de-sueno",
+      "tema": "La deuda de sueño y el mito de recuperarse el fin de semana",
+      "nivelCEFR": "C1",
+      "texto": "Many people believe that sleeping late on weekends cancels the damage of a short-sleeping week. The idea is comforting, and it is only partly true. Extra sleep does reduce tiredness, but studies measuring attention and memory suggest that some of the lost performance does not return so easily, especially after several consecutive nights of insufficient rest. Worse, sleeping late on Sunday can shift the body clock and make the following Monday harder. Researchers therefore recommend consistency over compensation: a regular schedule that is slightly shorter than ideal may serve most people better than an irregular one that averages out the same.",
+      "vocabularioClave": [
+        {
+          "termino": "short-sleeping",
+          "traduccion": "con poco sueño"
+        },
+        {
+          "termino": "consecutive",
+          "traduccion": "consecutivas"
+        },
+        {
+          "termino": "body clock",
+          "traduccion": "reloj biológico"
+        },
+        {
+          "termino": "compensation",
+          "traduccion": "compensación"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What does the text say about sleeping late on weekends?",
+          "opciones": [
+            "It reduces tiredness but does not fully repair lost performance",
+            "It completely cancels the effects of a week of poor sleep",
+            "It only works for people who sleep very little",
+            "It is harmful and should be avoided at all costs"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c1-deuda-de-sueno-p1"
+        },
+        {
+          "pregunta": "Why can sleeping late on Sunday cause problems?",
+          "opciones": [
+            "It can shift the body clock and make Monday harder",
+            "It leads to forgetting what was learned during the week",
+            "It makes people sleep less during the following week",
+            "It is usually followed by a day of much lower energy"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c1-deuda-de-sueno-p2"
+        },
+        {
+          "pregunta": "What do researchers recommend?",
+          "opciones": [
+            "A regular schedule, even if it is a little short",
+            "Sleeping only on weekends to save time during the week",
+            "A long sleep every night, whatever the schedule",
+            "Taking naps in the afternoon instead of sleeping at night"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c1-deuda-de-sueno-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c1-museos",
+      "tema": "Los museos y el problema del contexto",
+      "nivelCEFR": "C1",
+      "texto": "A museum does more than keep objects safe; it quietly tells a story about them. When a statue appears alone under a spotlight, visitors admire its form but learn little about the people who made it or how it arrived. Many institutions are now rethinking this approach, adding labels that explain how an object was acquired, and sometimes acknowledging that it should never have left its place of origin. The debate is uncomfortable because it forces museums to question their own authority. Yet it may also make them more interesting: an object with a complicated history invites visitors to think, instead of merely nodding at something famous.",
+      "vocabularioClave": [
+        {
+          "termino": "spotlight",
+          "traduccion": "reflector"
+        },
+        {
+          "termino": "acquired",
+          "traduccion": "adquirido"
+        },
+        {
+          "termino": "origin",
+          "traduccion": "origen"
+        },
+        {
+          "termino": "authority",
+          "traduccion": "autoridad"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What problem does the writer see with showing a statue alone under a spotlight?",
+          "opciones": [
+            "The museum cannot guarantee the statue is authentic",
+            "The statue may be damaged by the strong light",
+            "Visitors do not usually pay attention to statues",
+            "Visitors admire its form but learn little about its history"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c1-museos-p1"
+        },
+        {
+          "pregunta": "What are many museums starting to add to their displays?",
+          "opciones": [
+            "Explanations of how objects were acquired",
+            "Photographs of the visitors who donated them",
+            "Prices showing the value of each object",
+            "Games designed to entertain younger visitors"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c1-museos-p2"
+        },
+        {
+          "pregunta": "What can be inferred about the writer's attitude toward the debate?",
+          "opciones": [
+            "It is dangerous because it will empty the museums",
+            "It is boring because it concerns only experts",
+            "It is uncomfortable but could improve the museum experience",
+            "It is unnecessary because visitors prefer famous objects"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c1-museos-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c1-sesgo-automatizacion",
+      "tema": "Cuando la máquina tiene la última palabra",
+      "nivelCEFR": "C1",
+      "texto": "Automation bias is the tendency to trust a machine's suggestion even when our own judgment points elsewhere. In hospitals, where decision-support systems flag possible diagnoses, researchers have documented cases in which experienced doctors accepted an incorrect recommendation against their better instincts. The effect grows with workload: the more tired and rushed people are, the more appealing it becomes to defer. Designers have therefore started to ask not only how accurate a system is, but how it presents its advice. Showing the reasoning behind a recommendation, or occasionally withholding it, can keep professionals engaged instead of reducing them to the role of someone who merely signs off.",
+      "vocabularioClave": [
+        {
+          "termino": "bias",
+          "traduccion": "sesgo"
+        },
+        {
+          "termino": "flag",
+          "traduccion": "señalar"
+        },
+        {
+          "termino": "defer",
+          "traduccion": "ceder"
+        },
+        {
+          "termino": "signs off",
+          "traduccion": "da el visto bueno"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What is automation bias?",
+          "opciones": [
+            "A fear of using machines that make medical decisions",
+            "Trusting a machine's suggestion even against one's own judgment",
+            "A mistake made by machines that analyze patient data",
+            "A preference for older equipment over modern devices"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c1-sesgo-automatizacion-p1"
+        },
+        {
+          "pregunta": "When does the problem become more serious, according to the text?",
+          "opciones": [
+            "When the hospital has too few computers",
+            "When the doctor has little experience in the field",
+            "When the system is used for the first time",
+            "When people are tired and working under pressure"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c1-sesgo-automatizacion-p2"
+        },
+        {
+          "pregunta": "What are designers trying to do about it?",
+          "opciones": [
+            "Train doctors to ignore every recommendation",
+            "Change how advice is presented so professionals stay engaged",
+            "Remove machines from medical decisions entirely",
+            "Make systems more accurate by using bigger screens"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c1-sesgo-automatizacion-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c1-feedback-no-pedido",
+      "tema": "La retroalimentación que no pediste",
+      "nivelCEFR": "C1",
+      "texto": "Unsolicited feedback has a bad reputation, and often a deserved one: it tends to arrive at the wrong moment, from someone who knows less than they think. But an automatic defensiveness has its own cost. The most useful comments are often those we would never have thought to ask for, because they concern blind spots by definition. A practical approach is to pause before reacting and to separate the content from the delivery. A badly phrased remark can still contain something true. After the first sting has passed, it is worth asking two questions: is there a pattern here, and would I give the same advice to someone else?",
+      "vocabularioClave": [
+        {
+          "termino": "unsolicited",
+          "traduccion": "no solicitado"
+        },
+        {
+          "termino": "blind spots",
+          "traduccion": "puntos ciegos"
+        },
+        {
+          "termino": "sting",
+          "traduccion": "sensación de ardor"
+        },
+        {
+          "termino": "pattern",
+          "traduccion": "patrón"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "Why does the writer say the most useful feedback is often unrequested?",
+          "opciones": [
+            "It is always more polite than requested feedback",
+            "It deals with blind spots we cannot see ourselves",
+            "It usually comes from people who know us very well",
+            "It is more specific than any formal evaluation"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c1-feedback-no-pedido-p1"
+        },
+        {
+          "pregunta": "What does the writer recommend doing first?",
+          "opciones": [
+            "Pausing before reacting and separating content from delivery",
+            "Defending your decisions immediately and clearly",
+            "Asking the person to explain it in writing",
+            "Thanking the person and ignoring the comment"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c1-feedback-no-pedido-p2"
+        },
+        {
+          "pregunta": "Which question does the writer suggest asking after the first reaction?",
+          "opciones": [
+            "When will this person ask for my opinion?",
+            "Would I give the same advice to someone else?",
+            "Why does this person dislike my work so much?",
+            "How can I prove that this person is wrong?"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c1-feedback-no-pedido-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c2-pronosticos",
+      "tema": "La humildad de quien pronostica",
+      "nivelCEFR": "C2",
+      "texto": "The most striking feature of expert forecasting is not how often it fails but how rarely its failures change anyone's mind. Large studies of political and economic predictions have found that well-known commentators perform only marginally better than chance, yet their confidence remains undiminished. The explanation lies partly in incentives: a bold, memorable claim earns attention, whereas a carefully hedged probability earns none. Those who do predict well tend to share an unglamorous habit. They update in small steps, break large questions into smaller ones, and are openly reluctant to cling to a narrative once the evidence has shifted. Their secret, if it is one, is a kind of intellectual humility that the media economy has little room for.",
+      "vocabularioClave": [
+        {
+          "termino": "marginally",
+          "traduccion": "apenas"
+        },
+        {
+          "termino": "undiminished",
+          "traduccion": "intacta"
+        },
+        {
+          "termino": "hedged",
+          "traduccion": "con cautelas"
+        },
+        {
+          "termino": "cling",
+          "traduccion": "aferrarse"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What does the writer find most striking about expert forecasting?",
+          "opciones": [
+            "Failures rarely change the confidence of those who predict",
+            "Experts almost never make predictions about politics",
+            "Predictions are checked by independent scientific panels",
+            "Economic forecasts have become more accurate lately"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c2-pronosticos-p1"
+        },
+        {
+          "pregunta": "Why do bold predictions persist despite their poor record?",
+          "opciones": [
+            "They are required by the newspapers that hire experts",
+            "They reflect the genuine opinion of most economists",
+            "They attract more attention than carefully qualified claims",
+            "They are easier to verify than cautious probabilities"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c2-pronosticos-p2"
+        },
+        {
+          "pregunta": "What distinguishes those who predict well?",
+          "opciones": [
+            "They publish fewer predictions than other commentators",
+            "They revise their views gradually and drop failing narratives",
+            "They rely on a single model that they never question",
+            "They avoid questions that are too large or complicated"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-pronosticos-p3"
+        },
+        {
+          "pregunta": "What tone does the final sentence suggest?",
+          "opciones": [
+            "Complete indifference to the subject being discussed",
+            "A mildly ironic remark about what the media rewards",
+            "Anger at the people who read the predictions",
+            "Open admiration for how clever the experts are"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-pronosticos-p4"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c2-catalogo",
+      "tema": "La paradoja del catálogo infinito",
+      "nivelCEFR": "C2",
+      "texto": "Streaming services promised to liberate viewers from the tyranny of the schedule, and in a narrow sense they did. What they did not anticipate was that abundance would simply move the burden elsewhere. Faced with thousands of titles, many people spend more time browsing than watching, and settle, often wearily, on something familiar. Algorithms step in to narrow the field, but their definition of relevance tends to favor whatever resembles past choices, so the catalogue quietly shrinks to a mirror. It is tempting to read this as a failure of design, though it is perhaps better understood as a conflict of goals: the platform wants engagement, the viewer wants discovery, and the two are not always compatible.",
+      "vocabularioClave": [
+        {
+          "termino": "tyranny",
+          "traduccion": "tiranía"
+        },
+        {
+          "termino": "abundance",
+          "traduccion": "abundancia"
+        },
+        {
+          "termino": "wearily",
+          "traduccion": "con cansancio"
+        },
+        {
+          "termino": "mirror",
+          "traduccion": "espejo"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "According to the text, what was an unexpected result of abundance?",
+          "opciones": [
+            "Services lost most of their subscribers quickly",
+            "Choosing became a burden that replaced the old schedule",
+            "Television channels disappeared from the market",
+            "Viewers began to watch much more diverse content"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-catalogo-p1"
+        },
+        {
+          "pregunta": "How do algorithms affect what viewers see, in the writer's view?",
+          "opciones": [
+            "They promote unfamiliar titles to avoid repetition",
+            "They are designed and updated by the viewers themselves",
+            "They randomly show titles from the whole catalogue",
+            "They narrow options toward what resembles past choices"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c2-catalogo-p2"
+        },
+        {
+          "pregunta": "How does the writer interpret this situation in the end?",
+          "opciones": [
+            "As a clash between what platforms want and what viewers want",
+            "As evidence that viewers do not really like to explore",
+            "As proof that streaming services are poorly designed",
+            "As a temporary problem that technology will soon solve"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c2-catalogo-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c2-revision-por-pares",
+      "tema": "Incentivos y revisión por pares",
+      "nivelCEFR": "C2",
+      "texto": "Peer review is routinely described as the cornerstone of scientific quality, and routinely criticized as arbitrary, slow and prone to favoritism. Both descriptions contain truth. Reviewers are unpaid, overstretched and, in narrow fields, often acquainted with the authors they judge. Surprisingly, the system works as well as it does largely because most reviewers take the task seriously despite there being almost no reward for doing so. Proposals for reform tend to founder on this paradox: any scheme that introduces payment or public credit risks changing the motives that make the current arrangement function. Perhaps the most realistic path is neither revolution nor complacency but a patient adjustment of small things, such as publishing reviews alongside papers.",
+      "vocabularioClave": [
+        {
+          "termino": "cornerstone",
+          "traduccion": "piedra angular"
+        },
+        {
+          "termino": "overstretched",
+          "traduccion": "sobrecargados"
+        },
+        {
+          "termino": "founder",
+          "traduccion": "fracasar"
+        },
+        {
+          "termino": "complacency",
+          "traduccion": "autocomplacencia"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What does the writer find surprising about peer review?",
+          "opciones": [
+            "It is paid for by the journals that publish the papers",
+            "It is much faster than most people believe",
+            "It is completely free from favoritism and error",
+            "It works fairly well even though reviewers get almost no reward"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c2-revision-por-pares-p1"
+        },
+        {
+          "pregunta": "Why do reform proposals often fail, according to the text?",
+          "opciones": [
+            "Scientists prefer working alone to reviewing papers",
+            "Rewards may change the motives that keep the system working",
+            "Journals refuse to share any information about reviewers",
+            "Governments forbid any change in how papers are judged"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-revision-por-pares-p2"
+        },
+        {
+          "pregunta": "What is the writer's overall position on how to improve peer review?",
+          "opciones": [
+            "Reviewers should be hired as full-time employees",
+            "Small, patient adjustments are more realistic than radical change",
+            "Nothing should be changed because the system works perfectly",
+            "The system should be replaced by one controlled by readers"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-revision-por-pares-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c2-recomendaciones",
+      "tema": "Algoritmos y el gusto propio",
+      "nivelCEFR": "C2",
+      "texto": "There is a quiet irony in the way recommendation systems speak of taste. They claim to learn it, yet much of what they do is to shape it. Someone who is repeatedly shown a certain kind of music gradually comes to prefer it, not because it was always latent in their personality but because familiarity breeds fondness. The system then registers this preference as confirmation of its accuracy. The loop is difficult to see from the inside, which is precisely what makes it effective. None of this implies manipulation in the crude sense; it requires no malice at all. It merely suggests that the question 'what do I like?' has become harder to answer independently of the machines that keep asking.",
+      "vocabularioClave": [
+        {
+          "termino": "latent",
+          "traduccion": "latente"
+        },
+        {
+          "termino": "familiarity",
+          "traduccion": "familiaridad"
+        },
+        {
+          "termino": "malice",
+          "traduccion": "mala intención"
+        },
+        {
+          "termino": "crude",
+          "traduccion": "burdo"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What irony does the writer describe?",
+          "opciones": [
+            "Systems that predict taste are almost always wrong",
+            "Machines are said to be neutral but are built by companies",
+            "Systems that claim to learn taste actually help to form it",
+            "People who hate recommendations still follow them closely"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c2-recomendaciones-p1"
+        },
+        {
+          "pregunta": "How does the system interpret a preference it has helped create?",
+          "opciones": [
+            "As proof that its predictions were accurate",
+            "As an error that must be corrected immediately",
+            "As a random change that has no real importance",
+            "As a sign that it should stop making recommendations"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c2-recomendaciones-p2"
+        },
+        {
+          "pregunta": "What does the writer say about manipulation?",
+          "opciones": [
+            "Only young users are affected by this kind of process",
+            "Manipulation is impossible because users make the choices",
+            "Companies deliberately design systems to deceive users",
+            "The effect does not need any bad intention to occur"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c2-recomendaciones-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c2-patrones-oscuros",
+      "tema": "La ética de persuadir con el diseño",
+      "nivelCEFR": "C2",
+      "texto": "All design persuades; the interesting question is whether it persuades honestly. A button that is larger and brighter than its alternative is a simple example, and few would call it sinister. The ethical boundary becomes blurrier with practices such as pre-ticked boxes, countdown timers that reset, or cancellation flows that require seven separate screens. Defenders point out that these techniques raise conversion rates and that users remain free to refuse. That freedom, however, is largely formal. A choice engineered to be tiring is not made on equal terms, and an organization that depends on such friction should ask itself what that dependence says about the value of its product.",
+      "vocabularioClave": [
+        {
+          "termino": "sinister",
+          "traduccion": "siniestro"
+        },
+        {
+          "termino": "blurrier",
+          "traduccion": "más difuso"
+        },
+        {
+          "termino": "friction",
+          "traduccion": "fricción"
+        },
+        {
+          "termino": "engineered",
+          "traduccion": "diseñado a propósito"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What is the writer's main question about persuasive design?",
+          "opciones": [
+            "Whether it persuades honestly or exploits users",
+            "Whether users notice it before making a decision",
+            "Whether it is cheaper than traditional advertising",
+            "Whether it works better on mobile phones than computers"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c2-patrones-oscuros-p1"
+        },
+        {
+          "pregunta": "Why does the writer consider the users' freedom to refuse 'largely formal'?",
+          "opciones": [
+            "Companies do not tell users that they can refuse",
+            "Users are legally unable to refuse these practices",
+            "Most users never read any of the screens they see",
+            "The options are built so that refusing is tiring or confusing"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c2-patrones-oscuros-p2"
+        },
+        {
+          "pregunta": "What does the last sentence imply about companies using such techniques?",
+          "opciones": [
+            "Their reliance on friction may reveal a weak product",
+            "They have no other way to explain their prices",
+            "They are protecting users from making wrong decisions",
+            "They should hire more designers to improve screens"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c2-patrones-oscuros-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c2-memoria-externa",
+      "tema": "La memoria en la era del buscador",
+      "nivelCEFR": "C2",
+      "texto": "It has become commonplace to lament that search engines are eroding our memory, and equally commonplace to dismiss the lament as the latest chapter in a long tradition of technological panic. Plato, after all, worried about writing. The more careful research suggests something subtler than decline: people remember where to find information rather than the information itself, and they do so efficiently. The cost is not a weaker memory but a shifted one, and it appears chiefly when the tool is unavailable. What remains unsettled is whether depth of understanding depends on holding facts in mind, in which case a convenient shortcut may quietly cap what we can think, or whether it relies on structure, which no search can supply.",
+      "vocabularioClave": [
+        {
+          "termino": "lament",
+          "traduccion": "lamentar"
+        },
+        {
+          "termino": "subtler",
+          "traduccion": "más sutil"
+        },
+        {
+          "termino": "chiefly",
+          "traduccion": "principalmente"
+        },
+        {
+          "termino": "cap",
+          "traduccion": "limitar"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "How does the writer treat the claim that search engines erode memory?",
+          "opciones": [
+            "As an issue that nobody has researched seriously",
+            "As a proven fact supported by every study",
+            "As entirely false and based on technological panic",
+            "As partly true, but too simple to be fully accurate"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c2-memoria-externa-p1"
+        },
+        {
+          "pregunta": "According to the research mentioned, what do people tend to do?",
+          "opciones": [
+            "Remember where to find information instead of the information itself",
+            "Forget how to use a search engine after a few weeks",
+            "Memorize more facts than people did before the internet",
+            "Stop learning new subjects because they can search them"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c2-memoria-externa-p2"
+        },
+        {
+          "pregunta": "What question does the writer leave open at the end?",
+          "opciones": [
+            "Whether understanding needs facts held in mind or just structure",
+            "Whether search engines will become more accurate soon",
+            "Whether children should learn to use search engines early",
+            "Whether writing is a better tool than a search engine"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c2-memoria-externa-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c2-palabras-intraducibles",
+      "tema": "Las palabras que no se dejan traducir",
+      "nivelCEFR": "C2",
+      "texto": "Lists of untranslatable words enjoy remarkable popularity online, and they are usually charming and slightly misleading. The claim that a language lacks a word for a certain feeling often means only that it needs a phrase where another language has a single term. Speakers of every language manage to describe nostalgia, shame or longing; what differs is the ease and economy with which they do so, and the attention that a culture habitually pays to certain experiences. In this sense, such words are less windows onto a distinct way of feeling than small monuments to what a community found worth naming. They remind us that translation is never a matter of swapping labels, but of negotiating between ways of carving up the world.",
+      "vocabularioClave": [
+        {
+          "termino": "remarkable",
+          "traduccion": "notable"
+        },
+        {
+          "termino": "longing",
+          "traduccion": "anhelo"
+        },
+        {
+          "termino": "economy",
+          "traduccion": "economía (de palabras)"
+        },
+        {
+          "termino": "carving up",
+          "traduccion": "repartir"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What does the writer suggest the 'untranslatable' claim often really means?",
+          "opciones": [
+            "Translators have not worked hard enough on these words",
+            "One language needs a phrase where another uses one word",
+            "Some feelings cannot be experienced in certain cultures",
+            "Some languages are less precise than others"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-palabras-intraducibles-p1"
+        },
+        {
+          "pregunta": "How does the writer describe such words in the end?",
+          "opciones": [
+            "As reflections of what a community found worth naming",
+            "As jokes created by people who study languages",
+            "As mistakes that should be removed from dictionaries",
+            "As proof that languages shape every thought directly"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c2-palabras-intraducibles-p2"
+        },
+        {
+          "pregunta": "Which statement best matches the writer's view of translation?",
+          "opciones": [
+            "It involves negotiating between different ways of seeing the world",
+            "It is impossible and should therefore not be attempted",
+            "It is simply a matter of replacing each word with another",
+            "It should aim to keep every word in the original text"
+          ],
+          "respuestaCorrecta": 0,
+          "id": "lec-c2-palabras-intraducibles-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c2-confianza-institucional",
+      "tema": "Reconstruir la confianza después del escándalo",
+      "nivelCEFR": "C2",
+      "texto": "Trust is built slowly, lost abruptly and recovered, if at all, in a manner that few institutions understand. The instinctive response to a scandal is a statement of regret followed by a change of leadership, as though the problem were a matter of individuals. Yet public confidence tends to return only when people can see that the incentives which produced the failure have been altered. That requires openness about how decisions were made, accountability that is more than symbolic, and above all a willingness to be audited by those who have no stake in reassuring anyone. These measures are costly and often unwelcome, which is exactly why they signal sincerity. An apology that costs nothing, after all, proves very little.",
+      "vocabularioClave": [
+        {
+          "termino": "abruptly",
+          "traduccion": "de golpe"
+        },
+        {
+          "termino": "leadership",
+          "traduccion": "dirección"
+        },
+        {
+          "termino": "audited",
+          "traduccion": "auditada"
+        },
+        {
+          "termino": "sincerity",
+          "traduccion": "sinceridad"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What mistake do institutions often make after a scandal, according to the text?",
+          "opciones": [
+            "They refuse to say anything until investigations finish",
+            "They promote the people responsible to higher positions",
+            "They treat the problem as a matter of individuals only",
+            "They spend too much on advertising to repair their image"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c2-confianza-institucional-p1"
+        },
+        {
+          "pregunta": "According to the writer, when does public confidence usually come back?",
+          "opciones": [
+            "When enough time has passed for people to forget",
+            "When the incentives behind the failure are visibly changed",
+            "When the institution publishes a long statement of regret",
+            "When the new leader is popular with the media"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-confianza-institucional-p2"
+        },
+        {
+          "pregunta": "Why does the writer believe costly measures signal sincerity?",
+          "opciones": [
+            "Because institutions can easily afford them",
+            "Because an apology that costs nothing proves little",
+            "Because costly measures are required by public law",
+            "Because expensive reforms always work better than cheap ones"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-confianza-institucional-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c2-paradoja-productividad",
+      "tema": "La paradoja de la productividad",
+      "nivelCEFR": "C2",
+      "texto": "Each wave of automation arrives wrapped in a promise of leisure, and each time the leisure fails to materialize. Email was supposed to shorten communication; instead it multiplied it. Software that makes a report easier to produce encourages the production of more reports. This is not a paradox so much as an old observation about demand: when something becomes cheaper, we want more of it. The consequence is that efficiency gains seldom reduce workload; they raise the baseline of what counts as normal. Anyone hoping that artificial intelligence will finally deliver the shorter week should therefore consider not only what the technology can do, but who decides what happens to the time it saves.",
+      "vocabularioClave": [
+        {
+          "termino": "wrapped in",
+          "traduccion": "envuelta en"
+        },
+        {
+          "termino": "materialize",
+          "traduccion": "concretarse"
+        },
+        {
+          "termino": "baseline",
+          "traduccion": "nivel de referencia"
+        },
+        {
+          "termino": "deliver",
+          "traduccion": "cumplir"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What does the writer say usually happens when a task becomes easier?",
+          "opciones": [
+            "Companies hire fewer workers to do the same task",
+            "People produce more of it instead of working less",
+            "The quality of the work always improves quickly",
+            "Workers use the extra time to rest and study"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-paradoja-productividad-p1"
+        },
+        {
+          "pregunta": "How does the writer describe the so-called paradox?",
+          "opciones": [
+            "As an idea invented by software companies",
+            "As a mistake made by economists who study technology",
+            "As a problem that appeared only with the arrival of email",
+            "As an old observation about demand rather than a real paradox"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c2-paradoja-productividad-p2"
+        },
+        {
+          "pregunta": "What question does the writer suggest asking about artificial intelligence?",
+          "opciones": [
+            "Whether it can learn to write better reports",
+            "Whether it will be cheap enough for every company",
+            "Who decides how the time it saves will be used",
+            "Whether workers will accept using it"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c2-paradoja-productividad-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c2-atencion",
+      "tema": "La economía de la atención",
+      "nivelCEFR": "C2",
+      "texto": "Attention is the one resource that cannot be stockpiled, borrowed or recycled, which may explain why so many industries now compete for it with such ingenuity. The competition is rarely malicious; it is simply efficient at exploiting what we are: creatures drawn to novelty, social approval and the faint anxiety of an unread notification. What disturbs me is less any single technique than the cumulative effect. A life made of interruptions has no obvious villain, and consequently no obvious remedy. Practical advice, such as muting notifications, is sensible but marginal; it asks individuals to defend, one setting at a time, a resource that thousands of engineers are paid to capture.",
+      "vocabularioClave": [
+        {
+          "termino": "stockpiled",
+          "traduccion": "almacenada"
+        },
+        {
+          "termino": "ingenuity",
+          "traduccion": "ingenio"
+        },
+        {
+          "termino": "faint",
+          "traduccion": "leve"
+        },
+        {
+          "termino": "marginal",
+          "traduccion": "marginal"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "Why is attention described as a unique resource?",
+          "opciones": [
+            "It is more valuable than money for every company",
+            "It is owned by the platforms that capture it",
+            "It increases every time we use it for something",
+            "It cannot be stored, borrowed or recycled"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c2-atencion-p1"
+        },
+        {
+          "pregunta": "What disturbs the writer most?",
+          "opciones": [
+            "The lack of rules about notifications",
+            "The tendency of young people to ignore advice",
+            "The cumulative effect of many small interruptions",
+            "The use of malicious techniques by a few companies"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c2-atencion-p2"
+        },
+        {
+          "pregunta": "What is the writer's view of practical advice such as muting notifications?",
+          "opciones": [
+            "The only real solution to the whole problem of attention",
+            "Sensible, but too small to match the scale of the problem",
+            "Harmful because it makes people even more anxious",
+            "Completely useless and a waste of everybody's time"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-atencion-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c2-comunicar-ciencia",
+      "tema": "Comunicar la ciencia sin traicionarla",
+      "nivelCEFR": "C2",
+      "texto": "Scientists are trained to hedge. 'The data suggest', 'under these conditions', 'with a probability of' are not evasions but a form of honesty. The difficulty begins when this careful language meets a public that wants a verdict. Journalists, pressed for space, often remove the qualifications and leave a confident claim the researchers never made; the next study then appears to contradict it, and trust erodes. Some argue that scientists should simplify more boldly. Others fear that simplification is precisely how distortion begins. A modest middle path exists: state the main finding plainly, then say how sure you are and why. Uncertainty explained is persuasive; uncertainty hidden is eventually discovered.",
+      "vocabularioClave": [
+        {
+          "termino": "evasions",
+          "traduccion": "evasivas"
+        },
+        {
+          "termino": "pressed for space",
+          "traduccion": "con poco espacio"
+        },
+        {
+          "termino": "qualifications",
+          "traduccion": "salvedades"
+        },
+        {
+          "termino": "distortion",
+          "traduccion": "distorsión"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "Why do scientists use cautious language, according to the text?",
+          "opciones": [
+            "It helps them avoid being criticized by other scientists",
+            "It is required by every scientific journal",
+            "It makes their studies sound more important",
+            "It is a form of honesty about the limits of the evidence"
+          ],
+          "respuestaCorrecta": 3,
+          "id": "lec-c2-comunicar-ciencia-p1"
+        },
+        {
+          "pregunta": "How does trust in science erode, in the writer's account?",
+          "opciones": [
+            "Scientists openly disagree with each other in public",
+            "Studies take too long to be published in the press",
+            "Qualified findings become confident claims that later seem contradicted",
+            "Journalists invent results that scientists never studied"
+          ],
+          "respuestaCorrecta": 2,
+          "id": "lec-c2-comunicar-ciencia-p2"
+        },
+        {
+          "pregunta": "What solution does the writer propose?",
+          "opciones": [
+            "Replacing probabilities with simple yes-or-no answers",
+            "Stating the finding clearly and explaining the level of certainty",
+            "Avoiding any contact with journalists and the public",
+            "Publishing studies only in specialized journals"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-comunicar-ciencia-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "lec-c2-proposito-universidad",
+      "tema": "¿Para qué sirve una universidad?",
+      "nivelCEFR": "C2",
+      "texto": "Ask a dozen people what a university is for and the answers will range from the practical to the almost devotional: a route to employment, a place to learn how to think, a guardian of knowledge. Each answer captures something, and each distorts when pushed too far. A university judged only by graduate salaries will drift toward the narrowly vocational; one that scorns employability altogether risks complacency. The unresolved tension is perhaps the institution's most valuable feature, since it keeps asking what education is for instead of assuming the answer. Where the question disappears, the institution has usually become something else, however grand its buildings may remain.",
+      "vocabularioClave": [
+        {
+          "termino": "devotional",
+          "traduccion": "casi religioso"
+        },
+        {
+          "termino": "scorns",
+          "traduccion": "desprecia"
+        },
+        {
+          "termino": "vocational",
+          "traduccion": "profesional"
+        },
+        {
+          "termino": "grand",
+          "traduccion": "imponentes"
+        }
+      ],
+      "preguntas": [
+        {
+          "pregunta": "What does the writer say about the different answers people give?",
+          "opciones": [
+            "Only the practical answer is really correct",
+            "Each captures something but distorts when taken too far",
+            "All of them are equally wrong and misleading",
+            "They are given mostly by people who never studied"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-proposito-universidad-p1"
+        },
+        {
+          "pregunta": "What risk does the writer see in judging universities only by salaries?",
+          "opciones": [
+            "They may raise tuition fees too quickly",
+            "They may become narrowly focused on job training",
+            "They may lose students to cheaper institutions",
+            "They may stop doing any scientific research"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-proposito-universidad-p2"
+        },
+        {
+          "pregunta": "What does the writer mean by the last sentence?",
+          "opciones": [
+            "Questions about education are too difficult to answer",
+            "An institution that stops asking its purpose has lost its essence",
+            "A university with impressive buildings is always successful",
+            "Old universities should be replaced with modern buildings"
+          ],
+          "respuestaCorrecta": 1,
+          "id": "lec-c2-proposito-universidad-p3"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     }
   ]
 }

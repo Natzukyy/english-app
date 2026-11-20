@@ -134,4 +134,10 @@
     Test.assertEqual(App.Avance.porcentajeEnEscala("C2", 100) > App.Avance.porcentajeEnEscala("B2", 100), true);
     Test.assertEqual(App.Avance.porcentajeEnEscala("B2", 50) < 100, true);
   });
+
+  Test.test("nivelEfectivoConContenido: con contenido propio de C1 y C2 ya no se reutiliza B2", function () {
+    var todos = ["A1", "A2", "B1", "B2", "C1", "C2"];
+    Test.assertEqual(App.Avance.nivelEfectivoConContenido("C1", todos).sustituido, false);
+    Test.assertEqual(App.Avance.nivelEfectivoConContenido("C2", todos).nivel, "C2");
+  });
 })();

@@ -1,1 +1,2825 @@
-{"_nota":"Banco de confirmación de nivel (D29). Se llena en la Tarea 5.","preguntas":[]}
+{
+  "_nota": "Banco de confirmación de nivel (D29): preguntas del NIVEL SIGUIENTE para confirmar lectura (lectura + vocabulario/gramática), escucha y vocabulario/gramática de A2 a C2. Escritas por Claude (IA), revisar:true: Alex debe revisarlas.",
+  "preguntas": [
+    {
+      "id": "conf-lec-a2-1-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "Nina has a small flower shop near the station. She opens at eight and closes at six. On Mondays, the shop is closed because she buys new flowers from a farm outside the city.",
+      "pregunta": "Why is the shop closed on Mondays?",
+      "opciones": [
+        "Nina visits her family",
+        "Nina cleans the shop all day",
+        "Nina has a day off to rest",
+        "Nina goes to buy new flowers"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-a2-1-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "Nina has a small flower shop near the station. She opens at eight and closes at six. On Mondays, the shop is closed because she buys new flowers from a farm outside the city.",
+      "pregunta": "What time does Nina close the shop?",
+      "opciones": [
+        "At six",
+        "At seven",
+        "At eight",
+        "At five"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-a2-2-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "Dan wants to buy a laptop for university. The first one costs seven hundred dollars, but the second one is cheaper and lighter. He decides to take the second one because he carries it in his bag every day.",
+      "pregunta": "Why does Dan choose the second laptop?",
+      "opciones": [
+        "It comes in a nicer color",
+        "It has a bigger screen for work",
+        "It is cheaper and lighter to carry",
+        "It is faster than the first one"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-a2-2-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "Dan wants to buy a laptop for university. The first one costs seven hundred dollars, but the second one is cheaper and lighter. He decides to take the second one because he carries it in his bag every day.",
+      "pregunta": "Where does Dan carry the laptop?",
+      "opciones": [
+        "In a box at home",
+        "In his bag every day",
+        "In his office desk",
+        "In his car on weekends"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-a2-3-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "Last Saturday, Ana and her friends went to the beach. The water was cold, so they only walked on the sand and ate ice cream. Then it started to rain, and they went home by bus.",
+      "pregunta": "Why did the friends only walk on the sand?",
+      "opciones": [
+        "The beach was closed",
+        "The water was too cold",
+        "They did not like swimming",
+        "It was raining all morning"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-a2-3-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "Last Saturday, Ana and her friends went to the beach. The water was cold, so they only walked on the sand and ate ice cream. Then it started to rain, and they went home by bus.",
+      "pregunta": "How did they go home?",
+      "opciones": [
+        "By bus",
+        "By train",
+        "On foot",
+        "By car"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-a2-4-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "The library at Leo's school opens at nine. Students can borrow up to three books for two weeks. If you return a book late, you pay a small fee for each day.",
+      "pregunta": "How long can students keep the books?",
+      "opciones": [
+        "Three days",
+        "Two weeks",
+        "One week",
+        "One month"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-a2-4-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "The library at Leo's school opens at nine. Students can borrow up to three books for two weeks. If you return a book late, you pay a small fee for each day.",
+      "pregunta": "What happens if a book is returned late?",
+      "opciones": [
+        "The library calls the parents",
+        "The student cannot enter again",
+        "The student pays a small fee",
+        "The student loses the book"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-a2-5-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "Marta works from home on Wednesdays and Fridays. She likes it because she saves time on the bus, but sometimes she feels alone. On those days, she calls a friend at lunch.",
+      "pregunta": "What does Marta like about working from home?",
+      "opciones": [
+        "She saves the time of the bus ride",
+        "She can sleep until noon on those days",
+        "She does not need a computer to work",
+        "She earns more money than in the office"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-a2-5-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "Marta works from home on Wednesdays and Fridays. She likes it because she saves time on the bus, but sometimes she feels alone. On those days, she calls a friend at lunch.",
+      "pregunta": "What does Marta do when she feels alone?",
+      "opciones": [
+        "She goes to the office",
+        "She cleans her house",
+        "She calls a friend at lunch",
+        "She watches a long movie"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-a2-6-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "Tom is learning to cook. His first dish was rice with vegetables, and it was a little salty. Now he reads the recipe carefully and uses less salt.",
+      "pregunta": "What was wrong with Tom's first dish?",
+      "opciones": [
+        "It was cold",
+        "It was too small",
+        "It was a little salty",
+        "It was burned"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-a2-6-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "A2",
+      "texto": "Tom is learning to cook. His first dish was rice with vegetables, and it was a little salty. Now he reads the recipe carefully and uses less salt.",
+      "pregunta": "What does Tom do now?",
+      "opciones": [
+        "He eats only at restaurants",
+        "He asks his mother to cook",
+        "He reads the recipe carefully",
+        "He buys cooked food"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-a2-1-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "Hi, this is the dentist's office. Your appointment is on Thursday at four in the afternoon. Please come ten minutes early and bring your insurance card. See you then.",
+      "pregunta": "What should the patient bring?",
+      "opciones": [
+        "A friend",
+        "A medical report",
+        "A bottle of water",
+        "An insurance card"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-a2-1-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "Hi, this is the dentist's office. Your appointment is on Thursday at four in the afternoon. Please come ten minutes early and bring your insurance card. See you then.",
+      "pregunta": "When is the appointment?",
+      "opciones": [
+        "Thursday at four in the morning",
+        "Friday at five in the evening",
+        "Thursday at four in the afternoon",
+        "Tuesday at ten in the morning"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-a2-2-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "Excuse me, is there a bank near here? Yes, go straight for two blocks and turn right at the pharmacy. The bank is next to the bakery. Thank you very much.",
+      "pregunta": "Where is the bank?",
+      "opciones": [
+        "Next to the pharmacy",
+        "Next to the bakery",
+        "Across the park",
+        "Behind the station"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-a2-2-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "Excuse me, is there a bank near here? Yes, go straight for two blocks and turn right at the pharmacy. The bank is next to the bakery. Thank you very much.",
+      "pregunta": "What should the person do at the pharmacy?",
+      "opciones": [
+        "Turn left",
+        "Stop and ask again",
+        "Go back",
+        "Turn right"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-a2-3-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "Good evening, everyone. This is a short message from the train company. Tonight, the last train to the airport leaves at eleven thirty. After that, please take the night bus from platform four.",
+      "pregunta": "What time does the last train leave?",
+      "opciones": [
+        "At twelve thirty",
+        "At ten thirty",
+        "At eleven thirty",
+        "At eleven fifteen"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-a2-3-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "Good evening, everyone. This is a short message from the train company. Tonight, the last train to the airport leaves at eleven thirty. After that, please take the night bus from platform four.",
+      "pregunta": "Where can people take the night bus?",
+      "opciones": [
+        "From the main square",
+        "From platform four",
+        "From platform two",
+        "From the airport"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-a2-4-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "Hey, it's Carla. I'm at the supermarket. Do you want me to buy anything else? We have eggs and milk, but we need rice and some tomatoes. Text me back, please.",
+      "pregunta": "What does Carla ask the listener?",
+      "opciones": [
+        "If the listener has money",
+        "If the store is open late",
+        "If she should buy anything else",
+        "If the listener can come to the store"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-a2-4-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "Hey, it's Carla. I'm at the supermarket. Do you want me to buy anything else? We have eggs and milk, but we need rice and some tomatoes. Text me back, please.",
+      "pregunta": "What do they need to buy?",
+      "opciones": [
+        "Eggs and milk",
+        "Bread and cheese",
+        "Coffee and sugar",
+        "Rice and tomatoes"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-a2-5-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "Welcome to our gym. You can use the pool every day from seven to nine in the morning. The yoga class is on Tuesdays and Thursdays at six in the evening. Please bring your own towel.",
+      "pregunta": "When is the yoga class?",
+      "opciones": [
+        "Every day in the morning",
+        "Only on weekends",
+        "On Mondays and Fridays",
+        "On Tuesdays and Thursdays"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-a2-5-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "Welcome to our gym. You can use the pool every day from seven to nine in the morning. The yoga class is on Tuesdays and Thursdays at six in the evening. Please bring your own towel.",
+      "pregunta": "What should members bring?",
+      "opciones": [
+        "Their own water",
+        "Their own towel",
+        "A membership card",
+        "A swimming hat"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-a2-6-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "I'm sorry I'm late. My bus was stuck in traffic because of an accident, and I forgot my phone at home. I should be there in about fifteen minutes. Please start without me.",
+      "pregunta": "Why is the speaker late?",
+      "opciones": [
+        "The speaker woke up late",
+        "The speaker lost the keys",
+        "The train was cancelled",
+        "The bus was stuck in traffic"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-a2-6-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "A2",
+      "textoParaTTS": "I'm sorry I'm late. My bus was stuck in traffic because of an accident, and I forgot my phone at home. I should be there in about fifteen minutes. Please start without me.",
+      "pregunta": "What does the speaker ask the listeners to do?",
+      "opciones": [
+        "Call the bus company",
+        "Wait outside the building",
+        "Go home",
+        "Start without the speaker"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-a2-1",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: My brother ___ a new bike last week.",
+      "opciones": [
+        "buyed",
+        "buying",
+        "buys",
+        "bought"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-a2-2",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: We ___ dinner when the phone rang.",
+      "opciones": [
+        "have",
+        "are having",
+        "had had",
+        "were having"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-a2-3",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: She is ___ than her sister.",
+      "opciones": [
+        "tallest",
+        "taller",
+        "more tall",
+        "tall"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-a2-4",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: I'm going to the store ___ some bread.",
+      "opciones": [
+        "to buying",
+        "for buy",
+        "buying",
+        "to buy"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-a2-5",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: There isn't ___ milk in the fridge.",
+      "opciones": [
+        "a",
+        "many",
+        "some",
+        "any"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-a2-6",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: How ___ people are there in your class?",
+      "opciones": [
+        "many",
+        "often",
+        "much",
+        "long"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-a2-7",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: He ___ to work by bus every day.",
+      "opciones": [
+        "is go",
+        "going",
+        "goes",
+        "go"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-a2-8",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: If it rains tomorrow, we ___ at home.",
+      "opciones": [
+        "would stayed",
+        "staying",
+        "stayed",
+        "will stay"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-a2-9",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: I have lived here ___ 2020.",
+      "opciones": [
+        "during",
+        "since",
+        "for",
+        "from"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-a2-10",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: What ___ you do yesterday evening?",
+      "opciones": [
+        "did",
+        "were",
+        "do",
+        "does"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-a2-11",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: This is the ___ movie I have ever seen.",
+      "opciones": [
+        "goodest",
+        "most good",
+        "best",
+        "better"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-a2-12",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "A2",
+      "pregunta": "Choose the correct option: Please ___ the door; it's cold.",
+      "opciones": [
+        "to close",
+        "close",
+        "closing",
+        "closes"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b1-1-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "When Hugo started working remotely, he noticed that his days had no clear beginning or end. He began to answer emails late at night, and he felt tired all the time. After a month, he decided to set fixed working hours and to take a real lunch break, and his energy slowly returned.",
+      "pregunta": "What problem did Hugo notice when working remotely?",
+      "opciones": [
+        "His days had no clear beginning or end",
+        "His computer was too slow to use",
+        "He did not have enough work to do",
+        "His manager called him every hour"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b1-1-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "When Hugo started working remotely, he noticed that his days had no clear beginning or end. He began to answer emails late at night, and he felt tired all the time. After a month, he decided to set fixed working hours and to take a real lunch break, and his energy slowly returned.",
+      "pregunta": "What did Hugo do to improve the situation?",
+      "opciones": [
+        "He stopped answering any of his emails",
+        "He set fixed working hours and took a lunch break",
+        "He changed his job to an office position",
+        "He worked fewer days each week than before"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b1-2-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "The city council has decided to close the main street to cars on Sundays. Supporters say it will reduce noise and encourage people to walk or cycle. Some shop owners, however, are worried that fewer customers will arrive by car and that their sales will fall.",
+      "pregunta": "Why do some shop owners disagree with the decision?",
+      "opciones": [
+        "They want the council to build a new parking lot",
+        "They believe the noise will increase on Sundays",
+        "They think the street should be closed all week",
+        "They fear that fewer customers will visit by car"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b1-2-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "The city council has decided to close the main street to cars on Sundays. Supporters say it will reduce noise and encourage people to walk or cycle. Some shop owners, however, are worried that fewer customers will arrive by car and that their sales will fall.",
+      "pregunta": "What do supporters expect from the change?",
+      "opciones": [
+        "More buses on Sunday mornings",
+        "Less noise and more walking or cycling",
+        "Faster traffic in the city center",
+        "Lower taxes for the local shops"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b1-3-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "Nadia applied for an internship at a software company. During the interview, she was asked about a time she had failed. Instead of choosing a small mistake, she described a project that had been cancelled and explained what she had learned. The interviewer later said that her honesty had impressed the whole team.",
+      "pregunta": "Why was the interviewer impressed?",
+      "opciones": [
+        "Nadia arrived earlier than the other candidates",
+        "Nadia had a perfect record of success",
+        "Nadia promised to work extra hours",
+        "Nadia was honest about a real failure"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b1-3-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "Nadia applied for an internship at a software company. During the interview, she was asked about a time she had failed. Instead of choosing a small mistake, she described a project that had been cancelled and explained what she had learned. The interviewer later said that her honesty had impressed the whole team.",
+      "pregunta": "What did Nadia describe in the interview?",
+      "opciones": [
+        "A difficult university exam",
+        "A project that had been cancelled",
+        "A disagreement with a manager",
+        "A small mistake in an email"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b1-4-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "Many people think that learning a language is mainly a matter of memorizing words. However, teachers often say that listening and speaking regularly is much more effective. Even fifteen minutes a day, they explain, is better than a long session once a week.",
+      "pregunta": "What do teachers recommend, according to the text?",
+      "opciones": [
+        "Practicing a little every day",
+        "Avoiding speaking until the grammar is perfect",
+        "Studying for long periods once a week",
+        "Memorizing as many words as possible"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b1-4-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "Many people think that learning a language is mainly a matter of memorizing words. However, teachers often say that listening and speaking regularly is much more effective. Even fifteen minutes a day, they explain, is better than a long session once a week.",
+      "pregunta": "What do many people believe about language learning?",
+      "opciones": [
+        "That it requires living abroad for a year",
+        "That it is impossible without a private teacher",
+        "That it is mostly about memorizing words",
+        "That it is only possible when you are young"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b1-5-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "The company introduced a new rule: meetings can last a maximum of thirty minutes, and every meeting must have a written agenda. After two months, employees reported that they felt less tired and that decisions were made faster, although a few managers missed the longer discussions.",
+      "pregunta": "What was the result of the new rule after two months?",
+      "opciones": [
+        "Employees felt less tired and decisions were faster",
+        "Employees asked for longer meetings again",
+        "Managers started to work from their homes",
+        "The company cancelled all the meetings at once"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b1-5-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "The company introduced a new rule: meetings can last a maximum of thirty minutes, and every meeting must have a written agenda. After two months, employees reported that they felt less tired and that decisions were made faster, although a few managers missed the longer discussions.",
+      "pregunta": "Who was not completely happy with the change?",
+      "opciones": [
+        "The clients who attend the meetings",
+        "A few managers who liked longer discussions",
+        "The employees who work in other cities",
+        "The assistants who write the agendas"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b1-6-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "Lucas wanted to save money for a trip, so he made a list of all his monthly expenses. He was surprised to find that he spent a lot on small purchases, such as snacks and subscriptions he hardly used. By cancelling two of them, he saved enough for the flight in only four months.",
+      "pregunta": "What surprised Lucas about his expenses?",
+      "opciones": [
+        "How much he spent on small purchases",
+        "How little money he earned",
+        "How many trips he had taken",
+        "How expensive his rent was"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b1-6-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B1",
+      "texto": "Lucas wanted to save money for a trip, so he made a list of all his monthly expenses. He was surprised to find that he spent a lot on small purchases, such as snacks and subscriptions he hardly used. By cancelling two of them, he saved enough for the flight in only four months.",
+      "pregunta": "How did Lucas save money for the flight?",
+      "opciones": [
+        "By cancelling subscriptions he hardly used",
+        "By working extra hours at night",
+        "By selling some of his furniture",
+        "By asking his friends for a loan"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b1-1-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "Good morning, this is a reminder about tomorrow's workshop. It will start at nine thirty instead of nine, because the projector in the main room is being repaired. Please bring your laptop and a charger, since there are not many sockets in the new room.",
+      "pregunta": "Why does the workshop start later than usual?",
+      "opciones": [
+        "The speaker is arriving from another city",
+        "The projector is being repaired",
+        "The room is not available until noon",
+        "The organizers forgot the original time"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b1-1-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "Good morning, this is a reminder about tomorrow's workshop. It will start at nine thirty instead of nine, because the projector in the main room is being repaired. Please bring your laptop and a charger, since there are not many sockets in the new room.",
+      "pregunta": "What should participants bring?",
+      "opciones": [
+        "A notebook and a pen",
+        "A laptop and a charger",
+        "A lunch for the whole day",
+        "A printed copy of the schedule"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b1-2-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "I've been thinking about changing my degree. I like computer science, but I'm not sure I want to spend my life writing code. Maybe I should try a course in design first, and then decide. What do you think? Well, it can't hurt to try one course before changing everything.",
+      "pregunta": "What is the first speaker thinking about?",
+      "opciones": [
+        "Moving to another city",
+        "Starting a business with a friend",
+        "Leaving university to find a job",
+        "Changing the degree they are studying"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b1-2-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "I've been thinking about changing my degree. I like computer science, but I'm not sure I want to spend my life writing code. Maybe I should try a course in design first, and then decide. What do you think? Well, it can't hurt to try one course before changing everything.",
+      "pregunta": "What does the second speaker suggest?",
+      "opciones": [
+        "Changing to another university",
+        "Asking their family for advice",
+        "Taking one design course before deciding",
+        "Finishing the degree before changing anything"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b1-3-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "Our delivery usually takes between three and five working days, but because of the holiday, orders placed this week may arrive up to two days later. You'll receive an email with a tracking number as soon as your package leaves the warehouse.",
+      "pregunta": "When will customers receive the tracking number?",
+      "opciones": [
+        "As soon as they place the order",
+        "When the package arrives at their door",
+        "Two days after the holiday",
+        "When the package leaves the warehouse"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b1-3-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "Our delivery usually takes between three and five working days, but because of the holiday, orders placed this week may arrive up to two days later. You'll receive an email with a tracking number as soon as your package leaves the warehouse.",
+      "pregunta": "Why might some orders arrive late?",
+      "opciones": [
+        "Because of a strike at the warehouse",
+        "Because of a mistake in the address",
+        "Because of the holiday",
+        "Because of bad weather"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b1-4-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "So the main thing I want you to remember about the project is the deadline: the first version is due on the twelfth. If you run into any problems, don't wait until the last week to tell me. I'd much rather hear about a delay early than be surprised at the end.",
+      "pregunta": "What does the speaker prefer?",
+      "opciones": [
+        "To work on the project alone",
+        "To change the deadline to a later date",
+        "To receive the project before the deadline",
+        "To hear about problems early"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b1-4-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "So the main thing I want you to remember about the project is the deadline: the first version is due on the twelfth. If you run into any problems, don't wait until the last week to tell me. I'd much rather hear about a delay early than be surprised at the end.",
+      "pregunta": "What is due on the twelfth?",
+      "opciones": [
+        "The list of the team members",
+        "The payment for the project",
+        "The final report of the project",
+        "The first version of the project"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b1-5-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "Thanks for calling the clinic. All our doctors are busy at the moment. If you want to make an appointment, press one. If you need to change an existing appointment, press two. For urgent medical problems, please hang up and call the emergency number.",
+      "pregunta": "What should callers press to change an appointment?",
+      "opciones": [
+        "Zero",
+        "Three",
+        "Two",
+        "One"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b1-5-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "Thanks for calling the clinic. All our doctors are busy at the moment. If you want to make an appointment, press one. If you need to change an existing appointment, press two. For urgent medical problems, please hang up and call the emergency number.",
+      "pregunta": "What should people do in an urgent case?",
+      "opciones": [
+        "Hang up and call the emergency number",
+        "Wait for a doctor to answer",
+        "Press one and leave a message",
+        "Visit the clinic the next morning"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b1-6-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "When I moved to this city, I didn't know anybody. The first months were hard, but I joined a running club, and now I have a group of friends who meet every Saturday. We don't always run fast; we mostly talk and drink coffee afterwards.",
+      "pregunta": "How did the speaker make friends?",
+      "opciones": [
+        "By joining a running club",
+        "By working in a coffee shop",
+        "By studying at a new university",
+        "By meeting neighbors in the building"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b1-6-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B1",
+      "textoParaTTS": "When I moved to this city, I didn't know anybody. The first months were hard, but I joined a running club, and now I have a group of friends who meet every Saturday. We don't always run fast; we mostly talk and drink coffee afterwards.",
+      "pregunta": "What does the group do on Saturdays?",
+      "opciones": [
+        "They go to the gym together",
+        "They travel to nearby towns",
+        "They play football in the park",
+        "They run, talk and have coffee"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b1-1",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: If I ___ you, I would talk to the manager.",
+      "opciones": [
+        "were",
+        "will be",
+        "am",
+        "was being"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b1-2",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: She asked me where I ___.",
+      "opciones": [
+        "live",
+        "was live",
+        "lived",
+        "do live"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b1-3",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: I wish I ___ more free time.",
+      "opciones": [
+        "have",
+        "would have",
+        "will have",
+        "had"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b1-4",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: The report ___ by the team last week.",
+      "opciones": [
+        "finished",
+        "was finished",
+        "is finishing",
+        "has finish"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b1-5",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: We've been waiting ___ two hours.",
+      "opciones": [
+        "since",
+        "from",
+        "during",
+        "for"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b1-6",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: He suggested ___ the meeting to Friday.",
+      "opciones": [
+        "moved",
+        "move",
+        "to move",
+        "moving"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b1-7",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: I'm not used to ___ so early.",
+      "opciones": [
+        "woke up",
+        "wake up",
+        "waking up",
+        "waking"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b1-8",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: By next year, I ___ my degree.",
+      "opciones": [
+        "will have finished",
+        "have finishing",
+        "will finish",
+        "finish"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b1-9",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: She has lived here ___ she was a child.",
+      "opciones": [
+        "while",
+        "for",
+        "since",
+        "during"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b1-10",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: You ___ smoke in the hospital; it's forbidden.",
+      "opciones": [
+        "don't have to",
+        "shouldn't to",
+        "mustn't",
+        "needn't"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b1-11",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: I'd rather you ___ me tomorrow, not today.",
+      "opciones": [
+        "calling",
+        "call",
+        "called",
+        "will call"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b1-12",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B1",
+      "pregunta": "Choose the correct option: He apologized ___ being late.",
+      "opciones": [
+        "for",
+        "about",
+        "to",
+        "of"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b2-1-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "Open-plan offices were introduced to encourage collaboration, yet several studies suggest that employees in them actually talk to each other less, since they feel observed and prefer to send messages. Many companies have responded by creating small quiet rooms, which workers increasingly use to concentrate.",
+      "pregunta": "What do the studies mentioned in the text suggest?",
+      "opciones": [
+        "Open-plan offices improve collaboration in every case",
+        "Employees prefer working in completely silent offices",
+        "Messages are slower than conversations at the desk",
+        "People in open-plan offices often talk less face to face"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b2-1-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "Open-plan offices were introduced to encourage collaboration, yet several studies suggest that employees in them actually talk to each other less, since they feel observed and prefer to send messages. Many companies have responded by creating small quiet rooms, which workers increasingly use to concentrate.",
+      "pregunta": "How have many companies reacted?",
+      "opciones": [
+        "By banning the use of messaging tools",
+        "By building small quiet rooms for concentration",
+        "By returning to individual private offices",
+        "By reducing the number of employees per floor"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b2-2-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "Electric cars are often described as the clean alternative to petrol vehicles, and in terms of exhaust emissions that is accurate. But producing their batteries requires large amounts of energy and minerals, so their overall environmental benefit depends on how electricity is generated and how long the battery lasts.",
+      "pregunta": "According to the text, what does the benefit of electric cars depend on?",
+      "opciones": [
+        "How the electricity is produced and how long batteries last",
+        "How many people buy electric cars each year",
+        "How cheap the minerals are in the global market",
+        "How fast the car can be charged at home"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b2-2-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "Electric cars are often described as the clean alternative to petrol vehicles, and in terms of exhaust emissions that is accurate. But producing their batteries requires large amounts of energy and minerals, so their overall environmental benefit depends on how electricity is generated and how long the battery lasts.",
+      "pregunta": "What is accurate about electric cars, according to the passage?",
+      "opciones": [
+        "They require less energy than any other vehicle to build",
+        "They are cheaper to produce than petrol cars",
+        "They have longer-lasting batteries than expected",
+        "They produce no exhaust emissions while driving"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b2-3-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "A recent survey of university graduates found that the skill employers miss most is not technical knowledge but the ability to explain complex ideas clearly. Graduates themselves, however, rated their communication skills higher than their employers did, which suggests that the gap is partly one of self-awareness.",
+      "pregunta": "What does the survey reveal about the skill employers miss most?",
+      "opciones": [
+        "The capacity to work with very large teams",
+        "The ability to explain complex ideas clearly",
+        "The willingness to work during weekends",
+        "The knowledge of advanced technical subjects"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b2-3-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "A recent survey of university graduates found that the skill employers miss most is not technical knowledge but the ability to explain complex ideas clearly. Graduates themselves, however, rated their communication skills higher than their employers did, which suggests that the gap is partly one of self-awareness.",
+      "pregunta": "What does the writer infer from graduates' self-ratings?",
+      "opciones": [
+        "They need more technical courses at university",
+        "They are unaware of what employers want in general",
+        "They are more honest than their employers think",
+        "They may overestimate how well they communicate"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b2-4-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "Public libraries are often described as old-fashioned, but many have reinvented themselves. Some now lend tools, host coding workshops for children and offer quiet spaces to people without a stable workplace. Their funding, however, rarely reflects how much more they do than simply lend books.",
+      "pregunta": "How have many libraries changed, according to the text?",
+      "opciones": [
+        "They offer new services beyond lending books",
+        "They have stopped lending books completely",
+        "They now charge a fee for all their services",
+        "They have moved most of their collections online"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b2-4-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "Public libraries are often described as old-fashioned, but many have reinvented themselves. Some now lend tools, host coding workshops for children and offer quiet spaces to people without a stable workplace. Their funding, however, rarely reflects how much more they do than simply lend books.",
+      "pregunta": "What problem does the writer mention at the end?",
+      "opciones": [
+        "Their buildings are too small for new services",
+        "Their users prefer to buy books at shops",
+        "Their staff lack the training to teach children",
+        "Their funding does not match their broader role"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b2-5-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "When a team adopts a new tool, the first weeks are usually less productive, not more. People have to learn new habits while still delivering their normal work. Managers who expect immediate gains often abandon the tool too soon, concluding that it failed, when in fact it was never given enough time.",
+      "pregunta": "What usually happens in the first weeks of using a new tool?",
+      "opciones": [
+        "Managers train the team more than necessary",
+        "Employees refuse to use the tool at all",
+        "Productivity rises immediately and keeps rising",
+        "Productivity tends to fall while people adapt"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b2-5-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "When a team adopts a new tool, the first weeks are usually less productive, not more. People have to learn new habits while still delivering their normal work. Managers who expect immediate gains often abandon the tool too soon, concluding that it failed, when in fact it was never given enough time.",
+      "pregunta": "What mistake do some managers make, according to the text?",
+      "opciones": [
+        "They give up on the tool before it has had time to work",
+        "They choose tools that are too expensive for the team",
+        "They ignore feedback from the people using it",
+        "They ask employees to learn several tools at once"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b2-6-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "Tourism brings income to many small towns, yet it can also push up rents and change the character of a neighborhood until locals can no longer afford to live there. Some cities now limit short-term rentals, arguing that a place that loses its residents also loses the very atmosphere visitors came to enjoy.",
+      "pregunta": "What risk of tourism does the passage describe?",
+      "opciones": [
+        "Towns may lose their historic buildings",
+        "Locals may be priced out of their own neighborhoods",
+        "Visitors may stop coming to small towns",
+        "Hotels may become too expensive for tourists"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-b2-6-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "B2",
+      "texto": "Tourism brings income to many small towns, yet it can also push up rents and change the character of a neighborhood until locals can no longer afford to live there. Some cities now limit short-term rentals, arguing that a place that loses its residents also loses the very atmosphere visitors came to enjoy.",
+      "pregunta": "Why do some cities limit short-term rentals?",
+      "opciones": [
+        "Tourists prefer to stay in large hotels instead",
+        "Rental owners do not pay any local taxes",
+        "A town without residents loses the atmosphere visitors want",
+        "Short-term rentals are illegal in most countries"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b2-1-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "I'll be honest: I wasn't convinced at first. The new system seemed like a lot of extra paperwork for a small benefit. But after a month, I have to admit it saves us about two hours a week, and nobody has to chase colleagues for approvals anymore. So I've changed my mind.",
+      "pregunta": "What is the speaker's final opinion of the new system?",
+      "opciones": [
+        "It benefits managers more than other employees",
+        "It is useful, despite the speaker's initial doubts",
+        "It is still too complicated to be worth using",
+        "It should be replaced by a simpler form"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b2-1-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "I'll be honest: I wasn't convinced at first. The new system seemed like a lot of extra paperwork for a small benefit. But after a month, I have to admit it saves us about two hours a week, and nobody has to chase colleagues for approvals anymore. So I've changed my mind.",
+      "pregunta": "How much time does the system save?",
+      "opciones": [
+        "About two hours a day",
+        "About twenty minutes a week",
+        "About two hours a week",
+        "About two days a month"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b2-2-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "Today's economic news: unemployment fell slightly last month, but economists warn that the figure may be misleading, since many people have stopped looking for work and are no longer counted. Wages grew modestly, although prices rose faster, so many households feel worse off.",
+      "pregunta": "Why might the unemployment figure be misleading?",
+      "opciones": [
+        "Many new jobs are temporary and badly paid",
+        "The government changed the way it measures jobs",
+        "Some people stopped looking for work and are not counted",
+        "Companies reported incorrect hiring numbers"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b2-2-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "Today's economic news: unemployment fell slightly last month, but economists warn that the figure may be misleading, since many people have stopped looking for work and are no longer counted. Wages grew modestly, although prices rose faster, so many households feel worse off.",
+      "pregunta": "Why do many households feel worse off?",
+      "opciones": [
+        "Prices rose faster than wages",
+        "Many people lost their jobs",
+        "Taxes increased for most families",
+        "Wages fell during the month"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b2-3-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "If you ask me, the biggest problem with our onboarding isn't the documents or the tools. It's that new people don't know who to ask. We give them a long list of links but no human contact. A simple buddy system, one experienced colleague per newcomer, would solve most of it.",
+      "pregunta": "What does the speaker think is the biggest problem?",
+      "opciones": [
+        "New people do not know who to ask for help",
+        "The documents they receive are completely out of date",
+        "The tools are too difficult for them to learn",
+        "The onboarding process takes far too long"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b2-3-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "If you ask me, the biggest problem with our onboarding isn't the documents or the tools. It's that new people don't know who to ask. We give them a long list of links but no human contact. A simple buddy system, one experienced colleague per newcomer, would solve most of it.",
+      "pregunta": "What does the speaker propose?",
+      "opciones": [
+        "Hiring an outside company to train people",
+        "Assigning an experienced colleague to each newcomer",
+        "Cancelling the onboarding sessions",
+        "Giving new employees a longer list of links"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b2-4-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "The exhibition opens next Friday and will run until the end of June. Tickets are cheaper on weekdays, and children under twelve go free if accompanied by an adult. Because the rooms are small, visitors are advised to book a time slot online to avoid long queues.",
+      "pregunta": "Why are visitors advised to book online?",
+      "opciones": [
+        "The tickets are sold out at the entrance",
+        "The rooms are small and queues may be long",
+        "The exhibition is closed on weekdays",
+        "Online tickets are cheaper than on the door"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b2-4-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "The exhibition opens next Friday and will run until the end of June. Tickets are cheaper on weekdays, and children under twelve go free if accompanied by an adult. Because the rooms are small, visitors are advised to book a time slot online to avoid long queues.",
+      "pregunta": "Who can enter for free?",
+      "opciones": [
+        "Everyone on the first weekday",
+        "Students with a university card",
+        "Children under twelve with an adult",
+        "Adults over sixty-five years old"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b2-5-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "I've reread your draft, and the argument is interesting, but the structure is hard to follow. You introduce three ideas in the first paragraph and then only develop one of them. Either cut the other two or give each its own section. And the conclusion repeats the introduction instead of moving forward.",
+      "pregunta": "What is the main problem with the draft?",
+      "opciones": [
+        "The draft is much too short",
+        "The structure is hard to follow",
+        "The writing contains many grammar mistakes",
+        "The argument is not interesting"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b2-5-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "I've reread your draft, and the argument is interesting, but the structure is hard to follow. You introduce three ideas in the first paragraph and then only develop one of them. Either cut the other two or give each its own section. And the conclusion repeats the introduction instead of moving forward.",
+      "pregunta": "What is wrong with the conclusion?",
+      "opciones": [
+        "It is much longer than all the rest of the text",
+        "It introduces a completely new idea at the very end",
+        "It contradicts the main argument of the text",
+        "It repeats the introduction instead of advancing"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b2-6-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "The software update will be released in two phases. First, ten percent of users will receive it, so that the team can detect any unexpected problems. If nothing serious appears within a week, it will be released to everyone. Users who prefer to wait can postpone the update from the settings.",
+      "pregunta": "Why is the update released to ten percent of users first?",
+      "opciones": [
+        "To detect unexpected problems before a full release",
+        "To reduce the cost of the release",
+        "To reward the users who joined the earliest",
+        "To test the update on older devices only"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-b2-6-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "B2",
+      "textoParaTTS": "The software update will be released in two phases. First, ten percent of users will receive it, so that the team can detect any unexpected problems. If nothing serious appears within a week, it will be released to everyone. Users who prefer to wait can postpone the update from the settings.",
+      "pregunta": "What can users do if they do not want the update immediately?",
+      "opciones": [
+        "Postpone it from the settings",
+        "Uninstall the previous version",
+        "Contact support to cancel it",
+        "Wait for an email invitation"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b2-1",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: Had I known about the problem, I ___ earlier.",
+      "opciones": [
+        "had called",
+        "would call",
+        "will call",
+        "would have called"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b2-2",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: The project, ___ was started last year, is now complete.",
+      "opciones": [
+        "which",
+        "what",
+        "whom",
+        "who"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b2-3",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: She denied ___ the document.",
+      "opciones": [
+        "see",
+        "to see",
+        "to have seen",
+        "having seen"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b2-4",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: ___ the rain, we decided to go out.",
+      "opciones": [
+        "Despite",
+        "Although",
+        "However",
+        "Because"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b2-5",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: I'd rather he ___ the decision on his own.",
+      "opciones": [
+        "didn't made",
+        "hadn't made",
+        "won't make",
+        "doesn't make"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b2-6",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: The manager insisted that every employee ___ the training.",
+      "opciones": [
+        "attends",
+        "to attend",
+        "attend",
+        "attended"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b2-7",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: No sooner had we arrived ___ it started to rain.",
+      "opciones": [
+        "that",
+        "as",
+        "than",
+        "when"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b2-8",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: By the time you read this, I ___ already left.",
+      "opciones": [
+        "am having",
+        "will have",
+        "had",
+        "would have"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b2-9",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: He is said ___ the best engineer in the company.",
+      "opciones": [
+        "that he is",
+        "to be",
+        "be",
+        "being"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b2-10",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: We should have the report ___ by Friday.",
+      "opciones": [
+        "finishing",
+        "finish",
+        "finished",
+        "to finish"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b2-11",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: It's high time we ___ a decision.",
+      "opciones": [
+        "will make",
+        "have to make",
+        "make",
+        "made"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-b2-12",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "B2",
+      "pregunta": "Choose the correct option: Not only ___ late, but he also forgot the documents.",
+      "opciones": [
+        "he did arrive",
+        "he arrived",
+        "arrived he",
+        "did he arrive"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c1-1-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "Productivity advice often assumes that more time spent working means more work done. Yet research on creative professions suggests a more complicated picture: after a certain point, additional hours produce little, and may even undo earlier progress through errors that must later be corrected. The most productive people in such studies were not those who worked longest, but those who protected a few hours of uninterrupted concentration and then genuinely stopped.",
+      "pregunta": "What does the research suggest about long working hours in creative jobs?",
+      "opciones": [
+        "They always lead to better creative results",
+        "They are useful when combined with frequent meetings",
+        "Beyond a point they bring little and can cause errors",
+        "They are only harmful for people who work alone"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c1-1-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "Productivity advice often assumes that more time spent working means more work done. Yet research on creative professions suggests a more complicated picture: after a certain point, additional hours produce little, and may even undo earlier progress through errors that must later be corrected. The most productive people in such studies were not those who worked longest, but those who protected a few hours of uninterrupted concentration and then genuinely stopped.",
+      "pregunta": "What characterized the most productive people in the studies?",
+      "opciones": [
+        "A willingness to work well beyond the usual schedule",
+        "Protected hours of deep concentration followed by real rest",
+        "A preference for working during evenings and weekends",
+        "A strict routine of meetings throughout the day"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c1-2-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "In many countries, the legal definition of an employee was written for a world of factories and fixed schedules. Platform work, where people choose their hours but depend on a single app for income, fits awkwardly into it. Courts have reached inconsistent conclusions, and companies argue that flexibility would disappear if workers were reclassified, while advocates reply that flexibility without protection is merely precarity.",
+      "pregunta": "Why does platform work fit awkwardly into the legal definition of employee?",
+      "opciones": [
+        "Courts have not been asked to examine the question",
+        "Platform workers earn more than regular employees",
+        "Platform companies refuse to register their workers",
+        "The definition was designed for fixed schedules and factories"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c1-2-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "In many countries, the legal definition of an employee was written for a world of factories and fixed schedules. Platform work, where people choose their hours but depend on a single app for income, fits awkwardly into it. Courts have reached inconsistent conclusions, and companies argue that flexibility would disappear if workers were reclassified, while advocates reply that flexibility without protection is merely precarity.",
+      "pregunta": "What is the advocates' main reply to the companies?",
+      "opciones": [
+        "Companies should stop using applications altogether",
+        "Reclassification would increase the profits of companies",
+        "Flexibility without protection is merely precarity",
+        "Workers prefer fixed schedules to flexible ones"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c1-3-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "The idea that we use only ten percent of our brains is among the most durable myths in popular science. It is false: imaging studies show activity throughout the brain, and damage to almost any region produces some deficit. Part of the myth's appeal is its flattering implication that vast potential lies untapped, which may explain why it survives despite being so thoroughly debunked.",
+      "pregunta": "Why does the writer think the myth persists?",
+      "opciones": [
+        "It is taught in most school textbooks",
+        "It flatters people by suggesting hidden potential",
+        "It is supported by recent imaging research",
+        "It has never been tested by scientists"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c1-3-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "The idea that we use only ten percent of our brains is among the most durable myths in popular science. It is false: imaging studies show activity throughout the brain, and damage to almost any region produces some deficit. Part of the myth's appeal is its flattering implication that vast potential lies untapped, which may explain why it survives despite being so thoroughly debunked.",
+      "pregunta": "What does the evidence mentioned in the passage show?",
+      "opciones": [
+        "Ten percent of the brain is enough",
+        "Most brain regions remain inactive",
+        "Damage rarely affects daily functioning",
+        "Activity occurs throughout the brain"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c1-4-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "Critics of standardized testing argue that it rewards test-taking skill over understanding, while defenders counter that it is the only reasonably objective yardstick available when comparing students from very different schools. Both points have force, which is perhaps why reform proposals tend to modify tests rather than abolish them: the alternatives, such as portfolios, are richer but harder to compare fairly.",
+      "pregunta": "Why do reforms tend to modify tests instead of abolishing them?",
+      "opciones": [
+        "Teachers prefer standardized tests to portfolios",
+        "Students perform better under standardized conditions",
+        "Standardized tests are cheaper than any alternative",
+        "The alternatives are richer but harder to compare fairly"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c1-4-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "Critics of standardized testing argue that it rewards test-taking skill over understanding, while defenders counter that it is the only reasonably objective yardstick available when comparing students from very different schools. Both points have force, which is perhaps why reform proposals tend to modify tests rather than abolish them: the alternatives, such as portfolios, are richer but harder to compare fairly.",
+      "pregunta": "What is the defenders' main argument?",
+      "opciones": [
+        "Tests are required by international organizations",
+        "Tests offer an objective way to compare very different students",
+        "Tests help students feel less anxious about school",
+        "Tests measure understanding better than anything else"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c1-5-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "When a language disappears, we lose not only a set of words but a particular way of dividing up experience, with its own metaphors, humor and knowledge about a specific place. Documentation projects try to record what they can, yet recordings alone cannot keep a language alive; that requires speakers who use it for everyday purposes, particularly young ones.",
+      "pregunta": "According to the text, what is needed to keep a language alive?",
+      "opciones": [
+        "Laws that make the language compulsory in schools",
+        "Speakers who use it in daily life, especially young people",
+        "Detailed recordings stored in a university archive",
+        "Dictionaries written by documentation projects"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c1-5-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "When a language disappears, we lose not only a set of words but a particular way of dividing up experience, with its own metaphors, humor and knowledge about a specific place. Documentation projects try to record what they can, yet recordings alone cannot keep a language alive; that requires speakers who use it for everyday purposes, particularly young ones.",
+      "pregunta": "What is lost when a language disappears?",
+      "opciones": [
+        "The written records and documents of the community",
+        "A distinctive way of organizing experience and local knowledge",
+        "The ability of its speakers to learn other languages",
+        "Only the vocabulary used for traditional objects and tools"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c1-6-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "The success of open-source software is often explained by its price, but price alone cannot account for it. Many projects thrive because anyone can inspect and fix the code, so that a flaw noticed by one person is repaired for everyone. The model works less well for tasks nobody enjoys, such as documentation or accessibility, which is why such work still depends heavily on funded organizations.",
+      "pregunta": "According to the writer, what limits the open-source model?",
+      "opciones": [
+        "It works less well for tasks that nobody enjoys doing",
+        "It depends on programmers who are not paid at all",
+        "It produces software that is slower to develop",
+        "It cannot be used by large commercial companies"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c1-6-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C1",
+      "texto": "The success of open-source software is often explained by its price, but price alone cannot account for it. Many projects thrive because anyone can inspect and fix the code, so that a flaw noticed by one person is repaired for everyone. The model works less well for tasks nobody enjoys, such as documentation or accessibility, which is why such work still depends heavily on funded organizations.",
+      "pregunta": "What is the writer's view of price as an explanation?",
+      "opciones": [
+        "It is not enough to explain the success of open source",
+        "It is irrelevant because open source is always paid",
+        "It is the only reason that people choose it",
+        "It explains why companies prefer closed software"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c1-1-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "What I admire about her proposal is that it doesn't pretend the problem is simple. She acknowledges the costs, names the people who will bear them, and still argues that the change is worth making. You may disagree with the conclusion, but you can't accuse her of hiding the difficulties.",
+      "pregunta": "What does the speaker admire about the proposal?",
+      "opciones": [
+        "It honestly acknowledges the costs and difficulties",
+        "It avoids mentioning who will be affected",
+        "It is supported by every department",
+        "It offers a simple solution to a complex problem"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c1-1-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "What I admire about her proposal is that it doesn't pretend the problem is simple. She acknowledges the costs, names the people who will bear them, and still argues that the change is worth making. You may disagree with the conclusion, but you can't accuse her of hiding the difficulties.",
+      "pregunta": "What does the speaker say about people who disagree?",
+      "opciones": [
+        "They have probably not understood the costs",
+        "They should read the proposal more carefully",
+        "They are mostly people who will lose out",
+        "They cannot say that she concealed the difficulties"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c1-2-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "The trouble with metrics is that people start to optimize for them. Once a call center is measured by call length, agents rush callers off the line; once a school is judged by exam results, teaching narrows to what the exam covers. The measure was meant to describe quality, and ends up replacing it.",
+      "pregunta": "What problem with metrics does the speaker describe?",
+      "opciones": [
+        "Metrics are easy to manipulate by outsiders",
+        "People start to optimize for the measure instead of quality",
+        "Metrics cannot be calculated in public services",
+        "Metrics are too expensive to collect regularly"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c1-2-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "The trouble with metrics is that people start to optimize for them. Once a call center is measured by call length, agents rush callers off the line; once a school is judged by exam results, teaching narrows to what the exam covers. The measure was meant to describe quality, and ends up replacing it.",
+      "pregunta": "What happens in a school judged by exam results?",
+      "opciones": [
+        "Exams become easier to pass every year",
+        "Students become more interested in learning",
+        "Teaching narrows to what the exam covers",
+        "Teachers spend more time on creative subjects"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c1-3-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "I had assumed the experiment would fail, and I was ready to write it up as a cautionary tale. To our surprise, the effect appeared in all three sites. We're still being careful, since a single study never settles anything, but it was a useful reminder to hold predictions loosely.",
+      "pregunta": "What did the speaker expect from the experiment?",
+      "opciones": [
+        "That it would be inconclusive",
+        "That it would be cancelled",
+        "That it would fail",
+        "That it would succeed at all three sites"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c1-3-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "I had assumed the experiment would fail, and I was ready to write it up as a cautionary tale. To our surprise, the effect appeared in all three sites. We're still being careful, since a single study never settles anything, but it was a useful reminder to hold predictions loosely.",
+      "pregunta": "What lesson does the speaker draw?",
+      "opciones": [
+        "To avoid publishing early results",
+        "To hold one's predictions loosely",
+        "To repeat every experiment three times",
+        "To trust the first study completely"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c1-4-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "Look, I'm not saying remote hiring is a mistake. I'm saying we've changed where we recruit without changing how we evaluate. A candidate who is brilliant on paper but has never worked asynchronously will struggle, and we haven't built a way to test for that. We should, before we hire another twenty people.",
+      "pregunta": "What is the speaker's criticism?",
+      "opciones": [
+        "The company is hiring too few people this year",
+        "The company changed where it recruits but not how it evaluates",
+        "Remote candidates are less brilliant than local ones",
+        "Remote hiring is more expensive than hiring locally"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c1-4-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "Look, I'm not saying remote hiring is a mistake. I'm saying we've changed where we recruit without changing how we evaluate. A candidate who is brilliant on paper but has never worked asynchronously will struggle, and we haven't built a way to test for that. We should, before we hire another twenty people.",
+      "pregunta": "What does the speaker want the company to do?",
+      "opciones": [
+        "Delay hiring until the next year",
+        "Develop a way to test for asynchronous work skills",
+        "Hire only candidates who have worked remotely",
+        "Stop hiring people from other countries"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c1-5-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "Cities that remove cars from their centers often report an unexpected effect: shops do better, not worse. Pedestrians browse more slowly and spend more than drivers in a hurry. Nonetheless, the transition is painful for the businesses that depend on deliveries, and the policies work best when accompanied by early, generous consultation.",
+      "pregunta": "What unexpected effect do cities report after removing cars?",
+      "opciones": [
+        "Shops often do better than before",
+        "Fewer tourists visit the center",
+        "Traffic increases in nearby streets",
+        "Public transport becomes cheaper"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c1-5-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "Cities that remove cars from their centers often report an unexpected effect: shops do better, not worse. Pedestrians browse more slowly and spend more than drivers in a hurry. Nonetheless, the transition is painful for the businesses that depend on deliveries, and the policies work best when accompanied by early, generous consultation.",
+      "pregunta": "When do these policies work best, according to the speaker?",
+      "opciones": [
+        "When they are limited to weekends",
+        "When they come with early and generous consultation",
+        "When they are introduced without warning",
+        "When shops can no longer receive deliveries"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c1-6-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "There's a version of mentoring that amounts to giving advice, and another that amounts to asking good questions. The first feels more generous, but it makes the mentee dependent. The second is slower and more frustrating in the moment, yet it leaves people better able to reason on their own. I'd say the best mentors do a bit of both, and know which moment calls for which.",
+      "pregunta": "What is the problem with mentoring that only gives advice?",
+      "opciones": [
+        "It is less generous than asking questions",
+        "It can make the mentee dependent",
+        "It takes too much time from the mentor",
+        "It is rarely accepted by the mentee"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c1-6-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C1",
+      "textoParaTTS": "There's a version of mentoring that amounts to giving advice, and another that amounts to asking good questions. The first feels more generous, but it makes the mentee dependent. The second is slower and more frustrating in the moment, yet it leaves people better able to reason on their own. I'd say the best mentors do a bit of both, and know which moment calls for which.",
+      "pregunta": "What does the speaker conclude about the best mentors?",
+      "opciones": [
+        "They never answer the questions they are asked",
+        "They concentrate mainly on technical advice",
+        "They give advice only in difficult moments",
+        "They combine both approaches and know when to use each"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c1-1",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: ___ the delays, the team still managed to deliver on time.",
+      "opciones": [
+        "Provided",
+        "Notwithstanding",
+        "Unless",
+        "Whereas"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c1-2",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: Rarely ___ such a clear explanation of the problem.",
+      "opciones": [
+        "I have heard",
+        "I heard",
+        "have I heard",
+        "did I heard"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c1-3",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: She would have accepted the offer had she ___ about the salary earlier.",
+      "opciones": [
+        "been knowing",
+        "known",
+        "knew",
+        "know"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c1-4",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: The committee, ___ members were all experts, rejected the proposal.",
+      "opciones": [
+        "whom",
+        "who",
+        "which",
+        "whose"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c1-5",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: It is essential that the results ___ independently verified.",
+      "opciones": [
+        "be",
+        "are",
+        "being",
+        "were"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c1-6",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: He is reluctant ___ any commitment before the review.",
+      "opciones": [
+        "making",
+        "make",
+        "to make",
+        "of making"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c1-7",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: Little ___ that the decision would change everything.",
+      "opciones": [
+        "she knew",
+        "she did know",
+        "knew she",
+        "did she know"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c1-8",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: The plan seems feasible, ___ it requires more funding than expected.",
+      "opciones": [
+        "unless",
+        "hence",
+        "whereas",
+        "albeit"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c1-9",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: I'd have preferred it if you ___ me earlier.",
+      "opciones": [
+        "would tell",
+        "told",
+        "have told",
+        "had told"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c1-10",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: Only after the audit ___ the real scale of the problem.",
+      "opciones": [
+        "they understood",
+        "they did understand",
+        "did they understand",
+        "understood they"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c1-11",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: The more data we collect, ___ accurate the model becomes.",
+      "opciones": [
+        "most",
+        "the more",
+        "the most",
+        "more"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c1-12",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C1",
+      "pregunta": "Choose the correct option: She came across ___ confident in the interview, despite feeling nervous.",
+      "opciones": [
+        "like",
+        "that",
+        "to be",
+        "as"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c2-1-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C2",
+      "texto": "It is a commonplace that history is written by the victors, but the claim is only half true. The victors write the first draft, certainly, yet later generations of historians, with access to materials the victors could not control, tend to complicate or overturn it. What persists is not a single account but a conversation, in which each generation reveals as much about its own preoccupations as about the past it investigates.",
+      "pregunta": "How does the writer qualify the idea that history is written by the victors?",
+      "opciones": [
+        "It is true because historians always agree with the victors",
+        "It is only partly true, since later historians revise the first account",
+        "It is entirely false because victors rarely write anything",
+        "It is true only for modern wars with many records"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c2-1-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C2",
+      "texto": "It is a commonplace that history is written by the victors, but the claim is only half true. The victors write the first draft, certainly, yet later generations of historians, with access to materials the victors could not control, tend to complicate or overturn it. What persists is not a single account but a conversation, in which each generation reveals as much about its own preoccupations as about the past it investigates.",
+      "pregunta": "What does the writer suggest each generation of historians reveals?",
+      "opciones": [
+        "Its lack of interest in historical documents",
+        "Its total agreement with earlier historians",
+        "Its fear of contradicting the victors",
+        "Its own preoccupations as well as facts about the past"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c2-2-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C2",
+      "texto": "Expertise, we are told, is the product of ten thousand hours of practice. The figure is memorable and misleading. It was derived from a small study of violinists, it conceals large individual differences, and it says nothing about the quality of the practice. A person can repeat the same mistakes for ten thousand hours; what matters is whether the practice involves attention, feedback and progressively harder challenges.",
+      "pregunta": "Why does the writer consider the ten thousand hours figure misleading?",
+      "opciones": [
+        "It claims that practice is not important at all",
+        "It ignores individual differences and the quality of practice",
+        "It was calculated by researchers who never played",
+        "It is based on a study of thousands of violinists"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c2-2-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C2",
+      "texto": "Expertise, we are told, is the product of ten thousand hours of practice. The figure is memorable and misleading. It was derived from a small study of violinists, it conceals large individual differences, and it says nothing about the quality of the practice. A person can repeat the same mistakes for ten thousand hours; what matters is whether the practice involves attention, feedback and progressively harder challenges.",
+      "pregunta": "According to the writer, what makes practice effective?",
+      "opciones": [
+        "Attention, feedback and increasingly difficult challenges",
+        "Practicing only with the help of a famous teacher",
+        "Starting at a very young age without interruptions",
+        "Repeating the same task for as long as possible"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c2-3-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C2",
+      "texto": "The language of efficiency has colonized domains where it sits uneasily. We speak of optimizing friendships, maximizing leisure and measuring the return on a holiday. The vocabulary is not innocent: it smuggles in the assumption that every activity is a means to something else, and that a pastime without a measurable outcome is a kind of waste. A culture that cannot value anything for its own sake is, in a quiet way, impoverished.",
+      "pregunta": "What does the writer mean by saying the vocabulary of efficiency is 'not innocent'?",
+      "opciones": [
+        "It brings in the assumption that everything is a means to an end",
+        "It makes leisure activities more profitable for companies",
+        "It is used mainly by people with bad intentions",
+        "It is taken directly from the language of the law"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c2-3-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C2",
+      "texto": "The language of efficiency has colonized domains where it sits uneasily. We speak of optimizing friendships, maximizing leisure and measuring the return on a holiday. The vocabulary is not innocent: it smuggles in the assumption that every activity is a means to something else, and that a pastime without a measurable outcome is a kind of waste. A culture that cannot value anything for its own sake is, in a quiet way, impoverished.",
+      "pregunta": "What is the writer's overall attitude?",
+      "opciones": [
+        "Indifferent to how people choose to spend time",
+        "Hopeful that efficiency will make people happier",
+        "Concerned that the idea of efficiency is applied too widely",
+        "Enthusiastic about measuring everything in life"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c2-4-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C2",
+      "texto": "It is tempting to view scientific consensus as a vote among experts, but that image misleads. Consensus emerges when independent lines of evidence converge, so that a conclusion survives attempts to dislodge it from different directions. Its authority derives not from the number of people who endorse it but from the number of ways it could have failed and did not.",
+      "pregunta": "How does the writer describe scientific consensus?",
+      "opciones": [
+        "As a temporary agreement that changes every year",
+        "As a decision taken by scientific organizations",
+        "As the result of independent evidence converging on a conclusion",
+        "As a vote among experts who share the same views"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c2-4-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C2",
+      "texto": "It is tempting to view scientific consensus as a vote among experts, but that image misleads. Consensus emerges when independent lines of evidence converge, so that a conclusion survives attempts to dislodge it from different directions. Its authority derives not from the number of people who endorse it but from the number of ways it could have failed and did not.",
+      "pregunta": "What gives consensus its authority, according to the writer?",
+      "opciones": [
+        "The large number of people who support it",
+        "The prestige of the institutions that publish it",
+        "The speed with which it was reached",
+        "The many ways in which it could have failed and did not"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c2-5-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C2",
+      "texto": "Translation is frequently described as a loss, yet the metaphor overlooks what a good translation adds. A text moved into another language acquires new readers, new contexts and sometimes a clarity its author never achieved. The original is not diminished; it is placed in dialogue with a culture it never anticipated. What is lost is only the illusion that a text has a single, fixed meaning independent of those who read it.",
+      "pregunta": "What does the writer think the 'loss' metaphor overlooks?",
+      "opciones": [
+        "How much translators are usually paid for their work",
+        "How translations make originals seem less valuable",
+        "What a good translation adds, such as new readers and contexts",
+        "How easily mistakes are made by most translators"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c2-5-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C2",
+      "texto": "Translation is frequently described as a loss, yet the metaphor overlooks what a good translation adds. A text moved into another language acquires new readers, new contexts and sometimes a clarity its author never achieved. The original is not diminished; it is placed in dialogue with a culture it never anticipated. What is lost is only the illusion that a text has a single, fixed meaning independent of those who read it.",
+      "pregunta": "What does the writer say is really lost in translation?",
+      "opciones": [
+        "The respect of the original readers",
+        "The illusion of a single fixed meaning",
+        "The style and rhythm of the author",
+        "The most important words of the original"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c2-6-p1",
+      "habilidad": "lectura",
+      "nivelCEFR": "C2",
+      "texto": "There is a persistent belief that creativity thrives on constraint-free freedom. The experience of many artists suggests the opposite: a sonnet's fourteen lines, a limited palette or a fixed budget can concentrate invention rather than stifle it. Constraints supply resistance, and resistance is what turns a vague impulse into a decision. Absolute freedom, by contrast, often yields paralysis disguised as possibility.",
+      "pregunta": "What does the writer claim about constraints and creativity?",
+      "opciones": [
+        "Constraints are only useful for beginners",
+        "Constraints can concentrate creativity instead of stifling it",
+        "Constraints should be avoided in every art form",
+        "Constraints always destroy the artist's imagination"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-lec-c2-6-p2",
+      "habilidad": "lectura",
+      "nivelCEFR": "C2",
+      "texto": "There is a persistent belief that creativity thrives on constraint-free freedom. The experience of many artists suggests the opposite: a sonnet's fourteen lines, a limited palette or a fixed budget can concentrate invention rather than stifle it. Constraints supply resistance, and resistance is what turns a vague impulse into a decision. Absolute freedom, by contrast, often yields paralysis disguised as possibility.",
+      "pregunta": "What does the phrase 'paralysis disguised as possibility' refer to?",
+      "opciones": [
+        "The inability to choose when everything is permitted",
+        "The lack of money to start an artistic project",
+        "The pressure of criticism from other artists",
+        "The fear of failing in front of an audience"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c2-1-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C2",
+      "textoParaTTS": "What strikes me about these debates is how often both sides quote the same study. The disagreement isn't about the data; it's about what the data should be allowed to mean. And that is a question no experiment can settle, because it concerns values, which is precisely why the argument continues, politely, indefinitely.",
+      "pregunta": "What does the speaker find striking about the debates?",
+      "opciones": [
+        "Both sides finally accept the results of the study",
+        "Both sides refuse to look at any scientific data",
+        "Both sides were involved in carrying out the experiment",
+        "Both sides use the same study to support opposite views"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c2-1-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C2",
+      "textoParaTTS": "What strikes me about these debates is how often both sides quote the same study. The disagreement isn't about the data; it's about what the data should be allowed to mean. And that is a question no experiment can settle, because it concerns values, which is precisely why the argument continues, politely, indefinitely.",
+      "pregunta": "Why can no experiment settle the disagreement, according to the speaker?",
+      "opciones": [
+        "The data are too limited to draw conclusions",
+        "The experiment was not carefully designed",
+        "The scientists involved disagree among themselves",
+        "It is really a question about values"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c2-2-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C2",
+      "textoParaTTS": "I'm wary of any account that is quite so tidy. Real organizations are made of competing incentives, half-remembered decisions and accidents of timing. When a retrospective presents a failure as the inevitable result of one bad choice, it usually tells us more about the author's need for a story than about what actually happened.",
+      "pregunta": "Why is the speaker wary of tidy accounts?",
+      "opciones": [
+        "They are usually written by people with little experience",
+        "Real organizations are messier than a single story suggests",
+        "They always avoid mentioning important decisions",
+        "They are produced by outside consultants"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c2-2-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C2",
+      "textoParaTTS": "I'm wary of any account that is quite so tidy. Real organizations are made of competing incentives, half-remembered decisions and accidents of timing. When a retrospective presents a failure as the inevitable result of one bad choice, it usually tells us more about the author's need for a story than about what actually happened.",
+      "pregunta": "What do tidy retrospectives reveal, according to the speaker?",
+      "opciones": [
+        "The author's need for a story",
+        "The disagreement among managers",
+        "The importance of timing",
+        "The true causes of the failure"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c2-3-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C2",
+      "textoParaTTS": "Her novel doesn't so much resolve its central conflict as outlast it. By the final chapter, the characters have grown tired of the question that drove them, and the reader is invited to share that weariness. It's a risky ending, and some will find it evasive, but I think it's the only honest one the book could have had.",
+      "pregunta": "How does the novel deal with its central conflict?",
+      "opciones": [
+        "It makes it the main theme of the last page",
+        "It ignores it from the very beginning",
+        "It solves it in the final chapter",
+        "It does not resolve it but lets it fade out"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c2-3-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C2",
+      "textoParaTTS": "Her novel doesn't so much resolve its central conflict as outlast it. By the final chapter, the characters have grown tired of the question that drove them, and the reader is invited to share that weariness. It's a risky ending, and some will find it evasive, but I think it's the only honest one the book could have had.",
+      "pregunta": "What is the reviewer's final opinion of the ending?",
+      "opciones": [
+        "Too predictable for a novel of this kind",
+        "Risky but the only honest one possible",
+        "Evasive and unsatisfying for most readers",
+        "Better than the rest of the book"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c2-4-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C2",
+      "textoParaTTS": "If a system has to be explained at length before anyone can be trusted to use it safely, the explanation is a symptom, not a solution. Good design makes the safe action the obvious one. Warnings, training and long manuals are what we resort to when we have failed to do that, and we should at least be honest about what they are.",
+      "pregunta": "How does the speaker view long explanations and warnings?",
+      "opciones": [
+        "As a legal requirement that exists in all industries",
+        "As a sign that the design has failed to make safety obvious",
+        "As the best possible way of ensuring that users are safe",
+        "As an unnecessary cost for most companies and users"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c2-4-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C2",
+      "textoParaTTS": "If a system has to be explained at length before anyone can be trusted to use it safely, the explanation is a symptom, not a solution. Good design makes the safe action the obvious one. Warnings, training and long manuals are what we resort to when we have failed to do that, and we should at least be honest about what they are.",
+      "pregunta": "What does good design do, according to the speaker?",
+      "opciones": [
+        "Protects the company from legal claims",
+        "Teaches people to read long manuals",
+        "Makes the safe action the obvious one",
+        "Gives users as many options as possible"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c2-5-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C2",
+      "textoParaTTS": "Predicting which technologies will matter is notoriously hard, partly because early versions look unimpressive and partly because the important uses are rarely the ones their inventors imagined. The telephone was first sold as a way of listening to concerts. If there is a lesson, it is humility: judge a new technology by what people end up doing with it, not by what it was meant for.",
+      "pregunta": "Why is predicting the importance of technologies so hard?",
+      "opciones": [
+        "Inventors rarely publish the results of their work",
+        "Investors usually refuse to fund new and risky ideas",
+        "Early versions look unimpressive and uses are unexpected",
+        "Governments restrict most new technologies at first"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c2-5-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C2",
+      "textoParaTTS": "Predicting which technologies will matter is notoriously hard, partly because early versions look unimpressive and partly because the important uses are rarely the ones their inventors imagined. The telephone was first sold as a way of listening to concerts. If there is a lesson, it is humility: judge a new technology by what people end up doing with it, not by what it was meant for.",
+      "pregunta": "What example does the speaker give?",
+      "opciones": [
+        "The radio being created for the army",
+        "The telephone being sold to listen to concerts",
+        "The computer being used for calculating taxes",
+        "The camera being designed for scientists"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c2-6-p1",
+      "habilidad": "escucha",
+      "nivelCEFR": "C2",
+      "textoParaTTS": "It would be too neat to say that the pandemic changed how we work; it accelerated changes that were already under way and exposed ones that had been postponed. Remote work, for instance, had existed for decades, but the crisis removed the argument that it couldn't be done. What remains uncertain is which of those changes will endure once the emergency motive has gone.",
+      "pregunta": "How does the speaker describe the effect of the pandemic on work?",
+      "opciones": [
+        "It accelerated and exposed changes that were already under way",
+        "It had very little effect on how most people work",
+        "It created completely new ways of working from nothing",
+        "It ended remote work in most companies"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-esc-c2-6-p2",
+      "habilidad": "escucha",
+      "nivelCEFR": "C2",
+      "textoParaTTS": "It would be too neat to say that the pandemic changed how we work; it accelerated changes that were already under way and exposed ones that had been postponed. Remote work, for instance, had existed for decades, but the crisis removed the argument that it couldn't be done. What remains uncertain is which of those changes will endure once the emergency motive has gone.",
+      "pregunta": "What remains uncertain, according to the speaker?",
+      "opciones": [
+        "When the crisis will finally end",
+        "Whether remote work was possible at all",
+        "How many people worked remotely before",
+        "Which changes will last after the emergency"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c2-1",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C2",
+      "pregunta": "Choose the correct option: Were it not for her intervention, the project ___ cancelled.",
+      "opciones": [
+        "will be",
+        "would be being",
+        "would have been",
+        "had been"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c2-2",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C2",
+      "pregunta": "Choose the correct option: The proposal is, ___ I can tell, entirely sound.",
+      "opciones": [
+        "as long",
+        "as far as",
+        "far as",
+        "so far"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c2-3",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C2",
+      "pregunta": "Choose the correct option: Overwhelming ___ the evidence seemed, the court demanded further proof.",
+      "opciones": [
+        "so",
+        "how",
+        "as",
+        "which"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c2-4",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C2",
+      "pregunta": "Choose the correct option: He was, ___ it were, the conscience of the whole team.",
+      "opciones": [
+        "as",
+        "so",
+        "how",
+        "like"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c2-5",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C2",
+      "pregunta": "Choose the correct option: It's high time the committee ___ a clear position on the issue.",
+      "opciones": [
+        "will take",
+        "take",
+        "takes",
+        "took"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c2-6",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C2",
+      "pregunta": "Choose the correct option: Such ___ the complexity of the problem that no single solution emerged.",
+      "opciones": [
+        "was",
+        "has",
+        "were",
+        "is being"
+      ],
+      "respuestaCorrecta": 0,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c2-7",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C2",
+      "pregunta": "Choose the correct option: She spoke so quietly that her remarks were barely ___.",
+      "opciones": [
+        "audibly",
+        "audible",
+        "audio",
+        "audience"
+      ],
+      "respuestaCorrecta": 1,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c2-8",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C2",
+      "pregunta": "Choose the correct option: ___ should you disclose this information to anyone outside the team.",
+      "opciones": [
+        "Not under any",
+        "In no way of",
+        "Under no circumstances",
+        "No circumstances"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c2-9",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C2",
+      "pregunta": "Choose the correct option: The findings, far from ___ the theory, actually undermined it.",
+      "opciones": [
+        "confirmed",
+        "to confirm",
+        "confirming",
+        "confirm"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c2-10",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C2",
+      "pregunta": "Choose the correct option: He has a tendency to ___ over the finer points of an argument.",
+      "opciones": [
+        "skim off",
+        "drift",
+        "gloss",
+        "pass up"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c2-11",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C2",
+      "pregunta": "Choose the correct option: The two accounts are hard to ___ with each other.",
+      "opciones": [
+        "reunite",
+        "equalize",
+        "reconcile",
+        "unify up"
+      ],
+      "respuestaCorrecta": 2,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "conf-voc-c2-12",
+      "habilidad": "vocabulario_gramatica",
+      "nivelCEFR": "C2",
+      "pregunta": "Choose the correct option: Suffice ___ say that the meeting did not go well.",
+      "opciones": [
+        "to",
+        "that to",
+        "it for",
+        "it to"
+      ],
+      "respuestaCorrecta": 3,
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    }
+  ]
+}

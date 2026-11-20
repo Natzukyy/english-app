@@ -1770,6 +1770,876 @@
       ],
       "revisar": true,
       "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c1_argumentar_con_matices",
+      "nivelCEFR": "C1",
+      "frases": [
+        {
+          "ingles": "That's a fair point, though I'd see it slightly differently.",
+          "espanol": "Es un buen punto, aunque yo lo vería de forma algo distinta.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'm not convinced the evidence supports that conclusion.",
+          "espanol": "No estoy convencido de que la evidencia respalde esa conclusión.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "It depends on what you mean by success.",
+          "espanol": "Depende de qué entiendas por éxito.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "There's a case to be made for both approaches.",
+          "espanol": "Hay argumentos a favor de ambos enfoques.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "That only holds if the assumptions are realistic.",
+          "espanol": "Eso solo se cumple si los supuestos son realistas.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'd go as far as to say it's overrated.",
+          "espanol": "Yo diría incluso que está sobrevalorado.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "To some extent, yes, but only to some extent.",
+          "espanol": "Hasta cierto punto, sí, pero solo hasta cierto punto.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "That's easier said than done.",
+          "espanol": "Eso es más fácil de decir que de hacer.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We may be comparing apples and oranges here.",
+          "espanol": "Quizá estemos comparando cosas que no se pueden comparar.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Let's not lose sight of what we set out to do.",
+          "espanol": "No perdamos de vista lo que nos propusimos hacer.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c1_negociar_y_reuniones",
+      "nivelCEFR": "C1",
+      "frases": [
+        {
+          "ingles": "We'd be open to a compromise, provided the deadline stays.",
+          "espanol": "Estaríamos abiertos a un punto medio, siempre que la fecha límite se mantenga.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Can we park the pricing question and come back to it?",
+          "espanol": "¿Podemos dejar la cuestión del precio y volver a ella?",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'd like to flag a concern before we move on.",
+          "espanol": "Quiero señalar una preocupación antes de seguir.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "That's a deal-breaker for us, I'm afraid.",
+          "espanol": "Me temo que eso es inaceptable para nosotros.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Could we meet in the middle on the timeline?",
+          "espanol": "¿Podríamos llegar a un punto medio con el calendario?",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Let me play that back to make sure we're aligned.",
+          "espanol": "Déjame repetirlo para asegurarnos de que estamos de acuerdo.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We'll need sign-off from legal before we proceed.",
+          "espanol": "Necesitaremos la aprobación del área legal antes de continuar.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I don't want to put you on the spot, but where do we stand?",
+          "espanol": "No quiero ponerte en un aprieto, pero ¿en qué punto estamos?",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Let's take this offline and report back on Monday.",
+          "espanol": "Hablemos de esto aparte y avisamos el lunes.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "That's outside my remit, but I'll find out who owns it.",
+          "espanol": "Eso no me corresponde, pero averiguaré quién se encarga.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c1_correos_formales",
+      "nivelCEFR": "C1",
+      "frases": [
+        {
+          "ingles": "I am writing to enquire about the status of my application.",
+          "espanol": "Le escribo para preguntar por el estado de mi solicitud.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Please find attached the revised proposal for your review.",
+          "espanol": "Adjunto la propuesta revisada para su revisión.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I would be grateful if you could confirm receipt.",
+          "espanol": "Le agradecería que confirmara la recepción.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Further to our conversation yesterday, I wanted to clarify two points.",
+          "espanol": "En relación con nuestra conversación de ayer, quería aclarar dos puntos.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Apologies for the delay in getting back to you.",
+          "espanol": "Disculpe la demora en responderle.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'd appreciate your input on the draft by Thursday.",
+          "espanol": "Le agradecería sus comentarios sobre el borrador antes del jueves.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Should you have any questions, please do not hesitate to contact me.",
+          "espanol": "Si tiene alguna pregunta, no dude en contactarme.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I regret to inform you that the position has been filled.",
+          "espanol": "Lamento informarle que el puesto ya fue cubierto.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Thank you for bringing this to our attention.",
+          "espanol": "Gracias por hacérnoslo notar.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I look forward to hearing your thoughts.",
+          "espanol": "Quedo atento a sus comentarios.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c1_opinion_y_actualidad",
+      "nivelCEFR": "C1",
+      "frases": [
+        {
+          "ingles": "Public opinion on the matter is sharply divided.",
+          "espanol": "La opinión pública sobre el tema está muy dividida.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The policy has had unintended consequences.",
+          "espanol": "La política ha tenido consecuencias no deseadas.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "It's a step in the right direction, but it doesn't go far enough.",
+          "espanol": "Es un paso en la dirección correcta, pero no llega lo bastante lejos.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Critics argue that the law is poorly enforced.",
+          "espanol": "Los críticos sostienen que la ley no se aplica bien.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The headline is misleading; the article says something quite different.",
+          "espanol": "El titular engaña; el artículo dice algo bastante distinto.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Trust in institutions has eroded over the past decade.",
+          "espanol": "La confianza en las instituciones se ha erosionado en la última década.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The data tells a more complicated story than the press suggests.",
+          "espanol": "Los datos cuentan una historia más complicada de lo que sugiere la prensa.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "It remains to be seen whether the reform will work.",
+          "espanol": "Está por verse si la reforma funcionará.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "There's growing pressure on the government to act.",
+          "espanol": "Hay cada vez más presión sobre el gobierno para que actúe.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The debate has largely shifted from whether to how.",
+          "espanol": "El debate ha pasado en gran parte de si hacerlo a cómo hacerlo.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c1_tecnologia_e_ia",
+      "nivelCEFR": "C1",
+      "frases": [
+        {
+          "ingles": "The model performs well on average but fails on edge cases.",
+          "espanol": "El modelo funciona bien en promedio, pero falla en casos extremos.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We can't treat the output as ground truth.",
+          "espanol": "No podemos tratar el resultado como una verdad absoluta.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "It's impressive, but it's still prone to making things up.",
+          "espanol": "Es impresionante, pero todavía tiende a inventar cosas.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The training data skews heavily toward English.",
+          "espanol": "Los datos de entrenamiento se inclinan mucho hacia el inglés.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We need a human in the loop for high-stakes decisions.",
+          "espanol": "Necesitamos a una persona en el proceso para las decisiones importantes.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Latency is fine, but the cost per request adds up quickly.",
+          "espanol": "La latencia está bien, pero el costo por solicitud se acumula rápido.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The rollout was staggered to limit the risk.",
+          "espanol": "El lanzamiento se hizo por etapas para limitar el riesgo.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Nobody can fully explain why it behaves that way.",
+          "espanol": "Nadie puede explicar del todo por qué se comporta así.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We're trading some accuracy for a much faster response.",
+          "espanol": "Estamos cediendo algo de precisión a cambio de una respuesta mucho más rápida.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Privacy should be a design constraint, not an afterthought.",
+          "espanol": "La privacidad debe ser una condición del diseño, no un añadido de último momento.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c1_entrevistas_y_liderazgo",
+      "nivelCEFR": "C1",
+      "frases": [
+        {
+          "ingles": "I tend to take a hands-on approach in the early stages.",
+          "espanol": "Tiendo a involucrarme directamente en las primeras etapas.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "One thing I'd do differently is involve the team sooner.",
+          "espanol": "Algo que haría distinto es involucrar antes al equipo.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I try to give feedback early rather than let issues pile up.",
+          "espanol": "Intento dar retroalimentación pronto en lugar de dejar que los problemas se acumulen.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "What drew me to this role is the scope of the problem.",
+          "espanol": "Lo que me atrajo de este puesto es la magnitud del problema.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'm comfortable making a call with incomplete information.",
+          "espanol": "Me siento cómodo tomando una decisión con información incompleta.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "My greatest weakness is that I can be overly cautious.",
+          "espanol": "Mi mayor debilidad es que a veces soy demasiado cauteloso.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I see my role as removing obstacles for the team.",
+          "espanol": "Veo mi papel como quitarle obstáculos al equipo.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Could you tell me more about how success is measured here?",
+          "espanol": "¿Podría contarme más sobre cómo se mide el éxito aquí?",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'd rather admit a mistake early than hide it.",
+          "espanol": "Prefiero admitir un error pronto que ocultarlo.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I've learned to say no when the plate is already full.",
+          "espanol": "He aprendido a decir que no cuando ya tengo demasiado trabajo.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c1_conversacion_natural",
+      "nivelCEFR": "C1",
+      "frases": [
+        {
+          "ingles": "Honestly, I didn't see that coming.",
+          "espanol": "La verdad es que no me lo esperaba.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "It's not the end of the world, you know.",
+          "espanol": "No es el fin del mundo, ya sabes.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'm kind of torn between the two options.",
+          "espanol": "Estoy algo dividido entre las dos opciones.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "To be fair, he did warn us.",
+          "espanol": "Para ser justos, él sí nos advirtió.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "That came out of nowhere.",
+          "espanol": "Eso salió de la nada.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'll believe it when I see it.",
+          "espanol": "Lo creeré cuando lo vea.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "It's a bit of a long shot, but worth trying.",
+          "espanol": "Es una posibilidad remota, pero vale la pena intentarlo.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Don't get me wrong, I like the idea.",
+          "espanol": "No me malentiendas, me gusta la idea.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We'll cross that bridge when we come to it.",
+          "espanol": "Resolveremos eso cuando llegue el momento.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I could do with a break, to be honest.",
+          "espanol": "Me vendría bien un descanso, la verdad.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c2_discrepar_con_diplomacia",
+      "nivelCEFR": "C2",
+      "frases": [
+        {
+          "ingles": "With respect, I think that overstates the case.",
+          "espanol": "Con todo respeto, creo que eso exagera la situación.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I take your point, but I wonder whether it generalizes.",
+          "espanol": "Entiendo tu punto, pero me pregunto si se puede generalizar.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'm not sure that follows from what you've just said.",
+          "espanol": "No estoy seguro de que eso se desprenda de lo que acabas de decir.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Allow me to push back gently on that.",
+          "espanol": "Permíteme objetar con suavidad a eso.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'd be inclined to read it rather differently.",
+          "espanol": "Yo me inclinaría por leerlo de forma bastante distinta.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "That may be true, but it sidesteps the real question.",
+          "espanol": "Puede que sea cierto, pero evita la verdadera pregunta.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I don't think we're disagreeing so much as talking past each other.",
+          "espanol": "No creo que estemos en desacuerdo, sino hablando sin entendernos.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Forgive me for being blunt, but the numbers don't add up.",
+          "espanol": "Perdona la franqueza, pero los números no cuadran.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'd hesitate to draw firm conclusions from so little data.",
+          "espanol": "Dudaría en sacar conclusiones firmes con tan pocos datos.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We may simply have to agree to disagree on this one.",
+          "espanol": "Quizá tengamos que aceptar que no estamos de acuerdo en esto.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c2_presentar_y_persuadir",
+      "nivelCEFR": "C2",
+      "frases": [
+        {
+          "ingles": "Allow me to begin with a question that rarely gets asked.",
+          "espanol": "Permítanme empezar con una pregunta que casi nunca se hace.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "What I want to suggest is that the problem lies elsewhere.",
+          "espanol": "Lo que quiero sugerir es que el problema está en otra parte.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The implications go well beyond what the figures show.",
+          "espanol": "Las implicaciones van mucho más allá de lo que muestran las cifras.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "If there is one takeaway, let it be this.",
+          "espanol": "Si hay una sola idea para llevarse, que sea esta.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'd like to dwell for a moment on a point that's easily missed.",
+          "espanol": "Quisiera detenerme un momento en algo que se pasa por alto fácilmente.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Bear with me; the connection will become clear shortly.",
+          "espanol": "Tengan paciencia; la conexión quedará clara enseguida.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Let me anticipate an obvious objection.",
+          "espanol": "Déjenme adelantarme a una objeción evidente.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "This is not a technical problem so much as a human one.",
+          "espanol": "Esto no es tanto un problema técnico como uno humano.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'll leave you with one final thought.",
+          "espanol": "Les dejo con una última reflexión.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Having said that, I don't want to understate the risks.",
+          "espanol": "Dicho esto, no quiero restarle importancia a los riesgos.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c2_analisis_critico",
+      "nivelCEFR": "C2",
+      "frases": [
+        {
+          "ingles": "The argument rests on a questionable premise.",
+          "espanol": "El argumento descansa en una premisa cuestionable.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The study is suggestive rather than conclusive.",
+          "espanol": "El estudio es sugerente más que concluyente.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "It conflates correlation with causation.",
+          "espanol": "Confunde correlación con causalidad.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The author glosses over the most serious objection.",
+          "espanol": "El autor pasa por alto la objeción más seria.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "There is a tension between the two claims that is never resolved.",
+          "espanol": "Hay una tensión entre las dos afirmaciones que nunca se resuelve.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The sample is hardly representative of the wider population.",
+          "espanol": "La muestra difícilmente representa a la población en general.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The conclusion is more cautious than the evidence warrants.",
+          "espanol": "La conclusión es más cautelosa de lo que justifica la evidencia.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "What is conspicuously absent is any discussion of cost.",
+          "espanol": "Lo que brilla por su ausencia es cualquier mención del costo.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The findings sit uneasily with earlier research.",
+          "espanol": "Los resultados encajan mal con investigaciones anteriores.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "It's a compelling narrative, but is it true?",
+          "espanol": "Es una narrativa convincente, pero ¿es cierta?",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c2_etica_ia_y_tecnologia",
+      "nivelCEFR": "C2",
+      "frases": [
+        {
+          "ingles": "Who bears the cost when an automated system gets it wrong?",
+          "espanol": "¿Quién paga el costo cuando un sistema automático se equivoca?",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Opacity is not a bug; it's a design choice.",
+          "espanol": "La opacidad no es un error; es una decisión de diseño.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Efficiency gains tend to be captured by a few and borne by many.",
+          "espanol": "Las ganancias de eficiencia suelen quedarse en pocos y pagarlas muchos.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We're deploying systems we don't fully understand.",
+          "espanol": "Estamos desplegando sistemas que no entendemos del todo.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Consent is meaningless if refusing means being locked out.",
+          "espanol": "El consentimiento no vale nada si negarse significa quedar excluido.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Regulation always lags behind the technology it governs.",
+          "espanol": "La regulación siempre va por detrás de la tecnología que regula.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "A system optimized for engagement will find our weaknesses.",
+          "espanol": "Un sistema optimizado para captar atención encontrará nuestras debilidades.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The burden of proof should rest on those deploying the system.",
+          "espanol": "La carga de la prueba debería recaer en quienes despliegan el sistema.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Transparency without recourse is just theater.",
+          "espanol": "La transparencia sin posibilidad de reclamar es puro teatro.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The question isn't whether we can, but whether we should.",
+          "espanol": "La pregunta no es si podemos, sino si debemos.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c2_cultura_y_debate",
+      "nivelCEFR": "C2",
+      "frases": [
+        {
+          "ingles": "The novel resists easy interpretation.",
+          "espanol": "La novela se resiste a una interpretación fácil.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "It reads as a quiet indictment of consumer culture.",
+          "espanol": "Se lee como una acusación silenciosa a la cultura de consumo.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The film is more interesting for what it leaves unsaid.",
+          "espanol": "La película es más interesante por lo que deja sin decir.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Nostalgia has a way of flattening the past.",
+          "espanol": "La nostalgia tiende a aplanar el pasado.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "It would be naive to think the issue is purely economic.",
+          "espanol": "Sería ingenuo pensar que el asunto es puramente económico.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Her work sits at the uneasy intersection of art and activism.",
+          "espanol": "Su trabajo se ubica en la incómoda intersección entre el arte y el activismo.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The language of the debate has become increasingly polarized.",
+          "espanol": "El lenguaje del debate se ha polarizado cada vez más.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "What passes for common sense is often cultural habit.",
+          "espanol": "Lo que pasa por sentido común suele ser costumbre cultural.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The idea gained traction long before the evidence did.",
+          "espanol": "La idea ganó terreno mucho antes que la evidencia.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Irony, in this context, is a form of resistance.",
+          "espanol": "La ironía, en este contexto, es una forma de resistencia.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c2_expresiones_idiomaticas",
+      "nivelCEFR": "C2",
+      "frases": [
+        {
+          "ingles": "It's a tall order, but not impossible.",
+          "espanol": "Es mucho pedir, pero no imposible.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "That's neither here nor there.",
+          "espanol": "Eso no viene al caso.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We're running on fumes at this point.",
+          "espanol": "A estas alturas estamos funcionando con las últimas fuerzas.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "He's a bit of a loose cannon.",
+          "espanol": "Es un poco impredecible y peligroso.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The proof of the pudding is in the eating.",
+          "espanol": "La prueba está en los resultados.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "It's water under the bridge now.",
+          "espanol": "Eso ya es agua pasada.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "She has a knack for explaining complicated things simply.",
+          "espanol": "Tiene un don para explicar cosas complicadas de forma sencilla.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We've been going around in circles for an hour.",
+          "espanol": "Llevamos una hora dando vueltas sin avanzar.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Let's not throw the baby out with the bathwater.",
+          "espanol": "No tiremos lo bueno junto con lo malo.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I wouldn't hold my breath.",
+          "espanol": "Yo no esperaría sentado.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c2_en_el_trabajo_con_matices",
+      "nivelCEFR": "C2",
+      "frases": [
+        {
+          "ingles": "I'll defer to your judgment on this one.",
+          "espanol": "En esto me guiaré por tu criterio.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We may need to recalibrate our expectations.",
+          "espanol": "Quizá tengamos que recalibrar nuestras expectativas.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The timeline is aggressive but not unrealistic.",
+          "espanol": "El calendario es ambicioso, pero no irreal.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'd rather we err on the side of caution.",
+          "espanol": "Prefiero que pequemos de cautelosos.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Let's not mistake activity for progress.",
+          "espanol": "No confundamos actividad con progreso.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We're operating with a thin margin for error.",
+          "espanol": "Estamos operando con muy poco margen de error.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The real risk is complacency, not competition.",
+          "espanol": "El verdadero riesgo es la complacencia, no la competencia.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "That decision will have knock-on effects for other teams.",
+          "espanol": "Esa decisión tendrá efectos en cadena en otros equipos.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "I'd welcome a candid assessment of where we fell short.",
+          "espanol": "Agradecería una evaluación franca de dónde fallamos.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "It's less a matter of skill than of judgment.",
+          "espanol": "Es menos cuestión de habilidad que de criterio.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "categoria": "c2_ciencia_y_pensamiento",
+      "nivelCEFR": "C2",
+      "frases": [
+        {
+          "ingles": "Absence of evidence is not evidence of absence.",
+          "espanol": "La ausencia de pruebas no es prueba de ausencia.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The effect is real but modest in size.",
+          "espanol": "El efecto es real, pero de tamaño modesto.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Extraordinary claims require extraordinary evidence.",
+          "espanol": "Las afirmaciones extraordinarias requieren pruebas extraordinarias.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "The result has yet to be independently replicated.",
+          "espanol": "El resultado todavía no ha sido replicado de forma independiente.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Complexity tends to hide in the interactions, not the parts.",
+          "espanol": "La complejidad suele esconderse en las interacciones, no en las partes.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Models are useful simplifications, not mirrors of reality.",
+          "espanol": "Los modelos son simplificaciones útiles, no espejos de la realidad.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "We should be wary of explanations that are too neat.",
+          "espanol": "Conviene desconfiar de las explicaciones demasiado limpias.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Uncertainty is not a weakness of science but its method.",
+          "espanol": "La incertidumbre no es una debilidad de la ciencia, sino su método.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Small effects can compound into large consequences.",
+          "espanol": "Los efectos pequeños pueden acumularse en grandes consecuencias.",
+          "revisionIA": "2026-11-20"
+        },
+        {
+          "ingles": "Progress is rarely linear, however much we'd like it to be.",
+          "espanol": "El progreso rara vez es lineal, por mucho que quisiéramos.",
+          "revisionIA": "2026-11-20"
+        }
+      ],
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     }
   ]
 }

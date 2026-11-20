@@ -604,6 +604,512 @@
       "respuestaModelo": "Hi Sam! Can I borrow your English book, please? I need it today. I can give it back tomorrow. Thank you!",
       "revisar": true,
       "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-a1-mi-ciudad",
+      "tema": "Describir mi ciudad",
+      "nivelCEFR": "A1",
+      "consigna": "Escribe sobre la ciudad o el pueblo donde vives: cómo es y qué hay.",
+      "listaVerificacion": [
+        "Dije cómo se llama mi ciudad",
+        "Usé 'There is' o 'There are'",
+        "Dije si me gusta y por qué",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "I live in Puebla. It is a big city, but it is very nice. There is a big park near my house. There are many small restaurants and a big market. I like my city because the food is good.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-a1-mi-dia-favorito",
+      "tema": "Mi día favorito",
+      "nivelCEFR": "A1",
+      "consigna": "Escribe sobre tu día favorito de la semana y qué haces ese día.",
+      "listaVerificacion": [
+        "Dije cuál es mi día favorito",
+        "Dije dos cosas que hago ese día",
+        "Dije con quién estoy",
+        "Escribí al menos 4 oraciones"
+      ],
+      "respuestaModelo": "My favorite day is Saturday. I wake up late and eat a big breakfast. In the afternoon, I play football with my friends. In the evening, I watch a movie with my family. I love Saturdays.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-a2-recomendar-restaurante",
+      "tema": "Recomendar un restaurante a un amigo",
+      "nivelCEFR": "A2",
+      "consigna": "Escribe un mensaje a un amigo recomendándole un restaurante que te gusta. Di qué comida tiene y por qué vale la pena.",
+      "listaVerificacion": [
+        "Dije el nombre o el tipo de restaurante",
+        "Mencioné al menos una comida o bebida",
+        "Di una razón para ir",
+        "Escribí al menos 3 oraciones"
+      ],
+      "respuestaModelo": "Hey, you have to try Casa Lola! It's a small restaurant near the university, and the tacos are amazing. The prices are low and the people are really friendly. Let's go together on Friday if you're free!",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-a2-disculpas-tarde",
+      "tema": "Pedir disculpas por llegar tarde",
+      "nivelCEFR": "A2",
+      "consigna": "Escribe un mensaje a un compañero de trabajo o de clase pidiendo disculpas porque llegaste tarde a una reunión. Explica brevemente por qué.",
+      "listaVerificacion": [
+        "Pedí disculpas claramente",
+        "Expliqué el motivo en una frase",
+        "Dije qué voy a hacer para compensarlo",
+        "Mantuve un tono respetuoso"
+      ],
+      "respuestaModelo": "Hi Sam, I'm really sorry I was late to the meeting this morning. My bus broke down and I had to walk to the office. I read the notes you sent, and I'll finish my part before the end of the day. Thanks for your patience.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-b1-instrucciones-usar",
+      "tema": "Dar instrucciones para usar algo",
+      "nivelCEFR": "B1",
+      "consigna": "Escribe instrucciones paso a paso para algo que sabes hacer (por ejemplo, usar una app, preparar un platillo o configurar un programa).",
+      "listaVerificacion": [
+        "Usé palabras de secuencia (first, then, after that, finally)",
+        "Cada paso es claro y corto",
+        "Incluí un consejo o una advertencia",
+        "Escribí al menos 5 oraciones"
+      ],
+      "respuestaModelo": "Here's how to share your screen in a video call. First, open the meeting and click the button at the bottom of the window. Then choose whether you want to share the whole screen or only one window. After that, make sure your notifications are turned off, so nobody sees your private messages. Finally, click \"Share\" and wait a few seconds. If something goes wrong, stop sharing and try again.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-b1-describir-pelicula",
+      "tema": "Describir una película o serie",
+      "nivelCEFR": "B1",
+      "consigna": "Describe una película o serie que viste recientemente: de qué trata, qué te gustó y si la recomendarías.",
+      "listaVerificacion": [
+        "Resumí la historia sin contar el final",
+        "Dije al menos una cosa que me gustó",
+        "Dije si la recomiendo y a quién",
+        "Escribí al menos 5 oraciones"
+      ],
+      "respuestaModelo": "Last week I watched a documentary about how large cities are changing their transport systems. It follows three engineers who try to reduce traffic without building more roads. I liked that it showed real problems instead of simple answers. It was a little slow in the middle, but the ending made it worth it. I'd recommend it to anyone interested in cities or technology.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-b2-responder-critica",
+      "tema": "Responder a una crítica en el trabajo",
+      "nivelCEFR": "B2",
+      "consigna": "Escribe un correo respondiendo a una crítica que recibiste sobre tu trabajo. Reconoce lo que es válido, explica tu punto de vista y propone cómo mejorar.",
+      "listaVerificacion": [
+        "Reconocí lo que es válido de la crítica",
+        "Expliqué mi punto de vista con calma",
+        "Propuse una acción concreta para mejorar",
+        "Mantuve un tono profesional",
+        "Escribí al menos 6 oraciones"
+      ],
+      "respuestaModelo": "Thank you for your detailed comments on the report. You're right that the second section is too long and could confuse readers, and I'll shorten it this week. On the other hand, I'd like to explain why I included the extra data: the client asked specifically for that comparison during our last call. I understand the concern, though, so I'll move that material to an appendix. I'd also welcome a short conversation to agree on the structure before the next version.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-b2-semana-cuatro-dias",
+      "tema": "Argumento sobre la semana laboral de cuatro días",
+      "nivelCEFR": "B2",
+      "consigna": "Argumenta a favor o en contra de la semana laboral de cuatro días. Da razones claras y responde a una objeción.",
+      "listaVerificacion": [
+        "Tomé una postura clara",
+        "Di al menos dos razones concretas",
+        "Consideré una objeción y la respondí",
+        "Usé conectores de contraste y de conclusión",
+        "Escribí al menos 6 oraciones"
+      ],
+      "respuestaModelo": "I believe a four-day work week is worth trying in most office jobs. Firstly, several pilot programs have shown that productivity stays stable, because people waste less time on unnecessary meetings. Secondly, an extra day of rest reduces burnout, which is costly for any company. Some argue that clients expect service five days a week, and that is a fair concern. However, it can be solved with shifts, so that someone is always available. In the end, results matter more than hours.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-carta-posgrado",
+      "tema": "Carta de motivación para un posgrado",
+      "nivelCEFR": "C1",
+      "consigna": "Escribe un párrafo de una carta de motivación para un posgrado en tu área. Explica qué te interesa investigar, qué experiencia previa tienes y qué esperas aportar.",
+      "listaVerificacion": [
+        "Expliqué mi interés académico con precisión",
+        "Mencioné experiencia previa concreta",
+        "Dije qué espero aportar, no solo recibir",
+        "Usé un registro formal y matizado",
+        "Evité frases demasiado generales"
+      ],
+      "respuestaModelo": "My interest in machine learning began during an undergraduate project in which a model we trained performed well on average but failed on a minority of cases. That experience led me to ask not only how accurate a system is, but for whom it works. Since then, I have worked on evaluation methods for a university research group, and I would like to pursue this question more rigorously. I hope to contribute careful empirical work, and I would value the chance to learn from a department that takes both technical depth and social impact seriously.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-resena-critica",
+      "tema": "Reseña crítica de un artículo",
+      "nivelCEFR": "C1",
+      "consigna": "Escribe una reseña crítica breve de un artículo o libro que hayas leído. Resume la idea principal, evalúa sus puntos fuertes y débiles y da tu valoración final.",
+      "listaVerificacion": [
+        "Resumí la idea principal con claridad",
+        "Señalé al menos un punto fuerte",
+        "Señalé al menos una debilidad con argumentos",
+        "Di una valoración final matizada",
+        "Usé un tono formal"
+      ],
+      "respuestaModelo": "The article argues that remote work weakens the informal exchange of ideas that drives innovation. Its strongest point is the use of real communication data rather than anecdote. However, the sample consists mainly of large technology firms, which limits how far the conclusions can be generalized. The author also treats office interaction as uniformly beneficial, which seems optimistic. Overall, it is a useful contribution, albeit one that should be read with some caution.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-mejora-proceso",
+      "tema": "Propuesta de mejora de un proceso",
+      "nivelCEFR": "C1",
+      "consigna": "Escribe una propuesta breve para mejorar un proceso de tu trabajo, escuela o equipo. Describe el problema, tu propuesta, los beneficios y un posible riesgo.",
+      "listaVerificacion": [
+        "Describí el problema con datos o ejemplos",
+        "Presenté una propuesta concreta",
+        "Expliqué los beneficios esperados",
+        "Mencioné un riesgo y cómo reducirlo",
+        "Usé un tono persuasivo y profesional"
+      ],
+      "respuestaModelo": "Our current review process requires every change to be approved by two senior engineers, which has created a backlog of nearly a week. I propose that low-risk changes be approved by a single reviewer, while critical ones keep the two-person rule. This should reduce waiting time considerably without compromising quality where it matters most. The main risk is inconsistency between reviewers, which we could limit with a short checklist. I suggest trying the new approach for one month and reviewing the results together.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-rechazar-con-tacto",
+      "tema": "Rechazar una solicitud con tacto",
+      "nivelCEFR": "C1",
+      "consigna": "Escribe un correo rechazando una solicitud (por ejemplo, una propuesta, una petición de fecha o una oferta) de manera clara pero amable, y ofrece una alternativa.",
+      "listaVerificacion": [
+        "Dije que no con claridad, sin ambigüedad",
+        "Agradecí la propuesta",
+        "Expliqué el motivo sin dar demasiados detalles",
+        "Ofrecí una alternativa realista",
+        "Mantuve un tono cordial y formal"
+      ],
+      "respuestaModelo": "Thank you for thinking of me for this project; I'm genuinely flattered. Unfortunately, I won't be able to take it on, as my schedule is already full until the end of the quarter, and I wouldn't want to deliver less than my best. If it would help, I'd be glad to recommend a colleague who has the right experience. I'd also be happy to be considered for similar work in the autumn. I appreciate your understanding.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-resumen-ejecutivo",
+      "tema": "Resumen ejecutivo de un informe",
+      "nivelCEFR": "C1",
+      "consigna": "Escribe un resumen ejecutivo breve (para alguien que no leerá el informe completo) sobre un proyecto, estudio o resultado reciente.",
+      "listaVerificacion": [
+        "Empecé con la conclusión principal",
+        "Incluí dos o tres datos clave",
+        "Dije qué decisión o acción se recomienda",
+        "Fui conciso, sin detalles innecesarios",
+        "Usé un registro formal"
+      ],
+      "respuestaModelo": "This report concludes that migrating our customer support to the new platform is feasible and cost-effective. In a three-month pilot, response times fell by almost a third, and customer satisfaction remained stable. The main risk is the training required for staff, which we estimate at two weeks. We therefore recommend a gradual rollout beginning with the smallest team, followed by a review before wider adoption.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-ensayo-ia-aula",
+      "tema": "Ensayo de opinión: la IA en el aula",
+      "nivelCEFR": "C1",
+      "consigna": "Escribe un texto de opinión sobre el uso de herramientas de inteligencia artificial en el aula. Presenta tu postura, concede un punto a la otra posición y concluye.",
+      "listaVerificacion": [
+        "Presenté mi postura con claridad",
+        "Concedí un punto válido de la posición contraria",
+        "Usé conectores de contraste (although, however, whereas)",
+        "Concluí con una idea propia",
+        "Escribí al menos 7 oraciones"
+      ],
+      "respuestaModelo": "Although some teachers fear that artificial intelligence will encourage laziness, I believe that banning it would be a mistake. Students will use these tools in their working lives, and learning to use them critically is part of a modern education. It is true that a student who copies an answer learns nothing. However, the same could be said of copying from a textbook. The real question is how assignments are designed. If tasks reward reasoning rather than polished text, the tool becomes an aid rather than a shortcut.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-queja-cliente",
+      "tema": "Responder a la queja de un cliente",
+      "nivelCEFR": "C1",
+      "consigna": "Escribe una respuesta a un cliente molesto cuyo pedido llegó tarde. Pide disculpas, explica lo ocurrido sin poner excusas y ofrece una solución concreta.",
+      "listaVerificacion": [
+        "Pedí disculpas de forma sincera",
+        "Expliqué lo ocurrido sin excusas",
+        "Ofrecí una solución concreta",
+        "Evité un tono defensivo",
+        "Cerré de manera profesional"
+      ],
+      "respuestaModelo": "Thank you for bringing this to our attention, and please accept our sincere apologies for the delay. Your order was held up at our distribution center because of an error in our system, and we should have contacted you sooner. We have now expedited the shipment, and it should reach you by Thursday. As a gesture of goodwill, we will refund the delivery fee. If anything else goes wrong, please contact me directly.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-describir-grafica",
+      "tema": "Describir una tendencia en datos",
+      "nivelCEFR": "C1",
+      "consigna": "Describe una tendencia que viste en una gráfica o en datos (por ejemplo, ventas, usuarios, calificaciones). Explica qué cambió, posibles causas y una cautela.",
+      "listaVerificacion": [
+        "Describí el cambio principal con precisión",
+        "Usé vocabulario de tendencias (rise, decline, fluctuate)",
+        "Propuse una posible causa",
+        "Añadí una cautela sobre los datos",
+        "Escribí al menos 5 oraciones"
+      ],
+      "respuestaModelo": "Over the past year, weekly active users rose steadily until March, then dropped sharply in April before stabilizing. The decline coincides with a change in the sign-up process, which may have discouraged new users. However, it is too early to draw firm conclusions, since the data covers only a few weeks after the change. It would be worth comparing these figures with those of last April to rule out seasonal effects.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-carta-editor",
+      "tema": "Carta al editor",
+      "nivelCEFR": "C1",
+      "consigna": "Escribe una carta breve al editor de un periódico respondiendo a un artículo que te hizo reaccionar. Menciona el artículo, expresa tu desacuerdo con respeto y da un argumento.",
+      "listaVerificacion": [
+        "Mencioné el artículo al que respondo",
+        "Expresé mi desacuerdo con respeto",
+        "Di al menos un argumento sólido",
+        "Usé un registro formal",
+        "Concluí con una frase clara"
+      ],
+      "respuestaModelo": "I am writing in response to your recent article on university fees. While I agree that the current system is flawed, I disagree that abolishing fees would make education fairer. Without sufficient public funding, universities would be forced to limit places, and those with the fewest resources would suffer first. A more targeted approach, with grants for low-income students, seems both fairer and more realistic. I would welcome a debate on this subject.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-informe-incidente",
+      "tema": "Informe breve de un incidente",
+      "nivelCEFR": "C1",
+      "consigna": "Escribe un informe breve sobre un problema o incidente (técnico o de otro tipo): qué ocurrió, la causa, cómo se resolvió y qué se hará para evitarlo.",
+      "listaVerificacion": [
+        "Describí qué ocurrió en orden",
+        "Identifiqué la causa principal",
+        "Expliqué cómo se resolvió",
+        "Propuse una medida para evitar que se repita",
+        "Usé un tono objetivo, sin culpar a nadie"
+      ],
+      "respuestaModelo": "On Tuesday at nine in the morning, the booking system became unavailable for roughly forty minutes. The cause was an expired security certificate that nobody had been assigned to renew. Service was restored once the certificate was replaced. To prevent a recurrence, we will add an automatic alert thirty days before any certificate expires, and assign a named owner to each one.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-recomendacion-matizada",
+      "tema": "Recomendar algo con matices",
+      "nivelCEFR": "C1",
+      "consigna": "Escribe una recomendación de un libro, película, curso o herramienta, con sus puntos fuertes y sus limitaciones, para un lector que decide si le conviene.",
+      "listaVerificacion": [
+        "Dije qué es y para quién sirve",
+        "Mencioné puntos fuertes concretos",
+        "Mencioné al menos una limitación",
+        "Di una recomendación matizada",
+        "Usé lenguaje evaluativo variado"
+      ],
+      "respuestaModelo": "This online course is an excellent introduction to statistics, provided you are comfortable with basic algebra. The explanations are clear, and the exercises build gradually. Its main limitation is that it offers little guidance on real datasets, so you may need to practice elsewhere. I would recommend it to anyone starting out, but not to those who already have a solid background.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-ensayo-contraargumento",
+      "tema": "Ensayo con contraargumento",
+      "nivelCEFR": "C2",
+      "consigna": "Escribe un párrafo argumentativo sobre un tema que te interese (tecnología, educación, trabajo o sociedad). Defiende una postura, presenta el mejor contraargumento y respóndele con precisión.",
+      "listaVerificacion": [
+        "Mi postura es clara y está bien delimitada",
+        "Presenté el contraargumento más fuerte, no uno débil",
+        "Respondí al contraargumento con razones",
+        "Usé conectores variados y precisos",
+        "Mantuve un registro formal y natural"
+      ],
+      "respuestaModelo": "It is often claimed that automation will inevitably widen inequality, and the concern is not unreasonable. Yet the claim assumes that the gains from new technology are fixed in their distribution, which history does not support. Where unions, public education and fair taxation have been strong, the benefits have been shared more widely. The more defensible position is therefore not that automation causes inequality, but that it magnifies whatever institutions already exist to absorb it.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-critica-idea-popular",
+      "tema": "Criticar una idea popular",
+      "nivelCEFR": "C2",
+      "consigna": "Escribe una crítica razonada de una idea muy popular (por ejemplo, 'hay que seguir tu pasión' o 'más datos siempre es mejor'). Explica qué tiene de cierto y dónde se queda corta.",
+      "listaVerificacion": [
+        "Reconocí lo que la idea tiene de cierto",
+        "Expliqué dónde falla o se queda corta",
+        "Usé un ejemplo o un contraejemplo",
+        "Evité caricaturizar la idea",
+        "Mantuve un tono reflexivo"
+      ],
+      "respuestaModelo": "The advice to follow your passion contains a grain of truth: people who care about their work tend to persist. But it quietly assumes that passion exists in advance, waiting to be discovered, when it often grows out of competence and attention. A young engineer who feels indifferent to a field may simply not have reached the point where it becomes interesting. Better advice might be to follow your curiosity, and to be patient enough for it to find something worth caring about.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-discurso-agradecimiento",
+      "tema": "Discurso breve de agradecimiento",
+      "nivelCEFR": "C2",
+      "consigna": "Escribe un discurso breve (para decir en voz alta) agradeciendo un reconocimiento, por ejemplo un premio de tu equipo o escuela. Debe sonar natural, humilde y con un toque de humor.",
+      "listaVerificacion": [
+        "Agradecí con sinceridad y sin exagerar",
+        "Reconocí a otras personas",
+        "Incluí un toque de humor ligero",
+        "Sonó natural al leerlo en voz alta",
+        "Cerré con una idea memorable"
+      ],
+      "respuestaModelo": "I wasn't expecting this, and I'm afraid I haven't prepared anything clever, which my team will tell you is entirely in character. This award belongs to all of them, who put up with my emails at midnight and my love of long meetings. What I've learned is that good work is rarely done alone, however much our job titles suggest otherwise. So thank you. I promise to use this power only for good, or at least for better coffee.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-correo-desacuerdo",
+      "tema": "Correo diplomático de desacuerdo",
+      "nivelCEFR": "C2",
+      "consigna": "Escribe un correo a un superior en el que expreses con respeto un desacuerdo con una decisión, sin sonar a reproche, y propongas revisarla.",
+      "listaVerificacion": [
+        "Reconocí la intención o la lógica de la decisión",
+        "Expresé el desacuerdo con claridad y respeto",
+        "Di una razón concreta, no solo una opinión",
+        "Propuse revisar o probar una alternativa",
+        "Evité un tono acusatorio"
+      ],
+      "respuestaModelo": "Thank you for explaining the reasoning behind the new schedule; I can see why it appeals from a planning perspective. I would nonetheless like to raise one concern: moving the deadline earlier leaves almost no time for testing, which may cost us more later than it saves now. I may be missing information, so I would welcome your view. Might it be worth reviewing the plan together before we commit?",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-resumen-critico-estudio",
+      "tema": "Resumen crítico de un estudio",
+      "nivelCEFR": "C2",
+      "consigna": "Resume un estudio o artículo científico (real o imaginario) y evalúa críticamente sus métodos y conclusiones, distinguiendo lo que demuestra de lo que solo sugiere.",
+      "listaVerificacion": [
+        "Resumí la pregunta y el método con precisión",
+        "Distinguí lo demostrado de lo sugerido",
+        "Señalé una limitación metodológica",
+        "Usé lenguaje cauteloso (suggest, appear, may)",
+        "Concluí con una valoración equilibrada"
+      ],
+      "respuestaModelo": "The study examines whether a four-week mindfulness course improves students' concentration. Participants who completed the course scored higher on an attention test than those who did not. The result is suggestive, but several limitations temper it: participants chose whether to join, so motivation may explain the difference, and the effect was measured only once. The authors are appropriately cautious, yet the media coverage has been far less so. A longer randomized trial would be needed to say more.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-politica-institucional",
+      "tema": "Propuesta de política institucional",
+      "nivelCEFR": "C2",
+      "consigna": "Escribe una propuesta breve de una norma o política para una escuela, empresa o comunidad. Justifica su necesidad, anticipa críticas y explica cómo evaluarías si funciona.",
+      "listaVerificacion": [
+        "Justifiqué por qué hace falta la norma",
+        "Anticipé al menos una crítica",
+        "Propuse un criterio para evaluar si funciona",
+        "Mi redacción es precisa y bien organizada",
+        "Usé un registro institucional"
+      ],
+      "respuestaModelo": "We propose that all course materials be made available online at least one week before each term begins. The current practice of releasing them gradually disadvantages students who work part-time or need extra preparation. Some instructors may object that this reduces flexibility, and we acknowledge the concern; materials could be marked provisional where necessary. After one academic year, the policy should be assessed using student surveys and the number of late-enrollment complaints.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-opinion-privacidad",
+      "tema": "Artículo de opinión sobre privacidad",
+      "nivelCEFR": "C2",
+      "consigna": "Escribe un párrafo de un artículo de opinión sobre la privacidad digital. Evita los tópicos: busca un ángulo propio y respáldalo con una idea concreta.",
+      "listaVerificacion": [
+        "Tuve un ángulo propio, no un lugar común",
+        "Respaldé la idea con un ejemplo concreto",
+        "Usé un registro de opinión pulido",
+        "Mantuve coherencia entre las oraciones",
+        "Cerré con una idea que invite a pensar"
+      ],
+      "respuestaModelo": "We tend to describe privacy as something we own, like a possession that careless people leave unlocked. That framing is convenient for companies, because it makes every leak the user's fault. Privacy is better understood as a relationship: what I tell a doctor, a bank or a friend carries expectations about how it will be used. When those expectations are routinely ignored, the problem is not a careless individual but a broken agreement.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-renuncia-elegante",
+      "tema": "Carta de renuncia elegante",
+      "nivelCEFR": "C2",
+      "consigna": "Escribe una carta breve de renuncia a un trabajo o a un cargo voluntario. Debe ser cordial, no dejar puertas cerradas y evitar tanto los reproches como la adulación excesiva.",
+      "listaVerificacion": [
+        "Comuniqué la renuncia con claridad",
+        "Agradecí algo específico",
+        "Ofrecí ayudar con la transición",
+        "Evité reproches y exageraciones",
+        "Mantuve un tono sobrio y cordial"
+      ],
+      "respuestaModelo": "I am writing to inform you of my decision to resign from my position, effective at the end of next month. I am grateful for the trust placed in me, and particularly for the opportunity to lead the migration project. To ensure a smooth transition, I will document my current tasks and am happy to help train my successor. I have valued my time here and hope to stay in touch.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-explicar-publico-general",
+      "tema": "Explicar un tema técnico al público general",
+      "nivelCEFR": "C2",
+      "consigna": "Explica en un párrafo un concepto técnico o científico (por ejemplo, cómo funciona un modelo de lenguaje o un algoritmo) a un público general, sin jerga y sin perder precisión.",
+      "listaVerificacion": [
+        "Evité la jerga o la expliqué",
+        "Usé una analogía clara",
+        "No sacrifiqué la precisión esencial",
+        "Mantuve un orden lógico",
+        "Terminé con un matiz importante"
+      ],
+      "respuestaModelo": "A language model works a little like an extremely well-read person who has learned which words tend to follow which. Given the start of a sentence, it estimates what is most likely to come next, one piece at a time. This is why it can sound fluent on almost any subject. The important caveat is that fluency is not understanding: the model has no direct way of checking whether what it says is true.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-comparar-enfoques",
+      "tema": "Comparar dos enfoques con matices",
+      "nivelCEFR": "C2",
+      "consigna": "Compara dos enfoques para resolver el mismo problema (dos métodos de estudio, dos herramientas o dos formas de organizar un equipo). Evita elegir uno sin matices.",
+      "listaVerificacion": [
+        "Describí ambos enfoques con justicia",
+        "Señalé ventajas y costos de cada uno",
+        "Indiqué en qué contexto conviene cada uno",
+        "Evité conclusiones absolutas",
+        "Usé conectores de comparación precisos"
+      ],
+      "respuestaModelo": "Centralized teams offer consistency, since decisions pass through a single point, whereas autonomous teams tend to move faster because they decide for themselves. The former suits situations in which errors are costly; the latter, those in which speed and local knowledge matter most. Neither is superior in the abstract. What matters is whether the organization is honest about which of the two problems it actually has.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-introduccion-informe",
+      "tema": "Introducción de un informe",
+      "nivelCEFR": "C2",
+      "consigna": "Escribe la introducción de un informe breve sobre un tema que conozcas. Debe presentar el problema, el alcance y lo que el lector encontrará, con una voz sobria y clara.",
+      "listaVerificacion": [
+        "Presenté el problema con claridad",
+        "Delimité el alcance (qué incluye y qué no)",
+        "Anticipé la estructura del informe",
+        "Evité adornos innecesarios",
+        "Mantuve un registro formal y preciso"
+      ],
+      "respuestaModelo": "This report examines how small engineering teams manage technical risk when launching new products. It focuses on practices that require little investment, and does not consider regulatory requirements, which vary by country. The first section describes the problem; the second reviews three common approaches; the third offers recommendations. Throughout, the aim is to be practical rather than exhaustive.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c2-reflexion-error",
+      "tema": "Reflexión personal sobre un error",
+      "nivelCEFR": "C2",
+      "consigna": "Escribe una breve reflexión personal sobre un error que cometiste y lo que realmente cambió en ti. Evita la moraleja fácil: busca una conclusión honesta.",
+      "listaVerificacion": [
+        "Describí el error sin justificarlo de más",
+        "Expliqué qué entendí después",
+        "Evité una moraleja fácil",
+        "Usé un tono honesto y sereno",
+        "Mi redacción fluye con naturalidad"
+      ],
+      "respuestaModelo": "Looking back, my mistake was not the missed deadline but the weeks of optimism that preceded it. I had sensed the project was slipping and chose not to say so, partly out of pride. What changed was less my planning than my willingness to say early, and somewhat awkwardly, that something is not working. It is not a dramatic lesson, but it has been the most useful one.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
+    },
+    {
+      "id": "esc-c1-pedir-recomendacion",
+      "tema": "Pedir una carta de recomendación",
+      "nivelCEFR": "C1",
+      "consigna": "Escribe un correo formal a un profesor o exjefe pidiéndole una carta de recomendación. Recuérdale cómo lo conoces, explica para qué la necesitas y facilita su respuesta.",
+      "listaVerificacion": [
+        "Recordé cómo conozco a la persona",
+        "Expliqué para qué necesito la carta y la fecha límite",
+        "Facilité la tarea (adjunté información útil)",
+        "Le di una salida cortés si no puede",
+        "Usé un registro formal y cordial"
+      ],
+      "respuestaModelo": "I hope you are well. I took your course on data structures two years ago, and I am now applying for a master's program in computer science. Would you be willing to write a letter of recommendation on my behalf? The deadline is the fifteenth of March, and I have attached my résumé and a short summary of the project we discussed. I fully understand if your schedule makes this difficult, and I am grateful for any consideration.",
+      "revisar": true,
+      "revisionIA": "2026-11-20"
     }
   ]
 }
