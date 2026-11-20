@@ -1755,6 +1755,1087 @@
           "respuestaCorrecta": 1
         }
       ]
+    },
+    {
+      "id": "lec-a1-mi-mascota",
+      "tema": "Mi mascota",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "texto": "I have a small dog. His name is Max. He is brown and white. Max is two years old. Every morning, I give him water and food. In the afternoon, we go to the park. Max likes to run and play with a ball. In the evening, he sleeps next to my bed. I love my dog.",
+      "vocabularioClave": [
+        {
+          "termino": "give",
+          "traduccion": "dar"
+        },
+        {
+          "termino": "park",
+          "traduccion": "parque"
+        },
+        {
+          "termino": "ball",
+          "traduccion": "pelota"
+        },
+        {
+          "termino": "sleeps",
+          "traduccion": "duerme"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a1-mi-mascota-p1",
+          "pregunta": "What is the dog's name?",
+          "opciones": [
+            "Ben",
+            "Max",
+            "Rex",
+            "Leo"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-a1-mi-mascota-p2",
+          "pregunta": "How old is the dog?",
+          "opciones": [
+            "Two years old",
+            "One year old",
+            "Five years old",
+            "Ten years old"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-a1-mi-mascota-p3",
+          "pregunta": "Where does the dog sleep?",
+          "opciones": [
+            "In the garden",
+            "In the kitchen",
+            "In the park",
+            "Next to the bed"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-a1-mi-trabajo",
+      "tema": "Mi trabajo",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "texto": "My name is Carlos. I work in an office in the city. I start work at nine o'clock. I use a computer all day. I write emails and talk with my team. At one o'clock, I eat lunch with my friends. I finish work at six. I take the bus home. I like my job because my team is nice.",
+      "vocabularioClave": [
+        {
+          "termino": "office",
+          "traduccion": "oficina"
+        },
+        {
+          "termino": "team",
+          "traduccion": "equipo"
+        },
+        {
+          "termino": "finish",
+          "traduccion": "terminar"
+        },
+        {
+          "termino": "because",
+          "traduccion": "porque"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a1-mi-trabajo-p1",
+          "pregunta": "Where does Carlos work?",
+          "opciones": [
+            "In a school",
+            "In a shop",
+            "In an office",
+            "In a hospital"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-a1-mi-trabajo-p2",
+          "pregunta": "What time does he start work?",
+          "opciones": [
+            "At seven o'clock",
+            "At nine o'clock",
+            "At one o'clock",
+            "At six o'clock"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-a1-mi-trabajo-p3",
+          "pregunta": "Why does he like his job?",
+          "opciones": [
+            "Because his team is nice",
+            "Because it is near his house",
+            "Because he works at night",
+            "Because he eats at home"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ]
+    },
+    {
+      "id": "lec-a1-mi-cumpleanos",
+      "tema": "Mi cumpleaños",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "texto": "Today is my birthday. I am twenty years old. My mother makes a big chocolate cake. My friends come to my house at four o'clock. They bring presents. We eat cake and listen to music. My best friend, Julia, gives me a book. I am very happy today.",
+      "vocabularioClave": [
+        {
+          "termino": "birthday",
+          "traduccion": "cumpleaños"
+        },
+        {
+          "termino": "cake",
+          "traduccion": "pastel"
+        },
+        {
+          "termino": "presents",
+          "traduccion": "regalos"
+        },
+        {
+          "termino": "happy",
+          "traduccion": "feliz"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a1-mi-cumpleanos-p1",
+          "pregunta": "How old is the writer today?",
+          "opciones": [
+            "Eighteen",
+            "Twenty-five",
+            "Thirty",
+            "Twenty"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "lec-a1-mi-cumpleanos-p2",
+          "pregunta": "What kind of cake does the mother make?",
+          "opciones": [
+            "A fruit cake",
+            "A vanilla cake",
+            "A chocolate cake",
+            "A cheese cake"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-a1-mi-cumpleanos-p3",
+          "pregunta": "What does Julia give to the writer?",
+          "opciones": [
+            "A phone",
+            "A book",
+            "Flowers",
+            "A cake"
+          ],
+          "respuestaCorrecta": 1
+        }
+      ]
+    },
+    {
+      "id": "lec-a1-parada-autobus",
+      "tema": "En la parada de autobús",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "texto": "Every day I wait for the bus at the bus stop near my house. The bus number is twelve. It comes at eight fifteen. Today the bus is late. I wait for ten minutes. A woman asks, \"Is this the bus to the center?\" I say yes. The bus arrives and we get on. I sit by the window.",
+      "vocabularioClave": [
+        {
+          "termino": "wait",
+          "traduccion": "esperar"
+        },
+        {
+          "termino": "late",
+          "traduccion": "tarde"
+        },
+        {
+          "termino": "get on",
+          "traduccion": "subirse"
+        },
+        {
+          "termino": "window",
+          "traduccion": "ventana"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a1-parada-autobus-p1",
+          "pregunta": "What is the bus number?",
+          "opciones": [
+            "Twelve",
+            "Fifteen",
+            "Eight",
+            "Ten"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-a1-parada-autobus-p2",
+          "pregunta": "How long does the writer wait today?",
+          "opciones": [
+            "Five minutes",
+            "Twenty minutes",
+            "One hour",
+            "Ten minutes"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "lec-a1-parada-autobus-p3",
+          "pregunta": "What does the woman ask?",
+          "opciones": [
+            "What time it is",
+            "Where the school is",
+            "If the bus goes to the center",
+            "If the bus is free"
+          ],
+          "respuestaCorrecta": 2
+        }
+      ]
+    },
+    {
+      "id": "lec-a2-primera-semana-trabajo",
+      "tema": "Mi primera semana en un trabajo nuevo",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "Last Monday, I started my first job as a junior developer. I was nervous, but my new team was very friendly. My manager, Elena, showed me the office and gave me a laptop. On Tuesday, I learned how to use the company's tools. On Wednesday, I asked many questions and wrote notes in a notebook. By Friday, I fixed my first small bug in the code. Everyone said \"good job,\" and I felt proud. Next week, I will start a bigger task with another developer. I think I will learn a lot in this company.",
+      "vocabularioClave": [
+        {
+          "termino": "junior developer",
+          "traduccion": "desarrollador junior"
+        },
+        {
+          "termino": "nervous",
+          "traduccion": "nervioso"
+        },
+        {
+          "termino": "bug",
+          "traduccion": "error (en el código)"
+        },
+        {
+          "termino": "proud",
+          "traduccion": "orgulloso"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a2-primera-semana-trabajo-p1",
+          "pregunta": "How did the writer feel on the first day?",
+          "opciones": [
+            "Bored",
+            "Nervous",
+            "Angry",
+            "Sleepy"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-a2-primera-semana-trabajo-p2",
+          "pregunta": "What did the writer do on Wednesday?",
+          "opciones": [
+            "Asked many questions and wrote notes",
+            "Fixed a small bug",
+            "Learned how to use the tools",
+            "Met the manager"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-a2-primera-semana-trabajo-p3",
+          "pregunta": "What happened on Friday?",
+          "opciones": [
+            "The writer lost the laptop",
+            "The writer changed teams",
+            "The writer left the company",
+            "The writer fixed a first small bug"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "lec-a2-primera-semana-trabajo-p4",
+          "pregunta": "What will happen next week?",
+          "opciones": [
+            "The writer will go on vacation",
+            "The writer will get a new manager",
+            "The writer will start a bigger task",
+            "The writer will take an English test"
+          ],
+          "respuestaCorrecta": 2
+        }
+      ]
+    },
+    {
+      "id": "lec-a2-comprar-ropa",
+      "tema": "Comprar ropa en una tienda",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "Maria needs a jacket for the winter. On Saturday, she goes to a clothing store in the mall. She finds a blue jacket, but it is too big. She asks a worker for a smaller size. The worker brings a size small, and it fits well. The jacket costs sixty dollars, but today there is a discount of twenty percent. Maria is happy because she saves money. She pays with her card and takes the bag. Then she walks to a café to drink a hot chocolate.",
+      "vocabularioClave": [
+        {
+          "termino": "jacket",
+          "traduccion": "chamarra"
+        },
+        {
+          "termino": "size",
+          "traduccion": "talla"
+        },
+        {
+          "termino": "discount",
+          "traduccion": "descuento"
+        },
+        {
+          "termino": "fits",
+          "traduccion": "queda bien"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a2-comprar-ropa-p1",
+          "pregunta": "Why does Maria go to the store?",
+          "opciones": [
+            "She wants new shoes",
+            "She needs a jacket for the winter",
+            "She works there",
+            "She wants to visit the café"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-a2-comprar-ropa-p2",
+          "pregunta": "What is the problem with the first jacket?",
+          "opciones": [
+            "It is too big",
+            "It is too expensive",
+            "It is the wrong color",
+            "It is dirty"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-a2-comprar-ropa-p3",
+          "pregunta": "Why is Maria happy?",
+          "opciones": [
+            "The jacket is free",
+            "She meets a friend",
+            "The store is close to home",
+            "She gets a discount"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "lec-a2-comprar-ropa-p4",
+          "pregunta": "What does Maria do after shopping?",
+          "opciones": [
+            "She goes home by bus",
+            "She returns the jacket",
+            "She goes to a café",
+            "She calls a friend"
+          ],
+          "respuestaCorrecta": 2
+        }
+      ]
+    },
+    {
+      "id": "lec-a2-fin-de-semana-playa",
+      "tema": "Un fin de semana en la playa",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "Last weekend, my family and I went to the beach. We left home early at six o'clock because the road is long. The weather was perfect: sunny, with a light wind. My little brother built a sand castle while my parents read books. I swam in the sea for an hour, and the water was cold but nice. For lunch, we ate sandwiches and fruit under an umbrella. In the evening, we watched the sunset before driving home. We were tired, but we had a great time.",
+      "vocabularioClave": [
+        {
+          "termino": "beach",
+          "traduccion": "playa"
+        },
+        {
+          "termino": "sand castle",
+          "traduccion": "castillo de arena"
+        },
+        {
+          "termino": "swam",
+          "traduccion": "nadé"
+        },
+        {
+          "termino": "sunset",
+          "traduccion": "atardecer"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a2-fin-de-semana-playa-p1",
+          "pregunta": "Why did the family leave early?",
+          "opciones": [
+            "The beach was closing",
+            "The road is long",
+            "It was going to rain",
+            "The father had work"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-a2-fin-de-semana-playa-p2",
+          "pregunta": "What did the little brother do?",
+          "opciones": [
+            "He built a sand castle",
+            "He swam in the sea",
+            "He read a book",
+            "He drove the car"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-a2-fin-de-semana-playa-p3",
+          "pregunta": "How was the water?",
+          "opciones": [
+            "Warm and calm",
+            "Dirty and dark",
+            "Too salty to swim",
+            "Cold but nice"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "lec-a2-fin-de-semana-playa-p4",
+          "pregunta": "What did they do before driving home?",
+          "opciones": [
+            "They ate in a restaurant",
+            "They went shopping",
+            "They watched the sunset",
+            "They visited a museum"
+          ],
+          "respuestaCorrecta": 2
+        }
+      ]
+    },
+    {
+      "id": "lec-a2-primer-proyecto-python",
+      "tema": "Aprender Python: mi primer proyecto",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "texto": "I started learning Python two months ago. At first, the code looked strange, but now I understand the basics. My first project is a small program that counts the words in a text file. I wrote it in one afternoon. When I ran it the first time, it showed an error because I forgot a colon. I read the message carefully and fixed the line. Then the program worked! Now I want to make it better. I plan to add a feature that shows the five most common words. Programming is difficult, but it is fun when the code finally runs.",
+      "vocabularioClave": [
+        {
+          "termino": "basics",
+          "traduccion": "conceptos básicos"
+        },
+        {
+          "termino": "text file",
+          "traduccion": "archivo de texto"
+        },
+        {
+          "termino": "error",
+          "traduccion": "error"
+        },
+        {
+          "termino": "feature",
+          "traduccion": "función"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-a2-primer-proyecto-python-p1",
+          "pregunta": "What does the program do?",
+          "opciones": [
+            "It translates a text",
+            "It counts the words in a text file",
+            "It sends emails",
+            "It plays music"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-a2-primer-proyecto-python-p2",
+          "pregunta": "Why did the first run show an error?",
+          "opciones": [
+            "A colon was missing",
+            "The file was too big",
+            "The computer was slow",
+            "The text was in Spanish"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-a2-primer-proyecto-python-p3",
+          "pregunta": "What does the writer want to add?",
+          "opciones": [
+            "A small game",
+            "A website",
+            "A translation tool",
+            "A feature that shows the five most common words"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-b1-correo-extension",
+      "tema": "Correo para pedir una extensión",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "texto": "Daniel is a university student who has a big project due on Friday. On Wednesday, he realizes that he cannot finish it on time because his team lost an important file and his laptop broke the day before. Instead of staying silent, he decides to write an email to his professor. In the message, he explains the situation clearly and politely, without making excuses. He also says what he has already completed and proposes a new deadline: Monday morning. He attaches a short report with the work he has done so far. The professor answers within two hours. She thanks him for being honest and accepts the new date, but she reminds him to plan his time better in the future. Daniel learns that asking for help early is much better than waiting until the last minute, and that a short, respectful email can solve a stressful problem. It was a small lesson, but an important one.",
+      "vocabularioClave": [
+        {
+          "termino": "due",
+          "traduccion": "con fecha de entrega"
+        },
+        {
+          "termino": "excuses",
+          "traduccion": "excusas"
+        },
+        {
+          "termino": "deadline",
+          "traduccion": "fecha límite"
+        },
+        {
+          "termino": "attaches",
+          "traduccion": "adjunta"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-b1-correo-extension-p1",
+          "pregunta": "Why can't Daniel finish the project on time?",
+          "opciones": [
+            "He forgot the date",
+            "He was sick all week",
+            "His team lost a file and his laptop broke",
+            "The professor changed the project"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-b1-correo-extension-p2",
+          "pregunta": "What new deadline does he propose?",
+          "opciones": [
+            "Friday afternoon",
+            "Monday morning",
+            "Wednesday night",
+            "The next month"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-b1-correo-extension-p3",
+          "pregunta": "How does the professor react?",
+          "opciones": [
+            "She accepts the date but asks him to plan better",
+            "She refuses and lowers his grade",
+            "She ignores the email",
+            "She gives him a different project"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-b1-correo-extension-p4",
+          "pregunta": "What does Daniel learn?",
+          "opciones": [
+            "Emails are not useful for problems",
+            "Professors never accept changes",
+            "Teamwork is always difficult",
+            "Asking for help early is better than waiting"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-b1-transporte-publico",
+      "tema": "Una experiencia con el transporte público",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "texto": "Last month, I decided to leave my car at home and use public transport for two weeks. I wanted to know if it was really cheaper and less stressful. The first days were difficult because I had to wake up earlier and check the schedules. However, I soon discovered that I could read or listen to podcasts during the trip instead of watching the traffic. I also saved money: I spent almost half of what I usually pay for fuel and parking. On the other hand, there were disadvantages. When it rained, the buses were crowded, and one evening I waited forty minutes for the last train. After two weeks, I concluded that public transport works well for my daily trips to work, but I will still use my car on weekends, when I need to visit places that are far from the stations. In the end, the experiment changed how I think about my daily trips.",
+      "vocabularioClave": [
+        {
+          "termino": "schedules",
+          "traduccion": "horarios"
+        },
+        {
+          "termino": "crowded",
+          "traduccion": "lleno de gente"
+        },
+        {
+          "termino": "fuel",
+          "traduccion": "combustible"
+        },
+        {
+          "termino": "disadvantages",
+          "traduccion": "desventajas"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-b1-transporte-publico-p1",
+          "pregunta": "Why did the writer try public transport?",
+          "opciones": [
+            "The car was broken",
+            "The employer asked for it",
+            "To find out if it was cheaper and less stressful",
+            "To lose weight"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-b1-transporte-publico-p2",
+          "pregunta": "What was one advantage?",
+          "opciones": [
+            "The trips were much faster",
+            "The writer could read or listen to podcasts",
+            "The buses were never crowded",
+            "The tickets were free"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-b1-transporte-publico-p3",
+          "pregunta": "What was one disadvantage?",
+          "opciones": [
+            "One evening the writer waited forty minutes for a train",
+            "The trains were too fast",
+            "Parking was too expensive",
+            "The stations were very far from work"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-b1-transporte-publico-p4",
+          "pregunta": "What will the writer do from now on?",
+          "opciones": [
+            "Sell the car",
+            "Use only the car",
+            "Use public transport on weekends only",
+            "Use public transport for work and the car on weekends"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-b1-presentacion-tecnica",
+      "tema": "Cómo preparar una presentación técnica",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "texto": "Giving a technical presentation can be stressful, but good preparation makes it much easier. First, you should think about your audience. If they are not experts, avoid too many technical terms and explain the main ideas with simple examples. Second, organize your talk in three parts: a short introduction with the problem, the main content, and a clear conclusion. Many people try to put too much text on each slide, but it is better to use one idea per slide and a few images or diagrams. Third, practice out loud at least three times, ideally in front of a friend who can give you feedback. This helps you control the time and notice unclear explanations. Finally, prepare for questions. Think about what people might ask and write short answers. If you do not know something, it is fine to say, \"I am not sure, but I can find out and write to you.\"",
+      "vocabularioClave": [
+        {
+          "termino": "audience",
+          "traduccion": "audiencia"
+        },
+        {
+          "termino": "slide",
+          "traduccion": "diapositiva"
+        },
+        {
+          "termino": "feedback",
+          "traduccion": "retroalimentación"
+        },
+        {
+          "termino": "conclusion",
+          "traduccion": "conclusión"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-b1-presentacion-tecnica-p1",
+          "pregunta": "What should you do if the audience is not made of experts?",
+          "opciones": [
+            "Use as many technical terms as possible",
+            "Make the talk much longer",
+            "Explain the ideas with simple examples",
+            "Skip the introduction"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-b1-presentacion-tecnica-p2",
+          "pregunta": "How does the text suggest organizing the talk?",
+          "opciones": [
+            "Conclusion, questions, and slides",
+            "Introduction, main content, and conclusion",
+            "Only the main content",
+            "Questions first, then the problem"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-b1-presentacion-tecnica-p3",
+          "pregunta": "What does the text recommend for each slide?",
+          "opciones": [
+            "One idea and a few images or diagrams",
+            "As much text as possible",
+            "No images at all",
+            "Three different topics"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-b1-presentacion-tecnica-p4",
+          "pregunta": "What can you say if you do not know an answer?",
+          "opciones": [
+            "That the question is not important",
+            "That the audience should search online",
+            "Nothing, to avoid mistakes",
+            "That you are not sure but can find out later"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-b1-habitos-sueno",
+      "tema": "Hábitos de sueño de una estudiante",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "texto": "For years, Lucía believed that staying up late was the only way to study well. She usually worked until two in the morning and then slept only five hours. During exams, she drank a lot of coffee to stay awake. However, her grades did not improve, and she often felt tired and irritated. A friend who studies psychology told her that sleep helps the brain store what we learn. Lucía decided to run a small experiment for a month. She went to bed at eleven, woke up at seven, and studied in the afternoon instead of at night. At first, it was hard to change her routine, but after two weeks she noticed that she remembered more and concentrated better. She also stopped needing so much coffee. Now she keeps a regular schedule, even though she sometimes breaks it on weekends. She even recommends this experiment to all of her classmates.",
+      "vocabularioClave": [
+        {
+          "termino": "stayed up late",
+          "traduccion": "se desveló"
+        },
+        {
+          "termino": "irritated",
+          "traduccion": "irritada"
+        },
+        {
+          "termino": "experiment",
+          "traduccion": "experimento"
+        },
+        {
+          "termino": "concentrated",
+          "traduccion": "se concentraba"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-b1-habitos-sueno-p1",
+          "pregunta": "What did Lucía believe for years?",
+          "opciones": [
+            "Coffee was bad for her",
+            "She needed ten hours of sleep",
+            "Studying late at night was the only good way",
+            "Exams were not important"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-b1-habitos-sueno-p2",
+          "pregunta": "What did her friend explain?",
+          "opciones": [
+            "Coffee improves memory",
+            "Sleep helps the brain store what we learn",
+            "Studying at night is always better",
+            "Exams should be avoided"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-b1-habitos-sueno-p3",
+          "pregunta": "What changed after two weeks?",
+          "opciones": [
+            "She remembered more and concentrated better",
+            "She slept less",
+            "She stopped studying",
+            "She got worse grades"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-b1-habitos-sueno-p4",
+          "pregunta": "How is her schedule now?",
+          "opciones": [
+            "She studies only at night",
+            "She never goes to bed before two",
+            "She has no schedule",
+            "Regular, although she sometimes breaks it on weekends"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-b2-privacidad-apps",
+      "tema": "Privacidad de datos y aplicaciones móviles",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "Most of us install new apps without reading the terms and conditions. We tap \"accept\" because we want to use the service immediately, and we assume that the company will respect our privacy. Yet many applications collect far more information than they need: our location, our contacts, our browsing habits, and even the time at which we usually wake up. Companies argue that this data allows them to personalize the experience and offer services for free. According to this view, users are not paying with money but with information, and the exchange is fair as long as it is transparent.\n\nCritics, however, point out that transparency is largely theoretical. Privacy policies are long, written in complicated legal language, and rarely understood by ordinary people. Moreover, once data has been collected, users have little control over how it is shared, sold, or protected from leaks. A single security failure can expose the personal details of millions of people.\n\nSome governments have responded with regulations that require clear consent and give citizens the right to delete their data. These laws have forced many companies to be more careful, but enforcement is uneven. In the end, protecting privacy probably requires a combination of stricter rules, better design that makes choices simple, and more informed users who ask a basic question before installing any app: do I really need to share this?\n\nUltimately, the debate is not only technical but also cultural, because it depends on how much value each society gives to personal autonomy compared with convenience and innovation, and on who is willing to defend that value in practice.",
+      "vocabularioClave": [
+        {
+          "termino": "terms and conditions",
+          "traduccion": "términos y condiciones"
+        },
+        {
+          "termino": "consent",
+          "traduccion": "consentimiento"
+        },
+        {
+          "termino": "enforcement",
+          "traduccion": "aplicación (de una ley)"
+        },
+        {
+          "termino": "leaks",
+          "traduccion": "filtraciones"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-b2-privacidad-apps-p1",
+          "pregunta": "Why do most people accept the terms without reading them?",
+          "opciones": [
+            "They trust the law completely",
+            "The terms are always very short",
+            "They want to use the service immediately",
+            "They are afraid of the company"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-b2-privacidad-apps-p2",
+          "pregunta": "What do companies argue about data collection?",
+          "opciones": [
+            "It is required by every government",
+            "It allows personalization and free services",
+            "It makes apps faster to install",
+            "It is never shared with anyone"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-b2-privacidad-apps-p3",
+          "pregunta": "What is the main criticism of the 'fair exchange' idea?",
+          "opciones": [
+            "Transparency is mostly theoretical",
+            "Users prefer to pay with money",
+            "Companies collect too little data",
+            "Privacy policies are too simple"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-b2-privacidad-apps-p4",
+          "pregunta": "What does the author conclude?",
+          "opciones": [
+            "Apps should be banned",
+            "Only governments can solve the problem",
+            "Users should never install apps",
+            "Privacy needs stricter rules, simpler design, and informed users"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-b2-automatizacion-empleo",
+      "tema": "Automatización y empleo",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "Every technological revolution has raised the same fear: that machines will take away people's jobs. In the nineteenth century, textile workers destroyed looms because they believed factories would leave them without income. Today, the debate has returned with artificial intelligence, which can write texts, analyze images, and even generate code. Some economists warn that, this time, the change may be faster and may affect not only manual work but also professions that require education, such as accounting or translation.\n\nOthers are more optimistic. They remind us that previous waves of automation destroyed some occupations but also created new ones that nobody had imagined, from software testers to social media managers. In their opinion, the real challenge is not the total number of jobs but the transition: workers who lose a position need time, training, and support to move to a different one, and that process is rarely smooth.\n\nA third group argues that the question should be reformulated. Instead of asking which jobs will disappear, we should ask which tasks can be automated and how people can use these tools to be more productive. A designer who uses AI to produce first drafts, for example, may spend more time on creative decisions. What seems clear is that continuous learning will become a basic professional skill. Governments, companies, and schools will need to cooperate so that the benefits of automation are shared more widely and the costs do not fall only on those who are least prepared. In that sense, the future of work will depend less on the machines themselves than on the decisions that societies make about how to use them.",
+      "vocabularioClave": [
+        {
+          "termino": "looms",
+          "traduccion": "telares"
+        },
+        {
+          "termino": "income",
+          "traduccion": "ingresos"
+        },
+        {
+          "termino": "transition",
+          "traduccion": "transición"
+        },
+        {
+          "termino": "drafts",
+          "traduccion": "borradores"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-b2-automatizacion-empleo-p1",
+          "pregunta": "Why might the current change be different from earlier ones?",
+          "opciones": [
+            "It only affects manual work",
+            "It is slower than before",
+            "It may be faster and affect educated professions",
+            "Nobody is worried about it"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-b2-automatizacion-empleo-p2",
+          "pregunta": "What do the optimists remind us?",
+          "opciones": [
+            "Automation never destroyed any job",
+            "Past automation also created new occupations",
+            "New jobs always pay more",
+            "Workers can change jobs instantly"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-b2-automatizacion-empleo-p3",
+          "pregunta": "According to the optimists, what is the real challenge?",
+          "opciones": [
+            "Helping workers through the transition",
+            "Reducing the number of machines",
+            "Stopping all technological progress",
+            "Creating more factories"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-b2-automatizacion-empleo-p4",
+          "pregunta": "What does the third group suggest?",
+          "opciones": [
+            "Ignoring artificial intelligence",
+            "Eliminating creative jobs",
+            "Banning code generation",
+            "Thinking about which tasks can be automated"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-b2-sesgos-datos",
+      "tema": "Los sesgos en los datos de entrenamiento",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "Machine learning models learn patterns from examples, which means that their behavior depends heavily on the data used to train them. When that data reflects an unfair situation, the model can reproduce it, or even amplify it. A frequently discussed example involves hiring tools trained on the résumés of past employees. If most people hired in the past were men, the system may learn to prefer male candidates, even if nobody programmed it to do so.\n\nBias can enter at several points. The first is data collection: some groups may be under-represented because they have less access to technology or because their information was never recorded. The second is labeling, since people who annotate examples bring their own assumptions. The third is the way success is measured. A model optimized only for overall accuracy can perform very well on the majority and poorly on a small group without anyone noticing.\n\nResearchers have proposed several practical measures. Teams can audit their datasets before training, evaluate the results separately for different groups, and document the limitations of the model so that users know where it should not be trusted. Diversity within development teams also helps, because people with different experiences notice problems that others overlook. None of these steps eliminates bias completely, but together they make it visible, and what is visible can be discussed and corrected.\n\nIn the end, building fairer systems is not a purely mathematical problem: it also requires asking who benefits from a model, who may be harmed by it, and who has the power to decide when it is good enough to be used in the real world.",
+      "vocabularioClave": [
+        {
+          "termino": "training data",
+          "traduccion": "datos de entrenamiento"
+        },
+        {
+          "termino": "bias",
+          "traduccion": "sesgo"
+        },
+        {
+          "termino": "under-represented",
+          "traduccion": "subrepresentados"
+        },
+        {
+          "termino": "audit",
+          "traduccion": "auditar"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-b2-sesgos-datos-p1",
+          "pregunta": "Why can a hiring model prefer male candidates?",
+          "opciones": [
+            "Its programmers wrote that rule",
+            "Women never apply for jobs",
+            "It learned from past hiring decisions made mostly about men",
+            "It cannot read résumés"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-b2-sesgos-datos-p2",
+          "pregunta": "What problem can appear in data collection?",
+          "opciones": [
+            "There is always too much data",
+            "Some groups may be under-represented",
+            "Data is always perfectly neutral",
+            "Labels are never needed"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-b2-sesgos-datos-p3",
+          "pregunta": "Why can overall accuracy be misleading?",
+          "opciones": [
+            "It can hide poor results for a small group",
+            "It is always very low",
+            "It ignores the majority",
+            "It cannot be measured"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-b2-sesgos-datos-p4",
+          "pregunta": "What does the text say about the proposed measures?",
+          "opciones": [
+            "They completely eliminate bias",
+            "They are too expensive to try",
+            "They only work for small models",
+            "They do not remove bias but make it visible"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
+    },
+    {
+      "id": "lec-b2-viajar-solo",
+      "tema": "Viajar solo: ventajas y riesgos",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "texto": "Traveling alone is becoming increasingly popular, and the reasons are easy to understand. When you travel by yourself, you decide everything: where to go, how long to stay, and what to eat. There is no need to negotiate with anyone or to adapt to a different rhythm. Many solo travelers also say that the experience makes them more confident, because they must solve problems without help, from reading a map to asking for directions in a foreign language.\n\nAnother advantage is social. Paradoxically, people who travel alone often meet more people than those who travel in groups. Without a companion to talk to, they start conversations in hostels, restaurants, and public transport, and they sometimes end up making lasting friendships.\n\nHowever, solo travel also has real disadvantages. Costs can be higher, since you cannot share a room or a taxi. Loneliness may appear, especially in the evenings or when something exciting happens and there is nobody to tell. Safety is the most serious concern. Experts recommend leaving a copy of your itinerary with someone you trust, avoiding poorly lit areas at night, and keeping your valuables in different places.\n\nFor these reasons, the best approach may not be to travel alone because it is fashionable, but to ask yourself what you expect from the trip. Those who enjoy independence and are prepared to deal with uncertainty will probably find it rewarding; those who prefer shared moments may be happier with a friend. Whatever the choice, a little planning always makes the journey safer and more enjoyable.",
+      "vocabularioClave": [
+        {
+          "termino": "itinerary",
+          "traduccion": "itinerario"
+        },
+        {
+          "termino": "hostels",
+          "traduccion": "hostales"
+        },
+        {
+          "termino": "loneliness",
+          "traduccion": "soledad"
+        },
+        {
+          "termino": "valuables",
+          "traduccion": "objetos de valor"
+        }
+      ],
+      "preguntas": [
+        {
+          "id": "lec-b2-viajar-solo-p1",
+          "pregunta": "What is a main advantage of traveling alone?",
+          "opciones": [
+            "It is always cheaper",
+            "You never feel lonely",
+            "You decide everything about the trip",
+            "It is always safer"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "lec-b2-viajar-solo-p2",
+          "pregunta": "Why do solo travelers often meet more people?",
+          "opciones": [
+            "They stay in larger groups",
+            "Without a companion, they start conversations with others",
+            "They avoid public places",
+            "They only travel in summer"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "lec-b2-viajar-solo-p3",
+          "pregunta": "Which is described as the most serious concern?",
+          "opciones": [
+            "Safety",
+            "Boredom",
+            "Language",
+            "Luggage weight"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "lec-b2-viajar-solo-p4",
+          "pregunta": "What does the author suggest at the end?",
+          "opciones": [
+            "Always travel alone",
+            "Never travel alone",
+            "Choose only fashionable places",
+            "Think about what you expect from the trip"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ]
     }
   ]
 }

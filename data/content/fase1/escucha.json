@@ -1057,6 +1057,694 @@
         }
       ],
       "transcripcion": "Hello! It is a sunny day today. It is warm, about twenty-five degrees. There is no rain. It is a good day for the park. Tomorrow it is cloudy and a little cold."
+    },
+    {
+      "id": "esc-fase1-a1-mascota",
+      "tema": "Hablar de mascotas",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "guion": "Hi, Anna! Do you have a pet? Yes, I have a cat. Her name is Luna. She is black and very small. She likes milk and sleeping on my bed. And you? I have a dog. His name is Rex. He is big and funny.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a1-mascota-p1",
+          "pregunta": "What kind of pet does the first speaker have?",
+          "opciones": [
+            "A dog",
+            "A bird",
+            "A cat",
+            "A fish"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "esc-fase1-a1-mascota-p2",
+          "pregunta": "What is the cat's name?",
+          "opciones": [
+            "Rex",
+            "Luna",
+            "Anna",
+            "Milk"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-a1-mascota-p3",
+          "pregunta": "What is Rex like?",
+          "opciones": [
+            "Big and funny",
+            "Small and black",
+            "Quiet and old",
+            "Small and funny"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ],
+      "transcripcion": "Hi, Anna! Do you have a pet? Yes, I have a cat. Her name is Luna. She is black and very small. She likes milk and sleeping on my bed. And you? I have a dog. His name is Rex. He is big and funny."
+    },
+    {
+      "id": "esc-fase1-a1-taxi",
+      "tema": "Pedir un taxi",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "guion": "Hello, I need a taxi, please. I am at the train station. I want to go to the Hotel Sol. How much is it? It is ten dollars. Okay, thank you. The taxi comes in five minutes.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a1-taxi-p1",
+          "pregunta": "Where is the person now?",
+          "opciones": [
+            "At a hotel",
+            "At the airport",
+            "At home",
+            "At the train station"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "esc-fase1-a1-taxi-p2",
+          "pregunta": "How much is the trip?",
+          "opciones": [
+            "Five dollars",
+            "Fifteen dollars",
+            "Ten dollars",
+            "Twenty dollars"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "esc-fase1-a1-taxi-p3",
+          "pregunta": "When does the taxi come?",
+          "opciones": [
+            "In ten minutes",
+            "In five minutes",
+            "Tomorrow",
+            "In one hour"
+          ],
+          "respuestaCorrecta": 1
+        }
+      ],
+      "transcripcion": "Hello, I need a taxi, please. I am at the train station. I want to go to the Hotel Sol. How much is it? It is ten dollars. Okay, thank you. The taxi comes in five minutes."
+    },
+    {
+      "id": "esc-fase1-a1-boleto-autobus",
+      "tema": "Comprar un boleto de autobús",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "guion": "Good morning. One ticket to Boston, please. Sure. For today? No, for tomorrow, at nine in the morning. That is twenty dollars. Here you are. Thank you. Your bus is number seven.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a1-boleto-autobus-p1",
+          "pregunta": "Where does the person want to go?",
+          "opciones": [
+            "To Boston",
+            "To Chicago",
+            "To Miami",
+            "To Denver"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "esc-fase1-a1-boleto-autobus-p2",
+          "pregunta": "When does the person want to travel?",
+          "opciones": [
+            "Today at nine at night",
+            "Tomorrow at seven",
+            "Today at noon",
+            "Tomorrow at nine in the morning"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "esc-fase1-a1-boleto-autobus-p3",
+          "pregunta": "What is the bus number?",
+          "opciones": [
+            "Nine",
+            "Twenty",
+            "Seven",
+            "Seventeen"
+          ],
+          "respuestaCorrecta": 2
+        }
+      ],
+      "transcripcion": "Good morning. One ticket to Boston, please. Sure. For today? No, for tomorrow, at nine in the morning. That is twenty dollars. Here you are. Thank you. Your bus is number seven."
+    },
+    {
+      "id": "esc-fase1-a1-cumpleanos-mensaje",
+      "tema": "Un mensaje de cumpleaños",
+      "nivelCEFR": "A1",
+      "revisar": true,
+      "guion": "Hi, Tom! This is Sara. Happy birthday! I have a present for you. Can you come to my house on Saturday? We have a small party at six o'clock. There is pizza and cake. Please bring your guitar. See you!",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a1-cumpleanos-mensaje-p1",
+          "pregunta": "Why does Sara call?",
+          "opciones": [
+            "To ask for a guitar lesson",
+            "To say happy birthday and invite Tom",
+            "To cancel a party",
+            "To buy a present"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-a1-cumpleanos-mensaje-p2",
+          "pregunta": "What time is the party?",
+          "opciones": [
+            "At six o'clock",
+            "At two o'clock",
+            "At nine o'clock",
+            "At eight o'clock"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "esc-fase1-a1-cumpleanos-mensaje-p3",
+          "pregunta": "What should Tom bring?",
+          "opciones": [
+            "A cake",
+            "A present",
+            "Some pizza",
+            "His guitar"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ],
+      "transcripcion": "Hi, Tom! This is Sara. Happy birthday! I have a present for you. Can you come to my house on Saturday? We have a small party at six o'clock. There is pizza and cake. Please bring your guitar. See you!"
+    },
+    {
+      "id": "esc-fase1-a2-devolver-camisa",
+      "tema": "Devolver una camisa en una tienda",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "guion": "Hello, I would like to return this shirt, please. Is there a problem? Yes, it is too small. Do you have the receipt? Yes, here it is. I bought it last week. No problem. You can choose another size or get a gift card. I think I will take a bigger size. Let me check if we have it. Please wait a moment.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a2-devolver-camisa-p1",
+          "pregunta": "Why does the customer return the shirt?",
+          "opciones": [
+            "It is dirty",
+            "It is too expensive",
+            "It is too small",
+            "It is the wrong color"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "esc-fase1-a2-devolver-camisa-p2",
+          "pregunta": "What does the customer show?",
+          "opciones": [
+            "A credit card",
+            "The receipt",
+            "An identity card",
+            "A coupon"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-a2-devolver-camisa-p3",
+          "pregunta": "What does the customer decide?",
+          "opciones": [
+            "To take a bigger size",
+            "To get a gift card",
+            "To keep the shirt",
+            "To come back tomorrow"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ],
+      "transcripcion": "Hello, I would like to return this shirt, please. Is there a problem? Yes, it is too small. Do you have the receipt? Yes, here it is. I bought it last week. No problem. You can choose another size or get a gift card. I think I will take a bigger size. Let me check if we have it. Please wait a moment."
+    },
+    {
+      "id": "esc-fase1-a2-invitacion-cena",
+      "tema": "Mensaje de voz: invitación a cenar",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "guion": "Hi, it's Mark. I'm calling because we are having dinner at my place on Friday evening, and I'd love for you to come. It starts at seven thirty. I'm cooking pasta, and my sister is making dessert. If you have any food allergies, please tell me. You don't need to bring anything, but a drink is always welcome. Call me back when you can. Bye!",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a2-invitacion-cena-p1",
+          "pregunta": "What is Mark cooking?",
+          "opciones": [
+            "Pizza",
+            "Fish",
+            "Soup",
+            "Pasta"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "esc-fase1-a2-invitacion-cena-p2",
+          "pregunta": "Who is making dessert?",
+          "opciones": [
+            "Mark",
+            "A friend",
+            "Mark's sister",
+            "A restaurant"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "esc-fase1-a2-invitacion-cena-p3",
+          "pregunta": "What does Mark ask the listener to tell him?",
+          "opciones": [
+            "What time they arrive",
+            "If they have food allergies",
+            "What drink they like",
+            "Where they live"
+          ],
+          "respuestaCorrecta": 1
+        }
+      ],
+      "transcripcion": "Hi, it's Mark. I'm calling because we are having dinner at my place on Friday evening, and I'd love for you to come. It starts at seven thirty. I'm cooking pasta, and my sister is making dessert. If you have any food allergies, please tell me. You don't need to bring anything, but a drink is always welcome. Call me back when you can. Bye!"
+    },
+    {
+      "id": "esc-fase1-a2-horario-biblioteca",
+      "tema": "Preguntar por el horario de una biblioteca",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "guion": "Good afternoon. Can you tell me the opening hours of the library? Of course. We are open from nine in the morning to eight in the evening, Monday to Friday. And on weekends? On Saturday we close at two, and on Sunday we are closed. Do I need a card to borrow books? Yes, but it is free for students.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a2-horario-biblioteca-p1",
+          "pregunta": "What time does the library close on weekdays?",
+          "opciones": [
+            "At eight in the evening",
+            "At two in the afternoon",
+            "At nine in the morning",
+            "At six in the evening"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "esc-fase1-a2-horario-biblioteca-p2",
+          "pregunta": "What happens on Sunday?",
+          "opciones": [
+            "It opens until two",
+            "It opens all day",
+            "It opens only for students",
+            "The library is closed"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "esc-fase1-a2-horario-biblioteca-p3",
+          "pregunta": "Who gets a free card?",
+          "opciones": [
+            "Teachers",
+            "Everyone",
+            "Students",
+            "Children only"
+          ],
+          "respuestaCorrecta": 2
+        }
+      ],
+      "transcripcion": "Good afternoon. Can you tell me the opening hours of the library? Of course. We are open from nine in the morning to eight in the evening, Monday to Friday. And on weekends? On Saturday we close at two, and on Sunday we are closed. Do I need a card to borrow books? Yes, but it is free for students."
+    },
+    {
+      "id": "esc-fase1-a2-alquilar-bici",
+      "tema": "Alquilar una bicicleta",
+      "nivelCEFR": "A2",
+      "revisar": true,
+      "guion": "Hi, I want to rent a bike for the day. Sure. We have city bikes and mountain bikes. The city bike is fifteen dollars, and the mountain bike is twenty-five. I'll take the city bike. Do you need a helmet? Yes, please. It is included in the price. Please bring the bike back before six o'clock.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-a2-alquilar-bici-p1",
+          "pregunta": "How much is the city bike?",
+          "opciones": [
+            "Twenty-five dollars",
+            "Fifteen dollars",
+            "Fifty dollars",
+            "Five dollars"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-a2-alquilar-bici-p2",
+          "pregunta": "What is included in the price?",
+          "opciones": [
+            "A helmet",
+            "A lock",
+            "A map",
+            "A water bottle"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "esc-fase1-a2-alquilar-bici-p3",
+          "pregunta": "When must the bike be returned?",
+          "opciones": [
+            "After six o'clock",
+            "At noon",
+            "Tomorrow morning",
+            "Before six o'clock"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ],
+      "transcripcion": "Hi, I want to rent a bike for the day. Sure. We have city bikes and mountain bikes. The city bike is fifteen dollars, and the mountain bike is twenty-five. I'll take the city bike. Do you need a helmet? Yes, please. It is included in the price. Please bring the bike back before six o'clock."
+    },
+    {
+      "id": "esc-fase1-b1-reunion-avances",
+      "tema": "Reunión de equipo: avances del proyecto",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "guion": "Okay, let's go through the progress on the project. Priya, how is the login page? It is almost finished. I only need to test it on mobile devices, so I should be done by Wednesday. Great. And Jonas, what about the database? Well, we found a problem with the migration script, so we are about one day behind. I'll work on it tomorrow morning, and I'll let you know if I need help. Thanks, both. If nothing else comes up, we'll still deliver the first version on Friday.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-b1-reunion-avances-p1",
+          "pregunta": "What does Priya still need to do?",
+          "opciones": [
+            "Write the database",
+            "Fix the migration script",
+            "Test the login page on mobile devices",
+            "Present the project"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "esc-fase1-b1-reunion-avances-p2",
+          "pregunta": "Why is Jonas behind?",
+          "opciones": [
+            "He was on vacation",
+            "There is a problem with the migration script",
+            "The login page is broken",
+            "He lost the data"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-b1-reunion-avances-p3",
+          "pregunta": "When will the first version be delivered?",
+          "opciones": [
+            "On Friday",
+            "On Wednesday",
+            "Tomorrow morning",
+            "Next month"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ],
+      "transcripcion": "Okay, let's go through the progress on the project. Priya, how is the login page? It is almost finished. I only need to test it on mobile devices, so I should be done by Wednesday. Great. And Jonas, what about the database? Well, we found a problem with the migration script, so we are about one day behind. I'll work on it tomorrow morning, and I'll let you know if I need help. Thanks, both. If nothing else comes up, we'll still deliver the first version on Friday."
+    },
+    {
+      "id": "esc-fase1-b1-cambiar-vuelo",
+      "tema": "Llamada para cambiar un vuelo",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "guion": "Thank you for calling the airline. How can I help you? Hi, I have a flight to Madrid on Monday, but I need to travel on Sunday instead. Let me check. There is a seat on Sunday at six in the evening, but there is a change fee of fifty euros. Is there any cheaper option? If you travel on Tuesday, the change is free, because that flight is not full. Unfortunately, I can't wait until Tuesday because I have an important meeting. In that case, I'll take the Sunday flight.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-b1-cambiar-vuelo-p1",
+          "pregunta": "How much is the change fee for Sunday?",
+          "opciones": [
+            "It is free",
+            "Twenty euros",
+            "One hundred euros",
+            "Fifty euros"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "esc-fase1-b1-cambiar-vuelo-p2",
+          "pregunta": "Why doesn't the passenger choose Tuesday?",
+          "opciones": [
+            "The Tuesday flight is full",
+            "It is more expensive",
+            "They have an important meeting",
+            "They prefer to travel at night"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "esc-fase1-b1-cambiar-vuelo-p3",
+          "pregunta": "What does the passenger decide?",
+          "opciones": [
+            "To cancel the trip",
+            "To take the Sunday flight",
+            "To keep the Monday flight",
+            "To travel on Tuesday"
+          ],
+          "respuestaCorrecta": 1
+        }
+      ],
+      "transcripcion": "Thank you for calling the airline. How can I help you? Hi, I have a flight to Madrid on Monday, but I need to travel on Sunday instead. Let me check. There is a seat on Sunday at six in the evening, but there is a change fee of fifty euros. Is there any cheaper option? If you travel on Tuesday, the change is free, because that flight is not full. Unfortunately, I can't wait until Tuesday because I have an important meeting. In that case, I'll take the Sunday flight."
+    },
+    {
+      "id": "esc-fase1-b1-podcast-habitos-estudio",
+      "tema": "Podcast sobre hábitos de estudio",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "guion": "Welcome back to the show. Today we are talking about study habits. Many students believe that studying for six hours without a break is the best method, but research suggests otherwise. Short sessions of about forty minutes, followed by a five-minute pause, help you stay focused. Another tip is to test yourself instead of rereading your notes. When you try to remember information without looking, your brain works harder, and the knowledge lasts longer. Finally, try to study at the same time every day so that it becomes a routine.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-b1-podcast-habitos-estudio-p1",
+          "pregunta": "What does research suggest?",
+          "opciones": [
+            "Short sessions with small breaks work better",
+            "Studying six hours without stopping is best",
+            "Studying only at night is best",
+            "Never taking breaks is best"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "esc-fase1-b1-podcast-habitos-estudio-p2",
+          "pregunta": "Why is testing yourself useful?",
+          "opciones": [
+            "It is faster than studying",
+            "It replaces all notes",
+            "It is easier than reading",
+            "The brain works harder and the knowledge lasts longer"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "esc-fase1-b1-podcast-habitos-estudio-p3",
+          "pregunta": "What is the final tip?",
+          "opciones": [
+            "Study only on weekends",
+            "Study with music",
+            "Study at the same time every day",
+            "Study for six hours"
+          ],
+          "respuestaCorrecta": 2
+        }
+      ],
+      "transcripcion": "Welcome back to the show. Today we are talking about study habits. Many students believe that studying for six hours without a break is the best method, but research suggests otherwise. Short sessions of about forty minutes, followed by a five-minute pause, help you stay focused. Another tip is to test yourself instead of rereading your notes. When you try to remember information without looking, your brain works harder, and the knowledge lasts longer. Finally, try to study at the same time every day so that it becomes a routine."
+    },
+    {
+      "id": "esc-fase1-b1-explicar-api",
+      "tema": "Explicar cómo usar una API sencilla",
+      "nivelCEFR": "B1",
+      "revisar": true,
+      "guion": "So, to get the weather data, you only need to send a request to the API. First, you need an access key, which you can get for free by creating an account on the website. Then you add that key to the address, together with the name of the city. The service answers with a text in a format called JSON, which your program can read easily. One important thing: the free plan allows only sixty requests per minute, so don't put the call inside a loop without a pause, or the service will block you for a while.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-b1-explicar-api-p1",
+          "pregunta": "How do you get the access key?",
+          "opciones": [
+            "By paying a monthly fee",
+            "By creating a free account on the website",
+            "By calling the company",
+            "By installing a program"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-b1-explicar-api-p2",
+          "pregunta": "What format does the service use to answer?",
+          "opciones": [
+            "JSON",
+            "A photo",
+            "A spreadsheet",
+            "A video"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "esc-fase1-b1-explicar-api-p3",
+          "pregunta": "What is the warning?",
+          "opciones": [
+            "The key expires every day",
+            "The service only works at night",
+            "The city name must be in capital letters",
+            "Too many requests without a pause can get you blocked"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ],
+      "transcripcion": "So, to get the weather data, you only need to send a request to the API. First, you need an access key, which you can get for free by creating an account on the website. Then you add that key to the address, together with the name of the city. The service answers with a text in a format called JSON, which your program can read easily. One important thing: the free plan allows only sixty requests per minute, so don't put the call inside a loop without a pause, or the service will block you for a while."
+    },
+    {
+      "id": "esc-fase1-b2-resultados-modelo",
+      "tema": "Presentación de resultados de un modelo de IA",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "guion": "Thank you all for coming. Let me summarize what we found after three months of testing. Our model correctly classifies about ninety-two percent of the support tickets, which is a clear improvement over the previous system. However, accuracy is not uniform. For tickets written in Spanish, the result drops to eighty-four percent, mainly because we had far fewer training examples in that language. Our recommendation is therefore twofold: first, collect more Spanish data over the next quarter; second, keep a human reviewer for sensitive categories, such as billing disputes, until the gap closes. We believe this approach reduces risk without delaying the launch.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-b2-resultados-modelo-p1",
+          "pregunta": "What is the overall accuracy of the model?",
+          "opciones": [
+            "About eighty-four percent",
+            "About fifty percent",
+            "About ninety-two percent",
+            "About ninety-nine percent"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "esc-fase1-b2-resultados-modelo-p2",
+          "pregunta": "Why are the results worse for Spanish?",
+          "opciones": [
+            "The model cannot read Spanish",
+            "There were far fewer training examples",
+            "The tickets were too long",
+            "The testing period was too short"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-b2-resultados-modelo-p3",
+          "pregunta": "What do they recommend for billing disputes?",
+          "opciones": [
+            "Keeping a human reviewer for now",
+            "Removing them from the system",
+            "Delaying the launch",
+            "Using only the model"
+          ],
+          "respuestaCorrecta": 0
+        }
+      ],
+      "transcripcion": "Thank you all for coming. Let me summarize what we found after three months of testing. Our model correctly classifies about ninety-two percent of the support tickets, which is a clear improvement over the previous system. However, accuracy is not uniform. For tickets written in Spanish, the result drops to eighty-four percent, mainly because we had far fewer training examples in that language. Our recommendation is therefore twofold: first, collect more Spanish data over the next quarter; second, keep a human reviewer for sensitive categories, such as billing disputes, until the gap closes. We believe this approach reduces risk without delaying the launch."
+    },
+    {
+      "id": "esc-fase1-b2-cambio-carrera",
+      "tema": "Conversación sobre un cambio de carrera",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "guion": "So, have you decided? I think so. After eight years in accounting, I've realized that I enjoy the data analysis part of my job much more than the paperwork. I've been taking evening courses in programming, and I got an offer from a small startup. It pays about twenty percent less, though. Isn't that a big risk? It is, but I've saved enough to live for a year, and I'd rather try now than wonder for the rest of my life what would have happened. Well, if you've thought it through, I think it's a brave decision.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-b2-cambio-carrera-p1",
+          "pregunta": "What does the speaker enjoy most in the current job?",
+          "opciones": [
+            "The paperwork",
+            "The long hours",
+            "The salary",
+            "The data analysis"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "esc-fase1-b2-cambio-carrera-p2",
+          "pregunta": "What is the drawback of the new offer?",
+          "opciones": [
+            "It is in another country",
+            "It requires a university degree",
+            "It pays about twenty percent less",
+            "It has no future"
+          ],
+          "respuestaCorrecta": 2
+        },
+        {
+          "id": "esc-fase1-b2-cambio-carrera-p3",
+          "pregunta": "Why is the speaker not too worried?",
+          "opciones": [
+            "They have another offer",
+            "They have saved enough to live for a year",
+            "Their family will pay",
+            "The startup is very large"
+          ],
+          "respuestaCorrecta": 1
+        }
+      ],
+      "transcripcion": "So, have you decided? I think so. After eight years in accounting, I've realized that I enjoy the data analysis part of my job much more than the paperwork. I've been taking evening courses in programming, and I got an offer from a small startup. It pays about twenty percent less, though. Isn't that a big risk? It is, but I've saved enough to live for a year, and I'd rather try now than wonder for the rest of my life what would have happened. Well, if you've thought it through, I think it's a brave decision."
+    },
+    {
+      "id": "esc-fase1-b2-noticia-ciberseguridad",
+      "tema": "Reporte de noticias: ciberseguridad",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "guion": "In technology news today, a regional hospital network has confirmed that it was the target of a cyberattack earlier this week. According to a spokesperson, the attackers blocked access to part of the scheduling system, and some non-urgent appointments had to be postponed. Emergency services were not affected. The hospital says it has no evidence that patient records were stolen, but an investigation is still under way. Security experts remind organizations to keep their software updated and to train staff to recognize suspicious emails, which remain the most common way for attackers to enter a network.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-b2-noticia-ciberseguridad-p1",
+          "pregunta": "What was affected by the attack?",
+          "opciones": [
+            "Part of the scheduling system",
+            "The emergency services",
+            "All patient records",
+            "The hospital's phone line"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "esc-fase1-b2-noticia-ciberseguridad-p2",
+          "pregunta": "What does the hospital say about patient records?",
+          "opciones": [
+            "They were all stolen",
+            "They were deleted",
+            "They were sold online",
+            "It has no evidence they were stolen"
+          ],
+          "respuestaCorrecta": 3
+        },
+        {
+          "id": "esc-fase1-b2-noticia-ciberseguridad-p3",
+          "pregunta": "What do experts remind organizations to do?",
+          "opciones": [
+            "Buy new computers",
+            "Close their networks",
+            "Update software and train staff about suspicious emails",
+            "Hire more doctors"
+          ],
+          "respuestaCorrecta": 2
+        }
+      ],
+      "transcripcion": "In technology news today, a regional hospital network has confirmed that it was the target of a cyberattack earlier this week. According to a spokesperson, the attackers blocked access to part of the scheduling system, and some non-urgent appointments had to be postponed. Emergency services were not affected. The hospital says it has no evidence that patient records were stolen, but an investigation is still under way. Security experts remind organizations to keep their software updated and to train staff to recognize suspicious emails, which remain the most common way for attackers to enter a network."
+    },
+    {
+      "id": "esc-fase1-b2-startup-pros-contras",
+      "tema": "Discusión sobre pros y contras de trabajar en una startup",
+      "nivelCEFR": "B2",
+      "revisar": true,
+      "guion": "I'm not sure a startup is for me. Why not? You learn so quickly. That's true, and you usually get responsibility early. But the hours are often longer, and the job can disappear if the funding runs out. Fair enough, but at a big company, you may spend two years on a tiny part of a project. I'd rather have stability while I'm still learning the basics. Maybe a medium-sized company is the best compromise: stable enough to feel safe, and flexible enough to try different tasks. Honestly, I think it depends on your personality and on the stage of your life.",
+      "preguntas": [
+        {
+          "id": "esc-fase1-b2-startup-pros-contras-p1",
+          "pregunta": "Which advantage of startups is mentioned?",
+          "opciones": [
+            "The salaries are very high",
+            "You learn quickly and get responsibility early",
+            "The hours are shorter",
+            "The jobs are permanent"
+          ],
+          "respuestaCorrecta": 1
+        },
+        {
+          "id": "esc-fase1-b2-startup-pros-contras-p2",
+          "pregunta": "What worries the first speaker?",
+          "opciones": [
+            "Long hours and the risk that funding runs out",
+            "The lack of computers",
+            "Working with many people",
+            "Having too much stability"
+          ],
+          "respuestaCorrecta": 0
+        },
+        {
+          "id": "esc-fase1-b2-startup-pros-contras-p3",
+          "pregunta": "What compromise do they suggest?",
+          "opciones": [
+            "A very large company",
+            "Working alone",
+            "Starting a new company",
+            "A medium-sized company"
+          ],
+          "respuestaCorrecta": 3
+        }
+      ],
+      "transcripcion": "I'm not sure a startup is for me. Why not? You learn so quickly. That's true, and you usually get responsibility early. But the hours are often longer, and the job can disappear if the funding runs out. Fair enough, but at a big company, you may spend two years on a tiny part of a project. I'd rather have stability while I'm still learning the basics. Maybe a medium-sized company is the best compromise: stable enough to feel safe, and flexible enough to try different tasks. Honestly, I think it depends on your personality and on the stage of your life."
     }
   ]
 }
