@@ -28,9 +28,7 @@
   }
 
   function render(el, ctx) {
-    var t = function (clave) {
-      return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings);
-    };
+    var t = global.App.I18n.traductor(ctx);
     var Datos = global.App.Datos;
 
     el.innerHTML = '<div class="estado-vacio">…</div>';
@@ -67,22 +65,22 @@
             '<span id="icono-flama-fin" class="flama-animada">' +
             global.App.Iconos.svg("flama", 16) +
             "</span>" +
-            "<span>Racha de <strong class=\"num-tabular\" id=\"valor-racha-fin\">0</strong></span>" +
+            "<span>" + t("repaso.racha_de", { n: '<strong class="num-tabular" id="valor-racha-fin">0</strong>' }) + "</span>" +
             "</p>" +
             "</div>" +
             '<div class="seccion">' +
-            '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">Tarjetas repasadas</span><span class="num-tabular">' +
+            '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">' + t("repaso.tarjetas_repasadas") + '</span><span class="num-tabular">' +
             tarjetasRepasadas +
             "</span></div></div>" +
-            '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">Aciertos</span><span class="num-tabular">' +
+            '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">' + t("repaso.aciertos") + '</span><span class="num-tabular">' +
             aciertos +
             "/" +
             tarjetasRepasadas +
             "</span></div></div>" +
-            '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">Minutos hoy</span><span class="num-tabular">' +
+            '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">' + t("repaso.minutos_hoy") + '</span><span class="num-tabular">' +
             minutos +
             "</span></div></div>" +
-            '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">XP ganado</span><span class="num-tabular">+<span id="valor-xp-fin">0</span></span></div></div>' +
+            '<div class="fila"><div class="fila-cabeza"><span class="texto-tenue">' + t("repaso.xp_ganado") + '</span><span class="num-tabular">+<span id="valor-xp-fin">0</span></span></div></div>' +
             "</div>" +
             // Sin este botón el resumen era un callejón sin salida (solo la barra de navegación);
             // en la ruta guiada es el "Continuar": Inicio detecta la vuelta y muestra el siguiente paso.
@@ -104,6 +102,13 @@
 
     var tarjeta = sesion.cola[sesion.indice];
     var esc = global.App.Util.escaparHTML;
+    // "frase"/"vocabulario" vienen del dato; si no hay traducción para otro tipo, se muestra tal cual.
+    function etiquetaTipo(tipo) {
+      var clave = "repaso.tipo." + tipo;
+      var texto = t(clave);
+      if (!tipo) return t("repaso.pastilla_defecto");
+      return texto === clave ? tipo : texto;
+    }
     var porcentaje = Math.round((sesion.indice / sesion.cola.length) * 100);
     var rotacion = ROTACIONES[sesion.indice % ROTACIONES.length];
     revelado = false;
@@ -124,35 +129,35 @@
       '<div class="repaso-cuerpo">' +
       '<div class="repaso-marco pop-entrada" id="repaso-marco" style="--r:' +
       rotacion +
-      '" role="button" tabindex="0" aria-label="Voltear para ver la traducción">' +
+      '" role="button" tabindex="0" aria-label="' + esc(t("repaso.voltear_aria")) + '">' +
       '<div class="repaso-cara repaso-cara-frente">' +
       '<span class="repaso-pastilla">' +
-      esc(tarjeta.tipo || "Repaso") +
+      esc(etiquetaTipo(tarjeta.tipo)) +
       "</span>" +
       '<p class="repaso-frase">' +
       esc(tarjeta.frente) +
       "</p>" +
-      '<button type="button" class="repaso-boton-bocina" id="btn-bocina" aria-label="Escuchar">' +
+      '<button type="button" class="repaso-boton-bocina" id="btn-bocina" aria-label="' + esc(t("comun.escuchar")) + '">' +
       global.App.Iconos.svg("bocina", 20) +
       "</button>" +
       "</div>" +
       '<div class="repaso-cara repaso-cara-atras">' +
-      '<p class="repaso-etiqueta-traduccion">Traducción</p>' +
+      '<p class="repaso-etiqueta-traduccion">' + esc(t("repaso.traduccion")) + '</p>' +
       '<p class="repaso-texto-traduccion">' +
       esc(tarjeta.atras) +
       "</p>" +
       "</div>" +
       "</div>" +
       '<div class="repaso-panel-calificar superficie-oscura" id="panel-calificar">' +
-      '<p class="repaso-etiqueta-traduccion" id="traduccion-panel">Toca la tarjeta o presiona espacio para ver la traducción</p>' +
-      '<p class="repaso-pregunta-calidad">¿Qué tal te fue?</p>' +
+      '<p class="repaso-etiqueta-traduccion" id="traduccion-panel">' + esc(t("repaso.ayuda_revelar")) + '</p>' +
+      '<p class="repaso-pregunta-calidad">' + esc(t("repaso.pregunta_calidad")) + '</p>' +
       '<div class="repaso-grid-calificar" id="repaso-calificar">' +
-      '<button type="button" class="repaso-boton-calidad" data-calidad="1" style="background:var(--coral)" disabled>No la sabía<span class="repaso-tecla">Tecla 1</span></button>' +
-      '<button type="button" class="repaso-boton-calidad" data-calidad="3" style="background:var(--amarillo)" disabled>Difícil<span class="repaso-tecla">Tecla 2</span></button>' +
-      '<button type="button" class="repaso-boton-calidad" data-calidad="4" style="background:var(--menta)" disabled>Bien<span class="repaso-tecla">Tecla 3</span></button>' +
-      '<button type="button" class="repaso-boton-calidad" data-calidad="5" style="background:var(--azul)" disabled>Fácil<span class="repaso-tecla">Tecla 4</span></button>' +
+      '<button type="button" class="repaso-boton-calidad" data-calidad="1" style="background:var(--coral)" disabled>' + esc(t("repaso.no_la_sabia")) + '<span class="repaso-tecla">' + esc(t("repaso.tecla", { n: 1 })) + '</span></button>' +
+      '<button type="button" class="repaso-boton-calidad" data-calidad="3" style="background:var(--amarillo)" disabled>' + esc(t("repaso.dificil")) + '<span class="repaso-tecla">' + esc(t("repaso.tecla", { n: 2 })) + '</span></button>' +
+      '<button type="button" class="repaso-boton-calidad" data-calidad="4" style="background:var(--menta)" disabled>' + esc(t("repaso.bien")) + '<span class="repaso-tecla">' + esc(t("repaso.tecla", { n: 3 })) + '</span></button>' +
+      '<button type="button" class="repaso-boton-calidad" data-calidad="5" style="background:var(--azul)" disabled>' + esc(t("repaso.facil")) + '<span class="repaso-tecla">' + esc(t("repaso.tecla", { n: 4 })) + '</span></button>' +
       "</div>" +
-      '<p class="repaso-nota-teclado">Espacio muestra la traducción. Puedes calificar con las teclas 1 a 4.</p>' +
+      '<p class="repaso-nota-teclado">' + esc(t("repaso.nota_teclado")) + '</p>' +
       "</div>" +
       "</div>" +
       "</div>";

@@ -40,9 +40,7 @@
   }
 
   function render(el, ctx) {
-    var t = function (clave) {
-      return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings);
-    };
+    var t = global.App.I18n.traductor(ctx);
     var esc = global.App.Util.escaparHTML;
 
     el.innerHTML = '<div class="estado-vacio">…</div>';
@@ -53,7 +51,7 @@
       var progresoIngles = calcularProgresoIngles(minutosPorDia, ctx.umbrales);
       var metaActual = Math.min(META_MAX, Math.max(META_MIN, prefs.metaMinutosDia || 15));
 
-      var estadoConversacion = prefs.conversacionActivada ? "Activada" : "No configurada";
+      var estadoConversacion = t(prefs.conversacionActivada ? "ajustes.conv_activada" : "ajustes.conv_no_configurada");
       var colorEstadoConversacion = prefs.conversacionActivada ? "var(--menta)" : "var(--surface-borde)";
 
       el.innerHTML =
@@ -62,45 +60,43 @@
         '<div class="ajustes-grid pop-entrada-escalonada">' +
         // 1. Meta diaria
         '<div class="ajustes-tarjeta superficie-oscura">' +
-        "<h2>Meta diaria</h2>" +
+        "<h2>" + esc(t("ajustes.meta_titulo")) + "</h2>" +
         '<div class="ajustes-stepper">' +
-        '<button type="button" class="ajustes-stepper-boton calcomania calcomania-presionable" id="btn-meta-menos" aria-label="Bajar meta diaria" style="--r:0deg">−</button>' +
+        '<button type="button" class="ajustes-stepper-boton calcomania calcomania-presionable" id="btn-meta-menos" aria-label="' + esc(t("ajustes.meta_bajar_aria")) + '" style="--r:0deg">−</button>' +
         '<span class="ajustes-stepper-valor num-tabular" id="valor-meta">' +
         metaActual +
         ' <small>min</small></span>' +
-        '<button type="button" class="ajustes-stepper-boton calcomania calcomania-presionable" id="btn-meta-mas" aria-label="Subir meta diaria" style="--r:0deg">+</button>' +
+        '<button type="button" class="ajustes-stepper-boton calcomania calcomania-presionable" id="btn-meta-mas" aria-label="' + esc(t("ajustes.meta_subir_aria")) + '" style="--r:0deg">+</button>' +
         "</div>" +
         "</div>" +
         // 2. Voz del modelo
         '<div class="ajustes-tarjeta superficie-oscura">' +
-        "<h2>Voz del modelo</h2>" +
-        '<p class="texto-caption">Qué voz usan Habla, Diagnóstico y Conversación para leer en voz alta.</p>' +
-        '<select id="select-voz" class="campo-texto" style="margin-top:8px"><option value="">Cargando voces…</option></select>' +
-        '<button type="button" class="boton-secundario" id="btn-probar-voz" style="margin-top:8px" disabled>Probar</button>' +
+        "<h2>" + esc(t("ajustes.voz_titulo")) + "</h2>" +
+        '<p class="texto-caption">' + esc(t("ajustes.voz_descripcion")) + '</p>' +
+        '<select id="select-voz" class="campo-texto" style="margin-top:8px"><option value="">' + esc(t("ajustes.voz_cargando")) + '</option></select>' +
+        '<button type="button" class="boton-secundario" id="btn-probar-voz" style="margin-top:8px" disabled>' + esc(t("ajustes.voz_probar")) + '</button>' +
         "</div>" +
         // 3. Tema
         '<div class="ajustes-tarjeta superficie-oscura">' +
-        "<h2>Tema</h2>" +
-        '<div class="ajustes-segmentado" id="botones-tema" role="group" aria-label="Tema"></div>' +
+        "<h2>" + esc(t("ajustes.tema_titulo")) + "</h2>" +
+        '<div class="ajustes-segmentado" id="botones-tema" role="group" aria-label="' + esc(t("ajustes.tema_titulo")) + '"></div>' +
         "</div>" +
         // 4. Interfaz en inglés
         '<div class="ajustes-tarjeta superficie-oscura">' +
-        "<h2>Interfaz en inglés</h2>" +
+        "<h2>" + esc(t("ajustes.ingles_titulo")) + "</h2>" +
         '<div class="barra-progreso barra-escala" style="--progreso:0">' +
         '<span id="barra-ingles" data-destino="' +
         progresoIngles.porcentaje +
         '"></span></div>' +
         '<p class="texto-caption" style="margin-top:4px">' +
-        esc(progresoIngles.diasActivos) +
-        " días activos · " +
-        progresoIngles.porcentaje +
-        "% hacia inglés completo</p>" +
-        '<button type="button" class="boton-secundario" id="btn-forzar-espanol" style="margin-top:8px">Forzar español</button>' +
-        '<p class="texto-caption" style="margin-top:8px">Si lo activas, la interfaz se queda en español sin importar tus días activos.</p>' +
+        esc(t("ajustes.ingles_progreso", { dias: progresoIngles.diasActivos, pct: progresoIngles.porcentaje })) +
+        "</p>" +
+        '<button type="button" class="boton-secundario" id="btn-forzar-espanol" style="margin-top:8px">' + esc(t("ajustes.forzar_espanol")) + '</button>' +
+        '<p class="texto-caption" style="margin-top:8px">' + esc(t("ajustes.forzar_espanol_desc")) + '</p>' +
         "</div>" +
         // 5. Tus datos
         '<div class="ajustes-tarjeta superficie-oscura">' +
-        "<h2>Tus datos</h2>" +
+        "<h2>" + esc(t("ajustes.datos_titulo")) + "</h2>" +
         '<button type="button" class="ajustes-boton-dato calcomania calcomania-presionable" id="btn-exportar" style="background:var(--azul);--r:-0.6deg" data-i18n-live="ajustes.exportar"></button>' +
         '<button type="button" class="ajustes-boton-dato calcomania calcomania-presionable" id="btn-importar" style="background:var(--rosa);--r:0.6deg;margin-top:12px" data-i18n-live="ajustes.importar"></button>' +
         '<input type="file" id="input-importar" accept="application/json" hidden />' +
@@ -108,15 +104,15 @@
         "</div>" +
         // 6. Conversación con IA
         '<div class="ajustes-tarjeta superficie-oscura">' +
-        '<div class="fila-cabeza"><h2 style="margin:0">Conversación con IA</h2>' +
+        '<div class="fila-cabeza"><h2 style="margin:0">' + esc(t("ajustes.conv_titulo")) + '</h2>' +
         '<span class="ajustes-pastilla-estado" id="pastilla-conversacion" style="background:' +
         colorEstadoConversacion +
         '">' +
-        estadoConversacion +
+        esc(estadoConversacion) +
         "</span></div>" +
-        '<p class="texto-caption">Necesita tu propio proxy desplegado (ver REPORTE_CONVERSACION_IA.md). Tu clave de API nunca vive aquí.</p>' +
-        '<input type="url" id="input-worker-url" class="campo-texto" placeholder="https://tu-worker.tu-cuenta.workers.dev" style="margin-top:8px" />' +
-        '<button type="button" class="boton-secundario" id="btn-activar-conversacion" style="margin-top:8px">Activar</button>' +
+        '<p class="texto-caption">' + esc(t("ajustes.conv_descripcion")) + '</p>' +
+        '<input type="url" id="input-worker-url" class="campo-texto" placeholder="https://tu-worker.tu-cuenta.workers.dev" style="margin-top:8px" />' + // i18n-ok: URL de ejemplo, no texto traducible
+        '<button type="button" class="boton-secundario" id="btn-activar-conversacion" style="margin-top:8px">' + esc(t("ajustes.conv_activar")) + '</button>' +
         "</div>" +
         "</div>" +
         "</div>";
@@ -137,9 +133,9 @@
       // --- Tema (segmentado) ---
       var contenedorTema = el.querySelector("#botones-tema");
       [
-        { valor: "sistema", etiqueta: "Sistema" },
-        { valor: "claro", etiqueta: "Claro" },
-        { valor: "oscuro", etiqueta: "Oscuro" }
+        { valor: "sistema", etiqueta: t("ajustes.tema_sistema") },
+        { valor: "claro", etiqueta: t("ajustes.tema_claro") },
+        { valor: "oscuro", etiqueta: t("ajustes.tema_oscuro") }
       ].forEach(function (opcion) {
         var boton = document.createElement("button");
         boton.type = "button";
@@ -196,7 +192,7 @@
           var utiles = global.App.TTS.vocesUtiles(voces);
           selectVoz.innerHTML = "";
           if (!utiles.length) {
-            selectVoz.innerHTML = '<option value="">No hay voces en inglés disponibles en este dispositivo</option>';
+            selectVoz.innerHTML = '<option value="">' + esc(t("ajustes.voz_sin_voces")) + '</option>';
             selectVoz.disabled = true;
             btnProbarVoz.disabled = true;
             return;
@@ -204,7 +200,7 @@
           var vozPorDefecto = global.App.TTS.elegirVoz(utiles, "");
           var opcionAuto = document.createElement("option");
           opcionAuto.value = "";
-          opcionAuto.textContent = "Automática (" + (vozPorDefecto ? vozPorDefecto.name : "—") + ")";
+          opcionAuto.textContent = t("ajustes.voz_automatica", { nombre: vozPorDefecto ? vozPorDefecto.name : "—" });
           selectVoz.appendChild(opcionAuto);
           utiles.forEach(function (voz) {
             var opcion = document.createElement("option");
@@ -242,9 +238,11 @@
       });
 
       btnProbarVoz.addEventListener("click", function () {
+        // i18n-ok-start: frase de prueba que se pronuncia en inglés, no texto de interfaz
         global.App.TTS.hablar("This is what the model sounds like.", "en-US").catch(function () {
           /* sin Web Speech disponible: no hay nada que probar */
         });
+        // i18n-ok-end
       });
 
       // --- Interfaz en inglés (forzar español) ---
@@ -265,10 +263,10 @@
       var pastillaConversacion = el.querySelector("#pastilla-conversacion");
       inputWorkerUrl.value = prefs.conversacionWorkerUrl || "";
       if (prefs.conversacionActivada) btnActivarConversacion.setAttribute("aria-current", "true");
-      btnActivarConversacion.textContent = prefs.conversacionActivada ? "Desactivar" : "Activar";
+      btnActivarConversacion.textContent = t(prefs.conversacionActivada ? "ajustes.conv_desactivar" : "ajustes.conv_activar");
 
       function actualizarPastillaConversacion() {
-        pastillaConversacion.textContent = prefs.conversacionActivada ? "Activada" : "No configurada";
+        pastillaConversacion.textContent = t(prefs.conversacionActivada ? "ajustes.conv_activada" : "ajustes.conv_no_configurada");
         pastillaConversacion.style.background = prefs.conversacionActivada ? "var(--menta)" : "var(--surface-borde)";
       }
 
@@ -283,7 +281,7 @@
         global.App.Datos.guardarPreferencias(Object.assign({}, prefs, { conversacionActivada: activar, conversacionWorkerUrl: url })).then(function () {
           prefs.conversacionActivada = activar;
           prefs.conversacionWorkerUrl = url;
-          btnActivarConversacion.textContent = activar ? "Desactivar" : "Activar";
+          btnActivarConversacion.textContent = t(activar ? "ajustes.conv_desactivar" : "ajustes.conv_activar");
           if (activar) btnActivarConversacion.setAttribute("aria-current", "true");
           else btnActivarConversacion.removeAttribute("aria-current");
           actualizarPastillaConversacion();
@@ -322,7 +320,7 @@
             var backup = JSON.parse(lector.result);
             global.App.Storage.importBackup(backup)
               .then(function (res2) {
-                mensaje.textContent = "Importado: " + res2.importados.join(", ");
+                mensaje.textContent = t("ajustes.importado", { lista: res2.importados.join(", ") });
                 mensaje.classList.remove("mensaje-error");
               })
               .catch(function (err) {
@@ -330,7 +328,7 @@
                 mensaje.classList.add("mensaje-error");
               });
           } catch (err) {
-            mensaje.textContent = t("error.generico") + " (JSON inválido)";
+            mensaje.textContent = t("error.generico") + " (" + t("ajustes.json_invalido") + ")";
             mensaje.classList.add("mensaje-error");
           }
         };

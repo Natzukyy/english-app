@@ -31,9 +31,7 @@
   }
 
   function render(el, ctx) {
-    var t = function (clave) {
-      return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings);
-    };
+    var t = global.App.I18n.traductor(ctx);
 
     el.innerHTML = '<div class="estado-vacio">…</div>';
 
@@ -86,21 +84,20 @@
       "</span>" +
       '<div class="escucha-panel-audio superficie-oscura">' +
       global.App.Iconos.svg("auriculares", 40) +
-      '<p class="texto-tenue" id="escucha-estado">Toca para escuchar.</p>' +
-      '<button type="button" class="calcomania calcomania-cta calcomania-presionable escucha-boton-escuchar" id="btn-escuchar">Escuchar</button>' +
-      '<button type="button" class="enlace-discreto" id="btn-escuchar-lento">Escuchar más despacio</button>' +
+      '<p class="texto-tenue" id="escucha-estado">' + esc(t("escucha.toca_escuchar")) + '</p>' +
+      '<button type="button" class="calcomania calcomania-cta calcomania-presionable escucha-boton-escuchar" id="btn-escuchar">' + esc(t("comun.escuchar")) + '</button>' +
+      '<button type="button" class="enlace-discreto" id="btn-escuchar-lento">' + esc(t("escucha.mas_despacio")) + '</button>' +
       "</div>" +
       (antesDePreguntas
-        ? '<p class="texto-caption" style="margin-top:8px">Escucha al menos una vez antes de ver las preguntas.</p>'
+        ? '<p class="texto-caption" style="margin-top:8px">' + esc(t("escucha.antes_de_preguntas")) + '</p>'
         : "") +
       "</div>" +
       '<div class="escucha-columna-preguntas">' +
       (antesDePreguntas
         ? '<div class="superficie-oscura escucha-tarjeta-intro"><p>' +
-          guion.preguntas.length +
-          (guion.preguntas.length === 1 ? " pregunta de comprensión sobre lo que escuchaste." : " preguntas de comprensión sobre lo que escuchaste.") +
+          esc(t(guion.preguntas.length === 1 ? "escucha.preguntas_una" : "escucha.preguntas_varias", { n: guion.preguntas.length })) +
           "</p>" +
-          '<button type="button" class="calcomania calcomania-cta calcomania-presionable escucha-boton-empezar" id="btn-empezar-preguntas" disabled>Ver preguntas</button>' +
+          '<button type="button" class="calcomania calcomania-cta calcomania-presionable escucha-boton-empezar" id="btn-empezar-preguntas" disabled>' + esc(t("comun.ver_preguntas")) + '</button>' +
           "</div>"
         : '<div class="diagnostico-tarjeta-pregunta calcomania"><h2>' +
           esc(pregunta.pregunta) +
@@ -114,7 +111,7 @@
           " / " +
           guion.preguntas.length +
           "</span>" +
-          '<button type="button" class="calcomania calcomania-cta calcomania-presionable diagnostico-boton-accion" id="btn-accion" disabled>Responder</button>' +
+          '<button type="button" class="calcomania calcomania-cta calcomania-presionable diagnostico-boton-accion" id="btn-accion" disabled>' + esc(t("comun.responder")) + '</button>' +
           "</div></div>") +
       "</div>" +
       "</div>" +
@@ -134,7 +131,7 @@
     function reproducir(velocidad) {
       btnEscuchar.disabled = true;
       btnEscucharLento.disabled = true;
-      estadoAudio.textContent = "Reproduciendo…";
+      estadoAudio.textContent = t("escucha.reproduciendo");
       global.App.TTS.hablar(guion.guion, "en-US", velocidad)
         .catch(function () {
           /* sin Web Speech disponible: igual se puede avanzar, solo no hubo audio que oír */
@@ -142,7 +139,7 @@
         .then(function () {
           btnEscuchar.disabled = false;
           btnEscucharLento.disabled = false;
-          estadoAudio.textContent = "Toca para escuchar de nuevo.";
+          estadoAudio.textContent = t("escucha.toca_de_nuevo");
           if (!estado.yaEscucho) {
             estado.yaEscucho = true;
             if (btnEmpezarPreguntas) btnEmpezarPreguntas.disabled = false;
@@ -227,12 +224,12 @@
         }
       });
 
-      notaPie.textContent = esCorrecta ? "¡Correcto!" : "La respuesta correcta era " + LETRAS[barajada.indiceCorrecta] + ".";
+      notaPie.textContent = esCorrecta ? t("comun.correcto") : t("comun.respuesta_era", { letra: LETRAS[barajada.indiceCorrecta] });
       notaPie.classList.add("visible");
       notaPie.classList.toggle("diagnostico-nota-correcta", esCorrecta);
       notaPie.classList.toggle("diagnostico-nota-incorrecta", !esCorrecta);
 
-      btnAccion.textContent = estado.indice + 1 < estado.guion.preguntas.length ? "Siguiente" : "Ver resultado";
+      btnAccion.textContent = estado.indice + 1 < estado.guion.preguntas.length ? t("comun.siguiente") : t("comun.ver_resultado");
       btnAccion.disabled = false;
     }
 
@@ -257,17 +254,17 @@
       '<span class="interstitial-sello">' +
       global.App.Iconos.svg("sello", 28) +
       "</span>" +
-      '<p class="interstitial-titulo">¡Listo!</p>' +
+      '<p class="interstitial-titulo">' + esc(t("comun.listo")) + '</p>' +
       '<p class="interstitial-resumen"><span class="num-tabular">' +
       correctas +
       "</span> / <span class=\"num-tabular\">" +
       total +
-      "</span> correctas</p>" +
-      '<button type="button" class="boton-secundario" id="btn-ver-transcripcion" style="margin-top:12px">Ver transcripción</button>' +
+      "</span> " + esc(t("comun.correctas")) + "</p>" +
+      '<button type="button" class="boton-secundario" id="btn-ver-transcripcion" style="margin-top:12px">' + esc(t("escucha.ver_transcripcion")) + '</button>' +
       '<div class="escucha-transcripcion superficie-oscura" id="zona-transcripcion" hidden><p>' +
       esc(estado.guion.transcripcion) +
       "</p></div>" +
-      '<button type="button" class="boton-principal interstitial-boton" id="btn-terminar-escucha" style="margin-top:12px">Terminar</button>' +
+      '<button type="button" class="boton-principal interstitial-boton" id="btn-terminar-escucha" style="margin-top:12px">' + esc(t("comun.terminar")) + '</button>' +
       "</div>" +
       "</div>";
     el.querySelector("#btn-ver-transcripcion").addEventListener("click", function () {

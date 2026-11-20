@@ -8,7 +8,6 @@
   "use strict";
 
   var ICONO_POR_HABILIDAD = { lectura: "libro", escucha: "auriculares", habla: "microfono", escritura: "pluma" };
-  var NOMBRE_HABILIDAD = { lectura: "Lectura", escucha: "Escucha", habla: "Habla", escritura: "Escritura" };
   var COLOR_POR_HABILIDAD = { lectura: "var(--azul)", escucha: "var(--amarillo)", habla: "var(--menta)", escritura: "var(--rosa)" };
   var ORDEN_HABILIDADES = ["lectura", "escucha", "habla", "escritura"];
   var ROTACION = [-1.4, 1, -0.8, 1.3]; // --r distinto por tarjeta, para el aire de collage que pide el spec
@@ -16,17 +15,17 @@
   // Las 4 habilidades ya tienen pantalla propia (Fase C completa).
   var RUTA_POR_HABILIDAD = { habla: "habla", lectura: "lectura", escucha: "escucha", escritura: "escritura" };
 
-  function formatoUltimaVez(fechaISO, hoyISO) {
-    if (!fechaISO) return "Por empezar";
-    if (fechaISO === hoyISO) return "Última vez: hoy";
+  function formatoUltimaVez(t, fechaISO, hoyISO) {
+    if (!fechaISO) return t("practicar.por_empezar");
+    if (fechaISO === hoyISO) return t("practicar.ultima_hoy");
     var ayerISO = global.App.Fecha.sumarDias(hoyISO, -1);
-    if (fechaISO === ayerISO) return "Última vez: ayer";
+    if (fechaISO === ayerISO) return t("practicar.ultima_ayer");
     var dias = global.App.Fecha.diferenciaDias(fechaISO, hoyISO);
-    return "Última vez: hace " + dias + " días";
+    return t("practicar.ultima_dias", { n: dias });
   }
 
   function render(el, ctx) {
-    var t = function (clave) { return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings); };
+    var t = global.App.I18n.traductor(ctx);
     var Iconos = global.App.Iconos;
     var esc = global.App.Util.escaparHTML;
     var Datos = global.App.Datos;
@@ -48,15 +47,15 @@
       var tarjetasHtml = ORDEN_HABILIDADES.map(function (h, i) {
         var tieneRuta = !!RUTA_POR_HABILIDAD[h];
         var nivelCEFR = diagnostico && diagnostico.porHabilidad[h] && diagnostico.porHabilidad[h].nivelCEFR;
-        var lineaEstado = tieneRuta ? formatoUltimaVez(ultimaPractica[h], hoyISO) : "Próximamente";
+        var lineaEstado = tieneRuta ? formatoUltimaVez(t, ultimaPractica[h], hoyISO) : t("practicar.proximamente");
         return (
-          '<' + (tieneRuta ? "button" : "div") + ' type="button" class="practicar-tarjeta calcomania' +
+          '<' + (tieneRuta ? "button" : "div") + ' type="button" class="practicar-tarjeta calcomania' + // i18n-ok: atributos HTML, no texto
           (tieneRuta ? " calcomania-presionable" : " practicar-tarjeta--proximamente") +
           '" style="background:' + COLOR_POR_HABILIDAD[h] + ";--r:" + ROTACION[i] + "deg\"" +
           (tieneRuta ? ' data-habilidad="' + h + '"' : ' aria-disabled="true"') +
           ">" +
           '<span class="practicar-icono">' + Iconos.svg(ICONO_POR_HABILIDAD[h], 24) + "</span>" +
-          '<span class="practicar-nombre">' + esc(NOMBRE_HABILIDAD[h]) + "</span>" +
+          '<span class="practicar-nombre">' + esc(t("habilidad." + h)) + "</span>" +
           (nivelCEFR ? '<span class="practicar-pastilla">' + esc(nivelCEFR) + "</span>" : "") +
           '<span class="practicar-ultima-vez">' + esc(lineaEstado) + "</span>" +
           "</" + (tieneRuta ? "button" : "div") + ">"
@@ -65,7 +64,7 @@
 
       el.innerHTML =
         '<div class="pantalla-vista pantalla-practicar">' +
-        '<button type="button" class="practicar-regreso" id="btn-regreso-inicio" aria-label="Volver a Inicio">' +
+        '<button type="button" class="practicar-regreso" id="btn-regreso-inicio" aria-label="' + esc(t("practicar.volver_aria")) + '">' +
         '<span class="practicar-regreso-flecha">' + Iconos.svg("chevron", 20) + "</span>" +
         "</button>" +
         '<h1>' + esc(t("practicar.titulo")) + "</h1>" +
@@ -75,7 +74,7 @@
         '<button type="button" class="practicar-fila superficie-oscura" id="fila-repaso">' +
         '<span class="icono-mosaico">' + Iconos.svg("repaso", 18) + "</span>" +
         '<span class="practicar-fila-texto"><strong>' + esc(t("practicar.repaso_titulo")) + "</strong><span class=\"texto-tenue\">" +
-        tarjetas.vencidas + " tarjeta" + (tarjetas.vencidas === 1 ? "" : "s") + " vencida" + (tarjetas.vencidas === 1 ? "" : "s") + "</span></span>" +
+        esc(t(tarjetas.vencidas === 1 ? "practicar.vencidas_una" : "practicar.vencidas_varias", { n: tarjetas.vencidas })) + "</span></span>" +
         Iconos.svg("chevron", 18) +
         "</button>" +
         '<button type="button" class="practicar-fila superficie-oscura" id="fila-conversacion">' +

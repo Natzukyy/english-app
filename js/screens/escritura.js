@@ -37,9 +37,7 @@
   }
 
   function render(el, ctx) {
-    var t = function (clave) {
-      return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings);
-    };
+    var t = global.App.I18n.traductor(ctx);
 
     el.innerHTML = '<div class="estado-vacio">…</div>';
 
@@ -91,12 +89,12 @@
       '<div class="escritura-consigna superficie-oscura"><p>' +
       esc(consigna.consigna) +
       "</p></div>" +
-      '<textarea class="campo-texto escritura-textarea" id="campo-escritura" placeholder="Escribe tu respuesta en inglés aquí…"></textarea>' +
-      '<button type="button" class="calcomania calcomania-cta calcomania-presionable escritura-boton-terminar" id="btn-terminar-escribir" disabled>Terminar de escribir</button>' +
+      '<textarea class="campo-texto escritura-textarea" id="campo-escritura" placeholder="' + esc(t("escritura.placeholder")) + '"></textarea>' +
+      '<button type="button" class="calcomania calcomania-cta calcomania-presionable escritura-boton-terminar" id="btn-terminar-escribir" disabled>' + esc(t("escritura.terminar_escribir")) + '</button>' +
       "</div>" +
       '<div class="escritura-columna-derecha">' +
       '<div class="superficie-oscura escritura-tarjeta-espera"><p class="texto-tenue">' +
-      "La lista de verificación y una respuesta de ejemplo aparecen aquí cuando termines de escribir." +
+      esc(t("escritura.espera")) +
       "</p></div>" +
       "</div>" +
       "</div>" +
@@ -165,23 +163,23 @@
         "</div>" +
         '<div class="escritura-columna-derecha">' +
         '<div class="superficie-oscura escritura-tarjeta-lista">' +
-        "<h2>¿Qué tal te fue?</h2>" +
-        '<p class="texto-caption">Marca lo que sí lograste -- es para ti, nadie más lo va a calificar.</p>' +
+        "<h2>" + esc(t("escritura.como_te_fue")) + "</h2>" +
+        '<p class="texto-caption">' + esc(t("escritura.marca_logrado")) + '</p>' +
         '<div class="escritura-lista-verificacion">' +
         listaHtml +
         "</div>" +
         "</div>" +
         '<div class="superficie-oscura escritura-tarjeta-modelo">' +
-        "<h2>Respuesta de ejemplo</h2>" +
+        "<h2>" + esc(t("escritura.respuesta_ejemplo")) + "</h2>" +
         '<p class="escritura-respuesta-modelo">' +
         esc(consigna.respuestaModelo) +
         "</p>" +
         "</div>" +
         (iaDisponible
-          ? '<button type="button" class="boton-secundario" id="btn-correccion-ia">Pedir corrección a la IA</button>' +
+          ? '<button type="button" class="boton-secundario" id="btn-correccion-ia">' + esc(t("escritura.pedir_correccion")) + '</button>' +
             '<div id="zona-correccion-ia"></div>'
           : "") +
-        '<button type="button" class="boton-principal escritura-boton-terminar-final" id="btn-terminar-escritura">Terminar</button>' +
+        '<button type="button" class="boton-principal escritura-boton-terminar-final" id="btn-terminar-escritura">' + esc(t("comun.terminar")) + '</button>' +
         "</div>" +
         "</div>" +
         "</div>";
@@ -199,7 +197,7 @@
       });
 
       if (iaDisponible) {
-        conectarCorreccionIA(el, prefs);
+        conectarCorreccionIA(el, prefs, t);
       }
 
       el.querySelector("#btn-terminar-escritura").addEventListener("click", function () {
@@ -216,12 +214,13 @@
    * genéricos) en vez de duplicar esas constantes -- el único payload propio de esta
    * pantalla es el "system" prompt, armado aquí porque pedir una corrección de texto es un
    * caso de uso distinto al de sostener una conversación (js/core/conversacion.js). */
-  function conectarCorreccionIA(el, prefs) {
+  function conectarCorreccionIA(el, prefs, t) {
     var boton = el.querySelector("#btn-correccion-ia");
     var zona = el.querySelector("#zona-correccion-ia");
     boton.addEventListener("click", function () {
       boton.disabled = true;
-      zona.innerHTML = '<p class="texto-tenue">Pidiendo corrección…</p>';
+      zona.innerHTML = '<p class="texto-tenue">' + global.App.Util.escaparHTML(t("escritura.pidiendo_correccion")) + '</p>';
+      // i18n-ok-start: instrucción para el modelo de IA (siempre en inglés), no texto de interfaz
       var sistema =
         "You are an English writing tutor helping a student at CEFR level " +
         (estado.consigna.nivelCEFR || "A2") +
@@ -230,6 +229,7 @@
         '". Correct their text for grammar, word choice, and natural phrasing. Reply with a short corrected ' +
         "version first, then 2-3 brief bullet points explaining the main fixes, in simple language appropriate " +
         "for their level. Keep your whole reply under 200 words.";
+      // i18n-ok-end
       var payload = {
         model: global.App.Conversacion.MODELO,
         max_tokens: global.App.Conversacion.MAX_TOKENS_RESPUESTA,

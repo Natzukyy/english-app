@@ -80,10 +80,8 @@
       banner.hidden = false;
       document.body.classList.add("tiene-banner-plan");
       banner.innerHTML =
-        '<span class="banner-plan-texto">Paso ' +
-        n +
-        " de " +
-        total +
+        '<span class="banner-plan-texto">' +
+        global.App.Util.escaparHTML(global.App.I18n.formatear(global.App.I18n.texto("plan.paso_n_de_m", contexto.nivelInterfaz, contexto.strings), { n: n, total: total })) +
         '</span><div class="barra-progreso"><span style="width:' +
         Math.round((n / total) * 100) +
         '%"></span></div>';
@@ -105,7 +103,7 @@
         // para el nombre de Alex y el día de conversación semanal -- "todo configurable desde
         // data/, nada hardcodeado en JS", ver spec de Calcomanías).
         contexto.config = config;
-        var nombre = config.nombreApp || "Rumbo";
+        var nombre = config.nombreApp || "Rumbo"; // i18n-ok: nombre de reserva si config.json no carga (el nombre real vive en data/config.json)
         document.title = nombre;
         var metaTitulo = document.querySelector('meta[name="apple-mobile-web-app-title"]');
         if (metaTitulo) metaTitulo.setAttribute("content", nombre);

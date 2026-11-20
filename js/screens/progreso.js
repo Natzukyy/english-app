@@ -8,9 +8,6 @@
 (function (global) {
   "use strict";
 
-  // Nombres legibles para las claves de App.Diagnostico.construirResultado (nunca se
-  // muestran directo en pantalla -- mismo criterio que diagnostico.js).
-  var NOMBRE_HABILIDAD = { lectura: "Lectura", escucha: "Escucha", habla: "Habla", escritura: "Escritura" };
   // Las 4 habilidades "de producto" (tienen --punto-* propio); vocabulario_gramatica no es
   // una de ellas (mismo criterio ya usado en Diagnóstico) -- Progreso solo muestra estas 4,
   // tal como pide el spec ("4 filas de habilidad").
@@ -18,9 +15,7 @@
   var DIAS_SEMANA = ["D", "L", "M", "M", "J", "V", "S"]; // getDay(): 0=domingo
 
   function render(el, ctx) {
-    var t = function (clave) {
-      return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings);
-    };
+    var t = global.App.I18n.traductor(ctx);
 
     el.innerHTML = '<div class="estado-vacio">…</div>';
 
@@ -42,7 +37,7 @@
           '<div class="pantalla-vista pantalla-progreso">' +
           '<h1 data-i18n-live="progreso.titulo"></h1>' +
           '<div class="estado-vacio" data-i18n-live="progreso.vacio"></div>' +
-          '<button type="button" class="calcomania calcomania-cta calcomania-presionable" id="btn-ir-diagnostico" style="background:var(--amarillo);color:var(--tinta);margin-top:16px">Hacer diagnóstico</button>' +
+          '<button type="button" class="calcomania calcomania-cta calcomania-presionable" id="btn-ir-diagnostico" style="background:var(--amarillo);color:var(--tinta);margin-top:16px">' + t("progreso.hacer_diagnostico") + '</button>' +
           "</div>";
         el.querySelectorAll("[data-i18n-live]").forEach(function (nodo) {
           nodo.textContent = t(nodo.getAttribute("data-i18n-live"));
@@ -97,7 +92,7 @@
           return (
             '<div class="progreso-tarjeta-habilidad superficie-oscura">' +
             '<div class="fila-cabeza"><span>' +
-            esc(NOMBRE_HABILIDAD[h]) +
+            esc(t("habilidad." + h)) +
             "</span>" +
             '<span class="diagnostico-pastilla-nivel" style="background:var(--punto-' +
             h +
@@ -118,11 +113,11 @@
         '<div class="pantalla-vista pantalla-progreso">' +
         '<div class="progreso-cabecera">' +
         '<h1 data-i18n-live="progreso.titulo"></h1>' +
-        '<button type="button" class="calcomania calcomania-presionable" id="btn-repetir-diagnostico" style="background:var(--crema);color:var(--tinta)">Repetir diagnóstico</button>' +
+        '<button type="button" class="calcomania calcomania-presionable" id="btn-repetir-diagnostico" style="background:var(--crema);color:var(--tinta)">' + esc(t("progreso.repetir_diagnostico")) + '</button>' +
         "</div>" +
         '<div class="progreso-fila-superior pop-entrada-escalonada">' +
         '<div class="progreso-tarjeta progreso-tarjeta-nivel calcomania calcomania-presionable">' +
-        '<p class="progreso-etiqueta">Nivel</p>' +
+        '<p class="progreso-etiqueta">' + esc(t("progreso.nivel")) + '</p>' +
         '<p class="progreso-numero-nivel num-tabular" id="valor-nivel">0</p>' +
         '<div class="barra-progreso barra-escala" style="--progreso:0"><span id="barra-xp" data-destino="' +
         porcentajeXP +
@@ -132,19 +127,19 @@
         " XP</p>" +
         "</div>" +
         '<div class="progreso-tarjeta progreso-tarjeta-racha superficie-oscura">' +
-        '<p class="progreso-etiqueta">Racha</p>' +
+        '<p class="progreso-etiqueta">' + esc(t("progreso.racha")) + '</p>' +
         '<p class="progreso-numero-racha num-tabular">' +
         Iconos.svg("flama", 28) +
         '<span id="valor-racha">0</span></p>' +
         "</div>" +
         '<div class="progreso-tarjeta progreso-tarjeta-semana superficie-oscura">' +
-        '<p class="progreso-etiqueta">Esta semana</p>' +
+        '<p class="progreso-etiqueta">' + esc(t("progreso.esta_semana")) + '</p>' +
         '<div class="progreso-grafica-semana">' +
         diasHTML +
         "</div>" +
         "</div>" +
         "</div>" +
-        "<h2>Por habilidad</h2>" +
+        "<h2>" + esc(t("progreso.por_habilidad")) + "</h2>" +
         '<div class="progreso-grid-habilidad pop-entrada-escalonada">' +
         filasHabilidad +
         "</div>" +

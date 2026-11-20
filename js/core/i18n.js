@@ -49,6 +49,33 @@
     return usarIngles ? entrada.en : entrada.es;
   }
 
+  /**
+   * Sustituye marcadores {nombre} por sus valores. Un marcador sin valor se deja tal cual (así
+   * un olvido se ve en pantalla en vez de mostrar "undefined"). Sin HTML ni lógica de plurales:
+   * singular/plural se resuelven con DOS claves distintas, nunca armando la gramática.
+   * @param {string} plantilla  p. ej. "Tienes {n} tarjetas"
+   * @param {Object<string, string|number>} [valores]
+   */
+  function formatear(plantilla, valores) {
+    if (!valores) return plantilla;
+    return String(plantilla).replace(/\{(\w+)\}/g, function (marcador, nombre) {
+      return Object.prototype.hasOwnProperty.call(valores, nombre) && valores[nombre] !== undefined && valores[nombre] !== null
+        ? String(valores[nombre])
+        : marcador;
+    });
+  }
+
+  /**
+   * Devuelve `t(clave, valores)` ya atado al contexto de la pantalla (nivel de interfaz y
+   * strings cargados): el patrón que antes se repetía a mano en cada pantalla.
+   * @param {{nivelInterfaz:number, strings:Object}} ctx
+   */
+  function traductor(ctx) {
+    return function (clave, valores) {
+      return formatear(texto(clave, ctx && ctx.nivelInterfaz, ctx && ctx.strings), valores);
+    };
+  }
+
   function cargarDesdeArchivos() {
     if (typeof fetch === "undefined") {
       return Promise.reject(new Error("fetch no disponible (entorno sin navegador)"));
@@ -69,6 +96,8 @@
   global.App.I18n = {
     calcularNivel: calcularNivel,
     texto: texto,
+    formatear: formatear,
+    traductor: traductor,
     cargarDesdeArchivos: cargarDesdeArchivos
   };
 })(typeof window !== "undefined" ? window : globalThis);

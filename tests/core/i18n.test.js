@@ -64,4 +64,26 @@
   Test.test("texto: clave inexistente devuelve la clave misma (no rompe)", function () {
     Test.assertEqual(App.I18n.texto("no.existe", 2, strings), "no.existe");
   });
+
+  Test.test("formatear: sustituye marcadores {n} por su valor (número o texto)", function () {
+    Test.assertEqual(App.I18n.formatear("Tienes {n} tarjetas", { n: 12 }), "Tienes 12 tarjetas");
+    Test.assertEqual(App.I18n.formatear("{a} y {b}", { a: "uno", b: 2 }), "uno y 2");
+  });
+
+  Test.test("formatear: un marcador sin valor se deja visible, no se vuelve 'undefined'", function () {
+    Test.assertEqual(App.I18n.formatear("Hola {nombre}", {}), "Hola {nombre}");
+    Test.assertEqual(App.I18n.formatear("Hola {nombre}", { nombre: undefined }), "Hola {nombre}");
+  });
+
+  Test.test("formatear: sin valores devuelve la plantilla tal cual; el valor 0 sí cuenta", function () {
+    Test.assertEqual(App.I18n.formatear("Racha de {n}"), "Racha de {n}");
+    Test.assertEqual(App.I18n.formatear("Racha de {n}", { n: 0 }), "Racha de 0");
+  });
+
+  Test.test("traductor: respeta el nivel de interfaz y aplica los valores", function () {
+    var strings = { "x.dias": { categoria: "corta", es: "{n} días", en: "{n} days" } };
+    Test.assertEqual(App.I18n.traductor({ nivelInterfaz: 0, strings: strings })("x.dias", { n: 3 }), "3 días");
+    Test.assertEqual(App.I18n.traductor({ nivelInterfaz: 3, strings: strings })("x.dias", { n: 3 }), "3 days");
+    Test.assertEqual(App.I18n.traductor({ nivelInterfaz: 0, strings: {} })("no.existe"), "no.existe");
+  });
 })();

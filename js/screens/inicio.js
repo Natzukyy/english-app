@@ -13,15 +13,7 @@
   "use strict";
 
   var ICONO_POR_HABILIDAD = { lectura: "libro", escucha: "auriculares", habla: "microfono", escritura: "pluma" };
-  var NOMBRE_HABILIDAD = { lectura: "Lectura", escucha: "Escucha", habla: "Habla", escritura: "Escritura" };
   var ORDEN_HABILIDADES = ["lectura", "escucha", "habla", "escritura"];
-
-  var NOMBRE_PASO = {
-    diagnostico: "Diagnóstico de nivel",
-    reevaluacion: "Mini-reevaluación de nivel",
-    repaso: "Repaso de tarjetas",
-    conversacion: "Conversación con IA"
-  };
 
   // A qué ruta navega cada tipo de paso del plan. "reevaluacion" reutiliza la pantalla de
   // Diagnóstico -- construir un cuestionario corto aparte es más trabajo del que alcanza esta
@@ -36,20 +28,22 @@
 
   var CLAVE_FLUJO = "rumboFlujoEnCurso"; // localStorage: {fecha, indice} del paso que se acaba de empezar
 
-  function nombrePaso(paso) {
-    if (paso.tipo === "practica") return "Práctica de " + (NOMBRE_HABILIDAD[paso.habilidad] || paso.habilidad).toLowerCase();
-    return NOMBRE_PASO[paso.tipo] || paso.tipo;
+  function nombrePaso(t, paso) {
+    if (paso.tipo === "practica") return t("inicio.paso.practica", { habilidad: t("habilidad." + paso.habilidad).toLowerCase() });
+    var clave = "inicio.paso." + paso.tipo;
+    var texto = t(clave);
+    return texto === clave ? paso.tipo : texto;
   }
 
-  function razonPaso(paso) {
+  function razonPaso(t, paso) {
     if (paso.tipo === "repaso") {
       var total = (paso.tarjetasVencidas || 0) + (paso.tarjetasNuevas || 0);
-      return "Tienes " + total + " tarjeta" + (total === 1 ? "" : "s") + " por repasar hoy.";
+      return t(total === 1 ? "inicio.razon.repaso_una" : "inicio.razon.repaso_varias", { n: total });
     }
-    if (paso.tipo === "practica") return paso.minutos + " minutos de práctica, nivel " + (paso.nivelCEFR || "");
-    if (paso.tipo === "conversacion") return "Te toca conversación esta semana.";
-    if (paso.tipo === "reevaluacion") return "Ya pasaron unas semanas -- vale la pena confirmar tu nivel.";
-    return "Tu diagnóstico inicial, para armar el resto de tu ruta.";
+    if (paso.tipo === "practica") return t("inicio.razon.practica", { minutos: paso.minutos, nivel: paso.nivelCEFR || "" });
+    if (paso.tipo === "conversacion") return t("inicio.razon.conversacion");
+    if (paso.tipo === "reevaluacion") return t("inicio.razon.reevaluacion");
+    return t("inicio.razon.diagnostico");
   }
 
   function rutaParaPaso(paso) {
@@ -112,7 +106,7 @@
   /** Celebraciones pendientes (subida de nivel de XP o CEFR, anotadas por App.Datos): lluvia
    * de calcomanías + mensaje. Una por una, separadas ~0.9 s, por si hubo más de una. */
   function mostrarCelebracionesPendientes(ctx) {
-    var t = function (clave) { return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings); };
+    var t = global.App.I18n.traductor(ctx);
     global.App.Util.tomarCelebracionesPendientes().forEach(function (c, i) {
       var texto = c.tipo === "cefr" ? t("celebracion.nivel_cefr") + " " + c.nivel : t("celebracion.nivel_xp") + " " + c.nivel;
       global.setTimeout(function () {
@@ -165,14 +159,14 @@
   }
 
   function renderListoSiguiente(el, ctx, plan, indiceSiguiente) {
-    var t = function (clave) { return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings); };
+    var t = global.App.I18n.traductor(ctx);
     var paso = plan.pasos[indiceSiguiente];
     el.innerHTML =
       '<div class="pantalla-vista pantalla-interstitial">' +
       '<div class="interstitial-tarjeta calcomania pop-entrada" style="background:var(--menta)">' +
       '<span class="interstitial-sello">' + global.App.Iconos.svg("check", 28) + "</span>" +
       '<p class="interstitial-titulo">' + global.App.Util.escaparHTML(t("inicio.listo_siguiente")) + "</p>" +
-      '<p class="interstitial-paso">' + global.App.Util.escaparHTML(nombrePaso(paso)) + "</p>" +
+      '<p class="interstitial-paso">' + global.App.Util.escaparHTML(nombrePaso(t, paso)) + "</p>" +
       '<button type="button" class="boton-principal interstitial-boton" id="btn-continuar-flujo">' +
       global.App.Util.escaparHTML(t("inicio.continuar")) +
       "</button>" +
@@ -184,7 +178,7 @@
   }
 
   function renderDiaCompleto(el, ctx, plan) {
-    var t = function (clave) { return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings); };
+    var t = global.App.I18n.traductor(ctx);
     Promise.all([global.App.Datos.obtenerEstadoRacha(), global.App.Datos.obtenerXP()]).then(function (res) {
       var racha = res[0];
       var xp = res[1];
@@ -194,11 +188,11 @@
         '<span class="interstitial-sello">' + global.App.Iconos.svg("sello", 28) + "</span>" +
         '<p class="interstitial-titulo">' + global.App.Util.escaparHTML(t("inicio.dia_completo_titulo")) + "</p>" +
         '<p class="interstitial-resumen">' +
-        '<span class="num-tabular">' + racha.rachaActual + "</span> racha · " +
+        '<span class="num-tabular">' + racha.rachaActual + '</span> ' + global.App.Util.escaparHTML(t("inicio.racha_minuscula")) + ' · ' +
         '<span class="num-tabular">' + plan.totalMinutos + "</span> min · " +
         '<span class="num-tabular">' + xp.total + "</span> XP" +
         "</p>" +
-        '<p class="interstitial-manana">' + global.App.Util.escaparHTML(t("inicio.manana")) + " un plan nuevo te espera.</p>" +
+        '<p class="interstitial-manana">' + global.App.Util.escaparHTML(t("inicio.manana")) + " " + global.App.Util.escaparHTML(t("inicio.manana_detalle")) + "</p>" +
         '<button type="button" class="boton-principal interstitial-boton" id="btn-cerrar-dia">' +
         global.App.Util.escaparHTML(t("nav.inicio")) +
         "</button>" +
@@ -212,7 +206,7 @@
   }
 
   function renderDashboard(el, ctx) {
-    var t = function (clave) { return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings); };
+    var t = global.App.I18n.traductor(ctx);
     var Datos = global.App.Datos;
     var Iconos = global.App.Iconos;
     var esc = global.App.Util.escaparHTML;
@@ -240,7 +234,7 @@
       var nivel = global.App.XP.nivelDesdeXP(xp.total);
       var minutosHoy = sesionHoy.minutos || 0;
       var porcentajeMeta = Math.min(100, Math.round((minutosHoy / prefs.metaMinutosDia) * 100));
-      var nombreUsuario = config.nombreUsuario || "Alex";
+      var nombreUsuario = config.nombreUsuario || "Alex"; // i18n-ok: nombre de reserva; el real vive en data/config.json
 
       // --- Avance en la escala abierta A1-C2 (App.Avance), a partir del último diagnóstico.
       // Sin una medición más fina de desempeño reciente todavía, se asume el punto medio del
@@ -271,8 +265,8 @@
         tarjetaPrincipalHtml =
           '<div class="tarjeta-principal calcomania calcomania-cta pop-entrada" style="background:var(--amarillo)">' +
           '<span class="tarjeta-principal-etiqueta">' + esc(t("inicio.hoy_te_toca").toUpperCase()) + "</span>" +
-          '<p class="tarjeta-principal-nombre">' + esc(nombrePaso(pasoActual)) + "</p>" +
-          '<p class="tarjeta-principal-razon">' + esc(razonPaso(pasoActual)) + "</p>" +
+          '<p class="tarjeta-principal-nombre">' + esc(nombrePaso(t, pasoActual)) + "</p>" +
+          '<p class="tarjeta-principal-razon">' + esc(razonPaso(t, pasoActual)) + "</p>" +
           '<button type="button" class="boton-tinta tarjeta-principal-boton calcomania calcomania-presionable" id="btn-empezar-plan" style="--r:0deg">' +
           esc(t(hayAlgoHecho || leerFlujoEnCurso() ? "inicio.continuar" : "inicio.empezar")) +
           "</button>" +
@@ -288,7 +282,7 @@
           return (
             '<div class="ruta-hoy-paso ruta-hoy-paso--' + estado + '">' +
             '<span class="ruta-hoy-numero">' + contenido + "</span>" +
-            '<span class="ruta-hoy-nombre">' + esc(nombrePaso(paso)) + "</span>" +
+            '<span class="ruta-hoy-nombre">' + esc(nombrePaso(t, paso)) + "</span>" +
             '<span class="ruta-hoy-minutos num-tabular">' + paso.minutos + " min</span>" +
             "</div>"
           );
@@ -316,7 +310,7 @@
           '<div class="mini-barra-habilidad">' +
           '<div class="mini-barra-cabeza">' +
           '<span class="icono-mosaico icono-mosaico--' + h + '">' + Iconos.svg(ICONO_POR_HABILIDAD[h], 16) + "</span>" +
-          '<span class="mini-barra-nombre">' + NOMBRE_HABILIDAD[h] + "</span>" +
+          '<span class="mini-barra-nombre">' + esc(t("habilidad." + h)) + "</span>" +
           '<span class="mini-barra-nivel">' + (nivelCEFR || "—") + "</span>" +
           "</div>" +
           '<div class="barra-progreso barra-escala" data-habilidad="' + h + '" style="--progreso:0">' +
@@ -344,7 +338,7 @@
         esc(minutosHoy) + "/" + esc(prefs.metaMinutosDia) + " min</span></div>" +
         '<div class="meta-fila-barra">' +
         '<div class="barra-progreso barra-escala" style="--progreso:0"><span id="barra-meta" data-destino="' + porcentajeMeta + '"></span></div>' +
-        '<span class="pastilla-nivel-xp">Nivel <strong class="num-tabular">' + nivel + '</strong> · <span class="num-tabular" id="valor-xp">0</span> XP</span>' +
+        '<span class="pastilla-nivel-xp">' + esc(t("progreso.nivel")) + ' <strong class="num-tabular">' + nivel + '</strong> · <span class="num-tabular" id="valor-xp">0</span> XP</span>' +
         "</div>" +
         "</div>" +
         tarjetaPrincipalHtml +
@@ -360,13 +354,13 @@
         '<div class="inicio-camino">' +
         '<div class="fila-cabeza camino-cabeza"><h2>' + esc(t("inicio.camino_titulo")) + "</h2>" +
         '<span class="pastilla-nivel-xp camino-pastilla">' +
-        (global_.siguienteNivel ? global_.porcentajeHaciaSiguiente + "% hacia " + global_.siguienteNivel : "Nivel máximo de la escala") +
+        esc(global_.siguienteNivel ? t("inicio.pct_hacia", { pct: global_.porcentajeHaciaSiguiente, nivel: global_.siguienteNivel }) : t("inicio.nivel_maximo")) +
         "</span></div>" +
         '<div class="camino-pista">' +
         '<div class="camino-nodos">' + caminoNodosHtml + "</div>" +
         '<span class="camino-estrella" style="left:' + porcentajeCamino + '%">' + Iconos.svg("estrella", 18) + "</span>" +
         "</div>" +
-        '<p class="camino-linea texto-tenue">' + esc(t("inicio.camino_vas_aqui")) + '<span class="camino-linea-detalle"> · tu nivel de inglés ahora: ' + global_.nivel + "</span> · " +
+        '<p class="camino-linea texto-tenue">' + esc(t("inicio.camino_vas_aqui")) + '<span class="camino-linea-detalle"> · ' + esc(t("inicio.tu_nivel_ahora", { nivel: global_.nivel })) + "</span> · " +
         esc(t(ritmo === "bien" ? "inicio.ritmo_bien" : "inicio.ritmo_lento")) + "</p>" +
         '<div class="camino-mini-barras">' + miniBarrasHtml + "</div>" +
         "</div>" +

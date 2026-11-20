@@ -27,16 +27,14 @@
 (function (global) {
   "use strict";
 
-  var NOMBRE_ESCENARIO = {
-    correos: "Correo de trabajo",
-    reuniones: "Reunión de equipo",
-    standups: "Standup diario",
-    explicar_proyecto: "Explicar tu proyecto",
-    pedir_ayuda: "Pedir ayuda",
-    dar_feedback: "Dar feedback",
-    entrevistas: "Entrevista de trabajo"
-  };
+  // Orden de los escenarios; sus nombres y tips salen de data/i18n (conv.escenario.<clave>, conv.tip.<clave>).
+  var ORDEN_ESCENARIOS = ["correos", "reuniones", "standups", "explicar_proyecto", "pedir_ayuda", "dar_feedback", "entrevistas"];
 
+  // Traductor de la pantalla: se ata al contexto en cada render() (las funciones de abajo se llaman
+  // desde manejadores de eventos, ya después de render).
+  var t = function (clave) { return clave; };
+
+  // i18n-ok-start: saludos del asistente EN INGLÉS -- es el contenido que se practica, igual en cualquier nivel de interfaz
   var SALUDO_POR_ESCENARIO = {
     correos: "Hi! I'm your manager -- I just saw your email. What did you want to follow up on?",
     reuniones: "Hey, thanks for joining. Want to kick things off and tell me where we're at?",
@@ -47,15 +45,7 @@
     entrevistas: "Thanks for coming in. To start, can you tell me a bit about yourself?"
   };
 
-  var TIP_POR_ESCENARIO = {
-    correos: "Sé directo: di qué necesitas y para cuándo.",
-    reuniones: "No hace falta hablar perfecto -- enfócate en que te entiendan.",
-    standups: "Tres frases bastan: qué hiciste, qué sigue, qué te bloquea.",
-    explicar_proyecto: "Empieza por el problema que resuelve, no por los detalles técnicos.",
-    pedir_ayuda: "Describe qué ya intentaste antes de pedir ayuda.",
-    dar_feedback: "Sé específico: un ejemplo concreto vale más que un adjetivo.",
-    entrevistas: "Está bien tomarte un segundo para pensar antes de responder."
-  };
+  // i18n-ok-end
 
   var UMBRAL_HISTORIAL_VISIBLE = 50; // tope defensivo de burbujas en el DOM; el historial enviado ya se recorta en App.Conversacion
 
@@ -82,6 +72,7 @@
   }
 
   function render(el, ctx) {
+    t = global.App.I18n.traductor(ctx);
     el.innerHTML = '<div class="estado-vacio">…</div>';
 
     global.App.Datos.obtenerPreferencias().then(function (prefs) {
@@ -102,11 +93,11 @@
       '<div class="icono-mosaico" style="background:var(--surface-borde);margin-bottom:12px">' +
       global.App.Iconos.svg("candado", 20) +
       "</div>" +
-      "<h1>Conversación con IA</h1>" +
+      "<h1>" + global.App.Util.escaparHTML(t("conv.titulo")) + "</h1>" +
       '<div class="estado-vacio">' +
-      "<p>Todavía no está configurada: necesitas desplegar tu propio proxy y activarlo en Ajustes.</p>" +
-      "<p class=\"texto-caption\">Ver REPORTE_CONVERSACION_IA.md para los pasos.</p>" +
-      '<button type="button" class="boton-principal" id="btn-ir-ajustes" style="margin-top:12px">Ir a Ajustes</button>' +
+      "<p>" + global.App.Util.escaparHTML(t("conv.no_configurada")) + "</p>" +
+      "<p class=\"texto-caption\">" + global.App.Util.escaparHTML(t("conv.ver_reporte")) + "</p>" +
+      '<button type="button" class="boton-principal" id="btn-ir-ajustes" style="margin-top:12px">' + global.App.Util.escaparHTML(t("conv.ir_ajustes")) + '</button>' +
       "</div>" +
       "</div>";
     el.querySelector("#btn-ir-ajustes").addEventListener("click", function () {
@@ -115,7 +106,7 @@
   }
 
   function listaEscenariosHTML(esc, escenarioActivo) {
-    return Object.keys(NOMBRE_ESCENARIO)
+    return ORDEN_ESCENARIOS
       .map(function (clave) {
         var activo = clave === escenarioActivo;
         return (
@@ -124,7 +115,7 @@
           '"' +
           (activo ? ' aria-current="true"' : "") +
           ">" +
-          esc(NOMBRE_ESCENARIO[clave]) +
+          esc(t("conv.escenario." + clave)) +
           "</button>"
         );
       })
@@ -136,8 +127,8 @@
 
     el.innerHTML =
       '<div class="pantalla-vista ancho-lectura">' +
-      "<h1>Conversación con IA</h1>" +
-      '<p class="texto-tenue">Elige una situación para practicar</p>' +
+      "<h1>" + esc(t("conv.titulo")) + "</h1>" +
+      '<p class="texto-tenue">' + esc(t("conv.elige_situacion")) + '</p>' +
       '<div class="conv-escenarios-selector pop-entrada-escalonada" style="margin-top:12px">' +
       listaEscenariosHTML(esc, null) +
       "</div>" +
@@ -164,7 +155,7 @@
     el.innerHTML =
       '<div class="pantalla-vista pantalla-conversacion">' +
       "<h1>" +
-      esc(NOMBRE_ESCENARIO[escenario]) +
+      esc(t("conv.escenario." + escenario)) +
       "</h1>" +
       '<div class="conv-cuerpo">' +
       '<div class="conv-columna-escenarios">' +
@@ -172,25 +163,25 @@
       listaEscenariosHTML(esc, escenario) +
       "</div>" +
       '<div class="conv-tip">' +
-      '<p class="conv-tip-titulo">Tip</p>' +
+      '<p class="conv-tip-titulo">' + esc(t("conv.tip_titulo")) + '</p>' +
       "<p>" +
-      esc(TIP_POR_ESCENARIO[escenario] || "") +
+      esc(t("conv.tip." + escenario)) +
       "</p>" +
       "</div>" +
       "</div>" +
       '<div class="conv-panel-chat superficie-oscura">' +
-      '<p class="texto-caption">Las respuestas vienen de un modelo de lenguaje: son una guía de práctica, no una corrección oficial.</p>' +
+      '<p class="texto-caption">' + esc(t("conv.aviso_ia")) + '</p>' +
       '<div class="conversacion-historial" id="zona-historial"></div>' +
       '<div id="zona-reconocimiento"></div>' +
       '<div class="conv-barra-entrada">' +
       '<div class="conv-mic-wrap" id="mic-wrap">' +
       '<span class="habla-onda conv-onda"></span>' +
       '<span class="habla-onda conv-onda"></span>' +
-      '<button type="button" class="conv-boton-mic calcomania calcomania-presionable" id="btn-hablar" aria-label="Hablar" style="background:var(--coral);--r:0deg">' +
+      '<button type="button" class="conv-boton-mic calcomania calcomania-presionable" id="btn-hablar" aria-label="' + esc(t("mic.hablar_aria")) + '" style="background:var(--coral);--r:0deg">' +
       global.App.Iconos.svg("microfono", 20) +
       "</button>" +
       "</div>" +
-      '<button type="button" class="enlace-discreto" id="btn-terminar-conversacion">Terminar</button>' +
+      '<button type="button" class="enlace-discreto" id="btn-terminar-conversacion">' + esc(t("comun.terminar")) + '</button>' +
       "</div>" +
       "</div>" +
       "</div>" +
@@ -226,7 +217,7 @@
       esc(texto) +
       "</p>" +
       (esAsistente
-        ? '<button type="button" class="enlace-discreto boton-escuchar-burbuja" aria-label="Escuchar">' +
+        ? '<button type="button" class="enlace-discreto boton-escuchar-burbuja" aria-label="' + esc(t("comun.escuchar")) + '">' +
           global.App.Iconos.svg("bocina", 16) +
           "</button>"
         : "");
@@ -268,7 +259,7 @@
     var transcripcionFinal = "";
 
     function actualizarParcial() {
-      zonaReconocimiento.innerHTML = '<p class="texto-tenue">Escuchando… ' + global.App.Util.escaparHTML(parcial) + "</p>";
+      zonaReconocimiento.innerHTML = '<p class="texto-tenue">' + global.App.Util.escaparHTML(t("conv.escuchando")) + " " + global.App.Util.escaparHTML(parcial) + "</p>";
     }
     actualizarParcial();
 
@@ -286,19 +277,20 @@
       reconocedorActivo = null;
       btnHablar.disabled = false;
       micWrap.classList.remove("escuchando");
+      var esc = global.App.Util.escaparHTML;
       var mensajes = {
-        "no-speech": "No se detectó voz. Intenta hablar un poco más fuerte o más cerca del micrófono.",
-        "not-allowed": "No se dio permiso de micrófono. Revisa los permisos de Safari para esta página.",
-        "permission-denied": "No se dio permiso de micrófono. Revisa los permisos de Safari para esta página.",
-        network: "Hubo un problema de red con el reconocimiento de voz."
+        "no-speech": t("mic.err_no_speech"),
+        "not-allowed": t("mic.err_permiso"),
+        "permission-denied": t("mic.err_permiso"),
+        network: t("mic.err_red")
       };
-      var mensaje = mensajes[ev.error] || "Algo salió mal con el reconocimiento de voz (" + ev.error + ").";
+      var mensaje = mensajes[ev.error] || t("mic.err_otro", { err: ev.error });
       zonaReconocimiento.innerHTML =
         '<div class="panel-retro error">' +
-        '<p class="titulo-retro">No se pudo reconocer</p><p>' +
-        mensaje +
+        '<p class="titulo-retro">' + esc(t("mic.no_se_pudo_reconocer")) + '</p><p>' +
+        esc(mensaje) +
         "</p>" +
-        '<button type="button" class="boton-principal" id="btn-reintentar-reconocer" style="margin-top:12px">Reintentar</button>' +
+        '<button type="button" class="boton-principal" id="btn-reintentar-reconocer" style="margin-top:12px">' + esc(t("comun.reintentar")) + '</button>' +
         "</div>";
       zonaReconocimiento.querySelector("#btn-reintentar-reconocer").addEventListener("click", function () {
         iniciarReconocimiento(el, escenario, workerUrl, nivelCEFR);
@@ -322,7 +314,7 @@
       reconocedorActivo = null;
       btnHablar.disabled = false;
       micWrap.classList.remove("escuchando");
-      zonaReconocimiento.innerHTML = '<p class="mensaje-error">No se pudo iniciar el reconocimiento: ' + global.App.Util.escaparHTML(e.message) + "</p>";
+      zonaReconocimiento.innerHTML = '<p class="mensaje-error">' + global.App.Util.escaparHTML(t("mic.no_se_pudo_iniciar", { mensaje: e.message })) + "</p>";
     }
   }
 
@@ -330,9 +322,9 @@
     var zonaReconocimiento = el.querySelector("#zona-reconocimiento");
     zonaReconocimiento.innerHTML =
       '<div class="fila">' +
-      '<p class="texto-tenue">Este navegador no tiene reconocimiento de voz. Escribe tu respuesta:</p>' +
+      '<p class="texto-tenue">' + global.App.Util.escaparHTML(t("conv.sin_reconocimiento_escribe")) + '</p>' +
       '<input type="text" id="input-texto-conversacion" class="campo-texto" style="margin-top:8px" />' +
-      '<button type="button" class="boton-principal" id="btn-enviar-texto" style="margin-top:8px">Enviar</button>' +
+      '<button type="button" class="boton-principal" id="btn-enviar-texto" style="margin-top:8px">' + global.App.Util.escaparHTML(t("conv.enviar")) + '</button>' +
       "</div>";
     var input = zonaReconocimiento.querySelector("#input-texto-conversacion");
     zonaReconocimiento.querySelector("#btn-enviar-texto").addEventListener("click", function () {
@@ -396,7 +388,7 @@
       "<p>" +
       esc(mensaje) +
       "</p>" +
-      '<button type="button" class="boton-secundario" id="btn-reintentar-turno" style="margin-top:8px">Reintentar</button>' +
+      '<button type="button" class="boton-secundario" id="btn-reintentar-turno" style="margin-top:8px">' + esc(t("comun.reintentar")) + '</button>' +
       "</div>";
     zonaReconocimiento.querySelector("#btn-reintentar-turno").addEventListener("click", function () {
       zonaReconocimiento.innerHTML = "";

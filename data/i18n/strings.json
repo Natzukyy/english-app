@@ -253,5 +253,810 @@
     "categoria": "corta",
     "es": "Terminar",
     "en": "Finish"
+  },
+  "comun.escuchar": {
+    "categoria": "corta",
+    "es": "Escuchar",
+    "en": "Listen"
+  },
+  "repaso.racha_de": {
+    "categoria": "corta",
+    "es": "Racha de {n}",
+    "en": "Streak of {n}"
+  },
+  "repaso.tarjetas_repasadas": {
+    "categoria": "corta",
+    "es": "Tarjetas repasadas",
+    "en": "Cards reviewed"
+  },
+  "repaso.aciertos": {
+    "categoria": "corta",
+    "es": "Aciertos",
+    "en": "Correct"
+  },
+  "repaso.minutos_hoy": {
+    "categoria": "corta",
+    "es": "Minutos hoy",
+    "en": "Minutes today"
+  },
+  "repaso.xp_ganado": {
+    "categoria": "corta",
+    "es": "XP ganado",
+    "en": "XP earned"
+  },
+  "repaso.pastilla_defecto": {
+    "categoria": "corta",
+    "es": "Repaso",
+    "en": "Review"
+  },
+  "repaso.tipo.frase": {
+    "categoria": "corta",
+    "es": "frase",
+    "en": "phrase"
+  },
+  "repaso.tipo.vocabulario": {
+    "categoria": "corta",
+    "es": "vocabulario",
+    "en": "vocabulary"
+  },
+  "repaso.voltear_aria": {
+    "categoria": "larga",
+    "es": "Voltear para ver la traducción",
+    "en": "Flip to see the translation"
+  },
+  "repaso.traduccion": {
+    "categoria": "corta",
+    "es": "Traducción",
+    "en": "Translation"
+  },
+  "repaso.ayuda_revelar": {
+    "categoria": "larga",
+    "es": "Toca la tarjeta o presiona espacio para ver la traducción",
+    "en": "Tap the card or press space to see the translation"
+  },
+  "repaso.pregunta_calidad": {
+    "categoria": "larga",
+    "es": "¿Qué tal te fue?",
+    "en": "How did it go?"
+  },
+  "repaso.no_la_sabia": {
+    "categoria": "corta",
+    "es": "No la sabía",
+    "en": "Didn't know it"
+  },
+  "repaso.dificil": {
+    "categoria": "corta",
+    "es": "Difícil",
+    "en": "Hard"
+  },
+  "repaso.bien": {
+    "categoria": "corta",
+    "es": "Bien",
+    "en": "Good"
+  },
+  "repaso.facil": {
+    "categoria": "corta",
+    "es": "Fácil",
+    "en": "Easy"
+  },
+  "repaso.tecla": {
+    "categoria": "corta",
+    "es": "Tecla {n}",
+    "en": "Key {n}"
+  },
+  "repaso.nota_teclado": {
+    "categoria": "larga",
+    "es": "Espacio muestra la traducción. Puedes calificar con las teclas 1 a 4.",
+    "en": "Space shows the translation. You can rate with keys 1 to 4."
+  },
+  "habilidad.lectura": {
+    "categoria": "corta",
+    "es": "Lectura",
+    "en": "Reading"
+  },
+  "habilidad.escucha": {
+    "categoria": "corta",
+    "es": "Escucha",
+    "en": "Listening"
+  },
+  "habilidad.habla": {
+    "categoria": "corta",
+    "es": "Habla",
+    "en": "Speaking"
+  },
+  "habilidad.escritura": {
+    "categoria": "corta",
+    "es": "Escritura",
+    "en": "Writing"
+  },
+  "habilidad.vocabulario_gramatica": {
+    "categoria": "corta",
+    "es": "Vocabulario y gramática",
+    "en": "Vocabulary and grammar"
+  },
+  "comun.correcto": {
+    "categoria": "corta",
+    "es": "¡Correcto!",
+    "en": "Correct!"
+  },
+  "comun.respuesta_era": {
+    "categoria": "larga",
+    "es": "La respuesta correcta era {letra}.",
+    "en": "The correct answer was {letra}."
+  },
+  "comun.siguiente": {
+    "categoria": "corta",
+    "es": "Siguiente",
+    "en": "Next"
+  },
+  "comun.responder": {
+    "categoria": "corta",
+    "es": "Responder",
+    "en": "Answer"
+  },
+  "diagnostico.reproducir": {
+    "categoria": "corta",
+    "es": "Reproducir",
+    "en": "Play"
+  },
+  "diagnostico.teclas": {
+    "categoria": "larga",
+    "es": "Teclas A–D para elegir · Enter para responder",
+    "en": "Keys A–D to choose · Enter to answer"
+  },
+  "diagnostico.autoeval_pregunta": {
+    "categoria": "larga",
+    "es": "¿Qué descripción te queda mejor para {habilidad}?",
+    "en": "Which description fits you best for {habilidad}?"
+  },
+  "diagnostico.estimacion": {
+    "categoria": "larga",
+    "es": "Esto es una estimación, no una certificación oficial.",
+    "en": "This is an estimate, not an official certification."
+  },
+  "diagnostico.ver_progreso": {
+    "categoria": "corta",
+    "es": "Ver progreso",
+    "en": "View progress"
+  },
+  "progreso.hacer_diagnostico": {
+    "categoria": "corta",
+    "es": "Hacer diagnóstico",
+    "en": "Take the diagnostic"
+  },
+  "progreso.repetir_diagnostico": {
+    "categoria": "corta",
+    "es": "Repetir diagnóstico",
+    "en": "Retake the diagnostic"
+  },
+  "progreso.nivel": {
+    "categoria": "corta",
+    "es": "Nivel",
+    "en": "Level"
+  },
+  "progreso.racha": {
+    "categoria": "corta",
+    "es": "Racha",
+    "en": "Streak"
+  },
+  "progreso.esta_semana": {
+    "categoria": "corta",
+    "es": "Esta semana",
+    "en": "This week"
+  },
+  "progreso.por_habilidad": {
+    "categoria": "corta",
+    "es": "Por habilidad",
+    "en": "By skill"
+  },
+  "practicar.ultima_hoy": {
+    "categoria": "corta",
+    "es": "Última vez: hoy",
+    "en": "Last time: today"
+  },
+  "practicar.ultima_ayer": {
+    "categoria": "corta",
+    "es": "Última vez: ayer",
+    "en": "Last time: yesterday"
+  },
+  "practicar.ultima_dias": {
+    "categoria": "corta",
+    "es": "Última vez: hace {n} días",
+    "en": "Last time: {n} days ago"
+  },
+  "practicar.proximamente": {
+    "categoria": "corta",
+    "es": "Próximamente",
+    "en": "Coming soon"
+  },
+  "practicar.volver_aria": {
+    "categoria": "corta",
+    "es": "Volver a Inicio",
+    "en": "Back to Home"
+  },
+  "practicar.vencidas_una": {
+    "categoria": "corta",
+    "es": "{n} tarjeta vencida",
+    "en": "{n} card due"
+  },
+  "practicar.vencidas_varias": {
+    "categoria": "corta",
+    "es": "{n} tarjetas vencidas",
+    "en": "{n} cards due"
+  },
+  "plan.paso_n_de_m": {
+    "categoria": "corta",
+    "es": "Paso {n} de {total}",
+    "en": "Step {n} of {total}"
+  },
+  "inicio.paso.diagnostico": {
+    "categoria": "corta",
+    "es": "Diagnóstico de nivel",
+    "en": "Level diagnostic"
+  },
+  "inicio.paso.reevaluacion": {
+    "categoria": "corta",
+    "es": "Mini-reevaluación de nivel",
+    "en": "Mini level re-check"
+  },
+  "inicio.paso.repaso": {
+    "categoria": "corta",
+    "es": "Repaso de tarjetas",
+    "en": "Flashcard review"
+  },
+  "inicio.paso.conversacion": {
+    "categoria": "corta",
+    "es": "Conversación con IA",
+    "en": "AI conversation"
+  },
+  "inicio.paso.practica": {
+    "categoria": "corta",
+    "es": "Práctica de {habilidad}",
+    "en": "{habilidad} practice"
+  },
+  "inicio.razon.repaso_una": {
+    "categoria": "larga",
+    "es": "Tienes {n} tarjeta por repasar hoy.",
+    "en": "You have {n} card to review today."
+  },
+  "inicio.razon.repaso_varias": {
+    "categoria": "larga",
+    "es": "Tienes {n} tarjetas por repasar hoy.",
+    "en": "You have {n} cards to review today."
+  },
+  "inicio.razon.practica": {
+    "categoria": "larga",
+    "es": "{minutos} minutos de práctica, nivel {nivel}",
+    "en": "{minutos} minutes of practice, level {nivel}"
+  },
+  "inicio.razon.conversacion": {
+    "categoria": "larga",
+    "es": "Te toca conversación esta semana.",
+    "en": "Conversation is due this week."
+  },
+  "inicio.razon.reevaluacion": {
+    "categoria": "larga",
+    "es": "Ya pasaron unas semanas -- vale la pena confirmar tu nivel.",
+    "en": "It's been a few weeks -- worth confirming your level."
+  },
+  "inicio.razon.diagnostico": {
+    "categoria": "larga",
+    "es": "Tu diagnóstico inicial, para armar el resto de tu ruta.",
+    "en": "Your initial diagnostic, to build the rest of your route."
+  },
+  "inicio.racha_minuscula": {
+    "categoria": "corta",
+    "es": "racha",
+    "en": "streak"
+  },
+  "inicio.manana_detalle": {
+    "categoria": "corta",
+    "es": "un plan nuevo te espera.",
+    "en": "a new plan awaits you."
+  },
+  "inicio.pct_hacia": {
+    "categoria": "corta",
+    "es": "{pct}% hacia {nivel}",
+    "en": "{pct}% toward {nivel}"
+  },
+  "inicio.nivel_maximo": {
+    "categoria": "corta",
+    "es": "Nivel máximo de la escala",
+    "en": "Top level of the scale"
+  },
+  "inicio.tu_nivel_ahora": {
+    "categoria": "corta",
+    "es": "tu nivel de inglés ahora: {nivel}",
+    "en": "your English level now: {nivel}"
+  },
+  "comun.ver_preguntas": {
+    "categoria": "corta",
+    "es": "Ver preguntas",
+    "en": "View questions"
+  },
+  "comun.listo": {
+    "categoria": "corta",
+    "es": "¡Listo!",
+    "en": "Done!"
+  },
+  "comun.correctas": {
+    "categoria": "corta",
+    "es": "correctas",
+    "en": "correct"
+  },
+  "comun.ver_resultado": {
+    "categoria": "corta",
+    "es": "Ver resultado",
+    "en": "See result"
+  },
+  "lectura.min_lectura": {
+    "categoria": "corta",
+    "es": "~{n} min de lectura",
+    "en": "~{n} min read"
+  },
+  "lectura.toca_palabra": {
+    "categoria": "larga",
+    "es": "Toca una palabra resaltada para ver su traducción.",
+    "en": "Tap a highlighted word to see its translation."
+  },
+  "lectura.preguntas_una": {
+    "categoria": "larga",
+    "es": "{n} pregunta de comprensión sobre el texto.",
+    "en": "{n} comprehension question about the text."
+  },
+  "lectura.preguntas_varias": {
+    "categoria": "larga",
+    "es": "{n} preguntas de comprensión sobre el texto.",
+    "en": "{n} comprehension questions about the text."
+  },
+  "escucha.toca_escuchar": {
+    "categoria": "corta",
+    "es": "Toca para escuchar.",
+    "en": "Tap to listen."
+  },
+  "escucha.toca_de_nuevo": {
+    "categoria": "corta",
+    "es": "Toca para escuchar de nuevo.",
+    "en": "Tap to listen again."
+  },
+  "escucha.mas_despacio": {
+    "categoria": "corta",
+    "es": "Escuchar más despacio",
+    "en": "Listen more slowly"
+  },
+  "escucha.antes_de_preguntas": {
+    "categoria": "larga",
+    "es": "Escucha al menos una vez antes de ver las preguntas.",
+    "en": "Listen at least once before viewing the questions."
+  },
+  "escucha.reproduciendo": {
+    "categoria": "corta",
+    "es": "Reproduciendo…",
+    "en": "Playing…"
+  },
+  "escucha.preguntas_una": {
+    "categoria": "larga",
+    "es": "{n} pregunta de comprensión sobre lo que escuchaste.",
+    "en": "{n} comprehension question about what you heard."
+  },
+  "escucha.preguntas_varias": {
+    "categoria": "larga",
+    "es": "{n} preguntas de comprensión sobre lo que escuchaste.",
+    "en": "{n} comprehension questions about what you heard."
+  },
+  "escucha.ver_transcripcion": {
+    "categoria": "corta",
+    "es": "Ver transcripción",
+    "en": "View transcript"
+  },
+  "escritura.placeholder": {
+    "categoria": "corta",
+    "es": "Escribe tu respuesta en inglés aquí…",
+    "en": "Write your answer in English here…"
+  },
+  "escritura.terminar_escribir": {
+    "categoria": "corta",
+    "es": "Terminar de escribir",
+    "en": "Finish writing"
+  },
+  "escritura.espera": {
+    "categoria": "larga",
+    "es": "La lista de verificación y una respuesta de ejemplo aparecen aquí cuando termines de escribir.",
+    "en": "The checklist and a sample answer appear here when you finish writing."
+  },
+  "escritura.como_te_fue": {
+    "categoria": "larga",
+    "es": "¿Qué tal te fue?",
+    "en": "How did it go?"
+  },
+  "escritura.marca_logrado": {
+    "categoria": "larga",
+    "es": "Marca lo que sí lograste -- es para ti, nadie más lo va a calificar.",
+    "en": "Check what you achieved -- it's for you, nobody else will grade it."
+  },
+  "escritura.respuesta_ejemplo": {
+    "categoria": "corta",
+    "es": "Respuesta de ejemplo",
+    "en": "Sample answer"
+  },
+  "escritura.pedir_correccion": {
+    "categoria": "corta",
+    "es": "Pedir corrección a la IA",
+    "en": "Ask the AI for a correction"
+  },
+  "escritura.pidiendo_correccion": {
+    "categoria": "corta",
+    "es": "Pidiendo corrección…",
+    "en": "Requesting correction…"
+  },
+  "ajustes.meta_titulo": {
+    "categoria": "corta",
+    "es": "Meta diaria",
+    "en": "Daily goal"
+  },
+  "ajustes.meta_bajar_aria": {
+    "categoria": "corta",
+    "es": "Bajar meta diaria",
+    "en": "Decrease daily goal"
+  },
+  "ajustes.meta_subir_aria": {
+    "categoria": "corta",
+    "es": "Subir meta diaria",
+    "en": "Increase daily goal"
+  },
+  "ajustes.voz_titulo": {
+    "categoria": "corta",
+    "es": "Voz del modelo",
+    "en": "Model voice"
+  },
+  "ajustes.voz_descripcion": {
+    "categoria": "larga",
+    "es": "Qué voz usan Habla, Diagnóstico y Conversación para leer en voz alta.",
+    "en": "Which voice Speaking, Diagnostic and Conversation use to read aloud."
+  },
+  "ajustes.voz_cargando": {
+    "categoria": "corta",
+    "es": "Cargando voces…",
+    "en": "Loading voices…"
+  },
+  "ajustes.voz_probar": {
+    "categoria": "corta",
+    "es": "Probar",
+    "en": "Test"
+  },
+  "ajustes.voz_sin_voces": {
+    "categoria": "larga",
+    "es": "No hay voces en inglés disponibles en este dispositivo",
+    "en": "No English voices available on this device"
+  },
+  "ajustes.voz_automatica": {
+    "categoria": "corta",
+    "es": "Automática ({nombre})",
+    "en": "Automatic ({nombre})"
+  },
+  "ajustes.tema_titulo": {
+    "categoria": "corta",
+    "es": "Tema",
+    "en": "Theme"
+  },
+  "ajustes.tema_sistema": {
+    "categoria": "corta",
+    "es": "Sistema",
+    "en": "System"
+  },
+  "ajustes.tema_claro": {
+    "categoria": "corta",
+    "es": "Claro",
+    "en": "Light"
+  },
+  "ajustes.tema_oscuro": {
+    "categoria": "corta",
+    "es": "Oscuro",
+    "en": "Dark"
+  },
+  "ajustes.ingles_titulo": {
+    "categoria": "corta",
+    "es": "Interfaz en inglés",
+    "en": "English interface"
+  },
+  "ajustes.ingles_progreso": {
+    "categoria": "corta",
+    "es": "{dias} días activos · {pct}% hacia inglés completo",
+    "en": "{dias} active days · {pct}% toward full English"
+  },
+  "ajustes.forzar_espanol": {
+    "categoria": "critica",
+    "es": "Forzar español",
+    "en": "Force Spanish"
+  },
+  "ajustes.forzar_espanol_desc": {
+    "categoria": "critica",
+    "es": "Si lo activas, la interfaz se queda en español sin importar tus días activos.",
+    "en": "If you turn this on, the interface stays in Spanish regardless of your active days."
+  },
+  "ajustes.datos_titulo": {
+    "categoria": "corta",
+    "es": "Tus datos",
+    "en": "Your data"
+  },
+  "ajustes.conv_titulo": {
+    "categoria": "corta",
+    "es": "Conversación con IA",
+    "en": "AI conversation"
+  },
+  "ajustes.conv_activada": {
+    "categoria": "corta",
+    "es": "Activada",
+    "en": "Enabled"
+  },
+  "ajustes.conv_no_configurada": {
+    "categoria": "corta",
+    "es": "No configurada",
+    "en": "Not set up"
+  },
+  "ajustes.conv_descripcion": {
+    "categoria": "larga",
+    "es": "Necesita tu propio proxy desplegado (ver REPORTE_CONVERSACION_IA.md). Tu clave de API nunca vive aquí.",
+    "en": "It needs your own deployed proxy (see REPORTE_CONVERSACION_IA.md). Your API key never lives here."
+  },
+  "ajustes.conv_activar": {
+    "categoria": "corta",
+    "es": "Activar",
+    "en": "Enable"
+  },
+  "ajustes.conv_desactivar": {
+    "categoria": "corta",
+    "es": "Desactivar",
+    "en": "Disable"
+  },
+  "ajustes.importado": {
+    "categoria": "corta",
+    "es": "Importado: {lista}",
+    "en": "Imported: {lista}"
+  },
+  "ajustes.json_invalido": {
+    "categoria": "corta",
+    "es": "JSON inválido",
+    "en": "invalid JSON"
+  },
+  "comun.reintentar": {
+    "categoria": "corta",
+    "es": "Reintentar",
+    "en": "Try again"
+  },
+  "mic.toca_hablar": {
+    "categoria": "corta",
+    "es": "Toca el micrófono para hablar",
+    "en": "Tap the microphone to speak"
+  },
+  "mic.hablar_aria": {
+    "categoria": "corta",
+    "es": "Hablar",
+    "en": "Speak"
+  },
+  "mic.escuchando": {
+    "categoria": "corta",
+    "es": "Escuchando… habla ahora",
+    "en": "Listening… speak now"
+  },
+  "mic.no_se_pudo_reconocer": {
+    "categoria": "corta",
+    "es": "No se pudo reconocer",
+    "en": "Could not recognize"
+  },
+  "mic.err_no_speech": {
+    "categoria": "larga",
+    "es": "No se detectó voz. Intenta hablar un poco más fuerte o más cerca del micrófono.",
+    "en": "No speech detected. Try speaking a bit louder or closer to the microphone."
+  },
+  "mic.err_permiso": {
+    "categoria": "larga",
+    "es": "No se dio permiso de micrófono. Revisa los permisos de Safari para esta página.",
+    "en": "Microphone permission was not granted. Check the Safari permissions for this page."
+  },
+  "mic.err_red": {
+    "categoria": "larga",
+    "es": "Hubo un problema de red con el reconocimiento de voz.",
+    "en": "There was a network problem with speech recognition."
+  },
+  "mic.err_otro": {
+    "categoria": "larga",
+    "es": "Algo salió mal con el reconocimiento de voz ({err}).",
+    "en": "Something went wrong with speech recognition ({err})."
+  },
+  "mic.no_se_pudo_iniciar": {
+    "categoria": "larga",
+    "es": "No se pudo iniciar el reconocimiento: {mensaje}",
+    "en": "Could not start recognition: {mensaje}"
+  },
+  "habla.repite_frase": {
+    "categoria": "corta",
+    "es": "Repite la frase",
+    "en": "Repeat the phrase"
+  },
+  "habla.responde_voz": {
+    "categoria": "corta",
+    "es": "Responde en voz alta",
+    "en": "Answer out loud"
+  },
+  "habla.escuchar_modelo": {
+    "categoria": "corta",
+    "es": "Escuchar el modelo",
+    "en": "Listen to the model"
+  },
+  "habla.escuchar_pregunta": {
+    "categoria": "corta",
+    "es": "Escuchar la pregunta",
+    "en": "Listen to the question"
+  },
+  "habla.sin_reconocimiento": {
+    "categoria": "larga",
+    "es": "Este navegador no tiene reconocimiento de voz",
+    "en": "This browser has no speech recognition"
+  },
+  "habla.autoevaluarte": {
+    "categoria": "larga",
+    "es": "Puedes autoevaluarte: ¿cómo te salió?",
+    "en": "You can self-assess: how did it go?"
+  },
+  "habla.me_salio_bien": {
+    "categoria": "corta",
+    "es": "Me salió bien",
+    "en": "It went well"
+  },
+  "habla.me_costo": {
+    "categoria": "corta",
+    "es": "Me costó trabajo",
+    "en": "It was hard"
+  },
+  "habla.se_entendio": {
+    "categoria": "larga",
+    "es": "Se entendió: “{texto}”",
+    "en": "Understood: “{texto}”"
+  },
+  "habla.bien_parecido": {
+    "categoria": "corta",
+    "es": "¡Bien parecido!",
+    "en": "Pretty close!"
+  },
+  "habla.buen_camino": {
+    "categoria": "corta",
+    "es": "Vas por buen camino",
+    "en": "You're on the right track"
+  },
+  "habla.aproximado": {
+    "categoria": "larga",
+    "es": "El reconocimiento de voz es aproximado: esto es una guía, no una calificación exacta.",
+    "en": "Speech recognition is approximate: this is a guide, not an exact grade."
+  },
+  "habla.autoeval_registrada": {
+    "categoria": "corta",
+    "es": "Autoevaluación registrada.",
+    "en": "Self-assessment recorded."
+  },
+  "habla.otro_ejercicio": {
+    "categoria": "corta",
+    "es": "Otro ejercicio",
+    "en": "Another exercise"
+  },
+  "conv.titulo": {
+    "categoria": "corta",
+    "es": "Conversación con IA",
+    "en": "AI conversation"
+  },
+  "conv.no_configurada": {
+    "categoria": "larga",
+    "es": "Todavía no está configurada: necesitas desplegar tu propio proxy y activarlo en Ajustes.",
+    "en": "It is not set up yet: you need to deploy your own proxy and enable it in Settings."
+  },
+  "conv.ver_reporte": {
+    "categoria": "larga",
+    "es": "Ver REPORTE_CONVERSACION_IA.md para los pasos.",
+    "en": "See REPORTE_CONVERSACION_IA.md for the steps."
+  },
+  "conv.ir_ajustes": {
+    "categoria": "corta",
+    "es": "Ir a Ajustes",
+    "en": "Go to Settings"
+  },
+  "conv.elige_situacion": {
+    "categoria": "larga",
+    "es": "Elige una situación para practicar",
+    "en": "Choose a situation to practice"
+  },
+  "conv.aviso_ia": {
+    "categoria": "larga",
+    "es": "Las respuestas vienen de un modelo de lenguaje: son una guía de práctica, no una corrección oficial.",
+    "en": "The replies come from a language model: they are a practice guide, not an official correction."
+  },
+  "conv.tip_titulo": {
+    "categoria": "corta",
+    "es": "Tip",
+    "en": "Tip"
+  },
+  "conv.escuchando": {
+    "categoria": "corta",
+    "es": "Escuchando…",
+    "en": "Listening…"
+  },
+  "conv.sin_reconocimiento_escribe": {
+    "categoria": "larga",
+    "es": "Este navegador no tiene reconocimiento de voz. Escribe tu respuesta:",
+    "en": "This browser has no speech recognition. Type your answer:"
+  },
+  "conv.enviar": {
+    "categoria": "corta",
+    "es": "Enviar",
+    "en": "Send"
+  },
+  "conv.escenario.correos": {
+    "categoria": "corta",
+    "es": "Correo de trabajo",
+    "en": "Work email"
+  },
+  "conv.escenario.reuniones": {
+    "categoria": "corta",
+    "es": "Reunión de equipo",
+    "en": "Team meeting"
+  },
+  "conv.escenario.standups": {
+    "categoria": "corta",
+    "es": "Standup diario",
+    "en": "Daily standup"
+  },
+  "conv.escenario.explicar_proyecto": {
+    "categoria": "corta",
+    "es": "Explicar tu proyecto",
+    "en": "Explain your project"
+  },
+  "conv.escenario.pedir_ayuda": {
+    "categoria": "corta",
+    "es": "Pedir ayuda",
+    "en": "Ask for help"
+  },
+  "conv.escenario.dar_feedback": {
+    "categoria": "corta",
+    "es": "Dar feedback",
+    "en": "Give feedback"
+  },
+  "conv.escenario.entrevistas": {
+    "categoria": "corta",
+    "es": "Entrevista de trabajo",
+    "en": "Job interview"
+  },
+  "conv.tip.correos": {
+    "categoria": "larga",
+    "es": "Sé directo: di qué necesitas y para cuándo.",
+    "en": "Be direct: say what you need and by when."
+  },
+  "conv.tip.reuniones": {
+    "categoria": "larga",
+    "es": "No hace falta hablar perfecto -- enfócate en que te entiendan.",
+    "en": "You don't need to speak perfectly -- focus on being understood."
+  },
+  "conv.tip.standups": {
+    "categoria": "larga",
+    "es": "Tres frases bastan: qué hiciste, qué sigue, qué te bloquea.",
+    "en": "Three sentences are enough: what you did, what is next, what blocks you."
+  },
+  "conv.tip.explicar_proyecto": {
+    "categoria": "larga",
+    "es": "Empieza por el problema que resuelve, no por los detalles técnicos.",
+    "en": "Start with the problem it solves, not the technical details."
+  },
+  "conv.tip.pedir_ayuda": {
+    "categoria": "larga",
+    "es": "Describe qué ya intentaste antes de pedir ayuda.",
+    "en": "Describe what you already tried before asking for help."
+  },
+  "conv.tip.dar_feedback": {
+    "categoria": "larga",
+    "es": "Sé específico: un ejemplo concreto vale más que un adjetivo.",
+    "en": "Be specific: a concrete example is worth more than an adjective."
+  },
+  "conv.tip.entrevistas": {
+    "categoria": "larga",
+    "es": "Está bien tomarte un segundo para pensar antes de responder.",
+    "en": "It is fine to take a second to think before answering."
   }
 }

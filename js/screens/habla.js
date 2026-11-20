@@ -49,9 +49,7 @@
   }
 
   function render(el, ctx) {
-    var t = function (clave) {
-      return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings);
-    };
+    var t = global.App.I18n.traductor(ctx);
 
     el.innerHTML = '<div class="estado-vacio">…</div>';
 
@@ -82,11 +80,11 @@
     var esc = global.App.Util.escaparHTML;
     var esSombra = ejercicio.tipo === "shadowing";
     var fraseMostrada = esSombra ? ejercicio.fraseObjetivo : ejercicio.prompt;
-    var etiqueta = esSombra ? "Repite la frase" : "Responde en voz alta";
+    var etiqueta = t(esSombra ? "habla.repite_frase" : "habla.responde_voz");
 
     el.innerHTML =
       '<div class="pantalla-vista pantalla-habla">' +
-      "<h1>Habla</h1>" +
+      "<h1>" + esc(t("habilidad.habla")) + "</h1>" +
       '<div class="habla-cuerpo">' +
       '<div class="habla-tarjeta calcomania pop-entrada" style="background:var(--crema);--r:-1deg">' +
       '<span class="habla-etiqueta">' +
@@ -100,18 +98,18 @@
       '<button type="button" class="habla-boton-escuchar calcomania calcomania-presionable" id="btn-escuchar" style="background:var(--azul);--r:0deg">' +
       global.App.Iconos.svg("bocina", 18) +
       "<span>" +
-      (esSombra ? "Escuchar el modelo" : "Escuchar la pregunta") +
+      esc(t(esSombra ? "habla.escuchar_modelo" : "habla.escuchar_pregunta")) +
       "</span></button>" +
       "</div>" +
       '<div class="habla-panel-mic superficie-oscura pop-entrada" id="panel-mic">' +
       '<div class="habla-mic-wrap" id="mic-wrap">' +
       '<span class="habla-onda habla-onda-1"></span>' +
       '<span class="habla-onda habla-onda-2"></span>' +
-      '<button type="button" class="habla-boton-mic calcomania calcomania-presionable" id="btn-hablar" aria-label="Hablar" style="background:var(--coral);--r:0deg">' +
+      '<button type="button" class="habla-boton-mic calcomania calcomania-presionable" id="btn-hablar" aria-label="' + esc(t("mic.hablar_aria")) + '" style="background:var(--coral);--r:0deg">' +
       global.App.Iconos.svg("microfono", 36) +
       "</button>" +
       "</div>" +
-      '<p class="habla-estado-mic" id="estado-mic">Toca el micrófono para hablar</p>' +
+      '<p class="habla-estado-mic" id="estado-mic">' + esc(t("mic.toca_hablar")) + '</p>' +
       '<div id="zona-reconocimiento"></div>' +
       '<div id="zona-retro"></div>' +
       // Salida explícita: sin ella un paso de Habla en la ruta guiada solo se podía cerrar
@@ -153,6 +151,7 @@
   }
 
   function iniciarReconocimiento(el, t, ejercicio, esSombra, fraseMostrada) {
+    var esc = global.App.Util.escaparHTML;
     var Reconocedor = global.SpeechRecognition || global.webkitSpeechRecognition;
     var btnHablar = el.querySelector("#btn-hablar");
     var micWrap = el.querySelector("#mic-wrap");
@@ -164,11 +163,11 @@
     if (!Reconocedor) {
       zonaReconocimiento.innerHTML =
         '<div class="panel-retro error">' +
-        '<p class="titulo-retro">Este navegador no tiene reconocimiento de voz</p>' +
-        "<p>Puedes autoevaluarte: ¿cómo te salió?</p>" +
+        '<p class="titulo-retro">' + esc(t("habla.sin_reconocimiento")) + '</p>' +
+        "<p>" + esc(t("habla.autoevaluarte")) + "</p>" +
         '<div class="fila-botones" style="margin-top:8px">' +
-        '<button type="button" class="boton-secundario estado-correcto" id="btn-auto-bien">Me salió bien</button>' +
-        '<button type="button" class="boton-secundario estado-incorrecto" id="btn-auto-mal">Me costó trabajo</button>' +
+        '<button type="button" class="boton-secundario estado-correcto" id="btn-auto-bien">' + esc(t("habla.me_salio_bien")) + '</button>' +
+        '<button type="button" class="boton-secundario estado-incorrecto" id="btn-auto-mal">' + esc(t("habla.me_costo")) + '</button>' +
         "</div>" +
         "</div>";
       zonaReconocimiento.querySelector("#btn-auto-bien").addEventListener("click", function () {
@@ -185,7 +184,7 @@
     // se detienen en CUALQUIER salida del reconocimiento (result final, error o excepción al
     // iniciar), nunca quedan girando de más.
     micWrap.classList.add("escuchando");
-    estadoMic.textContent = "Escuchando… habla ahora";
+    estadoMic.textContent = t("mic.escuchando");
 
     var reconocimiento = new Reconocedor();
     reconocedorActivo = reconocimiento;
@@ -214,21 +213,21 @@
       reconocedorActivo = null;
       btnHablar.disabled = false;
       micWrap.classList.remove("escuchando");
-      estadoMic.textContent = "Toca el micrófono para hablar";
+      estadoMic.textContent = t("mic.toca_hablar");
       var mensajes = {
-        "no-speech": "No se detectó voz. Intenta hablar un poco más fuerte o más cerca del micrófono.",
-        "not-allowed": "No se dio permiso de micrófono. Revisa los permisos de Safari para esta página.",
-        "permission-denied": "No se dio permiso de micrófono. Revisa los permisos de Safari para esta página.",
-        network: "Hubo un problema de red con el reconocimiento de voz."
+        "no-speech": t("mic.err_no_speech"),
+        "not-allowed": t("mic.err_permiso"),
+        "permission-denied": t("mic.err_permiso"),
+        network: t("mic.err_red")
       };
-      var mensaje = mensajes[ev.error] || "Algo salió mal con el reconocimiento de voz (" + ev.error + ").";
+      var mensaje = mensajes[ev.error] || t("mic.err_otro", { err: ev.error });
       zonaReconocimiento.innerHTML =
         '<div class="panel-retro error">' +
-        '<p class="titulo-retro">No se pudo reconocer</p>' +
+        '<p class="titulo-retro">' + esc(t("mic.no_se_pudo_reconocer")) + '</p>' +
         "<p>" +
-        mensaje +
+        esc(mensaje) +
         "</p>" +
-        '<button type="button" class="boton-principal" id="btn-reintentar-reconocer" style="margin-top:12px">Reintentar</button>' +
+        '<button type="button" class="boton-principal" id="btn-reintentar-reconocer" style="margin-top:12px">' + esc(t("comun.reintentar")) + '</button>' +
         "</div>";
       zonaReconocimiento.querySelector("#btn-reintentar-reconocer").addEventListener("click", function () {
         iniciarReconocimiento(el, t, ejercicio, esSombra, fraseMostrada);
@@ -239,7 +238,7 @@
       reconocedorActivo = null;
       btnHablar.disabled = false;
       micWrap.classList.remove("escuchando");
-      estadoMic.textContent = "Toca el micrófono para hablar";
+      estadoMic.textContent = t("mic.toca_hablar");
       if (!transcripcionFinal && !parcial) return; // ya se mostró el error correspondiente, si lo hubo
       var textoDicho = transcripcionFinal || parcial;
       zonaReconocimiento.innerHTML = "";
@@ -252,8 +251,8 @@
       reconocedorActivo = null;
       btnHablar.disabled = false;
       micWrap.classList.remove("escuchando");
-      estadoMic.textContent = "Toca el micrófono para hablar";
-      zonaReconocimiento.innerHTML = '<p class="mensaje-error">No se pudo iniciar el reconocimiento: ' + global.App.Util.escaparHTML(e.message) + "</p>";
+      estadoMic.textContent = t("mic.toca_hablar");
+      zonaReconocimiento.innerHTML = '<p class="mensaje-error">' + esc(t("mic.no_se_pudo_iniciar", { mensaje: e.message })) + "</p>";
     }
   }
 
@@ -266,13 +265,11 @@
       // que se entendió y se cuenta como intento válido (cualquier respuesta abierta cuenta).
       zonaRetro.innerHTML =
         '<div class="habla-resultado pop-entrada">' +
-        '<p class="titulo-retro">¡Listo!</p>' +
-        "<p>Se entendió: “" +
-        esc(textoDicho) +
-        "”</p>" +
+        '<p class="titulo-retro">' + esc(t("comun.listo")) + '</p>' +
+        "<p>" + esc(t("habla.se_entendio", { texto: textoDicho })) + "</p>" +
         '<div class="habla-botones-final">' +
-        '<button type="button" class="boton-secundario" id="btn-reintentar">Reintentar</button>' +
-        '<button type="button" class="boton-principal" id="btn-siguiente">Siguiente</button>' +
+        '<button type="button" class="boton-secundario" id="btn-reintentar">' + esc(t("comun.reintentar")) + '</button>' +
+        '<button type="button" class="boton-principal" id="btn-siguiente">' + esc(t("comun.siguiente")) + '</button>' +
         "</div>" +
         "</div>";
       conectarBotonesFinales(el, t, ejercicio, true);
@@ -295,16 +292,16 @@
       '<div class="habla-resultado pop-entrada">' +
       '<span class="habla-pastilla-porcentaje"><span class="num-tabular" id="valor-porcentaje">0</span>%</span>' +
       '<p class="titulo-retro" style="margin-top:8px">' +
-      (esBuena ? "¡Bien parecido!" : "Vas por buen camino") +
+      esc(t(esBuena ? "habla.bien_parecido" : "habla.buen_camino")) +
       "</p>" +
-      '<p class="texto-caption">El reconocimiento de voz es aproximado: esto es una guía, no una calificación exacta.</p>' +
+      '<p class="texto-caption">' + esc(t("habla.aproximado")) + '</p>' +
       '<div class="habla-chips pop-entrada-escalonada">' +
       (resultado.acertadas.length ? listaPalabras(resultado.acertadas, "habla-chip-acierto") : "") +
       (resultado.omitidas.length || resultado.distintas.length ? listaPalabras(resultado.omitidas.concat(resultado.distintas), "habla-chip-revisar") : "") +
       "</div>" +
       '<div class="habla-botones-final">' +
-      '<button type="button" class="boton-secundario" id="btn-reintentar">Reintentar</button>' +
-      '<button type="button" class="boton-principal" id="btn-siguiente">Siguiente</button>' +
+      '<button type="button" class="boton-secundario" id="btn-reintentar">' + esc(t("comun.reintentar")) + '</button>' +
+      '<button type="button" class="boton-principal" id="btn-siguiente">' + esc(t("comun.siguiente")) + '</button>' +
       "</div>" +
       "</div>";
 
@@ -316,8 +313,8 @@
     sesion.intentos += 1;
     if (fueBien) sesion.correctas += 1;
     el.querySelector("#zona-reconocimiento").innerHTML =
-      '<p class="texto-tenue" style="margin-top:8px">Autoevaluación registrada. ' +
-      '<button type="button" class="boton-secundario" id="btn-otro-auto" style="margin-top:8px">Otro ejercicio</button></p>';
+      '<p class="texto-tenue" style="margin-top:8px">' + global.App.Util.escaparHTML(t("habla.autoeval_registrada")) + ' ' +
+      '<button type="button" class="boton-secundario" id="btn-otro-auto" style="margin-top:8px">' + global.App.Util.escaparHTML(t("habla.otro_ejercicio")) + '</button></p>';
     el.querySelector("#btn-otro-auto").addEventListener("click", function () {
       pintarEjercicio(el, t, elegirEjercicioAlAzar());
     });

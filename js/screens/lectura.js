@@ -30,10 +30,10 @@
     return global.App.Avance.elegirPorNivel(lista, nivel);
   }
 
-  function tiempoLectura(texto) {
+  function tiempoLectura(t, texto) {
     var palabras = texto.trim().split(/\s+/).length;
     var minutos = Math.max(1, Math.round(palabras / PALABRAS_POR_MINUTO));
-    return "~" + minutos + " min de lectura";
+    return t("lectura.min_lectura", { n: minutos });
   }
 
   function escapeRegExp(s) {
@@ -69,9 +69,7 @@
   }
 
   function render(el, ctx) {
-    var t = function (clave) {
-      return global.App.I18n.texto(clave, ctx.nivelInterfaz, ctx.strings);
-    };
+    var t = global.App.I18n.traductor(ctx);
 
     el.innerHTML = '<div class="estado-vacio">…</div>';
 
@@ -123,21 +121,20 @@
       esc(lectura.nivelCEFR) +
       "</span>" +
       '<p class="texto-tenue num-tabular" style="margin-top:8px">' +
-      tiempoLectura(lectura.texto) +
+      esc(tiempoLectura(t, lectura.texto)) +
       "</p>" +
       '<div class="lectura-pasaje superficie-oscura"><p>' +
       resaltarVocabulario(esc(lectura.texto), lectura.vocabularioClave) +
       "</p></div>" +
-      '<p class="texto-caption" style="margin-top:8px">Toca una palabra resaltada para ver su traducción.</p>' +
+      '<p class="texto-caption" style="margin-top:8px">' + esc(t("lectura.toca_palabra")) + '</p>' +
       '<div class="lectura-traduccion" id="zona-traduccion" hidden></div>' +
       "</div>" +
       '<div class="lectura-columna-preguntas">' +
       (antesDeEmpezar
         ? '<div class="superficie-oscura lectura-tarjeta-intro"><p>' +
-          lectura.preguntas.length +
-          (lectura.preguntas.length === 1 ? " pregunta de comprensión sobre el texto." : " preguntas de comprensión sobre el texto.") +
+          esc(t(lectura.preguntas.length === 1 ? "lectura.preguntas_una" : "lectura.preguntas_varias", { n: lectura.preguntas.length })) +
           "</p>" +
-          '<button type="button" class="calcomania calcomania-cta calcomania-presionable lectura-boton-empezar" id="btn-empezar-preguntas">Ver preguntas</button>' +
+          '<button type="button" class="calcomania calcomania-cta calcomania-presionable lectura-boton-empezar" id="btn-empezar-preguntas">' + esc(t("comun.ver_preguntas")) + '</button>' +
           "</div>"
         : '<div class="diagnostico-tarjeta-pregunta calcomania"><h2>' +
           esc(pregunta.pregunta) +
@@ -151,7 +148,7 @@
           " / " +
           lectura.preguntas.length +
           "</span>" +
-          '<button type="button" class="calcomania calcomania-cta calcomania-presionable diagnostico-boton-accion" id="btn-accion" disabled>Responder</button>' +
+          '<button type="button" class="calcomania calcomania-cta calcomania-presionable diagnostico-boton-accion" id="btn-accion" disabled>' + esc(t("comun.responder")) + '</button>' +
           "</div></div>") +
       "</div>" +
       "</div>" +
@@ -239,12 +236,12 @@
         }
       });
 
-      notaPie.textContent = esCorrecta ? "¡Correcto!" : "La respuesta correcta era " + LETRAS[barajada.indiceCorrecta] + ".";
+      notaPie.textContent = esCorrecta ? t("comun.correcto") : t("comun.respuesta_era", { letra: LETRAS[barajada.indiceCorrecta] });
       notaPie.classList.add("visible");
       notaPie.classList.toggle("diagnostico-nota-correcta", esCorrecta);
       notaPie.classList.toggle("diagnostico-nota-incorrecta", !esCorrecta);
 
-      btnAccion.textContent = estado.indice + 1 < estado.lectura.preguntas.length ? "Siguiente" : "Ver resultado";
+      btnAccion.textContent = estado.indice + 1 < estado.lectura.preguntas.length ? t("comun.siguiente") : t("comun.ver_resultado");
       btnAccion.disabled = false;
     }
 
@@ -262,19 +259,20 @@
   function pintarResultado(el, ctx, t) {
     var total = estado.lectura.preguntas.length;
     var correctas = estado.respuestas.filter(Boolean).length;
+    var esc = global.App.Util.escaparHTML;
     el.innerHTML =
       '<div class="pantalla-vista ancho-lectura pantalla-lectura-resultado">' +
       '<div class="interstitial-tarjeta calcomania pop-entrada" style="background:var(--azul)">' +
       '<span class="interstitial-sello">' +
       global.App.Iconos.svg("sello", 28) +
       "</span>" +
-      '<p class="interstitial-titulo">¡Listo!</p>' +
+      '<p class="interstitial-titulo">' + esc(t("comun.listo")) + '</p>' +
       '<p class="interstitial-resumen"><span class="num-tabular">' +
       correctas +
       "</span> / <span class=\"num-tabular\">" +
       total +
-      "</span> correctas</p>" +
-      '<button type="button" class="boton-principal interstitial-boton" id="btn-terminar-lectura">Terminar</button>' +
+      "</span> " + esc(t("comun.correctas")) + "</p>" +
+      '<button type="button" class="boton-principal interstitial-boton" id="btn-terminar-lectura">' + esc(t("comun.terminar")) + '</button>' +
       "</div>" +
       "</div>";
     el.querySelector("#btn-terminar-lectura").addEventListener("click", function () {
