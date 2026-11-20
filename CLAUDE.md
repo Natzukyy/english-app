@@ -23,6 +23,8 @@ Ver `DECISIONES.md`. Resumen: sin backend propio en la app (IndexedDB + export/i
 
 **Rediseño "Calcomanías oscuro" + ruta guiada (D25-D27, ver `REPORTE_CALCOMANIAS.md`):** app renombrada a **"Rumbo"**, escala CEFR abierta A1-C2 sin tope en B2 (D25); Alex ya no elige qué estudiar, `js/core/plan.js` arma un plan diario y la pantalla Inicio lo guía paso a paso, con la pantalla **Practicar** aparte para practicar algo específico sin afectar el plan del día, "Tu camino" en Inicio es el progreso real de Alex en la escala A1-C2 (no un mapa de ruta tipo Duolingo), tope de 15 tarjetas NUEVAS por día en el repaso guiado (D26); lenguaje visual "Calcomanías oscuro" (paleta, tipografía Bricolage Grotesque autohospedada, sombras duras, animaciones con intención) en celular y laptop (D27).
 
+**Calcomanías 2 (D28, ver `REPORTE_CALCOMANIAS_2.md`):** contenido por nivel A1–B2 (≥150 tarjetas, 12 lecturas y 12 escuchas por nivel; C1/C2 sin contenido), selección que nunca sube de nivel, ruta guiada con "terminar vs. salir" (Esc sale sin marcar), lluvia de calcomanías, accesibilidad (roles, Esc, contraste) e i18n completo en pantallas. `./tests/run-tests.sh` ahora también corre `scripts/validar_contenido.py` y `scripts/buscar_texto_hardcodeado.py`. Scripts Playwright de punta a punta en `tests/e2e/` (se corren con el MCP de Playwright, no desde la terminal).
+
 ## Resultado probado en iPhone real (iOS 27, Safari 27.2) — ver DECISIONES.md D12
 - Micrófono (`getUserMedia`+`MediaRecorder`) funciona, mimeType `audio/mp4` (AAC).
 - `SpeechRecognition` (en-US) funciona, en Safari y ya instalada.

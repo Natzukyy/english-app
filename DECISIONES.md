@@ -748,5 +748,17 @@ de las decisiones que vale la pena que quede en este archivo:
   navegador de Playwright en esta sesión fue agresivo de verdad: más de una captura "vieja"
   parecía tener un bug que el código real ya no tenía).
 
+## D28. Calcomanías 2: contenido por nivel, ruta guiada robusta, lluvia, accesibilidad e i18n (rama `calcomanias-2`)
+Detalle por tarea en `REPORTE_CALCOMANIAS_2.md`. Decisiones que no se deducen del código:
+- **Selección por nivel (`App.Avance.elegirPorNivel`):** usa el nivel exacto; si no hay contenido, baja al más cercano **por debajo**; nunca sube a uno más difícil (antes un A1 sin contenido A1 caía a B1/B2). Con nivel B2+ sin contenido C1/C2 se reutiliza B2 y el plan deja una advertencia. C1/C2 queda sin contenido a propósito (solo 10 tarjetas y 3 frases de Habla C1 sueltas).
+- **Topes reales de Repaso:** `armarColaRepaso` topa vencidas a 20 (las más atrasadas primero) y nuevas a 15/día descontando las ya introducidas hoy; las falladas vuelven a la cola sin gastar cupo; las nuevas se ordenan por cercanía al nivel.
+- **Plan provisional:** el plan "solo Diagnóstico" se recalcula en cuanto hay diagnóstico (antes se quedaba todo el día). Siempre entra al menos un bloque de lectura/habla/escucha, aunque el repaso llene la meta.
+- **Terminar vs. salir:** terminar un paso (botón Terminar / resultado) lo marca hecho y vuelve a Inicio; salir por la navegación o con **Esc** NO lo marca (queda pendiente). El marcador es por **tipo** de paso, no por posición.
+- **Lluvia de calcomanías:** al subir de nivel de XP o de CEFR y al cerrar el día; 30 piezas, solo `transform`/`opacity`, `pointer-events:none`, con movimiento reducido solo queda el mensaje.
+- **Animaciones:** barras con `scaleX` (no `width`), estrella de "Tu camino" con pop (no `left`). Excepciones aceptadas: `dibujar-palomita` (stroke-dashoffset) y transiciones de `box-shadow` de botones (150 ms).
+- **Accesibilidad:** opciones A–D con `role=radio`/`aria-checked` dentro de `radiogroup`; sol de racha `role=img` con aria-label; Esc vuelve a Inicio salvo escribiendo en input/textarea/select. Contraste y objetivos ≥44px medidos con script/Playwright.
+- **i18n:** cero texto de interfaz hardcodeado en `js/screens` y `js/app.js` (lo vigila `scripts/buscar_texto_hardcodeado.py` desde `run-tests.sh`); excepciones marcadas con `i18n-ok`. `js/core/conversacion.js` (`mensajeError`) sigue con texto en el core.
+- **Validadores:** `scripts/validar_contenido.py` (esquema, ids únicos, mínimos por nivel) corre dentro de `run-tests.sh`.
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*
