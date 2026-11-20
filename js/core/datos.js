@@ -398,23 +398,39 @@
    * página ni aunque se practique de más el mismo día, ver registrarPracticaExtra). Si no
    * existe, lo calcula una sola vez con el contexto real y lo guarda, con cada paso marcado
    * "completado:false". */
+  function esPlanSoloDiagnostico(plan) {
+    return !!(plan && plan.pasos && plan.pasos.length === 1 && plan.pasos[0].tipo === "diagnostico");
+  }
+
+  function calcularYGuardarPlan(ahora, hoyISO) {
+    return armarContextoPlan(ahora).then(function (contexto) {
+      var resultado = global.App.Plan.calcularPlanDelDia(contexto);
+      var registro = {
+        id: hoyISO,
+        pasos: resultado.pasos.map(function (p) {
+          return Object.assign({ completado: false }, p);
+        }),
+        totalMinutos: resultado.totalMinutos,
+        advertencias: resultado.advertencias
+      };
+      return global.App.Storage.put("plan", registro).then(function () {
+        return registro;
+      });
+    });
+  }
+
   function obtenerOCalcularPlanDeHoy(ahora) {
     var hoyISO = global.App.Fecha.hoyISO(ahora);
     return global.App.Storage.get("plan", hoyISO).then(function (existente) {
-      if (existente) return existente;
-      return armarContextoPlan(ahora).then(function (contexto) {
-        var resultado = global.App.Plan.calcularPlanDelDia(contexto);
-        var registro = {
-          id: hoyISO,
-          pasos: resultado.pasos.map(function (p) {
-            return Object.assign({ completado: false }, p);
-          }),
-          totalMinutos: resultado.totalMinutos,
-          advertencias: resultado.advertencias
-        };
-        return global.App.Storage.put("plan", registro).then(function () {
-          return registro;
-        });
+      if (!existente) return calcularYGuardarPlan(ahora, hoyISO);
+      if (!esPlanSoloDiagnostico(existente)) return existente;
+      // El plan de hoy se guardó cuando todavía no había diagnóstico ("solo Diagnóstico"). Es
+      // un plan PROVISIONAL: en cuanto existe un diagnóstico (acaba de hacerse, o se importó un
+      // respaldo) se calcula el plan real del día -- si no, se quedaba en "Diagnóstico de nivel"
+      // todo el día aunque ya estuviera hecho. Cualquier otro plan guardado es definitivo
+      // (determinismo, regla 8).
+      return obtenerUltimoDiagnostico().then(function (diagnostico) {
+        return diagnostico ? calcularYGuardarPlan(ahora, hoyISO) : existente;
       });
     });
   }

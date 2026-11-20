@@ -379,12 +379,85 @@
         });
       });
 
+      // Las pruebas viven en /tests/ pero App.Datos pide el contenido con rutas relativas a la
+      // raíz ("data/content/..."): durante la batería, fetch se reescribe a "../" (ver correrTodo).
+      function conContenidoDesdeRaiz(fn) {
+        return Promise.resolve().then(fn);
+      }
+
+      // --- 14. Plan provisional: el plan "solo Diagnóstico" se recalcula en cuanto hay diagnóstico ---
+      prueba("plan: el plan solo-Diagnóstico se recalcula al existir un diagnóstico (antes se quedaba todo el día)", function () {
+        var ahora = new Date(2026, 10, 18);
+        return conContenidoDesdeRaiz(function () {
+          return limpiarStores(["plan", "diagnostico_resultados", "srs_cards", "settings"]).then(function () {
+            return App.Datos.obtenerOCalcularPlanDeHoy(ahora);
+          }).then(function (plan1) {
+            assertEqual(plan1.pasos.length, 1);
+            assertEqual(plan1.pasos[0].tipo, "diagnostico");
+            return App.Datos.guardarDiagnostico({ porHabilidad: {
+              lectura: { nivelCEFR: "A2" }, habla: { nivelCEFR: "A2" }, escucha: { nivelCEFR: "A2" }, escritura: { nivelCEFR: "A2" }
+            } });
+          }).then(function () {
+            return App.Datos.obtenerOCalcularPlanDeHoy(ahora);
+          }).then(function (plan2) {
+            assertTrue(plan2.pasos.length > 1 || plan2.pasos[0].tipo !== "diagnostico", "debería ser el plan real del día");
+            return App.Datos.obtenerOCalcularPlanDeHoy(ahora).then(function (plan3) {
+              assertEqual(JSON.stringify(plan2), JSON.stringify(plan3)); // y ya es estable (determinista)
+            });
+          });
+        });
+      });
+
+      // --- 15. Migración de contenido: sembrar agrega tarjetas nuevas SIN tocar el SM-2 de las existentes ---
+      prueba("tarjetas: contenido nuevo se suma y el progreso SM-2 de las ya existentes queda intacto", function () {
+        var ahora = new Date(2026, 10, 18);
+        return conContenidoDesdeRaiz(function () {
+          return limpiarStores(["srs_cards"]).then(function () {
+            // Estado "versión anterior": una sola tarjeta con progreso, sin nivelCEFR.
+            return App.Storage.put("srs_cards", { id: "voc-voc-f1-1", frente: "viejo", atras: "viejo", tipo: "vocabulario", repeticiones: 4, intervaloDias: 15, facilidad: 2.1, proximaFecha: "2026-12-01" });
+          }).then(function () {
+            return App.Datos.sembrarTarjetasSiHaceFalta(ahora);
+          }).then(function (todas) {
+            assertTrue(todas.length > 400, "debería haber sembrado el contenido nuevo (hay " + todas.length + ")");
+            var t = todas.filter(function (c) { return c.id === "voc-voc-f1-1"; })[0];
+            assertEqual(t.repeticiones, 4);
+            assertEqual(t.intervaloDias, 15);
+            assertEqual(t.facilidad, 2.1);
+            assertEqual(t.proximaFecha, "2026-12-01");
+            assertTrue(!!t.nivelCEFR, "debería haberse completado nivelCEFR");
+            assertTrue(t.frente !== "viejo", "el texto de contenido se sincroniza");
+          });
+        });
+      });
+
+      // --- 16. Repaso: la cola real respeta 15 nuevas/día y el cupo se guarda por día ---
+      prueba("repaso: obtenerColaRepaso topa en 15 nuevas por día y no entrega otras 15 al reabrir", function () {
+        var ahora = new Date(2026, 10, 18);
+        return conContenidoDesdeRaiz(function () {
+          return limpiarStores(["srs_cards", "settings", "diagnostico_resultados"]).then(function () {
+            return App.Datos.obtenerColaRepaso(ahora);
+          }).then(function (cola1) {
+            assertEqual(cola1.length, 15);
+            return App.Datos.obtenerColaRepaso(ahora).then(function (cola2) {
+              assertEqual(cola2.length, 15); // las mismas 15 (siguen nuevas: no se calificaron), no 30
+              var ids1 = cola1.map(function (c) { return c.id; }).sort().join();
+              assertEqual(cola2.map(function (c) { return c.id; }).sort().join(), ids1);
+              return App.Datos.obtenerColaRepaso(new Date(2026, 10, 19));
+            });
+          }).then(function (colaManana) {
+            assertEqual(colaManana.length, 15); // día nuevo, cupo nuevo
+          });
+        });
+      });
+
       function correrTodo() {
         var lista = document.getElementById("lista-resultados");
         var resumen = document.getElementById("resumen");
         lista.innerHTML = "";
         resumen.textContent = "Corriendo…";
         App.Storage = storagePrueba; // a partir de aquí, App.Datos lee/escribe en la base de prueba
+        var fetchReal = window.fetch;
+        window.fetch = function (url, opciones) { return fetchReal("../" + url, opciones); };
 
         var pasaron = 0;
         var fallaron = 0;
@@ -422,10 +495,12 @@
           })
           .then(function () {
             App.Storage = storageReal; // restaurar siempre, pase lo que pase
+            window.fetch = fetchReal;
             return storagePrueba.eliminarBaseDeDatos();
           })
           .catch(function (err) {
             App.Storage = storageReal;
+            window.fetch = fetchReal;
             resumen.textContent = "Error inesperado corriendo la batería: " + err.message;
           });
       }
