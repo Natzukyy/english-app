@@ -326,7 +326,7 @@
         '<h1>' + esc(t("inicio.saludo")) + ", " + esc(nombreUsuario) + "</h1>" +
         '<p class="texto-tenue">' + esc(t("inicio.pregunta")) + "</p>" +
         "</div>" +
-        '<div class="sol-racha" aria-hidden="true">' +
+        '<div class="sol-racha" role="img" aria-label="' + esc(global.App.I18n.formatear(t("inicio.racha_aria"), { n: racha.rachaActual })) + '">' +
         '<div class="sol-rayos">' +
         [0, 45, 90, 135, 180, 225, 270, 315].map(function (a) { return '<span class="rayo" style="transform:rotate(' + a + 'deg)"></span>'; }).join("") +
         "</div>" +

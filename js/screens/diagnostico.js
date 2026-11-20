@@ -142,6 +142,8 @@
     var seleccionada = -1;
     var respondido = false;
     var contenedorOpciones = el.querySelector("#opciones");
+    contenedorOpciones.setAttribute("role", "radiogroup");
+    contenedorOpciones.setAttribute("aria-label", t("comun.opciones_respuesta"));
     var btnAccion = el.querySelector("#btn-accion");
     var notaPie = el.querySelector("#nota-pie");
 
@@ -149,6 +151,8 @@
       var boton = document.createElement("button");
       boton.type = "button";
       boton.className = "diagnostico-opcion superficie-oscura";
+      boton.setAttribute("role", "radio");
+      boton.setAttribute("aria-checked", "false");
       boton.innerHTML =
         '<span class="diagnostico-letra" aria-hidden="true">' + LETRAS[i] + "</span>" + '<span class="diagnostico-texto-opcion">' + esc(opcion) + "</span>";
       boton.addEventListener("click", function () {
@@ -162,6 +166,7 @@
       if (respondido) return;
       seleccionada = i;
       botonesOpcion.forEach(function (b, idx) {
+        b.setAttribute("aria-checked", idx === i ? "true" : "false");
         b.classList.remove("calcomania", "calcomania-presionable", "superficie-oscura", "diagnostico-opcion--seleccionada");
         if (idx === i) {
           b.classList.add("calcomania", "calcomania-presionable", "diagnostico-opcion--seleccionada");

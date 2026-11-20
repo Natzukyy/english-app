@@ -175,6 +175,16 @@
       });
     });
     global.addEventListener("hashchange", renderizar);
+    // Esc sale de cualquier pantalla de flujo y vuelve a Inicio SIN marcar el paso como hecho
+    // (mismo protocolo que salir por la navegación: el paso queda pendiente, ver D26). No actúa
+    // si el foco está escribiendo (campo de escritura, selects) ni si ya se está en Inicio.
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key !== "Escape" || ev.defaultPrevented) return;
+      var a = document.activeElement;
+      if (a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) return;
+      if (rutaActual() === "inicio") return;
+      global.location.hash = "#/inicio";
+    });
   }
 
   function registrarServiceWorker() {

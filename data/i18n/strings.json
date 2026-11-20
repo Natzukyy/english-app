@@ -1058,5 +1058,15 @@
     "categoria": "larga",
     "es": "Está bien tomarte un segundo para pensar antes de responder.",
     "en": "It is fine to take a second to think before answering."
+  },
+  "comun.opciones_respuesta": {
+    "categoria": "corta",
+    "es": "Opciones de respuesta",
+    "en": "Answer options"
+  },
+  "inicio.racha_aria": {
+    "categoria": "corta",
+    "es": "Racha: {n} días",
+    "en": "Streak: {n} days"
   }
 }
