@@ -97,14 +97,19 @@
   function animarBarra(elementoSpan, porcentaje) {
     if (!elementoSpan) return;
     var destino = Math.max(0, Math.min(100, Number(porcentaje) || 0));
+    // Se llena con transform: scaleX (nunca con "width", que provoca reflow en cada cuadro --
+    // regla de animación de todo el proyecto: solo transform y opacity). El span ocupa siempre
+    // el 100% del ancho y se escala desde la izquierda.
+    elementoSpan.style.width = "100%";
+    elementoSpan.style.transformOrigin = "left center";
     if (prefiereMenosMovimiento()) {
-      elementoSpan.style.width = destino + "%";
+      elementoSpan.style.transform = "scaleX(" + destino / 100 + ")";
       return;
     }
-    elementoSpan.style.width = "0%";
+    elementoSpan.style.transform = "scaleX(0)";
     global.requestAnimationFrame(function () {
       global.requestAnimationFrame(function () {
-        elementoSpan.style.width = destino + "%";
+        elementoSpan.style.transform = "scaleX(" + destino / 100 + ")";
       });
     });
   }
@@ -127,7 +132,7 @@
 
   var COLORES_LLUVIA = ["var(--amarillo)", "var(--menta)", "var(--rosa)", "var(--coral)", "var(--azul)", "var(--crema)"];
   var FORMAS_LLUVIA = ["circulo", "cuadrado", "triangulo", "anillo"];
-  var DURACION_LLUVIA_MS = 1900; // ~1.5 s de caída + hasta 0.3 s de retraso escalonado + margen
+  var DURACION_LLUVIA_MS = 1900; // retraso <=450 ms + caída <=1250 ms + margen (~1.7 s en total)
 
   /** Lluvia corta (~1.5 s) de formas/calcomanías de colores de la paleta. Solo CSS
    * (transform/opacity, ver .lluvia-pieza), sin sonido, sin bloquear nada (el contenedor es
@@ -145,9 +150,10 @@
       var estilo =
         "left:" + (Math.random() * 100).toFixed(1) + "%;" +
         "--dx:" + Math.round((Math.random() - 0.5) * 120) + "px;" +
+        "--y0:-" + Math.round(Math.random() * 260) + "px;" + // arrancan a alturas distintas: lluvia, no cortina
         "--giro:" + Math.round((Math.random() - 0.5) * 720) + "deg;" +
-        "--retraso:" + Math.round(Math.random() * 300) + "ms;" +
-        "--dur:" + (1100 + Math.round(Math.random() * 400)) + "ms;" +
+        "--retraso:" + Math.round(Math.random() * 450) + "ms;" +
+        "--dur:" + (900 + Math.round(Math.random() * 350)) + "ms;" +
         "--color:" + COLORES_LLUVIA[i % COLORES_LLUVIA.length] + ";" +
         "width:" + tam + "px;height:" + tam + "px";
       piezas += '<span class="lluvia-pieza lluvia-' + FORMAS_LLUVIA[i % FORMAS_LLUVIA.length] + '" style="' + estilo + '"></span>';

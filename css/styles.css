@@ -358,12 +358,22 @@ h2 {
 .diagnostico-opcion--correcta {
   background: var(--menta);
   color: var(--tinta);
-  animation: diagnostico-pop-correcto var(--dur-rapida) var(--ease-pop);
 }
 
 .diagnostico-opcion--incorrecta {
   border: 2.5px solid var(--coral);
   color: var(--coral);
+}
+
+/* Doble clase a propósito: ".pop-entrada-escalonada > *" (más abajo en el archivo) también fija
+   "animation" y, con la misma especificidad, GANABA -- la sacudida y el pop de acierto nunca
+   corrían (verificado con document.getAnimations(): la opción tenía --incorrecta y solo
+   calcomania-pop). Con (0,2,0) el estado de la respuesta manda sobre la animación de entrada. */
+.diagnostico-opcion.diagnostico-opcion--correcta {
+  animation: diagnostico-pop-correcto var(--dur-rapida) var(--ease-pop);
+}
+
+.diagnostico-opcion.diagnostico-opcion--incorrecta {
   animation: diagnostico-sacude var(--dur-media) var(--ease-out);
 }
 
@@ -380,21 +390,23 @@ h2 {
 }
 
 @keyframes diagnostico-sacude {
+  /* conserva la rotación de la calcomanía (--r): solo translateX en el keyframe la quitaba y la
+     opción "saltaba" al terminar */
   0%,
   100% {
-    transform: translateX(0);
+    transform: rotate(var(--r, 0deg)) translateX(0);
   }
   20% {
-    transform: translateX(-6px);
+    transform: rotate(var(--r, 0deg)) translateX(-6px);
   }
   40% {
-    transform: translateX(5px);
+    transform: rotate(var(--r, 0deg)) translateX(5px);
   }
   60% {
-    transform: translateX(-3px);
+    transform: rotate(var(--r, 0deg)) translateX(-3px);
   }
   80% {
-    transform: translateX(2px);
+    transform: rotate(var(--r, 0deg)) translateX(2px);
   }
 }
 
@@ -746,8 +758,9 @@ button {
   display: block;
   height: 100%;
   background: var(--acento);
-  border-radius: 999px;
-  transition: width 600ms var(--easing);
+  border-radius: 0; /* el contenedor (overflow:hidden + radio) redondea el extremo izquierdo; escalado en X no deforma */
+  transform-origin: left center;
+  transition: transform 600ms var(--easing); /* scaleX, no width (ver App.Util.animarBarra) */
 }
 
 /* Chips de habilidad: un punto de color (detalle sobrio), no un bloque de color. */
@@ -2954,14 +2967,22 @@ main:has(> .pantalla-habla) {
    ambiental como los rayos, que SIEMPRE giran; este es un evento, "se acaba de lograr algo"). */
 @keyframes sol-pulso {
   0% {
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--amarillo) 60%, transparent);
+    transform: scale(1);
+    opacity: 0.75;
   }
   100% {
-    box-shadow: 0 0 0 12px transparent;
+    transform: scale(1.9);
+    opacity: 0;
   }
 }
-.sol-circulo--completo {
-  animation: sol-pulso 900ms var(--ease-out);
+.sol-circulo--completo::after {
+  /* anillo que se expande y se desvanece (transform + opacity): animar box-shadow repinta en cada cuadro */
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 3px solid var(--amarillo);
+  animation: sol-pulso 900ms var(--ease-out) both;
 }
 
 .tarjeta-meta {
@@ -3122,6 +3143,217 @@ main:has(> .pantalla-habla) {
   align-items: center;
 }
 .camino-cabeza .camino-pastilla {
+  margin-top: 0;
+  align-self: center;
+}
+
+/* --- Tu ruta de hoy: calcomanías numeradas compactas, máx. 5 (celular: 4 columnas; laptop:
+   filas). Hecho = menta + palomita (con el trazo dibujándose, ver @keyframes abajo); actual =
+   amarillo; pendiente = superficie oscura neutra. */
+.inicio-ruta-hoy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-1);
+}
+
+.inicio-ruta-hoy h2 {
+  margin: 0;
+  font-size: var(--fs-small);
+}
+
+.ruta-hoy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--e-1);
+}
+
+.ruta-hoy-paso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 2px;
+  border-radius: var(--radio-calcomania-chica);
+  background: var(--surface);
+  border: 2px solid var(--surface-borde);
+  text-align: center;
+}
+
+.ruta-hoy-numero {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--surface-borde);
+  color: var(--texto);
+}
+
+.ruta-hoy-nombre {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--texto-2);
+  /* nombres como "Práctica de escritura" no caben en una columna angosta -- se recortan con
+     elipsis en vez de desbordar o envolver a 3 líneas y romper el alto parejo de la fila. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ruta-hoy-minutos {
+  font-size: 9px;
+  color: var(--texto-2);
+}
+
+.ruta-hoy-paso--actual {
+  background: var(--amarillo);
+  border-color: var(--tinta);
+}
+.ruta-hoy-paso--actual .ruta-hoy-numero {
+  background: var(--tinta);
+  color: var(--amarillo);
+}
+.ruta-hoy-paso--actual .ruta-hoy-nombre,
+.ruta-hoy-paso--actual .ruta-hoy-minutos {
+  color: var(--tinta);
+}
+
+.ruta-hoy-paso--hecho {
+  background: var(--menta);
+  border-color: var(--tinta);
+}
+.ruta-hoy-paso--hecho .ruta-hoy-numero {
+  background: var(--tinta);
+  color: var(--menta);
+}
+.ruta-hoy-paso--hecho .ruta-hoy-nombre,
+.ruta-hoy-paso--hecho .ruta-hoy-minutos {
+  color: var(--tinta);
+}
+/* La palomita se "dibuja" (stroke-dasharray recorriéndose) en vez de aparecer de golpe --
+   el SVG de "check" de App.Iconos ya es un solo trazo, así que esto funciona tal cual. */
+.ruta-hoy-paso--hecho .ruta-hoy-numero svg path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: dibujar-palomita 400ms var(--ease-out) forwards;
+}
+@keyframes dibujar-palomita {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* --- Botón "Practicar algo específico": superficie, visualmente MENOR que la tarjeta
+   principal (spec) -- nunca calcomanía, nunca sombra dura, para que no compita con ella. */
+.boton-practicar {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  padding: 0 var(--e-3);
+  min-height: var(--toque-minimo);
+  text-align: left;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--texto);
+}
+.boton-practicar span:nth-child(2) {
+  flex: 1;
+}
+
+/* --- Tu camino: 6 nodos A1-C2 + marcador estrella posicionado por fracciones. --- */
+.inicio-camino {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-1);
+}
+
+.inicio-camino h2 {
+  margin: 0;
+  font-size: var(--fs-small);
+}
+
+.camino-pista {
+  position: relative;
+  padding-top: var(--e-3); /* dale aire a la estrella, que vive arriba de los nodos */
+}
+
+.camino-nodos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.camino-nodos::before {
+  /* línea conectora detrás de los 6 nodos */
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--e-3) + 9px);
+  height: 2px;
+  background: var(--surface-borde);
+  z-index: 0;
+}
+
+.camino-nodo {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.camino-circulo {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 2px solid var(--surface-borde);
+}
+
+.camino-nodo--alcanzado .camino-circulo {
+  background: var(--menta);
+  border-color: var(--tinta);
+}
+
+.camino-etiqueta {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--texto-2);
+}
+
+/* Estrella "vas aquí": ya está en su posición real (left inline desde JS) y "llega" con un pop
+   de escala+giro. Antes animaba "left" (dispara layout en cada fotograma, contra la regla de
+   animar solo transform/opacity) y, además, nunca corría: el valor inline no cambiaba después
+   del primer render, así que la transición no tenía nada que interpolar. */
+.camino-estrella {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  color: var(--amarillo);
+  filter: drop-shadow(0 1px 0 var(--tinta));
+  animation: estrella-llega var(--dur-lenta) var(--ease-pop) 250ms both;
+}
+
+@keyframes estrella-llega {
+  0% {
+    transform: translateX(-50%) scale(0) rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.camino-pastilla {
   margin-top: 0;
   align-self: center;
 }
@@ -4002,14 +4234,14 @@ main:has(> .pantalla-habla) {
   border: 2px solid var(--tinta);
   opacity: 0;
   will-change: transform, opacity; /* solo mientras dura la lluvia: el contenedor se elimina */
-  animation: lluvia-cae var(--dur) var(--ease-out) var(--retraso) forwards;
+  animation: lluvia-cae var(--dur) cubic-bezier(0.4, 0, 0.7, 0.9) var(--retraso) forwards; /* acelera como algo que cae (ease-out la clavaba abajo de golpe) */
 }
 .lluvia-circulo { border-radius: 999px; }
 .lluvia-cuadrado { border-radius: 4px; }
 .lluvia-triangulo { clip-path: polygon(50% 0, 100% 100%, 0 100%); border: 0; }
 .lluvia-anillo { border-radius: 999px; background: transparent; border: 3px solid var(--color); }
 @keyframes lluvia-cae {
-  0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+  0% { transform: translate3d(0, var(--y0, 0px), 0) rotate(0deg); opacity: 0; }
   12% { opacity: 1; }
   80% { opacity: 1; }
   100% { transform: translate3d(var(--dx), 105vh, 0) rotate(var(--giro)); opacity: 0; }
