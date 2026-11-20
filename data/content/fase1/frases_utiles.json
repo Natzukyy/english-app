@@ -891,6 +891,566 @@
           "revisar": true
         }
       ]
+    },
+    {
+      "categoria": "salud_y_bienestar",
+      "nivelCEFR": "A2",
+      "frases": [
+        {
+          "ingles": "I have a headache.",
+          "espanol": "Me duele la cabeza.",
+          "revisar": true
+        },
+        {
+          "ingles": "I don't feel well today.",
+          "espanol": "Hoy no me siento bien.",
+          "revisar": true
+        },
+        {
+          "ingles": "I need to see a doctor.",
+          "espanol": "Necesito ir al doctor.",
+          "revisar": true
+        },
+        {
+          "ingles": "Do you have anything for a cold?",
+          "espanol": "¿Tienes algo para el resfriado?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm allergic to nuts.",
+          "espanol": "Soy alérgico a las nueces.",
+          "revisar": true
+        },
+        {
+          "ingles": "You should drink more water.",
+          "espanol": "Deberías tomar más agua.",
+          "revisar": true
+        },
+        {
+          "ingles": "I slept badly last night.",
+          "espanol": "Dormí mal anoche.",
+          "revisar": true
+        },
+        {
+          "ingles": "How often should I take this?",
+          "espanol": "¿Cada cuánto debo tomar esto?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm feeling much better now.",
+          "espanol": "Ya me siento mucho mejor.",
+          "revisar": true
+        },
+        {
+          "ingles": "Take it easy and rest.",
+          "espanol": "Tómalo con calma y descansa.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "tecnologia_diaria",
+      "nivelCEFR": "A2",
+      "frases": [
+        {
+          "ingles": "My phone is out of battery.",
+          "espanol": "A mi teléfono se le acabó la batería.",
+          "revisar": true
+        },
+        {
+          "ingles": "Can I connect to the Wi-Fi?",
+          "espanol": "¿Me puedo conectar al Wi-Fi?",
+          "revisar": true
+        },
+        {
+          "ingles": "I forgot my password again.",
+          "espanol": "Olvidé mi contraseña otra vez.",
+          "revisar": true
+        },
+        {
+          "ingles": "The app is not working.",
+          "espanol": "La aplicación no funciona.",
+          "revisar": true
+        },
+        {
+          "ingles": "Please turn off your phone.",
+          "espanol": "Por favor, apaga tu teléfono.",
+          "revisar": true
+        },
+        {
+          "ingles": "I need to update my laptop.",
+          "espanol": "Necesito actualizar mi laptop.",
+          "revisar": true
+        },
+        {
+          "ingles": "Can you send me the link?",
+          "espanol": "¿Me puedes mandar el enlace?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'll share the file with you.",
+          "espanol": "Te compartiré el archivo.",
+          "revisar": true
+        },
+        {
+          "ingles": "The screen is frozen.",
+          "espanol": "La pantalla está congelada.",
+          "revisar": true
+        },
+        {
+          "ingles": "Let me restart the computer.",
+          "espanol": "Déjame reiniciar la computadora.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "planes_y_citas",
+      "nivelCEFR": "A2",
+      "frases": [
+        {
+          "ingles": "Are you free this weekend?",
+          "espanol": "¿Estás libre este fin de semana?",
+          "revisar": true
+        },
+        {
+          "ingles": "Let's meet at six o'clock.",
+          "espanol": "Veámonos a las seis.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm sorry, I'm running late.",
+          "espanol": "Perdón, voy retrasado.",
+          "revisar": true
+        },
+        {
+          "ingles": "Can we change the time?",
+          "espanol": "¿Podemos cambiar la hora?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'll be there in ten minutes.",
+          "espanol": "Llego en diez minutos.",
+          "revisar": true
+        },
+        {
+          "ingles": "Where should we meet?",
+          "espanol": "¿Dónde nos vemos?",
+          "revisar": true
+        },
+        {
+          "ingles": "That sounds like a good plan.",
+          "espanol": "Me parece un buen plan.",
+          "revisar": true
+        },
+        {
+          "ingles": "I can't make it on Friday.",
+          "espanol": "No puedo el viernes.",
+          "revisar": true
+        },
+        {
+          "ingles": "Would you like to join us?",
+          "espanol": "¿Quieres unirte a nosotros?",
+          "revisar": true
+        },
+        {
+          "ingles": "See you tomorrow morning.",
+          "espanol": "Nos vemos mañana por la mañana.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "opiniones_simples",
+      "nivelCEFR": "B1",
+      "frases": [
+        {
+          "ingles": "In my opinion, it is a good idea.",
+          "espanol": "En mi opinión, es una buena idea.",
+          "revisar": true
+        },
+        {
+          "ingles": "I see your point, but I disagree.",
+          "espanol": "Entiendo tu punto, pero no estoy de acuerdo.",
+          "revisar": true
+        },
+        {
+          "ingles": "I think we should wait a little.",
+          "espanol": "Creo que deberíamos esperar un poco.",
+          "revisar": true
+        },
+        {
+          "ingles": "That depends on the budget.",
+          "espanol": "Eso depende del presupuesto.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm not sure that will work.",
+          "espanol": "No estoy seguro de que eso funcione.",
+          "revisar": true
+        },
+        {
+          "ingles": "It seems to me that it is too early.",
+          "espanol": "Me parece que es demasiado pronto.",
+          "revisar": true
+        },
+        {
+          "ingles": "What do you think about this option?",
+          "espanol": "¿Qué opinas de esta opción?",
+          "revisar": true
+        },
+        {
+          "ingles": "I agree with you on that.",
+          "espanol": "Estoy de acuerdo contigo en eso.",
+          "revisar": true
+        },
+        {
+          "ingles": "Personally, I prefer the first plan.",
+          "espanol": "Personalmente, prefiero el primer plan.",
+          "revisar": true
+        },
+        {
+          "ingles": "Both options have advantages.",
+          "espanol": "Ambas opciones tienen ventajas.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "viajes_y_servicios",
+      "nivelCEFR": "B1",
+      "frases": [
+        {
+          "ingles": "I'd like to change my flight to Monday.",
+          "espanol": "Quisiera cambiar mi vuelo al lunes.",
+          "revisar": true
+        },
+        {
+          "ingles": "Is breakfast included in the price?",
+          "espanol": "¿El desayuno está incluido en el precio?",
+          "revisar": true
+        },
+        {
+          "ingles": "My luggage hasn't arrived yet.",
+          "espanol": "Mi equipaje todavía no llega.",
+          "revisar": true
+        },
+        {
+          "ingles": "Could you recommend a good restaurant nearby?",
+          "espanol": "¿Podría recomendarme un buen restaurante cercano?",
+          "revisar": true
+        },
+        {
+          "ingles": "We have a reservation under Garcia.",
+          "espanol": "Tenemos una reservación a nombre de García.",
+          "revisar": true
+        },
+        {
+          "ingles": "How long does it take to get there?",
+          "espanol": "¿Cuánto se tarda en llegar?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'd like to speak to the manager, please.",
+          "espanol": "Quisiera hablar con el gerente, por favor.",
+          "revisar": true
+        },
+        {
+          "ingles": "There seems to be a mistake on the bill.",
+          "espanol": "Parece que hay un error en la cuenta.",
+          "revisar": true
+        },
+        {
+          "ingles": "Can I get a refund for this ticket?",
+          "espanol": "¿Me pueden reembolsar este boleto?",
+          "revisar": true
+        },
+        {
+          "ingles": "Is there a late check-out option?",
+          "espanol": "¿Hay opción de salida tardía?",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "trabajo_en_equipo",
+      "nivelCEFR": "B1",
+      "frases": [
+        {
+          "ingles": "Could you give me a hand with this?",
+          "espanol": "¿Me podrías echar una mano con esto?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'll take care of the first part.",
+          "espanol": "Yo me encargo de la primera parte.",
+          "revisar": true
+        },
+        {
+          "ingles": "Let's divide the tasks between us.",
+          "espanol": "Dividamos las tareas entre nosotros.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'm waiting for your reply before I continue.",
+          "espanol": "Espero tu respuesta antes de continuar.",
+          "revisar": true
+        },
+        {
+          "ingles": "We're a bit behind schedule.",
+          "espanol": "Vamos un poco atrasados.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'll keep you posted on the progress.",
+          "espanol": "Te mantendré al tanto del avance.",
+          "revisar": true
+        },
+        {
+          "ingles": "Can we go over the plan once more?",
+          "espanol": "¿Podemos repasar el plan una vez más?",
+          "revisar": true
+        },
+        {
+          "ingles": "Thanks for your help with the report.",
+          "espanol": "Gracias por tu ayuda con el informe.",
+          "revisar": true
+        },
+        {
+          "ingles": "I haven't had time to finish it yet.",
+          "espanol": "Todavía no he tenido tiempo de terminarlo.",
+          "revisar": true
+        },
+        {
+          "ingles": "Let's set a deadline for each task.",
+          "espanol": "Pongamos una fecha límite para cada tarea.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "argumentar",
+      "nivelCEFR": "B2",
+      "frases": [
+        {
+          "ingles": "The main argument against this is the cost.",
+          "espanol": "El principal argumento en contra es el costo.",
+          "revisar": true
+        },
+        {
+          "ingles": "That is a fair point, but consider this.",
+          "espanol": "Es un buen punto, pero considera esto.",
+          "revisar": true
+        },
+        {
+          "ingles": "The evidence strongly suggests otherwise.",
+          "espanol": "La evidencia sugiere firmemente lo contrario.",
+          "revisar": true
+        },
+        {
+          "ingles": "On the one hand it's faster; on the other, it's riskier.",
+          "espanol": "Por un lado es más rápido; por otro, más arriesgado.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'd argue that the benefits outweigh the risks.",
+          "espanol": "Yo diría que los beneficios superan los riesgos.",
+          "revisar": true
+        },
+        {
+          "ingles": "That doesn't necessarily follow from the data.",
+          "espanol": "Eso no se desprende necesariamente de los datos.",
+          "revisar": true
+        },
+        {
+          "ingles": "We shouldn't jump to conclusions.",
+          "espanol": "No deberíamos sacar conclusiones apresuradas.",
+          "revisar": true
+        },
+        {
+          "ingles": "Let me play devil's advocate for a moment.",
+          "espanol": "Déjame hacer de abogado del diablo un momento.",
+          "revisar": true
+        },
+        {
+          "ingles": "This only works under certain assumptions.",
+          "espanol": "Esto solo funciona bajo ciertos supuestos.",
+          "revisar": true
+        },
+        {
+          "ingles": "In the long run, it will pay off.",
+          "espanol": "A la larga, valdrá la pena.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "matizar_y_corregir",
+      "nivelCEFR": "B2",
+      "frases": [
+        {
+          "ingles": "To be more precise, we lost about ten percent.",
+          "espanol": "Para ser más preciso, perdimos cerca del diez por ciento.",
+          "revisar": true
+        },
+        {
+          "ingles": "I may have phrased that badly.",
+          "espanol": "Quizá lo expresé mal.",
+          "revisar": true
+        },
+        {
+          "ingles": "What I meant to say is that it is optional.",
+          "espanol": "Lo que quería decir es que es opcional.",
+          "revisar": true
+        },
+        {
+          "ingles": "That's not entirely accurate.",
+          "espanol": "Eso no es del todo exacto.",
+          "revisar": true
+        },
+        {
+          "ingles": "Let me rephrase that.",
+          "espanol": "Déjame reformularlo.",
+          "revisar": true
+        },
+        {
+          "ingles": "It's more complicated than that.",
+          "espanol": "Es más complicado que eso.",
+          "revisar": true
+        },
+        {
+          "ingles": "Strictly speaking, that isn't a bug.",
+          "espanol": "Estrictamente hablando, eso no es un error.",
+          "revisar": true
+        },
+        {
+          "ingles": "I stand corrected.",
+          "espanol": "Tienes razón, me corrijo.",
+          "revisar": true
+        },
+        {
+          "ingles": "To clarify, I'm not blaming anyone.",
+          "espanol": "Para aclarar, no culpo a nadie.",
+          "revisar": true
+        },
+        {
+          "ingles": "Please don't take it the wrong way.",
+          "espanol": "Por favor, no lo tomes a mal.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "tecnologia_e_ia",
+      "nivelCEFR": "B2",
+      "frases": [
+        {
+          "ingles": "The model performs well on unseen data.",
+          "espanol": "El modelo funciona bien con datos que no ha visto.",
+          "revisar": true
+        },
+        {
+          "ingles": "We need more diverse training data.",
+          "espanol": "Necesitamos datos de entrenamiento más diversos.",
+          "revisar": true
+        },
+        {
+          "ingles": "The results aren't reproducible yet.",
+          "espanol": "Los resultados todavía no son reproducibles.",
+          "revisar": true
+        },
+        {
+          "ingles": "It's hard to explain why the model made that choice.",
+          "espanol": "Es difícil explicar por qué el modelo tomó esa decisión.",
+          "revisar": true
+        },
+        {
+          "ingles": "We should evaluate it on a separate test set.",
+          "espanol": "Deberíamos evaluarlo en un conjunto de prueba aparte.",
+          "revisar": true
+        },
+        {
+          "ingles": "The accuracy dropped after the update.",
+          "espanol": "La precisión bajó después de la actualización.",
+          "revisar": true
+        },
+        {
+          "ingles": "Privacy has to be a priority from the start.",
+          "espanol": "La privacidad debe ser una prioridad desde el inicio.",
+          "revisar": true
+        },
+        {
+          "ingles": "The system flags suspicious activity automatically.",
+          "espanol": "El sistema marca la actividad sospechosa automáticamente.",
+          "revisar": true
+        },
+        {
+          "ingles": "We're still tuning the parameters.",
+          "espanol": "Todavía estamos ajustando los parámetros.",
+          "revisar": true
+        },
+        {
+          "ingles": "The API response time is unacceptable.",
+          "espanol": "El tiempo de respuesta de la API es inaceptable.",
+          "revisar": true
+        }
+      ]
+    },
+    {
+      "categoria": "reuniones_avanzadas",
+      "nivelCEFR": "B2",
+      "frases": [
+        {
+          "ingles": "Let's park this for now.",
+          "espanol": "Dejemos esto en pausa por ahora.",
+          "revisar": true
+        },
+        {
+          "ingles": "Can we circle back to this later?",
+          "espanol": "¿Podemos volver a esto más tarde?",
+          "revisar": true
+        },
+        {
+          "ingles": "I'd like to propose an alternative approach.",
+          "espanol": "Me gustaría proponer un enfoque alternativo.",
+          "revisar": true
+        },
+        {
+          "ingles": "Let's make sure we're all on the same page.",
+          "espanol": "Asegurémonos de que todos estemos en la misma página.",
+          "revisar": true
+        },
+        {
+          "ingles": "We're running out of time, so let's wrap up.",
+          "espanol": "Se nos acaba el tiempo, así que cerremos.",
+          "revisar": true
+        },
+        {
+          "ingles": "Who will take ownership of this item?",
+          "espanol": "¿Quién se hará responsable de este punto?",
+          "revisar": true
+        },
+        {
+          "ingles": "Let's agree on the next steps before we leave.",
+          "espanol": "Acordemos los siguientes pasos antes de irnos.",
+          "revisar": true
+        },
+        {
+          "ingles": "I'll follow up with a written summary.",
+          "espanol": "Daré seguimiento con un resumen por escrito.",
+          "revisar": true
+        },
+        {
+          "ingles": "That's outside the scope of this project.",
+          "espanol": "Eso queda fuera del alcance de este proyecto.",
+          "revisar": true
+        },
+        {
+          "ingles": "Let's get everyone's input first.",
+          "espanol": "Primero escuchemos la opinión de todos.",
+          "revisar": true
+        }
+      ]
     }
   ]
 }

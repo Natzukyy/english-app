@@ -2239,6 +2239,1401 @@
       "nivelCEFR": "A1",
       "categoria": "trabajo_estudios",
       "revisar": true
+    },
+    {
+      "id": "voc-f1-252",
+      "ingles": "discount",
+      "espanol": "descuento",
+      "ejemplo": "They offer a discount for students.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-253",
+      "ingles": "borrow",
+      "espanol": "pedir prestado",
+      "ejemplo": "Can I borrow your charger?",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-254",
+      "ingles": "lend",
+      "espanol": "prestar",
+      "ejemplo": "I can lend you my umbrella.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-255",
+      "ingles": "improve",
+      "espanol": "mejorar",
+      "ejemplo": "I want to improve my English.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-256",
+      "ingles": "invite",
+      "espanol": "invitar",
+      "ejemplo": "I want to invite you to my party.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-257",
+      "ingles": "message",
+      "espanol": "mensaje",
+      "ejemplo": "I will send you a message later.",
+      "nivelCEFR": "A2",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-258",
+      "ingles": "reservation",
+      "espanol": "reservación",
+      "ejemplo": "I made a reservation for two people.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-259",
+      "ingles": "headache",
+      "espanol": "dolor de cabeza",
+      "ejemplo": "I have a headache, so I am going to rest.",
+      "nivelCEFR": "A2",
+      "categoria": "salud",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-260",
+      "ingles": "medicine",
+      "espanol": "medicina",
+      "ejemplo": "Take this medicine twice a day.",
+      "nivelCEFR": "A2",
+      "categoria": "salud",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-261",
+      "ingles": "prescription",
+      "espanol": "receta médica",
+      "ejemplo": "The doctor gave me a prescription.",
+      "nivelCEFR": "A2",
+      "categoria": "salud",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-262",
+      "ingles": "pharmacy",
+      "espanol": "farmacia",
+      "ejemplo": "The pharmacy is next to the bank.",
+      "nivelCEFR": "A2",
+      "categoria": "salud",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-263",
+      "ingles": "wear",
+      "espanol": "usar (ropa)",
+      "ejemplo": "I usually wear a jacket in winter.",
+      "nivelCEFR": "A2",
+      "categoria": "ropa",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-264",
+      "ingles": "size",
+      "espanol": "talla",
+      "ejemplo": "Do you have this shirt in a bigger size?",
+      "nivelCEFR": "A2",
+      "categoria": "ropa",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-265",
+      "ingles": "try on",
+      "espanol": "probarse",
+      "ejemplo": "Can I try on these shoes?",
+      "nivelCEFR": "A2",
+      "categoria": "ropa",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-266",
+      "ingles": "charger",
+      "espanol": "cargador",
+      "ejemplo": "My phone charger is in my bag.",
+      "nivelCEFR": "A2",
+      "categoria": "tecnologia_basica",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-267",
+      "ingles": "password",
+      "espanol": "contraseña",
+      "ejemplo": "I forgot my password.",
+      "nivelCEFR": "A2",
+      "categoria": "tecnologia_basica",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-268",
+      "ingles": "download",
+      "espanol": "descargar",
+      "ejemplo": "I need to download the app first.",
+      "nivelCEFR": "A2",
+      "categoria": "tecnologia_basica",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-269",
+      "ingles": "update",
+      "espanol": "actualización",
+      "ejemplo": "There is a new update for my laptop.",
+      "nivelCEFR": "A2",
+      "categoria": "tecnologia_basica",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-270",
+      "ingles": "screen",
+      "espanol": "pantalla",
+      "ejemplo": "The screen of my phone is cracked.",
+      "nivelCEFR": "A2",
+      "categoria": "tecnologia_basica",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-271",
+      "ingles": "attachment",
+      "espanol": "archivo adjunto",
+      "ejemplo": "I sent the report as an attachment.",
+      "nivelCEFR": "A2",
+      "categoria": "tecnologia_basica",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-272",
+      "ingles": "meeting room",
+      "espanol": "sala de juntas",
+      "ejemplo": "The meeting room is on the second floor.",
+      "nivelCEFR": "A2",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-273",
+      "ingles": "coworker",
+      "espanol": "compañero de trabajo",
+      "ejemplo": "My coworker helped me with the task.",
+      "nivelCEFR": "A2",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-274",
+      "ingles": "exam",
+      "espanol": "examen",
+      "ejemplo": "The exam is next Monday.",
+      "nivelCEFR": "A2",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-275",
+      "ingles": "subject",
+      "espanol": "materia",
+      "ejemplo": "My favorite subject is math.",
+      "nivelCEFR": "A2",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-276",
+      "ingles": "schedule",
+      "espanol": "horario",
+      "ejemplo": "What is your schedule for tomorrow?",
+      "nivelCEFR": "A2",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-277",
+      "ingles": "forget",
+      "espanol": "olvidar",
+      "ejemplo": "I always forget my keys.",
+      "nivelCEFR": "A2",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-278",
+      "ingles": "remember",
+      "espanol": "recordar",
+      "ejemplo": "Do you remember her name?",
+      "nivelCEFR": "A2",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-279",
+      "ingles": "choose",
+      "espanol": "elegir",
+      "ejemplo": "It is hard to choose a gift.",
+      "nivelCEFR": "A2",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-280",
+      "ingles": "decide",
+      "espanol": "decidir",
+      "ejemplo": "I cannot decide what to eat.",
+      "nivelCEFR": "A2",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-281",
+      "ingles": "prefer",
+      "espanol": "preferir",
+      "ejemplo": "I prefer tea to coffee.",
+      "nivelCEFR": "A2",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-282",
+      "ingles": "enough",
+      "espanol": "suficiente",
+      "ejemplo": "We have enough time to finish.",
+      "nivelCEFR": "A2",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-283",
+      "ingles": "crowded",
+      "espanol": "lleno de gente",
+      "ejemplo": "The metro is crowded at six.",
+      "nivelCEFR": "A2",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-284",
+      "ingles": "comfortable",
+      "espanol": "cómodo",
+      "ejemplo": "This chair is very comfortable.",
+      "nivelCEFR": "A2",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-285",
+      "ingles": "busy",
+      "espanol": "ocupado",
+      "ejemplo": "I am busy until five.",
+      "nivelCEFR": "A2",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-286",
+      "ingles": "benefit",
+      "espanol": "beneficio",
+      "ejemplo": "One benefit of remote work is flexibility.",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-287",
+      "ingles": "experience",
+      "espanol": "experiencia",
+      "ejemplo": "I have two years of experience in data analysis.",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-288",
+      "ingles": "participate",
+      "espanol": "participar",
+      "ejemplo": "Everyone should participate in the discussion.",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-289",
+      "ingles": "postpone",
+      "espanol": "posponer",
+      "ejemplo": "We need to postpone the trip.",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-290",
+      "ingles": "provide",
+      "espanol": "proporcionar",
+      "ejemplo": "The company provides free training.",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-291",
+      "ingles": "require",
+      "espanol": "requerir",
+      "ejemplo": "This job requires good communication skills.",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-292",
+      "ingles": "responsible",
+      "espanol": "responsable",
+      "ejemplo": "He is responsible for the website.",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-293",
+      "ingles": "shortage",
+      "espanol": "escasez",
+      "ejemplo": "There is a shortage of engineers.",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-294",
+      "ingles": "review",
+      "espanol": "revisar",
+      "ejemplo": "Could you review my code today?",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-295",
+      "ingles": "reduce",
+      "espanol": "reducir",
+      "ejemplo": "We want to reduce our costs.",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-296",
+      "ingles": "resolve",
+      "espanol": "resolver",
+      "ejemplo": "We resolved the problem in an hour.",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-297",
+      "ingles": "suggest",
+      "espanol": "sugerir",
+      "ejemplo": "I suggest we start earlier.",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-298",
+      "ingles": "recommend",
+      "espanol": "recomendar",
+      "ejemplo": "I recommend this course to beginners.",
+      "nivelCEFR": "B1",
+      "categoria": "trabajo",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-299",
+      "ingles": "complain",
+      "espanol": "quejarse",
+      "ejemplo": "Several customers complained about the delay.",
+      "nivelCEFR": "B1",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-300",
+      "ingles": "deliver",
+      "espanol": "entregar",
+      "ejemplo": "They deliver the package within two days.",
+      "nivelCEFR": "B1",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-301",
+      "ingles": "fee",
+      "espanol": "tarifa",
+      "ejemplo": "There is a small fee for cancellations.",
+      "nivelCEFR": "B1",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-302",
+      "ingles": "guarantee",
+      "espanol": "garantía",
+      "ejemplo": "The laptop has a two-year guarantee.",
+      "nivelCEFR": "B1",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-303",
+      "ingles": "instructions",
+      "espanol": "instrucciones",
+      "ejemplo": "Please read the instructions carefully.",
+      "nivelCEFR": "B1",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-304",
+      "ingles": "upgrade",
+      "espanol": "mejorar de categoría",
+      "ejemplo": "I would like to upgrade my seat.",
+      "nivelCEFR": "B1",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-305",
+      "ingles": "support",
+      "espanol": "soporte",
+      "ejemplo": "Technical support answered quickly.",
+      "nivelCEFR": "B1",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-306",
+      "ingles": "treat",
+      "espanol": "tratar",
+      "ejemplo": "The staff treated us very well.",
+      "nivelCEFR": "B1",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-307",
+      "ingles": "afford",
+      "espanol": "permitirse",
+      "ejemplo": "I cannot afford a new laptop right now.",
+      "nivelCEFR": "B1",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-308",
+      "ingles": "challenge",
+      "espanol": "desafío",
+      "ejemplo": "Learning a new language is a big challenge.",
+      "nivelCEFR": "B1",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-309",
+      "ingles": "damage",
+      "espanol": "daño",
+      "ejemplo": "The storm caused a lot of damage.",
+      "nivelCEFR": "B1",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-310",
+      "ingles": "decision",
+      "espanol": "decisión",
+      "ejemplo": "It was a difficult decision.",
+      "nivelCEFR": "B1",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-311",
+      "ingles": "depend on",
+      "espanol": "depender de",
+      "ejemplo": "It depends on the weather.",
+      "nivelCEFR": "B1",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-312",
+      "ingles": "manage",
+      "espanol": "lograr",
+      "ejemplo": "She managed to finish before noon.",
+      "nivelCEFR": "B1",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-313",
+      "ingles": "lack",
+      "espanol": "falta",
+      "ejemplo": "There is a lack of information.",
+      "nivelCEFR": "B1",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-314",
+      "ingles": "warn",
+      "espanol": "advertir",
+      "ejemplo": "They warned us about the heavy traffic.",
+      "nivelCEFR": "B1",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-315",
+      "ingles": "journey",
+      "espanol": "trayecto",
+      "ejemplo": "The journey took six hours.",
+      "nivelCEFR": "B1",
+      "categoria": "dia_a_dia",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-316",
+      "ingles": "convenient",
+      "espanol": "conveniente",
+      "ejemplo": "Is Thursday convenient for you?",
+      "nivelCEFR": "B1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-317",
+      "ingles": "efficient",
+      "espanol": "eficiente",
+      "ejemplo": "This method is faster and more efficient.",
+      "nivelCEFR": "B1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-318",
+      "ingles": "reliable",
+      "espanol": "confiable",
+      "ejemplo": "The internet here is not reliable.",
+      "nivelCEFR": "B1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-319",
+      "ingles": "temporary",
+      "espanol": "temporal",
+      "ejemplo": "It is only a temporary solution.",
+      "nivelCEFR": "B1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-320",
+      "ingles": "flexible",
+      "espanol": "flexible",
+      "ejemplo": "My schedule is flexible this week.",
+      "nivelCEFR": "B1",
+      "categoria": "adjetivos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-321",
+      "ingles": "disagree",
+      "espanol": "no estar de acuerdo",
+      "ejemplo": "I disagree with that opinion.",
+      "nivelCEFR": "B1",
+      "categoria": "opiniones",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-322",
+      "ingles": "opinion",
+      "espanol": "opinión",
+      "ejemplo": "In my opinion, the plan is too risky.",
+      "nivelCEFR": "B1",
+      "categoria": "opiniones",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-323",
+      "ingles": "prefer to",
+      "espanol": "preferir (hacer)",
+      "ejemplo": "I prefer to work in the morning.",
+      "nivelCEFR": "B1",
+      "categoria": "opiniones",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-324",
+      "ingles": "assume",
+      "espanol": "suponer",
+      "ejemplo": "I assume the meeting is still on.",
+      "nivelCEFR": "B1",
+      "categoria": "opiniones",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-325",
+      "ingles": "doubt",
+      "espanol": "dudar",
+      "ejemplo": "I doubt we can finish today.",
+      "nivelCEFR": "B1",
+      "categoria": "opiniones",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-326",
+      "ingles": "developer",
+      "espanol": "desarrollador",
+      "ejemplo": "She works as a software developer.",
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-327",
+      "ingles": "bug",
+      "espanol": "error de software",
+      "ejemplo": "We fixed the bug in the login page.",
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-328",
+      "ingles": "feature",
+      "espanol": "función",
+      "ejemplo": "The new feature saves a lot of time.",
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-329",
+      "ingles": "server",
+      "espanol": "servidor",
+      "ejemplo": "The server was down for an hour.",
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-330",
+      "ingles": "database",
+      "espanol": "base de datos",
+      "ejemplo": "The database stores all user records.",
+      "nivelCEFR": "B1",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-331",
+      "ingles": "bottleneck",
+      "espanol": "cuello de botella",
+      "ejemplo": "The database is the main bottleneck.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-332",
+      "ingles": "breakthrough",
+      "espanol": "avance importante",
+      "ejemplo": "The team announced a breakthrough in speech recognition.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-333",
+      "ingles": "framework",
+      "espanol": "marco de trabajo",
+      "ejemplo": "The team uses an open-source framework.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-334",
+      "ingles": "robust",
+      "espanol": "robusto",
+      "ejemplo": "We need a more robust solution.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-335",
+      "ingles": "benchmark",
+      "espanol": "punto de referencia",
+      "ejemplo": "We compared the model against a benchmark.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-336",
+      "ingles": "bias",
+      "espanol": "sesgo",
+      "ejemplo": "The dataset contains a strong bias.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-337",
+      "ingles": "refactor",
+      "espanol": "refactorizar",
+      "ejemplo": "We need to refactor this module.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-338",
+      "ingles": "dependency",
+      "espanol": "dependencia",
+      "ejemplo": "Each dependency adds a possible risk.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-339",
+      "ingles": "deprecated",
+      "espanol": "obsoleto",
+      "ejemplo": "This function is deprecated.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-340",
+      "ingles": "integrate",
+      "espanol": "integrar",
+      "ejemplo": "We need to integrate the payment system.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-341",
+      "ingles": "leverage",
+      "espanol": "aprovechar",
+      "ejemplo": "We can leverage existing data to train the model.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-342",
+      "ingles": "streamline",
+      "espanol": "simplificar",
+      "ejemplo": "The new tool streamlines the approval process.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-343",
+      "ingles": "mitigate",
+      "espanol": "mitigar",
+      "ejemplo": "These steps mitigate the risk of data loss.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-344",
+      "ingles": "verify",
+      "espanol": "verificar",
+      "ejemplo": "Please verify the data before publishing.",
+      "nivelCEFR": "B2",
+      "categoria": "tecnico",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-345",
+      "ingles": "assumption",
+      "espanol": "suposición",
+      "ejemplo": "That conclusion is based on a wrong assumption.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-346",
+      "ingles": "ambiguous",
+      "espanol": "ambiguo",
+      "ejemplo": "The requirements were ambiguous.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-347",
+      "ingles": "consistent",
+      "espanol": "coherente",
+      "ejemplo": "The results were consistent across all tests.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-348",
+      "ingles": "contradict",
+      "espanol": "contradecir",
+      "ejemplo": "The new data contradicts our earlier findings.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-349",
+      "ingles": "convincing",
+      "espanol": "convincente",
+      "ejemplo": "She gave a convincing argument.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-350",
+      "ingles": "crucial",
+      "espanol": "crucial",
+      "ejemplo": "Clear communication is crucial in remote teams.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-351",
+      "ingles": "drawback",
+      "espanol": "desventaja",
+      "ejemplo": "The main drawback is the high cost.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-352",
+      "ingles": "elaborate",
+      "espanol": "explicar con más detalle",
+      "ejemplo": "Could you elaborate on that point?",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-353",
+      "ingles": "emphasize",
+      "espanol": "enfatizar",
+      "ejemplo": "I want to emphasize the security risks.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-354",
+      "ingles": "feasible",
+      "espanol": "viable",
+      "ejemplo": "Is this schedule feasible?",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-355",
+      "ingles": "flaw",
+      "espanol": "falla",
+      "ejemplo": "We found a serious flaw in the design.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-356",
+      "ingles": "implication",
+      "espanol": "implicación",
+      "ejemplo": "What are the implications for our budget?",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-357",
+      "ingles": "insight",
+      "espanol": "idea reveladora",
+      "ejemplo": "The survey gave us useful insights.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-358",
+      "ingles": "justify",
+      "espanol": "justificar",
+      "ejemplo": "How do you justify this extra expense?",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-359",
+      "ingles": "outcome",
+      "espanol": "resultado",
+      "ejemplo": "The outcome of the experiment surprised everyone.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-360",
+      "ingles": "overwhelming",
+      "espanol": "abrumador",
+      "ejemplo": "The amount of information was overwhelming.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-361",
+      "ingles": "reluctant",
+      "espanol": "reacio",
+      "ejemplo": "He was reluctant to change the plan.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-362",
+      "ingles": "substantial",
+      "espanol": "considerable",
+      "ejemplo": "There was a substantial increase in traffic.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-363",
+      "ingles": "undermine",
+      "espanol": "socavar",
+      "ejemplo": "Constant changes undermine the confidence of the team.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-364",
+      "ingles": "valid",
+      "espanol": "válido",
+      "ejemplo": "That is a valid concern.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-365",
+      "ingles": "widespread",
+      "espanol": "generalizado",
+      "ejemplo": "Remote work has become widespread.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-366",
+      "ingles": "pitfall",
+      "espanol": "trampa",
+      "ejemplo": "A common pitfall is skipping the tests.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-367",
+      "ingles": "thorough",
+      "espanol": "minucioso",
+      "ejemplo": "She did a thorough review of the contract.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-368",
+      "ingles": "downside",
+      "espanol": "lado negativo",
+      "ejemplo": "The downside is that it takes longer.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-369",
+      "ingles": "tedious",
+      "espanol": "tedioso",
+      "ejemplo": "Updating every record by hand is tedious.",
+      "nivelCEFR": "B2",
+      "categoria": "argumentacion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-370",
+      "ingles": "accountable",
+      "espanol": "responsable ante alguien",
+      "ejemplo": "Managers are accountable for the results.",
+      "nivelCEFR": "B2",
+      "categoria": "gestion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-371",
+      "ingles": "prioritize",
+      "espanol": "priorizar",
+      "ejemplo": "We must prioritize the critical bugs.",
+      "nivelCEFR": "B2",
+      "categoria": "gestion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-372",
+      "ingles": "tackle",
+      "espanol": "abordar",
+      "ejemplo": "Let us tackle the biggest problem first.",
+      "nivelCEFR": "B2",
+      "categoria": "gestion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-373",
+      "ingles": "compromise",
+      "espanol": "acuerdo mutuo",
+      "ejemplo": "We reached a compromise on the deadline.",
+      "nivelCEFR": "B2",
+      "categoria": "gestion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-374",
+      "ingles": "reinforce",
+      "espanol": "reforzar",
+      "ejemplo": "The results reinforce our hypothesis.",
+      "nivelCEFR": "B2",
+      "categoria": "gestion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-375",
+      "ingles": "reconsider",
+      "espanol": "reconsiderar",
+      "ejemplo": "Please reconsider your decision.",
+      "nivelCEFR": "B2",
+      "categoria": "gestion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-376",
+      "ingles": "scope creep",
+      "espanol": "crecimiento descontrolado del alcance",
+      "ejemplo": "Scope creep delayed the launch by a month.",
+      "nivelCEFR": "B2",
+      "categoria": "gestion",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-377",
+      "ingles": "come up with",
+      "espanol": "idear",
+      "ejemplo": "She came up with a clever solution.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-378",
+      "ingles": "carry out",
+      "espanol": "llevar a cabo",
+      "ejemplo": "We carried out the survey last month.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-379",
+      "ingles": "bring up",
+      "espanol": "sacar a colación",
+      "ejemplo": "He brought up an important issue.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-380",
+      "ingles": "point out",
+      "espanol": "señalar",
+      "ejemplo": "I would like to point out one problem.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-381",
+      "ingles": "rule out",
+      "espanol": "descartar",
+      "ejemplo": "We cannot rule out a hardware failure.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-382",
+      "ingles": "back up",
+      "espanol": "respaldar",
+      "ejemplo": "The data is backed up every night.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-383",
+      "ingles": "sort out",
+      "espanol": "resolver",
+      "ejemplo": "Let us sort out the details tomorrow.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-384",
+      "ingles": "fall behind",
+      "espanol": "quedarse atrás",
+      "ejemplo": "We are falling behind schedule.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-385",
+      "ingles": "run into",
+      "espanol": "toparse con",
+      "ejemplo": "We ran into a few unexpected issues.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-386",
+      "ingles": "look into",
+      "espanol": "investigar",
+      "ejemplo": "I will look into the error.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-387",
+      "ingles": "turn down",
+      "espanol": "rechazar",
+      "ejemplo": "She turned down the job offer.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-388",
+      "ingles": "cut back on",
+      "espanol": "recortar",
+      "ejemplo": "The company is cutting back on expenses.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-389",
+      "ingles": "set up",
+      "espanol": "configurar",
+      "ejemplo": "I will set up the test environment.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-390",
+      "ingles": "follow through",
+      "espanol": "cumplir hasta el final",
+      "ejemplo": "He always follows through on his promises.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-391",
+      "ingles": "step down",
+      "espanol": "renunciar al puesto",
+      "ejemplo": "The director will step down in June.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-392",
+      "ingles": "hold off",
+      "espanol": "posponer",
+      "ejemplo": "Let us hold off on the release until Monday.",
+      "nivelCEFR": "B2",
+      "categoria": "phrasal_verbs",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-393",
+      "ingles": "ticket",
+      "espanol": "boleto",
+      "ejemplo": "I bought two tickets for the concert.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-394",
+      "ingles": "platform",
+      "espanol": "andén",
+      "ejemplo": "The train leaves from platform three.",
+      "nivelCEFR": "A2",
+      "categoria": "viajes",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-395",
+      "ingles": "bill",
+      "espanol": "cuenta",
+      "ejemplo": "Could we have the bill, please?",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-396",
+      "ingles": "tip",
+      "espanol": "propina",
+      "ejemplo": "We left a tip for the waiter.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-397",
+      "ingles": "queue",
+      "espanol": "fila",
+      "ejemplo": "There is a long queue at the bank.",
+      "nivelCEFR": "A2",
+      "categoria": "servicios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-398",
+      "ingles": "pain",
+      "espanol": "dolor",
+      "ejemplo": "I have a pain in my back.",
+      "nivelCEFR": "A2",
+      "categoria": "salud",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-399",
+      "ingles": "fever",
+      "espanol": "fiebre",
+      "ejemplo": "She has a fever and a cough.",
+      "nivelCEFR": "A2",
+      "categoria": "salud",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-400",
+      "ingles": "jacket",
+      "espanol": "chamarra",
+      "ejemplo": "Take a jacket; it is cold outside.",
+      "nivelCEFR": "A2",
+      "categoria": "ropa",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-401",
+      "ingles": "email address",
+      "espanol": "correo electrónico",
+      "ejemplo": "What is your email address?",
+      "nivelCEFR": "A2",
+      "categoria": "tecnologia_basica",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-402",
+      "ingles": "deadline day",
+      "espanol": "día de entrega",
+      "ejemplo": "Tomorrow is deadline day for the project.",
+      "nivelCEFR": "A2",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-403",
+      "ingles": "salary",
+      "espanol": "sueldo",
+      "ejemplo": "He is happy with his new salary.",
+      "nivelCEFR": "A2",
+      "categoria": "trabajo_estudios",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-404",
+      "ingles": "lose",
+      "espanol": "perder",
+      "ejemplo": "I always lose my umbrella.",
+      "nivelCEFR": "A2",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-405",
+      "ingles": "hurry",
+      "espanol": "darse prisa",
+      "ejemplo": "We have to hurry or we will miss the bus.",
+      "nivelCEFR": "A2",
+      "categoria": "verbos_basicos",
+      "revisar": true
+    },
+    {
+      "id": "voc-f1-406",
+      "ingles": "noisy",
+      "espanol": "ruidoso",
+      "ejemplo": "My street is very noisy at night.",
+      "nivelCEFR": "A2",
+      "categoria": "adjetivos",
+      "revisar": true
     }
   ]
 }
