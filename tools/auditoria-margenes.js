@@ -5,6 +5,7 @@
 //   pantalla  : texto/controles a < 16 px del borde de la pantalla (solo móvil)
 //   desborde  : contenido que se sale o se corta
 //   hermanas  : tarjetas hermanas a < 8 px o tocándose
+//   hueco     : aire real entre hermanos CON sombra dura y rotación incluidas (< 12 px; < 16 px bajo un hero) (D35)
 //   tactil    : botones de menos de 44 px de alto o ancho
 // Cómo se corre (servidor local en 8001 y receptor de resultados, ver tools/auditoria-margenes.md):
 //   browser_run_code_unsafe con filename: tools/auditoria-margenes.js
@@ -36,6 +37,78 @@ async (page) => {
   const medir = (meta) => {
     const out = [];
     const vw = window.innerWidth;
+    // ---- Regla 'hueco' (D35): aire REAL entre hermanos contando la sombra dura (box-shadow: offset, blur,
+    // spread) y la rotación (transform). Se mide ANTES de apagar los transforms: solo se apagan animaciones,
+    // transiciones y opacidad para que las entradas no falseen la medida.
+    const estiloAnim = document.createElement('style');
+    estiloAnim.textContent = '[class*="pop-entrada"], [class*="pop-entrada"] > * { animation: none !important; transition: none !important; opacity: 1 !important; }';
+    document.head.appendChild(estiloAnim);
+    const extension = (e) => {
+      const sombra = getComputedStyle(e).boxShadow;
+      const ex = { t: 0, r: 0, b: 0, l: 0 };
+      if (!sombra || sombra === 'none') return ex;
+      const partes = []; let prof = 0, ini = 0;
+      for (let i = 0; i < sombra.length; i++) { const c = sombra[i]; if (c === '(') prof++; else if (c === ')') prof--; else if (c === ',' && prof === 0) { partes.push(sombra.slice(ini, i)); ini = i + 1; } }
+      partes.push(sombra.slice(ini));
+      partes.forEach((s) => {
+        if (/inset/.test(s)) return;
+        const n = (s.replace(/rgba?\([^)]*\)/g, '').match(/-?[\d.]+px/g) || []).map(parseFloat);
+        const [ox = 0, oy = 0, blur = 0, spread = 0] = n;
+        ex.l = Math.max(ex.l, blur + spread - ox); ex.r = Math.max(ex.r, blur + spread + ox);
+        ex.t = Math.max(ex.t, blur + spread - oy); ex.b = Math.max(ex.b, blur + spread + oy);
+      });
+      return ex;
+    };
+    const rectExt = (e) => { const r = e.getBoundingClientRect(); const x = extension(e); return { top: r.top - x.t, bottom: r.bottom + x.b, left: r.left - x.l, right: r.right + x.r, sombra: x.t + x.r + x.b + x.l > 0, rot: getComputedStyle(e).transform !== 'none' }; };
+    const esVisibleRaw = (e) => { const r = e.getBoundingClientRect(); const cs = getComputedStyle(e); return r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.display !== 'none' && Number(cs.opacity) > 0.05; };
+    const selH = (e) => { const partes = []; let n = e; for (let i = 0; i < 3 && n && n.nodeType === 1 && n.id !== 'pantalla'; i++) { const c = (typeof n.className === 'string' ? n.className : '').trim().split(/\s+/).filter(Boolean).slice(0, 2).join('.'); partes.unshift(n.tagName.toLowerCase() + (n.id ? '#' + n.id : '') + (c ? '.' + c : '')); n = n.parentElement; } return partes.join(' > '); };
+    const huecos = [];
+    {
+      const zonas0 = [document.getElementById('pantalla')].filter(Boolean);
+      zonas0.forEach((z) => z.querySelectorAll('*').forEach((e) => {
+        if (!esVisibleRaw(e) || e.closest('svg') || !e.parentElement) return;
+        const re = rectExt(e);
+        if (!(re.sombra || re.rot)) return;                       // solo elementos que "crecen" con sombra o rotación
+        const re0 = e.getBoundingClientRect();
+        if (re0.width < 80 || re0.height < 36) return;
+        const hero = /hero|hoy|cta/i.test(typeof e.className === 'string' ? e.className : '');
+        [...e.parentElement.children].forEach((h) => {
+          if (h === e || !esVisibleRaw(h) || /^(script|style)$/i.test(h.tagName)) return;
+          const rh = rectExt(h); const rh0 = h.getBoundingClientRect();
+          if (rh0.width < 1 || rh0.height < 1) return;
+          if (getComputedStyle(h).position === 'fixed' || getComputedStyle(h).position === 'absolute') return;
+          const solapeX = Math.min(re.right, rh.right) - Math.max(re.left, rh.left);
+          const solapeY = Math.min(re.bottom, rh.bottom) - Math.max(re.top, rh.top);
+          let gap = null;
+          if (solapeX > 8) gap = Math.max(re.top, rh.top) - Math.min(re.bottom, rh.bottom);
+          else if (solapeY > 8) gap = Math.max(re.left, rh.left) - Math.min(re.right, rh.right);
+          if (gap === null) return;
+          const min = (hero && rh0.top > re0.top) ? 16 : 12;
+          if (gap < min - 0.5) huecos.push({ regla: 'hueco', selector: selH(e) + '  ↔  ' + selH(h), medida: Math.round(gap * 10) / 10 + 'px de aire real con sombra/rotación (mín ' + min + ')', sev: gap < 4 ? 'alta' : 'media' });
+        });
+        // Lo mismo subiendo por los ancestros: un hijo con sombra o rotación que sobresale de su contenedor
+        // (p. ej. un paso rotado dentro de "Tu ruta de hoy") cuenta contra los hermanos del contenedor.
+        for (let anc = e.parentElement; anc && anc !== z && anc.parentElement && anc.parentElement !== z; anc = anc.parentElement) {
+          const ra = rectExt(anc);
+          const u = { top: Math.min(ra.top, re.top), bottom: Math.max(ra.bottom, re.bottom), left: Math.min(ra.left, re.left), right: Math.max(ra.right, re.right) };
+          if (u.top >= ra.top - 0.5 && u.bottom <= ra.bottom + 0.5 && u.left >= ra.left - 0.5 && u.right <= ra.right + 0.5) continue; // no sobresale del contenedor: ya lo cubre la comparación de hermanos
+          [...anc.parentElement.children].forEach((h) => {
+            if (h === anc || !esVisibleRaw(h) || /^(script|style)$/i.test(h.tagName)) return;
+            const rh = rectExt(h); const rh0 = h.getBoundingClientRect();
+            if (rh0.width < 1 || rh0.height < 1) return;
+            const ps = getComputedStyle(h).position; if (ps === 'fixed' || ps === 'absolute') return;
+            const sX = Math.min(u.right, rh.right) - Math.max(u.left, rh.left);
+            const sY = Math.min(u.bottom, rh.bottom) - Math.max(u.top, rh.top);
+            let gap = null;
+            if (sX > 8) gap = Math.max(u.top, rh.top) - Math.min(u.bottom, rh.bottom);
+            else if (sY > 8) gap = Math.max(u.left, rh.left) - Math.min(u.right, rh.right);
+            if (gap === null) return;
+            if (gap < 11.5) huecos.push({ regla: 'hueco', selector: selH(e) + '  (dentro de ' + selH(anc) + ')  ↔  ' + selH(h), medida: Math.round(gap * 10) / 10 + 'px de aire real (hijo con sombra/rotación vs hermano del contenedor, mín 12)', sev: gap < 4 ? 'alta' : 'media' });
+          });
+        }
+      }));
+    }
+    estiloAnim.remove();
     // Se mide sin rotación ni animaciones de entrada (las calcomanías giran ±1° y eso agranda el rectángulo).
     const estiloMedicion = document.createElement('style');
     estiloMedicion.textContent = '.calcomania, .superficie-oscura, [class*="pop-entrada"] > *, [class*="pop-entrada"] { transform: none !important; animation: none !important; transition: none !important; opacity: 1 !important; }';
@@ -157,6 +230,7 @@ async (page) => {
       if (r.height < 43.5 || r.width < 43.5) out.push({ regla: 'tactil', selector: sel(e), medida: Math.round(r.width) + '×' + Math.round(r.height) + 'px (mín 44)', sev: Math.min(r.width, r.height) < 32 ? 'alta' : 'baja' });
     }));
     estiloMedicion.remove();
+    out.push(...huecos);
     // quitar repetidos
     const vistos = new Set();
     return out.filter((f) => { const k = f.regla + f.selector + f.medida; if (vistos.has(k)) return false; vistos.add(k); return true; }).map((f) => Object.assign(f, meta));

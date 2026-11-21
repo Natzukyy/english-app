@@ -34,6 +34,8 @@ Ver `DECISIONES.md`. Resumen: sin backend propio en la app (IndexedDB + export/i
 
 **Márgenes de tarjetas (D33, rama `hey-2`):** toda tarjeta o contenedor con borde o fondo lleva **padding interior** con el token `--pad-tarjeta` (16 px; `--pad-tarjeta-grande` 24 px), definido UNA vez en `:root` de `css/styles.css`. `.superficie-oscura` y `.calcomania` son bases **sin padding**: cada uso pone el suyo (pastillas y fichas pequeñas: 8 px vertical / 12 px horizontal; nada de valores sueltos). Las barras con borde de 2.5 px necesitan ≥ 8 px de alto (a 6 px quedaba 1 px de relleno). Después de tocar CSS corre la auditoría: ver `tools/auditoria-margenes.md` (comandos exactos; no va en `run-tests.sh` porque necesita navegador). Debe salir sin hallazgos o con excepciones justificadas en `docs/auditoria-margenes.md`.
 
+**Aire con sombra (D35, rama `hey-3`):** la sombra dura y la rotación cuentan como parte de la tarjeta: entre una tarjeta con sombra y el siguiente elemento debe haber ≥ 12 px de aire real (≥ 16 px bajo la hero). Usa `--aire-sombra` / `--sep-calcomania` / `--sep-hero`; la auditoría tiene la regla `hueco` que lo mide. Los márgenes verticales de bloques colapsan (en flex/grid se suman): mide, no adivines.
+
 ## Resultado probado en iPhone real (iOS 27, Safari 27.2) — ver DECISIONES.md D12
 - Micrófono (`getUserMedia`+`MediaRecorder`) funciona, mimeType `audio/mp4` (AAC).
 - `SpeechRecognition` (en-US) funciona, en Safari y ya instalada.

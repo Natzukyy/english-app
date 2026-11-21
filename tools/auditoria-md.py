@@ -39,7 +39,7 @@ def resumen(filas):
 antes = json.load(open(sys.argv[1]))["filas"]
 despues = json.load(open(sys.argv[2]))["filas"] if len(sys.argv) > 2 else None
 print("# Auditoría de márgenes (D33)\n")
-print("Generada con `tools/auditoria-margenes.js` + `tools/auditoria-md.py`. Umbrales: contenido a ≥ 12 px del borde de su tarjeta (8 px en pastillas y fichas compactas de ≤ 72 px de lado menor, 4 px en insignias de ≤ 44 px con un glifo centrado); texto a ≥ 16 px del borde de la pantalla (móvil); tarjetas hermanas a ≥ 8 px; áreas táctiles ≥ 44 px; sin desbordes. Se mide sin la rotación de ±1° de las calcomanías. 33 estados × 390×844 / 360×740 / 1440×900 × interfaz nivel 0 y 3, con datos sembrados en una base de pruebas aislada.\n")
+print("Generada con `tools/auditoria-margenes.js` + `tools/auditoria-md.py`. Umbrales: contenido a ≥ 12 px del borde de su tarjeta (8 px en pastillas y fichas compactas de ≤ 72 px de lado menor, 4 px en insignias de ≤ 44 px con un glifo centrado); texto a ≥ 16 px del borde de la pantalla (móvil); tarjetas hermanas a ≥ 8 px; áreas táctiles ≥ 44 px; sin desbordes. Las reglas de interior/hermanas se miden sin la rotación de ±1° de las calcomanías; la regla **hueco** (D35) mide al revés: con la sombra dura (offset/blur/spread) y la rotación incluidas, mínimo 12 px entre hermanos (16 px bajo una tarjeta hero) y también entre un hijo que sobresale de su contenedor y los hermanos de ese contenedor. 33 estados × 390×844 / 360×740 / 1440×900 × interfaz nivel 0 y 3, con datos sembrados en una base de pruebas aislada.\n")
 print("## Estado inicial (antes de corregir)\n")
 print(resumen(antes) + "\n")
 print("\n".join(tabla(antes)) + "\n")

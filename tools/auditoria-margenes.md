@@ -1,6 +1,6 @@
 # Auditoría de márgenes — cómo correrla
 
-Mide, en todas las pantallas y estados (33) × 390×844 / 360×740 / 1440×900 × interfaz nivel 0 y 3, cada tarjeta o contenedor con borde, fondo o sombra: distancia contenido→borde (≥ 12 px; 8 px en pastillas y fichas compactas de ≤ 72 px; 3 px en insignias de ≤ 44 px), texto a ≥ 16 px del borde de la pantalla (móvil), desbordes, tarjetas hermanas a ≥ 8 px y áreas táctiles ≥ 44 px. Siembra una base de pruebas aislada (contexto nuevo de Playwright, nunca tu base real). Sin dependencias en el proyecto: usa el Playwright del MCP.
+Mide, en todas las pantallas y estados (33) × 390×844 / 360×740 / 1440×900 × interfaz nivel 0 y 3, cada tarjeta o contenedor con borde, fondo o sombra: distancia contenido→borde (≥ 12 px; 8 px en pastillas y fichas compactas de ≤ 72 px; 3 px en insignias de ≤ 44 px), texto a ≥ 16 px del borde de la pantalla (móvil), desbordes, tarjetas hermanas a ≥ 8 px, **aire real entre hermanos contando la sombra dura y la rotación (regla `hueco`, D35: ≥ 12 px; ≥ 16 px bajo una tarjeta hero; también para hijos que sobresalen de su contenedor)** y áreas táctiles ≥ 44 px. Siembra una base de pruebas aislada (contexto nuevo de Playwright, nunca tu base real). Sin dependencias en el proyecto: usa el Playwright del MCP.
 
 ```
 cd /ruta/al/proyecto

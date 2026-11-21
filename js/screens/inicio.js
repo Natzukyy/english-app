@@ -360,11 +360,10 @@
         "</div>" +
         "</div>" +
         '<div class="tarjeta-meta superficie-oscura">' +
-        '<div class="fila-cabeza"><span class="texto-tenue">' + esc(t("inicio.meta.etiqueta")) + "</span>" +
+        '<div class="fila-cabeza"><span class="texto-tenue meta-etiqueta">' + esc(t("inicio.meta.etiqueta")) + ' · <span class="num-tabular meta-minutos">' + esc(minutosHoy) + "/" + esc(prefs.metaMinutosDia) + " min</span></span>" +
         '<span class="pastilla-nivel-xp">' + esc(t("progreso.nivel")) + ' <strong class="num-tabular">' + nivel + '</strong> · <span class="num-tabular" id="valor-xp">0</span> XP</span></div>' +
         '<div class="meta-fila-barra">' +
         '<div class="barra-progreso barra-escala" style="--progreso:0"><span id="barra-meta" data-destino="' + porcentajeMeta + '"></span></div>' +
-        '<span class="texto-tenue num-tabular meta-minutos">' + esc(minutosHoy) + "/" + esc(prefs.metaMinutosDia) + " min</span>" +
         "</div>" +
         "</div>" +
         tarjetaPrincipalHtml +

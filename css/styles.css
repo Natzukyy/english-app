@@ -133,6 +133,12 @@
   --sombra-offset: 5px;
   --sombra-dura: var(--sombra-offset) var(--sombra-offset) 0 0 var(--sombra);
   --sombra-cta: var(--sombra-offset) var(--sombra-offset) 0 0 var(--coral);
+  /* Aire con sombra (D35): la sombra dura (+5 px) y la rotación (~±1°, hasta ~4 px en tarjetas
+     anchas) cuentan como parte de la tarjeta. --aire-sombra es lo que "ocupan" y --sep-* es la
+     separación de layout que deja >= 12 px (16 px bajo la tarjeta hero) de aire visible. */
+  --aire-sombra: calc(var(--sombra-offset) + var(--e-1));
+  --sep-calcomania: calc(var(--e-3) + var(--aire-sombra));
+  --sep-hero: calc(var(--e-4) + var(--aire-sombra));
 
   /* --- Animación: un solo bloque con todos los tokens de duración/curva (pedido explícito
      del spec, para poder ajustarlos desde un solo lugar). Reglas duras para TODA animación
@@ -1899,7 +1905,7 @@ button.tarjeta-habilidad:active {
 .progreso-fila-superior {
   display: flex;
   flex-direction: column;
-  gap: var(--e-4);
+  gap: var(--sep-calcomania);
   margin-top: var(--e-5);
 }
 
@@ -2909,8 +2915,15 @@ main:has(> .pantalla-habla) {
   gap: var(--e-1);
 }
 /* Entre tarjetas (meta, HOY TE TOCA) 8px: gap de 4px + este margen. */
-.pantalla-inicio-guiada > .tarjeta-meta + .tarjeta-principal {
-  margin-top: var(--e-1);
+/* Solo celular (columna): en laptop el aire lo da el gap de la rejilla (--sep-calcomania). D35 */
+@media (max-width: 899px) {
+  .pantalla-inicio-guiada > .tarjeta-meta + .tarjeta-principal {
+    margin-top: var(--e-3); /* la hero gira -0.8° y sube ~2 px por la esquina: 12 px de aire real */
+  }
+  /* Bajo la hero (sombra coral + rotación): 16 px de aire real hasta "Tu ruta de hoy". */
+  .pantalla-inicio-guiada > .tarjeta-principal + .inicio-ruta-hoy {
+    margin-top: calc(var(--e-4) + var(--e-1)); /* 20 + 4 de gap = 24 */
+  }
 }
 
 /* Las barras heredan un margin vertical de e-2 (8px arriba y abajo) pensado para pantallas
@@ -3088,6 +3101,8 @@ main:has(> .pantalla-habla) {
    título (que puede tener 2 líneas), con alto >=48px. En laptop vuelve a su tamaño natural. */
 @media (max-width: 899px) {
   .tarjeta-principal .boton-tinta {
+    margin-top: var(--e-3); /* 12 px: la sombra y la rotación del botón cuentan (D35) */
+    --r: 0deg; /* a todo el ancho de la tarjeta, girado se comía el aire con el texto de arriba */
     align-self: stretch;
     min-height: 48px;
     justify-content: center;
@@ -3124,6 +3139,15 @@ main:has(> .pantalla-habla) {
   .pantalla-inicio-guiada .barra-progreso {
     margin: 2px 0;
   }
+  .tarjeta-principal-etiqueta {
+    line-height: 1.2;
+  }
+  .tarjeta-principal .boton-tinta {
+    min-height: var(--toque-minimo); /* 44 px: sigue siendo área táctil completa (D35) */
+  }
+  .inicio-ruta-hoy .fila-cabeza {
+    line-height: 1.2; /* D35: el título de la ruta no necesita 28 px de alto; el aire nuevo se saca de aquí, no de contenido */
+  }
   .camino-mini-barras {
     gap: var(--e-1) var(--e-3);
   }
@@ -3140,6 +3164,13 @@ main:has(> .pantalla-habla) {
   }
   .pantalla-inicio-guiada {
     gap: var(--e-1);
+  }
+}
+
+/* Inicio (D35): la cabecera no necesita 32 px de aire arriba; mismo margen superior que en celular bajito. */
+@media (max-width: 899px) {
+  main:has(> .pantalla-vista.pantalla-inicio-guiada) {
+    padding-top: calc(max(var(--e-3), env(safe-area-inset-top, 0px)) + var(--e-1));
   }
 }
 
@@ -3689,7 +3720,7 @@ main:has(> .pantalla-habla) {
       "principal ruta"
       "practicar ruta"
       "camino camino";
-    gap: var(--e-4) var(--e-6);
+    gap: var(--sep-calcomania) var(--e-6); /* 21 px: la sombra de la hero cuenta (D35) */
     align-items: start;
   }
 
@@ -3794,7 +3825,7 @@ main:has(> .pantalla-habla) {
 .practicar-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--e-3);
+  gap: var(--sep-calcomania);
   margin-top: var(--e-1);
 }
 
@@ -4337,9 +4368,8 @@ main:has(> .pantalla-habla) {
 .tarjeta-meta .fila-cabeza {
   align-items: center;
 }
-.meta-fila-barra .meta-minutos {
-  flex: none;
-  white-space: nowrap;
+.meta-etiqueta .meta-minutos {
+  white-space: nowrap; /* D35: "x/y min" sube junto al título; la barra queda sola en su fila */
 }
 
 /* Ruta de hoy en celular (D33): mosaico compacto, número y minutos en la primera fila y el nombre
@@ -4383,5 +4413,64 @@ main:has(> .pantalla-habla) {
   .camino-linea,
   .mini-barra-detalle {
     display: none;
+  }
+}
+
+/* ============================================================================
+   AIRE CON SOMBRA (D35) -- las calcomanías llevan sombra dura (+5 px) y giran ~1°; ese rectángulo
+   extendido es el que no debe tocar al vecino. Un solo bloque, al final, con los tokens de :root
+   (--aire-sombra, --sep-calcomania, --sep-hero). La auditoría (tools/auditoria-margenes.js, regla
+   "hueco") mide con sombra y rotación: mínimo 12 px (16 px bajo una hero). */
+.diagnostico-pastilla-area {
+  display: flex;
+  width: fit-content;
+  margin-bottom: var(--sep-calcomania);
+}
+.diagnostico-pasaje,
+.diagnostico-tarjeta-pregunta,
+.escucha-panel-audio,
+.escritura-consigna {
+  margin-top: var(--sep-calcomania);
+}
+.diagnostico-tarjeta-pregunta {
+  margin-bottom: var(--sep-calcomania);
+}
+.ajustes-boton-dato {
+  margin-top: var(--e-2);
+  margin-bottom: var(--aire-sombra);
+}
+/* Estos botones tienen al vecino ARRIBA (la frase, el cuadro de texto): su esquina rotada sube hacia él. */
+.habla-boton-escuchar {
+  margin-top: var(--e-2);
+}
+/* Bloques con tarjetas rotadas/con sombra que van seguidos de otro bloque (regla "hueco" por ancestros, D35). */
+.practicar-grid {
+  margin-bottom: var(--sep-calcomania);
+}
+.pantalla-progreso > .progreso-fila-superior {
+  margin-bottom: var(--sep-calcomania);
+}
+#btn-terminar-escribir {
+  margin-top: var(--e-4); /* el textarea queda arriba; con 12 px quedaban 8.9 px de aire real en laptop */
+}
+.escucha-panel-audio .calcomania-cta {
+  margin-bottom: calc(var(--aire-sombra) + var(--e-2));
+}
+
+/* Celular: el aire nuevo bajo la hero se compensa con alto de línea más ajustado en dos rótulos de una línea
+   (no se oculta nada); Inicio sigue sin scroll en 390x844 y 360x740. */
+@media (max-width: 899px) {
+  .inicio-ruta-hoy .fila-cabeza {
+    line-height: 1;
+  }
+  .tarjeta-principal-etiqueta {
+    line-height: 1.2; /* con 1.1 el texto subía y quedaban 11 px (mín 12) entre el borde y la etiqueta */
+  }
+}
+
+/* Diagnóstico en celular: la pastilla/tarjeta rotada con sombra del cuerpo queda a < 12 px de la barra de progreso de arriba. */
+@media (max-width: 899px) {
+  .pantalla-diagnostico > .diagnostico-cuerpo {
+    margin-top: var(--e-4); /* el margen colapsa con el de la barra (8 px): 16 px dan ~15 de aire real */
   }
 }
