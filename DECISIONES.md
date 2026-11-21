@@ -798,5 +798,10 @@ Alex vio tarjetas con el texto tocando el borde (Progreso, la ruta de hoy, la me
 - **Inicio en celular sin scroll:** con el padding nuevo ya no cabía (+85 px a 390×844, +126 a 360×740). Se compactó SIN quitar padding: "Nivel · XP" sube a la fila del título de la meta, mosaicos de la ruta con número y minutos en una fila, separación de 4 px entre bloques (8 px entre tarjetas), y se ocultan lo secundario (frase "Vas aquí · ritmo", "tu nivel ahora", y en pantallas de ≤ 780 px de alto el detalle bajo cada mini-barra; el texto completo sigue en Progreso).
 - **Excepciones:** ver `docs/auditoria-margenes.md` (cada una justificada).
 
+## D34. Íconos con sufijo de versión (rama `hey-3`)
+El iPhone de Alex seguía mostrando el ícono viejo aunque `apple-touch-icon.png` ya era el globo "Hey!": iOS guarda el ícono de pantalla de inicio **por URL** y el nombre no había cambiado.
+- Los PNG se renombraron con `git mv` (los nombres viejos ya no existen en disco ni están enlazados): `icons/hey-v2-apple-touch-180.png`, `hey-v2-192.png`, `hey-v2-512.png`, `hey-v2-512-maskable.png`, `hey-v2-favicon-32.png`, `hey-v2-favicon-16.png`, `hey-v2.ico`. Actualizados `index.html`, `manifest.webmanifest` y la lista de `sw.js` (CACHE_VERSION v32). Sin "!" en nombres de archivo.
+- **REGLA:** cada vez que cambie el ícono, cambiar el sufijo de versión (`hey-v3-...`) en archivos, `index.html`, manifest y `sw.js`, y subir CACHE_VERSION. iOS cachea por URL.
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*
