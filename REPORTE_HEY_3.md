@@ -23,7 +23,7 @@ Alex probó `hey-2` en el iPhone real y encontró dos problemas: el ícono no ca
 
 **Cambio de aspecto que notarás:** en Inicio "Meta de hoy · 0/15 min" ahora va junto, en la fila de arriba, y la barra ocupa sola la fila de abajo.
 
-**Capturas:** `docs/design-review/hey-3/` (35 pares antes/después: 390×844 y 1440×900, nivel 0). 11 MB.
+**Capturas:** `docs/design-review/hey-3/` (70 pares antes/después: 33 estados en 390×844 y 1440×900, nivel 0). 11 MB.
 
 ## Tarea 3 — Pruebas
 - `./tests/run-tests.sh`: **181 pasaron, 0 fallaron**; validador de contenido OK; detector de texto hardcodeado OK.
@@ -35,7 +35,7 @@ Alex probó `hey-2` en el iPhone real y encontró dos problemas: el ícono no ca
 - Los estados de Inicio con más contenido (p. ej. con confirmación pendiente) no se midieron para "sin scroll"; solo el plan activo normal.
 
 ## Dudas
-- ¿Quieres que borre del disco `assets/icono/hey.svg`-derivados viejos? No quedaron (se movieron), solo aviso.
+- Los PNG viejos no se dejaron en disco (se movieron con `git mv`). Si prefieres conservarlos por si quieres volver atrás, están en el historial de git (`65575ac`).
 - Un receptor viejo de la auditoría (puerto 8010, de una sesión anterior) sigue corriendo en tu Mac; no lo maté. Se ve con `lsof -iTCP:8010`.
 
 ## Cómo verlo
