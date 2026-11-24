@@ -157,14 +157,17 @@
   // lugar; nada más del proyecto repite estos números.
   // ---------------------------------------------------------------------------------------
   var CONSTANTES = {
-    VENTANA_RESPUESTAS: 30, // tamaño de la ventana móvil (en "peso": 1 respuesta normal = 1)
+    VENTANA_RESPUESTAS: 30, // tamaño de la ventana móvil por defecto (en "peso": 1 respuesta normal = 1)
+    // Excepciones por habilidad (D35): escritura llena su barra con 10 consignas, no 30 (30
+    // textos escritos no es razonable). Las demás habilidades usan VENTANA_RESPUESTAS.
+    VENTANA_POR_HABILIDAD: { escritura: 10 },
+    PESO_RESPUESTA: 1, // peso normal de una respuesta en la ventana (escritura ya no pesa media)
     ACIERTO_OBJETIVO: 0.8, // promedio de la ventana con el que la fracción llega a 100 %
     CONFIRMACION_APRUEBA: 0.7, // % mínimo para aprobar la confirmación
     CONFIRMACION_MIN_PREGUNTAS: 8, // una confirmación con menos preguntas no vale
     CONFIRMACION_PREGUNTAS: 10, // cuántas se presentan (>= mínimo)
     CONFIRMACION_REINTENTO_DIAS: 7, // espera tras no aprobar
     CONFIRMACION_RETENIDAS: 15, // respuestas que se conservan al no aprobar
-    PESO_ESCRITURA: 0.5, // una consigna de escritura (lista autoevaluada) pesa media respuesta
     MINUTOS_CONFIRMACION: 10, // duración estimada del paso del plan
     MAX_CONFIRMACIONES_POR_DIA: 1,
     PORCENTAJE_LISTA_PARA_CONFIRMAR: 99 // lo que se ve mientras espera confirmación
@@ -172,8 +175,28 @@
 
   var HABILIDADES_AVANCE = ["lectura", "escucha", "habla", "escritura"];
 
-  function estadoHabilidadVacio(nivel) {
-    return { nivel: nivel || "A1", ventana: [], listaParaConfirmar: false, listaDesde: null, ultimoFallo: null };
+  /** Tamaño de la ventana de una habilidad (por defecto, VENTANA_RESPUESTAS). */
+  function ventanaDe(habilidad) {
+    var v = habilidad && CONSTANTES.VENTANA_POR_HABILIDAD[habilidad];
+    return typeof v === "number" && v > 0 ? v : CONSTANTES.VENTANA_RESPUESTAS;
+  }
+
+  /** Ventana guardada -> ventana válida para la habilidad: para las que tienen tamaño propio,
+   * pesos normales y solo las últimas N (migración desde hey-3, donde escritura guardaba hasta
+   * 60 respuestas de peso 0.5). */
+  function normalizarVentana(ventana, habilidad) {
+    var v = (ventana || []).slice();
+    if (habilidad && CONSTANTES.VENTANA_POR_HABILIDAD[habilidad]) {
+      v = v.map(function (r) {
+        return { v: r.v, w: CONSTANTES.PESO_RESPUESTA };
+      });
+      v = v.slice(-ventanaDe(habilidad));
+    }
+    return v;
+  }
+
+  function estadoHabilidadVacio(nivel, habilidad) {
+    return { habilidad: habilidad || null, nivel: nivel || "A1", ventana: [], listaParaConfirmar: false, listaDesde: null, ultimoFallo: null };
   }
 
   function pesoTotal(ventana) {
@@ -190,23 +213,24 @@
     return v;
   }
 
-  /** Agrega una respuesta puntuada (valor 0..1, peso >0) y recorta a la ventana de 30. No muta. */
-  function agregarRespuesta(ventana, valor, peso) {
+  /** Agrega una respuesta puntuada (valor 0..1, peso >0) y recorta a la ventana de la habilidad
+   * (30 por defecto, 10 en escritura). No muta. */
+  function agregarRespuesta(ventana, valor, peso, habilidad) {
     var w = typeof peso === "number" && peso > 0 ? peso : 1;
     var v = Math.max(0, Math.min(1, Number(valor) || 0));
-    return recortarVentana((ventana || []).concat([{ v: v, w: w }]), CONSTANTES.VENTANA_RESPUESTAS);
+    return recortarVentana((ventana || []).concat([{ v: v, w: w }]), ventanaDe(habilidad));
   }
 
   /** n = peso total de la ventana, aciertos = promedio ponderado,
-   * fraccion = min(1, n/30) * min(1, aciertos/0.80). */
-  function resumenVentana(ventana) {
+   * fraccion = min(1, n/ventana) * min(1, aciertos/0.80). */
+  function resumenVentana(ventana, habilidad) {
     var n = pesoTotal(ventana);
     if (n <= 0) return { n: 0, aciertos: 0, fraccion: 0 };
     var suma = (ventana || []).reduce(function (s, r) {
       return s + r.v * r.w;
     }, 0);
     var aciertos = suma / n;
-    var fraccion = Math.min(1, n / CONSTANTES.VENTANA_RESPUESTAS) * Math.min(1, aciertos / CONSTANTES.ACIERTO_OBJETIVO);
+    var fraccion = Math.min(1, n / ventanaDe(habilidad)) * Math.min(1, aciertos / CONSTANTES.ACIERTO_OBJETIVO);
     return { n: n, aciertos: aciertos, fraccion: fraccion };
   }
 
@@ -215,7 +239,7 @@
   function porcentajeDeHabilidad(estado) {
     if (indiceNivel(estado.nivel) >= ORDEN_NIVELES.length - 1) return 100;
     if (estado.listaParaConfirmar) return CONSTANTES.PORCENTAJE_LISTA_PARA_CONFIRMAR;
-    var pct = Math.floor(resumenVentana(estado.ventana).fraccion * 100 + 1e-9);
+    var pct = Math.floor(resumenVentana(estado.ventana, estado.habilidad).fraccion * 100 + 1e-9);
     return Math.min(CONSTANTES.PORCENTAJE_LISTA_PARA_CONFIRMAR, pct);
   }
 
@@ -238,20 +262,28 @@
   function textoDeFalta(estado) {
     if (indiceNivel(estado.nivel) >= ORDEN_NIVELES.length - 1) return { tipo: "techo", faltan: 0 };
     if (estado.listaParaConfirmar) return { tipo: "lista", faltan: 0 };
-    var r = resumenVentana(estado.ventana);
-    if (r.n <= 0) return { tipo: "nada", faltan: CONSTANTES.VENTANA_RESPUESTAS };
-    if (r.n < CONSTANTES.VENTANA_RESPUESTAS) return { tipo: "faltan", faltan: Math.ceil(CONSTANTES.VENTANA_RESPUESTAS - r.n - 1e-9) };
+    var r = resumenVentana(estado.ventana, estado.habilidad);
+    var tam = ventanaDe(estado.habilidad);
+    if (r.n <= 0) return { tipo: "nada", faltan: tam };
+    if (r.n < tam) return { tipo: "faltan", faltan: Math.ceil(tam - r.n - 1e-9) };
     return { tipo: "aciertos", faltan: 0 };
+  }
+
+  /** Clave i18n del "Faltan N ..." de una habilidad (escritura cuenta consignas, no respuestas). */
+  function claveFalta(estado, faltan) {
+    var consignas = estado && estado.habilidad === "escritura";
+    if (faltan === 1) return consignas ? "avance.falta_una_consigna" : "avance.falta_una";
+    return consignas ? "avance.faltan_n_consignas" : "avance.faltan_n";
   }
 
   /** Registra una respuesta puntuada en el estado de una habilidad. Si con ella la fracción
    * llega a 100 %, queda "lista para confirmar" (se muestra 99 %). No muta; devuelve
    * { estado, quedoLista } (quedoLista = true solo en el momento en que pasa a estar lista). */
   function registrarRespuestaEnEstado(estado, valor, peso, hoyISO) {
-    var nuevo = Object.assign({}, estado, { ventana: agregarRespuesta(estado.ventana, valor, peso) });
+    var nuevo = Object.assign({}, estado, { ventana: agregarRespuesta(estado.ventana, valor, peso, estado.habilidad) });
     var quedoLista = false;
     var techo = indiceNivel(nuevo.nivel) >= ORDEN_NIVELES.length - 1;
-    if (!techo && !nuevo.listaParaConfirmar && resumenVentana(nuevo.ventana).fraccion >= 1 - 1e-9) {
+    if (!techo && !nuevo.listaParaConfirmar && resumenVentana(nuevo.ventana, nuevo.habilidad).fraccion >= 1 - 1e-9) {
       nuevo.listaParaConfirmar = true;
       nuevo.listaDesde = hoyISO || null;
       quedoLista = true;
@@ -305,7 +337,7 @@
     if (resultado.aprobada) {
       var siguiente = siguienteNivelDe(estado.nivel);
       if (!siguiente) return { estado: estado, subio: false };
-      return { estado: { nivel: siguiente, ventana: [], listaParaConfirmar: false, listaDesde: null, ultimoFallo: null }, subio: true };
+      return { estado: { habilidad: estado.habilidad || null, nivel: siguiente, ventana: [], listaParaConfirmar: false, listaDesde: null, ultimoFallo: null }, subio: true };
     }
     return {
       estado: Object.assign({}, estado, {
@@ -324,7 +356,7 @@
     var actual = indiceNivel(estado.nivel);
     var medido = indiceNivel(nivelMedido);
     if (medido > actual) {
-      return { estado: { nivel: nivelMedido, ventana: [], listaParaConfirmar: false, listaDesde: null, ultimoFallo: null }, accion: "sube" };
+      return { estado: { habilidad: estado.habilidad || null, nivel: nivelMedido, ventana: [], listaParaConfirmar: false, listaDesde: null, ultimoFallo: null }, accion: "sube" };
     }
     return { estado: estado, accion: medido === actual ? "confirma" : "repasa" };
   }
@@ -344,12 +376,15 @@
     CONSTANTES: CONSTANTES,
     HABILIDADES_AVANCE: HABILIDADES_AVANCE,
     estadoHabilidadVacio: estadoHabilidadVacio,
+    ventanaDe: ventanaDe,
+    normalizarVentana: normalizarVentana,
     agregarRespuesta: agregarRespuesta,
     resumenVentana: resumenVentana,
     porcentajeDeHabilidad: porcentajeDeHabilidad,
     numeroDeHabilidad: numeroDeHabilidad,
     calcularNivelGlobalDesdeEstados: calcularNivelGlobalDesdeEstados,
     textoDeFalta: textoDeFalta,
+    claveFalta: claveFalta,
     registrarRespuestaEnEstado: registrarRespuestaEnEstado,
     puedeConfirmar: puedeConfirmar,
     fechaReintento: fechaReintento,

@@ -54,13 +54,50 @@
     Test.assertEqual(Math.abs(A.resumenVentana(v).aciertos - 1 / 30) < 1e-9, true);
   });
 
-  Test.test("escritura pesa 0.5: la ventana se recorta por peso total, no por cantidad", function () {
+  Test.test("escritura (D35): ventana de 10 consignas, peso 1, el resto de habilidades sigue en 30", function () {
+    Test.assertEqual(K.VENTANA_POR_HABILIDAD.escritura, 10);
+    Test.assertEqual(K.PESO_RESPUESTA, 1);
+    Test.assertEqual(A.ventanaDe("escritura"), 10);
+    ["lectura", "escucha", "habla"].forEach(function (h) {
+      Test.assertEqual(A.ventanaDe(h), 30);
+    });
     var v = [];
-    for (var i = 0; i < 40; i++) v = A.agregarRespuesta(v, 1, K.PESO_ESCRITURA);
-    Test.assertEqual(v.length, 40); // 40 * 0.5 = 20 <= 30: caben todas
-    for (var j = 0; j < 40; j++) v = A.agregarRespuesta(v, 1, K.PESO_ESCRITURA);
-    Test.assertEqual(v.length, 60); // 60 * 0.5 = 30
-    Test.assertEqual(A.resumenVentana(v).n, 30);
+    for (var i = 0; i < 25; i++) v = A.agregarRespuesta(v, 1, K.PESO_RESPUESTA, "escritura");
+    Test.assertEqual(v.length, 10);
+    Test.assertEqual(A.resumenVentana(v, "escritura").n, 10);
+    var w = [];
+    for (var j = 0; j < 40; j++) w = A.agregarRespuesta(w, 1, 1, "lectura");
+    Test.assertEqual(w.length, 30);
+  });
+
+  Test.test("escritura (D35): 10 consignas al 80 % llenan la barra; 'Faltan N' usa 10", function () {
+    var e = A.estadoHabilidadVacio("B1", "escritura");
+    Test.assertEqual(A.textoDeFalta(e).faltan, 10);
+    e = llenar(e, 4, 1, 1).estado;
+    var f = A.textoDeFalta(e);
+    Test.assertEqual(f.tipo, "faltan");
+    Test.assertEqual(f.faltan, 6);
+    Test.assertEqual(A.porcentajeDeHabilidad(e), 40);
+    var lista = llenar(A.estadoHabilidadVacio("B1", "escritura"), 10, 0.8, 1);
+    Test.assertEqual(lista.quedoLista, true);
+    Test.assertEqual(A.porcentajeDeHabilidad(lista.estado), 99);
+    // 10 consignas con 70 % de la lista: no llena (aciertos < 80 %)
+    var baja = llenar(A.estadoHabilidadVacio("B1", "escritura"), 10, 0.7, 1);
+    Test.assertEqual(baja.quedoLista, false);
+    // lectura con 10 respuestas NO se llena
+    Test.assertEqual(llenar(A.estadoHabilidadVacio("B1", "lectura"), 10, 1, 1).quedoLista, false);
+  });
+
+  Test.test("escritura (D35): migración desde hey-3 (60 respuestas de peso 0.5) -> últimas 10 con peso 1", function () {
+    var vieja = [];
+    for (var i = 0; i < 60; i++) vieja.push({ v: i < 50 ? 0 : 1, w: 0.5 });
+    var n = A.normalizarVentana(vieja, "escritura");
+    Test.assertEqual(n.length, 10);
+    Test.assertEqual(n[0].w, 1);
+    Test.assertEqual(A.resumenVentana(n, "escritura").aciertos, 1); // solo quedan las últimas 10 (valor 1)
+    // otras habilidades no se tocan
+    var lect = [{ v: 1, w: 1 }, { v: 0, w: 1 }];
+    Test.assertEqual(A.normalizarVentana(lect, "lectura").length, 2);
   });
 
   Test.test("porcentaje mostrado: nunca 100 antes de confirmar; lista = 99", function () {

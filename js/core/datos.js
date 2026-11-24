@@ -146,8 +146,9 @@
     return p;
   }
 
-  function limpiarFilaAvance(fila) {
-    return { nivel: fila.nivel, ventana: fila.ventana || [], listaParaConfirmar: !!fila.listaParaConfirmar, listaDesde: fila.listaDesde || null, ultimoFallo: fila.ultimoFallo || null };
+  function limpiarFilaAvance(fila, habilidad) {
+    // normalizarVentana: escritura conserva solo las últimas 10 (D35); datos de hey-3 se migran al leer.
+    return { habilidad: habilidad, nivel: fila.nivel, ventana: global.App.Avance.normalizarVentana(fila.ventana, habilidad), listaParaConfirmar: !!fila.listaParaConfirmar, listaDesde: fila.listaDesde || null, ultimoFallo: fila.ultimoFallo || null };
   }
 
   /** { lectura:{nivel,ventana,listaParaConfirmar,listaDesde,ultimoFallo}, escucha, habla, escritura } */
@@ -161,10 +162,10 @@
       var estados = {};
       HABILIDADES_PLAN.forEach(function (h) {
         if (filas[h]) {
-          estados[h] = limpiarFilaAvance(filas[h]);
+          estados[h] = limpiarFilaAvance(filas[h], h);
         } else {
           var base = diag && diag.porHabilidad && diag.porHabilidad[h] && diag.porHabilidad[h].nivelCEFR;
-          estados[h] = global.App.Avance.estadoHabilidadVacio(base || "A1");
+          estados[h] = global.App.Avance.estadoHabilidadVacio(base || "A1", h);
         }
       });
       return estados;
@@ -291,7 +292,7 @@
             nuevos[h] = r.estado;
             acciones[h] = { accion: r.accion, nivelMedido: medido, nivel: r.estado.nivel };
           } else {
-            nuevos[h] = medido === estados[h].nivel && anterior ? estados[h] : global.App.Avance.estadoHabilidadVacio(medido);
+            nuevos[h] = medido === estados[h].nivel && anterior ? estados[h] : global.App.Avance.estadoHabilidadVacio(medido, h);
             acciones[h] = { accion: "fija", nivelMedido: medido, nivel: nuevos[h].nivel };
           }
         });

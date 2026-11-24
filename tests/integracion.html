@@ -518,6 +518,36 @@
         });
       });
 
+      prueba("avance escritura (D35): ventana de 10 y datos de hey-3 (60 x 0.5) se migran al leer", function () {
+        var ahora = new Date(2026, 10, 18);
+        return limpiarStores(STORES_AVANCE).then(function () {
+          return App.Datos.guardarDiagnostico(DIAG_A2);
+        }).then(function () {
+          var vieja = [];
+          for (var i = 0; i < 60; i++) vieja.push({ v: 1, w: 0.5 });
+          return App.Storage.put("avance", { id: "escritura", nivel: "A2", ventana: vieja, listaParaConfirmar: false, listaDesde: null, ultimoFallo: null });
+        }).then(function () {
+          return App.Datos.obtenerEstadosAvance();
+        }).then(function (e) {
+          assertEqual(e.escritura.ventana.length, 10);
+          assertEqual(e.escritura.ventana[0].w, 1);
+          assertEqual(App.Avance.textoDeFalta(e.escritura).tipo, "aciertos"); // 10 de 10 y listaParaConfirmar aún false: solo se marca al responder
+          return limpiarStores(["avance"]);
+        }).then(function () {
+          return responderN("escritura", "A2", 4, 1, ahora);
+        }).then(function () {
+          return App.Datos.obtenerEstadosAvance();
+        }).then(function (e) {
+          assertEqual(App.Avance.textoDeFalta(e.escritura).faltan, 6);
+          return responderN("escritura", "A2", 6, 1, ahora);
+        }).then(function (r) {
+          assertEqual(r.quedoLista, true); // 10 consignas llenan la barra de escritura
+          return App.Storage.get("avance", "escritura");
+        }).then(function (fila) {
+          assertEqual(fila.ventana.length, 10);
+        });
+      });
+
       prueba("avance: flujo completo -> lista -> paso en el plan -> aprobar sube el nivel de ESA habilidad", function () {
         var ahora = new Date(2026, 10, 18);
         return limpiarStores(STORES_AVANCE).then(function () {

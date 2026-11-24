@@ -100,7 +100,7 @@
           var detalle;
           if (!siguiente) detalle = t("inicio.nivel_maximo");
           else if (falta.tipo === "lista") detalle = t("avance.lista_para_confirmar_detalle", { nivel: siguiente });
-          else if (falta.tipo === "faltan") detalle = t("inicio.pct_hacia", { pct: pctNivel, nivel: siguiente }) + " · " + t(falta.faltan === 1 ? "avance.falta_una" : "avance.faltan_n", { n: falta.faltan });
+          else if (falta.tipo === "faltan") detalle = t("inicio.pct_hacia", { pct: pctNivel, nivel: siguiente }) + " · " + t(global.App.Avance.claveFalta(est, falta.faltan), { n: falta.faltan });
           else if (falta.tipo === "aciertos") detalle = t("inicio.pct_hacia", { pct: pctNivel, nivel: siguiente }) + " · " + t("avance.necesitas_aciertos");
           else detalle = t("inicio.pct_hacia", { pct: pctNivel, nivel: siguiente });
           return (

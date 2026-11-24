@@ -329,7 +329,7 @@
         var siguiente = global.App.Avance.siguienteNivelDe(est.nivel);
         var detalle = "";
         if (diagnostico && falta.tipo === "lista") detalle = t("avance.lista_para_confirmar");
-        else if (diagnostico && falta.tipo === "faltan" && falta.faltan <= 10) detalle = t(falta.faltan === 1 ? "avance.falta_una" : "avance.faltan_n", { n: falta.faltan });
+        else if (diagnostico && falta.tipo === "faltan" && falta.faltan <= 10) detalle = t(global.App.Avance.claveFalta(est, falta.faltan), { n: falta.faltan });
         else if (diagnostico && siguiente) detalle = t("inicio.pct_hacia", { pct: global.App.Avance.porcentajeDeHabilidad(est), nivel: siguiente });
         return (
           '<div class="mini-barra-habilidad">' +

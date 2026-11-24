@@ -810,5 +810,15 @@ En el iPhone "Tu ruta de hoy" quedaba pegado a "HOY TE TOCA": la sombra coral (5
 - **Inicio sin scroll:** el aire nuevo bajo la hero (+4 y +16 px) se compensó SIN ocultar nada: la cabecera arriba usa el mismo margen que el celular bajito (-16 px en 390×844), "x/y min" sube junto a "Meta de hoy" y la barra queda sola (-11 px), alto de línea más ajustado en dos rótulos de una línea ("Tu ruta de hoy", "HOY TE TOCA") y el botón "Empezar" a 44 px en celular bajito. El botón de la hero en celular deja de girar (`--r: 0deg`, a todo el ancho se comía el aire con el texto).
 - **Trampa conocida:** márgenes verticales de bloques colapsan (el mayor gana); en flex/grid se suman. Al subir un margen para dar aire, medir con la auditoría, no a ojo (el diagnóstico en celular no cambió hasta pasar de 8 a 16 px por colapsar con la barra).
 
+## D36. Escritura: ventana de 10 consignas y peso normal (rama `hey-4`)
+*(Alex pidió llamarla "D35", pero D35 ya era "Aire con sombra" de hey-3; se numera D36 y las siguientes corren: tema claro D37, recordatorios D38.)*
+Con peso 0.5 y ventana de 30, llenar la barra de escritura pedía **60 consignas** escritas: nada realista, y la habilidad casi solo subía por confirmación. Cambio (único toque a D29, solo escritura):
+- `App.Avance.CONSTANTES.VENTANA_POR_HABILIDAD = { escritura: 10 }` (lectura, escucha y habla siguen en `VENTANA_RESPUESTAS = 30`) y `PESO_RESPUESTA = 1` (se elimina `PESO_ESCRITURA = 0.5`). El 80 % de aciertos (`ACIERTO_OBJETIVO`) no cambia. Todo vive en `CONSTANTES`; la lógica usa `ventanaDe(habilidad)`.
+- El estado de avance ahora lleva `habilidad` (se asigna al leer de IndexedDB), así `resumenVentana`, `textoDeFalta` y `registrarRespuestaEnEstado` saben qué ventana usar.
+- **Migración:** al leer, la ventana de escritura se normaliza: pesos a 1 y solo las últimas 10 (datos de hey-3 guardaban hasta 60 x 0.5). Nada se borra de IndexedDB hasta la siguiente respuesta.
+- **Lo que decide la subida de nivel NO cambia:** la prueba de confirmación (>= 70 %, mínimo 8 preguntas; en escritura, la misma lista de criterios en modo confirmación). La ventana solo decide cuándo "estás lista para confirmar".
+- La **autoevaluación por lista de criterios sigue siendo la fuente** de la puntuación de escritura (no hay corrector automático): 10 consignas autoevaluadas con >= 80 % de criterios marcados llenan la barra.
+- UI: "Faltan N consignas" / "Falta 1 consigna" (`avance.faltan_n_consignas`, `avance.falta_una_consigna`) en Inicio y Progreso.
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*

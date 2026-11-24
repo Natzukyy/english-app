@@ -1104,6 +1104,16 @@
     "es": "Falta {n} respuesta",
     "en": "{n} answer to go"
   },
+  "avance.faltan_n_consignas": {
+    "categoria": "corta",
+    "es": "Faltan {n} consignas",
+    "en": "{n} prompts to go"
+  },
+  "avance.falta_una_consigna": {
+    "categoria": "corta",
+    "es": "Falta {n} consigna",
+    "en": "{n} prompt to go"
+  },
   "avance.necesitas_aciertos": {
     "categoria": "larga",
     "es": "Necesitas más aciertos",

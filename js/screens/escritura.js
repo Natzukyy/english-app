@@ -29,7 +29,7 @@
     var correcta = totalCriterios > 0 && marcados / totalCriterios >= 0.5 ? 1 : 0;
     var proporcion = totalCriterios > 0 ? marcados / totalCriterios : 0;
     // Avance continuo (D29): la lista de criterios autoevaluada es la única puntuación que hay
-    // para escritura libre; pesa media respuesta (PESO_ESCRITURA) porque es subjetiva. En modo
+    // para escritura libre; pesa una respuesta normal (D35: ventana de 10 consignas). En modo
     // confirmación no entra a la ventana: define el resultado de la confirmación.
     var K = global.App.Avance.CONSTANTES;
     var avance;
@@ -38,7 +38,7 @@
         estado.resultadoConfirmacion = r;
       });
     } else {
-      avance = global.App.Datos.registrarRespuestaAvance("escritura", estado.consigna.nivelCEFR, proporcion, K.PESO_ESCRITURA, new Date());
+      avance = global.App.Datos.registrarRespuestaAvance("escritura", estado.consigna.nivelCEFR, proporcion, K.PESO_RESPUESTA, new Date());
     }
     return avance.then(function () {
       return global.App.Datos.registrarSesion(minutos, correcta, new Date(), "escritura");
