@@ -7,6 +7,9 @@
 //   hermanas  : tarjetas hermanas a < 8 px o tocándose
 //   hueco     : aire real entre hermanos CON sombra dura y rotación incluidas (< 12 px; < 16 px bajo un hero) (D35)
 //   tactil    : botones de menos de 44 px de alto o ancho
+//   contraste : texto con < 4.5:1 contra su fondo real (< 3:1 si es grande: >= 24 px, o >= 18.7 px en negrita) (D37)
+// Tema: CFG.tema = 'light' | 'dark' emula prefers-color-scheme del sistema con la preferencia en "Sistema";
+// CFG.contraste = true activa la regla `contraste` (tema claro y oscuro).
 // Cómo se corre (servidor local en 8001 y receptor de resultados, ver tools/auditoria-margenes.md):
 //   browser_run_code_unsafe con filename: tools/auditoria-margenes.js
 // Para correr solo una parte edita AJUSTES al inicio de la función ({views, niveles, estados, capturas, base, receptor}).
@@ -20,6 +23,8 @@ async (page) => {
     views: { '390x844': [390, 844], '360x740': [360, 740], '1440x900': [1440, 900] },
     estados: null,
     capturas: null, // carpeta para guardar capturas (solo nivel 0, 390x844 y 1440x900)
+    tema: null, // 'light' | 'dark' | null (null = el navegador por defecto)
+    contraste: true,
     sufijo: 'despues',
     salida: 'auditoria' // nombre del archivo que guarda el receptor
   }, AJUSTES);
@@ -231,6 +236,37 @@ async (page) => {
     }));
     estiloMedicion.remove();
     out.push(...huecos);
+    // ---- Regla 'contraste' (D37): color del texto contra el fondo REAL (se compone la transparencia de
+    // los ancestros; si hay degradado/imagen en el camino se mide contra el color de fondo base y se omite
+    // el caso dudoso). Se desactivan animaciones de entrada para medir el color final.
+    if (meta.contraste) {
+      const num = (c) => { const m = c.match(/(?:rgba?|color)\(([^)]+)\)/); if (!m) return null; let t = m[1].replace('srgb', '').replace('/', ' ').split(/[\s,]+/).filter(Boolean).map(Number); if (/color\(/.test(c)) { t = [t[0] * 255, t[1] * 255, t[2] * 255, t.length > 3 ? t[3] : 1]; } return { r: t[0], g: t[1], b: t[2], a: t.length > 3 ? t[3] : 1 }; };
+      const mezcla = (f, b) => ({ r: f.r * f.a + b.r * (1 - f.a), g: f.g * f.a + b.g * (1 - f.a), b: f.b * f.a + b.b * (1 - f.a), a: 1 });
+      const lin = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); };
+      const lumi = (c) => 0.2126 * lin(c.r) + 0.7152 * lin(c.g) + 0.0722 * lin(c.b);
+      const razon = (a, b) => { const x = lumi(a), y = lumi(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
+      const fondoDe = (e) => {
+        const capas = []; let n = e; let dudoso = false;
+        while (n && n.nodeType === 1) { const cs = getComputedStyle(n); if (cs.backgroundImage && cs.backgroundImage !== 'none') dudoso = true; const c = num(cs.backgroundColor); if (c && c.a > 0) { capas.push(c); if (c.a >= 0.999) break; } n = n.parentElement; }
+        let base = num(getComputedStyle(document.body).backgroundColor); if (!base || base.a < 1) base = { r: 255, g: 255, b: 255, a: 1 };
+        let col = capas.length && capas[capas.length - 1].a >= 0.999 ? capas.pop() : base;
+        for (let i = capas.length - 1; i >= 0; i--) col = mezcla(capas[i], col);
+        return { col, dudoso };
+      };
+      const textoDirecto = (e) => [...e.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim().length > 0);
+      document.querySelectorAll('#pantalla *, nav *').forEach((e) => {
+        if (!esVisibleRaw(e) || !textoDirecto(e) || e.closest('svg, [aria-hidden="true"]')) return;
+        const cs = getComputedStyle(e);
+        const fg0 = num(cs.color); if (!fg0) return;
+        const { col, dudoso } = fondoDe(e);
+        const fg = mezcla(fg0, col);
+        const px = parseFloat(cs.fontSize); const peso = parseInt(cs.fontWeight, 10) || 400;
+        const grande = px >= 24 || (px >= 18.66 && peso >= 700);
+        const umbral = grande ? 3 : 4.5;
+        const r = razon(fg, col);
+        if (r + 1e-6 < umbral) out.push({ regla: 'contraste', selector: selH(e), medida: r.toFixed(2) + ':1 (mín ' + umbral + ') "' + e.textContent.trim().slice(0, 24) + '"' + (dudoso ? ' [fondo con degradado: dudoso]' : ''), sev: r < umbral - 1 ? 'alta' : 'baja' });
+      });
+    }
     // quitar repetidos
     const vistos = new Set();
     return out.filter((f) => { const k = f.regla + f.selector + f.medida; if (vistos.has(k)) return false; vistos.add(k); return true; }).map((f) => Object.assign(f, meta));
@@ -302,7 +338,7 @@ async (page) => {
     ['escucha-resultado', 'diag', async (p) => { await ir(p, 'escucha'); await p.evaluate(() => { const e = document.querySelector('#pantalla'); }); await responder(p, 60); await p.waitForTimeout(800); }],
     ['escritura-escribiendo', 'diag', async (p) => { await ir(p, 'escritura'); }],
     ['escritura-revision', 'diag', async (p) => { await ir(p, 'escritura'); await p.evaluate(() => { const t = document.querySelector('textarea'); if (t) { t.value = 'I usually wake up at seven and have breakfast. Then I go to work.'; t.dispatchEvent(new Event('input', { bubbles: true })); } }); await clicTexto(p, '^(Terminar de escribir|Finish writing|Terminar|Finish)'); await p.waitForTimeout(800); }],
-    ['escritura-confirmacion', 'datos', async (p) => { await p.evaluate(async () => { for (let i = 0; i < 60; i++) await window.App.Datos.registrarRespuestaAvance('escritura', 'A2', 1, 0.5, new Date()); }); await modo(p, { tipo: 'confirmacion', habilidad: 'escritura' }); await ir(p, 'escritura'); }],
+    ['escritura-confirmacion', 'datos', async (p) => { await p.evaluate(async () => { for (let i = 0; i < 10; i++) await window.App.Datos.registrarRespuestaAvance('escritura', 'A2', 1, 1, new Date()); }); await modo(p, { tipo: 'confirmacion', habilidad: 'escritura' }); await ir(p, 'escritura'); }],
     ['celebracion-y-lluvia', 'diag', async (p) => { await ir(p, 'inicio'); await p.evaluate(() => { window.App.Util.mostrarCelebracion('¡Nuevo nivel de inglés: B1', true); }); await p.waitForTimeout(500); }],
     ['lluvia-dia-completo', 'diag', async (p) => { await ir(p, 'inicio'); await p.evaluate(() => { window.App.Util.lluviaCalcomanias(); }); await p.waitForTimeout(600); }]
   ];
@@ -310,7 +346,7 @@ async (page) => {
   const filtro = CFG.estados;
   for (const nivel of CFG.niveles) {
     for (const [vpNombre, [w, h]] of Object.entries(CFG.views)) {
-      const ctx = await browser.newContext({ serviceWorkers: 'block', viewport: { width: w, height: h } });
+      const ctx = await browser.newContext(Object.assign({ serviceWorkers: 'block', viewport: { width: w, height: h } }, CFG.tema ? { colorScheme: CFG.tema } : {}));
       await ctx.addInitScript(STUB);
       const p = await ctx.newPage();
       p.on('pageerror', (e) => errores.push(nivel + '/' + vpNombre + ': ' + String(e)));
@@ -325,8 +361,8 @@ async (page) => {
           await p.waitForTimeout(400);
           const pantalla = nombre.split('-')[0];
           // La captura va ANTES de medir: medir apaga las animaciones de entrada y al quitarlas se reinician.
-          if (CFG.capturas && nivel === 0 && vpNombre !== '360x740') await p.screenshot({ path: CFG.capturas + nombre + '-' + vpNombre + '-' + CFG.sufijo + '.png', fullPage: true });
-          const r = await p.evaluate(medir, { pantalla, estado: nombre, viewport: vpNombre, nivel });
+          if (CFG.capturas && nivel === 0 && vpNombre !== '360x740') await p.screenshot({ path: CFG.capturas + nombre + '-' + CFG.sufijo + '-' + vpNombre + '.png', fullPage: true });
+          const r = await p.evaluate(medir, { pantalla, estado: nombre, viewport: vpNombre, nivel, tema: CFG.tema || 'dark', contraste: CFG.contraste });
           filas.push(...r);
         } catch (e) { errores.push(nivel + '/' + vpNombre + '/' + nombre + ': ' + e.message.slice(0, 120)); }
       }

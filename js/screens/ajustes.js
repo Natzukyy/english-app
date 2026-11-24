@@ -52,7 +52,7 @@
       var metaActual = Math.min(META_MAX, Math.max(META_MIN, prefs.metaMinutosDia || 15));
 
       var estadoConversacion = t(prefs.conversacionActivada ? "ajustes.conv_activada" : "ajustes.conv_no_configurada");
-      var colorEstadoConversacion = prefs.conversacionActivada ? "var(--menta)" : "var(--surface-borde)";
+      var colorEstadoConversacion = prefs.conversacionActivada ? "var(--menta)" : "var(--surface-relleno)";
 
       el.innerHTML =
         '<div class="pantalla-vista pantalla-ajustes">' +
@@ -105,7 +105,7 @@
         // 6. Conversación con IA
         '<div class="ajustes-tarjeta superficie-oscura">' +
         '<div class="fila-cabeza"><h2 style="margin:0">' + esc(t("ajustes.conv_titulo")) + '</h2>' +
-        '<span class="ajustes-pastilla-estado" id="pastilla-conversacion" style="background:' +
+        '<span class="ajustes-pastilla-estado' + (prefs.conversacionActivada ? " ajustes-pastilla-estado--activa" : "") + '" id="pastilla-conversacion" style="background:' +
         colorEstadoConversacion +
         '">' +
         esc(estadoConversacion) +
@@ -267,7 +267,8 @@
 
       function actualizarPastillaConversacion() {
         pastillaConversacion.textContent = t(prefs.conversacionActivada ? "ajustes.conv_activada" : "ajustes.conv_no_configurada");
-        pastillaConversacion.style.background = prefs.conversacionActivada ? "var(--menta)" : "var(--surface-borde)";
+        pastillaConversacion.style.background = prefs.conversacionActivada ? "var(--menta)" : "var(--surface-relleno)";
+        pastillaConversacion.classList.toggle("ajustes-pastilla-estado--activa", !!prefs.conversacionActivada);
       }
 
       function guardarAjustesConversacion() {

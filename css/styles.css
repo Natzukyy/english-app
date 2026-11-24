@@ -32,24 +32,40 @@
 }
 
 :root {
-  color-scheme: dark;
+  /* TEMAS (D37): cada token de paleta se define UNA vez con light-dark(CLARO, OSCURO). El tema
+     lo decide color-scheme: "light dark" = sigue el sistema (en vivo); [data-theme="light"] /
+     [data-theme="dark"] lo fuerzan (ver más abajo). Todo el CSS/JS usa estos tokens, sin colores
+     sueltos. Orden dentro de light-dark(): primero claro, luego oscuro. */
+  color-scheme: light dark;
 
-  /* --- Paleta base "Calcomanías oscuro" (valores exactos pedidos por Alex) --- */
-  --bg: #12122a;
-  --surface: #1e1e3f;
-  --surface-borde: #3a3a70;
-  --tinta: #0b0b1e;
-  --sombra: #070714;
-  --texto: #f2f0ff;
-  --texto-2: #b9b7e0;
-  --nav: #1a1a38;
+  /* --- Paleta base: "Calcomanías claro" | "Calcomanías oscuro" (el oscuro, valores exactos de Alex) --- */
+  --bg: light-dark(#fff8e7, #12122a);
+  --surface: light-dark(#ffffff, #1e1e3f);
+  --surface-borde: light-dark(#0b0b1e, #3a3a70); /* borde de superficies: en claro, tinta como las calcomanías */
+  --surface-relleno: light-dark(#e6e0f5, #3a3a70); /* neutro de RELLENO (pistas, divisores, pastillas): no es borde */
+  --tinta: #0b0b1e; /* igual en ambos temas: texto sobre calcomanías de color y bordes de calcomanía */
+  --sombra: light-dark(#0b0b1e, #070714);
+  --texto: light-dark(#0b0b1e, #f2f0ff);
+  --texto-2: light-dark(#4b4a7a, #b9b7e0);
+  --nav: light-dark(#ffffff, #1a1a38);
+  --pantalla-borde-tinta: #12122a; /* franja bajo la barra de estado del iPhone en tema claro (ver .tema-claro) */
 
-  --amarillo: #ffc93c;
-  --menta: #38d9a9;
-  --rosa: #ff8fb1;
-  --coral: #ff6b57;
-  --azul: #7c96ff;
-  --crema: #fff3c9;
+  /* Colores de habilidad/acento: identidad fija. En claro se ajustan SOLO para que sus
+     luminosidades difieran entre sí (azul < menta < rosa < amarillo) y el texto tinta lea >= 4.5:1. */
+  --amarillo: light-dark(#ffda3d, #ffc93c);
+  --menta: light-dark(#22b98a, #38d9a9);
+  --rosa: light-dark(#ff9dbe, #ff8fb1);
+  --coral: light-dark(#f0553f, #ff6b57);
+  --azul: light-dark(#5b78f2, #7c96ff);
+  --crema: light-dark(#fff3c9, #fff3c9);
+
+  /* Variantes para usar COMO COLOR DE TEXTO/ÍCONO sobre superficies claras u oscuras del tema
+     (en oscuro son los mismos colores vivos; en claro, versiones oscurecidas con >= 4.5:1). */
+  --amarillo-texto: light-dark(#7a5200, #ffc93c);
+  --menta-texto: light-dark(#00694a, #38d9a9);
+  --rosa-texto: light-dark(#a8205a, #ff8fb1);
+  --coral-texto: light-dark(#b8301c, #ff6b57);
+  --azul-texto: light-dark(#3447b8, #7c96ff);
 
   /* Habilidades: un color fijo por habilidad en toda la app. */
   --punto-lectura: var(--azul);
@@ -69,17 +85,20 @@
      (coral = negativo/"no la sabía", menta = positivo/"bien", azul = "fácil"/lectura...),
      usar esa variable directamente en vez de depender de --acento genérico. */
   --superficie: var(--surface);
-  --superficie-hundida: #181838; /* la franja oscura del rayado diagonal de las barras de progreso, ver más abajo */
-  --borde: var(--surface-borde);
+  --superficie-hundida: light-dark(#f1e7c8, #181838); /* la franja oscura del rayado diagonal de las barras de progreso, ver más abajo */
+  --borde: light-dark(#a39dcb, #3a3a70);
   --texto-tenue: var(--texto-2);
 
   --acento: var(--amarillo);
-  --acento-fuerte: #e6b32f; /* amarillo oscurecido ~10%, para hover/press */
+  --acento-fuerte: light-dark(#e0b800, #e6b32f); /* amarillo oscurecido ~10%, para hover/press */
   --acento-sobre: var(--tinta); /* regla dura del spec: sobre cualquier superficie de color plano, el texto SIEMPRE es --tinta */
   --acento-tenue: color-mix(in srgb, var(--amarillo) 18%, var(--nav));
+  --acento-texto: var(--amarillo-texto);
 
   --exito: var(--menta);
   --error: var(--coral);
+  --exito-texto: var(--menta-texto);
+  --error-texto: var(--coral-texto);
   /* Puente temporal: el "sello" del rediseño anterior (estampado al completar un paso) usa
      el semántico negativo de este lenguaje. El spec nuevo reemplaza ese mecanismo por una
      palomita que se dibuja + la calcomanía saltando de amarillo a menta (ver spec de
@@ -154,13 +173,11 @@
   --easing: var(--ease-out); /* alias -- el resto del CSS ya usaba var(--easing) desde antes, se conserva para no romper nada */
 }
 
-/* "Claro" y "Sistema" dan la misma paleta oscura que :root por ahora (ver nota al inicio
-   del archivo) -- el mecanismo de data-theme/prefers-color-scheme queda intacto para
-   cuando exista un tema claro real; hoy las 3 rutas resuelven a los mismos valores. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-  }
+/* Tema (D37): "Sistema" = sin atributo, color-scheme "light dark" sigue prefers-color-scheme en
+   vivo; "Claro"/"Oscuro" fuerzan con data-theme en <html> (lo pone App.Util.aplicarTema y,
+   antes del primer pintado, js/tema-inicial.js). */
+:root[data-theme="light"] {
+  color-scheme: light;
 }
 
 :root[data-theme="dark"] {
@@ -372,7 +389,7 @@ h2 {
 
 .diagnostico-opcion--incorrecta {
   border: 2.5px solid var(--coral);
-  color: var(--coral);
+  color: var(--coral-texto);
 }
 
 /* Doble clase a propósito: ".pop-entrada-escalonada > *" (más abajo en el archivo) también fija
@@ -433,10 +450,10 @@ h2 {
   display: block;
 }
 .diagnostico-nota-pie.diagnostico-nota-correcta {
-  color: var(--menta);
+  color: var(--menta-texto);
 }
 .diagnostico-nota-pie.diagnostico-nota-incorrecta {
-  color: var(--coral);
+  color: var(--coral-texto);
 }
 
 .diagnostico-nota-teclado {
@@ -566,7 +583,7 @@ h2 {
   color: var(--tinta);
 }
 .diagnostico-pastilla-nivel--neutral {
-  background: var(--surface-borde);
+  background: var(--surface-relleno);
   color: var(--texto);
 }
 .diagnostico-resultado-fila .barra-progreso {
@@ -591,7 +608,7 @@ h2 {
   transform: scale(0.98);
 }
 .diagnostico-rubrica-fila strong {
-  color: var(--amarillo);
+  color: var(--amarillo-texto);
 }
 
 p {
@@ -615,7 +632,7 @@ p {
 }
 
 a {
-  color: var(--acento);
+  color: var(--acento-texto);
 }
 
 button {
@@ -675,7 +692,7 @@ button {
 
 .boton-secundario[aria-current="true"] {
   border-color: var(--acento);
-  color: var(--acento);
+  color: var(--acento-texto);
   background: var(--acento-tenue);
   font-weight: 600;
 }
@@ -732,7 +749,7 @@ button {
 }
 
 .hero-etiqueta svg {
-  color: var(--acento);
+  color: var(--acento-texto);
 }
 
 /* Pista con rayado diagonal sutil entre --bg y --superficie-hundida (ver spec Calcomanías:
@@ -850,14 +867,14 @@ button {
 .boton-secundario.estado-correcto {
   border-color: var(--exito);
   background: color-mix(in srgb, var(--exito) 8%, var(--superficie));
-  color: var(--exito);
+  color: var(--exito-texto);
   font-weight: 600;
 }
 
 .boton-secundario.estado-incorrecto {
   border-color: var(--error);
   background: color-mix(in srgb, var(--error) 8%, var(--superficie));
-  color: var(--error);
+  color: var(--error-texto);
   font-weight: 600;
 }
 
@@ -934,7 +951,7 @@ button {
 .resumen-racha .resumen-etiqueta svg {
   width: 14px;
   height: 14px;
-  color: var(--acento);
+  color: var(--acento-texto);
 }
 
 .resumen-divisor {
@@ -969,14 +986,14 @@ button {
 }
 
 .mensaje-error {
-  color: var(--error);
+  color: var(--error-texto);
 }
 
 .enlace-discreto {
   display: inline-flex;
   align-items: center;
   gap: var(--e-1);
-  color: var(--acento);
+  color: var(--acento-texto);
   background: none;
   border: none;
   padding: var(--e-2) 0;
@@ -1100,14 +1117,14 @@ nav.tabs button[aria-current="true"] {
    acento a medida que crece la confianza -- "Fácil" es el único relleno sólido. */
 .grid-calificar [data-calidad="1"] {
   border-color: var(--error);
-  color: var(--error);
+  color: var(--error-texto);
   font-weight: 600;
 }
 
 .grid-calificar [data-calidad="4"] {
   border-color: var(--acento);
   background: var(--acento-tenue);
-  color: var(--acento);
+  color: var(--acento-texto);
   font-weight: 600;
 }
 
@@ -1493,7 +1510,7 @@ button.tarjeta-habilidad:active {
 
 .ruta-nodo.actual .ruta-circulo {
   border-color: var(--acento);
-  color: var(--acento);
+  color: var(--acento-texto);
 }
 
 .ruta-nodo.actual .ruta-circulo::before {
@@ -1536,11 +1553,11 @@ button.tarjeta-habilidad:active {
 }
 
 .panel-retro.exito .titulo-retro {
-  color: var(--exito);
+  color: var(--exito-texto);
 }
 
 .panel-retro.error .titulo-retro {
-  color: var(--error);
+  color: var(--error-texto);
 }
 
 /* --- Confeti discreto (fin de sesión), solo transform/opacity. --- */
@@ -1867,7 +1884,7 @@ button.tarjeta-habilidad:active {
     text-decoration: underline;
   }
   nav.tabs button:hover {
-    color: var(--acento);
+    color: var(--acento-texto);
   }
   button.tarjeta-habilidad:hover {
     border-color: var(--acento);
@@ -1924,6 +1941,10 @@ button.tarjeta-habilidad:active {
   background: var(--amarillo);
   color: var(--tinta);
 }
+/* Los <p> traen su propio color (var(--texto)); en oscuro eso daba texto claro sobre amarillo (1.4:1). */
+.progreso-tarjeta-nivel p {
+  color: var(--tinta);
+}
 .progreso-numero-nivel {
   font-size: 64px;
   line-height: 1;
@@ -1932,8 +1953,8 @@ button.tarjeta-habilidad:active {
 .progreso-tarjeta-nivel .barra-progreso {
   /* Sobre fondo amarillo, el rayado diagonal oscuro (pensado para superficies oscuras) no
      se lee bien -- pista translúcida de --tinta en su lugar, relleno --tinta sólido. */
-  background: rgba(11, 11, 30, 0.18);
-  border-color: rgba(11, 11, 30, 0.35);
+  background: color-mix(in srgb, var(--tinta) 18%, transparent);
+  border-color: color-mix(in srgb, var(--tinta) 35%, transparent);
 }
 .progreso-xp-texto {
   margin: var(--e-2) 0 0;
@@ -1955,7 +1976,7 @@ button.tarjeta-habilidad:active {
   gap: var(--e-2);
 }
 .progreso-numero-racha svg {
-  color: var(--amarillo);
+  color: var(--amarillo-texto);
 }
 
 /* Tarjeta "Esta semana": gráfica de 7 columnas. Sin datos reales de QUÉ habilidad se
@@ -1983,7 +2004,7 @@ button.tarjeta-habilidad:active {
   width: 100%;
   max-width: 28px;
   border-radius: 6px 6px 2px 2px;
-  background: var(--surface-borde);
+  background: var(--surface-relleno);
   min-height: 4px;
   transform: scaleY(0);
   transform-origin: bottom;
@@ -2215,7 +2236,7 @@ button.tarjeta-habilidad:active {
   /* El signo final del logo ("Hey!") es el acento amarillo -- ver js/app.js
      aplicarConfigShell(), que arma el markup con un <span class="marca-punto"> aparte. */
   .marca-punto {
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
   }
 
   nav.tabs button {
@@ -2316,7 +2337,7 @@ button.tarjeta-habilidad:active {
 }
 
 .boton-escuchar-burbuja:active {
-  color: var(--acento);
+  color: var(--acento-texto);
 }
 
 .campo-texto {
@@ -2438,8 +2459,11 @@ button.tarjeta-habilidad:active {
   border-radius: 999px;
   font-size: var(--fs-caption);
   font-weight: 700;
-  color: var(--tinta);
+  color: var(--texto); /* sobre el relleno neutro; la variante activa (menta) lleva tinta */
   white-space: nowrap;
+}
+.ajustes-pastilla-estado--activa {
+  color: var(--tinta);
 }
 
 /* --- Exportar/Importar: dos calcomanías CTA de color (azul/rosa), no botones de texto
@@ -2794,7 +2818,7 @@ main:has(> .pantalla-habla) {
   font-size: var(--fs-caption);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--amarillo);
+  color: var(--amarillo-texto);
 }
 
 .conv-tip p:last-child {
@@ -3033,7 +3057,7 @@ main:has(> .pantalla-habla) {
    (es información de contexto, no un estado positivo/negativo). */
 .pastilla-nivel-xp {
   align-self: flex-start;
-  background: var(--surface-borde);
+  background: var(--surface-relleno);
   color: var(--texto);
   font-size: var(--fs-caption);
   font-weight: 600;
@@ -3239,7 +3263,7 @@ main:has(> .pantalla-habla) {
   justify-content: center;
   font-size: 11px;
   font-weight: 700;
-  background: var(--surface-borde);
+  background: var(--surface-relleno);
   color: var(--texto);
 }
 
@@ -3347,7 +3371,7 @@ main:has(> .pantalla-habla) {
   right: 0;
   top: calc(var(--e-3) + 9px);
   height: 2px;
-  background: var(--surface-borde);
+  background: var(--surface-relleno);
   z-index: 0;
 }
 
@@ -3387,7 +3411,7 @@ main:has(> .pantalla-habla) {
   position: absolute;
   top: 0;
   transform: translateX(-50%);
-  color: var(--amarillo);
+  color: var(--amarillo-texto);
   filter: drop-shadow(0 1px 0 var(--tinta));
   animation: estrella-llega var(--dur-lenta) var(--ease-pop) 250ms both;
 }
@@ -3450,7 +3474,7 @@ main:has(> .pantalla-habla) {
   justify-content: center;
   font-size: 11px;
   font-weight: 700;
-  background: var(--surface-borde);
+  background: var(--surface-relleno);
   color: var(--texto);
 }
 
@@ -3558,7 +3582,7 @@ main:has(> .pantalla-habla) {
   right: 0;
   top: calc(var(--e-3) + 9px);
   height: 2px;
-  background: var(--surface-borde);
+  background: var(--surface-relleno);
   z-index: 0;
 }
 
@@ -3598,7 +3622,7 @@ main:has(> .pantalla-habla) {
   position: absolute;
   top: 0;
   transform: translateX(-50%);
-  color: var(--amarillo);
+  color: var(--amarillo-texto);
   filter: drop-shadow(0 1px 0 var(--tinta));
   transition: left 900ms var(--ease-out);
 }
@@ -3650,19 +3674,19 @@ main:has(> .pantalla-habla) {
 
 .icono-mosaico--lectura {
   background: color-mix(in srgb, var(--azul) 22%, var(--nav));
-  color: var(--azul);
+  color: var(--azul-texto);
 }
 .icono-mosaico--escucha {
   background: color-mix(in srgb, var(--amarillo) 22%, var(--nav));
-  color: var(--amarillo);
+  color: var(--amarillo-texto);
 }
 .icono-mosaico--habla {
   background: color-mix(in srgb, var(--menta) 22%, var(--nav));
-  color: var(--menta);
+  color: var(--menta-texto);
 }
 .icono-mosaico--escritura {
   background: color-mix(in srgb, var(--rosa) 22%, var(--nav));
-  color: var(--rosa);
+  color: var(--rosa-texto);
 }
 
 /* --- Pantallas cortas de flujo ("¡Listo! Siguiente…" / cierre del día): una sola calcomanía
@@ -4057,7 +4081,7 @@ main:has(> .pantalla-habla) {
   gap: var(--e-2);
 }
 .escucha-panel-audio svg {
-  color: var(--amarillo);
+  color: var(--amarillo-texto);
 }
 
 .escucha-boton-escuchar {
@@ -4474,3 +4498,24 @@ main:has(> .pantalla-habla) {
     margin-top: var(--e-4); /* el margen colapsa con el de la barra (8 px): 16 px dan ~15 de aire real */
   }
 }
+
+
+/* ============================================================================
+   TEMA CLARO (D37): detalles que no salen solos de los tokens.
+   Con apple-mobile-web-app-status-bar-style "black-translucent" el reloj/batería del iPhone
+   (instalada) son SIEMPRE blancos y la app dibuja detrás de ellos; sobre crema no se leerían.
+   En claro, una franja del color oscuro de marca cubre solo la zona segura de arriba (0 px
+   donde no hay muesca, o sea en escritorio y Safari normal no se ve). html.tema-claro lo pone
+   App.Util.aplicarTema / js/tema-inicial.js según el tema EFECTIVO (forzado o del sistema). */
+html.tema-claro::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--pantalla-borde-tinta);
+  z-index: 90;
+  pointer-events: none;
+}
+

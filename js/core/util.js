@@ -59,13 +59,12 @@
     return typeof global.matchMedia === "function" && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
 
-  /** Aplica el tema guardado en preferencias ("sistema"|"claro"|"oscuro") al documento. */
+  /** Aplica el tema guardado en preferencias ("sistema"|"claro"|"oscuro") y lo copia al espejo
+   * síncrono de arranque (App.Tema, D37). */
   function aplicarTema(tema) {
-    var raiz = global.document && global.document.documentElement;
-    if (!raiz) return;
-    if (tema === "claro") raiz.setAttribute("data-theme", "light");
-    else if (tema === "oscuro") raiz.setAttribute("data-theme", "dark");
-    else raiz.removeAttribute("data-theme");
+    if (!global.App || !global.App.Tema) return;
+    global.App.Tema.aplicar(tema);
+    global.App.Tema.guardarEspejo(tema);
   }
 
   /** Anima un número entero en un elemento de texto, de su valor actual a valorFinal. */

@@ -7,9 +7,11 @@
          este es solo el valor antes de que cargue JS. -->
     <title>Hey!</title>
     <meta name="description" content="App personal para practicar inglés, con progreso medido en niveles CEFR (A1-C2)." />
-    <!-- Solo modo oscuro por ahora (ver css/styles.css) -- un único theme-color, sin
-         distinguir claro/oscuro todavía. -->
-    <meta name="theme-color" content="#12122a" />
+    <!-- theme-color por tema (D37): con "Sistema" el navegador elige según prefers-color-scheme;
+         js/core/tema.js los fija al tema forzado y los actualiza al cambiar. data-color = valor
+         propio de cada uno (los usa tema.js al volver a "Sistema"). -->
+    <meta name="theme-color" content="#fff8e7" media="(prefers-color-scheme: light)" data-color="#fff8e7" />
+    <meta name="theme-color" content="#12122a" media="(prefers-color-scheme: dark)" data-color="#12122a" />
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://*.workers.dev; object-src 'none'; base-uri 'self'; form-action 'self'"
@@ -26,6 +28,8 @@
     <meta name="apple-mobile-web-app-title" content="Hey!" />
 
     <link rel="stylesheet" href="css/styles.css" />
+    <!-- Bloqueante a propósito: aplica el tema guardado antes del primer pintado (sin destello). -->
+    <script src="js/core/tema.js"></script>
   </head>
   <body>
     <div id="app">

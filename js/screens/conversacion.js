@@ -90,7 +90,7 @@
   function pintarNoConfigurado(el) {
     el.innerHTML =
       '<div class="pantalla-vista ancho-lectura">' +
-      '<div class="icono-mosaico" style="background:var(--surface-borde);margin-bottom:12px">' +
+      '<div class="icono-mosaico" style="background:var(--surface-relleno);margin-bottom:12px">' +
       global.App.Iconos.svg("candado", 20) +
       "</div>" +
       "<h1>" + global.App.Util.escaparHTML(t("conv.titulo")) + "</h1>" +

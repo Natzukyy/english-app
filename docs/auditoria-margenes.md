@@ -41,3 +41,23 @@ Por pantalla: inicio 52, escucha 36, diagnostico 30, ajustes 26, escritura 22, p
 
 **Sin hallazgos.**
 
+
+---
+
+# Auditoría en tema claro y oscuro (hey-4, D37)
+
+Misma herramienta (`tools/auditoria-margenes.js`), ahora con `tema: 'light' | 'dark'` (emula `prefers-color-scheme` con la preferencia en "Sistema") y la regla nueva **`contraste`**: texto real de cada pantalla contra su fondo compuesto, ≥ 4.5:1 (≥ 3:1 si ≥ 24 px, o ≥ 18.7 px en negrita). 33 estados × 390×844 / 360×740 / 1440×900 × interfaz nivel 0 y 3, con todas las reglas de arriba (interior, pantalla, desborde, hermanas, hueco, táctil) además de `contraste`.
+
+| Tema | Estado inicial | Estado final |
+|---|---|---|
+| Claro | 0 hallazgos (primera pasada, con las variantes `-texto` ya aplicadas) | **0** |
+| Oscuro | **84** (todos `contraste`, ya existían en hey-3) | **0** |
+
+Los 84 del tema oscuro, encontrados por la regla nueva (no son del tema claro; el oscuro de hey-3 los tenía):
+- **72** — Progreso, tarjeta "Nivel" (amarilla): sus `<p>` usaban `color: var(--texto)` (claro) sobre amarillo = **1.37:1** (etiqueta "Nivel", el número, "0 / 100 XP"). Corregido: `.progreso-tarjeta-nivel p { color: var(--tinta) }`.
+- **12** — Ajustes, pastilla "No configurada": texto tinta sobre el relleno neutro oscuro = **1.87:1**. Corregido: texto `--texto` por defecto y `--tinta` solo en la variante activa (menta).
+
+Sin excepciones. Además, `python3 scripts/contraste.py` (pares de tokens en ambos temas): 81/81 (1 excepción documentada, solo oscuro: borde decorativo `--surface-borde` sobre `--bg`, 1.76:1).
+
+Inicio en celular sin scroll (`scrollHeight − innerHeight`): **0** en 390×844, 360×740 y 1440×900, en claro y en oscuro.
+Capturas del tema claro: `docs/design-review/hey-4/<estado>-claro-<viewport>.png` (390×844 y 1440×900).
