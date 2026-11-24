@@ -1188,5 +1188,120 @@
     "categoria": "corta",
     "es": "Hacia {nivel}",
     "en": "Toward {nivel}"
+  },
+  "recordatorio.titulo": {
+    "categoria": "corta",
+    "es": "Recordatorio en el Calendario",
+    "en": "Calendar reminder"
+  },
+  "recordatorio.descripcion": {
+    "categoria": "larga",
+    "es": "Crea un evento con alarma en el Calendario del iPhone: suena a la hora elegida aunque la app esté cerrada. Vive en tu Calendario: para quitarlo, bórralo ahí. Si lo añades otra vez con otra hora o días, se actualiza en vez de duplicarse.",
+    "en": "Creates an event with an alarm in your iPhone Calendar: it rings at the chosen time even when the app is closed. It lives in your Calendar: to remove it, delete it there. If you add it again with a different time or days, it updates instead of duplicating."
+  },
+  "recordatorio.diferencia": {
+    "categoria": "larga",
+    "es": "Distinto de las notificaciones: esta app no puede avisarte sola con la app cerrada; el aviso del Calendario sí.",
+    "en": "Unlike notifications: this app can't alert you on its own while it's closed; the Calendar alert can."
+  },
+  "recordatorio.hora": {
+    "categoria": "corta",
+    "es": "Hora",
+    "en": "Time"
+  },
+  "recordatorio.dias": {
+    "categoria": "corta",
+    "es": "Días",
+    "en": "Days"
+  },
+  "recordatorio.dia_0": {
+    "categoria": "corta",
+    "es": "Lun",
+    "en": "Mon"
+  },
+  "recordatorio.dia_1": {
+    "categoria": "corta",
+    "es": "Mar",
+    "en": "Tue"
+  },
+  "recordatorio.dia_2": {
+    "categoria": "corta",
+    "es": "Mié",
+    "en": "Wed"
+  },
+  "recordatorio.dia_3": {
+    "categoria": "corta",
+    "es": "Jue",
+    "en": "Thu"
+  },
+  "recordatorio.dia_4": {
+    "categoria": "corta",
+    "es": "Vie",
+    "en": "Fri"
+  },
+  "recordatorio.dia_5": {
+    "categoria": "corta",
+    "es": "Sáb",
+    "en": "Sat"
+  },
+  "recordatorio.dia_6": {
+    "categoria": "corta",
+    "es": "Dom",
+    "en": "Sun"
+  },
+  "recordatorio.anadir": {
+    "categoria": "corta",
+    "es": "Añadir recordatorio al calendario",
+    "en": "Add reminder to calendar"
+  },
+  "recordatorio.evento_titulo": {
+    "categoria": "corta",
+    "es": "{app} — hoy te toca",
+    "en": "{app} — your turn today"
+  },
+  "recordatorio.evento_descripcion": {
+    "categoria": "larga",
+    "es": "Tu práctica de inglés de hoy te espera. Ábrela aquí:",
+    "en": "Today's English practice is waiting. Open it here:"
+  },
+  "recordatorio.evento_alarma": {
+    "categoria": "larga",
+    "es": "Hora de tu práctica de inglés",
+    "en": "Time for your English practice"
+  },
+  "recordatorio.compartido": {
+    "categoria": "larga",
+    "es": "Listo: en la hoja que se abrió, elige Calendario para añadirlo.",
+    "en": "Done: in the sheet that opened, choose Calendar to add it."
+  },
+  "recordatorio.descargado": {
+    "categoria": "larga",
+    "es": "Archivo descargado. Ábrelo para añadirlo al Calendario.",
+    "en": "File downloaded. Open it to add it to your Calendar."
+  },
+  "recordatorio.mostrar_texto": {
+    "categoria": "corta",
+    "es": "¿No pasó nada? Ver el contenido",
+    "en": "Nothing happened? Show the content"
+  },
+  "recordatorio.texto_instrucciones": {
+    "categoria": "larga",
+    "es": "Copia este texto, pégalo en un archivo llamado hey-recordatorio.ics y ábrelo con el iPhone (por ejemplo desde Archivos o enviándotelo por correo). El Calendario lo importa.",
+    "en": "Copy this text, paste it into a file named hey-recordatorio.ics and open it on your iPhone (for example from Files or by emailing it to yourself). Calendar imports it."
+  },
+  "recordatorio.copiar": {
+    "categoria": "corta",
+    "es": "Copiar texto",
+    "en": "Copy text"
+  },
+  "recordatorio.copiado": {
+    "categoria": "corta",
+    "es": "Copiado",
+    "en": "Copied"
+  },
+  "recordatorio.guardado": {
+    "categoria": "corta",
+    "es": "Guardado",
+    "en": "Saved"
   }
 }

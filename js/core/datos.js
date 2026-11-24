@@ -15,6 +15,10 @@
     // nunca una clave de API -- esa vive solo en el servidor del proxy.
     conversacionActivada: false,
     conversacionWorkerUrl: "",
+    // Recordatorio con .ics (D38): hora local "HH:MM" y días 0..6 (0 = lunes). Viven en settings (se
+    // exportan/importan con el resto); un respaldo de hey-3 sin estas claves queda con estos valores.
+    recordatorioHora: "20:00",
+    recordatorioDias: [0, 1, 2, 3, 4, 5, 6],
     vozPreferidaTTS: "" // nombre de voz elegido en Ajustes; "" = sin preferencia, usa el orden por defecto de App.TTS
   };
 

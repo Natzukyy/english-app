@@ -51,6 +51,7 @@
       var progresoIngles = calcularProgresoIngles(minutosPorDia, ctx.umbrales);
       var metaActual = Math.min(META_MAX, Math.max(META_MIN, prefs.metaMinutosDia || 15));
 
+      var cfgRecordatorio = global.App.Recordatorio.normalizarConfig({ hora: prefs.recordatorioHora, dias: prefs.recordatorioDias });
       var estadoConversacion = t(prefs.conversacionActivada ? "ajustes.conv_activada" : "ajustes.conv_no_configurada");
       var colorEstadoConversacion = prefs.conversacionActivada ? "var(--menta)" : "var(--surface-relleno)";
 
@@ -93,6 +94,23 @@
         "</p>" +
         '<button type="button" class="boton-secundario" id="btn-forzar-espanol" style="margin-top:8px">' + esc(t("ajustes.forzar_espanol")) + '</button>' +
         '<p class="texto-caption" style="margin-top:8px">' + esc(t("ajustes.forzar_espanol_desc")) + '</p>' +
+        "</div>" +
+        // 4b. Recordatorio en el Calendario (.ics, D38)
+        '<div class="ajustes-tarjeta superficie-oscura">' +
+        "<h2>" + esc(t("recordatorio.titulo")) + "</h2>" +
+        '<p class="texto-caption">' + esc(t("recordatorio.descripcion")) + "</p>" +
+        '<label class="ajustes-etiqueta-campo" for="input-recordatorio-hora">' + esc(t("recordatorio.hora")) + "</label>" +
+        '<input type="time" id="input-recordatorio-hora" class="campo-texto" value="' + esc(cfgRecordatorio.hora) + '" />' +
+        '<div class="ajustes-etiqueta-campo" id="etiqueta-recordatorio-dias">' + esc(t("recordatorio.dias")) + "</div>" +
+        '<div class="ajustes-dias" id="botones-recordatorio-dias" role="group" aria-labelledby="etiqueta-recordatorio-dias"></div>' +
+        '<button type="button" class="ajustes-boton-dato calcomania calcomania-presionable" id="btn-recordatorio" style="background:var(--menta);--r:0.4deg;margin-top:12px" data-i18n-live="recordatorio.anadir"></button>' +
+        '<p id="mensaje-recordatorio" class="texto-caption" aria-live="polite"></p>' +
+        '<div id="recordatorio-texto" hidden>' +
+        '<p class="texto-caption">' + esc(t("recordatorio.texto_instrucciones")) + "</p>" +
+        '<textarea id="recordatorio-ics" class="campo-texto ajustes-ics" readonly rows="6"></textarea>' +
+        '<button type="button" class="boton-secundario" id="btn-copiar-ics">' + esc(t("recordatorio.copiar")) + "</button>" +
+        "</div>" +
+        '<p class="texto-caption">' + esc(t("recordatorio.diferencia")) + "</p>" +
         "</div>" +
         // 5. Tus datos
         '<div class="ajustes-tarjeta superficie-oscura">' +
@@ -297,6 +315,141 @@
         global.App.Datos.guardarPreferencias(Object.assign({}, prefs, { conversacionWorkerUrl: url })).then(function () {
           prefs.conversacionWorkerUrl = url;
         });
+      });
+
+      // --- Recordatorio en el Calendario (.ics, D38) ---
+      var inputHora = el.querySelector("#input-recordatorio-hora");
+      var contenedorDias = el.querySelector("#botones-recordatorio-dias");
+      var mensajeRecordatorio = el.querySelector("#mensaje-recordatorio");
+      var bloqueTexto = el.querySelector("#recordatorio-texto");
+      var areaIcs = el.querySelector("#recordatorio-ics");
+
+      function guardarRecordatorio() {
+        var nueva = global.App.Recordatorio.normalizarConfig(cfgRecordatorio);
+        cfgRecordatorio = nueva;
+        return global.App.Datos.guardarPreferencias(Object.assign({}, prefs, { recordatorioHora: nueva.hora, recordatorioDias: nueva.dias })).then(function () {
+          prefs.recordatorioHora = nueva.hora;
+          prefs.recordatorioDias = nueva.dias;
+        });
+      }
+
+      global.App.Recordatorio.CODIGOS_DIA.forEach(function (codigo, i) {
+        var boton = document.createElement("button");
+        boton.type = "button";
+        boton.className = "ajustes-segmentado-boton ajustes-dia";
+        boton.textContent = t("recordatorio.dia_" + i);
+        boton.setAttribute("aria-pressed", cfgRecordatorio.dias.indexOf(i) !== -1 ? "true" : "false");
+        boton.addEventListener("click", function () {
+          var activo = cfgRecordatorio.dias.indexOf(i) !== -1;
+          var nuevos = activo
+            ? cfgRecordatorio.dias.filter(function (d) {
+                return d !== i;
+              })
+            : cfgRecordatorio.dias.concat([i]);
+          if (!nuevos.length) return; // siempre al menos un día
+          cfgRecordatorio = global.App.Recordatorio.normalizarConfig({ hora: cfgRecordatorio.hora, dias: nuevos });
+          boton.setAttribute("aria-pressed", activo ? "false" : "true");
+          guardarRecordatorio();
+        });
+        contenedorDias.appendChild(boton);
+      });
+
+      inputHora.addEventListener("change", function () {
+        cfgRecordatorio = global.App.Recordatorio.normalizarConfig({ hora: inputHora.value, dias: cfgRecordatorio.dias });
+        inputHora.value = cfgRecordatorio.hora;
+        guardarRecordatorio();
+      });
+
+      function mostrarTextoIcs(ics) {
+        areaIcs.value = ics;
+        bloqueTexto.hidden = false;
+      }
+
+      function crearArchivoIcs(ics) {
+        var blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+        var archivo = null;
+        try {
+          archivo = new File([blob], "hey-recordatorio.ics", { type: "text/calendar" });
+        } catch (e) {
+          archivo = null;
+        }
+        return { blob: blob, archivo: archivo };
+      }
+
+      function descargarIcs(blob) {
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = "hey-recordatorio.ics";
+        a.type = "text/calendar";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () {
+          URL.revokeObjectURL(url);
+        }, 4000);
+      }
+
+      el.querySelector("#btn-recordatorio").addEventListener("click", function () {
+        var nombreApp = (ctx.config && ctx.config.nombreApp) || "Hey!"; // i18n-ok: nombre de reserva; el real vive en data/config.json
+        var url = global.location.origin + global.location.pathname;
+        var titulo = t("recordatorio.evento_titulo", { app: nombreApp });
+        var ics = global.App.Recordatorio.construirICS({
+          hora: cfgRecordatorio.hora,
+          dias: cfgRecordatorio.dias,
+          titulo: titulo,
+          descripcion: t("recordatorio.evento_descripcion"),
+          alarma: t("recordatorio.evento_alarma"),
+          url: url,
+          ahora: new Date()
+        });
+        guardarRecordatorio();
+        var f = crearArchivoIcs(ics);
+        var puedeCompartir = !!(f.archivo && global.navigator && typeof global.navigator.share === "function" && typeof global.navigator.canShare === "function" && global.navigator.canShare({ files: [f.archivo] }));
+        var puedeDescargar = typeof global.URL !== "undefined" && typeof global.URL.createObjectURL === "function" && "download" in document.createElement("a");
+        var metodo = global.App.Recordatorio.elegirEntrega({ puedeCompartirArchivos: puedeCompartir, puedeDescargar: puedeDescargar });
+        bloqueTexto.hidden = true;
+
+        function porDescarga() {
+          descargarIcs(f.blob);
+          mensajeRecordatorio.innerHTML = esc(t("recordatorio.descargado")) + ' <button type="button" class="enlace-discreto" id="btn-ver-ics">' + esc(t("recordatorio.mostrar_texto")) + "</button>";
+          var ver = mensajeRecordatorio.querySelector("#btn-ver-ics");
+          if (ver) ver.addEventListener("click", function () { mostrarTextoIcs(ics); });
+        }
+
+        if (metodo === "compartir") {
+          global.navigator.share({ files: [f.archivo], title: titulo }).then(
+            function () {
+              mensajeRecordatorio.textContent = t("recordatorio.compartido");
+            },
+            function (err) {
+              if (err && err.name === "AbortError") return; // i18n-ok: nombre de error de la Web Share API, no texto visible
+              if (puedeDescargar) porDescarga();
+              else mostrarTextoIcs(ics);
+            }
+          );
+        } else if (metodo === "descarga") {
+          porDescarga();
+        } else {
+          mensajeRecordatorio.textContent = "";
+          mostrarTextoIcs(ics);
+        }
+      });
+
+      el.querySelector("#btn-copiar-ics").addEventListener("click", function () {
+        areaIcs.select();
+        var ok = false;
+        try {
+          if (global.navigator.clipboard && global.navigator.clipboard.writeText) {
+            global.navigator.clipboard.writeText(areaIcs.value);
+            ok = true;
+          } else {
+            ok = document.execCommand("copy");
+          }
+        } catch (e) {
+          ok = false;
+        }
+        if (ok) mensajeRecordatorio.textContent = t("recordatorio.copiado");
       });
 
       // --- Tus datos (exportar/importar) ---

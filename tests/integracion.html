@@ -90,6 +90,7 @@
     <script src="../js/core/progreso.js"></script>
     <script src="../js/core/avance.js"></script>
     <script src="../js/core/plan.js"></script>
+    <script src="../js/core/recordatorio.js"></script>
     <script src="../js/core/datos.js"></script>
     <script>
       "use strict";
@@ -516,6 +517,47 @@
         }).then(function (fila) {
           assertEqual(fila.ventana.length, 30);
           assertEqual(fila.listaParaConfirmar, false); // 50 % de acierto nunca llena la barra
+        });
+      });
+
+      prueba("recordatorio (D38): hora y días se guardan en settings, viajan en el export y vuelven al importar", function () {
+        return limpiarStores(["settings"]).then(function () {
+          return App.Datos.obtenerPreferencias();
+        }).then(function (p) {
+          assertEqual(p.recordatorioHora, "20:00"); // por defecto
+          assertEqual(p.recordatorioDias.length, 7);
+          return App.Datos.guardarPreferencias(Object.assign({}, p, { recordatorioHora: "07:45", recordatorioDias: [0, 2, 4] }));
+        }).then(function () {
+          return App.Storage.exportBackup();
+        }).then(function (backup) {
+          var fila = backup.datos.settings.filter(function (f) { return f.id === "preferencias"; })[0];
+          assertEqual(fila.recordatorioHora, "07:45");
+          assertEqual(fila.recordatorioDias.join(","), "0,2,4");
+          return limpiarStores(["settings"]).then(function () {
+            return App.Storage.importBackup(JSON.parse(JSON.stringify(backup)));
+          });
+        }).then(function () {
+          return App.Datos.obtenerPreferencias();
+        }).then(function (p) {
+          assertEqual(p.recordatorioHora, "07:45");
+          assertEqual(p.recordatorioDias.join(","), "0,2,4");
+        });
+      });
+
+      prueba("recordatorio (D38): un respaldo de hey-3 (sin esas claves) se importa y deja los valores por defecto", function () {
+        return limpiarStores(["settings"]).then(function () {
+          return App.Storage.importBackup({ app: "app-ingles", version: 3, datos: { settings: [{ id: "preferencias", metaMinutosDia: 20, tema: "claro", forzarEspanol: false }] } });
+        }).then(function () {
+          return App.Datos.obtenerPreferencias();
+        }).then(function (p) {
+          assertEqual(p.metaMinutosDia, 20);
+          assertEqual(p.tema, "claro");
+          assertEqual(p.recordatorioHora, "20:00");
+          assertEqual(p.recordatorioDias.join(","), "0,1,2,3,4,5,6");
+          // y el .ics sale válido con esos valores por defecto
+          var cfg = App.Recordatorio.normalizarConfig({ hora: p.recordatorioHora, dias: p.recordatorioDias });
+          var ics = App.Recordatorio.construirICS({ hora: cfg.hora, dias: cfg.dias, titulo: "t", url: "http://x/", ahora: new Date(2026, 10, 24, 9, 0) });
+          assertTrue(ics.indexOf("RRULE:FREQ=DAILY") > 0);
         });
       });
 
