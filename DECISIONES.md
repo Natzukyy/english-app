@@ -845,5 +845,15 @@ Sin servidor push no hay avisos programados en iPhone (la app solo notifica abie
 - **Notificaciones:** Alex pidió "mantener la opción existente de notificaciones", pero en `hey-3` NO existe ninguna opción de notificaciones en Ajustes (se buscó en `js/` y en `strings.json`). No se creó nada; la tarjeta solo aclara en una línea que la app no puede avisar sola con la app cerrada y el Calendario sí.
 - **Datos:** `recordatorioHora` ("HH:MM") y `recordatorioDias` (0 = lunes … 6) en `settings.preferencias` (IndexedDB), así viajan en el export/import JSON; un respaldo de hey-3 sin esas claves queda con 20:00 y los 7 días (probado en `tests/integracion.html`).
 
+## D39 — Recordatorio: "Abrir en Calendario" como camino principal en iPhone (rama `hey-5`)
+**Problema (reportado por Alex en iPhone con hey-4):** al tocar "Añadir recordatorio al calendario" la hoja de compartir se abría pero no aparecía Calendario.
+**Causa probable (deducción, NO comprobada en iOS):** en iOS, Calendario no es destino de la hoja de compartir con archivos; un `.ics` se importa al abrirlo (Archivos, Safari, Mail) o al navegar a un recurso `text/calendar`, lo que dispara el aviso nativo "Añadir a Calendario". D38 ponía la hoja de compartir como primer camino; eso era el error.
+**Decisión:**
+- **iOS/iPadOS** (`App.Recordatorio.esIOS`: UA iPhone/iPad/iPod, o `MacIntel` con `maxTouchPoints > 1` = iPadOS): acción principal "Abrir en Calendario", un `<a>` REAL (no `click()` programático), sin `download`, con `href="data:text/calendar;charset=utf-8,<encodeURIComponent(ics)>"` (`enlaceDatosICS`; conserva CRLF como `%0D%0A`). Se eligió (a) sobre (b) blob: porque es el patrón de los botones "add to calendar" web para iOS y no depende de un objeto efímero. El `href` se regenera al cambiar hora/días y justo al tocar (antes de que el navegador siga el enlace). No se pudo comparar (a) con (b) ni verificar el modo standalone sin iPhone: si en la app instalada no apareciera el aviso, quedan los secundarios.
+- **Otras plataformas:** principal = descargar el archivo.
+- **Secundarios (todas las plataformas):** "Guardar archivo" (hoja de compartir con el archivo; si falla o no existe, descarga; ayuda: elegir Guardar en Archivos y tocar el archivo) y "Copiar texto" (último recurso).
+- **Sin cambios:** contenido del `.ics`, `construirICS`, UID estable (volver a añadir actualiza), `SEQUENCE`. `elegirEntrega` solo gana el caso `esIOS → "calendario"`.
+- Ayuda de la tarjeta (i18n `recordatorio.ayuda_ios` / `ayuda_otros`): qué pasa al tocar y cómo quitarlo (borrar el evento en Calendario).
+
 ---
 *(Esta lista se sigue actualizando conforme avanzan las fases.)*

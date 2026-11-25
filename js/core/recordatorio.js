@@ -191,8 +191,26 @@
   /** Elige cómo entregar el archivo según lo que haya: "compartir" (hoja de compartir con el
    * archivo), "descarga" (enlace con download) o "texto" (mostrar el contenido para copiar).
    * caps: { puedeCompartirArchivos, puedeDescargar } */
+  // iOS/iPadOS (iPadOS 13+ se anuncia como Mac pero con pantalla táctil). D39.
+  function esIOS(info) {
+    info = info || {};
+    var ua = String(info.userAgent || "");
+    var plat = String(info.plataforma || "");
+    if (/iPhone|iPad|iPod/.test(ua)) return true;
+    if (/iPhone|iPad|iPod/.test(plat)) return true;
+    return plat === "MacIntel" && Number(info.maxTouchPoints) > 1;
+  }
+
+  // Enlace data: sin atributo download: en iOS, Safari lo abre como text/calendar y
+  // muestra el aviso nativo "Añadir a Calendario". encodeURIComponent conserva CRLF (%0D%0A).
+  function enlaceDatosICS(ics) {
+    return "data:text/calendar;charset=utf-8," + encodeURIComponent(String(ics));
+  }
+
+  // Acción principal: en iOS abrir directo en Calendario; si no, compartir > descarga > texto.
   function elegirEntrega(caps) {
     caps = caps || {};
+    if (caps.esIOS) return "calendario";
     if (caps.puedeCompartirArchivos) return "compartir";
     if (caps.puedeDescargar) return "descarga";
     return "texto";
@@ -215,6 +233,8 @@
     primerDia: primerDia,
     uidEstable: uidEstable,
     construirICS: construirICS,
+    esIOS: esIOS,
+    enlaceDatosICS: enlaceDatosICS,
     elegirEntrega: elegirEntrega
   };
 })(typeof window !== "undefined" ? window : globalThis);

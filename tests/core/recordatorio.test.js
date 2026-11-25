@@ -107,4 +107,27 @@
     Test.assertEqual(R.elegirEntrega({}), "texto");
     Test.assertEqual(R.elegirEntrega(), "texto");
   });
+
+  Test.test("elegirEntrega: en iOS la acción principal es abrir en Calendario", function () {
+    Test.assertEqual(R.elegirEntrega({ esIOS: true, puedeCompartirArchivos: true, puedeDescargar: true }), "calendario");
+    Test.assertEqual(R.elegirEntrega({ esIOS: false, puedeCompartirArchivos: true }), "compartir");
+  });
+
+  Test.test("esIOS: iPhone, iPad, iPadOS como Mac táctil; no Mac ni Android", function () {
+    Test.assertTrue(R.esIOS({ userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)" }));
+    Test.assertTrue(R.esIOS({ userAgent: "Mozilla/5.0 (iPad; CPU OS 16_0 like Mac OS X)" }));
+    Test.assertTrue(R.esIOS({ userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)", plataforma: "MacIntel", maxTouchPoints: 5 }));
+    Test.assertTrue(!R.esIOS({ userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)", plataforma: "MacIntel", maxTouchPoints: 0 }));
+    Test.assertTrue(!R.esIOS({ userAgent: "Mozilla/5.0 (Linux; Android 14)", plataforma: "Linux armv8l", maxTouchPoints: 5 }));
+    Test.assertTrue(!R.esIOS());
+  });
+
+  Test.test("enlaceDatosICS: tipo text/calendar, sin perder CRLF ni caracteres y reversible", function () {
+    var ics = R.construirICS({ hora: "20:00", dias: [0, 1, 2, 3, 4, 5, 6], titulo: "Hey! — hoy te toca", descripcion: "Practica, 15 min; ¡ya!", alarma: "Hora", url: "https://x.github.io/app/", ahora: AHORA });
+    var url = R.enlaceDatosICS(ics);
+    Test.assertTrue(url.indexOf("data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0A") === 0);
+    Test.assertTrue(url.indexOf("%0D%0A") > 0 && url.indexOf("\r") === -1 && url.indexOf("\n") === -1);
+    Test.assertTrue(url.indexOf(" ") === -1);
+    Test.assertEqual(decodeURIComponent(url.slice(url.indexOf(",") + 1)), ics);
+  });
 })();

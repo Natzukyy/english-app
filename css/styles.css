@@ -4554,3 +4554,25 @@ html.tema-claro::before {
 #mensaje-recordatorio:not(:empty) {
   margin: var(--e-2) 0;
 }
+/* Recordatorio (D39): el enlace "Abrir en Calendario" es un <a> con aspecto de botón; [hidden] debe ganar a display:block. */
+.ajustes-enlace-calendario,
+.ajustes-boton-dato[hidden] {
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.ajustes-boton-dato[hidden] {
+  display: none;
+}
+.ajustes-ics-secundarios {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--e-2);
+  margin-top: var(--e-2);
+}
+.ajustes-ics-secundarios .boton-secundario + .boton-secundario {
+  margin-top: 0;
+}
+#ayuda-recordatorio {
+  margin: var(--e-2) 0;
+}

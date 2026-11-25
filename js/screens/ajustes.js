@@ -103,7 +103,13 @@
         '<input type="time" id="input-recordatorio-hora" class="campo-texto" value="' + esc(cfgRecordatorio.hora) + '" />' +
         '<div class="ajustes-etiqueta-campo" id="etiqueta-recordatorio-dias">' + esc(t("recordatorio.dias")) + "</div>" +
         '<div class="ajustes-dias" id="botones-recordatorio-dias" role="group" aria-labelledby="etiqueta-recordatorio-dias"></div>' +
-        '<button type="button" class="ajustes-boton-dato calcomania calcomania-presionable" id="btn-recordatorio" style="background:var(--menta);--r:0.4deg;margin-top:12px" data-i18n-live="recordatorio.anadir"></button>' +
+        '<a role="button" class="ajustes-boton-dato calcomania calcomania-presionable ajustes-enlace-calendario" id="enlace-calendario" href="#" hidden style="background:var(--menta);--r:0.4deg;margin-top:12px">' + esc(t("recordatorio.abrir")) + "</a>" +
+        '<button type="button" class="ajustes-boton-dato calcomania calcomania-presionable" id="btn-recordatorio" style="background:var(--menta);--r:0.4deg;margin-top:12px">' + esc(t("recordatorio.descargar")) + "</button>" +
+        '<div class="ajustes-ics-secundarios">' +
+        '<button type="button" class="boton-secundario" id="btn-guardar-archivo">' + esc(t("recordatorio.guardar_archivo")) + "</button>" +
+        '<button type="button" class="boton-secundario" id="btn-ver-texto">' + esc(t("recordatorio.copiar")) + "</button>" +
+        "</div>" +
+        '<p class="texto-caption" id="ayuda-recordatorio"></p>' +
         '<p id="mensaje-recordatorio" class="texto-caption" aria-live="polite"></p>' +
         '<div id="recordatorio-texto" hidden>' +
         '<p class="texto-caption">' + esc(t("recordatorio.texto_instrucciones")) + "</p>" +
@@ -390,50 +396,92 @@
         }, 4000);
       }
 
-      el.querySelector("#btn-recordatorio").addEventListener("click", function () {
+      var R = global.App.Recordatorio;
+      var nav = global.navigator || {};
+      var ios = R.esIOS({ userAgent: nav.userAgent, plataforma: nav.platform, maxTouchPoints: nav.maxTouchPoints });
+      var enlaceCal = el.querySelector("#enlace-calendario");
+      var btnDescargar = el.querySelector("#btn-recordatorio");
+      var ayuda = el.querySelector("#ayuda-recordatorio");
+
+      function generarIcs() {
         var nombreApp = (ctx.config && ctx.config.nombreApp) || "Hey!"; // i18n-ok: nombre de reserva; el real vive en data/config.json
-        var url = global.location.origin + global.location.pathname;
         var titulo = t("recordatorio.evento_titulo", { app: nombreApp });
-        var ics = global.App.Recordatorio.construirICS({
-          hora: cfgRecordatorio.hora,
-          dias: cfgRecordatorio.dias,
+        return {
           titulo: titulo,
-          descripcion: t("recordatorio.evento_descripcion"),
-          alarma: t("recordatorio.evento_alarma"),
-          url: url,
-          ahora: new Date()
+          ics: R.construirICS({
+            hora: cfgRecordatorio.hora,
+            dias: cfgRecordatorio.dias,
+            titulo: titulo,
+            descripcion: t("recordatorio.evento_descripcion"),
+            alarma: t("recordatorio.evento_alarma"),
+            url: global.location.origin + global.location.pathname,
+            ahora: new Date()
+          })
+        };
+      }
+
+      // Principal en iOS: un <a> real (sin download) con href data:text/calendar, que Safari abre
+      // con el aviso nativo "Añadir a Calendario". Se refresca al cambiar hora/días y al tocarlo (D39).
+      function refrescarEnlace() {
+        if (ios) enlaceCal.setAttribute("href", R.enlaceDatosICS(generarIcs().ics));
+      }
+
+      if (ios) {
+        enlaceCal.hidden = false;
+        btnDescargar.hidden = true;
+        ayuda.textContent = t("recordatorio.ayuda_ios");
+        refrescarEnlace();
+        enlaceCal.addEventListener("click", function () {
+          refrescarEnlace(); // antes de que el navegador siga el enlace: usa la hora y días actuales
+          guardarRecordatorio();
+          mensajeRecordatorio.textContent = t("recordatorio.abierto");
         });
+        inputHora.addEventListener("change", refrescarEnlace);
+        contenedorDias.addEventListener("click", refrescarEnlace);
+      } else {
+        ayuda.textContent = t("recordatorio.ayuda_otros");
+      }
+
+      function entregarComoArchivo(preferirCompartir) {
+        var g = generarIcs();
         guardarRecordatorio();
-        var f = crearArchivoIcs(ics);
-        var puedeCompartir = !!(f.archivo && global.navigator && typeof global.navigator.share === "function" && typeof global.navigator.canShare === "function" && global.navigator.canShare({ files: [f.archivo] }));
+        var f = crearArchivoIcs(g.ics);
+        var puedeCompartir = !!(f.archivo && nav && typeof nav.share === "function" && typeof nav.canShare === "function" && nav.canShare({ files: [f.archivo] }));
         var puedeDescargar = typeof global.URL !== "undefined" && typeof global.URL.createObjectURL === "function" && "download" in document.createElement("a");
-        var metodo = global.App.Recordatorio.elegirEntrega({ puedeCompartirArchivos: puedeCompartir, puedeDescargar: puedeDescargar });
+        var metodo = preferirCompartir ? R.elegirEntrega({ puedeCompartirArchivos: puedeCompartir, puedeDescargar: puedeDescargar }) : (puedeDescargar ? "descarga" : "texto");
         bloqueTexto.hidden = true;
 
         function porDescarga() {
           descargarIcs(f.blob);
           mensajeRecordatorio.innerHTML = esc(t("recordatorio.descargado")) + ' <button type="button" class="enlace-discreto" id="btn-ver-ics">' + esc(t("recordatorio.mostrar_texto")) + "</button>";
           var ver = mensajeRecordatorio.querySelector("#btn-ver-ics");
-          if (ver) ver.addEventListener("click", function () { mostrarTextoIcs(ics); });
+          if (ver) ver.addEventListener("click", function () { mostrarTextoIcs(g.ics); });
         }
 
         if (metodo === "compartir") {
-          global.navigator.share({ files: [f.archivo], title: titulo }).then(
+          nav.share({ files: [f.archivo], title: g.titulo }).then(
             function () {
               mensajeRecordatorio.textContent = t("recordatorio.compartido");
             },
             function (err) {
               if (err && err.name === "AbortError") return; // i18n-ok: nombre de error de la Web Share API, no texto visible
               if (puedeDescargar) porDescarga();
-              else mostrarTextoIcs(ics);
+              else mostrarTextoIcs(g.ics);
             }
           );
         } else if (metodo === "descarga") {
           porDescarga();
         } else {
           mensajeRecordatorio.textContent = "";
-          mostrarTextoIcs(ics);
+          mostrarTextoIcs(g.ics);
         }
+      }
+
+      btnDescargar.addEventListener("click", function () { entregarComoArchivo(false); });
+      el.querySelector("#btn-guardar-archivo").addEventListener("click", function () { entregarComoArchivo(true); });
+      el.querySelector("#btn-ver-texto").addEventListener("click", function () {
+        mensajeRecordatorio.textContent = "";
+        mostrarTextoIcs(generarIcs().ics);
       });
 
       el.querySelector("#btn-copiar-ics").addEventListener("click", function () {

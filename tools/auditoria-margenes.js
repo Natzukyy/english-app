@@ -25,6 +25,7 @@ async (page) => {
     capturas: null, // carpeta para guardar capturas (solo nivel 0, 390x844 y 1440x900)
     tema: null, // 'light' | 'dark' | null (null = el navegador por defecto)
     contraste: true,
+    ios: false, // true = contexto con user agent de iPhone (muestra la variante iOS de Ajustes, D39)
     sufijo: 'despues',
     salida: 'auditoria' // nombre del archivo que guarda el receptor
   }, AJUSTES);
@@ -346,7 +347,7 @@ async (page) => {
   const filtro = CFG.estados;
   for (const nivel of CFG.niveles) {
     for (const [vpNombre, [w, h]] of Object.entries(CFG.views)) {
-      const ctx = await browser.newContext(Object.assign({ serviceWorkers: 'block', viewport: { width: w, height: h } }, CFG.tema ? { colorScheme: CFG.tema } : {}));
+      const ctx = await browser.newContext(Object.assign({ serviceWorkers: 'block', viewport: { width: w, height: h } }, CFG.tema ? { colorScheme: CFG.tema } : {}, CFG.ios ? { userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1', hasTouch: true } : {}));
       await ctx.addInitScript(STUB);
       const p = await ctx.newPage();
       p.on('pageerror', (e) => errores.push(nivel + '/' + vpNombre + ': ' + String(e)));

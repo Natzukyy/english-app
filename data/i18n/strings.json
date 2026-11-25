@@ -1303,5 +1303,35 @@
     "categoria": "corta",
     "es": "Guardado",
     "en": "Saved"
+  },
+  "recordatorio.abrir": {
+    "categoria": "corta",
+    "es": "Abrir en Calendario",
+    "en": "Open in Calendar"
+  },
+  "recordatorio.descargar": {
+    "categoria": "larga",
+    "es": "Descargar archivo del recordatorio",
+    "en": "Download reminder file"
+  },
+  "recordatorio.guardar_archivo": {
+    "categoria": "corta",
+    "es": "Guardar archivo",
+    "en": "Save file"
+  },
+  "recordatorio.abierto": {
+    "categoria": "larga",
+    "es": "Si no apareció el aviso de Calendario, toca «Guardar archivo» o «Copiar texto».",
+    "en": "If the Calendar prompt didn't appear, tap “Save file” or “Copy text”."
+  },
+  "recordatorio.ayuda_ios": {
+    "categoria": "larga",
+    "es": "Al tocar «Abrir en Calendario», el iPhone te muestra «Añadir a Calendario» con el evento ya cargado: toca Añadir. Para quitarlo, bórralo en la app Calendario. «Guardar archivo»: elige Guardar en Archivos y luego toca el archivo para añadirlo al Calendario.",
+    "en": "When you tap “Open in Calendar”, your iPhone shows “Add to Calendar” with the event already filled in: tap Add. To remove it, delete it in the Calendar app. “Save file”: choose Save to Files, then tap the file to add it to Calendar."
+  },
+  "recordatorio.ayuda_otros": {
+    "categoria": "larga",
+    "es": "Descarga el archivo y ábrelo con tu aplicación de calendario. Para quitar el recordatorio, bórralo en tu calendario.",
+    "en": "Download the file and open it with your calendar app. To remove the reminder, delete it in your calendar."
   }
 }
